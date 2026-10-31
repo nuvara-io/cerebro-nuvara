@@ -1,0 +1,64 @@
+<!-- @dsCard group="Redes" width=1080 height=1350 subtitle="Post completo armado con la línea de redes" -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+<style>
+  .post { position: relative; width: 1080px; height: 1350px; overflow: hidden; font-family: Poppins, sans-serif;
+          background: linear-gradient(135deg, var(--redes-fondo-inicio) 0%, #efefef 45%, var(--redes-fondo-fin) 100%); }
+  .wm { position: absolute; -webkit-mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat;
+        mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat; rotate: -28deg; }
+  .wm.a { width: 1100px; height: 1100px; left: 520px; top: -380px; background: rgba(255,255,255,.55); }
+  .wm.b { width: 900px; height: 900px; left: -420px; top: 760px; background: rgba(0,0,0,.035); }
+  .logo { position: absolute; top: 108px; left: 0; right: 0; display: flex; justify-content: center; }
+  .logo img { width: 110px; }
+  .col { position: absolute; left: 76px; top: 236px; width: 560px; display: grid; gap: 48px; }
+  .t { margin: 0; font-size: 64px; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+  .azul { color: var(--redes-azul); }
+  .gris { color: var(--redes-texto-titulo); }
+  .body { margin: 0; font-size: 30px; line-height: 1.3; color: var(--redes-texto-cuerpo); }
+  .body strong, .row strong { font-weight: 700; color: var(--redes-azul-profundo); }
+  .row { display: flex; align-items: center; gap: 28px; font-size: 28px; line-height: 1.3; color: var(--redes-texto-cuerpo); }
+  .row b { font-weight: 700; color: var(--redes-texto-titulo); }
+  .dot { width: 84px; height: 84px; flex: none; border-radius: 50%; background: var(--redes-azul); display: grid; place-items: center; }
+  .dot svg { width: 40px; height: 40px; fill: none; stroke: var(--white); stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
+  .card { justify-self: start; display: inline-flex; align-items: center; gap: 36px; padding: 28px 52px 28px 32px; border-radius: var(--redes-radius-tarjeta);
+          background: var(--white); box-shadow: var(--redes-sombra-tarjeta); font-size: 30px; line-height: 1.25; color: var(--redes-texto-titulo); }
+  .card svg { width: 48px; height: 48px; fill: none; stroke: var(--redes-azul); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+  .card strong { font-weight: 700; color: var(--redes-azul); }
+  .doc { position: absolute; left: 660px; top: 380px; width: 190px; height: 236px; border-radius: 8px; background: var(--white);
+         box-shadow: var(--redes-sombra-tarjeta); padding: 32px 28px; box-sizing: border-box; }
+  .doc p { margin: 0 0 22px; font-size: 22px; font-weight: 700; color: var(--redes-azul-profundo); }
+  .doc i { display: block; height: 10px; border-radius: 5px; background: var(--ds-gray-200); margin-bottom: 14px; }
+  .node { position: absolute; left: 707px; top: 650px; width: 96px; height: 64px; border-radius: var(--redes-radius-pill); background: var(--redes-azul);
+          display: grid; place-items: center; }
+  .node svg { width: 34px; height: 34px; fill: none; stroke: var(--white); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .link { position: absolute; border: 2px dashed var(--ds-gray-300); }
+  .cat { position: absolute; top: 742px; width: 240px; padding: 8px 0; text-align: center; border-radius: var(--redes-radius-pill); background: var(--redes-azul);
+         color: var(--white); font-size: 24px; font-weight: 700; }
+  .next { position: absolute; right: 108px; bottom: 112px; font-size: 56px; font-weight: 700; letter-spacing: -0.18em; color: var(--redes-azul); }
+</style>
+<div class="post">
+  <div class="wm a"></div><div class="wm b"></div>
+  <div class="logo"><img src="/_blob/2afa5016f4b00685a16a377f5feea51a" alt="núvara"></div>
+  <div class="col">
+    <div><p class="t azul">La contabilidad</p><p class="t gris">no es una receta.</p></div>
+    <p class="body">Dos empresas pueden recibir la misma factura y construir <strong>causaciones diferentes,</strong> porque cada una responde a criterios distintos.</p>
+    <div class="row">
+      <div class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <span>La tecnología no debería imponer una <b>única forma de trabajar.</b></span>
+    </div>
+    <div class="row">
+      <div class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
+      <span>Debería <strong>respetar la tuya.</strong></span>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+      <span>Eso es lo que<br>hace <strong>núvara.</strong></span>
+    </div>
+  </div>
+  <div class="doc"><p>Factura</p><i style="width:100%"></i><i style="width:70%"></i><i style="width:85%"></i><i style="width:55%"></i></div>
+  <div class="link" style="left:754px; top:616px; width:0; height:34px; border-width:0 0 0 2px;"></div>
+  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M12 8v4M12 12l-5 4.5M12 12l5 4.5"/></svg></div>
+  <div class="link" style="left:640px; top:714px; width:236px; height:24px; border-bottom:0; border-radius:16px 16px 0 0;"></div>
+  <span class="cat" style="left:520px;">empresa a</span>
+  <span class="cat" style="left:790px;">empresa b</span>
+  <span class="next">&gt;&gt;&gt;</span>
+</div>

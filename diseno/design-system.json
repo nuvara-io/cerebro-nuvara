@@ -1,0 +1,99 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": { "v": 1, "at": "2026-10-31T21:40:00Z" },
+  "title": "Cerebro gráfico núvara",
+  "namespace": "NuvaraVideo",
+  "libraries": [],
+  "sections": {},
+  "groups": ["Logos", "Iconos", "Nuvi", "Referencias"],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "m",
+      "order": [
+        "horizontal-azul.svg", "horizontal-navy.svg", "horizontal-turquesa.svg", "horizontal-petroleo.svg", "horizontal-blanco.svg",
+        "apilado-azul.svg", "apilado-navy.svg", "apilado-turquesa.svg", "apilado-petroleo.svg", "apilado-blanco.svg",
+        "isotipo-azul.svg", "isotipo-navy.svg", "isotipo-turquesa.svg", "isotipo-petroleo.svg", "isotipo-blanco.svg"
+      ],
+      "files": {
+        "horizontal-azul.svg": { "name": "horizontal-azul.svg", "blob": "2afa5016f4b00685a16a377f5feea51a", "size": 6633, "type": "image/svg+xml" },
+        "horizontal-navy.svg": { "name": "horizontal-navy.svg", "blob": "19d187587d1d968d642ca885c57567fa", "size": 6706, "type": "image/svg+xml" },
+        "horizontal-turquesa.svg": { "name": "horizontal-turquesa.svg", "blob": "67f01a333fcc7075083cbc0bb0d232c2", "size": 6680, "type": "image/svg+xml" },
+        "horizontal-petroleo.svg": { "name": "horizontal-petroleo.svg", "blob": "6669a2ddd77a1e9d3812341e4f162015", "size": 6721, "type": "image/svg+xml" },
+        "horizontal-blanco.svg": { "name": "horizontal-blanco.svg", "blob": "a53de633205bea588556a1d67be54111", "size": 6538, "type": "image/svg+xml" },
+        "apilado-azul.svg": { "name": "apilado-azul.svg", "blob": "ec545bb0c575606f899e4b7c63a3bf37", "size": 6746, "type": "image/svg+xml" },
+        "apilado-navy.svg": { "name": "apilado-navy.svg", "blob": "a395e31ba83ce44fef16a8c955c377e4", "size": 6738, "type": "image/svg+xml" },
+        "apilado-turquesa.svg": { "name": "apilado-turquesa.svg", "blob": "8614ecc81463560b859badf1a28ce01a", "size": 6750, "type": "image/svg+xml" },
+        "apilado-petroleo.svg": { "name": "apilado-petroleo.svg", "blob": "1c870eb15f05b0c9507c712987257f8b", "size": 6770, "type": "image/svg+xml" },
+        "apilado-blanco.svg": { "name": "apilado-blanco.svg", "blob": "36e0ad44bcf0ceae415937c21a87d271", "size": 6620, "type": "image/svg+xml" },
+        "isotipo-azul.svg": { "name": "isotipo-azul.svg", "blob": "9c9ae92709b8e81bda1e28a088cbaf2a", "size": 2740, "type": "image/svg+xml" },
+        "isotipo-navy.svg": { "name": "isotipo-navy.svg", "blob": "b5e54776b436d2d4560f706765ba8b92", "size": 2744, "type": "image/svg+xml" },
+        "isotipo-turquesa.svg": { "name": "isotipo-turquesa.svg", "blob": "f61138e96f8fdd663410cf496f0991c2", "size": 2743, "type": "image/svg+xml" },
+        "isotipo-petroleo.svg": { "name": "isotipo-petroleo.svg", "blob": "0d95cf576c6c0754a7bc771340cbf895", "size": 2720, "type": "image/svg+xml" },
+        "isotipo-blanco.svg": { "name": "isotipo-blanco.svg", "blob": "f61f94a1b05661f8493b73806437fd3e", "size": 2689, "type": "image/svg+xml" }
+      }
+    },
+    "Iconos": {
+      "name": "Iconos",
+      "tile": "s",
+      "order": [
+        "azul-calendario.svg", "azul-x.svg", "verde-alerta.svg", "verde-empresa.svg", "verde-plan-de-cuentas.svg",
+        "blanco-estrella.svg", "blanco-facturacion.svg", "blanco-producto.svg", "blanco-usuario.svg",
+        "redes-04.svg", "redes-18.svg", "redes-29.svg"
+      ],
+      "files": {
+        "azul-calendario.svg": { "name": "azul-calendario.svg", "blob": "fa67314d9addb368d1673e53afcefd6e", "size": 2424, "type": "image/svg+xml" },
+        "azul-x.svg": { "name": "azul-x.svg", "blob": "d299b54bd96950dbc64fb0e12e3a8776", "size": 560, "type": "image/svg+xml" },
+        "verde-alerta.svg": { "name": "verde-alerta.svg", "blob": "4ec6fe24f2bcda43a712c95bd759f9b6", "size": 840, "type": "image/svg+xml" },
+        "verde-empresa.svg": { "name": "verde-empresa.svg", "blob": "fa62495bd11adcfe87a5789a4d3d3ace", "size": 1135, "type": "image/svg+xml" },
+        "verde-plan-de-cuentas.svg": { "name": "verde-plan-de-cuentas.svg", "blob": "870d26c87fd365ec0331852655142db7", "size": 1177, "type": "image/svg+xml" },
+        "blanco-estrella.svg": { "name": "blanco-estrella.svg", "blob": "bf36cce57e40ad5655ef10b87795c991", "size": 1349, "type": "image/svg+xml" },
+        "blanco-facturacion.svg": { "name": "blanco-facturacion.svg", "blob": "81c401f05548f34415a923236a28ea74", "size": 901, "type": "image/svg+xml" },
+        "blanco-producto.svg": { "name": "blanco-producto.svg", "blob": "0f005c8883317c4638f402e48da8c002", "size": 894, "type": "image/svg+xml" },
+        "blanco-usuario.svg": { "name": "blanco-usuario.svg", "blob": "07668548141911fade70d8b03d20480b", "size": 2284, "type": "image/svg+xml" },
+        "redes-04.svg": { "name": "redes-04.svg", "blob": "6511ba49d1a0a8350c168ac9393f58e6", "size": 352, "type": "image/svg+xml" },
+        "redes-18.svg": { "name": "redes-18.svg", "blob": "f480c156c457c1a80b0c72f37742b8a6", "size": 2443, "type": "image/svg+xml" },
+        "redes-29.svg": { "name": "redes-29.svg", "blob": "842170a0f2610cbcbba6593fc3f34eca", "size": 1382, "type": "image/svg+xml" }
+      }
+    },
+    "Nuvi": {
+      "name": "Nuvi",
+      "tile": "m",
+      "order": ["saludo.webm", "pensando.webm", "analizando.webm", "conexion.webm", "dian.webm", "nuvi-onboarding.png", "nuvi-senala.png", "nuvi-procesos.png", "nuvi-celebrating.png", "nuvi-ticket.png", "nuvi-fix.png", "nuvi-sad.png"],
+      "files": {
+        "saludo.webm": { "name": "saludo.webm", "blob": "eb12b603f9a797e744cb4c264855b29d", "size": 42425, "type": "video/webm" },
+        "pensando.webm": { "name": "pensando.webm", "blob": "c337e48f908d4e9cc33e2500bce654c4", "size": 40642, "type": "video/webm" },
+        "analizando.webm": { "name": "analizando.webm", "blob": "16275dca7737745fd47f1af54bc1e64f", "size": 47938, "type": "video/webm" },
+        "conexion.webm": { "name": "conexion.webm", "blob": "0d21b7678f36e29ea5f3f3721cd57514", "size": 71257, "type": "video/webm" },
+        "dian.webm": { "name": "dian.webm", "blob": "272e097816cd97a224b843d4c2ef1754", "size": 44744, "type": "video/webm" },
+        "nuvi-onboarding.png": { "name": "nuvi-onboarding.png", "blob": "a627717916c122b68069d992c766e4ac", "size": 347769, "type": "image/png" },
+        "nuvi-senala.png": { "name": "nuvi-senala.png", "blob": "b4d4c4b27df03d22fdef58af7053ea8a", "size": 651978, "type": "image/png" },
+        "nuvi-procesos.png": { "name": "nuvi-procesos.png", "blob": "0603438af5be06f48638e60ce1355e60", "size": 675971, "type": "image/png" },
+        "nuvi-celebrating.png": { "name": "nuvi-celebrating.png", "blob": "9d14a3cd80a968cbc808a15ad54dd135", "size": 208423, "type": "image/png" },
+        "nuvi-ticket.png": { "name": "nuvi-ticket.png", "blob": "5b5dbae74a741898e6c9e65fe7b6a4b7", "size": 202612, "type": "image/png" },
+        "nuvi-fix.png": { "name": "nuvi-fix.png", "blob": "4d3d627b9fd1cdbd86152fc294073640", "size": 38324, "type": "image/png" },
+        "nuvi-sad.png": { "name": "nuvi-sad.png", "blob": "528f69a4e046f0a79d1a14a1ce6ae740", "size": 29806, "type": "image/png" }
+      }
+    },
+    "Referencias": {
+      "name": "Referencias",
+      "tile": "l",
+      "order": ["post-contabilidad-no-es-receta.png", "post-beneficios.png", "post-referidos.jpg", "post-suspension.png"],
+      "files": {
+        "post-contabilidad-no-es-receta.png": { "name": "post-contabilidad-no-es-receta.png", "blob": "a5c4b61d552a5d990fec24dd9669ce4d", "size": 293096, "type": "image/png" },
+        "post-beneficios.png": { "name": "post-beneficios.png", "blob": "057e77a1e553105bf8fa2d07d48d2e99", "size": 259241, "type": "image/png" },
+        "post-referidos.jpg": { "name": "post-referidos.jpg", "blob": "11fb8b815f6911cc659100e2b98ab5b0", "size": 933885, "type": "image/jpeg" },
+        "post-suspension.png": { "name": "post-suspension.png", "blob": "dee18906c5d8111dda03bb0ccba76a53", "size": 716138, "type": "image/png" }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": { "readme": "project/README.md", "sections": [] },
+  "lastChange": {
+    "by": "Yohan",
+    "at": "2026-11-01T00:30:00Z",
+    "via": "Claude Code",
+    "note": "Unificación: una sola línea Poppins para tutoriales, reels y redes; README = Fundamentos; nueva sección Tutoriales en video; componentes de video rehechos; StatPill → StatCard; logos vectoriales en todas las vistas previas; KeyVisual pasa a uso institucional."
+  }
+}

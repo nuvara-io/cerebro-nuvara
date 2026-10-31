@@ -1,0 +1,47 @@
+<!-- @dsCard height=288 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
+<style>
+  .cover { position: relative; width: 960px; height: 288px; background: var(--white); overflow: hidden; }
+  .cover svg { position: absolute; left: 0; top: 0; width: 960px; height: 112px; }
+  .azul { fill: var(--brand-azul); }
+  .turq { fill: var(--brand-verde-turquesa); }
+  .petr { fill: var(--brand-azul-petroleo); }
+  .navy { fill: var(--brand-navy); }
+  .tint { fill: var(--ds-electric-blue-50); }
+  .wire { stroke: var(--white); stroke-width: 2; fill: none; }
+  .wire-dk { stroke: var(--brand-navy); stroke-width: 2; fill: none; }
+  .node { fill: var(--white); }
+  .node-dk { fill: var(--brand-navy); }
+  .ring { fill: none; stroke: var(--white); stroke-width: 2; }
+  .cover .txt { position: absolute; left: 48px; top: 152px; max-width: 864px; }
+  .cover h1 { margin: 0; font-family: var(--font-sans); font-weight: 700; font-size: 64px; line-height: .95; letter-spacing: -0.01em; color: var(--redes-texto-titulo); }
+  .cover p { margin: 16px 0 0; font-family: var(--font-sans); font-size: 14px; color: var(--redes-texto-cuerpo); }
+</style>
+<div class="cover">
+  <!--
+    blocks: brand-azul 320 (ds-size-80×4) · brand-verde-turquesa 192 (video-margin-x) · brand-azul-petroleo 240 (ds-size-80×3) · brand-navy 128 (ds-size-64×2) · ds-electric-blue-50 80 (ds-size-80); all 112 tall, bottom corners video-radius-frame (16)
+    arrangement: top-band skeleton (name too wide for the 440px zone), a strip of unequal bands flush across the top
+    pattern: literal motif, the key visual's "conexión": a dozen nodes joined by one flowing wire, chosen because núvara's concept is núcleo + valor
+    steps/radii: node pitch ~ ds-size-80, node radii 4/6/10 px, core node 14 px, band corners video-radius-frame
+  -->
+  <svg viewBox="0 0 960 112" aria-hidden="true">
+    <path class="azul" d="M0 0H320V112H16A16 16 0 0 1 0 96Z"/>
+    <rect class="turq" x="320" y="0" width="192" height="112"/>
+    <rect class="petr" x="512" y="0" width="240" height="112"/>
+    <rect class="navy" x="752" y="0" width="128" height="112"/>
+    <path class="tint" d="M880 0H960V96A16 16 0 0 1 944 112H880Z"/>
+    <polyline class="wire" points="40,72 120,40 200,64 280,36 360,70 440,44 520,58 600,30 680,66 760,46 840,74"/>
+    <polyline class="wire-dk" points="840,74 900,50 940,80"/>
+    <circle class="node" cx="40" cy="72" r="4"/><circle class="ring" cx="120" cy="40" r="6"/>
+    <circle class="node" cx="200" cy="64" r="6"/><circle class="node" cx="280" cy="36" r="4"/>
+    <circle class="node" cx="360" cy="70" r="6"/><circle class="ring" cx="440" cy="44" r="10"/>
+    <circle class="node" cx="520" cy="58" r="14"/><circle class="node" cx="600" cy="30" r="4"/>
+    <circle class="ring" cx="680" cy="66" r="6"/><circle class="node" cx="760" cy="46" r="6"/>
+    <circle class="node" cx="840" cy="74" r="4"/><circle class="node-dk" cx="900" cy="50" r="6"/>
+    <circle class="node-dk" cx="940" cy="80" r="4"/>
+  </svg>
+  <div class="txt">
+    <h1>Cerebro gráfico núvara</h1>
+    <p>Una sola línea para tutoriales, reels y redes: núcleo, conexión y flujo.</p>
+  </div>
+</div>

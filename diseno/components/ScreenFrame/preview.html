@@ -1,0 +1,41 @@
+<!-- @dsCard group="Video" width=1920 height=1080 subtitle="Escena de paso: header, captura en tarjeta blanca y subtítulo" -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+<style>
+  .s { position: relative; width: 1920px; height: 1080px; overflow: hidden; font-family: Poppins, sans-serif;
+       background: linear-gradient(135deg, var(--redes-fondo-inicio) 0%, #efefef 45%, var(--redes-fondo-fin) 100%); }
+  .wm { position: absolute; rotate: -28deg; -webkit-mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat;
+        mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat; }
+  .wm.a { width: 1500px; height: 1500px; left: 1050px; top: -520px; background: rgba(255,255,255,.55); }
+  .wm.b { width: 1100px; height: 1100px; left: -520px; top: 560px; background: rgba(0,0,0,.035); }
+  .h { position: absolute; left: 192px; top: 64px; display: flex; align-items: center; gap: 24px; }
+  .pill { height: 64px; padding: 0 24px; display: inline-flex; align-items: center; border-radius: var(--redes-radius-pill); background: var(--redes-azul); color: var(--white); font-size: 32px; font-weight: 700; }
+  .t { margin: 0; font-size: 72px; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; color: var(--redes-texto-titulo); }
+  .frame { position: absolute; left: 192px; top: 176px; width: 1536px; height: 856px; border-radius: var(--redes-radius-tarjeta); background: var(--white); box-shadow: var(--video-shadow-frame); overflow: hidden; }
+  .head { height: 72px; display: flex; align-items: center; gap: 16px; padding: 0 32px; border-bottom: 1px solid var(--ds-gray-200); }
+  .head img { height: 28px; }
+  .crumb { font-size: 18px; color: var(--ds-gray-500); }
+  .rows { padding: 24px 32px; display: grid; gap: 12px; }
+  .row { display: grid; grid-template-columns: 1fr 220px 200px; align-items: center; height: 64px; padding: 0 20px; border-radius: 4px; background: var(--ds-gray-100); font-size: 20px; color: var(--ds-gray-700); }
+  .row.th { background: none; color: var(--ds-gray-600); font-weight: 500; }
+  .tag { justify-self: start; padding: 4px 14px; border-radius: 4px; font-size: 18px; }
+  .pre { background: var(--ds-yellow-20); color: var(--ds-yellow-100); }
+  .ok { background: var(--ds-emerald-20); color: var(--ds-emerald-100); }
+  .cap { position: absolute; left: 50%; bottom: 80px; translate: -50% 0; padding: 20px 40px; border-radius: var(--redes-radius-tarjeta); background: var(--white);
+         box-shadow: var(--redes-sombra-tarjeta); font-size: 40px; line-height: 1.3; color: var(--redes-texto-cuerpo); white-space: nowrap; }
+  .cap b { color: var(--redes-azul); }
+</style>
+<div class="s">
+  <div class="wm a"></div><div class="wm b"></div>
+  <div class="h"><span class="pill">Paso 3 de 3</span><h2 class="t">Revisa y aprueba</h2></div>
+  <div class="frame">
+    <div class="head"><img src="/_blob/2afa5016f4b00685a16a377f5feea51a" alt="núvara"><span class="crumb">Operaciones › Causaciones</span></div>
+    <div class="rows">
+      <div class="row th"><span>Proveedor</span><span>Total</span><span>Estado</span></div>
+      <div class="row"><span>Café y Catering Empresarial S.A.S.</span><span>$ 535.500</span><span class="tag pre">Pre-causada</span></div>
+      <div class="row"><span>Asesorías Jurídicas del Norte S.A.S.</span><span>$ 2.975.000</span><span class="tag pre">Pre-causada</span></div>
+      <div class="row"><span>Ferretería La Treinta S.A.S.</span><span>$ 809.200</span><span class="tag ok">Aprobada</span></div>
+      <div class="row"><span>Transportes del Valle S.A.S.</span><span>$ 523.600</span><span class="tag ok">Aprobada</span></div>
+    </div>
+  </div>
+  <div class="cap">Revisa el <b>asiento contable</b> antes de <b>aprobar</b></div>
+</div>

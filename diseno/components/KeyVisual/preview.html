@@ -1,0 +1,30 @@
+<!-- @dsCard group="Marca" width=1920 height=1080 subtitle="Key visual institucional: blobs desenfocados + red de nodos" -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+<style>
+  .kv { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--white); }
+  .kv .blob { position: absolute; border-radius: 50%; filter: blur(140px); opacity: .85; }
+  .kv .b1 { width: 980px; height: 980px; left: -160px; top: 260px; background: var(--brand-verde-turquesa); }
+  .kv .b2 { width: 1100px; height: 1100px; right: -240px; top: -380px; background: var(--brand-azul); }
+  .kv .b3 { width: 620px; height: 620px; left: 760px; top: 640px; background: var(--ds-electric-blue-300); opacity: .6; }
+  .kv svg.net { position: absolute; right: 120px; bottom: 96px; width: 520px; height: 300px; }
+  .kv .net line { stroke: var(--brand-navy); stroke-width: 2; opacity: .55; }
+  .kv .net .n { fill: var(--brand-navy); }
+  .kv .net .o { fill: none; stroke: var(--brand-navy); stroke-width: 2; }
+  .kv .mark { position: absolute; inset: 0; display: grid; place-items: center; }
+  .kv .mark img { width: 600px; }
+</style>
+<div class="kv">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="mark"><img src="/_blob/2afa5016f4b00685a16a377f5feea51a" alt="núvara"></div>
+  <svg class="net" viewBox="0 0 520 300" aria-hidden="true">
+    <line x1="260" y1="150" x2="120" y2="70"/><line x1="260" y1="150" x2="400" y2="60"/>
+    <line x1="260" y1="150" x2="440" y2="210"/><line x1="260" y1="150" x2="150" y2="240"/>
+    <line x1="120" y1="70" x2="40" y2="120"/><line x1="400" y1="60" x2="490" y2="110"/>
+    <circle class="n" cx="260" cy="150" r="22"/>
+    <circle class="n" cx="120" cy="70" r="9"/><circle class="o" cx="400" cy="60" r="10"/>
+    <circle class="n" cx="440" cy="210" r="8"/><circle class="o" cx="150" cy="240" r="9"/>
+    <circle class="n" cx="40" cy="120" r="6"/><circle class="n" cx="490" cy="110" r="6"/>
+  </svg>
+</div>

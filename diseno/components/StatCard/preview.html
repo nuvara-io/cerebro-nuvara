@@ -1,0 +1,15 @@
+<!-- @dsCard group="Video" width=1920 height=320 subtitle="Tarjeta blanca con ícono en círculo y cifra que cuenta" -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+<style>
+  .s { width: 1920px; height: 320px; display: grid; place-items: center; font-family: Poppins, sans-serif;
+       background: linear-gradient(135deg, var(--redes-fondo-inicio) 0%, var(--redes-fondo-fin) 100%); }
+  .stat { display: inline-flex; align-items: center; gap: 36px; padding: 32px 48px 32px 32px; border-radius: var(--redes-radius-tarjeta); background: var(--white); box-shadow: var(--redes-sombra-tarjeta); }
+  .dot { width: 104px; height: 104px; border-radius: 50%; background: var(--redes-azul); display: grid; place-items: center; }
+  .dot svg { width: 48px; height: 48px; fill: none; stroke: var(--white); stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
+  .num { font-size: 120px; font-weight: 700; line-height: 1; color: var(--redes-azul); font-variant-numeric: tabular-nums; }
+  .lbl { font-size: 44px; line-height: 1.2; color: var(--redes-texto-cuerpo); max-width: 420px; }
+</style>
+<div class="s"><div class="stat">
+  <div class="dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+  <span class="num">15</span><span class="lbl">segundos por causación</span>
+</div></div>

@@ -1,0 +1,16 @@
+<!-- @dsCard group="Redes" width=1080 height=1350 subtitle="Degradado gris + isotipo de marca de agua + wordmark arriba" -->
+<style>
+  .bg { position: relative; width: 1080px; height: 1350px; overflow: hidden;
+        background: linear-gradient(135deg, var(--redes-fondo-inicio) 0%, #efefef 45%, var(--redes-fondo-fin) 100%); }
+  .wm { position: absolute; -webkit-mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat;
+        mask: url(/_blob/9c9ae92709b8e81bda1e28a088cbaf2a) center / contain no-repeat; rotate: -28deg; }
+  .wm.a { width: 1100px; height: 1100px; left: 520px; top: -380px; background: rgba(255,255,255,.55); }
+  .wm.b { width: 900px; height: 900px; left: -420px; top: 760px; background: rgba(0,0,0,.035); }
+  .logo { position: absolute; top: 108px; left: 0; right: 0; display: flex; justify-content: center; }
+  .logo img { width: 110px; }
+</style>
+<div class="bg">
+  <div class="wm a"></div>
+  <div class="wm b"></div>
+  <div class="logo"><img src="/_blob/2afa5016f4b00685a16a377f5feea51a" alt="núvara"></div>
+</div>

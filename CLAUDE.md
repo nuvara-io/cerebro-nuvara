@@ -1,16 +1,27 @@
-# nuvara-tuturiales
+# cerebro-nuvara
 
-Videos tutoriales, capacitaciones y piezas de marca de **núvara**, hechos con Remotion y narrados con ElevenLabs.
+El cerebro de **núvara**: todo lo que se sabe de la marca y del producto, y las piezas que se producen con eso (tutoriales, reels y posts en Remotion, narrados con ElevenLabs). Repo: github.com/nuvara-io/cerebro-nuvara
+
+## Mapa del cerebro
+
+| Parte | Dónde | Para qué |
+|---|---|---|
+| **Cerebro de diseño** | `diseno/` (fuente versionada) y el artifact https://claude.ai/artifact/44mTTe4PPiDv33UWqWsaPL (vista navegable) | **Cómo se ve y cómo suena** núvara: fundamentos, tutoriales, redes, reels, tokens y componentes. Ver `diseno/COMO-USAR.md`. |
+| **Cerebro de conocimiento** | `conocimiento/` | **Qué es y cómo se usa** núvara: producto, flujos paso a paso, preguntas de usuarios, objeciones, glosario e ideas de tutoriales. Sale de las capacitaciones y está anonimizado. |
+| **Producción** | `src/` (Remotion), `public/` (recursos), `docs/banco-fotos.md` | Las piezas: `src/brand/` es el espejo en código del cerebro de diseño. |
+
+Para escribir un guion, primero se lee `conocimiento/` (qué decir) y después `diseno/` (cómo mostrarlo).
 
 ## Fuentes de verdad (en este orden)
 
-1. **Cerebro gráfico núvara**: la línea gráfica de los videos (tokens, componentes de video, voz, Nuvi, logos). Está en https://claude.ai/artifact/44mTTe4PPiDv33UWqWsaPL. Leé su `project/README.md` antes de diseñar cualquier escena.
+1. **Cerebro de diseño** (`diseno/README.md` y el artifact). Leelo antes de diseñar cualquier escena o pieza.
 2. **núvara Brand OS**: voz, vocabulario y personaje. Está en Drive › Marketing › Branding › "Dirección Manual de identidad".
 3. **Key visual**: paleta oficial, tipografía y elementos gráficos. Está en Drive › Marketing › Branding › "Copia de key visual núvara.pdf".
 4. **Monorepo de la app**: producto, rutas, tokens de UI y copy. Está en `/home/yohan/Documentos/Proyectos/NUVARA`.
 
 Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp_7NmT
 
+- **Todas las reuniones** ("Google Meet"): https://drive.google.com/drive/folders/1tki9xYtHipo3Uz-KhOHJzCTEbhlZAgNu. Tiene una subcarpeta por reunión, incluida "Meet Recordings" (https://drive.google.com/drive/folders/16--n5fk7g5qaCY0v0FAVVgt10txCl7zR). Antes de procesar una reunión, revisá `conocimiento/fuentes-procesadas.md`, que registra cuáles ya entraron y cuáles se descartaron por no ser de núvara. Tienen datos de usuarios reales, así que lo que pasa a `conocimiento/` va **anonimizado**: sin nombres de empresas o personas, NIT, montos ni datos de sus operaciones. El texto crudo nunca entra al repo.
 - **Piezas gráficas publicadas** (posts, historias, portadas de reels, LinkedIn y reels): https://drive.google.com/drive/folders/1sI0C-NJBCPdlLHI1a3WOynkrD3fCFn2o
 - **Referencias descargadas** en `Rerefencias/Núvara-20261031T222228Z-1-005/Núvara/` (excluidas de git). Es la parte 5 de la carpeta raíz e incluye:
   - el logo maestro `.ai`, ya extraído a `public/brand/logo/` (15 SVG);
@@ -44,12 +55,12 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
 
 - **Causar una venta:** el Brand OS dice $100 COP y la landing (`consts.ts`) dice $200 COP.
 - **Recarga mínima:** la app dice $70.000 y la landing $80.000 de mínimo mensual.
-- **Azul petróleo:** el key visual usa `#005256` y la app `#09695c`. En video manda el key visual.
+- **Azul petróleo:** resuelto. Es `#09695c`, el del logo maestro, que coincide con la app. El `#005256` del PDF del key visual no se usa.
 
 ## Código (Remotion)
 
-- `src/brand/`: espejo en código del cerebro gráfico. Tiene `tokens.ts` (colores, gradientes, tipo, espaciado, motion), `fonts.ts` (Jost + Poppins) y `assets.ts` (logos y Nuvi en `public/`). Si cambia un valor en el cerebro gráfico, se cambia acá. No se escriben hex sueltos en los componentes.
-- `src/components/`: piezas reutilizables, como `KeyVisual`, `StatPill`, `StepHeader`, `ScreenFrame`, `Caption`, `ClickHighlight`, `Nuvi`, `FadeUp` y `ScreenPlaceholder`.
+- `src/brand/`: espejo en código del cerebro gráfico. Tiene `tokens.ts` (colores, gradientes, tipo, espaciado, motion), `fonts.ts` (Poppins) y `assets.ts` (logos y Nuvi en `public/`). Si cambia un valor en el cerebro gráfico, se cambia acá. No se escriben hex sueltos en los componentes.
+- `src/components/`: piezas reutilizables, como `Backdrop`, `TwoToneTitle`, `StatCard`, `StepHeader`, `ScreenFrame`, `Caption`, `Emphasis`, `IconBadge`, `Highlight`, `ClickHighlight`, `Nuvi`, `FadeUp` y `ScreenPlaceholder`.
 - `src/scenes/`: los tres actos (`IntroScene`, `StepScene`, `OutroScene`), creados con `Interactive.create` para que se editen desde Studio.
 - `src/tutorials/`: un archivo por video, que encadena escenas con `TransitionSeries` y fade de `motion.exit`.
 - Las grabaciones de la plataforma van en `public/recordings/` y se pasan en `recording` de `StepScene`. Si el campo está vacío, se muestra la vista ilustrativa.
