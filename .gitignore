@@ -5,3 +5,8 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Banco de fotos y descargas de Drive (pesados: van en Drive, no en git)
+Imagenes nuvara/
+Videos nuvara/
+Rerefencias/
