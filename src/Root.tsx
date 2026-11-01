@@ -1,6 +1,7 @@
 import { Composition, Folder, Still } from "remotion";
 import { PortadaCausaciones } from "./posts/PortadaCausaciones";
 import { Post500Causaciones } from "./posts/Post500Causaciones";
+import { QueEsNuvara } from "./posts/QueEsNuvara";
 import { IntroScene } from "./scenes/IntroScene";
 import { OutroScene } from "./scenes/OutroScene";
 import { StepScene } from "./scenes/StepScene";
@@ -22,6 +23,7 @@ export const RemotionRoot: React.FC = () => {
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
         <Still id="PortadaCausaciones" component={PortadaCausaciones} width={1080} height={1350} />
+        <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
       </Folder>
       <Folder name="Escenas">
         <Composition
