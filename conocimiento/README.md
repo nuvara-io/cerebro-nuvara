@@ -34,7 +34,31 @@ Se revisaron 103 carpetas de reunión; 95 tenían notas legibles. Se incluyeron 
 | Notas vacías | 3 |
 | Solo grabación (notas inaccesibles sin iniciar sesión) | 8 |
 
-Total acumulado de fuentes con contenido analizado: 9 + 67 = **76**.
+### Tercera tanda (carpeta local de notas de Gemini, 01/11/2026)
+
+Se procesaron 310 archivos con la skill `procesar-reuniones`:
+- 18 estaban vacíos (sobre todo chats de una o dos líneas).
+- 105 ya habían entrado desde Drive y no se volvieron a leer.
+- 187 eran nuevos (de septiembre de 2025 a octubre de 2026): se incluyeron **110** y se descartaron 77.
+- Los 56 de otro producto o de otro tema, más 12 de la segunda tanda que tampoco eran de núvara, se movieron a la papelera.
+
+| Tipo (incluidas) | Cantidad |
+|---|---|
+| Sesiones de soporte | 52 |
+| Reuniones internas de producto | 32 |
+| Capacitaciones de usuarios | 20 |
+| Demostraciones y reuniones comerciales | 6 |
+
+| Tipo (no incluidas) | Cantidad |
+|---|---|
+| Otro producto (imprenta, vivero, SG-SST, desarrollos para otras empresas) | 47 |
+| Otros temas (personales, societarios) | 9 |
+| Notas vacías | 16 |
+| Gestión interna sin contenido del producto | 5 |
+
+Las reuniones de 2025 y de inicios de 2026 describen un producto temprano. Cuando chocan con fuentes más recientes, gana la más reciente, y cada sección indica de qué reuniones salió con un comentario `<!-- fuentes: h-… -->`.
+
+Total acumulado de fuentes con contenido analizado: 9 + 67 + 110 = **186**.
 
 Las sesiones duran entre 35 minutos y más de 2 horas y son pantalla compartida: el asesor guía al usuario mientras este opera su propia empresa en la plataforma.
 
@@ -74,6 +98,9 @@ Las sesiones duran entre 35 minutos y más de 2 horas y son pantalla compartida:
 16. `flujos/16-exportar-a-world-office-y-siigo-escritorio.md`
 17. `flujos/17-papelera-bloqueo-y-limpieza-de-facturas.md`
 18. `flujos/18-modulo-de-nomina.md`
+19. `flujos/19-asociacion-de-productos-e-inventario.md`
+20. `flujos/20-facturacion-electronica-de-venta-y-radian.md` (en desarrollo)
+21. `flujos/21-conciliacion-bancaria-y-pagos-a-proveedores.md` (en desarrollo)
 
 ## Regla de actualización
 

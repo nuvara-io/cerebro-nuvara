@@ -10,3 +10,6 @@ out
 Imagenes nuvara/
 Videos nuvara/
 Rerefencias/
+
+# Transcripciones crudas de reuniones: tienen datos de usuarios, nunca van a git
+conocimiento/grabaciones de reuniones nuvara/
