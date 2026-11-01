@@ -8,9 +8,11 @@ núvara elimina la carga operativa de la **causación** contable de facturas ele
 - **Precausa** cada factura con inteligencia artificial, apoyándose en el balance de prueba por tercero que carga el usuario y en reglas propias.
 - Calcula IVA y retenciones, crea terceros, cuentas, asociaciones y productos cuando hacen falta.
 - Agrupa las facturas con la misma causación para revisarlas y aprobarlas en bloque.
-- Exporta lo aprobado al software contable (Siigo por API; archivo plano para otros).
+- Exporta lo aprobado al software contable: Siigo y World Office por API; Alegra, Helisa, Siigo PyME, Contai o un formato genérico por archivo.
 
 El foco actual es **netamente causación** de compras (el asesor lo dijo así). Ventas, nómina, cajas operativas y eventos RADIAN se mencionan como módulos futuros o recién habilitados (ver `por-confirmar.md`).
+
+> **Lo que dice el sitio oficial** (`sitio-web.md`, 31/10/2026): causa compras **y** ventas; World Office ya se conecta por API con token; la conciliación bancaria lee extractos PDF de Bancolombia, Davivienda y Nu o CSV; nómina, facturación electrónica, file manager, cajas y calendario tributario aparecen como módulos de la plataforma. Donde esto choque con lo de abajo, gana el sitio.
 
 ## A quién va dirigido
 

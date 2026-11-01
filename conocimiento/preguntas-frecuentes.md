@@ -184,8 +184,8 @@ Están en desarrollo o validación (ver `producto.md`).
 **¿Cuánto cuesta causar una factura de venta?**
 200 COP por factura (confirmado).
 
-**¿Cuál es la recarga mínima?**
-80.000 COP (confirmado).
+**¿Me cobran si no uso la plataforma?**
+Hay un mínimo mensual de consumo de 80.000 COP (confirmado). Cada mes se descuenta al menos eso del saldo; lo que no se consume se acumula para el mes siguiente.
 
 Lo que sigue está a validar.
 
@@ -195,8 +195,6 @@ No se mencionó cláusula de permanencia.
 **¿Qué incluye el primer pago?**
 La recarga inicial con la capacitación (2 horas más 1 hora de acompañamiento).
 
-**¿Me cobran si no uso la plataforma?**
-Desde el segundo mes se habló de un consumo mínimo mensual (ver `por-confirmar.md`).
 
 **¿Quién responde si hay un error de la plataforma?**
 El chat de soporte integrado es el canal oficial.

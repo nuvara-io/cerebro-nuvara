@@ -52,6 +52,7 @@ Las sesiones duran entre 35 minutos y más de 2 horas y son pantalla compartida:
 | `por-confirmar.md` | Contradicciones, datos dudosos y posibles errores del producto |
 | `demostraciones-y-ventas.md` | Cómo se hace una demostración en vivo, argumentos, preguntas y objeciones de prospectos |
 | `fuentes-procesadas.md` | Registro de reuniones ya procesadas, para no repetir trabajo |
+| `sitio-web.md` | Lo que dice el sitio oficial nuvara.com.co: precios, integraciones, módulos y desvíos de marca. **Fuente oficial: si choca con una sesión, gana el sitio** |
 
 ### Flujos disponibles
 

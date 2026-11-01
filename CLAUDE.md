@@ -18,6 +18,7 @@ Para escribir un guion, primero se lee `conocimiento/` (qué decir) y después `
 2. **núvara Brand OS**: voz, vocabulario y personaje. Está en Drive › Marketing › Branding › "Dirección Manual de identidad".
 3. **Key visual**: paleta oficial, tipografía y elementos gráficos. Está en Drive › Marketing › Branding › "Copia de key visual núvara.pdf".
 4. **Monorepo de la app**: producto, rutas, tokens de UI y copy. Está en `/home/yohan/Documentos/Proyectos/NUVARA`.
+5. **Sitio oficial** https://nuvara.com.co: precios, integraciones y módulos que se anuncian. Está resumido en `conocimiento/sitio-web.md`. Para datos de producto gana sobre las capacitaciones, pero su copy tiene desvíos de marca y no se copia (ver la lista en ese archivo).
 
 Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp_7NmT
 
@@ -54,7 +55,7 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
 ## Datos confirmados por el equipo (31/10/2026)
 
 - **Causar una venta:** $200 COP. El $100 del Brand OS está desactualizado.
-- **Recarga mínima:** $80.000 COP. El $70.000 que muestra la app (configuración y mock de la billetera) está desactualizado.
+- **Mínimo mensual de consumo:** $80.000 COP. Es lo mínimo que se descuenta del saldo cada mes; lo que no se consume se acumula. **No es la recarga mínima**: esa sigue sin confirmar (la billetera de la app dice $70.000).
 - **Azul petróleo:** resuelto. Es `#09695c`, el del logo maestro, que coincide con la app. El `#005256` del PDF del key visual no se usa.
 
 ## Código (Remotion)

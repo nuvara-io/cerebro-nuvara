@@ -5,10 +5,18 @@ Todo lo que aquí aparece se dijo en sesiones pero necesita validación del equi
 ## Confirmado por el equipo (31/10/2026)
 Estos valores ya se pueden usar en videos y respuestas:
 - **Causación de una venta:** 200 COP.
-- **Recarga mínima:** 80.000 COP.
+- **Mínimo mensual de consumo:** 80.000 COP, que se descuentan del saldo cada mes; lo no consumido se acumula para el mes siguiente.
+- **Sigue pendiente la recarga mínima:** la billetera de la app dice 70.000 COP y la calculadora del sitio arranca en 200.000.
+
+## Sitio oficial frente a las sesiones (31/10/2026)
+- **World Office:** en las sesiones se exportaba por archivo plano; el sitio dice que ya hay API con token.
+- **Conciliación bancaria:** en las sesiones figuraba como "en desarrollo"; el sitio la ofrece con extractos PDF de Bancolombia, Davivienda y Nu, o CSV.
+- **Ventas:** se dijo que núvara "prioriza compras"; el sitio causa compras y ventas por igual.
+- **Fuentes de facturas:** el sitio menciona chats y facturas físicas escaneadas; en las sesiones el OCR estaba en desarrollo.
+- **Cifras de ahorro:** el sitio dice 80 %, 88 % y 90 % según la página, y 15 o más de 20 horas semanales. Hay que unificarlas antes de usarlas.
 
 ## Precios y números
-- **Recarga inicial con capacitación:** se mencionó una recarga cercana a 271.000 COP equivalentes a unos 2.710 créditos y a unas 531 facturas; en otra sesión se habló de "270.000". Es el paquete de inicio, no la recarga mínima (confirmada arriba).
+- **Recarga inicial con capacitación:** se mencionó una recarga cercana a 271.000 COP equivalentes a unos 2.710 créditos y a unas 531 facturas; en otra sesión se habló de "270.000". Es el paquete de inicio, no la recarga mínima.
 - **Costo por causación:** un asesor dijo unos 5,1 créditos por factura (cerca de 510 COP); otro número aproximado salió en otra sesión. Confirmar tarifa por causación de compra, venta, nómina y caja.
 - **Costo de eventos RADIAN:** se mencionó 2,5 créditos; también que se "habilitarían la próxima semana". Confirmar si ya están disponibles.
 - **Reducción de precios:** el asesor dijo que "bajaron un poquito". ¿Cuál es la lista vigente?
@@ -47,7 +55,7 @@ Estos valores ya se pueden usar en videos y respuestas:
 ### Precios y créditos: contradicciones y datos nuevos
 - **Tarifa por documento:** compra unos 510 COP (5,1 créditos); venta 200 COP (confirmado); en la misma conversación otro número fue "500 por factura adicional". Equivalencia dicha: 1 crédito ≈ 100 COP.
 - **Recarga inicial:** 271.000 COP por 250 documentos con capacitación (2 h + 1 h de acompañamiento); otra sesión habló de 300.000 COP por 300 facturas con capacitación (150.000 de capacitación + 150.000 de recarga) y de recargas siguientes de 150.000 COP; una usuaria negoció 250 → 300 documentos. Una venta de 6.000 créditos por 600.000 COP "con descuento". ¿Cuál es la lista vigente?
-- **Consumo mínimo mensual:** 80.000 COP (≈156 documentos), solo desde el segundo mes, para cubrir soporte y almacenamiento. En sesiones previas no se mencionaba y los créditos "no vencían". Confirmar si aplica a usuarios antiguos (se habló de migrarlos a un nuevo esquema a inicios del año siguiente).
+- **Consumo mínimo mensual:** 80.000 COP (confirmado; ≈156 documentos), solo desde el segundo mes, para cubrir soporte y almacenamiento. En sesiones previas no se mencionaba y los créditos "no vencían". Confirmar si aplica a usuarios antiguos (se habló de migrarlos a un nuevo esquema a inicios del año siguiente).
 - **Vigencia de los créditos:** "se acumulan" (una sesión), "vigencia acumulativa de dos meses" (otra), "no se vencen" (internas). Contradicción.
 - **Nuevo modelo comercial (reunión interna):** se acordó eliminar el modelo de recargas para ventas nuevas y pasar a suscripción con consumo mínimo; saldo y consumo en pesos; bloqueo de cuenta tras unos meses sin pago (3 a 5 mencionados) y posible eliminación o cobro de descarga de la información; planes por tramos de causaciones (un plan básico de hasta 1.000 al mes); pago inicial de habilitación de 150.000 COP con certificado digital para facturación electrónica; planes de nómina por rangos de empleados con cobro anual; nómina obligatoriamente vinculada a facturación electrónica. **Todo en discusión; pendiente asesoría legal para débitos automáticos.** No usar en materiales.
 - **Compensación única** de 100 facturas adicionales a un usuario que perdió créditos por ventas no deseadas, "sin más compensaciones". Confirmar política.

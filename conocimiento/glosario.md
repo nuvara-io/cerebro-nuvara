@@ -39,9 +39,9 @@
 | IMAP / contraseña de aplicación | Forma de conectar un correo cuando no es Gmail estándar o falla la autorización. |
 | Consecutivo estricto | Ajuste de envío a Siigo que evita saltos y pausa el envío ante errores. |
 | Detalle por producto | Ajuste de envío que manda cada ítem al software contable. |
-| Consumo mínimo mensual | Cobro mínimo mensual planteado desde el segundo mes (ver `por-confirmar.md`). |
+| Consumo mínimo mensual | 80.000 COP que se descuentan del saldo cada mes como mínimo; lo no consumido se acumula. En el sitio se llama "mínimo mensual". |
 | Recarga inicial | Primera compra de créditos; incluye la capacitación. |
-| Recarga mínima | El valor más bajo que se puede recargar: 80.000 COP. |
+| Recarga mínima | El valor más bajo que se puede recargar. Sin confirmar (ver `por-confirmar.md`). |
 | PILA | Planilla integrada de aportes a la seguridad social, generada por el módulo de nómina. |
 | Nómina electrónica | Documento de nómina que se emite a la DIAN. |
 | Perfiles de cargo | Agrupaciones de empleados (administrativo, operativo, producción) con su actividad ARL. |

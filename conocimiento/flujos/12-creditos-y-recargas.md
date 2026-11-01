@@ -12,7 +12,8 @@ Entender cómo se cobra y cómo recargar la billetera.
 
 ## Valores confirmados
 - **Causación de una venta:** 200 COP.
-- **Recarga mínima:** 80.000 COP.
+- **Mínimo mensual de consumo:** 80.000 COP. Cada mes se descuenta al menos eso del saldo; si causas más, pagas tu consumo real, y lo no consumido se acumula para el mes siguiente.
+- **Crédito:** 100 COP. Una compra consume 5,1 créditos (510 COP), según el sitio.
 
 ## Cómo se cobra (según el asesor)
 - Una causación de compra o venta cuesta una cantidad fija de créditos y se descuenta al **precausar**.

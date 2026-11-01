@@ -2,6 +2,8 @@
 
 Complementa el flujo 10 con lo observado en sesiones de soporte donde el usuario importa el archivo en su software contable.
 
+> **Actualización (sitio oficial, 31/10/2026):** World Office ya se conecta **por API con token**: importa catálogo y bodegas, mapea productos y exporta compras y ventas, con automatización por proveedor (ver `sitio-web.md`). El archivo plano de abajo queda para quien no use la API. Antes de grabar el tutorial 18 de `ideas-tutoriales.md`, conviene decidir si se reemplaza por "Conectar World Office por API".
+
 ## Objetivo
 Exportar las causaciones aprobadas y los terceros nuevos, e importarlos sin errores en el software contable.
 
