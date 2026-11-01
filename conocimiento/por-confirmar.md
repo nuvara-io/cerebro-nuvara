@@ -2,8 +2,13 @@
 
 Todo lo que aquí aparece se dijo en sesiones pero necesita validación del equipo antes de usarlo en videos o respuestas.
 
+## Confirmado por el equipo (31/10/2026)
+Estos valores ya se pueden usar en videos y respuestas:
+- **Causación de una venta:** 200 COP.
+- **Recarga mínima:** 80.000 COP.
+
 ## Precios y números
-- **Recarga mínima:** se mencionó una recarga cercana a 271.000 COP equivalentes a unos 2.710 créditos y a unas 531 facturas. ¿Es el mínimo oficial? En otra sesión se habló de "270.000".
+- **Recarga inicial con capacitación:** se mencionó una recarga cercana a 271.000 COP equivalentes a unos 2.710 créditos y a unas 531 facturas; en otra sesión se habló de "270.000". Es el paquete de inicio, no la recarga mínima (confirmada arriba).
 - **Costo por causación:** un asesor dijo unos 5,1 créditos por factura (cerca de 510 COP); otro número aproximado salió en otra sesión. Confirmar tarifa por causación de compra, venta, nómina y caja.
 - **Costo de eventos RADIAN:** se mencionó 2,5 créditos; también que se "habilitarían la próxima semana". Confirmar si ya están disponibles.
 - **Reducción de precios:** el asesor dijo que "bajaron un poquito". ¿Cuál es la lista vigente?
@@ -40,7 +45,7 @@ Todo lo que aquí aparece se dijo en sesiones pero necesita validación del equi
 ## Segunda tanda de fuentes (soporte, demostraciones y reuniones internas)
 
 ### Precios y créditos: contradicciones y datos nuevos
-- **Tarifa por documento:** compra unos 510 COP (5,1 créditos); venta unos 200 COP; en la misma conversación otro número fue "500 por factura adicional". Equivalencia dicha: 1 crédito ≈ 100 COP.
+- **Tarifa por documento:** compra unos 510 COP (5,1 créditos); venta 200 COP (confirmado); en la misma conversación otro número fue "500 por factura adicional". Equivalencia dicha: 1 crédito ≈ 100 COP.
 - **Recarga inicial:** 271.000 COP por 250 documentos con capacitación (2 h + 1 h de acompañamiento); otra sesión habló de 300.000 COP por 300 facturas con capacitación (150.000 de capacitación + 150.000 de recarga) y de recargas siguientes de 150.000 COP; una usuaria negoció 250 → 300 documentos. Una venta de 6.000 créditos por 600.000 COP "con descuento". ¿Cuál es la lista vigente?
 - **Consumo mínimo mensual:** 80.000 COP (≈156 documentos), solo desde el segundo mes, para cubrir soporte y almacenamiento. En sesiones previas no se mencionaba y los créditos "no vencían". Confirmar si aplica a usuarios antiguos (se habló de migrarlos a un nuevo esquema a inicios del año siguiente).
 - **Vigencia de los créditos:** "se acumulan" (una sesión), "vigencia acumulativa de dos meses" (otra), "no se vencen" (internas). Contradicción.

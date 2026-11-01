@@ -10,6 +10,10 @@ Entender cómo se cobra y cómo recargar la billetera.
 4. Envía el comprobante por el grupo de soporte si pagaste por transferencia; el asesor acredita la recarga.
 5. Recarga la página y verifica el saldo y la capacidad estimada en facturas.
 
+## Valores confirmados
+- **Causación de una venta:** 200 COP.
+- **Recarga mínima:** 80.000 COP.
+
 ## Cómo se cobra (según el asesor)
 - Una causación de compra o venta cuesta una cantidad fija de créditos y se descuenta al **precausar**.
 - Documentos eliminados antes de precausar no se cobran.

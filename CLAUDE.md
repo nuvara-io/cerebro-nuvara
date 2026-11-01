@@ -51,10 +51,10 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
 - Guiones paso a paso: `NUVARA/apps/web/src/features/trial-onboarding/tours/{causar,empresa,importar}.ts`
 - Módulos con slot de tutorial en la app: `NUVARA/apps/api/src/video-tutorials/domain/value-objects/tutorial-module.vo.ts`
 
-## Datos a confirmar antes de ponerlos en un video
+## Datos confirmados por el equipo (31/10/2026)
 
-- **Causar una venta:** el Brand OS dice $100 COP y la landing (`consts.ts`) dice $200 COP.
-- **Recarga mínima:** la app dice $70.000 y la landing $80.000 de mínimo mensual.
+- **Causar una venta:** $200 COP. El $100 del Brand OS está desactualizado.
+- **Recarga mínima:** $80.000 COP. El $70.000 que muestra la app (configuración y mock de la billetera) está desactualizado.
 - **Azul petróleo:** resuelto. Es `#09695c`, el del logo maestro, que coincide con la app. El `#005256` del PDF del key visual no se usa.
 
 ## Código (Remotion)

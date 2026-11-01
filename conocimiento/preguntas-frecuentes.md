@@ -180,7 +180,15 @@ Sí, directamente a la DIAN; en el software contable solo se registra el asiento
 **¿Hay un módulo de egresos, conciliación o cajas menores?**
 Están en desarrollo o validación (ver `producto.md`).
 
-### Precios y comercial (a validar)
+### Precios y comercial
+**¿Cuánto cuesta causar una factura de venta?**
+200 COP por factura (confirmado).
+
+**¿Cuál es la recarga mínima?**
+80.000 COP (confirmado).
+
+Lo que sigue está a validar.
+
 **¿Hay permanencia mínima?**
 No se mencionó cláusula de permanencia.
 

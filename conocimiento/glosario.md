@@ -41,6 +41,7 @@
 | Detalle por producto | Ajuste de envío que manda cada ítem al software contable. |
 | Consumo mínimo mensual | Cobro mínimo mensual planteado desde el segundo mes (ver `por-confirmar.md`). |
 | Recarga inicial | Primera compra de créditos; incluye la capacitación. |
+| Recarga mínima | El valor más bajo que se puede recargar: 80.000 COP. |
 | PILA | Planilla integrada de aportes a la seguridad social, generada por el módulo de nómina. |
 | Nómina electrónica | Documento de nómina que se emite a la DIAN. |
 | Perfiles de cargo | Agrupaciones de empleados (administrativo, operativo, producción) con su actividad ARL. |
