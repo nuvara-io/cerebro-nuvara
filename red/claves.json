@@ -302,7 +302,15 @@
     "radian",
     "facturar electronicamente",
     "emitir factura",
-    "factura electronica de venta"
+    "factura electronica de venta",
+    "facturar desde nuvara",
+    "documentos electronicos",
+    "factura electronica",
+    "nomina electronica",
+    "firma digital",
+    "pos",
+    "punto de venta",
+    "documento equivalente"
   ],
   "conciliacion-bancaria": [
     "conciliacion",
@@ -383,5 +391,80 @@
     "listo el mes",
     "dejar listo el mes",
     "dejo listo el mes"
+  ],
+  "emitir-factura-de-venta": [
+    "emitir una factura",
+    "emito una factura",
+    "hacer una factura",
+    "hago una factura",
+    "crear una factura",
+    "nueva factura",
+    "factura de venta",
+    "emitir factura de venta",
+    "facturarle",
+    "hacerle una factura",
+    "una factura a un comprador"
+  ],
+  "solicitar-facturacion-electronica": [
+    "activar la facturacion",
+    "activo la facturacion",
+    "solicitar la facturacion",
+    "solicito la habilitacion",
+    "solicitar la habilitacion",
+    "solicitar habilitacion",
+    "complemento",
+    "addon",
+    "cuenta modulos"
+  ],
+  "habilitar-ante-la-dian": [
+    "habilitar ante la dian",
+    "habilito ante la dian",
+    "habilitacion dian",
+    "habilitacion ante la dian",
+    "set de pruebas",
+    "testsetid",
+    "software propio",
+    "software id",
+    "pasar a produccion",
+    "resolucion de facturacion",
+    "rango de numeracion",
+    "prefijo"
+  ],
+  "emitir-nota-credito-o-debito": [
+    "nota debito",
+    "anular una factura",
+    "anulo una factura",
+    "anular factura",
+    "nota credito de venta",
+    "emitir una nota",
+    "emito una nota",
+    "ajustar una factura"
+  ],
+  "emitir-documento-soporte": [
+    "emitir un documento soporte",
+    "emito un documento soporte",
+    "hacer un documento soporte",
+    "hago un documento soporte",
+    "no obligado a facturar",
+    "no obligados a facturar"
+  ],
+  "registrar-eventos-radian": [
+    "acuse de recibo",
+    "acuse",
+    "evento radian",
+    "eventos radian",
+    "aceptacion expresa",
+    "recibo del bien",
+    "reclamo",
+    "rechazar una factura",
+    "reglas radian"
+  ],
+  "renovar-certificado": [
+    "renovar el certificado",
+    "renuevo el certificado",
+    "renovar certificado",
+    "se vence la firma",
+    "vence el certificado",
+    "renovar la firma"
   ]
 }

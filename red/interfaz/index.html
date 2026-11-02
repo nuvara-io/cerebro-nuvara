@@ -200,6 +200,7 @@
   .migas-ruta li + li::before { content: "›"; color: var(--ink-3); margin: 0 6px 0 2px; }
   .migas-ruta li:last-child { color: var(--blue); font-weight: 600; }
   .ir { margin-left: auto; font: 500 13px/1 'Jost', sans-serif; color: var(--white); background: var(--blue); border-radius: 999px; padding: 8px 12px; text-decoration: none; }
+  .url-ref { flex-basis: 100%; font: 400 12px/1.4 ui-monospace, monospace; color: var(--ink-3); word-break: break-all; }
   .verificacion { display: flex; gap: 8px; align-items: center; font: 400 12px/1.4 'Jost', sans-serif; color: #7A5D00; margin: -4px 0 16px; }
   .verificacion i { width: 6px; height: 6px; border-radius: 50%; background: var(--warning); flex: none; }
   .verificacion.ok { color: #00703A; } .verificacion.ok i { background: var(--success); }
@@ -834,8 +835,9 @@
     const siguiente = p.siguiente && ejemploDe(p.siguiente);
     return `
       <div class="donde"><span>Dónde</span><ol class="migas-ruta">${p.ruta.map((r) => `<li>${escapar(r)}</li>`).join("")}</ol>
-        ${p.url ? `<a class="ir" href="${escapar(p.url)}" target="_blank" rel="noopener">Ir a la pantalla</a>` : ""}</div>
-      <p class="verificacion ${verificado ? "ok" : ""}"><i></i>${verificado ? "Verificado en la plataforma" : "Según capacitación: los nombres de pantallas y botones pueden variar"}</p>
+        ${p.url && !p.url.includes("{") ? `<a class="ir" href="${escapar(p.url)}" target="_blank" rel="noopener">Ir a la pantalla</a>` : ""}
+        ${p.url && p.url.includes("{") ? `<code class="url-ref">${escapar(p.url)}</code>` : ""}</div>
+      <p class="verificacion ${verificado ? "ok" : ""}"><i></i>${verificado ? (/c[oó]digo/i.test(p.estado) ? "Verificado en el código de la plataforma" : "Verificado en la plataforma") : "Según capacitación: los nombres de pantallas y botones pueden variar"}</p>
       ${p.antes.length ? `<div class="bloque"><h4>Antes de empezar</h4><ul class="antes">${p.antes.map((x) => `<li><span>${enLinea(x)}</span></li>`).join("")}</ul></div>` : ""}
       <div class="bloque"><h4>Pasos</h4><ol class="pasos-proc">${p.pasos.map((x) => `<li><label><input type="checkbox"><span class="num"></span><span class="txt">${enLinea(x)}</span></label></li>`).join("")}</ol></div>
       ${p.resultado.length ? `<div class="resultado">${p.resultado.map((x) => `<p>${enLinea(x)}</p>`).join("")}</div>` : ""}
@@ -1016,7 +1018,7 @@
       estado.ocupado = false;
       guardar();
       pintar();
-      ajustar();
+      requestAnimationFrame(ajustar);
       // Deja ver el camino en el cerebro un momento antes de atenuarlo.
       setTimeout(() => $("principal").classList.remove("pensando"), 2600);
     }
@@ -1056,9 +1058,11 @@
   const segmentos = (id, valor) => { for (const b of $(id).querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.v === valor)); };
   function ajustar() {
     const t = $("pregunta");
+    $("enviar").disabled = !t.value.trim() || estado.ocupado;
+    // Sin ancho (oculta o en plena maquetación) la medida sale inflada.
+    if (!t.clientWidth) return;
     t.style.height = "auto";
     t.style.height = Math.min(t.scrollHeight, 160) + "px";
-    $("enviar").disabled = !t.value.trim() || estado.ocupado;
   }
 
   $("form").addEventListener("submit", (e) => { e.preventDefault(); preguntar($("pregunta").value); });
@@ -1090,7 +1094,7 @@
     preguntar(x.pregunta, x.publico);
   });
   $("filtros").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; estado.filtro = b.dataset.v; segmentos("filtros", estado.filtro); pintarMapa(); });
-  addEventListener("resize", () => { if (!conversacion()?.mensajes.length) pintarChat(); });
+  addEventListener("resize", () => { ajustar(); if (!conversacion()?.mensajes.length) pintarChat(); });
   $("cambiar-tema").addEventListener("click", () => aplicarTema(document.documentElement.dataset.tema === "claro" ? "oscuro" : "claro"));
   $("abrir-menu").addEventListener("click", () => document.body.classList.add("menu-abierto"));
   $("cerrar-menu").addEventListener("click", () => document.body.classList.remove("menu-abierto"));

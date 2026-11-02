@@ -1,7 +1,7 @@
 {
   "descripcion": "Prueba del nodo precios. Cada patrón es una expresión regular sin distinguir mayúsculas. 'incluye' es una lista de grupos: cada grupo exige al menos una de sus alternativas. 'excluye' son patrones que no pueden aparecer. 'excluyeSiempre' se aplica a todos los casos de ese público.",
   "excluyeSiempre": {
-    "P": ["870", "750", "\\b490\\b", "271\\.000", "170\\.000", "\\b70\\.000", "50\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "sin confirmar", "\\bintern[oa]s?\\b"],
+    "P": ["870", "750", "\\b490\\b", "271\\.000", "170\\.000", "\\b70\\.000", "\\b50\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "sin confirmar", "\\bintern[oa]s?\\b"],
     "C": ["\\busted\\b", "Núvara", "Nuvara", "nuvicoin"],
     "I": ["\\busted\\b", "Núvara", "Nuvara"]
   },

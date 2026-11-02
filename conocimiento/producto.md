@@ -127,8 +127,8 @@ La plataforma trabaja internamente todo como "causado"; los estados visibles son
 | Conciliación bancaria | En desarrollo y pruebas: concilia por montos y fechas y explica lo no conciliado. El sitio ya la anuncia con extractos PDF o CSV (31/10/2026). | 01/08/2026 |
 | Egresos y pagos con bancos | En desarrollo: agrupa por proveedor, comprobantes de egreso, reparte pagos. | 14/05/2026 |
 | Cajas menores | En pruebas con usuarios: foto del comprobante por Telegram o WhatsApp, un custodio por caja. | 25/08/2026 |
-| Facturación electrónica, documento soporte | En desarrollo; los módulos estaban **desactivados temporalmente** (04/05/2026). | 04/05/2026 |
-| Eventos RADIAN | En desarrollo; dependerían del módulo de facturación y de un complemento aparte. | 30/07/2026 |
+| Facturación electrónica, documento soporte | **Disponible** desde el menú Facturación Electrónica, tras solicitar la habilitación ($150.000). Ver flujo 20. | 02/11/2026 |
+| Eventos RADIAN | **Disponible** con la facturación electrónica en producción (Documentos › Eventos RADIAN). Ver flujo 20. | 02/11/2026 |
 | Inventario con World Office | En pruebas con una empresa real: productos, bodegas, kardex, mapeo y cola de revisión de productos con sugerencias hechas con inteligencia artificial. Bodegas, proveedores y centros se leen; el envío hacia World Office está en desarrollo. | 11/08/2026 |
 | Inteligencia de compras y Visión ejecutiva | Procesa facturas con inteligencia artificial: gasto, precio promedio y variación por proveedor y producto, categorías con subcategorías, exportación a Excel. Independiente de Siigo. En refinamiento. | 08/07/2026 |
 | Cambios de precio | Alzas en rojo, bajas en verde, impacto total y filtro de cambio mínimo. El icono junto al valor unitario en la causación está acordado, sin implementar. | 06/08/2026 |

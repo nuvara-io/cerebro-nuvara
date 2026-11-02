@@ -33,6 +33,8 @@ Fuente: sitio oficial (página `/precios/`, que lo presenta como "precio de lanz
 - [P] **Incluido en el precio:** traer las facturas del correo y de la DIAN, empresas ilimitadas, cálculo de retenciones e IVA, generación del archivo de exportación y causación en lotes.
 - [P] **Tarifa especial desde 1.500 causaciones al mes.** Se negocia con el equipo por WhatsApp.
 - [P] El mínimo mensual **no es la recarga mínima**: son dos cosas distintas.
+- [P] **Facturación electrónica: habilitación de $150.000, pago único.** Incluye la configuración inicial y la firma digital por un año; luego el certificado se renueva cada año. El precio es el mismo sin importar cuántos tipos de documento habilites (factura de venta y sus notas, documento soporte y su nota, eventos RADIAN, nómina electrónica).
+- [P] **Cada documento electrónico emitido se cobra en créditos**, con un precio que depende del flujo de facturación de tu empresa: se pacta un acuerdo de facturas o se descuenta del saldo. Las pruebas ante la DIAN no se cobran.
 
 ## Por confirmar
 
@@ -40,7 +42,7 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 
 - [C] **Recarga mínima:** sin definir. La billetera de la app dice $70.000 y la calculadora del sitio arranca en $200.000.
 - [C] **Si el mínimo mensual aplica desde el primer mes** o solo desde el segundo, y si aplica a los usuarios antiguos.
-- [C] **Tarifas sin definir:** documento soporte, eventos RADIAN, certificado y documentos de facturación electrónica, y nómina.
+- [C] **Precio por documento electrónico:** no hay una tarifa única publicada; se define según el flujo de cada empresa. Confirma el valor con el equipo antes de dar una cifra.
 - [C] **Escalas por volumen:** si $510 es el precio de compra en todos los planes estándar y desde cuántas causaciones hay descuento por debajo de 1.500 al mes.
 - [C] **Si el crédito sigue valiendo $100** cuando haya paquetes.
 - [C] **Paquete inicial con capacitación:** no hay uno oficial. No ofrecer cantidades ni precios.
@@ -54,6 +56,7 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 
 - [I] **Cambio de modelo en discusión:** pasar de recargas a suscripción con consumo mínimo, saldo en pesos, planes por tramos y nómina por rangos con cobro anual. Pendiente de asesoría legal. No mencionar fuera del equipo.
 - [I] Diseño del monedero (04/05/2026): una sola moneda interna, los "paquetes" son solo sugerencias por tamaño de empresa y la nómina se cobraría por empleado activo al inicio de cada mes.
+- [I] En la plataforma, la tarifa base sembrada es de $1.000 por documento electrónico y $0 por evento RADIAN; se puede ajustar por empresa. El mensaje de saldo insuficiente todavía dice "Nuvicoins".
 - [I] **Decisiones pendientes del equipo:** recarga mínima, precio de compra y escalas, tarifas de los módulos nuevos, paquete inicial, descuentos y referidos, vencimiento, mínimo en el primer mes, plan corporativo, medios de pago y regla de cobro y devolución.
 
 ## Descartado: no decir nunca

@@ -78,8 +78,8 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | `exportar-world-office` | P | "¿Cómo exporto a World Office?", "¿y a Siigo escritorio?" | `flujos/16`, `por-confirmar.md` §World Office |
 | `inventario-y-productos` | P | "¿Cómo asocio productos?", "¿maneja inventario?" | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
 | `nomina` | P | "¿Cómo funciona la nómina?", "¿cómo cargo el histórico?" | `flujos/18`, `preguntas-frecuentes.md` §Ventas, nómina y otros módulos |
-| `facturacion-electronica-y-radian` | P (en desarrollo: lo disponible se dice, lo demás va a I) | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?" | `flujos/20` |
-| `conciliacion-bancaria` | P (igual que el anterior) | "¿Concilian el banco?", "¿qué bancos leen?" | `flujos/21`, `sitio-web.md` §Otros módulos |
+| `facturacion-electronica-y-radian` | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" | `flujos/20`, código de `platform` |
+| `conciliacion-bancaria` | P (en desarrollo: lo disponible se dice, lo demás va a I) | "¿Concilian el banco?", "¿qué bancos leen?" | `flujos/21`, `sitio-web.md` §Otros módulos |
 | `glosario` | P | "¿Qué es un asiento?", "¿qué significa precausar?" | `glosario.md` |
 
 ## Capa 3: interna
@@ -103,6 +103,13 @@ Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estad
 | `revisar-causacion` | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
 | `aprobar-en-bloque` | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
 | `archivar-aprobadas` | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
+| `emitir-factura-de-venta` | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `solicitar-facturacion-electronica` | P | "¿Cómo activo la facturación electrónica?", "¿dónde solicito la habilitación?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `habilitar-ante-la-dian` | P | "¿Cómo me habilito ante la DIAN?", "¿dónde pongo el TestSetID?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `emitir-nota-credito-o-debito` | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `emitir-documento-soporte` | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `registrar-eventos-radian` | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `renovar-certificado` | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
 
 ## Fuera de la red
 
@@ -140,6 +147,19 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `capacitar-usuarios` | `onboarding` | El orden de la configuración inicial en la sesión |
 | `problemas-conocidos` | `seguridad-y-soporte` | Cómo reportar el error o a quién escalarlo |
 | `modulos-disponibles` | `hoja-de-ruta` | Solo I: cuándo sale un módulo en desarrollo |
+| `facturacion-electronica-y-radian` | `precios` | Cuánto cuesta la habilitación o cada documento |
+| `facturacion-electronica-y-radian` | `nomina` | La nómina electrónica sale de la misma habilitación |
+| `solicitar-facturacion-electronica` | `habilitar-ante-la-dian` | Después de pagar: el paso ante la DIAN |
+| `habilitar-ante-la-dian` | `emitir-factura-de-venta` | Ya en producción: emitir |
+| `emitir-factura-de-venta` | `emitir-nota-credito-o-debito` | Anular o ajustar una factura emitida |
+| `emitir-factura-de-venta` | `creditos-y-recargas` | Saldo insuficiente para emitir |
+| `emitir-factura-de-venta` | `ventas-y-autorretencion` | Cómo queda causada la venta emitida |
+| `emitir-factura-de-venta` | `usuarios-roles-y-empresas` | Quién puede emitir |
+| `emitir-factura-de-venta` | `registrar-eventos-radian` | A crédito: el comprador debe hacer el acuse |
+| `registrar-eventos-radian` | `causar-y-revisar` | El costo deducible de las compras a crédito |
+| `emitir-documento-soporte` | `notas-credito-y-documento-soporte` | Cómo se causa un documento soporte recibido |
+| `emitir-documento-soporte` | `facturas-del-exterior` | Legalización de gastos |
+| `renovar-certificado` | `precios` | Precio de la renovación |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo se verá un nodo (ejemplo: `precios`)

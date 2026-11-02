@@ -69,8 +69,10 @@ for (const linea of conocimiento("preguntas-frecuentes.md").split("\n")) {
   const b = buscar(m[1], "I");
   g.total++;
   if (!b.nodos.length) { g.sinRuta++; g.vacias.push(m[1]); continue; }
-  // Cuenta como acierto si el tema llega por el nodo o por la conexión seguida.
-  if ([...b.nodos, b.conexion].some((id) => id && TEMA[seccion].includes(id))) g.enTema++;
+  // Cuenta como acierto si el tema llega por el nodo, por la conexión seguida
+  // o por un procedimiento de ese tema.
+  const temaDe = (id: string) => indice.nodos.find((n) => n.id === id)?.tema ?? id;
+  if ([...b.nodos, b.conexion].some((id) => id && (TEMA[seccion].includes(id) || TEMA[seccion].includes(temaDe(id))))) g.enTema++;
   else g.fuera.push({ id: seccion, pregunta: m[1], eligio: b.nodos });
 }
 

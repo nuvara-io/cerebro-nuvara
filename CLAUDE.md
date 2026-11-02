@@ -19,7 +19,7 @@ Para escribir un guion, primero se lee `conocimiento/` (qué decir) y después `
 1. **Cerebro de diseño** (`diseno/README.md` y el artifact). Leelo antes de diseñar cualquier escena o pieza.
 2. **núvara Brand OS**: voz, vocabulario y personaje. Está en Drive › Marketing › Branding › "Dirección Manual de identidad".
 3. **Key visual**: paleta oficial, tipografía y elementos gráficos. Está en Drive › Marketing › Branding › "Copia de key visual núvara.pdf".
-4. **Monorepo de la app**: producto, rutas, tokens de UI y copy. Está en `/home/yohan/Documentos/Proyectos/NUVARA`.
+4. **Monorepo de la app** (`github.com/nuvara-io/platform`): producto, rutas, tokens de UI y copy. Está en `/home/yohan/Documentos/Proyectos/NUVARA` o en `~/code/platform`, según la máquina. Los procedimientos de `red/` que se verifican contra este código llevan `estado: verificado en el código`.
 5. **Sitio oficial** https://nuvara.com.co: precios, integraciones y módulos que se anuncian. Está resumido en `conocimiento/sitio-web.md`. Para datos de producto gana sobre las capacitaciones, pero su copy tiene desvíos de marca y no se copia (ver la lista en ese archivo).
 
 Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp_7NmT
