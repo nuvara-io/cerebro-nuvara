@@ -124,8 +124,8 @@ La plataforma trabaja internamente todo como "causado"; los estados visibles son
 | Módulo | Estado según las reuniones | Última mención |
 |---|---|---|
 | Nómina y nómina electrónica | **Disponible**: módulo por cupos de empleados al mes, con liquidación, PILA, causación y nómina electrónica bajo la habilitación DIAN. Ver flujo 18. | 02/11/2026 |
-| Conciliación bancaria | En desarrollo y pruebas: concilia por montos y fechas y explica lo no conciliado. El sitio ya la anuncia con extractos PDF o CSV (31/10/2026). | 01/08/2026 |
-| Egresos y pagos con bancos | En desarrollo: agrupa por proveedor, comprobantes de egreso, reparte pagos. | 14/05/2026 |
+| Conciliación bancaria | **Disponible** en Tesorería (la activa el equipo): extractos PDF de Bancolombia, Davivienda o Nu, o CSV; conciliación automática y manual, partidas y cierre. Ver flujo 21. | 02/11/2026 |
+| Egresos y pagos con bancos | **Disponible** en Tesorería: comprobantes de ingreso y egreso, cuentas por cobrar y por pagar, aprobaciones y pago de nómina. Ver flujo 21. | 02/11/2026 |
 | Cajas menores | En pruebas con usuarios: foto del comprobante por Telegram o WhatsApp, un custodio por caja. | 25/08/2026 |
 | Facturación electrónica, documento soporte | **Disponible** desde el menú Facturación Electrónica, tras solicitar la habilitación ($150.000). Ver flujo 20. | 02/11/2026 |
 | Eventos RADIAN | **Disponible** con la facturación electrónica en producción (Documentos › Eventos RADIAN). Ver flujo 20. | 02/11/2026 |

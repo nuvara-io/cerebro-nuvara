@@ -79,7 +79,7 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | `inventario-y-productos` | P | "¿Cómo asocio productos?", "¿maneja inventario?" | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
 | `nomina` | P | "¿Cómo funciona la nómina?", "¿qué incluye el módulo de nómina?" | `flujos/18`, código de `platform` |
 | `facturacion-electronica-y-radian` | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" | `flujos/20`, código de `platform` |
-| `conciliacion-bancaria` | P (en desarrollo: lo disponible se dice, lo demás va a I) | "¿Concilian el banco?", "¿qué bancos leen?" | `flujos/21`, `sitio-web.md` §Otros módulos |
+| `tesoreria` | P | "¿Qué hace la tesorería?", "¿núvara maneja bancos y cartera?" | `flujos/21`, código de `platform` |
 | `glosario` | P | "¿Qué es un asiento?", "¿qué significa precausar?" | `glosario.md` |
 
 ## Capa 3: interna
@@ -121,6 +121,13 @@ Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estad
 | `causar-nomina` | P | "¿Cómo causo la nómina?", "¿cómo contabilizo la nómina?" | `nomina` | `flujos/18`, código de `platform` |
 | `liquidar-prestaciones` | P | "¿Cómo liquido la prima?", "¿cómo pago las cesantías?" | `nomina` | `flujos/18`, código de `platform` |
 | `liquidar-contrato` | P | "¿Cómo liquido a un empleado que se retira?", "¿cómo hago la liquidación de un contrato?" | `nomina` | `flujos/18`, código de `platform` |
+| `solicitar-tesoreria` | P | "¿Cómo activo la tesorería?", "¿dónde solicito la tesorería?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `crear-cuenta-bancaria` | P | "¿Cómo creo una cuenta bancaria?", "¿dónde registro el saldo inicial del banco?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `registrar-cobro` | P | "¿Cómo registro un cobro?", "¿cómo hago un recibo de caja?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `registrar-pago-proveedor` | P | "¿Cómo le pago a un proveedor?", "¿cómo hago un comprobante de egreso?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `pagar-nomina` | P | "¿Cómo pago la nómina?", "¿cómo envío los desprendibles?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `conciliacion-bancaria` | P | "¿Cómo concilio el banco?", "¿cómo cargo el extracto?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `manejar-caja` | P | "¿Cómo hago el arqueo de caja?", "¿cómo repongo la caja menor?" | `tesoreria` | `flujos/21`, código de `platform` |
 
 ## Fuera de la red
 
@@ -185,6 +192,18 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `emitir-nomina-electronica` | `creditos-y-recargas` | Saldo para los documentos o módulo en pausa |
 | `liquidar-contrato` | `causar-nomina` | El asiento de la liquidación |
 | `crear-empleado` | `emitir-documento-soporte` | Contratistas por prestación de servicios |
+| `tesoreria` | `facturacion-electronica-y-radian` | Las ventas emitidas llegan a cartera |
+| `tesoreria` | `precios` | Cómo se cobra la tesorería |
+| `solicitar-tesoreria` | `crear-cuenta-bancaria` | Ya activa: crear las cuentas |
+| `crear-cuenta-bancaria` | `conciliacion-bancaria` | Conciliar la cuenta con el extracto |
+| `emitir-factura-de-venta` | `registrar-cobro` | Una venta a crédito queda en cuentas por cobrar |
+| `registrar-cobro` | `conciliacion-bancaria` | El cobro aparece en el extracto |
+| `aprobar-en-bloque` | `registrar-pago-proveedor` | Las compras aprobadas quedan por pagar |
+| `registrar-pago-proveedor` | `proveedores-y-retenciones` | La retención al pagar |
+| `registrar-pago-proveedor` | `conciliacion-bancaria` | El pago aparece en el extracto |
+| `generar-nomina` | `pagar-nomina` | Pagar el periodo confirmado |
+| `pagar-nomina` | `conciliacion-bancaria` | El lote aparece en el extracto |
+| `manejar-caja` | `crear-cuenta-bancaria` | Fondear la caja desde el banco |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo se verá un nodo (ejemplo: `precios`)

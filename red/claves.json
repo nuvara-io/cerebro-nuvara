@@ -317,7 +317,14 @@
     "conciliacion",
     "conciliar",
     "banco",
-    "extracto"
+    "extracto",
+    "conciliar el banco",
+    "concilio el banco",
+    "cargar el extracto",
+    "cargo el extracto",
+    "conciliacion bancaria",
+    "partidas conciliatorias",
+    "cerrar la conciliacion"
   ],
   "glosario": [
     "que significa",
@@ -573,5 +580,72 @@
     "indemnizacion",
     "liquidacion laboral",
     "terminar el contrato"
+  ],
+  "tesoreria": [
+    "tesoreria",
+    "cartera",
+    "cuentas bancarias",
+    "maneja bancos",
+    "flujo de caja"
+  ],
+  "solicitar-tesoreria": [
+    "activar la tesoreria",
+    "activo la tesoreria",
+    "solicitar la tesoreria",
+    "solicito la tesoreria",
+    "habilitar la tesoreria"
+  ],
+  "crear-cuenta-bancaria": [
+    "crear una cuenta bancaria",
+    "creo una cuenta bancaria",
+    "nueva cuenta bancaria",
+    "agregar un banco",
+    "agrego un banco",
+    "saldo inicial",
+    "cuenta de ahorros",
+    "cuenta corriente"
+  ],
+  "registrar-cobro": [
+    "registrar un cobro",
+    "registro un cobro",
+    "recibo de caja",
+    "comprobante de ingreso",
+    "cuentas por cobrar",
+    "me pagaron",
+    "abono de una factura",
+    "cobrar una factura",
+    "cobro una factura",
+    "pago de un comprador"
+  ],
+  "registrar-pago-proveedor": [
+    "pagar a un proveedor",
+    "pago a un proveedor",
+    "pagarle a un proveedor",
+    "le pago a un proveedor",
+    "comprobante de egreso",
+    "egreso",
+    "cuentas por pagar",
+    "abonar a un proveedor",
+    "programar un pago"
+  ],
+  "pagar-nomina": [
+    "pagar la nomina",
+    "pago la nomina",
+    "pago de la nomina",
+    "desprendible",
+    "desprendibles",
+    "lote bancario",
+    "archivo pab",
+    "pab"
+  ],
+  "manejar-caja": [
+    "caja menor",
+    "arqueo",
+    "arqueo de caja",
+    "reponer la caja",
+    "repongo la caja",
+    "fondear la caja",
+    "crear una caja",
+    "custodio"
   ]
 }

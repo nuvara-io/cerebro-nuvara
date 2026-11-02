@@ -1,68 +1,64 @@
-# Conciliación bancaria y pagos a proveedores
+# Tesorería: bancos, cobros, pagos, conciliación y cajas
 
-## Estado: en desarrollo, no la presentes como disponible
-- **Conciliación bancaria:** el sitio oficial la ofrece con extractos importados (PDF de Bancolombia, Davivienda y Nu, o CSV). En las sesiones figuraba como **en desarrollo**, y una sesión de abril de 2026 la veía inviable en su versión completa sin antes tener otros documentos (ver abajo). Se habló de ofrecer primero un **cruce parcial**. Alcance real sin confirmar (ver `por-confirmar.md`).
-- **Pagos a proveedores desde la cuenta por pagar** (comprobantes de egreso): idea y módulo de egresos en desarrollo; sin fecha. Un fundador opinó que núvara no debería cancelar cuentas por pagar y que el pago se puede ajustar al exportar.
-- Lo que sí existe hoy es la causación de compras y ventas (flujos 05 y 14). Primero va la causación bien hecha; la conciliación es una **segunda etapa**.
+## Estado: disponible
+Verificado en el código de la plataforma (repo `platform`, 02/11/2026). Reemplaza la descripción de agosto de 2026, que daba la conciliación y los egresos como en desarrollo.
 
-<!-- fuentes: h-2eed69e6f27f, h-3bfcdd9e3190, h-6518cb30d010 -->
+## Cómo se activa y cuánto cuesta
+- **Tesorería** no se activa sola: se pide en **Cuenta › Módulos › Tesorería › Solicitar habilitación** (abre el chat) y la activa el equipo de núvara, para toda la organización o por empresa. Se cobra **según el acuerdo con núvara**.
+- **Caja** (cajas operativas, arqueos y movimientos de efectivo) es un módulo aparte, con su propia tarjeta.
+- Roles: el rol de consulta solo lee. Reabrir una conciliación, definir la política de aprobaciones y aprobar lotes de nómina es del administrador. Fondear y reponer cajas: administrador o contador.
 
-## Objetivo
-Cruzar los pagos del banco con las facturas causadas para registrar el pago, cancelar la cuenta por pagar o por cobrar y dejar las diferencias para resolver a mano.
+## Menú
+**Tesorería** (junto a Operaciones) tiene: **Bancos y cajas** (Cuentas, Cheques, Créditos, Cajas); **Cartera** (Cuentas por cobrar, Cuentas por pagar, Pago de nómina, Lotes, Anticipos a proveedores, Anticipos de clientes, Anticipos de viaje); **Soportes** (Comprobantes, Soportes recibidos, Aprobaciones); **Informes** (Movimientos, Pagos en efectivo, Reexpresión). No hay menús "Recibos de caja" ni "Egresos": se hacen como comprobante de ingreso y comprobante de egreso.
 
-## Requisitos
-- Causación al día (flujo 05).
-- Extracto bancario en Excel (o en el formato del banco) y, cuando aplique, el histórico del software contable en Excel.
-- Una empresa que pague por banco y sea ordenada. En empresas que pagan en efectivo no hay forma de conciliar.
+## Pasos: cuentas bancarias
+1. **Tesorería › Cuentas › Nueva cuenta**: banco, alias, número, tipo (corriente, ahorros, caja menor o dólares), moneda, si es la cuenta por defecto y la cuenta PUC vinculada (grupo 11; se puede crear el auxiliar).
+2. Registra el **saldo inicial** con monto y fecha.
+3. Desde la cuenta: **Registrar movimiento** (entrada o salida contra una cuenta PUC) o **Transferir** a otra cuenta de la misma moneda.
 
-## Pasos: flujo manual de hoy
-1. Descarga el extracto en Excel.
-2. Saca el histórico del software contable en Excel.
-3. Cruza por **valor**; lo que no cruza se revisa.
+## Pasos: cobros (cuentas por cobrar)
+- Las facturas de venta aceptadas por la DIAN llegan a cartera si su asiento debita una cuenta 13. Las de contado se liquidan solas con un comprobante de ingreso desde la caja o banco elegidos al emitir.
+1. **Tesorería › Cartera › Cuentas por cobrar** (antigüedad: al día, 1–30, 31–60, 61–90, más de 90 días).
+2. Marca facturas de un mismo comprador y pulsa **Cobrar seleccionadas**.
+3. En el **Comprobante de ingreso**, escribe el valor de cada factura (o usa abonar saldo, distribuir uniforme o por antigüedad), la fecha y los medios de pago (transferencia, efectivo, cheque, anticipo u otro).
+4. Revisa que el asiento quede cuadrado y pulsa **Registrar ingreso**.
+- Informes de cartera por factura o por comprador, en Excel o PDF, y recordatorios.
 
-## Pasos: cómo se planteó la conciliación en núvara (en desarrollo)
-1. Sube el extracto bancario (Excel o formato del banco).
-2. La plataforma relaciona los pagos con las facturas por **valor** y usa la **fecha** de apoyo; devuelve lo que no encontró.
-3. Resuelves a mano las diferencias.
-4. Se genera un documento importable para el software contable.
-- Se cruza por valor y no solo por fecha, porque a veces el pago no se hace el mismo día de la factura; la fecha ayuda a desempatar cuando hay varios pagos del mismo valor.
-- El extracto casi nunca trae el NIT del tercero, por eso solo se cruza por valor y fecha.
+## Pasos: pagos a proveedores (cuentas por pagar)
+- Las compras aprobadas o exportadas cuyo asiento acredita una cuenta por pagar aparecen aquí.
+1. **Tesorería › Cartera › Cuentas por pagar** (pestañas Por pagar, Programados, Pagos).
+2. Marca facturas de un mismo proveedor y pulsa **Abonar seleccionadas** (o, por fila, Abonar / comprobante de egreso).
+3. En el **Comprobante de egreso**: facturas, retención (la plataforma avisa si falta retener o si hay posible doble retención), fecha, medios de pago (con el GMF 4x1000 estimado), anticipos y asiento. Pulsa **Registrar egreso**.
+- **Programar pago**: deja el pago para aprobación del dueño; no mueve dinero.
+- **Aprobaciones**: con la política activa, los egresos por encima de un umbral piden aprobación antes de registrarse.
+- **Egreso libre** (sin factura) desde Soportes › Comprobantes.
+- **Anticipo a proveedor**: Cartera › Anticipos a proveedores › Egreso de anticipo.
 
-<!-- fuentes: h-2eed69e6f27f, h-3bfcdd9e3190 -->
+## Pasos: pago de nómina
+**Tesorería › Cartera › Pago de nómina** (Pagos y desprendibles): pago individual con **Registrar pago y egreso**, o **lote bancario** (archivo PAB): Revisar y aprobar, Descargar PAB, Comprobar aceptación, Registrar presentación, Registrar resultado del banco y Conciliar lote. Los desprendibles se envían por correo. La nómina también puede registrar el pago sola al confirmarse.
 
-## Pagos a proveedores (idea, en desarrollo)
-- Orden del flujo de una firma: causar la factura de compra, cancelarla con el pago y, a fin de mes, sacar los informes para liquidar retención e IVA.
-- Idea de **pago automático** desde la cuenta por pagar: seleccionas una factura, eliges el medio de pago y la plataforma debita la cuenta por pagar y acredita banco o caja.
-- Dolor: si pagas varias facturas de un mismo proveedor con un único desembolso, pagarlas una por una deja movimientos que no coinciden con lo que salió del banco. Se pide una opción de **agrupar el pago**.
+## Pasos: conciliación bancaria
+1. En **Tesorería › Cuentas**, pulsa **Conciliar** en la cuenta.
+2. **Importar** el extracto: PDF de Bancolombia, Davivienda o Nu, o CSV. Si el PDF tiene clave, se escribe y no se guarda.
+3. **Conciliar Auto**: cruza por reglas propias, monto exacto, monto y nombre del tercero, o monto y fecha (±5 días). Confirma solo lo muy seguro y sugiere el resto.
+4. **Conciliar Manual** para lo que quede: primero la línea del banco y luego su contrapartida. Las líneas sin factura se clasifican contra una cuenta PUC (generan asiento) o se ignoran.
+5. Registra las **partidas conciliatorias** (cheque girado no cobrado, consignación en tránsito, nota bancaria pendiente, error bancario).
+6. **Cerrar período** (no deja líneas sin conciliar) y **Descargar informe** en PDF o Excel. Reabrir pide motivo.
+- Reglas propias en Utilidades › Definición de Reglas (exacta, contiene o expresión regular).
 
-<!-- fuentes: h-3bfcdd9e3190 -->
+## Pasos: cajas
+En **Tesorería › Cajas** (módulo Caja): crear la caja (nombre, código, centro de costo, custodio, si opera en efectivo o con cuenta bancaria, cuenta contable, frecuencia de liquidación y de arqueo, tope de descuadre), **Registrar arqueo**, **Fondear desde el banco**, **Reponer caja** y operadores para la app móvil. Un arqueo cuadrado no genera asiento; un faltante o sobrante se lleva a una cuenta puente y lo clasifica un contador.
 
-## Qué hace falta antes de una conciliación completa
-Una conciliación completa exige que el registro contable del banco coincida con el extracto. Para eso se necesitan antes:
-- **Recibos de caja** (ingresos).
-- **Comprobantes de egreso** (pagos y salidas).
-- **Registros de ajuste** (gastos bancarios, partidas internas).
+## Contabilidad
+Ingresos, egresos, movimientos, transferencias, fondeos de caja, líneas clasificadas del extracto y pagos de nómina generan su asiento. Se ven en **Soportes › Comprobantes**, desde donde se contabilizan y se exportan (también por Archivo › Exportar como comprobante de ingreso o egreso).
 
-Cruzar documentos que ya existen en la plataforma con pagos por banco para generar el comprobante de egreso es un **cruce de documentos pagados**, no una conciliación bancaria completa. Otras plataformas ofrecen "conciliación de ventas con bancos" (aplicar pagos a facturas de venta, actualizar estados y generar un informe), sin ser conciliación completa. Sin facturación, documento soporte, recibos de caja y comprobantes de egreso, solo se vería viable ofrecer un cruce parcial.
-
-<!-- fuentes: h-6518cb30d010 -->
-
-## Cómo se registran los ingresos y los ajustes (según el planteamiento de abril de 2026)
-- **Recibo de caja por facturas:** paga facturas pendientes de cartera, total o parcialmente.
-- **Recibo de caja por otros:** ingreso sin factura, como un anticipo de un comprador.
-- **Anticipo:** se registra como recibo de caja por otros contra una cuenta de anticipo de clientes. Al llegar la factura, se hace un recibo de caja por factura con el medio **"cruce con anticipo"**, que reduce el anticipo sin mover el banco.
-- Un recibo de caja **no permite editar el valor de la factura** para cubrir un pago mayor; primero se registra el ingreso completo.
-- **Registros de ajuste:** mueven cuentas y terceros sin soporte electrónico (por ejemplo, causar la autorretención mensual de ventas o los intereses de un crédito que no llegan como factura).
-- Los gastos sin documento electrónico (intereses bancarios, extractos) se causan con **comprobante de gasto**, porque no llegan por la DIAN y no se pueden traer a la causación.
-
-<!-- fuentes: h-6518cb30d010 -->
+## Todavía no
+- Crear y exportar lotes de pago a proveedores desde la pantalla (hoy solo se listan).
+- Extractos de BBVA, Banco de Bogotá y Daviplata; Davivienda aún sin validar con un extracto real.
+- "Conciliar con IA", plantillas y reportes en Utilidades.
 
 ## Errores comunes
-- Esperar conciliar con pagos en efectivo: no hay extracto contra qué cruzar.
-- Pagar una por una las facturas de un único desembolso: los movimientos no coinciden con el banco.
-- Querer corregir el valor de la factura desde el recibo de caja: registra primero el ingreso completo.
-- Intentar traer a la causación un gasto bancario que no tiene documento electrónico: hay que usar el comprobante de gasto.
-
-## Tips del asesor
-- Empieza por la causación bien hecha; la conciliación ayuda sobre todo a empresas ordenadas que pagan todo por banco.
-- Cruza por valor y usa la fecha para desempatar.
+- Cobrar o pagar facturas de varios terceros a la vez: el comprobante es de un solo comprador o proveedor.
+- Cerrar la conciliación con líneas pendientes: primero concilia, clasifica o ignora cada una.
+- Emitir de contado sin caja o banco cuando Tesorería está activa: la plataforma lo exige.
+- Pago automático de nómina sin cuenta por defecto vinculada a una cuenta contable: se omite.

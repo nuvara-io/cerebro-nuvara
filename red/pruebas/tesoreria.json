@@ -1,0 +1,30 @@
+{
+  "descripcion": "Tesorería: preguntas de «cómo hago X» que deben llegar al procedimiento, y otras que deben quedarse en el tema o en otro módulo. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": ["870", "\\b490\\b", "271\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara"],
+    "C": ["\\busted\\b", "Núvara", "Nuvara"],
+    "I": ["\\busted\\b", "Núvara", "Nuvara"]
+  },
+  "casos": [
+    { "pregunta": "¿Cómo activo la tesorería?", "publico": "P", "nodos": ["solicitar-tesoreria"], "incluye": [["Solicitar habilitación"]] },
+    { "pregunta": "¿Cómo creo una cuenta bancaria?", "publico": "P", "nodos": ["crear-cuenta-bancaria"], "incluye": [["PUC"]] },
+    { "pregunta": "¿Dónde registro el saldo inicial del banco?", "publico": "P", "nodos": ["crear-cuenta-bancaria"] },
+    { "pregunta": "¿Cómo registro un cobro de una factura?", "publico": "P", "nodos": ["registrar-cobro"], "incluye": [["Comprobante de ingreso"]] },
+    { "pregunta": "¿Cómo hago un recibo de caja?", "publico": "P", "nodos": ["registrar-cobro"] },
+    { "pregunta": "Me pagaron una factura a crédito, ¿cómo lo registro?", "publico": "P", "nodos": ["registrar-cobro"] },
+    { "pregunta": "¿Cómo le pago a un proveedor?", "publico": "P", "nodos": ["registrar-pago-proveedor"], "incluye": [["Comprobante de egreso"]] },
+    { "pregunta": "¿Cómo hago un comprobante de egreso?", "publico": "P", "nodos": ["registrar-pago-proveedor"] },
+    { "pregunta": "¿Dónde veo las cuentas por pagar?", "publico": "P", "nodos": ["registrar-pago-proveedor"] },
+    { "pregunta": "¿Cómo pago la nómina por el banco?", "publico": "P", "nodos": ["pagar-nomina"], "incluye": [["PAB"]] },
+    { "pregunta": "¿Cómo envío los desprendibles a los empleados?", "publico": "P", "nodos": ["pagar-nomina"] },
+    { "pregunta": "¿Cómo concilio el banco?", "publico": "P", "nodos": ["conciliacion-bancaria"], "incluye": [["Conciliar Auto"]] },
+    { "pregunta": "¿Cómo cargo el extracto de Bancolombia?", "publico": "P", "nodos": ["conciliacion-bancaria"] },
+    { "pregunta": "¿Cómo hago el arqueo de caja?", "publico": "P", "nodos": ["manejar-caja"] },
+    { "pregunta": "¿Cómo repongo la caja menor?", "publico": "P", "nodos": ["manejar-caja"] },
+    { "pregunta": "¿Qué hace la tesorería?", "publico": "P", "nodos": ["tesoreria"] },
+    { "pregunta": "¿Hay conciliación bancaria en núvara?", "publico": "P", "nodos": ["tesoreria"], "noNodos": ["registrar-cobro"] },
+    { "pregunta": "¿Cómo genero la nómina de la quincena?", "publico": "P", "nodos": ["generar-nomina"], "noNodos": ["pagar-nomina"] },
+    { "pregunta": "¿Cómo emito una factura de venta?", "publico": "P", "nodos": ["emitir-factura-de-venta"], "noNodos": ["registrar-cobro"] },
+    { "pregunta": "¿Cómo causo una factura?", "publico": "P", "nodos": ["causar-facturas"], "noNodos": ["registrar-cobro"] }
+  ]
+}

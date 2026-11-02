@@ -156,6 +156,14 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
       conexion = segundo.id;
   }
 
+  // Si la pregunta no pide hacer algo y solo puntuaron procedimientos, se
+  // responde desde su tema y el procedimiento llega como conexión.
+  const nodoDe = (id: string) => indice.nodos.find((n) => n.id === id);
+  const principal = nodos.length === 1 ? nodoDe(nodos[0]) : undefined;
+  if (!hacer && principal?.procedimiento && principal.tema) {
+    [nodos, conexion] = [[principal.tema], principal.id];
+  }
+
   // Si la pregunta pide hacer algo, se responde con el procedimiento.
   if (hacer) {
     const proc = elegirProcedimiento(puntajes, [...nodos, ...(conexion ? [conexion] : [])], indice, publico);
