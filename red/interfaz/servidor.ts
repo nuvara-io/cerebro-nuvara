@@ -3,6 +3,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { buscar } from "../motor/buscar";
+import { correrPrueba, evaluarRed, listarPruebas } from "../motor/evaluacion";
 import { leerIndice, RAIZ_RED, type Publico } from "../motor/indice";
 import { cargarNodo, leerProcedimiento } from "../motor/nodos";
 
@@ -68,6 +69,31 @@ Bun.serve({
           [...b.nodos, ...(b.conexion ? [b.conexion] : [])].map((id) => [id, ocultas(id, publico)]),
         ),
       });
+    }
+
+    // Corre todas las pruebas de red/pruebas/ y el validador, sin IA (no cuesta).
+    if (req.method === "POST" && pathname === "/api/evaluar") {
+      const inicio = performance.now();
+      const validador = evaluarRed();
+      const pruebas = [];
+      for (const nombre of listarPruebas()) {
+        const p = await correrPrueba(nombre, false);
+        pruebas.push({
+          nombre: p.nombre,
+          descripcion: p.descripcion,
+          pasaron: p.pasaron,
+          total: p.total,
+          casos: p.resultados.map((r) => ({
+            pregunta: r.caso.pregunta,
+            publico: r.caso.publico,
+            esperado: r.caso.nodos,
+            nodos: r.salida.nodos,
+            conexion: r.salida.conexion,
+            fallas: r.fallas,
+          })),
+        });
+      }
+      return json({ validador, pruebas, ms: Math.round(performance.now() - inicio) });
     }
 
     // Para otros agentes: la ruta y los pasos de un procedimiento en datos.

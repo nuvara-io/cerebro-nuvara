@@ -307,6 +307,29 @@
   .kpi { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px 18px; }
   .kpi b { display: block; font: 700 30px/1 'Jost', sans-serif; color: var(--blue); }
   .kpi span { font: 300 14px/1.3 'Jost', sans-serif; color: var(--ink-3); }
+  .correr-fila { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-bottom: 22px; }
+  .boton-correr { font: 600 16px/1 'Jost', sans-serif; color: var(--white); background: var(--blue); border: 0; border-radius: 999px; padding: 13px 22px; cursor: pointer; }
+  .boton-correr:hover { background: var(--blue-dark); }
+  .boton-correr:disabled { background: var(--line-2); cursor: wait; }
+  .correr-estado { font: 300 15px/1.4 'Jost', sans-serif; color: var(--ink-3); }
+  .kpi.ok b { color: var(--success); } .kpi.mal b { color: var(--danger); }
+  .caidas { border: 1px solid #F6C6BA; background: #FDEEEA; border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; font: 400 15px/1.5 'Jost', sans-serif; color: var(--ink); }
+  .bloque-prueba { margin: 26px 0 0; }
+  .bloque-prueba > h3 { font: 600 18px/1.3 'Jost', sans-serif; color: var(--blue-dark); margin: 0 0 10px; }
+  details.set { border: 1px solid var(--line); border-radius: var(--radius-lg); margin-bottom: 10px; background: var(--white); overflow: hidden; }
+  details.set > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 18px; font: 600 16px/1.2 'Jost', sans-serif; color: var(--ink); }
+  details.set > summary::-webkit-details-marker { display: none; }
+  details.set > summary small { font: 300 14px/1.3 'Jost', sans-serif; color: var(--ink-3); flex: 1; }
+  .marcador { flex: none; font: 600 13px/1 'Jost', sans-serif; border-radius: 999px; padding: 6px 10px; }
+  .marcador.ok { background: #E3F5EC; color: #00703A; } .marcador.mal { background: #FDEEEA; color: #B1300F; }
+  .casos { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .casos li { display: grid; grid-template-columns: 22px auto 1fr auto; gap: 10px; align-items: start; padding: 10px 18px; border-bottom: 1px solid #F1F2F4; font: 300 15px/1.45 'Jost', sans-serif; color: var(--ink-2); }
+  .casos li:last-child { border-bottom: 0; }
+  .casos .ico { font-weight: 700; } .casos .ico.ok { color: var(--success); } .casos .ico.mal { color: var(--danger); }
+  .casos .q { color: var(--ink); font-weight: 400; }
+  .casos .r { display: block; font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+  .casos .f { display: block; font-size: 13px; color: var(--danger); margin-top: 2px; }
+  .casos .enlace { padding: 6px 12px; font-size: 13px; }
   .filtro-red { font: 400 15px/1 'Jost', sans-serif; color: var(--ink); background: var(--white); border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 14px; margin: 0 8px 14px 0; cursor: pointer; }
   tr.grupo td { background: #FAFBFC; font: 600 12px/1 'Jost', sans-serif; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); padding: 12px 18px; }
   tr.grupo i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
@@ -432,7 +455,7 @@
   <div class="herramientas">
     <button type="button" data-pagina="pruebas">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="10" height="12" rx="1.5"/><path d="M5.5 6.5l1.2 1.2L9 5.5M5.5 10.5h5"/></svg>
-      Preguntas de prueba
+      Pruebas
     </button>
     <button type="button" data-pagina="mapa">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="4" cy="4" r="1.7"/><circle cx="12" cy="4" r="1.7"/><circle cx="8" cy="12" r="1.7"/><path d="M5.2 5.3l2 5M10.8 5.3l-2 5M5.7 4h4.6"/></svg>
@@ -494,12 +517,13 @@
   <section class="pagina" id="pagina-pruebas" hidden>
     <div class="ancho">
       <button class="volver" type="button" data-volver>← Volver al chat</button>
-      <h2>Preguntas de prueba</h2>
-      <p>Las preguntas de <code>red/pruebas/precios.json</code>. Al probar una se envía en la conversación abierta, con su público.</p>
-      <div class="tabla"><table>
-        <thead><tr><th>Pregunta</th><th>Público</th><th></th></tr></thead>
-        <tbody id="tabla-pruebas"></tbody>
-      </table></div>
+      <h2>Pruebas</h2>
+      <p>Corre las mismas pruebas que <code>bun run red:validar</code> y <code>bun run red:probar</code>: cada pregunta de <code>red/pruebas/</code> y el validador del cerebro. Son sin IA, así que no cuestan. Con <b>Probar</b> mandas una pregunta al chat para verla.</p>
+      <div class="correr-fila">
+        <button class="boton-correr" type="button" id="correr">Correr todas</button>
+        <span class="correr-estado" id="correr-estado">Todavía no se han corrido.</span>
+      </div>
+      <div id="resultado-pruebas"></div>
     </div>
   </section>
 
@@ -1099,14 +1123,74 @@
     $("hilo").hidden = $("redactar").hidden = Boolean(nombre);
     for (const b of document.querySelectorAll(".herramientas [data-pagina]"))
       if (b.dataset.pagina === nombre) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
-    if (nombre) $("titulo-conv").textContent = nombre === "pruebas" ? "Preguntas de prueba" : "Mapa de la red";
+    if (nombre) $("titulo-conv").textContent = nombre === "pruebas" ? "Pruebas" : "Mapa de la red";
     else { const c = conversacion(); $("titulo-conv").textContent = c ? c.titulo : "Nueva conversación"; }
   }
 
-  function pintarPruebas() {
-    $("tabla-pruebas").innerHTML = estado.ejemplos.map((x, i) => `
-      <tr><td class="principal-c">${escapar(x.pregunta)}</td><td><span class="chip ${x.publico}">${PUBLICO[x.publico]}</span></td>
-      <td class="accion"><button type="button" class="enlace" data-i="${i}">Probar</button></td></tr>`).join("");
+  // ---------- Pruebas ----------
+  const ruta = (nodos, conexion) => `${nodos.map(titulo).join(" + ") || "ningún nodo"}${conexion ? ` → ${titulo(conexion)}` : ""}`;
+  const fila = (ok, publico, pregunta, detalle, falla) => `
+    <li><span class="ico ${ok ? "ok" : "mal"}">${ok ? "✓" : "✗"}</span><span class="chip ${publico}">${PUBLICO[publico]}</span>
+      <span><span class="q">${escapar(pregunta)}</span>${detalle ? `<span class="r">${detalle}</span>` : ""}${falla ? `<span class="f">${escapar(falla)}</span>` : ""}</span>
+      <button type="button" class="enlace" data-probar="${escapar(pregunta)}" data-publico="${publico}">Probar</button></li>`;
+  const bloque = (titulo_, sub, ok, total, cuerpo, abierto) => `
+    <details class="set" ${abierto ? "open" : ""}><summary><span class="marcador ${ok === total ? "ok" : "mal"}">${ok}/${total}</span>${escapar(titulo_)}<small>${escapar(sub)}</small>${ICONO.abajo}</summary>${cuerpo}</details>`;
+
+  function pintarPruebas(d) {
+    if (!d) return;
+    const v = d.validador;
+    const casos = d.pruebas.reduce((s, p) => s + p.total, 0), pasaron = d.pruebas.reduce((s, p) => s + p.pasaron, 0);
+    const pct = (a, b) => `${Math.round((100 * a) / b)} %`;
+    let h = `<div class="resumen">
+      <div class="kpi ${pasaron === casos ? "ok" : "mal"}"><b>${pasaron}/${casos}</b><span>preguntas de las pruebas por red</span></div>
+      <div class="kpi ${v.caidas.length ? "mal" : "ok"}"><b>${v.caidas.length ? "✗" : "✓"}</b><span>${v.caidas.length ? "el validador no cumple los mínimos" : "el validador cumple los mínimos"}</span></div>
+      <div class="kpi ${v.fragmentos.ok === v.fragmentos.total ? "ok" : "mal"}"><b>${v.fragmentos.ok}/${v.fragmentos.total}</b><span>traen solo el fragmento que aplica</span></div>
+    </div>`;
+    if (v.caidas.length) h += `<div class="caidas"><b>No se cumplen:</b> ${escapar(v.caidas.join(" · "))}</div>`;
+
+    h += `<div class="bloque-prueba"><h3>Pruebas por red neuronal</h3>` + d.pruebas.map((p) => bloque(
+      titulo(p.nombre), p.descripcion.split(":")[0], p.pasaron, p.total,
+      `<ul class="casos">${p.casos.map((c) => fila(!c.fallas.length, c.publico, c.pregunta,
+        `Fue a ${escapar(ruta(c.nodos, c.conexion))}${c.fallas.length ? ` · esperaba ${escapar(c.esperado.map(titulo).join(" + "))}` : ""}`,
+        c.fallas.join(" · "))).join("")}</ul>`, p.pasaron < p.total)).join("") + `</div>`;
+
+    h += `<div class="bloque-prueba"><h3>Redes neuronales</h3><div class="tabla"><table>
+      <thead><tr><th>Red</th><th>Núcleos</th><th>Neuronas</th><th class="ocultar-movil">Escritas</th><th class="ocultar-movil">Conex. internas</th><th class="ocultar-movil">Con otras redes</th><th>Acierto</th></tr></thead>
+      <tbody>${v.porRed.map((r) => `<tr><td class="principal-c"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;background:rgb(${colorRed(r.id)})"></i>${escapar(r.nombre)}</td>
+        <td>${r.nucleos}</td><td>${r.neuronas}</td><td class="ocultar-movil">${r.escritas}</td><td class="ocultar-movil">${r.internas}</td><td class="ocultar-movil">${r.externas}</td>
+        <td>${r.acierto === null ? "—" : `${r.acierto} %`}</td></tr>`).join("")}</tbody></table></div></div>`;
+
+    h += `<div class="bloque-prueba"><h3>Validador</h3>`;
+    h += bloque("Fragmentos", "de un núcleo solo debe llegar lo que aplica", v.fragmentos.ok, v.fragmentos.total,
+      `<ul class="casos">${v.fragmentos.casos.map((f) => fila(!f.fallas.length, f.publico, f.pregunta, "", f.fallas.join(" · "))).join("")}</ul>`,
+      v.fragmentos.ok < v.fragmentos.total);
+    h += bloque("Ejemplos del mapa", `${pct(v.mapa.aciertos, v.mapa.total)} · mínimo ${v.minimos.mapa} %; solo se listan los que fallan`, v.mapa.aciertos, v.mapa.total,
+      `<ul class="casos">${v.mapa.fallos.map((f) => fila(false, "I", f.pregunta, `Esperaba ${escapar(titulo(f.id))} · fue a ${escapar(ruta(f.eligio))}`, "")).join("") || `<li><span></span><span></span><span>Todos llegan a su nodo.</span><span></span></li>`}</ul>`, false);
+    const a = v.reales.ajuste, c = v.reales.control;
+    h += bloque("Preguntas reales: ajuste", `${pct(a.enTema, a.total)} · mínimo ${v.minimos.ajuste} %; solo se listan las que fallan`, a.enTema, a.total,
+      `<ul class="casos">${[...a.fuera.map((f) => fila(false, "I", f.pregunta, `Sección ${escapar(f.id)} · fue a ${escapar(ruta(f.eligio))}`, "")), ...a.vacias.map((q) => fila(false, "I", q, "No encontró nodo", ""))].join("")}</ul>`, false);
+    h += bloque("Preguntas reales: control", `${pct(c.enTema, c.total)} · mínimo ${v.minimos.control} %; no se listan para no ajustar las claves a ellas`, c.enTema, c.total, "", false);
+    h += `<p class="nota" style="margin-top:14px">Conexiones: ${v.conexiones.total}, rotas ${v.conexiones.rotas}, nodos sin conexión ${v.conexiones.aisladas.length}. Palabras clave compartidas: ${v.claves.choques.length}. ${v.msPorConsulta.toFixed(2)} ms por consulta.</p></div>`;
+    $("resultado-pruebas").innerHTML = h;
+  }
+
+  async function correrPruebas() {
+    $("correr").disabled = true;
+    $("correr").textContent = "Corriendo…";
+    $("correr-estado").textContent = "";
+    try {
+      const r = await fetch("/api/evaluar", { method: "POST" });
+      const d = await r.json();
+      if (!r.ok) throw new Error(d.error || "No se pudieron correr las pruebas.");
+      pintarPruebas(d);
+      const casos = d.pruebas.reduce((s, p) => s + p.total, 0), pasaron = d.pruebas.reduce((s, p) => s + p.pasaron, 0);
+      $("correr-estado").textContent = `${pasaron === casos && !d.validador.caidas.length ? "Todo pasa" : "Hay fallas"} · ${new Date().toLocaleTimeString("es-CO", { hour: "numeric", minute: "2-digit" })} · ${(d.ms / 1000).toFixed(1)} s`;
+    } catch (err) {
+      $("correr-estado").textContent = err.message || String(err);
+    } finally {
+      $("correr").disabled = false;
+      $("correr").textContent = "Correr de nuevo";
+    }
   }
 
   function pintarRedes() {
@@ -1171,11 +1255,11 @@
   for (const b of document.querySelectorAll(".herramientas [data-pagina]"))
     b.addEventListener("click", () => { mostrarPagina(b.dataset.pagina); document.body.classList.remove("menu-abierto"); });
   for (const b of document.querySelectorAll("[data-volver]")) b.addEventListener("click", () => mostrarPagina(null));
-  $("tabla-pruebas").addEventListener("click", (e) => {
-    const b = e.target.closest("button"); if (!b) return;
-    const x = estado.ejemplos[b.dataset.i];
-    estado.publico = x.publico; segmentos("publicos", x.publico);
-    preguntar(x.pregunta, x.publico);
+  $("correr").addEventListener("click", correrPruebas);
+  $("resultado-pruebas").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-probar]"); if (!b) return;
+    estado.publico = b.dataset.publico; segmentos("publicos", b.dataset.publico);
+    preguntar(b.dataset.probar, b.dataset.publico);
   });
   $("filtro-red").addEventListener("change", (e) => { estado.redFiltro = e.target.value; pintarMapa(); });
   $("filtros").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; estado.filtro = b.dataset.v; segmentos("filtros", estado.filtro); pintarMapa(); });
