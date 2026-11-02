@@ -1,20 +1,26 @@
-# Mapa de la red de conocimiento de núvara
+# Mapa del cerebro de núvara
 
-Borrador del 02/11/2026. Define **qué nodos tiene la red, para quién es cada uno, de qué archivos de `conocimiento/` se alimenta y con qué otros nodos se conecta**. Todavía no hay nodos escritos: este mapa se valida primero.
+Así se organiza el conocimiento de núvara para consultarlo:
+
+| Término | Qué es | En este mapa |
+|---|---|---|
+| **Cerebro** | núvara completo | Todo este mapa y los nodos de `red/` |
+| **Red neuronal** | Un módulo de la plataforma: causación, facturación electrónica, nómina, tesorería… | Cada sección "Red neuronal" |
+| **Núcleo** | La entrada de una red: qué es el módulo, para quién y cómo se activa | Las filas de tipo `núcleo` |
+| **Neurona** | Un apartado puntual o una acción específica, con su ruta en la plataforma y sus pasos | Las filas de tipo `neurona`, que cuelgan de un núcleo |
+| **Conexión neuronal** | Lo que une dos núcleos o neuronas: dentro de la misma red (interna) o entre redes | La tabla de conexiones; el núcleo y sus neuronas quedan conectados sin escribirlo |
 
 ## Cómo funciona
 
 ```
-pregunta ─▶ enrutador ─▶ 1 o 2 nodos (+ máximo 1 conexión) ─▶ respuesta
-              │                │
-              └─ lee solo      └─ filtra por público y estado
-                 este índice
+pregunta ─▶ red neuronal ─▶ núcleo o neurona (+ máximo 1 conexión) ─▶ solo los fragmentos que aplican
 ```
 
-1. El **enrutador** solo lee la columna "Cuándo se activa" de este mapa y elige 1 o 2 nodos. Si duda entre más de 2, pregunta antes de buscar.
-2. Se cargan esos nodos y, solo si la pregunta lo pide, **una** conexión de la tabla de conexiones. Nunca se sigue de una conexión a otra.
-3. Los **dos nodos transversales** (voz de marca y límites) se cargan siempre.
-4. La respuesta sale solo de lo cargado. Si el dato no está, o está "por confirmar", se escala a un asesor.
+1. El **enrutador** compara la pregunta con las palabras clave de `claves.json` y elige el núcleo o la neurona que más coincide. Si la pregunta pide **hacer** algo ("¿cómo…?", "¿dónde…?", "pasos para…"), prefiere la neurona; si pide **entender** ("¿qué es…?", "¿cuánto…?"), el núcleo.
+2. Sigue como máximo **una** conexión neuronal, y solo si la pregunta toca los dos temas.
+3. De cada nodo elegido trae **solo los fragmentos que aplican** a la pregunta. Una neurona se entrega completa, porque es una sola acción con sus pasos.
+4. Las neuronas **siempre activas** (voz de marca y límites) acompañan cada respuesta.
+5. Si el dato no está, o está "por confirmar", se escala a un asesor.
 
 ## Público y estado
 
@@ -32,102 +38,127 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | **por confirmar** | No lo dice a P. A C e I se lo muestra marcado como "sin confirmar". |
 | **descartado** | Nunca lo dice. Se guarda para reconocerlo si alguien lo repite (por ejemplo, "una venta cuesta $100"). |
 
-## Capa 0: transversales (siempre activos)
+## Siempre activas
 
 | Nodo | Público | Contenido | Fuentes |
 |---|---|---|---|
 | `voz-de-marca` | P | núvara en minúscula con tilde, tú, créditos, usuario y no cliente, palabras prohibidas, "núvara prepara, tú apruebas" | `CLAUDE.md` (reglas de marca), `README.md` (reglas para escribir), `sitio-web.md` §Desvíos |
 | `limites` | P | Qué no se afirma: cifras de marketing sin validar, módulos en desarrollo ofrecidos como disponibles, datos de otros usuarios. Cuándo escalar a un asesor | `por-confirmar.md` §4, `sitio-web.md` §Cifras de marketing, `producto.md` §En desarrollo, `README.md` §Privacidad |
 
-## Capa 1: qué es núvara y lo comercial
+## Red neuronal: Comercial
 
-| Nodo | Público | Cuándo se activa | Fuentes |
-|---|---|---|---|
-| `que-es-nuvara` | P | "¿Qué hace núvara?", "¿qué es la causación?", "¿en qué me ayuda?" | `producto.md` §Qué hace, `sitio-web.md` §Posicionamiento y §Qué hace la causación |
-| `para-quien` | P (dolores: C) | "¿Sirve para un contador independiente?", "¿para una firma?", "¿para mi empresa?" | `producto.md` §A quién va dirigido, `demostraciones-y-ventas.md` §Perfiles y §Posicionamiento, `objeciones-y-dolores.md` §Dolores y §Lo que mueve a cada perfil |
-| `modulos-disponibles` | P (en desarrollo: I) | "¿Tienen nómina?", "¿hacen facturación electrónica?", "¿qué módulos hay?" | `producto.md` §Módulos y capacidades y §Mapa de menús, `sitio-web.md` §Otros módulos |
-| `integraciones` | P | "¿Se conecta con Siigo?", "¿con Alegra?", "¿y si uso otro software?" | `sitio-web.md` §Integraciones, `preguntas-frecuentes.md` §Exportación y software contable |
-| `seguridad-y-soporte` | P | "¿Mis datos están seguros?", "¿cómo los contacto?", "¿hay capacitación?" | `sitio-web.md` §Seguridad y soporte, `por-confirmar.md` §2 (capacitación incluida) |
-| `precios` | P (pendientes: C, discusiones de modelo: I) | "¿Cuánto cuesta?", "¿cuánto vale causar una compra?", "¿hay mínimo?", "¿hay descuentos?" | `sitio-web.md` §Precios, `CLAUDE.md` §Datos confirmados, `por-confirmar.md` §1 y §2, `producto.md` §Planes y créditos, `preguntas-frecuentes.md` §Precios y comercial |
-| `creditos-y-recargas` | P | "¿Cómo recargo?", "¿cuántas facturas me alcanzan?", "¿el saldo es por empresa?" | `flujos/12`, `preguntas-frecuentes.md` §Créditos y soporte |
-| `competencia` | C | "¿En qué se diferencia de X?", "¿por qué no uso solo Siigo?" | `sitio-web.md` §Comparativa con competidores |
-| `argumentos-de-venta` | C | "¿Qué le digo a un contador con mucho volumen?", "¿qué argumentos funcionan?" | `demostraciones-y-ventas.md` §Argumentos y §Qué decir y qué evitar |
-| `objeciones` | C | "Me dicen que es caro", "no confían en la automatización", "ya tienen otro software" | `objeciones-y-dolores.md` §Objeciones y dudas, `demostraciones-y-ventas.md` §Objeciones y §Preguntas de prospectos |
-| `demostracion-en-vivo` | C | "¿Cómo armo una demostración?", "¿cómo cierro?" | `demostraciones-y-ventas.md` §Cómo se estructura y §Cierre típico, `capacitacion.md` §Cómo adaptar según el perfil |
+Qué es núvara, para quién, precios, créditos y cómo se vende.
 
-## Capa 2: cómo se usa (soporte)
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `que-es-nuvara` | núcleo | P | "¿Qué hace núvara?", "¿qué es la causación?", "¿en qué me ayuda?" |  | `producto.md` §Qué hace, `sitio-web.md` §Posicionamiento y §Qué hace la causación |
+| `para-quien` | núcleo | P (dolores: C) | "¿Sirve para un contador independiente?", "¿para una firma?", "¿para mi empresa?" |  | `producto.md` §A quién va dirigido, `demostraciones-y-ventas.md` §Perfiles y §Posicionamiento, `objeciones-y-dolores.md` §Dolores y §Lo que mueve a cada perfil |
+| `modulos-disponibles` | núcleo | P (en desarrollo: I) | "¿Tienen nómina?", "¿hacen facturación electrónica?", "¿qué módulos hay?" |  | `producto.md` §Módulos y capacidades y §Mapa de menús, `sitio-web.md` §Otros módulos |
+| `integraciones` | núcleo | P | "¿Se conecta con Siigo?", "¿con Alegra?", "¿y si uso otro software?" |  | `sitio-web.md` §Integraciones, `preguntas-frecuentes.md` §Exportación y software contable |
+| `seguridad-y-soporte` | núcleo | P | "¿Mis datos están seguros?", "¿cómo los contacto?", "¿hay capacitación?" |  | `sitio-web.md` §Seguridad y soporte, `por-confirmar.md` §2 (capacitación incluida) |
+| `precios` | núcleo | P (pendientes: C, discusiones de modelo: I) | "¿Cuánto cuesta?", "¿cuánto vale causar una compra?", "¿hay mínimo?", "¿hay descuentos?" |  | `sitio-web.md` §Precios, `CLAUDE.md` §Datos confirmados, `por-confirmar.md` §1 y §2, `producto.md` §Planes y créditos, `preguntas-frecuentes.md` §Precios y comercial |
+| `creditos-y-recargas` | núcleo | P | "¿Cómo recargo?", "¿cuántas facturas me alcanzan?", "¿el saldo es por empresa?" |  | `flujos/12`, `preguntas-frecuentes.md` §Créditos y soporte |
+| `competencia` | núcleo | C | "¿En qué se diferencia de X?", "¿por qué no uso solo Siigo?" |  | `sitio-web.md` §Comparativa con competidores |
+| `argumentos-de-venta` | núcleo | C | "¿Qué le digo a un contador con mucho volumen?", "¿qué argumentos funcionan?" |  | `demostraciones-y-ventas.md` §Argumentos y §Qué decir y qué evitar |
+| `objeciones` | núcleo | C | "Me dicen que es caro", "no confían en la automatización", "ya tienen otro software" |  | `objeciones-y-dolores.md` §Objeciones y dudas, `demostraciones-y-ventas.md` §Objeciones y §Preguntas de prospectos |
+| `demostracion-en-vivo` | núcleo | C | "¿Cómo armo una demostración?", "¿cómo cierro?" |  | `demostraciones-y-ventas.md` §Cómo se estructura y §Cierre típico, `capacitacion.md` §Cómo adaptar según el perfil |
 
-| Nodo | Público | Cuándo se activa | Fuentes |
-|---|---|---|---|
-| `usuarios-roles-y-empresas` | P | "¿Puedo tener varias empresas?", "¿cómo invito a un auxiliar?" | `producto.md` §Tipos de cuenta y roles |
-| `onboarding` | P | "¿Cómo empiezo?", "¿qué configuro primero?" | `flujos/01`, `preguntas-frecuentes.md` §Configuración inicial, `capacitacion.md` §Los cuatro pasos iniciales |
-| `conectar-dian` | P | "¿Cómo conecto la DIAN?", "el token no funciona", "¿qué es la extensión?" | `flujos/02`, `preguntas-frecuentes.md` §DIAN y correo, `objeciones-y-dolores.md` §Descarga y DIAN, `por-confirmar.md` §DIAN y extensión |
-| `conectar-correo` | P | "¿Cómo conecto el correo?", "no llegan las facturas del correo" | `flujos/03`, `por-confirmar.md` §Correo |
-| `importar-facturas` | P | "¿Cómo traigo las facturas?", "¿cómo filtro por fecha?" | `flujos/04`, `producto.md` §Cómo entran las facturas |
-| `causar-y-revisar` | P | "¿Qué pasa cuando causo una factura?", "¿qué significa cada estado?", "¿cómo decide la cuenta?" | `flujos/05`, `producto.md` §Estados y §Cómo decide la causación, `preguntas-frecuentes.md` §Causación y revisión, `por-confirmar.md` §Causación |
-| `correcciones-y-aprendizaje` | P | "Puso mal la cuenta", "¿aprende de mis cambios?" | `flujos/06` |
-| `reglas-y-centros-de-costo` | P | "¿Cómo creo una regla fija?", "¿cómo asigno centros de costo?" | `flujos/07`, `preguntas-frecuentes.md` §Centros de costo y reglas, `objeciones-y-dolores.md` §Centros de costo, `por-confirmar.md` §Centros de costo |
-| `aprobacion-en-bloque` | P | "¿Puedo aprobar varias a la vez?" | `flujos/08` |
-| `proveedores-y-retenciones` | P | "¿Cómo configuro las retenciones de un proveedor?", "¿y si es autorretenedor?" | `flujos/09`, `preguntas-frecuentes.md` §Retenciones, `objeciones-y-dolores.md` §Cuentas, IVA y retenciones, `por-confirmar.md` §Retenciones e IVA y §5 |
-| `ventas-y-autorretencion` | P | "¿Cómo causo mis ventas?", "¿cómo manejo la autorretención?" | `flujos/14` |
-| `notas-credito-y-documento-soporte` | P | "¿Cómo causo una nota crédito?", "¿qué hago con un documento soporte?" | `flujos/13` |
-| `facturas-del-exterior` | P | "Tengo facturas de otro país", "¿cómo legalizo gastos?" | `flujos/15` |
-| `archivo-y-comparacion-dian` | P | "¿Me falta alguna factura frente a la DIAN?", "¿dónde quedan las facturas?" | `flujos/11` |
-| `papelera-y-limpieza` | P | "Borré una factura", "¿cómo bloqueo facturas que no son mías?" | `flujos/17` |
-| `exportar-siigo` | P | "¿Cómo paso los asientos a Siigo?", "error al exportar a Siigo" | `flujos/10`, `por-confirmar.md` §Exportación a Siigo |
-| `exportar-world-office` | P | "¿Cómo exporto a World Office?", "¿y a Siigo escritorio?" | `flujos/16`, `por-confirmar.md` §World Office |
-| `inventario-y-productos` | P | "¿Cómo asocio productos?", "¿maneja inventario?" | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
-| `nomina` | P | "¿Cómo funciona la nómina?", "¿qué incluye el módulo de nómina?" | `flujos/18`, código de `platform` |
-| `facturacion-electronica-y-radian` | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" | `flujos/20`, código de `platform` |
-| `tesoreria` | P | "¿Qué hace la tesorería?", "¿núvara maneja bancos y cartera?" | `flujos/21`, código de `platform` |
-| `glosario` | P | "¿Qué es un asiento?", "¿qué significa precausar?" | `glosario.md` |
+## Red neuronal: Configuración e inicio
 
-## Capa 3: interna
+Crear la empresa y dejarla lista: usuarios, DIAN y correo.
 
-| Nodo | Público | Cuándo se activa | Fuentes |
-|---|---|---|---|
-| `capacitar-usuarios` | I | "¿Cómo doy una capacitación?", "¿qué orden sigo?" | `capacitacion.md` (menos la plantilla de guion) |
-| `problemas-conocidos` | I | "¿Ese error ya pasó?", "¿qué falla se reporta más?" | `por-confirmar.md` §Interfaz, registro y estabilidad y §6, `objeciones-y-dolores.md` §Estabilidad y soporte, `producto.md` §Dudas de producto abiertas |
-| `hoja-de-ruta` | I | "¿Qué viene en desarrollo?", "¿cuándo sale X?" | `producto.md` §En desarrollo y §Ideas y visión, `por-confirmar.md` §Nómina, facturación electrónica, RADIAN… |
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `onboarding` | núcleo | P | "¿Cómo empiezo?", "¿qué configuro primero?" |  | `flujos/01`, `preguntas-frecuentes.md` §Configuración inicial, `capacitacion.md` §Los cuatro pasos iniciales |
+| `usuarios-roles-y-empresas` | núcleo | P | "¿Puedo tener varias empresas?", "¿cómo invito a un auxiliar?" |  | `producto.md` §Tipos de cuenta y roles |
+| `conectar-dian` | núcleo | P | "¿Cómo conecto la DIAN?", "el token no funciona", "¿qué es la extensión?" |  | `flujos/02`, `preguntas-frecuentes.md` §DIAN y correo, `objeciones-y-dolores.md` §Descarga y DIAN, `por-confirmar.md` §DIAN y extensión |
+| `conectar-correo` | núcleo | P | "¿Cómo conecto el correo?", "no llegan las facturas del correo" |  | `flujos/03`, `por-confirmar.md` §Correo |
 
-## Capa 4: procedimientos (cómo se hace)
+## Red neuronal: Causación
 
-Un procedimiento responde "¿cómo hago X?" con la **ruta en la plataforma** (menú › pantalla › botón) y los **pasos numerados**. Cada uno cuelga de un tema de la capa 2: si la pregunta pide hacer algo y el tema gana, el enrutador entrega su procedimiento. El tema y su procedimiento quedan conectados sin escribir la conexión abajo.
+Traer las facturas, causarlas, revisarlas, aprobarlas, archivarlas y exportarlas.
 
-Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estado: según capacitación` y los nombres de pantallas y botones son los que usa el asesor.
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `causar-y-revisar` | núcleo | P | "¿Qué pasa cuando causo una factura?", "¿qué significa cada estado?", "¿cómo decide la cuenta?" |  | `flujos/05`, `producto.md` §Estados y §Cómo decide la causación, `preguntas-frecuentes.md` §Causación y revisión, `por-confirmar.md` §Causación |
+| `importar-facturas` | núcleo | P | "¿Cómo traigo las facturas?", "¿cómo filtro por fecha?" |  | `flujos/04`, `producto.md` §Cómo entran las facturas |
+| `correcciones-y-aprendizaje` | núcleo | P | "Puso mal la cuenta", "¿aprende de mis cambios?" |  | `flujos/06` |
+| `reglas-y-centros-de-costo` | núcleo | P | "¿Cómo creo una regla fija?", "¿cómo asigno centros de costo?" |  | `flujos/07`, `preguntas-frecuentes.md` §Centros de costo y reglas, `objeciones-y-dolores.md` §Centros de costo, `por-confirmar.md` §Centros de costo |
+| `aprobacion-en-bloque` | núcleo | P | "¿Puedo aprobar varias a la vez?" |  | `flujos/08` |
+| `proveedores-y-retenciones` | núcleo | P | "¿Cómo configuro las retenciones de un proveedor?", "¿y si es autorretenedor?" |  | `flujos/09`, `preguntas-frecuentes.md` §Retenciones, `objeciones-y-dolores.md` §Cuentas, IVA y retenciones, `por-confirmar.md` §Retenciones e IVA y §5 |
+| `ventas-y-autorretencion` | núcleo | P | "¿Cómo causo mis ventas?", "¿cómo manejo la autorretención?" |  | `flujos/14` |
+| `notas-credito-y-documento-soporte` | núcleo | P | "¿Cómo causo una nota crédito?", "¿qué hago con un documento soporte?" |  | `flujos/13` |
+| `facturas-del-exterior` | núcleo | P | "Tengo facturas de otro país", "¿cómo legalizo gastos?" |  | `flujos/15` |
+| `archivo-y-comparacion-dian` | núcleo | P | "¿Me falta alguna factura frente a la DIAN?", "¿dónde quedan las facturas?" |  | `flujos/11` |
+| `papelera-y-limpieza` | núcleo | P | "Borré una factura", "¿cómo bloqueo facturas que no son mías?" |  | `flujos/17` |
+| `exportar-siigo` | núcleo | P | "¿Cómo paso los asientos a Siigo?", "error al exportar a Siigo" |  | `flujos/10`, `por-confirmar.md` §Exportación a Siigo |
+| `exportar-world-office` | núcleo | P | "¿Cómo exporto a World Office?", "¿y a Siigo escritorio?" |  | `flujos/16`, `por-confirmar.md` §World Office |
+| `inventario-y-productos` | núcleo | P | "¿Cómo asocio productos?", "¿maneja inventario?" |  | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
+| `glosario` | núcleo | P | "¿Qué es un asiento?", "¿qué significa precausar?" |  | `glosario.md` |
+| `causar-facturas` | neurona | P | "¿Cómo causo una factura?", "¿cómo causo varias facturas?" | `causar-y-revisar` | `flujos/04`, `flujos/05` |
+| `causar-por-lote` | neurona | P | "¿Cómo causo por lote?", "¿cómo causo todo el mes de una vez?" | `causar-y-revisar` | `flujos/05` |
+| `revisar-causacion` | neurona | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
+| `aprobar-en-bloque` | neurona | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
+| `archivar-aprobadas` | neurona | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
 
-| Nodo | Público | Cuándo se activa | Tema | Fuentes |
-|---|---|---|---|---|
-| `causar-facturas` | P | "¿Cómo causo una factura?", "¿cómo causo varias facturas?" | `causar-y-revisar` | `flujos/04`, `flujos/05` |
-| `causar-por-lote` | P | "¿Cómo causo por lote?", "¿cómo causo todo el mes de una vez?" | `causar-y-revisar` | `flujos/05` |
-| `revisar-causacion` | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
-| `aprobar-en-bloque` | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
-| `archivar-aprobadas` | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
-| `emitir-factura-de-venta` | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `solicitar-facturacion-electronica` | P | "¿Cómo activo la facturación electrónica?", "¿dónde solicito la habilitación?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `habilitar-ante-la-dian` | P | "¿Cómo me habilito ante la DIAN?", "¿dónde pongo el TestSetID?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `emitir-nota-credito-o-debito` | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `emitir-documento-soporte` | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `registrar-eventos-radian` | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `renovar-certificado` | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `activar-nomina` | P | "¿Cómo activo la nómina?", "¿dónde compro cupos de empleados?" | `nomina` | `flujos/18`, código de `platform` |
-| `configurar-nomina` | P | "¿Cómo configuro la nómina?", "¿dónde cambio la frecuencia de pago?" | `nomina` | `flujos/18`, código de `platform` |
-| `crear-empleado` | P | "¿Cómo creo un empleado?", "¿cómo importo los empleados?" | `nomina` | `flujos/18`, código de `platform` |
-| `importar-historico-nomina` | P | "¿Cómo traigo el histórico de nómina de Siigo?", "¿cómo migro la nómina de otro programa?" | `nomina` | `flujos/18`, código de `platform` |
-| `registrar-novedades` | P | "¿Cómo registro una incapacidad?", "¿dónde pongo las horas extra?" | `nomina` | `flujos/18`, código de `platform` |
-| `generar-nomina` | P | "¿Cómo genero la nómina de la quincena?", "¿cómo liquido la nómina del mes?" | `nomina` | `flujos/18`, código de `platform` |
-| `emitir-nomina-electronica` | P | "¿Cómo emito la nómina electrónica?", "¿cómo envío la nómina a la DIAN?" | `nomina` | `flujos/18`, código de `platform` |
-| `generar-planilla-pila` | P | "¿Cómo genero la planilla PILA?", "¿dónde descargo el archivo de la PILA?" | `nomina` | `flujos/18`, código de `platform` |
-| `causar-nomina` | P | "¿Cómo causo la nómina?", "¿cómo contabilizo la nómina?" | `nomina` | `flujos/18`, código de `platform` |
-| `liquidar-prestaciones` | P | "¿Cómo liquido la prima?", "¿cómo pago las cesantías?" | `nomina` | `flujos/18`, código de `platform` |
-| `liquidar-contrato` | P | "¿Cómo liquido a un empleado que se retira?", "¿cómo hago la liquidación de un contrato?" | `nomina` | `flujos/18`, código de `platform` |
-| `solicitar-tesoreria` | P | "¿Cómo activo la tesorería?", "¿dónde solicito la tesorería?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `crear-cuenta-bancaria` | P | "¿Cómo creo una cuenta bancaria?", "¿dónde registro el saldo inicial del banco?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `registrar-cobro` | P | "¿Cómo registro un cobro?", "¿cómo hago un recibo de caja?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `registrar-pago-proveedor` | P | "¿Cómo le pago a un proveedor?", "¿cómo hago un comprobante de egreso?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `pagar-nomina` | P | "¿Cómo pago la nómina?", "¿cómo envío los desprendibles?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `conciliacion-bancaria` | P | "¿Cómo concilio el banco?", "¿cómo cargo el extracto?" | `tesoreria` | `flujos/21`, código de `platform` |
-| `manejar-caja` | P | "¿Cómo hago el arqueo de caja?", "¿cómo repongo la caja menor?" | `tesoreria` | `flujos/21`, código de `platform` |
+## Red neuronal: Facturación electrónica
+
+Emitir documentos electrónicos ante la DIAN y registrar eventos RADIAN.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `facturacion-electronica-y-radian` | núcleo | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" |  | `flujos/20`, código de `platform` |
+| `emitir-factura-de-venta` | neurona | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `solicitar-facturacion-electronica` | neurona | P | "¿Cómo activo la facturación electrónica?", "¿dónde solicito la habilitación?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `habilitar-ante-la-dian` | neurona | P | "¿Cómo me habilito ante la DIAN?", "¿dónde pongo el TestSetID?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `emitir-nota-credito-o-debito` | neurona | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `emitir-documento-soporte` | neurona | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `registrar-eventos-radian` | neurona | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `renovar-certificado` | neurona | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+
+## Red neuronal: Nómina
+
+Empleados, novedades, liquidación, nómina electrónica, PILA y causación de la nómina.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `nomina` | núcleo | P | "¿Cómo funciona la nómina?", "¿qué incluye el módulo de nómina?" |  | `flujos/18`, código de `platform` |
+| `activar-nomina` | neurona | P | "¿Cómo activo la nómina?", "¿dónde compro cupos de empleados?" | `nomina` | `flujos/18`, código de `platform` |
+| `configurar-nomina` | neurona | P | "¿Cómo configuro la nómina?", "¿dónde cambio la frecuencia de pago?" | `nomina` | `flujos/18`, código de `platform` |
+| `crear-empleado` | neurona | P | "¿Cómo creo un empleado?", "¿cómo importo los empleados?" | `nomina` | `flujos/18`, código de `platform` |
+| `importar-historico-nomina` | neurona | P | "¿Cómo traigo el histórico de nómina de Siigo?", "¿cómo migro la nómina de otro programa?" | `nomina` | `flujos/18`, código de `platform` |
+| `registrar-novedades` | neurona | P | "¿Cómo registro una incapacidad?", "¿dónde pongo las horas extra?" | `nomina` | `flujos/18`, código de `platform` |
+| `generar-nomina` | neurona | P | "¿Cómo genero la nómina de la quincena?", "¿cómo liquido la nómina del mes?" | `nomina` | `flujos/18`, código de `platform` |
+| `emitir-nomina-electronica` | neurona | P | "¿Cómo emito la nómina electrónica?", "¿cómo envío la nómina a la DIAN?" | `nomina` | `flujos/18`, código de `platform` |
+| `generar-planilla-pila` | neurona | P | "¿Cómo genero la planilla PILA?", "¿dónde descargo el archivo de la PILA?" | `nomina` | `flujos/18`, código de `platform` |
+| `causar-nomina` | neurona | P | "¿Cómo causo la nómina?", "¿cómo contabilizo la nómina?" | `nomina` | `flujos/18`, código de `platform` |
+| `liquidar-prestaciones` | neurona | P | "¿Cómo liquido la prima?", "¿cómo pago las cesantías?" | `nomina` | `flujos/18`, código de `platform` |
+| `liquidar-contrato` | neurona | P | "¿Cómo liquido a un empleado que se retira?", "¿cómo hago la liquidación de un contrato?" | `nomina` | `flujos/18`, código de `platform` |
+
+## Red neuronal: Tesorería
+
+Bancos, cobros, pagos, pago de nómina, conciliación y cajas.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `tesoreria` | núcleo | P | "¿Qué hace la tesorería?", "¿núvara maneja bancos y cartera?" |  | `flujos/21`, código de `platform` |
+| `solicitar-tesoreria` | neurona | P | "¿Cómo activo la tesorería?", "¿dónde solicito la tesorería?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `crear-cuenta-bancaria` | neurona | P | "¿Cómo creo una cuenta bancaria?", "¿dónde registro el saldo inicial del banco?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `registrar-cobro` | neurona | P | "¿Cómo registro un cobro?", "¿cómo hago un recibo de caja?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `registrar-pago-proveedor` | neurona | P | "¿Cómo le pago a un proveedor?", "¿cómo hago un comprobante de egreso?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `pagar-nomina` | neurona | P | "¿Cómo pago la nómina?", "¿cómo envío los desprendibles?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `conciliacion-bancaria` | neurona | P | "¿Cómo concilio el banco?", "¿cómo cargo el extracto?" | `tesoreria` | `flujos/21`, código de `platform` |
+| `manejar-caja` | neurona | P | "¿Cómo hago el arqueo de caja?", "¿cómo repongo la caja menor?" | `tesoreria` | `flujos/21`, código de `platform` |
+
+## Red neuronal: Equipo interno
+
+Lo que solo usa el equipo de núvara.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `capacitar-usuarios` | núcleo | I | "¿Cómo doy una capacitación?", "¿qué orden sigo?" |  | `capacitacion.md` (menos la plantilla de guion) |
+| `problemas-conocidos` | núcleo | I | "¿Ese error ya pasó?", "¿qué falla se reporta más?" |  | `por-confirmar.md` §Interfaz, registro y estabilidad y §6, `objeciones-y-dolores.md` §Estabilidad y soporte, `producto.md` §Dudas de producto abiertas |
+| `hoja-de-ruta` | núcleo | I | "¿Qué viene en desarrollo?", "¿cuándo sale X?" |  | `producto.md` §En desarrollo y §Ideas y visión, `por-confirmar.md` §Nómina, facturación electrónica, RADIAN… |
 
 ## Fuera de la red
 
@@ -136,7 +167,7 @@ Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estad
 | `ideas-tutoriales.md`, `capacitacion.md` §Plantilla de guion | Son para producir videos, no para responder |
 | `fuentes-procesadas.md`, `README.md` §Fuentes, `por-confirmar.md` §7 | Registro de trabajo. La trazabilidad viaja en el campo `fuentes` de cada nodo |
 
-## Conexiones (máximo 1 salto)
+## Conexiones neuronales (máximo 1 salto)
 
 Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿cuánto cuesta y cómo recargo?" carga `precios` y sigue a `creditos-y-recargas`; "¿cuánto cuesta?" carga solo `precios`.
 
@@ -206,40 +237,9 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `manejar-caja` | `crear-cuenta-bancaria` | Fondear la caja desde el banco |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
-## Cómo se verá un nodo (ejemplo: `precios`)
+## Cómo agregar una red neuronal
 
-Solo un esbozo para validar el formato. Las cifras son las que hoy son oficiales.
-
-```markdown
----
-id: precios
-publico: P
-actualizado: 2026-11-02
-conexiones: [creditos-y-recargas, modulos-disponibles, objeciones]
-fuentes: [sitio-web.md#precios, CLAUDE.md#datos-confirmados, por-confirmar.md#2]
----
-
-## Oficial
-- [P] 1 crédito = $100 COP.
-- [P] Causar una compra: $510 (5,1 créditos).
-- [P] Causar una venta: $200 (2,0 créditos).
-- [P] Mínimo mensual de consumo: $80.000. Lo que no consumes se acumula.
-
-## Por confirmar
-- [C] Recarga mínima: sin definir (la app dice $70.000; la calculadora arranca en $200.000).
-- [C] Tarifas de documento soporte, RADIAN, nómina y facturación electrónica.
-- [C] Si el mínimo mensual aplica desde el primer mes.
-
-## Descartado (no decir nunca)
-- Venta a $100. Compra a $870, $750, $600, $490 o $300.
-
-## Si no está aquí
-"Ese valor te lo confirma un asesor de núvara."
-```
-
-## Decisiones para validar
-
-1. **Tamaño de los nodos:** 38 nodos (2 transversales, 11 comerciales, 22 de uso y 3 internos). ¿Se juntan o se separan algunos? Por ejemplo, `proveedores-y-retenciones` y `ventas-y-autorretencion` podrían ser uno solo.
-2. **Públicos:** ¿el chat abierto lo usan prospectos sin cuenta, usuarios con cuenta o los dos? Cambia qué datos de soporte se muestran.
-3. **Dónde vive la red:** propuesta, `red/` con un archivo por nodo, generado a partir de `conocimiento/` y revisado a mano. `procesar-reuniones` actualiza los dos.
-4. **Quién marca lo oficial:** hoy lo oficial sale del sitio y de lo confirmado el 31/10/2026. Hace falta una persona del equipo que apruebe cada cambio a "oficial".
+1. Escribe el núcleo (`red/<id>.md`) con qué es el módulo, cómo se activa y quién puede usarlo.
+2. Escribe una neurona por acción, con `tipo: procedimiento`, la ruta en la plataforma y los pasos, y verifícala contra el código de `platform`.
+3. Agrega aquí la sección "Red neuronal", las conexiones neuronales y las palabras clave en `claves.json`.
+4. Agrega las preguntas de prueba en `red/pruebas/` y corre `bun run red:validar`.

@@ -92,6 +92,15 @@
   .conv > button.borrar:hover { color: var(--white); background: rgba(255,255,255,.08); }
   .sin-conv { font: 300 14px/1.5 'Jost', sans-serif; color: var(--texto-noche-3); padding: 4px 10px; margin: 0; }
 
+  .redes { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 1px; }
+  .redes button { width: 100%; display: flex; align-items: center; gap: 9px; background: none; border: 0; border-radius: 8px; padding: 6px 10px; cursor: pointer; font: 400 13px/1.2 'Jost', sans-serif; color: var(--texto-noche-2); text-align: left; }
+  .redes button:hover { background: rgba(255,255,255,.05); color: var(--white); }
+  .redes i { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .redes span { flex: 1; }
+  .redes small { font-size: 11px; color: var(--texto-noche-3); }
+  [data-tema="claro"] .redes button { color: var(--ink-2); }
+  [data-tema="claro"] .redes button:hover { background: rgba(35,53,125,.05); color: var(--ink); }
+  [data-tema="claro"] .redes small { color: var(--ink-3); }
   .herramientas { border-top: 1px solid var(--borde-noche); padding-top: 10px; margin-top: 10px; display: grid; gap: 2px; }
   .herramientas button {
     display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
@@ -168,6 +177,8 @@
   .paso-ruta.nodo { background: var(--blue); border-color: var(--blue); color: var(--white); }
   .paso-ruta.conexion { background: var(--white); border-color: var(--blue); color: var(--blue); }
   .paso-ruta.filtro { background: var(--teal-90); border-color: #C8EFE3; color: var(--teal-dark); }
+  .paso-ruta.red-chip { gap: 6px; background: var(--white); border-color: var(--line); color: var(--ink-2); }
+  .paso-ruta.red-chip i { width: 8px; height: 8px; border-radius: 50%; }
   .paso-ruta.pendiente { background: var(--warning-bg); border-color: #F7E3A0; color: #7A5D00; }
   .flecha { color: var(--line-2); display: inline-flex; }
   .respuesta-cuerpo { padding: 18px 22px 4px; }
@@ -296,6 +307,10 @@
   .kpi { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px 18px; }
   .kpi b { display: block; font: 700 30px/1 'Jost', sans-serif; color: var(--blue); }
   .kpi span { font: 300 14px/1.3 'Jost', sans-serif; color: var(--ink-3); }
+  .filtro-red { font: 400 15px/1 'Jost', sans-serif; color: var(--ink); background: var(--white); border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 14px; margin: 0 8px 14px 0; cursor: pointer; }
+  tr.grupo td { background: #FAFBFC; font: 600 12px/1 'Jost', sans-serif; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); padding: 12px 18px; }
+  tr.grupo i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
+  .chip.tipo { background: var(--blue-95); color: var(--blue-dark); }
   .filtros { display: inline-flex; gap: 4px; margin-bottom: 14px; background: var(--blue-95); border: 1px solid var(--blue-90); border-radius: 999px; padding: 3px; }
   .filtros button { border: 0; background: transparent; border-radius: 999px; padding: 8px 14px; font: 500 14px/1 'Jost', sans-serif; color: var(--ink-2); cursor: pointer; }
   .filtros button[aria-pressed="true"] { background: var(--white); color: var(--blue); box-shadow: 0 1px 3px rgba(35,53,125,.15); }
@@ -411,6 +426,9 @@
   <p class="etiqueta">Conversaciones</p>
   <nav class="conversaciones" aria-label="Conversaciones"><ul id="lista-conv"></ul></nav>
 
+  <p class="etiqueta">Redes neuronales</p>
+  <ul class="redes" id="redes"></ul>
+
   <div class="herramientas">
     <button type="button" data-pagina="pruebas">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="10" height="12" rx="1.5"/><path d="M5.5 6.5l1.2 1.2L9 5.5M5.5 10.5h5"/></svg>
@@ -490,15 +508,16 @@
     <div class="ancho">
       <button class="volver" type="button" data-volver>← Volver al chat</button>
       <h2>Mapa de la red</h2>
-      <p>Los temas de <code>red/mapa.md</code>, para quién es cada uno y si ya está escrito.</p>
+      <p>El cerebro de núvara por redes neuronales (módulos): su núcleo, sus neuronas (acciones con ruta y pasos) y si ya están escritas. Sale de <code>red/mapa.md</code>.</p>
       <div class="resumen" id="resumen"></div>
+      <select class="filtro-red" id="filtro-red" aria-label="Red neuronal"></select>
       <div class="filtros" id="filtros">
         <button type="button" data-v="todos" aria-pressed="true">Todos</button>
         <button type="button" data-v="escritos" aria-pressed="false">Escritos</button>
         <button type="button" data-v="pendientes" aria-pressed="false">Sin escribir</button>
       </div>
       <div class="tabla"><table>
-        <thead><tr><th>Tema</th><th>Público</th><th class="ocultar-movil">Cuándo se usa</th><th>Estado</th></tr></thead>
+        <thead><tr><th>Nodo</th><th>Tipo</th><th>Público</th><th class="ocultar-movil">Cuándo se usa</th><th>Estado</th></tr></thead>
         <tbody id="tabla-mapa"></tbody>
       </table></div>
     </div>
@@ -525,6 +544,21 @@
   };
 
   const $ = (id) => document.getElementById(id);
+
+  // Un color por red neuronal, en tonos de la marca; en oscuro, más claros.
+  const COLOR_RED = {
+    "comercial": { claro: "35,53,125", oscuro: "142,198,247" },
+    "configuracion-e-inicio": { claro: "135,139,146", oscuro: "182,184,189" },
+    "causacion": { claro: "48,130,238", oscuro: "48,130,238" },
+    "facturacion-electronica": { claro: "43,169,140", oscuro: "75,206,166" },
+    "nomina": { claro: "214,160,0", oscuro: "243,193,27" },
+    "tesoreria": { claro: "9,105,92", oscuro: "120,220,200" },
+    "equipo-interno": { claro: "182,184,189", oscuro: "120,130,160" },
+  };
+  const temaActual = () => (document.documentElement.dataset.tema === "oscuro" ? "oscuro" : "claro");
+  const colorRed = (red) => (COLOR_RED[red] || { claro: "135,139,146", oscuro: "182,184,189" })[temaActual()];
+  const redDelNodo = (id) => estado.nodos.find((n) => n.id === id)?.red;
+  const nombreRed = (red) => estado.redes.find((r) => r.id === red)?.nombre || "";
   const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const enLinea = (t) => escapar(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>").replace(/`(.+?)`/g, "<code>$1</code>");
   const titulo = (id) => { const t = id.split("-").map((p) => TILDES[p] || p).join(" "); return t.charAt(0).toUpperCase() + t.slice(1); };
@@ -542,7 +576,7 @@
   function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(estado.conversaciones.slice(0, 50))); } catch { /* sin almacenamiento */ } }
 
   const estado = {
-    publico: "P", modo: "claves", ia: false,
+    publico: "P", modo: "claves", ia: false, redes: [], redFiltro: "todas",
     nodos: [], conexiones: [], ejemplos: [],
     conversaciones: cargarGuardadas(), activa: null, ocupado: false, filtro: "todos",
   };
@@ -624,13 +658,42 @@
       for (let i = 0; i < 160; i++) estrellas.push({ x: azar(), y: azar(), r: 0.3 + azar() * 1.1, fase: azar() * 6.28 });
     }
 
-    function crearNeuronas(nodos, conexiones) {
+    // Cada red neuronal ocupa una zona de la corteza, alternando hemisferios
+    // de adelante hacia atrás; sus neuronas se reparten alrededor del centro.
+    const zonas = new Map();
+    function crearNeuronas(nodos, conexiones, redes) {
       const oro = Math.PI * (3 - Math.sqrt(5));
-      nodos.forEach((n, i) => {
-        const u = 0.92 - 1.75 * ((i + 0.5) / nodos.length);
-        const th = Math.PI * 0.18 + ((i * oro) % (Math.PI * 1.15));
-        neuronas.set(n.id, { id: n.id, p: puntoCorteza(i % 2 ? 1 : -1, u, th, 1.02), escrito: n.escrito });
+      const filas = Math.ceil(redes.length / 2);
+      redes.forEach((r, k) => {
+        const lado = k % 2 ? 1 : -1;
+        const u = filas > 1 ? 0.62 - 1.2 * (Math.floor(k / 2) / (filas - 1)) : 0;
+        // Cara exterior del hemisferio, un poco por encima de la mitad.
+        const th = lado > 0 ? 0.45 : Math.PI - 0.45;
+        zonas.set(r.id, { lado, u, th, centro: puntoCorteza(lado, u, th, 1) });
       });
+      const porRed = new Map();
+      nodos.forEach((n, i) => {
+        const z = zonas.get(n.red);
+        let p;
+        if (z) {
+          const j = porRed.get(n.red) || 0; porRed.set(n.red, j + 1);
+          const radio = 0.07 + 0.045 * Math.sqrt(j);
+          const ang = j * oro;
+          p = puntoCorteza(z.lado, Math.max(-0.95, Math.min(0.95, z.u + radio * Math.cos(ang))), z.th + 2.2 * radio * Math.sin(ang) * z.lado, 1.02);
+        } else {
+          p = puntoCorteza(i % 2 ? 1 : -1, 0.95, Math.PI * 0.5, 1.02);
+        }
+        neuronas.set(n.id, { id: n.id, p, escrito: n.escrito, red: n.red });
+      });
+      // Las partículas cercanas a una zona toman el color de su red.
+      for (const q of particulas) {
+        let mejor = null, dist = 0.36;
+        for (const [id, z] of zonas) {
+          const d = Math.hypot(q.p[0] - z.centro[0], q.p[1] - z.centro[1], q.p[2] - z.centro[2]);
+          if (d < dist) { dist = d; mejor = id; }
+        }
+        q.red = mejor && q.tono > 0.35 ? mejor : null;
+      }
       for (const c of conexiones)
         if (c.desde !== "*" && neuronas.has(c.desde) && neuronas.has(c.hacia)) sinapsis.push([c.desde, c.hacia]);
     }
@@ -710,7 +773,7 @@
       ctx.globalCompositeOperation = paleta.mezcla;
       for (const { q, s } of proyectadas) {
         let alfa = paleta.alfa[0] + ((s.z + 1) / 2) * paleta.alfa[1];
-        let color = paleta.tonos[q.tono < 0.62 ? 0 : q.tono < 0.9 ? 1 : 2];
+        let color = q.red ? colorRed(q.red) : paleta.tonos[q.tono < 0.62 ? 0 : q.tono < 0.9 ? 1 : 2];
         let tam = q.tam * s.f;
         for (const f of foco) {
           const d = Math.hypot(q.p[0] - f[0], q.p[1] - f[1], q.p[2] - f[2]);
@@ -735,7 +798,7 @@
       for (const n of neuronas.values()) {
         const s = proyectar(n.p);
         const activo = activos.includes(n.id), conecta = n.id === conexionActiva;
-        let r = (n.escrito ? 3.4 : 2.4) * s.f, color = n.escrito ? paleta.escrita : paleta.neurona, alfa = 0.55 + ((s.z + 1) / 2) * 0.45;
+        let r = (n.escrito ? 3.4 : 2.4) * s.f, color = n.red ? colorRed(n.red) : paleta.neurona, alfa = (n.escrito ? 0.7 : 0.35) + ((s.z + 1) / 2) * 0.3;
         if (activo || conecta) {
           r = (activo ? 5 : 4) + (0.5 + 0.5 * Math.sin(edad * 4)) * 1.5;
           color = activo ? paleta.activa : paleta.conectada; alfa = 1;
@@ -785,8 +848,8 @@
     const pedirCuadro = () => { if (!corriendo || !quieto) { corriendo = true; requestAnimationFrame(cuadro); } };
 
     return {
-      iniciar(nodos, conexiones) {
-        crearForma(); crearNeuronas(nodos, conexiones); medir();
+      iniciar(nodos, conexiones, redes) {
+        crearForma(); crearNeuronas(nodos, conexiones, redes); medir();
         new ResizeObserver(() => { medir(); if (quieto) pedirCuadro(); }).observe(lienzo);
         corriendo = true; requestAnimationFrame(cuadro);
       },
@@ -818,12 +881,17 @@
 
   function rutaHtml(m) {
     const b = m.busqueda;
+    const red = b.nodos.length ? redDelNodo(b.nodos[0]) : null;
     const partes = [`<span class="paso-ruta">${PUBLICO[m.publico]}</span>`];
+    if (red) partes.push(`<span class="paso-ruta red-chip"><i style="background:rgb(${colorRed(red)})"></i>${escapar(nombreRed(red))}</span>`);
     if (!b.nodos.length) partes.push(`<span class="paso-ruta pendiente">Sin tema</span>`);
     for (const id of b.nodos) partes.push(`<span class="paso-ruta ${b.sinEscribir.includes(id) ? "pendiente" : "nodo"}">${titulo(id)}</span>`);
     if (b.conexion) partes.push(`<span class="paso-ruta conexion">+ ${titulo(b.conexion)}</span>`);
     const ocultas = Object.values(b.ocultas || {}).flat().length;
-    if (b.resultado) partes.push(`<span class="paso-ruta filtro">${ocultas ? `${ocultas} ${ocultas === 1 ? "sección oculta" : "secciones ocultas"}` : "Tema completo"}</span>`);
+    const frag = Object.values(b.fragmentos || {});
+    const total = frag.reduce((s, f) => s + f.total, 0), mostrados = frag.reduce((s, f) => s + f.mostrados, 0);
+    if (frag.length) partes.push(`<span class="paso-ruta filtro">${mostrados} de ${total} fragmentos</span>`);
+    else if (b.resultado) partes.push(`<span class="paso-ruta filtro">${ocultas ? `${ocultas} ${ocultas === 1 ? "sección oculta" : "secciones ocultas"}` : "Neurona completa"}</span>`);
     return `<div class="ruta">${partes.join(`<span class="flecha">${ICONO.flecha}</span>`)}</div>`;
   }
 
@@ -1041,17 +1109,33 @@
       <td class="accion"><button type="button" class="enlace" data-i="${i}">Probar</button></td></tr>`).join("");
   }
 
+  function pintarRedes() {
+    $("redes").innerHTML = estado.redes.map((r) => {
+      const neuronas = estado.nodos.filter((n) => n.red === r.id && n.procedimiento).length;
+      return `<li><button type="button" data-red="${r.id}" title="${escapar(r.descripcion)}"><i style="background:rgb(${colorRed(r.id)})"></i><span>${escapar(r.nombre)}</span><small>${neuronas} neuronas</small></button></li>`;
+    }).join("");
+  }
+
   function pintarMapa() {
-    const escritos = estado.nodos.filter((n) => n.escrito).length;
+    $("filtro-red").innerHTML = `<option value="todas">Todas las redes neuronales</option>` +
+      estado.redes.map((r) => `<option value="${r.id}">${escapar(r.nombre)}</option>`).join("");
+    $("filtro-red").value = estado.redFiltro;
+    const enRed = estado.nodos.filter((n) => n.red && (estado.redFiltro === "todas" || n.red === estado.redFiltro));
+    const ids = new Set(enRed.map((n) => n.id));
+    const conexiones = estado.conexiones.filter((c) => ids.has(c.hacia) || ids.has(c.desde));
     $("resumen").innerHTML = `
-      <div class="kpi"><b>${estado.nodos.length}</b><span>temas en el mapa</span></div>
-      <div class="kpi"><b>${estado.conexiones.length}</b><span>conexiones entre temas</span></div>
-      <div class="kpi"><b>${escritos}</b><span>temas escritos</span></div>`;
-    const filas = estado.nodos.filter((n) => estado.filtro === "todos" || (estado.filtro === "escritos" ? n.escrito : !n.escrito));
-    $("tabla-mapa").innerHTML = filas.map((n) => `
-      <tr><td class="principal-c">${titulo(n.id)}</td><td><span class="chip ${n.publico}">${PUBLICO[n.publico]}</span></td>
-      <td class="ocultar-movil">${escapar(n.cuando)}</td>
-      <td>${n.escrito ? '<span class="chip ok">Escrito</span>' : '<span class="chip no">Sin escribir</span>'}</td></tr>`).join("");
+      <div class="kpi"><b>${estado.redFiltro === "todas" ? estado.redes.length : 1}</b><span>${estado.redFiltro === "todas" ? "redes neuronales" : nombreRed(estado.redFiltro)}</span></div>
+      <div class="kpi"><b>${enRed.filter((n) => n.procedimiento).length}</b><span>neuronas (acciones con ruta y pasos)</span></div>
+      <div class="kpi"><b>${conexiones.length}</b><span>conexiones neuronales</span></div>`;
+    const filas = enRed.filter((n) => estado.filtro === "todos" || (estado.filtro === "escritos" ? n.escrito : !n.escrito));
+    const redes = estado.redes.filter((r) => filas.some((n) => n.red === r.id));
+    $("tabla-mapa").innerHTML = redes.map((r) =>
+      `<tr class="grupo"><td colspan="5"><i style="background:rgb(${colorRed(r.id)})"></i>${escapar(r.nombre)}</td></tr>` +
+      filas.filter((n) => n.red === r.id).map((n) => `
+        <tr><td class="principal-c">${titulo(n.id)}</td><td><span class="chip tipo">${n.procedimiento ? "Neurona" : "Núcleo"}</span></td>
+        <td><span class="chip ${n.publico}">${PUBLICO[n.publico]}</span></td>
+        <td class="ocultar-movil">${escapar(n.cuando)}</td>
+        <td>${n.escrito ? '<span class="chip ok">Escrito</span>' : '<span class="chip no">Sin escribir</span>'}</td></tr>`).join("")).join("");
   }
 
   // ---------- Eventos ----------
@@ -1093,19 +1177,29 @@
     estado.publico = x.publico; segmentos("publicos", x.publico);
     preguntar(x.pregunta, x.publico);
   });
+  $("filtro-red").addEventListener("change", (e) => { estado.redFiltro = e.target.value; pintarMapa(); });
   $("filtros").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; estado.filtro = b.dataset.v; segmentos("filtros", estado.filtro); pintarMapa(); });
   addEventListener("resize", () => { ajustar(); if (!conversacion()?.mensajes.length) pintarChat(); });
-  $("cambiar-tema").addEventListener("click", () => aplicarTema(document.documentElement.dataset.tema === "claro" ? "oscuro" : "claro"));
+  $("cambiar-tema").addEventListener("click", () => {
+    aplicarTema(document.documentElement.dataset.tema === "claro" ? "oscuro" : "claro");
+    pintarRedes(); pintarMapa(); pintarChat();
+  });
+  $("redes").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-red]"); if (!b) return;
+    estado.redFiltro = b.dataset.red; $("filtro-red").value = estado.redFiltro;
+    pintarMapa(); mostrarPagina("mapa"); document.body.classList.remove("menu-abierto");
+  });
   $("abrir-menu").addEventListener("click", () => document.body.classList.add("menu-abierto"));
   $("cerrar-menu").addEventListener("click", () => document.body.classList.remove("menu-abierto"));
   $("velo").addEventListener("click", () => document.body.classList.remove("menu-abierto"));
 
   fetch("/api/estado").then((r) => r.json()).then((s) => {
-    estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia;
+    estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia; estado.redes = s.redes;
+    pintarRedes();
     $("modo-ia").disabled = !s.ia;
     $("estado-ia").classList.toggle("on", s.ia);
     $("estado-ia").querySelector("span").textContent = s.ia ? "Claude conectado" : "Claude sin conectar";
-    cerebro.iniciar(s.nodos, s.conexiones);
+    cerebro.iniciar(s.nodos, s.conexiones, s.redes);
     aplicarTema(leerTema());
     pintarPruebas(); pintarMapa(); pintar();
   });

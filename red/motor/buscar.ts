@@ -3,7 +3,10 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { leerIndice, visiblesPara, RAIZ_RED, RANGO, type Indice, type Publico } from "./indice";
-import { cargarNodo, leerProcedimiento, type Procedimiento } from "./nodos";
+import { cargarNodo, fragmentar, leerProcedimiento, type Procedimiento } from "./nodos";
+import { palabras } from "./texto";
+
+export { palabras };
 
 export type Puntaje = { id: string; puntos: number; claves: string[] };
 
@@ -17,33 +20,13 @@ export type Busqueda = {
   resultado: string;
   // Cuando la pregunta pide hacer algo y hay un procedimiento: ruta y pasos.
   procedimiento: Procedimiento | null;
+  // Por nodo fragmentado: cuántos fragmentos tiene y cuántos se entregaron.
+  fragmentos: Record<string, { total: number; mostrados: number }>;
 };
 
 const PUNTOS_POR_PALABRA = 2;
 // Una cifra en pesos ("$870") delata una pregunta de precios.
 const PUNTOS_CIFRA_EN_PESOS = 3;
-
-// Minúsculas, sin tildes y con un recorte simple de plurales, infinitivos y
-// vocal final, para que "recargas", "recargar" y "recargo", o "crear" y
-// "creo", se comparen igual.
-function raiz(palabra: string) {
-  let p = palabra;
-  if (p.length > 5 && p.endsWith("es")) p = p.slice(0, -2);
-  else if (p.length > 3 && p.endsWith("s")) p = p.slice(0, -1);
-  if (p.length > 4 && /[aei]r$/.test(p)) p = p.slice(0, -2);
-  else if (p.length > 3 && /[aeiou]$/.test(p)) p = p.slice(0, -1);
-  return p;
-}
-
-export function palabras(texto: string) {
-  return texto
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .split(/[^a-z0-9]+/)
-    .filter(Boolean)
-    .map(raiz);
-}
 
 function contiene(texto: string[], frase: string[]) {
   for (let i = 0; i + frase.length <= texto.length; i++)
@@ -105,13 +88,18 @@ export function pideHacer(pregunta: string) {
   return PIDE_HACER.test(t) && !PIDE_EXPLICAR.test(t);
 }
 
+// "¿Cómo…?" o "pasos para…" piden el paso a paso aunque no nombren la acción;
+// "¿dónde está…?" sin una acción concreta se responde desde el núcleo.
+const PIDE_PASOS = /\b(como|pasos?|paso a paso|hago|hacer|que hago|que debo hacer)\b/;
+
 // Entre los procedimientos, el que más puntos sacó con sus propias claves;
-// si ninguno puntuó, el primero del tema que ganó.
+// si ninguno puntuó y la pregunta pide pasos, el primero del tema que ganó.
 function elegirProcedimiento(
   puntajes: Puntaje[],
   elegidos: string[],
   indice: Indice,
   publico: Publico,
+  pregunta: string,
 ) {
   const esProc = new Map(indice.nodos.filter((n) => n.procedimiento).map((n) => [n.id, n]));
   const tema = elegidos.find((id) => !esProc.has(id)) ?? null;
@@ -119,7 +107,8 @@ function elegirProcedimiento(
   const mejor = puntajes.find((p) => esProc.has(p.id));
   if (mejor && (!tema || esProc.get(mejor.id)!.tema === tema || mejor.puntos >= puntosTema))
     return mejor.id;
-  if (!tema) return null;
+  const normal = pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  if (!tema || !PIDE_PASOS.test(normal)) return null;
   const delTema = indice.nodos.find(
     (n) => n.procedimiento && n.tema === tema && RANGO[n.publico] <= RANGO[publico],
   );
@@ -166,12 +155,22 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
 
   // Si la pregunta pide hacer algo, se responde con el procedimiento.
   if (hacer) {
-    const proc = elegirProcedimiento(puntajes, [...nodos, ...(conexion ? [conexion] : [])], indice, publico);
+    const proc = elegirProcedimiento(puntajes, [...nodos, ...(conexion ? [conexion] : [])], indice, publico, pregunta);
     if (proc) [nodos, conexion] = [[proc], null];
   }
 
   const pedidos = [...nodos, ...(conexion ? [conexion] : [])];
-  const textos = pedidos.map((id) => ({ id, texto: cargarNodo(id, publico) }));
+  // Una neurona viaja completa (es una sola acción con sus pasos); de un
+  // núcleo o de una conexión solo viajan los fragmentos que aplican.
+  const esNeurona = (id: string) => indice.nodos.some((n) => n.id === id && n.procedimiento);
+  const fragmentos: Record<string, { total: number; mostrados: number }> = {};
+  const textos = pedidos.map((id) => {
+    const completo = cargarNodo(id, publico);
+    if (!completo || esNeurona(id)) return { id, texto: completo };
+    const f = fragmentar(completo, pregunta);
+    fragmentos[id] = { total: f.total, mostrados: f.mostrados };
+    return { id, texto: f.texto };
+  });
   const sinEscribir = textos.filter((t) => !t.texto).map((t) => t.id);
   const resultado = textos
     .filter((t) => t.texto)
@@ -179,5 +178,5 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
     .join("\n\n");
 
   const procedimiento = nodos.length === 1 ? leerProcedimiento(nodos[0], publico) : null;
-  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento };
+  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento, fragmentos };
 }

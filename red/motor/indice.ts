@@ -12,17 +12,30 @@ export type NodoIndice = {
   cuando: string;
   transversal: boolean;
   escrito: boolean;
-  // Los procedimientos (capa 4) dicen cómo se hace algo y cuelgan de un tema.
+  // Una neurona (procedimiento) dice cómo se hace algo y cuelga de un núcleo.
   procedimiento: boolean;
   tema?: string;
+  // Red neuronal (módulo) a la que pertenece; las siempre activas no tienen.
+  red?: string;
 };
+
+export type RedNeuronal = { id: string; nombre: string; descripcion: string };
 
 export type Conexion = { desde: string; hacia: string; cuando: string };
 
 export type Indice = {
   nodos: NodoIndice[];
   conexiones: Conexion[];
+  redes: RedNeuronal[];
 };
+
+const slug = (texto: string) =>
+  texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 export const RAIZ_RED = join(import.meta.dir, "..");
 
@@ -39,31 +52,57 @@ export function leerIndice(): Indice {
   const mapa = readFileSync(join(RAIZ_RED, "mapa.md"), "utf8");
   const nodos: NodoIndice[] = [];
   const conexiones: Conexion[] = [];
+  const redes: RedNeuronal[] = [];
   let seccion = "";
+  let red: RedNeuronal | null = null;
+  let esperandoDescripcion = false;
 
   for (const linea of mapa.split("\n")) {
     if (linea.startsWith("## ")) {
       seccion = linea.slice(3);
+      const nombre = seccion.match(/^Red neuronal: (.+)$/)?.[1];
+      red = nombre ? { id: slug(nombre), nombre, descripcion: "" } : null;
+      if (red) redes.push(red);
+      esperandoDescripcion = Boolean(red);
+      continue;
+    }
+    // La primera línea de texto bajo "Red neuronal" es su descripción.
+    if (red && esperandoDescripcion && linea.trim() && !linea.startsWith("|")) {
+      red.descripcion = linea.trim();
+      esperandoDescripcion = false;
       continue;
     }
     if (!linea.startsWith("| ")) continue;
 
-    if (seccion.startsWith("Capa")) {
-      const [nodo, publico, cuando, tema] = celdas(linea);
+    if (seccion === "Siempre activas") {
+      const [nodo, publico, contenido] = celdas(linea);
       const [id] = ids(nodo);
       if (!id) continue;
-      const procedimiento = seccion.startsWith("Capa 4");
-      const padre = procedimiento ? ids(tema ?? "")[0] : undefined;
+      nodos.push({
+        id,
+        publico: publico.charAt(0) as Publico,
+        cuando: contenido,
+        transversal: true,
+        escrito: existsSync(join(RAIZ_RED, `${id}.md`)),
+        procedimiento: false,
+      });
+    } else if (red) {
+      const [nodo, tipo, publico, cuando, nucleo] = celdas(linea);
+      const [id] = ids(nodo);
+      if (!id) continue;
+      const procedimiento = tipo.startsWith("neurona");
+      const padre = procedimiento ? ids(nucleo ?? "")[0] : undefined;
       nodos.push({
         id,
         publico: publico.charAt(0) as Publico,
         cuando,
-        transversal: seccion.startsWith("Capa 0"),
+        transversal: false,
         escrito: existsSync(join(RAIZ_RED, `${id}.md`)),
         procedimiento,
         tema: padre,
+        red: red.id,
       });
-      // El tema queda conectado con su procedimiento sin escribirlo en el mapa.
+      // El núcleo queda conectado con su neurona sin escribirlo en el mapa.
       if (padre) conexiones.push({ desde: padre, hacia: id, cuando: "Cómo se hace" });
     } else if (seccion.startsWith("Conexiones")) {
       const [desde, hacia, cuando] = celdas(linea);
@@ -75,7 +114,7 @@ export function leerIndice(): Indice {
     }
   }
 
-  return { nodos, conexiones };
+  return { nodos, conexiones, redes };
 }
 
 export function visiblesPara(indice: Indice, publico: Publico) {

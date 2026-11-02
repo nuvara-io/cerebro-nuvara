@@ -53,6 +53,7 @@ Bun.serve({
         ia: HAY_IA,
         nodos: indice.nodos,
         conexiones: indice.conexiones,
+        redes: indice.redes,
         ejemplos: prueba.casos.map((c: Pedido) => ({ pregunta: c.pregunta, publico: c.publico })),
       });
     }

@@ -4,7 +4,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
 import { leerIndice, visiblesPara, type Indice, type Publico } from "./indice";
-import { cargarNodo } from "./nodos";
+import { cargarNodo, fragmentar } from "./nodos";
 
 const MODELO = "claude-opus-5-5";
 const RESPALDO = {
@@ -150,7 +150,13 @@ export async function consultar(
   }
 
   const pedidos = [...ruta.nodos, ...(ruta.conexion ? [ruta.conexion] : [])];
-  const textos = pedidos.map((id) => ({ id, texto: cargarNodo(id, publico) }));
+  // Igual que sin IA: una neurona viaja completa; de un núcleo o de una
+  // conexión, solo los fragmentos que aplican a la pregunta.
+  const textos = pedidos.map((id) => {
+    const completo = cargarNodo(id, publico);
+    const neurona = indice.nodos.some((n) => n.id === id && n.procedimiento);
+    return { id, texto: completo && !neurona ? fragmentar(completo, pregunta).texto : completo };
+  });
   const cargados = textos.filter((t) => t.texto).map((t) => t.id);
   const sinEscribir = textos.filter((t) => !t.texto).map((t) => t.id);
 

@@ -88,6 +88,46 @@ for (const linea of conocimiento("demostraciones-y-ventas.md").split("\n")) {
   if (buscar(m[1], "C").nodos.length) prospectos.conRuta++;
 }
 
+// 1d. Fragmentos: de un núcleo solo debe llegar lo que aplica a la pregunta.
+const FRAGMENTOS: { pregunta: string; publico: Publico; incluye: RegExp; excluye?: RegExp }[] = [
+  { pregunta: "¿Cuánto cuesta causar una factura de venta?", publico: "P", incluye: /\$200/, excluye: /\$510/ },
+  { pregunta: "¿Cuánto cuesta causar una factura de compra?", publico: "P", incluye: /\$510/, excluye: /\$200 COP/ },
+  { pregunta: "¿Cuánto cuesta la habilitación de facturación electrónica?", publico: "P", incluye: /150\.000/, excluye: /\$510/ },
+  { pregunta: "¿Qué incluye el precio?", publico: "P", incluye: /empresas ilimitadas/, excluye: /\$510/ },
+  { pregunta: "¿Quién puede emitir facturas?", publico: "P", incluye: /administrador, operador o contador/, excluye: /Documento soporte/ },
+  { pregunta: "¿Qué hace la tesorería?", publico: "P", incluye: /Cuentas bancarias/, excluye: /Solicitar habilitación/ },
+  { pregunta: "¿Dónde está la nómina en la plataforma?", publico: "P", incluye: /Menú \*\*Nómina/, excluye: /cupos/ },
+  { pregunta: "¿La nómina se cobra por empleado?", publico: "P", incluye: /cupos de empleados al mes/, excluye: /Tesorería › Pago de nómina/ },
+  { pregunta: "¿Cuál es la recarga mínima?", publico: "P", incluye: /recarga mínima/, excluye: /70\.000/ },
+  { pregunta: "¿Cuál es la recarga mínima?", publico: "C", incluye: /70\.000/ },
+];
+const fragmentosFallidos = FRAGMENTOS.flatMap((f) => {
+  const r = buscar(f.pregunta, f.publico).resultado;
+  const fallas = [!f.incluye.test(r) && `falta ${f.incluye}`, f.excluye?.test(r) && `sobra ${f.excluye}`].filter(Boolean);
+  return fallas.length ? [`[${f.publico}] "${f.pregunta}": ${fallas.join(", ")}`] : [];
+});
+
+// 1e. Por red neuronal: núcleos, neuronas, conexiones internas y con otras redes.
+const redDe = new Map(indice.nodos.map((n) => [n.id, n.red]));
+const porRed = indice.redes.map((r) => {
+  const nodos = indice.nodos.filter((n) => n.red === r.id);
+  const ids = new Set(nodos.map((n) => n.id));
+  const propias = indice.conexiones.filter((c) => ids.has(c.hacia) || (c.desde !== "*" && ids.has(c.desde)));
+  const internas = propias.filter((c) => c.desde !== "*" && redDe.get(c.desde) === r.id && redDe.get(c.hacia) === r.id);
+  const ejemplos = Object.entries(porNodo).filter(([id]) => ids.has(id));
+  const tot = ejemplos.reduce((s, [, v]) => s + v.total, 0);
+  const ok = ejemplos.reduce((s, [, v]) => s + v.ok, 0);
+  return {
+    nombre: r.nombre,
+    nucleos: nodos.filter((n) => !n.procedimiento).length,
+    neuronas: nodos.filter((n) => n.procedimiento).length,
+    escritas: nodos.filter((n) => n.escrito).length,
+    internas: internas.length,
+    externas: propias.length - internas.length,
+    acierto: tot ? Math.round((100 * ok) / tot) : null,
+  };
+});
+
 // 2. Choques: la misma raíz usada como clave en varios nodos.
 const duenos = new Map<string, Set<string>>();
 for (const [id, lista] of Object.entries(claves)) {
@@ -128,6 +168,11 @@ for (let i = 0; i < 20; i++) for (const p of muestras) buscar(p, "I");
 const msPorConsulta = (performance.now() - inicio) / (20 * muestras.length);
 
 // ---------- Informe ----------
+console.log("REDES NEURONALES");
+console.log("  Red                        Núcleos  Neuronas  Escritas  Conex. internas  Con otras redes  Acierto");
+for (const r of porRed)
+  console.log(`  ${r.nombre.padEnd(26)} ${String(r.nucleos).padStart(7)}  ${String(r.neuronas).padStart(8)}  ${String(r.escritas).padStart(8)}  ${String(r.internas).padStart(15)}  ${String(r.externas).padStart(15)}  ${r.acierto === null ? "   —" : `${String(r.acierto).padStart(4)} %`}`);
+console.log("");
 const pct = (a: number, b: number) => `${Math.round((100 * a) / b)} %`;
 console.log("ENRUTADOR (preguntas de ejemplo del mapa)");
 console.log(`  Aciertos exactos: ${aciertos}/${total} (${pct(aciertos, total)}) · empates: ${empates}`);
@@ -138,6 +183,10 @@ for (const f of fallos)
 
 const linea = (g: Grupo) =>
   `${g.enTema}/${g.total} en el tema correcto (${pct(g.enTema, g.total)}) · sin ruta: ${g.sinRuta} · tema equivocado: ${g.fuera.length}`;
+console.log(`\nFRAGMENTOS (de un núcleo solo llega lo que aplica)`);
+console.log(`  ${FRAGMENTOS.length - fragmentosFallidos.length}/${FRAGMENTOS.length} preguntas traen el fragmento correcto sin ruido`);
+for (const f of fragmentosFallidos) console.log(`  ✗ ${f}`);
+
 console.log(`\nENRUTADOR (preguntas reales de preguntas-frecuentes.md)`);
 console.log(`  Ajuste:  ${linea(reales.ajuste)}`);
 console.log(`  Control: ${linea(reales.control)}`);
@@ -167,9 +216,10 @@ console.log(`  ${msPorConsulta.toFixed(2)} ms por consulta sin IA (lee mapa y cl
 
 // ---------- Mínimos ----------
 // Si un cambio en las claves o en el mapa baja de aquí, el validador falla.
-const MINIMOS = { mapa: 90, ajuste: 90, control: 70 };
+const MINIMOS = { mapa: 90, ajuste: 90, control: 70, fragmentos: 90 };
 const tasa = (a: number, b: number) => (100 * a) / b;
 const caidas = [
+  tasa(FRAGMENTOS.length - fragmentosFallidos.length, FRAGMENTOS.length) < MINIMOS.fragmentos && `fragmentos ${pct(FRAGMENTOS.length - fragmentosFallidos.length, FRAGMENTOS.length)} < ${MINIMOS.fragmentos} %`,
   tasa(aciertos, total) < MINIMOS.mapa && `mapa ${pct(aciertos, total)} < ${MINIMOS.mapa} %`,
   tasa(reales.ajuste.enTema, reales.ajuste.total) < MINIMOS.ajuste && `ajuste ${pct(reales.ajuste.enTema, reales.ajuste.total)} < ${MINIMOS.ajuste} %`,
   tasa(reales.control.enTema, reales.control.total) < MINIMOS.control && `control ${pct(reales.control.enTema, reales.control.total)} < ${MINIMOS.control} %`,
@@ -177,6 +227,6 @@ const caidas = [
   aisladas.length > 0 && `${aisladas.length} nodos sin conexiones`,
 ].filter(Boolean);
 console.log(`
-MÍNIMOS (mapa ${MINIMOS.mapa} %, ajuste ${MINIMOS.ajuste} %, control ${MINIMOS.control} %, sin conexiones rotas ni nodos aislados)`);
+MÍNIMOS (mapa ${MINIMOS.mapa} %, ajuste ${MINIMOS.ajuste} %, control ${MINIMOS.control} %, fragmentos ${MINIMOS.fragmentos} %, sin conexiones rotas ni nodos aislados)`);
 console.log(caidas.length ? `  ✗ ${caidas.join(" · ")}` : "  ✓ Se cumplen todos");
 process.exit(caidas.length ? 1 : 0);

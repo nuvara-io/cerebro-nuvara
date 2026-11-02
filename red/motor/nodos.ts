@@ -2,6 +2,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { RAIZ_RED, RANGO, type Publico } from "./indice";
+import { palabras } from "./texto";
 
 // Viñetas ("- [P] …") y pasos numerados ("1. [P] …").
 const ETIQUETA = /^(- |\d+\. )\[(P|C|I)\] /;
@@ -97,5 +98,84 @@ export function leerProcedimiento(id: string, publico: Publico): Procedimiento |
     pasos: items("Pasos"),
     resultado: items("Resultado"),
     siFalla: items("Si algo falla"),
+  };
+}
+
+// ---------- Fragmentos ----------
+
+// Palabras de la pregunta que no ayudan a elegir un fragmento.
+const VACIAS = new Set(
+  palabras(
+    "como cual cuales cuanto cuanta cuantos cuantas donde cuando para pero esta este esto eso esos " +
+      "tengo tiene tienen tener hacer hago puedo puede pueden quiero necesito sobre entre desde hasta " +
+      "nuvara plataforma favor hola saber debo tambien solo todo todos cada alguna alguno algun mucho " +
+      "muchas porque estoy estan hay",
+  ),
+);
+// Secciones con instrucciones para el chat: siempre viajan completas.
+const SIEMPRE = /^(Cómo responder|Si no está aquí)/;
+// Un fragmento entra si llega a esta parte del mejor puntaje.
+const PROPORCION = 0.75;
+const MAXIMO = 4;
+// Si la pregunta empieza como el título de una sección ("¿Quién puede…?",
+// "¿Qué hace…?", "¿Cuánto cuesta…?"), esa sección gana este extra.
+const BONO_TITULO = 3;
+
+export type Fragmentado = { texto: string; total: number; mostrados: number };
+
+// Deja del nodo solo las viñetas y párrafos que comparten palabras con la
+// pregunta; cada línea cuenta también las palabras del título de su sección.
+// El nombre del nodo no cuenta: si es lo único que coincide ("¿qué hace la
+// tesorería?"), entrega la primera sección como resumen.
+export function fragmentar(texto: string, pregunta: string): Fragmentado {
+  const [cabeza, ...secciones] = texto.split(/\n(?=## )/);
+  const titulo = cabeza.split("\n").find((l) => l.startsWith("# ")) ?? "";
+  const delNodo = new Set(palabras(titulo));
+  const buscadas = new Set(
+    palabras(pregunta).filter((p) => p.length > 3 && !VACIAS.has(p) && !delNodo.has(p)),
+  );
+
+  type Item = { seccion: number; linea: string; propias: Set<string>; titulo: string; puntos: number };
+  const inicio = palabras(pregunta).slice(0, 2).join(" ");
+  const items: Item[] = [];
+  secciones.forEach((sec, n) => {
+    const [cab, ...lineas] = sec.split("\n");
+    if (SIEMPRE.test(cab.slice(3))) return;
+    for (const linea of lineas) {
+      if (!linea.trim() || linea.startsWith("<!--")) continue;
+      const propias = new Set([...palabras(linea), ...palabras(cab.slice(3))]);
+      items.push({ seccion: n, linea, propias, titulo: palabras(cab.slice(3)).join(" "), puntos: 0 });
+    }
+  });
+  // Una palabra que aparece en pocas líneas del nodo pesa más que una que
+  // está en casi todas ("venta" pesa más que "factura" en precios).
+  const peso = (p: string) => Math.log(1 + items.length / Math.max(1, items.filter((i) => i.propias.has(p)).length));
+  for (const item of items) {
+    item.puntos = [...buscadas].filter((p) => item.propias.has(p)).reduce((s, p) => s + peso(p), 0);
+    if (inicio.includes(" ") && ` ${item.titulo} `.includes(` ${inicio} `)) item.puntos += BONO_TITULO;
+  }
+
+  const mejor = Math.max(0, ...items.map((i) => i.puntos));
+  const elegidos =
+    mejor === 0
+      ? items.filter((i) => i.seccion === 0)
+      : items
+          .filter((i) => i.puntos >= mejor * PROPORCION)
+          .sort((a, b) => b.puntos - a.puntos)
+          .slice(0, MAXIMO);
+  const quedan = new Set(elegidos);
+
+  const salida = [titulo];
+  secciones.forEach((sec, n) => {
+    const [cab] = sec.split("\n");
+    if (SIEMPRE.test(cab.slice(3))) return void salida.push(sec.trimEnd());
+    const propias = items.filter((i) => i.seccion === n && quedan.has(i)).map((i) => i.linea);
+    if (propias.length) salida.push([cab, ...propias].join("\n"));
+  });
+
+  return {
+    texto: salida.filter(Boolean).join("\n\n"),
+    total: items.length,
+    mostrados: elegidos.length,
   };
 }

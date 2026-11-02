@@ -30,7 +30,7 @@ Fuente: sitio oficial (página `/precios/`, que lo presenta como "precio de lanz
 - [P] **Causar una factura de venta: $200 COP** (2,0 créditos).
 - [P] **Mínimo mensual de consumo: $80.000 COP.** Es lo mínimo que se descuenta del saldo cada mes para mantener la cuenta activa. Si causas más, pagas tu consumo real. Lo que no consumes se acumula para el mes siguiente.
 - [P] El mínimo mensual cubre el procesamiento y el almacenamiento de las facturas de la DIAN durante el mes.
-- [P] **Incluido en el precio:** traer las facturas del correo y de la DIAN, empresas ilimitadas, cálculo de retenciones e IVA, generación del archivo de exportación y causación en lotes.
+- [P] **Qué incluye el precio:** traer las facturas del correo y de la DIAN, empresas ilimitadas, cálculo de retenciones e IVA, generación del archivo de exportación y causación en lotes.
 - [P] **Tarifa especial desde 1.500 causaciones al mes.** Se negocia con el equipo por WhatsApp.
 - [P] El mínimo mensual **no es la recarga mínima**: son dos cosas distintas.
 - [P] **Facturación electrónica: habilitación de $150.000, pago único.** Incluye la configuración inicial y la firma digital por un año; luego el certificado se renueva cada año. El precio es el mismo sin importar cuántos tipos de documento habilites (factura de venta y sus notas, documento soporte y su nota, eventos RADIAN, nómina electrónica).
