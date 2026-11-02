@@ -7,7 +7,7 @@ publico: P
 estado: según capacitación
 ruta: [Operaciones, Causaciones, Aprobadas, Archivar]
 url:
-siguiente: exportar-siigo
+siguiente: exportar-archivo
 actualizado: 2026-11-02
 fuentes:
   - conocimiento/flujos/05-causar-y-revisar.md#pasos

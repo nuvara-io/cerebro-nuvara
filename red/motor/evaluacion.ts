@@ -24,7 +24,7 @@ const TEMA: Record<string, string[]> = {
   "Retenciones e impuestos": ["proveedores-y-retenciones", "ventas-y-autorretencion", "glosario", "notas-credito-y-documento-soporte"],
   "Centros de costo y reglas": ["reglas-y-centros-de-costo", "correcciones-y-aprendizaje"],
   "Productos e inventario": ["inventario-y-productos"],
-  "Exportación y software contable": ["exportar-siigo", "exportar-world-office", "integraciones", "inventario-y-productos"],
+  "Exportación y software contable": ["exportacion", "exportar-archivo", "enviar-a-siigo", "exportar-world-office", "integraciones", "inventario-y-productos"],
   "Ventas, nómina y otros módulos": ["ventas-y-autorretencion", "nomina", "tesoreria", "facturacion-electronica-y-radian", "conciliacion-bancaria", "modulos-disponibles", "facturas-del-exterior", "notas-credito-y-documento-soporte"],
   "Precios y comercial": ["precios", "creditos-y-recargas", "seguridad-y-soporte"],
   "Créditos y soporte": ["creditos-y-recargas", "precios", "seguridad-y-soporte", "problemas-conocidos"],

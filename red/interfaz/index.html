@@ -569,15 +569,17 @@
 
   const $ = (id) => document.getElementById(id);
 
-  // Un color por red neuronal, en tonos de la marca; en oscuro, más claros.
+  // Un color por red neuronal, en tonos de la marca bien saturados para que
+  // brillen como neón; en oscuro, más claros.
   const COLOR_RED = {
-    "comercial": { claro: "35,53,125", oscuro: "142,198,247" },
-    "configuracion-e-inicio": { claro: "135,139,146", oscuro: "182,184,189" },
-    "causacion": { claro: "48,130,238", oscuro: "48,130,238" },
-    "facturacion-electronica": { claro: "43,169,140", oscuro: "75,206,166" },
-    "nomina": { claro: "214,160,0", oscuro: "243,193,27" },
-    "tesoreria": { claro: "9,105,92", oscuro: "120,220,200" },
-    "equipo-interno": { claro: "182,184,189", oscuro: "120,130,160" },
+    "comercial": { claro: "79,70,229", oscuro: "142,160,255" },
+    "configuracion-e-inicio": { claro: "0,163,224", oscuro: "90,215,255" },
+    "causacion": { claro: "30,133,255", oscuro: "64,156,255" },
+    "facturacion-electronica": { claro: "16,185,150", oscuro: "75,226,180" },
+    "nomina": { claro: "235,160,0", oscuro: "255,200,40" },
+    "tesoreria": { claro: "9,140,120", oscuro: "100,235,205" },
+    "exportacion": { claro: "234,88,12", oscuro: "255,150,80" },
+    "equipo-interno": { claro: "147,112,219", oscuro: "190,160,255" },
   };
   const temaActual = () => (document.documentElement.dataset.tema === "oscuro" ? "oscuro" : "claro");
   const colorRed = (red) => (COLOR_RED[red] || { claro: "135,139,146", oscuro: "182,184,189" })[temaActual()];
@@ -624,6 +626,9 @@
   // =====================================================================
   const cerebro = (() => {
     const lienzo = $("cerebro"), ctx = lienzo.getContext("2d");
+    // Lienzo a media resolución para el resplandor de neón (bloom).
+    const brillo = document.createElement("canvas"), bctx = brillo.getContext("2d");
+    const hayFiltro = "filter" in bctx;
     const cielo = $("cielo"), cctx = cielo.getContext("2d");
     const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
     let W = 0, H = 0, dpr = 1, cx = 0, cy = 0, escala = 0;
@@ -633,16 +638,18 @@
     // Sobre blanco no sirve la mezcla aditiva: se usan azules más oscuros.
     const PALETAS = {
       oscuro: {
-        mezcla: "lighter", tonos: ["48,130,238", "142,198,247", "75,206,166"], alfa: [0.28, 0.62],
+        mezcla: "lighter", tonos: ["48,130,238", "120,200,255", "75,226,180"], alfa: [0.28, 0.62],
+        neon: { mezcla: "lighter", saturar: 1.8, pasadas: [[2, 0.7], [9, 0.85]] },
         neurona: "220,235,255", escrita: "75,206,166", activa: "75,206,166", conectada: "142,198,247",
         sinapsis: "142,198,247", sinapsisAlfa: [0.05, 0.06], estrella: "200,220,255", estrellaAlfa: [0.22, 0.32],
         halo: "rgba(48,130,238,0.13)", etiquetaFondo: "rgba(10,16,41,0.8)", etiquetaTexto: "#fff",
       },
       claro: {
-        mezcla: "source-over", tonos: ["48,130,238", "35,53,125", "43,169,140"], alfa: [0.16, 0.56],
-        neurona: "35,53,125", escrita: "9,105,92", activa: "43,169,140", conectada: "48,130,238",
-        sinapsis: "48,130,238", sinapsisAlfa: [0.07, 0.08], estrella: "48,130,238", estrellaAlfa: [0.08, 0.14],
-        halo: "rgba(48,130,238,0.06)", etiquetaFondo: "rgba(255,255,255,0.95)", etiquetaTexto: "#111827",
+        mezcla: "source-over", tonos: ["30,133,255", "0,170,255", "16,190,160"], alfa: [0.2, 0.6],
+        neon: { mezcla: "destination-over", saturar: 2.2, pasadas: [[2, 0.9], [8, 0.75]] },
+        neurona: "30,133,255", escrita: "9,140,120", activa: "16,200,160", conectada: "30,133,255",
+        sinapsis: "30,133,255", sinapsisAlfa: [0.09, 0.1], estrella: "48,130,238", estrellaAlfa: [0.08, 0.14],
+        halo: "rgba(30,133,255,0.08)", etiquetaFondo: "rgba(255,255,255,0.95)", etiquetaTexto: "#111827",
       },
     };
     let paleta = PALETAS.claro;
@@ -727,6 +734,7 @@
       dpr = Math.min(devicePixelRatio || 1, 2);
       W = caja.width; H = caja.height;
       for (const c of [lienzo, cielo]) { c.width = W * dpr; c.height = H * dpr; }
+      brillo.width = Math.max(1, Math.ceil(W / 2)); brillo.height = Math.max(1, Math.ceil(H / 2));
       cx = W * 0.5;
       if (espacio) {
         // Bienvenida: el cerebro ocupa el hueco libre sobre el texto.
@@ -758,6 +766,23 @@
       }
     }
 
+    // Neón: se copia el cuadro a media resolución, se desenfoca y satura, y se
+    // suma encima (oscuro) o se pone detrás de las partículas (claro).
+    function neon() {
+      if (!hayFiltro) return;
+      const n = paleta.neon;
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      bctx.globalCompositeOperation = "copy";
+      for (const [radio, fuerza] of n.pasadas) {
+        bctx.filter = `blur(${radio}px) saturate(${n.saturar})`;
+        bctx.drawImage(lienzo, 0, 0, brillo.width, brillo.height);
+        ctx.globalCompositeOperation = n.mezcla; ctx.globalAlpha = fuerza;
+        ctx.drawImage(brillo, 0, 0, lienzo.width, lienzo.height);
+      }
+      ctx.restore();
+    }
+
     const disparar = (a, b, color, duracion = 900) => senales.push({ a, b, inicio: performance.now(), duracion, color });
     const ENTRADA = [0, -0.84, -0.36];
     const posicion = (id) => (id === "entrada" ? ENTRADA : neuronas.get(id).p);
@@ -786,10 +811,6 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, W, H);
       if (!quieto && Math.floor(t / 50) % 2) pintarCielo(t);
-
-      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, escala * 1.3);
-      halo.addColorStop(0, paleta.halo); halo.addColorStop(1, "rgba(48,130,238,0)");
-      ctx.fillStyle = halo; ctx.fillRect(0, 0, W, H);
 
       const foco = activos.map((id) => neuronas.get(id).p);
       const edad = (t - desde) / 1000;
@@ -832,6 +853,11 @@
         }
         ctx.fillStyle = `rgba(${color},${alfa})`;
         ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, 6.28); ctx.fill();
+        // Núcleo blanco: el tubo de neón encendido.
+        if (n.escrito || activo || conecta) {
+          ctx.fillStyle = `rgba(255,255,255,${activo || conecta ? 0.95 : 0.55 * alfa})`;
+          ctx.beginPath(); ctx.arc(s.x, s.y, r * 0.3, 0, 6.28); ctx.fill();
+        }
       }
 
       for (let i = senales.length - 1; i >= 0; i--) {
@@ -848,6 +874,14 @@
           ctx.beginPath(); ctx.arc(s.x, s.y, 3.2 - c * 0.4, 0, 6.28); ctx.fill();
         }
       }
+      ctx.globalCompositeOperation = "source-over";
+      neon();
+
+      // El halo va detrás de todo, después del neón para no desenfocarlo.
+      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, escala * 1.3);
+      halo.addColorStop(0, paleta.halo); halo.addColorStop(1, "rgba(48,130,238,0)");
+      ctx.globalCompositeOperation = "destination-over";
+      ctx.fillStyle = halo; ctx.fillRect(0, 0, W, H);
       ctx.globalCompositeOperation = "source-over";
 
       ctx.font = "500 13px Jost, sans-serif";

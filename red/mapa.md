@@ -76,7 +76,7 @@ Crear la empresa y dejarla lista: usuarios, DIAN y correo.
 
 ## Red neuronal: Causación
 
-Traer las facturas, causarlas, revisarlas, aprobarlas, archivarlas y exportarlas.
+Traer las facturas, causarlas, revisarlas, aprobarlas y archivarlas.
 
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
@@ -91,8 +91,6 @@ Traer las facturas, causarlas, revisarlas, aprobarlas, archivarlas y exportarlas
 | `facturas-del-exterior` | núcleo | P | "Tengo facturas de otro país", "¿cómo legalizo gastos?" |  | `flujos/15` |
 | `archivo-y-comparacion-dian` | núcleo | P | "¿Me falta alguna factura frente a la DIAN?", "¿dónde quedan las facturas?" |  | `flujos/11` |
 | `papelera-y-limpieza` | núcleo | P | "Borré una factura", "¿cómo bloqueo facturas que no son mías?" |  | `flujos/17` |
-| `exportar-siigo` | núcleo | P | "¿Cómo paso los asientos a Siigo?", "error al exportar a Siigo" |  | `flujos/10`, `por-confirmar.md` §Exportación a Siigo |
-| `exportar-world-office` | núcleo | P | "¿Cómo exporto a World Office?", "¿y a Siigo escritorio?" |  | `flujos/16`, `por-confirmar.md` §World Office |
 | `inventario-y-productos` | núcleo | P | "¿Cómo asocio productos?", "¿maneja inventario?" |  | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
 | `glosario` | núcleo | P | "¿Qué es un asiento?", "¿qué significa precausar?" |  | `glosario.md` |
 | `causar-facturas` | neurona | P | "¿Cómo causo una factura?", "¿cómo causo varias facturas?" | `causar-y-revisar` | `flujos/04`, `flujos/05` |
@@ -100,6 +98,20 @@ Traer las facturas, causarlas, revisarlas, aprobarlas, archivarlas y exportarlas
 | `revisar-causacion` | neurona | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
 | `aprobar-en-bloque` | neurona | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
 | `archivar-aprobadas` | neurona | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
+
+## Red neuronal: Exportación
+
+Llevar las causaciones y los comprobantes al software contable: por archivo o, con Siigo Nube, por envío directo.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `exportacion` | núcleo | P | "¿A qué programas exportan?", "¿qué se puede exportar?", "¿se puede exportar la nómina?" |  | `flujos/10`, `flujos/16`, código de `platform`, `por-confirmar.md` §Exportación a Siigo y §World Office |
+| `exportar-archivo` | neurona | P | "¿Cómo exporto a Alegra?", "¿cómo descargo el archivo para mi programa contable?" | `exportacion` | `flujos/10`, código de `platform` |
+| `conectar-siigo` | neurona | P | "¿Cómo conecto Siigo?", "¿dónde pongo el access key de Siigo?" | `exportacion` | `flujos/10`, código de `platform` |
+| `enviar-a-siigo` | neurona | P | "¿Cómo paso los asientos a Siigo?", "¿cómo envío las facturas a Siigo?" | `exportacion` | `flujos/10`, código de `platform` |
+| `exportar-world-office` | neurona | P | "¿Cómo exporto a World Office?", "¿cómo subo los ítems de inventario a World Office?" | `exportacion` | `flujos/16`, código de `platform` |
+| `exportar-comprobantes-tesoreria` | neurona | P | "¿Cómo exporto los comprobantes de egreso?", "¿cómo saco los recibos de caja para Siigo?" | `exportacion` | `flujos/21`, código de `platform` |
+| `historial-de-exportaciones` | neurona | P | "¿Cómo vuelvo a exportar un mes?", "¿dónde veo lo que ya exporté?" | `exportacion` | código de `platform` |
 
 ## Red neuronal: Facturación electrónica
 
@@ -177,7 +189,7 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `precios` | `modulos-disponibles` | Precio de un módulo que aún no tiene tarifa |
 | `precios` | `objeciones` | Solo C: "es caro", comparación de costo |
 | `que-es-nuvara` | `para-quien`, `modulos-disponibles` | "¿Me sirve a mí?", "¿qué más hace?" |
-| `integraciones` | `exportar-siigo`, `exportar-world-office` | Cómo se hace la exportación, no solo si existe |
+| `integraciones` | `exportacion` | Cómo se hace la exportación, no solo si existe |
 | `modulos-disponibles` | `nomina`, `facturacion-electronica-y-radian`, `conciliacion-bancaria` | Cómo funciona el módulo, no solo si existe |
 | `onboarding` | `conectar-dian`, `conectar-correo`, `usuarios-roles-y-empresas` | El paso de configuración puntual |
 | `conectar-dian` | `importar-facturas`, `archivo-y-comparacion-dian` | Ya conectó y no ve las facturas, o faltan frente a la DIAN |
@@ -188,7 +200,17 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `proveedores-y-retenciones` | `ventas-y-autorretencion` | Retenciones en ventas además de compras |
 | `notas-credito-y-documento-soporte` | `causar-y-revisar` | Cómo queda causada |
 | `facturas-del-exterior` | `notas-credito-y-documento-soporte` | Documento soporte de una compra al exterior |
-| `exportar-siigo`, `exportar-world-office` | `inventario-y-productos` | Productos o bodegas en la exportación |
+| `exportacion` | `inventario-y-productos` | Productos o bodegas en la exportación |
+| `exportar-world-office` | `inventario-y-productos` | Productos o bodegas de World Office |
+| `archivar-aprobadas` | `exportar-archivo` | Ya archivado: sacar el archivo del mes |
+| `archivar-aprobadas` | `enviar-a-siigo` | Ya archivado: enviarlo a Siigo |
+| `conectar-siigo` | `enviar-a-siigo` | Ya conectado: enviar |
+| `enviar-a-siigo` | `historial-de-exportaciones` | Corregir o reenviar un documento que ya llegó |
+| `exportar-archivo` | `historial-de-exportaciones` | Volver a exportar o descargar un lote |
+| `exportar-comprobantes-tesoreria` | `registrar-pago-proveedor` | Comprobantes de egreso en borrador |
+| `exportar-comprobantes-tesoreria` | `registrar-cobro` | Comprobantes de ingreso en borrador |
+| `exportacion` | `tesoreria` | Exportar los movimientos de bancos y cartera |
+| `causar-nomina` | `exportacion` | Llevar la nómina al programa contable |
 | `objeciones`, `demostracion-en-vivo` | `argumentos-de-venta` | Qué responder o qué mostrar |
 | `que-es-nuvara` | `seguridad-y-soporte` | "¿Es seguro?", "¿quién me ayuda si algo falla?" |
 | `integraciones` | `competencia` | Solo C: comparar con el programa contable que ya usa |

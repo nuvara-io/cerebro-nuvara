@@ -88,6 +88,7 @@ Etiquetas: **Bug** (reportado, con fecha; ninguno tiene cierre confirmado salvo 
 - **Prometido:** filtro por producto para excluir de la aprobación masiva, "subido pero no disponible" (10/07); reglas compartidas entre empresas con la misma estructura (idea, 14/05).
 
 ### Exportación a Siigo
+- **Resuelto (02/11/2026, código de la plataforma):** a Siigo Nube se envía por API desde **Operaciones › Archivo** (solo compras y notas archivadas; las ventas salen por archivo). Todos los demás programas salen por archivo desde **Operaciones › Exportar**, un mes a la vez. Detalle en `red/exportacion.md` y sus neuronas.
 - **Dudoso:** vías: API para Siigo en la nube y archivo plano para PyME y Contador; Siigo Contador por API: una sesión la conectó (25/07), otra dijo que no tiene API (24/08). De dónde se envía: Aprobadas, Archivadas o Archivo (13/05 a 21/08). Longitud del número de documento: 6, 9 o 10 caracteres según la fuente.
 - **Dudoso:** detalle por producto: "nunca se ha subido" (10/07) y luego existe "detallar por producto" (21/08). Notas crédito de compras: no se exportaban (21/07), antes sí (14/07), y el rechazo se atribuyó a la cuenta de IVA de devolución (28/07). El IVA como "mayor valor" llegó así en la sincronización de catálogo; otra reunión dice que se corrigió (10/08).
 - **Bug:** envío masivo por API con "el comprobante ya existe" (30/06); no se pudo generar o guardar la credencial de la API (30/06, 18/08); cierre inesperado al final de una exportación (23/07).
@@ -95,6 +96,7 @@ Etiquetas: **Bug** (reportado, con fecha; ninguno tiene cierre confirmado salvo 
 - **Prometido:** formato de exportación con la plantilla del usuario y revisión de códigos de impuesto (28/07); botón para exportar los terceros del mes (6/06). Se anunció a usuarios que "los cambios solo se suben los viernes" (6/08, 10/08): confirmar si es oficial.
 
 ### World Office
+- **Resuelto (02/11/2026, código de la plataforma):** la conexión por token existe, pero hoy solo lee catálogo y valida (no escribe documentos). La exportación a World Office es por archivo (Nota de contabilidad FC) más un archivo opcional de ítems de inventario para escritorio.
 - **Dudoso:** API con token: el sitio y varias sesiones (28/07, 11/08) sí; el 30/04 se dijo que no había API y que se exportaba por archivo; el 31/07 llevaba unas tres semanas de desarrollo. El token lo pega el usuario en Administración > Configuración > Integraciones o lo envía al equipo.
 - **Dudoso:** el archivo plano de la capacitación es el de escritorio y no sirve para la nube (11/08); estructura de dos pasos (encabezados y movimientos) o un solo documento; prefijo por tipo ("FC") o por año y mes. Si no se envía el código del producto, World Office lo genera al azar (28/07).
 - **Bug:** prefijo del encabezado vacío (31/07); IVA contado dos veces en un ítem con IVA incluido, retención en autorretenedor y una factura rechazada, sin diagnóstico final (6/08); algunas facturas entran y otras no (11/08).

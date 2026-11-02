@@ -40,7 +40,6 @@
     "alegra",
     "helisa",
     "contai",
-    "siigo pyme",
     "software contable",
     "otro software",
     "otro programa",
@@ -276,15 +275,6 @@
     "eliminar",
     "bloquear",
     "no son mias"
-  ],
-  "exportar-siigo": [
-    "siigo",
-    "exportar a siigo",
-    "pasar a siigo"
-  ],
-  "exportar-world-office": [
-    "world office",
-    "siigo escritorio"
   ],
   "inventario-y-productos": [
     "inventario",
@@ -647,5 +637,95 @@
     "fondear la caja",
     "crear una caja",
     "custodio"
+  ],
+  "exportacion": [
+    "exportar",
+    "exportacion",
+    "exportable",
+    "exportan",
+    "archivo plano",
+    "plano",
+    "que se exporta",
+    "formato de exportacion",
+    "siigo contador",
+    "siigo pyme",
+    "siigo escritorio",
+    "avansys",
+    "sedi",
+    "importar en siigo",
+    "importar en mi programa",
+    "rechaza",
+    "exportar la nomina",
+    "a que programas"
+  ],
+  "exportar-archivo": [
+    "exportar a excel",
+    "archivo para importar",
+    "exportar causaciones",
+    "exportar las compras",
+    "exportar las ventas",
+    "exporto a alegra",
+    "exportar a alegra",
+    "exportar a helisa",
+    "exportar a contai",
+    "maestro de terceros",
+    "terceros",
+    "numeracion",
+    "consecutivo",
+    "archivo para mi programa contable",
+    "exportar todo el mes"
+  ],
+  "conectar-siigo": [
+    "conectar siigo",
+    "conecto siigo",
+    "vincular siigo",
+    "access key",
+    "partner id",
+    "credenciales",
+    "api de siigo",
+    "sincronizar catalogos"
+  ],
+  "enviar-a-siigo": [
+    "siigo",
+    "enviar a siigo",
+    "envio a siigo",
+    "pasar a siigo",
+    "pasar los asientos",
+    "subir a siigo",
+    "exportar a siigo",
+    "llegan a siigo",
+    "error en el push"
+  ],
+  "exportar-world-office": [
+    "world office",
+    "worldoffice",
+    "exportar a world office",
+    "items de inventario",
+    "nota de contabilidad",
+    "tercero interno"
+  ],
+  "exportar-comprobantes-tesoreria": [
+    "exportar egresos",
+    "exportar ingresos",
+    "exportar comprobantes de egreso",
+    "exportar comprobantes de ingreso",
+    "exporto los comprobantes",
+    "exportar comprobantes",
+    "recibos de caja para siigo",
+    "egresos a siigo",
+    "ingresos a siigo"
+  ],
+  "historial-de-exportaciones": [
+    "historial",
+    "exportar de nuevo",
+    "volver a exportar",
+    "reexportar",
+    "ya exporte",
+    "lo que exporte",
+    "descargar de nuevo",
+    "anular en siigo",
+    "reenviar",
+    "lotes de exportacion",
+    "vuelvo a exportar"
   ]
 }

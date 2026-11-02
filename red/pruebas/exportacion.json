@@ -1,0 +1,30 @@
+{
+  "descripcion": "Exportación: preguntas de «cómo hago X» que deben llegar al procedimiento, y otras que deben quedarse en el núcleo o en otro módulo. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": ["870", "\\b490\\b", "271\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "NUVARA", "VALIDATION_ONLY", "ACCOUNTING_AUTO_PUSH"],
+    "C": ["\\busted\\b", "Núvara", "Nuvara", "NUVARA"],
+    "I": ["\\busted\\b", "Núvara", "Nuvara", "NUVARA"]
+  },
+  "casos": [
+    { "pregunta": "¿Cómo exporto a Alegra?", "publico": "P", "nodos": ["exportar-archivo"], "incluye": [["Operaciones › Exportar"]] },
+    { "pregunta": "¿Cómo descargo el archivo para mi programa contable?", "publico": "P", "nodos": ["exportar-archivo"] },
+    { "pregunta": "¿Cómo exporto las compras del mes a Helisa?", "publico": "P", "nodos": ["exportar-archivo"], "incluye": [["Maestro de terceros"]] },
+    { "pregunta": "¿Cómo conecto Siigo?", "publico": "P", "nodos": ["conectar-siigo"], "incluye": [["Partner ID"]] },
+    { "pregunta": "¿Dónde pongo el access key de Siigo?", "publico": "P", "nodos": ["conectar-siigo"] },
+    { "pregunta": "¿Cómo paso los asientos a Siigo?", "publico": "P", "nodos": ["enviar-a-siigo"], "incluye": [["Enviar a Siigo"]] },
+    { "pregunta": "¿Cómo envío las facturas a Siigo?", "publico": "P", "nodos": ["enviar-a-siigo"], "incluye": [["archivadas"]] },
+    { "pregunta": "¿Cómo exporto a World Office?", "publico": "P", "nodos": ["exportar-world-office"], "incluye": [["Nota de contabilidad"]] },
+    { "pregunta": "¿Cómo subo los ítems de inventario a World Office?", "publico": "P", "nodos": ["exportar-world-office"], "incluye": [["Validar Campos"]] },
+    { "pregunta": "¿Cómo exporto los comprobantes de egreso?", "publico": "P", "nodos": ["exportar-comprobantes-tesoreria"], "incluye": [["Siigo o Contai"]] },
+    { "pregunta": "¿Cómo saco los recibos de caja para Siigo?", "publico": "P", "nodos": ["exportar-comprobantes-tesoreria"] },
+    { "pregunta": "¿Cómo vuelvo a exportar un mes?", "publico": "P", "nodos": ["historial-de-exportaciones"], "incluye": [["Exportar de nuevo"]] },
+    { "pregunta": "¿Dónde veo lo que ya exporté?", "publico": "P", "nodos": ["historial-de-exportaciones"] },
+    { "pregunta": "¿A qué programas exportan?", "publico": "P", "nodos": ["exportacion"], "incluye": [["Avansys"]] },
+    { "pregunta": "¿Se puede exportar la nómina?", "publico": "P", "nodos": ["exportacion"], "incluye": [["nómina todavía no se exporta"]] },
+    { "pregunta": "¿Por qué Siigo rechaza lo que envío?", "publico": "P", "nodos": ["exportacion"], "incluye": [["Errores comunes"]] },
+    { "pregunta": "¿El envío a Siigo es automático?", "publico": "I", "nodos": ["exportacion"], "incluye": [["ACCOUNTING_AUTO_PUSH_ON_APPROVE"]] },
+    { "pregunta": "¿Cómo le pago a un proveedor?", "publico": "P", "nodos": ["registrar-pago-proveedor"], "noNodos": ["exportar-comprobantes-tesoreria"] },
+    { "pregunta": "¿Dónde descargo el archivo de la PILA?", "publico": "P", "nodos": ["generar-planilla-pila"], "noNodos": ["exportar-archivo"] },
+    { "pregunta": "¿Cómo archivo las facturas aprobadas?", "publico": "P", "nodos": ["archivar-aprobadas"], "noNodos": ["exportar-archivo"] }
+  ]
+}
