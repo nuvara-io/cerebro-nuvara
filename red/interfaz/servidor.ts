@@ -48,9 +48,11 @@ Bun.serve({
 
     if (pathname === "/api/estado") {
       const prueba = JSON.parse(readFileSync(join(RAIZ_RED, "pruebas", "precios.json"), "utf8"));
+      const indice = leerIndice();
       return json({
         ia: HAY_IA,
-        nodos: leerIndice().nodos,
+        nodos: indice.nodos,
+        conexiones: indice.conexiones,
         ejemplos: prueba.casos.map((c: Pedido) => ({ pregunta: c.pregunta, publico: c.publico })),
       });
     }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-tema="claro">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,532 +7,1041 @@
 <title>Red de consulta · núvara</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  /* Tokens del sistema de diseño de núvara (modo claro) */
+  /* Tokens del sistema de diseño de núvara */
   :root {
-    --blue-primary: #3082EE;
+    --blue: #3082EE;
     --blue-dark: #23357D;
-    --teal-primary: #4BCEA6;
+    --blue-light: #8EC6F7;
+    --teal: #4BCEA6;
     --teal-dark: #09695C;
     --blue-90: #E9F1FC;
-    --gray-900: #111827;
-    --gray-700: #404652;
-    --gray-500: #878B92;
-    --gray-300: #B6B8BD;
-    --gray-200: #CFCFCF;
-    --gray-100: #E5E6E8;
+    --blue-95: #F4F8FE;
+    --teal-90: #EBF8F4;
+    --ink: #111827;
+    --ink-2: #404652;
+    --ink-3: #878B92;
+    --line: #E5E6E8;
+    --line-2: #CFCFCF;
     --white: #FFFFFF;
     --warning: #F3C11B;
+    --warning-bg: #FEF8E4;
     --danger: #E03E1A;
     --success: #009D4E;
+    /* Noche: el azul oscuro de núvara llevado a fondo */
+    --noche: #0A1029;
+    --noche-2: #0E1636;
+    --noche-3: #16204A;
+    --borde-noche: rgba(255,255,255,.09);
+    --texto-noche: rgba(255,255,255,.88);
+    --texto-noche-2: rgba(255,255,255,.58);
+    --texto-noche-3: rgba(255,255,255,.38);
     --radius: 5px;
-    --thin: 0.5px;
-    --default: 1.2px;
-    --nav: 240px;
-    --header: 88px;
-    color-scheme: light;
+    --radius-lg: 12px;
   }
 
   * { box-sizing: border-box; }
-  html, body { background: var(--white); }
+  html, body { height: 100%; background: var(--noche); }
   body {
-    margin: 0;
-    color: var(--gray-900);
-    font: 400 16px/1.5 'Jost', system-ui, sans-serif;
-    display: grid;
-    grid-template-columns: var(--nav) 1fr;
-    min-height: 100vh;
+    margin: 0; color: var(--texto-noche);
+    font: 400 16px/1.55 'Jost', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+    display: grid; grid-template-columns: 284px 1fr; overflow: hidden;
   }
-  button, input { font-family: inherit; }
+  button, input, textarea { font-family: inherit; color: inherit; }
+  [hidden] { display: none !important; }
 
-  /* ---------- Menú lateral (modo claro) ---------- */
-  .nav {
-    background: var(--white);
-    border-right: var(--thin) solid var(--gray-200);
-    padding: 0 16px 24px;
-    position: sticky; top: 0; height: 100vh;
-    display: flex; flex-direction: column;
+  /* ================= Barra lateral: conversaciones ================= */
+  aside {
+    background: var(--noche-2); border-right: 1px solid var(--borde-noche);
+    display: flex; flex-direction: column; min-height: 0; height: 100vh; height: 100dvh;
+    padding: 18px 14px 14px;
   }
-  .nav .logo { height: var(--header); display: flex; align-items: center; padding-left: 8px; }
-  .nav .logo img { width: 124px; height: auto; display: block; }
-  .nav h6 { font: 400 14px/1 'Jost', sans-serif; color: var(--gray-500); margin: 16px 8px 10px; }
-  .nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-  .nav a {
-    display: flex; align-items: center; gap: 12px;
-    font: 300 18px/1.2 'Jost', sans-serif;
-    color: var(--blue-dark);
-    text-decoration: none;
-    border-radius: var(--radius);
-    padding: 10px 8px;
+  .marca { display: flex; align-items: center; justify-content: space-between; padding: 2px 8px 18px; }
+  .marca img { width: 100px; display: block; }
+  .cerrar-menu { display: none; background: none; border: 0; color: var(--texto-noche-2); cursor: pointer; padding: 4px; }
+  .nueva {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    font: 500 15px/1 'Jost', sans-serif; color: var(--white);
+    background: linear-gradient(135deg, rgba(48,130,238,.22), rgba(75,206,166,.16));
+    border: 1px solid rgba(142,198,247,.28); border-radius: 10px;
+    padding: 12px 14px; cursor: pointer; transition: border-color .15s, background .15s;
   }
-  .nav a svg { flex: none; color: var(--blue-primary); }
-  .nav a:hover { background: var(--blue-90); }
-  .nav a[aria-current="page"] { background: var(--blue-90); color: var(--blue-primary); font-weight: 600; }
-  .nav .pie { margin-top: auto; font: 400 14px/1.4 'Jost', sans-serif; color: var(--gray-500); padding: 0 8px; }
-
-  /* ---------- Área de trabajo ---------- */
-  .area { min-width: 0; }
-  .cabecera {
-    height: var(--header);
-    display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    padding: 0 32px;
-    border-bottom: var(--thin) solid var(--gray-200);
+  .nueva:hover { border-color: var(--blue-light); background: linear-gradient(135deg, rgba(48,130,238,.32), rgba(75,206,166,.22)); }
+  .etiqueta { font: 500 11px/1 'Jost', sans-serif; letter-spacing: 1.6px; text-transform: uppercase; color: var(--texto-noche-3); margin: 22px 10px 8px; }
+  .conversaciones { flex: 1; min-height: 0; overflow-y: auto; margin: 0 -4px; padding: 0 4px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.12) transparent; }
+  .conversaciones ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .conv {
+    position: relative; display: flex; align-items: center; width: 100%;
+    border-radius: 8px; transition: background .12s;
   }
-  .migas { font: 300 16px/1 'Jost', sans-serif; color: var(--gray-900); }
-  .migas span { margin: 0 8px; color: var(--gray-500); }
-  .migas b { font-weight: 600; color: var(--blue-primary); }
-  .cabecera .ia { font: 400 14px/1 'Jost', sans-serif; color: var(--gray-500); }
-
-  .pagina { padding: 28px 32px 48px; max-width: 1200px; }
-  .pagina h1 { font: 700 26px/1.3 'Jost', sans-serif; color: var(--blue-dark); margin: 0; }
-  .vista > p { font: 300 18px/1.5 'Jost', sans-serif; color: var(--gray-700); margin: 6px 0 24px; }
-  .vista > p code { font: 400 16px/1 'Jost', sans-serif; color: var(--blue-primary); }
-  .vista[hidden] { display: none; }
-
-  /* Formulario de consulta */
-  .formulario { border: var(--thin) solid var(--gray-200); border-radius: var(--radius); padding: 20px; }
-  .fila { display: flex; gap: 12px; }
-  .etq { display: block; font: 600 16px/1 'Jost', sans-serif; color: var(--gray-700); margin-bottom: 10px; }
-  .campo {
-    flex: 1; min-width: 0;
-    font: 300 18px/1.4 'Jost', sans-serif;
-    color: var(--gray-900);
-    background: var(--white);
-    border: var(--thin) solid var(--gray-300);
-    border-radius: var(--radius);
-    padding: 11px 14px;
-    outline: none;
+  .conv:hover { background: rgba(255,255,255,.05); }
+  .conv.activa { background: rgba(142,198,247,.1); }
+  .conv.activa::before { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: var(--teal); }
+  .conv > button.abrir {
+    flex: 1; min-width: 0; text-align: left; background: none; border: 0; cursor: pointer;
+    padding: 9px 10px 9px 12px; display: grid; gap: 2px;
   }
-  .campo::placeholder { color: var(--gray-300); }
-  .campo:hover, .campo:focus { border: var(--default) solid var(--blue-primary); padding: 10.3px 13.3px; }
-  .boton {
-    flex: none;
-    font: 600 18px/1 'Jost', sans-serif;
-    color: var(--white);
-    background: var(--blue-primary);
-    border: var(--default) solid var(--blue-primary);
-    border-radius: var(--radius);
-    padding: 0 28px;
-    cursor: pointer;
+  .conv .t { font: 400 14px/1.3 'Jost', sans-serif; color: var(--texto-noche); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .conv .m { font: 400 12px/1.2 'Jost', sans-serif; color: var(--texto-noche-3); }
+  .conv > button.borrar {
+    flex: none; opacity: 0; background: none; border: 0; cursor: pointer; color: var(--texto-noche-3);
+    padding: 6px; margin-right: 4px; border-radius: 6px;
   }
-  .boton:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
-  .boton:disabled { background: var(--white); color: var(--gray-200); border-color: var(--gray-200); cursor: default; }
-  .opciones { display: flex; flex-wrap: wrap; gap: 20px 48px; margin-top: 20px; }
-  .radios { display: flex; flex-wrap: wrap; gap: 8px 20px; }
-  .radio { display: flex; align-items: center; gap: 8px; font: 300 17px/1.2 'Jost', sans-serif; color: var(--gray-900); cursor: pointer; }
-  .radio input { appearance: none; width: 18px; height: 18px; margin: 0; border: var(--default) solid var(--gray-500); border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
-  .radio input:checked { border-color: var(--blue-primary); }
-  .radio input:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--blue-primary); }
-  .radio input:disabled { border-color: var(--gray-200); cursor: not-allowed; }
-  .radio:has(input:disabled) { color: var(--gray-300); cursor: not-allowed; }
-  .nota { font: 300 14px/1.4 'Jost', sans-serif; color: var(--gray-500); margin: 6px 0 0; }
+  .conv:hover > button.borrar, .conv > button.borrar:focus { opacity: 1; }
+  .conv > button.borrar:hover { color: var(--white); background: rgba(255,255,255,.08); }
+  .sin-conv { font: 300 14px/1.5 'Jost', sans-serif; color: var(--texto-noche-3); padding: 4px 10px; margin: 0; }
 
-  /* Resultados */
-  .resultados { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; margin-top: 28px; align-items: start; }
-  h2 { font: 600 20px/1.4 'Jost', sans-serif; margin: 0 0 12px; color: var(--gray-900); }
-  .vacio { font: 300 17px/1.5 'Jost', sans-serif; color: var(--gray-500); border: var(--thin) dashed var(--gray-300); border-radius: var(--radius); padding: 24px; margin: 0; }
-  .vacio button { font: 600 17px/1 'Jost', sans-serif; color: var(--blue-primary); background: none; border: 0; padding: 0; cursor: pointer; }
+  .herramientas { border-top: 1px solid var(--borde-noche); padding-top: 10px; margin-top: 10px; display: grid; gap: 2px; }
+  .herramientas button {
+    display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+    font: 400 14px/1 'Jost', sans-serif; color: var(--texto-noche-2);
+    background: none; border: 0; border-radius: 8px; padding: 10px; cursor: pointer;
+  }
+  .herramientas button:hover, .herramientas button[aria-current="page"] { background: rgba(255,255,255,.05); color: var(--white); }
+  .herramientas svg { flex: none; color: var(--blue-light); }
+  .estado-ia { display: flex; align-items: center; gap: 8px; font: 400 12px/1 'Jost', sans-serif; color: var(--texto-noche-3); padding: 10px 10px 2px; }
+  .estado-ia i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.3); }
+  .estado-ia.on i { background: var(--teal); box-shadow: 0 0 8px var(--teal); }
 
-  .consulta { border: var(--default) solid var(--gray-200); border-radius: var(--radius); margin-bottom: 14px; cursor: pointer; }
-  .consulta:hover { border-color: var(--blue-primary); }
-  .consulta.activa { border: 1.8px solid var(--teal-primary); }
-  .consulta-cab { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: var(--thin) solid var(--gray-100); }
-  .consulta-cab h3 { font: 600 20px/1.35 'Jost', sans-serif; color: var(--blue-primary); margin: 0; }
-  .consulta-cab .meta { font: 400 14px/1.4 'Jost', sans-serif; color: var(--gray-500); text-align: right; flex: none; }
-  .consulta-cuerpo { padding: 16px 18px; }
-  .consulta-pie { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 18px; border-top: var(--thin) solid var(--gray-100); font: 400 14px/1.3 'Jost', sans-serif; color: var(--gray-700); }
-  .consulta-pie b { font-weight: 600; color: var(--gray-500); margin-right: 4px; }
+  /* ================= Área principal ================= */
+  .principal { position: relative; min-width: 0; height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden;
+    background:
+      radial-gradient(ellipse 55% 50% at 50% 40%, rgba(48,130,238,.14), transparent 70%),
+      radial-gradient(ellipse 40% 30% at 50% 100%, rgba(75,206,166,.06), transparent 70%),
+      var(--noche);
+  }
+  #cielo, #cerebro { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; transition: opacity .8s ease; }
+  .principal.conversando #cerebro { opacity: .32; }
+  .principal.conversando.pensando #cerebro { opacity: .85; }
 
-  .md { font: 300 17px/1.55 'Jost', sans-serif; color: var(--gray-900); }
-  .md h3 { display: none; }
-  .md h4 { font: 600 16px/1.3 'Jost', sans-serif; color: var(--gray-500); margin: 16px 0 6px; }
-  .md h4:first-child { margin-top: 0; }
-  .md p { margin: 0 0 8px; }
-  .md .fuente { font-size: 14px; color: var(--gray-500); }
-  .md ul { margin: 0 0 8px; padding-left: 20px; }
-  .md li { margin-bottom: 4px; }
-  .md strong { font-weight: 600; }
-  .md code { font: 400 15px/1 'Jost', sans-serif; color: var(--blue-primary); }
-  .respuesta { font: 300 18px/1.55 'Jost', sans-serif; margin: 0; white-space: pre-wrap; }
+  .cabecera { position: relative; z-index: 3; display: flex; align-items: center; gap: 12px; padding: 14px 22px; min-height: 58px; }
+  .abrir-menu { display: none; background: none; border: 0; color: var(--texto-noche); cursor: pointer; padding: 4px; }
+  .cabecera h1 { font: 500 15px/1.3 'Jost', sans-serif; color: var(--texto-noche-2); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lectura { margin-left: auto; font: 500 11px/1.4 'Jost', sans-serif; letter-spacing: 1.6px; text-transform: uppercase; color: var(--texto-noche-3); white-space: nowrap; }
+  .lectura b { color: var(--teal); font-weight: 600; }
 
-  .alerta { display: flex; gap: 12px; align-items: flex-start; font: 300 17px/1.45 'Jost', sans-serif; border: var(--default) solid var(--blue-primary); border-radius: var(--radius); padding: 12px 14px; }
-  .alerta svg { flex: none; margin-top: 2px; color: var(--warning); }
-  .alerta.error svg { color: var(--danger); }
+  .hilo { display: flex; flex-direction: column; }
+  #contenido { flex: 1 0 auto; display: flex; flex-direction: column; }
+  .bienvenida { flex: 1; }
+  .hilo { position: relative; z-index: 2; flex: 1; min-height: 0; overflow-y: auto; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.14) transparent; }
+  .ancho { width: 100%; max-width: 820px; margin: 0 auto; padding: 0 24px; }
 
-  .badge { display: inline-block; font: 600 13px/1 'Jost', sans-serif; color: var(--white); border-radius: var(--radius); padding: 5px 8px; min-width: 73px; text-align: center; }
-  .badge.ok { background: var(--success); }
-  .badge.no { background: var(--gray-500); }
+  /* Bienvenida: el cerebro ocupa el centro */
+  .bienvenida { min-height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 18px; text-align: center; }
+  .bienvenida .ceja { display: inline-flex; align-items: center; gap: 8px; font: 500 11px/1 'Jost', sans-serif; letter-spacing: 2.2px; text-transform: uppercase; color: var(--blue-light); margin: 0 auto 14px; }
+  .bienvenida .ceja i { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+  .bienvenida h2 { font: 700 42px/1.08 'Jost', sans-serif; letter-spacing: -.8px; color: var(--white); margin: 0; }
+  .bienvenida h2 em { font-style: normal; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 45%, var(--teal) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .bienvenida p { font: 300 17px/1.55 'Jost', sans-serif; color: var(--texto-noche-2); margin: 12px auto 22px; max-width: 520px; }
+  .sugerencias { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left; }
+  .sugerencias button {
+    text-align: left;
+    background: rgba(14,22,54,.7); border: 1px solid var(--borde-noche); border-radius: 12px;
+    padding: 13px 15px; cursor: pointer; backdrop-filter: blur(6px);
+    font: 400 15px/1.35 'Jost', sans-serif; color: var(--texto-noche);
+    transition: border-color .15s, background .15s;
+  }
+  .sugerencias button span { display: block; font: 500 11px/1 'Jost', sans-serif; letter-spacing: 1.4px; text-transform: uppercase; color: var(--texto-noche-3); margin-bottom: 6px; }
+  .sugerencias button:hover { border-color: rgba(142,198,247,.45); background: rgba(22,32,74,.85); }
 
-  /* Detalle: indicador de pasos vertical */
-  .detalle { border: var(--thin) solid var(--gray-200); border-radius: var(--radius); padding: 18px 20px; position: sticky; top: 24px; }
-  .detalle h2 { margin-bottom: 16px; }
-  .pasos { list-style: none; margin: 0; padding: 0; }
-  .paso { position: relative; display: grid; grid-template-columns: 24px 1fr; gap: 12px; padding-bottom: 20px; }
-  .paso:last-child { padding-bottom: 0; }
-  .paso::before { content: ""; position: absolute; left: 11px; top: 26px; bottom: 2px; width: 2px; background: var(--teal-dark); }
-  .paso:last-child::before { display: none; }
-  .paso.no::before { background: var(--gray-500); }
-  .circulo { width: 24px; height: 24px; border-radius: 50%; background: var(--teal-primary); color: var(--white); display: grid; place-items: center; }
-  .paso.no .circulo { background: var(--gray-500); }
-  .paso b { display: block; font: 600 16px/1.3 'Jost', sans-serif; padding-top: 2px; }
-  .paso p { margin: 4px 0 0; font: 300 15px/1.45 'Jost', sans-serif; color: var(--gray-700); }
-  .paso .md { font-size: 15px; color: var(--gray-700); margin-top: 6px; }
+  /* Mensajes */
+  .mensajes { padding: 12px 0 24px; display: flex; flex-direction: column; gap: 22px; }
+  .yo { align-self: flex-end; max-width: 78%; display: grid; justify-items: end; gap: 6px; }
+  .yo .burbuja { background: linear-gradient(135deg, var(--blue), #2A6FD0); color: var(--white); border-radius: 18px 18px 4px 18px; padding: 11px 16px; font: 400 16px/1.45 'Jost', sans-serif; white-space: pre-wrap; box-shadow: 0 6px 20px rgba(48,130,238,.25); }
+  .yo .quien { font: 400 12px/1 'Jost', sans-serif; color: var(--texto-noche-3); }
 
-  /* Tablas */
+  .nuvara { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--white); display: grid; place-items: center; box-shadow: 0 0 0 1px rgba(142,198,247,.35), 0 0 18px rgba(75,206,166,.25); }
+  .avatar img { width: 20px; display: block; }
+  .pensando-txt { display: flex; align-items: center; gap: 10px; padding-top: 7px; font: 400 14px/1 'Jost', sans-serif; color: var(--texto-noche-2); }
+  .pensando-txt i { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: latido 1s infinite ease-in-out; }
+  .pensando-txt i:nth-child(2) { animation-delay: .15s; } .pensando-txt i:nth-child(3) { animation-delay: .3s; }
+  @keyframes latido { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+
+  /* Tarjeta de respuesta (blanca, corporativa) */
+  .respuesta { background: var(--white); color: var(--ink); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.35); min-width: 0; }
+  .respuesta-cab { padding: 18px 22px 16px; border-bottom: 1px solid var(--line); }
+  .respuesta-cab h3 { font: 600 22px/1.25 'Jost', sans-serif; color: var(--blue-dark); margin: 0; }
+  .ruta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
+  .paso-ruta { display: inline-flex; align-items: center; font: 500 12px/1 'Jost', sans-serif; padding: 6px 10px; border-radius: 999px; background: var(--blue-95); color: var(--ink-2); border: 1px solid var(--blue-90); }
+  .paso-ruta.nodo { background: var(--blue); border-color: var(--blue); color: var(--white); }
+  .paso-ruta.conexion { background: var(--white); border-color: var(--blue); color: var(--blue); }
+  .paso-ruta.filtro { background: var(--teal-90); border-color: #C8EFE3; color: var(--teal-dark); }
+  .paso-ruta.pendiente { background: var(--warning-bg); border-color: #F7E3A0; color: #7A5D00; }
+  .flecha { color: var(--line-2); display: inline-flex; }
+  .respuesta-cuerpo { padding: 18px 22px 4px; }
+  .bloque { margin-bottom: 18px; }
+  .bloque h4 { font: 600 11px/1 'Jost', sans-serif; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+  .hechos { list-style: none; margin: 0; padding: 0; }
+  .hechos li { display: grid; grid-template-columns: 16px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid #F1F2F4; }
+  .hechos li:last-child { border-bottom: 0; }
+  .hechos li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin: 9px 0 0 3px; }
+  .hechos .t { font: 300 16px/1.55 'Jost', sans-serif; color: var(--ink-2); }
+  .hechos .t strong { font-weight: 600; color: var(--ink); }
+  .respuesta code { font: 500 14px/1 'Jost', sans-serif; color: var(--blue); }
+  .texto { font: 300 16px/1.6 'Jost', sans-serif; color: var(--ink-2); margin: 0 0 10px; }
+  .redactada { font: 300 17px/1.65 'Jost', sans-serif; color: var(--ink); margin: 0 0 16px; white-space: pre-wrap; }
+  .fuente { display: flex; gap: 8px; align-items: flex-start; font: 400 12px/1.5 'Jost', sans-serif; color: var(--ink-3); padding: 10px 0 16px; border-top: 1px solid var(--line); }
+  .fuente svg { flex: none; margin-top: 2px; }
+  .aviso { display: flex; gap: 12px; align-items: flex-start; background: var(--warning-bg); border: 1px solid #F7E3A0; border-radius: 8px; padding: 14px 16px; margin-bottom: 18px; }
+  .aviso svg { flex: none; color: #C99A00; margin-top: 1px; }
+  .aviso b { display: block; font: 600 16px/1.3 'Jost', sans-serif; color: var(--ink); }
+  .aviso span { font: 300 15px/1.5 'Jost', sans-serif; color: var(--ink-2); }
+  .aviso.error { background: #FDEEEA; border-color: #F6C6BA; }
+  .aviso.error svg { color: var(--danger); }
+
+  details.traza { border-top: 1px solid var(--line); background: #FAFBFC; }
+  details.traza summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 12px 22px; font: 500 14px/1 'Jost', sans-serif; color: var(--blue); }
+  details.traza summary::-webkit-details-marker { display: none; }
+  details.traza summary svg { transition: transform .2s; }
+  details.traza[open] summary svg { transform: rotate(180deg); }
+  .traza-cuerpo { padding: 2px 22px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .traza h5 { font: 600 11px/1 'Jost', sans-serif; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+  .barras { display: grid; gap: 10px; }
+  .barra-fila { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; }
+  .barra-fila .nombre { font: 500 13px/1.2 'Jost', sans-serif; color: var(--ink); }
+  .barra-fila .pts { font: 600 13px/1 'Jost', sans-serif; color: var(--ink-2); }
+  .barra-fila .riel { grid-column: 1 / -1; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+  .barra-fila .riel i { display: block; height: 100%; background: var(--line-2); border-radius: 3px; }
+  .barra-fila.gana .riel i { background: linear-gradient(90deg, var(--blue), var(--teal)); }
+  .barra-fila.conecta .riel i { background: var(--blue-light); }
+  .barra-fila .claves { grid-column: 1 / -1; font: 300 12px/1.3 'Jost', sans-serif; color: var(--ink-3); }
+  .lista-ocultas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .lista-ocultas span { display: inline-flex; align-items: center; gap: 6px; font: 400 12px/1 'Jost', sans-serif; color: var(--ink-2); background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; }
+  .reglas { font: 300 13px/1.5 'Jost', sans-serif; color: var(--ink-2); margin: 0; padding-left: 16px; }
+  .reglas li { margin-bottom: 5px; }
+  .reglas strong { font-weight: 600; }
+  .nota { font: 300 13px/1.5 'Jost', sans-serif; color: var(--ink-3); margin: 0; }
+
+  /* Caja para escribir */
+  .redactar { position: relative; z-index: 3; padding: 6px 0 16px; }
+  .caja {
+    background: rgba(14,22,54,.82); border: 1px solid rgba(142,198,247,.22); border-radius: 18px;
+    padding: 10px 10px 10px 18px; backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .caja:focus-within { border-color: rgba(142,198,247,.55); box-shadow: 0 0 0 4px rgba(48,130,238,.16), 0 10px 40px rgba(0,0,0,.35); }
+  .caja-fila { display: flex; align-items: flex-end; gap: 10px; }
+  .caja textarea {
+    flex: 1; min-width: 0; resize: none; border: 0; outline: none; background: transparent;
+    color: var(--white); font: 400 17px/1.45 'Jost', sans-serif; padding: 8px 0; max-height: 160px;
+  }
+  .caja textarea::placeholder { color: var(--texto-noche-3); }
+  .enviar {
+    flex: none; width: 42px; height: 42px; border-radius: 50%; border: 0; cursor: pointer;
+    background: linear-gradient(135deg, var(--blue), var(--teal)); color: var(--white);
+    display: grid; place-items: center; transition: transform .15s, opacity .15s;
+  }
+  .enviar:hover { transform: scale(1.06); }
+  .enviar:disabled { opacity: .35; cursor: default; transform: none; }
+  .opciones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--borde-noche); }
+  .opcion { display: flex; align-items: center; gap: 8px; }
+  .opcion > span { font: 500 11px/1 'Jost', sans-serif; letter-spacing: 1.2px; text-transform: uppercase; color: var(--texto-noche-3); }
+  .segmentos { display: inline-flex; background: rgba(255,255,255,.04); border: 1px solid var(--borde-noche); border-radius: 999px; padding: 2px; }
+  .segmentos button { border: 0; background: transparent; cursor: pointer; border-radius: 999px; font: 500 12px/1 'Jost', sans-serif; color: var(--texto-noche-2); padding: 6px 11px; transition: background .15s, color .15s; }
+  .segmentos button:hover { color: var(--white); }
+  .segmentos button[aria-pressed="true"] { background: var(--white); color: var(--blue-dark); }
+  .segmentos button:disabled { color: rgba(255,255,255,.22); cursor: not-allowed; }
+  .ayuda { text-align: center; font: 400 12px/1.4 'Jost', sans-serif; color: var(--texto-noche-3); margin: 8px 0 0; }
+
+  /* ================= Páginas blancas: pruebas y mapa ================= */
+  .pagina { position: relative; z-index: 4; flex: 1; min-height: 0; overflow-y: auto; background: var(--white); color: var(--ink); }
+  .pagina .ancho { max-width: 1000px; padding: 36px 32px 64px; }
+  .pagina h2 { font: 700 30px/1.2 'Jost', sans-serif; color: var(--blue-dark); margin: 0; }
+  .pagina .ancho > p { font: 300 17px/1.5 'Jost', sans-serif; color: var(--ink-2); margin: 8px 0 22px; }
+  .pagina p code { font: 500 15px/1 'Jost', sans-serif; color: var(--blue); }
+  .volver { display: inline-flex; align-items: center; gap: 6px; font: 500 14px/1 'Jost', sans-serif; color: var(--blue); background: none; border: 0; padding: 0; margin-bottom: 18px; cursor: pointer; }
+  .resumen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .kpi { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px 18px; }
+  .kpi b { display: block; font: 700 30px/1 'Jost', sans-serif; color: var(--blue); }
+  .kpi span { font: 300 14px/1.3 'Jost', sans-serif; color: var(--ink-3); }
+  .filtros { display: inline-flex; gap: 4px; margin-bottom: 14px; background: var(--blue-95); border: 1px solid var(--blue-90); border-radius: 999px; padding: 3px; }
+  .filtros button { border: 0; background: transparent; border-radius: 999px; padding: 8px 14px; font: 500 14px/1 'Jost', sans-serif; color: var(--ink-2); cursor: pointer; }
+  .filtros button[aria-pressed="true"] { background: var(--white); color: var(--blue); box-shadow: 0 1px 3px rgba(35,53,125,.15); }
+  .tabla { border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
   table { width: 100%; border-collapse: collapse; }
-  th { text-align: left; font: 600 16px/1.3 'Jost', sans-serif; color: var(--gray-900); padding: 12px 14px; background: var(--white); border-bottom: var(--default) solid var(--gray-200); }
-  td { padding: 12px 14px; border-bottom: var(--default) solid var(--gray-100); font: 300 17px/1.4 'Jost', sans-serif; vertical-align: middle; }
+  th { text-align: left; font: 600 12px/1 'Jost', sans-serif; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); padding: 14px 18px; background: #FAFBFC; border-bottom: 1px solid var(--line); }
+  td { padding: 13px 18px; border-bottom: 1px solid #F1F2F4; font: 300 16px/1.4 'Jost', sans-serif; color: var(--ink-2); vertical-align: middle; }
   tbody tr:last-child td { border-bottom: 0; }
-  td.principal { font-weight: 600; color: var(--blue-primary); white-space: nowrap; }
+  tbody tr:hover td { background: var(--blue-95); }
+  td.principal-c { font-weight: 500; color: var(--ink); }
   td.accion { text-align: right; width: 1%; white-space: nowrap; }
-  tbody tr:hover td { background: rgba(220, 237, 251, .3); }
-  .tabla { border: var(--default) solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
-  .paso table th, .paso table td { padding: 6px 4px; font-size: 14px; }
-  .paso table th { font-weight: 600; color: var(--gray-500); }
-  .paso td.pts { text-align: right; font-weight: 600; }
-  .paso tr.gana td { background: var(--blue-90); }
-  .outline {
-    font: 600 15px/1 'Jost', sans-serif;
-    color: var(--blue-primary);
-    background: var(--white);
-    border: var(--default) solid var(--blue-primary);
-    border-radius: var(--radius);
-    padding: 8px 14px;
-    cursor: pointer;
-  }
-  .outline:hover { background: var(--blue-primary); color: var(--white); }
+  .chip { display: inline-block; font: 500 12px/1 'Jost', sans-serif; border-radius: 999px; padding: 6px 10px; white-space: nowrap; }
+  .chip.ok { background: #E3F5EC; color: #00703A; }
+  .chip.no { background: #F1F2F4; color: var(--ink-3); }
+  .chip.P { background: var(--teal-90); color: var(--teal-dark); }
+  .chip.C { background: var(--blue-90); color: var(--blue); }
+  .chip.I { background: #EFF0F5; color: var(--blue-dark); }
+  .enlace { font: 500 14px/1 'Jost', sans-serif; color: var(--blue); background: var(--white); border: 1.2px solid var(--blue); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+  .enlace:hover { background: var(--blue); color: var(--white); }
 
-  .filtros { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
-  .filtro { font: 600 16px/1 'Jost', sans-serif; color: var(--blue-primary); background: var(--white); border: var(--default) solid var(--blue-primary); border-radius: var(--radius); padding: 9px 16px; cursor: pointer; }
-  .filtro[aria-pressed="true"] { background: var(--blue-primary); color: var(--white); }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 1080px) { .resultados { grid-template-columns: 1fr; } .detalle { position: static; } }
-  @media (max-width: 760px) {
-    body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-    .nav { position: static; height: auto; flex-direction: row; align-items: center; gap: 8px; padding: 0 12px; border-right: 0; border-bottom: var(--thin) solid var(--gray-200); overflow-x: auto; }
-    .nav .logo { height: 60px; padding: 0 8px 0 0; }
-    .nav .logo img { width: 92px; }
-    .nav h6, .nav .pie { display: none; }
-    .nav ul { display: flex; gap: 2px; }
-    .nav a { font-size: 15px; padding: 8px; white-space: nowrap; }
-    .nav a svg { display: none; }
-    .cabecera { height: auto; padding: 14px 16px; }
-    .cabecera .ia { display: none; }
-    .pagina { padding: 20px 16px 40px; }
-    .fila { flex-direction: column; }
-    .boton { padding: 13px; }
-    .consulta-cab { flex-direction: column; }
-    .consulta-cab .meta { text-align: left; }
-    th, td { padding: 10px 8px; font-size: 15px; }
+  /* ================= Tema claro ================= */
+  [data-tema="claro"], [data-tema="claro"] body { background: var(--white); }
+  [data-tema="claro"] body { color: var(--ink); }
+  [data-tema="claro"] aside { background: #F7F9FC; border-right-color: var(--line); }
+  [data-tema="claro"] .cerrar-menu { color: var(--ink-3); }
+  [data-tema="claro"] .nueva { color: var(--blue-dark); background: linear-gradient(135deg, rgba(48,130,238,.10), rgba(75,206,166,.08)); border-color: rgba(48,130,238,.28); }
+  [data-tema="claro"] .nueva:hover { background: linear-gradient(135deg, rgba(48,130,238,.16), rgba(75,206,166,.12)); border-color: var(--blue); }
+  [data-tema="claro"] .etiqueta, [data-tema="claro"] .sin-conv, [data-tema="claro"] .conv .m, [data-tema="claro"] .estado-ia, [data-tema="claro"] .ayuda, [data-tema="claro"] .lectura, [data-tema="claro"] .yo .quien, [data-tema="claro"] .opcion > span { color: var(--ink-3); }
+  [data-tema="claro"] .conv:hover { background: rgba(35,53,125,.05); }
+  [data-tema="claro"] .conv.activa { background: var(--blue-90); }
+  [data-tema="claro"] .conv .t { color: var(--ink); }
+  [data-tema="claro"] .conv > button.borrar { color: var(--ink-3); }
+  [data-tema="claro"] .conv > button.borrar:hover { color: var(--ink); background: rgba(17,24,39,.06); }
+  [data-tema="claro"] .conversaciones, [data-tema="claro"] .hilo { scrollbar-color: rgba(17,24,39,.15) transparent; }
+  [data-tema="claro"] .herramientas { border-top-color: var(--line); }
+  [data-tema="claro"] .herramientas button { color: var(--ink-2); }
+  [data-tema="claro"] .herramientas button:hover, [data-tema="claro"] .herramientas button[aria-current="page"] { background: rgba(35,53,125,.05); color: var(--ink); }
+  [data-tema="claro"] .herramientas svg { color: var(--blue); }
+  [data-tema="claro"] .estado-ia i { background: var(--line-2); }
+  [data-tema="claro"] .principal { background: radial-gradient(ellipse 55% 50% at 50% 38%, rgba(48,130,238,.07), transparent 70%), var(--white); }
+  [data-tema="claro"] .principal.conversando #cerebro { opacity: .22; }
+  [data-tema="claro"] .principal.conversando.pensando #cerebro { opacity: .8; }
+  [data-tema="claro"] .abrir-menu { color: var(--ink); }
+  [data-tema="claro"] .cabecera h1 { color: var(--ink-2); }
+  [data-tema="claro"] .bienvenida .ceja { color: var(--blue); }
+  [data-tema="claro"] .bienvenida h2 { color: var(--blue-dark); }
+  [data-tema="claro"] .bienvenida h2 em { background: linear-gradient(90deg, var(--blue) 0%, #2BA9C9 55%, var(--teal) 100%); -webkit-background-clip: text; background-clip: text; }
+  [data-tema="claro"] .bienvenida p { color: var(--ink-2); }
+  [data-tema="claro"] .sugerencias button { background: rgba(255,255,255,.85); border-color: var(--line); color: var(--ink); }
+  [data-tema="claro"] .sugerencias button span { color: var(--ink-3); }
+  [data-tema="claro"] .sugerencias button:hover { border-color: var(--blue); background: var(--blue-95); }
+  [data-tema="claro"] .yo .burbuja { box-shadow: 0 4px 14px rgba(48,130,238,.22); }
+  [data-tema="claro"] .avatar { box-shadow: 0 0 0 1px var(--line), 0 2px 8px rgba(35,53,125,.08); }
+  [data-tema="claro"] .pensando-txt { color: var(--ink-2); }
+  [data-tema="claro"] .respuesta { border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(17,24,39,.04), 0 8px 30px rgba(35,53,125,.08); }
+  [data-tema="claro"] .caja { background: rgba(255,255,255,.92); border-color: var(--line-2); box-shadow: 0 2px 6px rgba(17,24,39,.04), 0 10px 30px rgba(35,53,125,.08); }
+  [data-tema="claro"] .caja:focus-within { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(48,130,238,.12), 0 10px 30px rgba(35,53,125,.08); }
+  [data-tema="claro"] .caja textarea { color: var(--ink); }
+  [data-tema="claro"] .caja textarea::placeholder { color: #A6AAB1; }
+  [data-tema="claro"] .enviar:disabled { opacity: .3; }
+  [data-tema="claro"] .opciones { border-top-color: var(--line); }
+  [data-tema="claro"] .segmentos { background: var(--blue-95); border-color: var(--blue-90); }
+  [data-tema="claro"] .segmentos button { color: var(--ink-2); }
+  [data-tema="claro"] .segmentos button:hover { color: var(--blue); }
+  [data-tema="claro"] .segmentos button[aria-pressed="true"] { background: var(--white); color: var(--blue); box-shadow: 0 1px 3px rgba(35,53,125,.15); }
+  [data-tema="claro"] .segmentos button:disabled { color: var(--line-2); }
+  [data-tema="claro"] body.menu-abierto .velo { background: rgba(17,24,39,.3); }
+
+  /* ================= Móvil ================= */
+  .velo { display: none; }
+  @media (max-width: 860px) {
+    body { grid-template-columns: 1fr; }
+    aside { position: fixed; inset: 0 auto 0 0; width: 86%; max-width: 310px; z-index: 20; transform: translateX(-100%); transition: transform .22s ease; }
+    body.menu-abierto aside { transform: none; box-shadow: 0 0 60px rgba(0,0,0,.5); }
+    body.menu-abierto .velo { display: block; position: fixed; inset: 0; z-index: 15; background: rgba(5,8,22,.55); }
+    .cerrar-menu, .abrir-menu { display: block; }
+    .cabecera { padding: 12px 14px; }
+    .lectura { display: none; }
+    .ancho { padding: 0 14px; }
+    .bienvenida h2 { font-size: 30px; }
+    .bienvenida p { font-size: 15px; }
+    .sugerencias { grid-template-columns: 1fr; }
+    .sugerencias button:nth-child(n+3) { display: none; }
+    .yo { max-width: 90%; }
+    .nuvara { grid-template-columns: 1fr; }
+    .avatar { display: none; }
+    .respuesta-cab, .respuesta-cuerpo { padding-left: 16px; padding-right: 16px; }
+    details.traza summary { padding: 12px 16px; }
+    .traza-cuerpo { grid-template-columns: 1fr; padding: 2px 16px 18px; }
+    .opciones { gap: 8px; }
+    .opcion > span { display: none; }
+    .pagina .ancho { padding: 24px 16px 48px; }
+    .resumen { grid-template-columns: 1fr; }
+    th, td { padding: 11px 10px; font-size: 15px; }
     .ocultar-movil { display: none; }
   }
 </style>
 </head>
 <body>
-<nav class="nav">
-  <div class="logo"><img src="/logo/horizontal-azul.svg" alt="núvara"></div>
-  <h6>Conocimiento</h6>
-  <ul>
-    <li><a href="#consultar" data-vista="consultar" aria-current="page">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="9" r="5.5"/><path d="M13 13l4 4"/></svg>Consultar</a></li>
-    <li><a href="#pruebas" data-vista="pruebas">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M7 8l1.5 1.5L11 7M7 13h6"/></svg>Preguntas de prueba</a></li>
-    <li><a href="#mapa" data-vista="mapa">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="5" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="10" cy="15" r="2"/><path d="M6.5 6.5l2.5 7M13.5 6.5l-2.5 7M7 5h6"/></svg>Mapa de la red</a></li>
-  </ul>
-  <p class="pie" id="pie"></p>
-</nav>
+<aside id="menu">
+  <div class="marca">
+    <img src="/logo/horizontal-azul.svg" alt="núvara" id="logo">
+    <button class="cerrar-menu" id="cerrar-menu" type="button" aria-label="Cerrar menú">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+  </div>
+  <button class="nueva" id="nueva" type="button">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>
+    Nueva conversación
+  </button>
 
-<div class="area">
+  <p class="etiqueta">Conversaciones</p>
+  <nav class="conversaciones" aria-label="Conversaciones"><ul id="lista-conv"></ul></nav>
+
+  <div class="herramientas">
+    <button type="button" data-pagina="pruebas">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="2" width="10" height="12" rx="1.5"/><path d="M5.5 6.5l1.2 1.2L9 5.5M5.5 10.5h5"/></svg>
+      Preguntas de prueba
+    </button>
+    <button type="button" data-pagina="mapa">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="4" cy="4" r="1.7"/><circle cx="12" cy="4" r="1.7"/><circle cx="8" cy="12" r="1.7"/><path d="M5.2 5.3l2 5M10.8 5.3l-2 5M5.7 4h4.6"/></svg>
+      Mapa de la red
+    </button>
+    <button type="button" id="cambiar-tema">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg>
+      <span>Tema oscuro</span>
+    </button>
+    <span class="estado-ia" id="estado-ia"><i></i><span>Cargando…</span></span>
+  </div>
+</aside>
+<div class="velo" id="velo"></div>
+
+<main class="principal" id="principal">
+  <canvas id="cielo" aria-hidden="true"></canvas>
+  <canvas id="cerebro" aria-hidden="true"></canvas>
+
   <header class="cabecera">
-    <div class="migas">Inicio<span>›</span>Conocimiento<span>›</span><b id="miga">Consultar</b></div>
-    <span class="ia" id="estado-ia"></span>
+    <button class="abrir-menu" id="abrir-menu" type="button" aria-label="Abrir conversaciones">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+    </button>
+    <h1 id="titulo-conv">Nueva conversación</h1>
+    <span class="lectura" id="lectura"></span>
   </header>
 
-  <main class="pagina">
-    <!-- Consultar -->
-    <section class="vista" id="vista-consultar">
-      <h1>Red de consulta</h1>
-      <p>Haz una pregunta y revisa qué nodo responde y qué información ve cada público.</p>
-
-      <form class="formulario" id="form">
-        <label class="etq" for="pregunta">Pregunta</label>
-        <div class="fila">
-          <input class="campo" id="pregunta" autocomplete="off" placeholder="Ej.: ¿Cuánto cuesta causar una factura de compra?">
-          <button class="boton" id="enviar" type="submit">Consultar</button>
-        </div>
-        <div class="opciones">
-          <fieldset style="border:0;margin:0;padding:0">
-            <legend class="etq">Quién pregunta</legend>
-            <div class="radios">
-              <label class="radio"><input type="radio" name="publico" value="P" checked>Usuario o prospecto</label>
-              <label class="radio"><input type="radio" name="publico" value="C">Comercial</label>
-              <label class="radio"><input type="radio" name="publico" value="I">Equipo interno</label>
-            </div>
-          </fieldset>
-          <fieldset style="border:0;margin:0;padding:0">
-            <legend class="etq">Cómo se responde</legend>
-            <div class="radios">
-              <label class="radio"><input type="radio" name="modo" value="claves" checked>Palabras clave</label>
-              <label class="radio"><input type="radio" name="modo" value="ia" id="modo-ia" disabled>Con Claude</label>
-            </div>
-            <p class="nota" id="nota-ia"></p>
-          </fieldset>
-        </div>
-      </form>
-
-      <div class="resultados">
-        <div>
-          <h2>Consultas</h2>
-          <div id="consultas"></div>
-        </div>
-        <aside class="detalle">
-          <h2>Detalle</h2>
-          <div id="detalle"><p class="nota">Selecciona una consulta para ver cómo se resolvió.</p></div>
-        </aside>
+  <!-- Chat -->
+  <div class="hilo" id="hilo"><div class="ancho" id="contenido"></div></div>
+  <div class="ancho redactar" id="redactar">
+    <form class="caja" id="form">
+      <div class="caja-fila">
+        <textarea id="pregunta" rows="1" placeholder="Pregúntale algo a núvara…" aria-label="Pregunta"></textarea>
+        <button class="enviar" id="enviar" type="submit" aria-label="Enviar" disabled>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14.5v-11M4.5 8L9 3.5 13.5 8"/></svg>
+        </button>
       </div>
-    </section>
-
-    <!-- Preguntas de prueba -->
-    <section class="vista" id="vista-pruebas" hidden>
-      <h1>Preguntas de prueba</h1>
-      <p>Las preguntas de <code>red/pruebas/precios.json</code>. Al probar una, se abre en Consultar con su público.</p>
-      <div class="tabla">
-        <table>
-          <thead><tr><th>Pregunta</th><th>Público</th><th></th></tr></thead>
-          <tbody id="tabla-pruebas"></tbody>
-        </table>
+      <div class="opciones">
+        <div class="opcion">
+          <span>Quién pregunta</span>
+          <div class="segmentos" id="publicos">
+            <button type="button" data-v="P" aria-pressed="true">Usuario</button>
+            <button type="button" data-v="C" aria-pressed="false">Comercial</button>
+            <button type="button" data-v="I" aria-pressed="false">Equipo</button>
+          </div>
+        </div>
+        <div class="opcion">
+          <span>Respuesta</span>
+          <div class="segmentos" id="modos">
+            <button type="button" data-v="claves" aria-pressed="true">Palabras clave</button>
+            <button type="button" data-v="ia" aria-pressed="false" id="modo-ia" disabled title="Necesita ANTHROPIC_API_KEY en .env">Claude</button>
+          </div>
+        </div>
       </div>
-    </section>
+    </form>
+    <p class="ayuda">Enter para enviar · Shift + Enter para un salto de línea</p>
+  </div>
 
-    <!-- Mapa -->
-    <section class="vista" id="vista-mapa" hidden>
-      <h1>Mapa de la red</h1>
-      <p>Los nodos de <code>red/mapa.md</code>: para quién es cada uno y si ya está escrito.</p>
+  <!-- Preguntas de prueba -->
+  <section class="pagina" id="pagina-pruebas" hidden>
+    <div class="ancho">
+      <button class="volver" type="button" data-volver>← Volver al chat</button>
+      <h2>Preguntas de prueba</h2>
+      <p>Las preguntas de <code>red/pruebas/precios.json</code>. Al probar una se envía en la conversación abierta, con su público.</p>
+      <div class="tabla"><table>
+        <thead><tr><th>Pregunta</th><th>Público</th><th></th></tr></thead>
+        <tbody id="tabla-pruebas"></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- Mapa -->
+  <section class="pagina" id="pagina-mapa" hidden>
+    <div class="ancho">
+      <button class="volver" type="button" data-volver>← Volver al chat</button>
+      <h2>Mapa de la red</h2>
+      <p>Los temas de <code>red/mapa.md</code>, para quién es cada uno y si ya está escrito.</p>
+      <div class="resumen" id="resumen"></div>
       <div class="filtros" id="filtros">
-        <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
-        <button type="button" class="filtro" data-filtro="escritos" aria-pressed="false">Escritos</button>
-        <button type="button" class="filtro" data-filtro="pendientes" aria-pressed="false">Sin escribir</button>
+        <button type="button" data-v="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-v="escritos" aria-pressed="false">Escritos</button>
+        <button type="button" data-v="pendientes" aria-pressed="false">Sin escribir</button>
       </div>
-      <div class="tabla">
-        <table>
-          <thead><tr><th>Nodo</th><th>Público</th><th class="ocultar-movil">Cuándo se usa</th><th>Estado</th></tr></thead>
-          <tbody id="tabla-mapa"></tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-</div>
+      <div class="tabla"><table>
+        <thead><tr><th>Tema</th><th>Público</th><th class="ocultar-movil">Cuándo se usa</th><th>Estado</th></tr></thead>
+        <tbody id="tabla-mapa"></tbody>
+      </table></div>
+    </div>
+  </section>
+</main>
 
 <script>
-  const PUBLICO = { P: "Usuario o prospecto", C: "Comercial", I: "Equipo interno" };
-  const ESCALAR = "Eso te lo confirma un asesor de núvara.";
-  const CHECK = '<svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg>';
-  const ALERTA = '<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9"/><path d="M10 5.5v5.5M10 13.8v.2" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/></svg>';
-  const MIGAS = { consultar: "Consultar", pruebas: "Preguntas de prueba", mapa: "Mapa de la red" };
-  const estado = { nodos: [], ejemplos: [], consultas: [], activa: null, ocupado: false, filtro: "todos" };
+  const PUBLICO = { P: "Usuario", C: "Comercial", I: "Equipo interno" };
+  const SUGERIDAS = [
+    { tipo: "Precios", pregunta: "¿Cuánto cuesta núvara?" },
+    { tipo: "Dato sin confirmar", pregunta: "¿Cuál es la recarga mínima?" },
+    { tipo: "Dos temas conectados", pregunta: "¿Cuánto cuesta y cómo recargo créditos?" },
+    { tipo: "Otro tema", pregunta: "¿Cómo conecto la DIAN?" },
+  ];
+  // Tildes y nombres propios que los identificadores de nodo no llevan.
+  const TILDES = { que: "qué", quien: "quién", creditos: "créditos", nomina: "nómina", facturacion: "facturación", electronica: "electrónica", conciliacion: "conciliación", demostracion: "demostración", aprobacion: "aprobación", comparacion: "comparación", modulos: "módulos", nuvara: "núvara", autorretencion: "autorretención", credito: "crédito", dian: "DIAN", radian: "RADIAN", siigo: "Siigo", world: "World", office: "Office" };
+  const ICONO = {
+    flecha: '<svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>',
+    candado: '<svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.5" y="5.5" width="7" height="5" rx="1"/><path d="M4 5.5V4a2 2 0 014 0v1.5"/></svg>',
+    doc: '<svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3.5 1.5h5l2.5 2.5v8.5h-7.5z"/><path d="M8.5 1.5V4H11"/></svg>',
+    abajo: '<svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>',
+    alerta: '<svg width="20" height="20" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M11 3L2 19h18z" stroke-linejoin="round"/><path d="M11 9v4.5M11 16.2v.3"/></svg>',
+    borrar: '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M3.5 3.5l7 7M10.5 3.5l-7 7"/></svg>',
+  };
+
   const $ = (id) => document.getElementById(id);
-
   const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-  const enLinea = (t) => escapar(t)
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    .replace(/`(.+?)`/g, "<code>$1</code>");
+  const enLinea = (t) => escapar(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>").replace(/`(.+?)`/g, "<code>$1</code>");
+  const titulo = (id) => { const t = id.split("-").map((p) => TILDES[p] || p).join(" "); return t.charAt(0).toUpperCase() + t.slice(1); };
+  const nodosDe = (resultado) => [...(resultado || "").matchAll(/<nodo id="([^"]+)">\n([\s\S]*?)\n<\/nodo>/g)].map(([, id, texto]) => ({ id, texto }));
+  const cuando = (iso) => {
+    const d = new Date(iso), hoy = new Date();
+    return d.toDateString() === hoy.toDateString()
+      ? d.toLocaleTimeString("es-CO", { hour: "numeric", minute: "2-digit" })
+      : d.toLocaleDateString("es-CO", { day: "numeric", month: "short" });
+  };
 
-  function markdown(texto) {
-    let html = "", lista = false;
-    for (const linea of texto.split("\n")) {
-      const vineta = linea.match(/^- (.*)/);
-      if (!vineta && lista) { html += "</ul>"; lista = false; }
-      if (vineta) { if (!lista) { html += "<ul>"; lista = true; } html += `<li>${enLinea(vineta[1])}</li>`; }
-      else if (linea.startsWith("## ")) html += `<h4>${enLinea(linea.slice(3))}</h4>`;
-      else if (linea.startsWith("# ")) html += `<h3>${enLinea(linea.slice(2))}</h3>`;
-      else if (/^Fuente:/.test(linea)) html += `<p class="fuente">${enLinea(linea)}</p>`;
-      else if (linea.trim()) html += `<p>${enLinea(linea)}</p>`;
-    }
-    return html + (lista ? "</ul>" : "");
+  // ---------- Conversaciones guardadas en este navegador ----------
+  const CLAVE = "nuvara-red-conversaciones";
+  function cargarGuardadas() { try { return JSON.parse(localStorage.getItem(CLAVE)) || []; } catch { return []; } }
+  function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(estado.conversaciones.slice(0, 50))); } catch { /* sin almacenamiento */ } }
+
+  const estado = {
+    publico: "P", modo: "claves", ia: false,
+    nodos: [], conexiones: [], ejemplos: [],
+    conversaciones: cargarGuardadas(), activa: null, ocupado: false, filtro: "todos",
+  };
+  const conversacion = () => estado.conversaciones.find((c) => c.id === estado.activa) || null;
+
+  // ---------- Tema claro u oscuro (claro por defecto) ----------
+  const CLAVE_TEMA = "nuvara-red-tema";
+  function leerTema() { try { return localStorage.getItem(CLAVE_TEMA) === "oscuro" ? "oscuro" : "claro"; } catch { return "claro"; } }
+  function aplicarTema(tema) {
+    document.documentElement.dataset.tema = tema;
+    document.querySelector('meta[name="color-scheme"]')?.setAttribute("content", tema === "claro" ? "light" : "dark");
+    $("logo").src = `/logo/horizontal-${tema === "claro" ? "azul" : "blanco"}.svg`;
+    $("cambiar-tema").querySelector("span").textContent = tema === "claro" ? "Tema oscuro" : "Tema claro";
+    cerebro.usarTema(tema);
+    try { localStorage.setItem(CLAVE_TEMA, tema); } catch { /* sin almacenamiento */ }
   }
 
-  const nodosDe = (resultado) =>
-    [...(resultado || "").matchAll(/<nodo id="([^"]+)">\n([\s\S]*?)\n<\/nodo>/g)].map(([, id, texto]) => ({ id, texto }));
-
-  // La introducción del nodo y "Cómo responder" son para el chat, no para quien pregunta.
-  function partirNodo(texto) {
-    const [, ...secciones] = texto.split(/\n(?=## )/);
-    const esRegla = (s) => s.startsWith("## Cómo responder");
-    return {
-      visible: secciones.filter((s) => !esRegla(s)).join("\n"),
-      reglas: secciones.filter(esRegla).join("\n"),
+  // =====================================================================
+  // Cerebro de partículas: los temas del mapa son neuronas sobre la
+  // corteza y las conexiones son sinapsis.
+  // =====================================================================
+  const cerebro = (() => {
+    const lienzo = $("cerebro"), ctx = lienzo.getContext("2d");
+    const cielo = $("cielo"), cctx = cielo.getContext("2d");
+    const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let W = 0, H = 0, dpr = 1, cx = 0, cy = 0, escala = 0;
+    let giro = 0.7, giroObjetivo = null, inclinacion = -0.18;
+    const particulas = [], estrellas = [], neuronas = new Map(), sinapsis = [], senales = [];
+    let activos = [], conexionActiva = null, desde = 0, corriendo = false, espacio = 0;
+    // Sobre blanco no sirve la mezcla aditiva: se usan azules más oscuros.
+    const PALETAS = {
+      oscuro: {
+        mezcla: "lighter", tonos: ["48,130,238", "142,198,247", "75,206,166"], alfa: [0.28, 0.62],
+        neurona: "220,235,255", escrita: "75,206,166", activa: "75,206,166", conectada: "142,198,247",
+        sinapsis: "142,198,247", sinapsisAlfa: [0.05, 0.06], estrella: "200,220,255", estrellaAlfa: [0.22, 0.32],
+        halo: "rgba(48,130,238,0.13)", etiquetaFondo: "rgba(10,16,41,0.8)", etiquetaTexto: "#fff",
+      },
+      claro: {
+        mezcla: "source-over", tonos: ["48,130,238", "35,53,125", "43,169,140"], alfa: [0.16, 0.56],
+        neurona: "35,53,125", escrita: "9,105,92", activa: "43,169,140", conectada: "48,130,238",
+        sinapsis: "48,130,238", sinapsisAlfa: [0.07, 0.08], estrella: "48,130,238", estrellaAlfa: [0.08, 0.14],
+        halo: "rgba(48,130,238,0.06)", etiquetaFondo: "rgba(255,255,255,0.95)", etiquetaTexto: "#111827",
+      },
     };
-  }
+    let paleta = PALETAS.claro;
 
-  const hora = (d) => d.toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" });
-  const valor = (nombre) => document.querySelector(`input[name="${nombre}"]:checked`).value;
+    let semilla = 7;
+    const azar = () => (semilla = (semilla * 16807) % 2147483647) / 2147483647;
 
-  function irA(vista) {
-    for (const v of Object.keys(MIGAS)) $(`vista-${v}`).hidden = v !== vista;
-    for (const a of document.querySelectorAll(".nav a"))
-      if (a.dataset.vista === vista) a.setAttribute("aria-current", "page");
-      else a.removeAttribute("aria-current");
-    $("miga").textContent = MIGAS[vista];
-    if (location.hash !== `#${vista}`) history.replaceState(null, "", `#${vista}`);
-  }
-
-  // ---------- Consultar ----------
-  function pintarConsultas() {
-    if (!estado.consultas.length) {
-      $("consultas").innerHTML = `<p class="vacio">Aún no hay consultas. Escribe una pregunta o usa una de las <button type="button" data-ir="pruebas">preguntas de prueba</button>.</p>`;
-      return;
+    function puntoCorteza(lado, u, th, capa) {
+      const s = Math.sqrt(1 - u * u);
+      let hx = s * Math.cos(th) * 0.43, y = s * Math.sin(th) * 0.6, z = u * 0.8;
+      const surco = 1 + 0.055 * Math.sin(11 * u + 7 * th) * Math.cos(9 * th + 3 * u);
+      hx *= surco * capa; y *= surco * capa; z *= surco * capa;
+      let x = lado * 0.46 + hx;
+      if (x * lado < 0.035) x = lado * (0.035 + Math.abs(hx) * 0.08);   // cisura entre hemisferios
+      if (y < -0.32) y = -0.32 + (y + 0.32) * 0.35;                     // base más plana
+      if (z > 0.35 && y < -0.1) y += (z - 0.35) * 0.25;                  // lóbulo frontal
+      return [x, y, z];
     }
-    $("consultas").innerHTML = estado.consultas.map((c, i) => {
-      const b = c.busqueda;
-      const nodos = b ? nodosDe(b.resultado) : [];
-      let cuerpo;
-      if (c.error) cuerpo = `<div class="alerta error">${ALERTA}<span>${escapar(c.error)}</span></div>`;
-      else if (!b) cuerpo = `<p class="nota">Consultando…</p>`;
-      else if (c.ia) cuerpo = `<p class="respuesta">${escapar(c.ia.respuesta)}</p>`;
-      else if (nodos.length) cuerpo = nodos.map((n) => `<div class="md">${markdown(partirNodo(n.texto).visible)}</div>`).join("");
-      else cuerpo = `<div class="alerta">${ALERTA}<span>${ESCALAR}</span></div>`;
 
-      const ocultas = b ? nodos.reduce((s, n) => s + (b.ocultas[n.id] || []).length, 0) : 0;
-      const pie = b ? `<div class="consulta-pie">
-          <span><b>Nodo:</b>${b.nodos.length ? b.nodos.map((id) => `${id}${b.sinEscribir.includes(id) ? " (sin escribir)" : ""}`).join(", ") : "ninguno"}</span>
-          ${b.conexion ? `<span><b>Conexión:</b>${b.conexion}${b.sinEscribir.includes(b.conexion) ? " (sin escribir)" : ""}</span>` : ""}
-          <span><b>Secciones ocultas:</b>${ocultas}</span>
-          <span><b>Respuesta:</b>${c.ia ? "redactada por Claude" : "nodo sin redactar"}</span>
-        </div>` : "";
-      return `<article class="consulta ${estado.activa === i ? "activa" : ""}" data-i="${i}">
-        <div class="consulta-cab"><h3>${escapar(c.pregunta)}</h3><div class="meta">${PUBLICO[c.publico]}<br>${hora(c.fecha)}</div></div>
-        <div class="consulta-cuerpo">${cuerpo}</div>${pie}
-      </article>`;
-    }).join("");
+    function crearForma() {
+      const total = innerWidth < 640 ? 2200 : 4200;
+      for (let i = 0; i < total; i++) {
+        const r = azar();
+        let p;
+        if (r < 0.86) {
+          p = puntoCorteza(azar() < 0.5 ? -1 : 1, azar() * 2 - 1, azar() * Math.PI * 2, 0.8 + 0.2 * Math.sqrt(azar()));
+        } else if (r < 0.96) {
+          const u = azar() * 2 - 1, th = azar() * Math.PI * 2, s = Math.sqrt(1 - u * u);
+          const z = u * 0.24;
+          p = [s * Math.cos(th) * 0.4, -0.44 + s * Math.sin(th) * 0.17 + 0.015 * Math.sin(z * 60), -0.56 + z];   // cerebelo
+        } else {
+          const t = azar();
+          p = [(azar() - 0.5) * 0.12, -0.42 - t * 0.42, -0.3 - t * 0.08 + (azar() - 0.5) * 0.1];                // tronco
+        }
+        particulas.push({ p, tam: 1.1 + azar() * 1.5, tono: azar(), fase: azar() * 6.28 });
+      }
+      for (let i = 0; i < 160; i++) estrellas.push({ x: azar(), y: azar(), r: 0.3 + azar() * 1.1, fase: azar() * 6.28 });
+    }
+
+    function crearNeuronas(nodos, conexiones) {
+      const oro = Math.PI * (3 - Math.sqrt(5));
+      nodos.forEach((n, i) => {
+        const u = 0.92 - 1.75 * ((i + 0.5) / nodos.length);
+        const th = Math.PI * 0.18 + ((i * oro) % (Math.PI * 1.15));
+        neuronas.set(n.id, { id: n.id, p: puntoCorteza(i % 2 ? 1 : -1, u, th, 1.02), escrito: n.escrito });
+      });
+      for (const c of conexiones)
+        if (c.desde !== "*" && neuronas.has(c.desde) && neuronas.has(c.hacia)) sinapsis.push([c.desde, c.hacia]);
+    }
+
+    function medir() {
+      const caja = lienzo.getBoundingClientRect();
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      W = caja.width; H = caja.height;
+      for (const c of [lienzo, cielo]) { c.width = W * dpr; c.height = H * dpr; }
+      cx = W * 0.5;
+      if (espacio) {
+        // Bienvenida: el cerebro ocupa el hueco libre sobre el texto.
+        const alto = Math.max(140, espacio - 70);
+        cy = 58 + alto / 2;
+        escala = Math.min(W * 0.3, alto * 0.55);
+      } else {
+        // Conversación: queda de fondo, centrado detrás del hilo.
+        cy = H * 0.42;
+        escala = Math.min(W * 0.32, H * 0.34);
+      }
+      pintarCielo(0);
+    }
+
+    function proyectar([x, y, z]) {
+      const cg = Math.cos(giro), sg = Math.sin(giro), ci = Math.cos(inclinacion), si = Math.sin(inclinacion);
+      let x1 = x * cg + z * sg, z1 = -x * sg + z * cg;
+      const y1 = y * ci - z1 * si; z1 = y * si + z1 * ci;
+      const f = 3.4 / (3.4 - z1);
+      return { x: cx + x1 * escala * f, y: cy - y1 * escala * f, z: z1, f };
+    }
+
+    function pintarCielo(t) {
+      cctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cctx.clearRect(0, 0, W, H);
+      for (const e of estrellas) {
+        cctx.fillStyle = `rgba(${paleta.estrella},${paleta.estrellaAlfa[0] + paleta.estrellaAlfa[1] * (0.5 + 0.5 * Math.sin(t * 0.0012 + e.fase))})`;
+        cctx.beginPath(); cctx.arc(e.x * W, e.y * H, e.r, 0, 6.28); cctx.fill();
+      }
+    }
+
+    const disparar = (a, b, color, duracion = 900) => senales.push({ a, b, inicio: performance.now(), duracion, color });
+    const ENTRADA = [0, -0.84, -0.36];
+    const posicion = (id) => (id === "entrada" ? ENTRADA : neuronas.get(id).p);
+
+    function enfocar(ids, conexion, animar = true) {
+      activos = ids.filter((id) => neuronas.has(id));
+      conexionActiva = conexion && neuronas.has(conexion) ? conexion : null;
+      desde = performance.now();
+      if (!activos.length) { giroObjetivo = null; return; }
+      // Gira a tres cuartos del lado de la neurona para conservar la silueta.
+      let objetivo = neuronas.get(activos[0]).p[0] < 0 ? 1.15 : -1.15;
+      while (objetivo - giro > Math.PI) objetivo -= 2 * Math.PI;
+      while (giro - objetivo > Math.PI) objetivo += 2 * Math.PI;
+      giroObjetivo = objetivo;
+      if (!animar) return;
+      for (const id of activos) disparar("entrada", id, paleta.activa, 1100);
+      if (conexionActiva) setTimeout(() => disparar(activos[0], conexionActiva, paleta.conectada, 800), 1000);
+    }
+
+    function cuadro(t) {
+      if (giroObjetivo !== null) {
+        giro += (giroObjetivo - giro) * 0.05;
+        if (Math.abs(giroObjetivo - giro) < 0.002) giroObjetivo = null;
+      } else if (!quieto) giro += 0.0016;
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      if (!quieto && Math.floor(t / 50) % 2) pintarCielo(t);
+
+      const halo = ctx.createRadialGradient(cx, cy, 0, cx, cy, escala * 1.3);
+      halo.addColorStop(0, paleta.halo); halo.addColorStop(1, "rgba(48,130,238,0)");
+      ctx.fillStyle = halo; ctx.fillRect(0, 0, W, H);
+
+      const foco = activos.map((id) => neuronas.get(id).p);
+      const edad = (t - desde) / 1000;
+      const proyectadas = particulas.map((q) => ({ q, s: proyectar(q.p) })).sort((a, b) => a.s.z - b.s.z);
+      ctx.globalCompositeOperation = paleta.mezcla;
+      for (const { q, s } of proyectadas) {
+        let alfa = paleta.alfa[0] + ((s.z + 1) / 2) * paleta.alfa[1];
+        let color = paleta.tonos[q.tono < 0.62 ? 0 : q.tono < 0.9 ? 1 : 2];
+        let tam = q.tam * s.f;
+        for (const f of foco) {
+          const d = Math.hypot(q.p[0] - f[0], q.p[1] - f[1], q.p[2] - f[2]);
+          if (d < 0.26) {
+            const k = (1 - d / 0.26) * Math.min(1, edad * 1.5);
+            color = paleta.activa; alfa = Math.min(1, alfa + k * 0.7); tam += k * 1.4;
+          }
+        }
+        if (!quieto) alfa *= 0.85 + 0.15 * Math.sin(t * 0.002 + q.fase);
+        ctx.fillStyle = `rgba(${color},${alfa})`;
+        ctx.beginPath(); ctx.arc(s.x, s.y, tam / 2, 0, 6.28); ctx.fill();
+      }
+
+      for (const [a, b] of sinapsis) {
+        const pa = proyectar(neuronas.get(a).p), pb = proyectar(neuronas.get(b).p);
+        const encendida = (activos.includes(a) && b === conexionActiva) || (activos.includes(b) && a === conexionActiva);
+        ctx.strokeStyle = encendida ? `rgba(${paleta.conectada},0.8)` : `rgba(${paleta.sinapsis},${paleta.sinapsisAlfa[0] + paleta.sinapsisAlfa[1] * ((pa.z + pb.z) / 4 + 0.5)})`;
+        ctx.lineWidth = encendida ? 1.4 : 0.6;
+        ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(pb.x, pb.y); ctx.stroke();
+      }
+
+      for (const n of neuronas.values()) {
+        const s = proyectar(n.p);
+        const activo = activos.includes(n.id), conecta = n.id === conexionActiva;
+        let r = (n.escrito ? 3.4 : 2.4) * s.f, color = n.escrito ? paleta.escrita : paleta.neurona, alfa = 0.55 + ((s.z + 1) / 2) * 0.45;
+        if (activo || conecta) {
+          r = (activo ? 5 : 4) + (0.5 + 0.5 * Math.sin(edad * 4)) * 1.5;
+          color = activo ? paleta.activa : paleta.conectada; alfa = 1;
+          const g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, r * 6);
+          g.addColorStop(0, `rgba(${color},0.45)`); g.addColorStop(1, `rgba(${color},0)`);
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(s.x, s.y, r * 6, 0, 6.28); ctx.fill();
+        }
+        ctx.fillStyle = `rgba(${color},${alfa})`;
+        ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, 6.28); ctx.fill();
+      }
+
+      for (let i = senales.length - 1; i >= 0; i--) {
+        const sg = senales[i], k = (t - sg.inicio) / sg.duracion;
+        if (k >= 1) { senales.splice(i, 1); continue; }
+        const a = posicion(sg.a), b = posicion(sg.b);
+        const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        const m = [(a[0] + b[0]) * 0.3, (a[1] + b[1]) * 0.3 + 0.1, (a[2] + b[2]) * 0.3];
+        // Cabeza brillante y una cola que se apaga.
+        for (let c = 0; c < 6; c++) {
+          const ee = Math.max(0, e - c * 0.025);
+          const s = proyectar([0, 1, 2].map((j) => (1 - ee) * (1 - ee) * a[j] + 2 * (1 - ee) * ee * m[j] + ee * ee * b[j]));
+          ctx.fillStyle = `rgba(${sg.color},${0.9 - c * 0.14})`;
+          ctx.beginPath(); ctx.arc(s.x, s.y, 3.2 - c * 0.4, 0, 6.28); ctx.fill();
+        }
+      }
+      ctx.globalCompositeOperation = "source-over";
+
+      ctx.font = "500 13px Jost, sans-serif";
+      for (const id of [...activos, ...(conexionActiva ? [conexionActiva] : [])]) {
+        const s = proyectar(neuronas.get(id).p);
+        const texto = titulo(id), ancho = ctx.measureText(texto).width;
+        const x = Math.min(W - ancho - 24, s.x + 14), y = s.y - 14;
+        ctx.fillStyle = paleta.etiquetaFondo;
+        ctx.beginPath(); ctx.roundRect(x - 10, y - 15, ancho + 20, 26, 13); ctx.fill();
+        ctx.strokeStyle = `rgba(${activos.includes(id) ? paleta.activa : paleta.conectada},0.8)`;
+        ctx.lineWidth = 1; ctx.stroke();
+        ctx.fillStyle = paleta.etiquetaTexto; ctx.fillText(texto, x, y + 3);
+      }
+
+      // Actividad de fondo: chispas sueltas entre temas conectados.
+      if (!quieto && sinapsis.length && Math.random() < 0.025 && senales.length < 4) {
+        const [a, b] = sinapsis[Math.floor(Math.random() * sinapsis.length)];
+        disparar(a, b, paleta.conectada, 1400);
+      }
+      if (!quieto) requestAnimationFrame(cuadro); else corriendo = false;
+    }
+    const pedirCuadro = () => { if (!corriendo || !quieto) { corriendo = true; requestAnimationFrame(cuadro); } };
+
+    return {
+      iniciar(nodos, conexiones) {
+        crearForma(); crearNeuronas(nodos, conexiones); medir();
+        new ResizeObserver(() => { medir(); if (quieto) pedirCuadro(); }).observe(lienzo);
+        corriendo = true; requestAnimationFrame(cuadro);
+      },
+      enfocar(ids, conexion, animar) { enfocar(ids, conexion, animar); if (quieto) pedirCuadro(); },
+      usarTema(nombre) { paleta = PALETAS[nombre]; pintarCielo(0); if (quieto) pedirCuadro(); },
+      // Alto libre sobre la bienvenida, o 0 cuando ya hay conversación.
+      ubicar(alto) { espacio = alto; medir(); if (quieto) pedirCuadro(); },
+    };
+  })();
+
+  // =====================================================================
+  // Respuestas
+  // =====================================================================
+  function leerNodo(texto) {
+    const bloques = [];
+    let reglas = [], fuente = null;
+    for (const seccion of texto.split(/\n(?=## )/).slice(1)) {
+      const [cab, ...lineas] = seccion.split("\n");
+      const nombre = cab.slice(3).trim();
+      const hechos = lineas.filter((l) => l.startsWith("- ")).map((l) => l.slice(2));
+      const parrafos = lineas.filter((l) => l.trim() && !l.startsWith("- "));
+      if (nombre.startsWith("Cómo responder")) { reglas = hechos; continue; }
+      const f = parrafos.find((p) => p.startsWith("Fuente:"));
+      if (f) fuente = f.replace(/^Fuente:\s*/, "");
+      bloques.push({ nombre, hechos, parrafos: parrafos.filter((p) => p !== f) });
+    }
+    return { bloques, reglas, fuente };
   }
 
-  function pintarDetalle() {
-    const c = estado.consultas[estado.activa];
-    if (!c || !c.busqueda) {
-      $("detalle").innerHTML = `<p class="nota">Selecciona una consulta para ver cómo se resolvió.</p>`;
-      return;
+  function rutaHtml(m) {
+    const b = m.busqueda;
+    const partes = [`<span class="paso-ruta">${PUBLICO[m.publico]}</span>`];
+    if (!b.nodos.length) partes.push(`<span class="paso-ruta pendiente">Sin tema</span>`);
+    for (const id of b.nodos) partes.push(`<span class="paso-ruta ${b.sinEscribir.includes(id) ? "pendiente" : "nodo"}">${titulo(id)}</span>`);
+    if (b.conexion) partes.push(`<span class="paso-ruta conexion">+ ${titulo(b.conexion)}</span>`);
+    const ocultas = Object.values(b.ocultas || {}).flat().length;
+    if (b.resultado) partes.push(`<span class="paso-ruta filtro">${ocultas ? `${ocultas} ${ocultas === 1 ? "sección oculta" : "secciones ocultas"}` : "Tema completo"}</span>`);
+    return `<div class="ruta">${partes.join(`<span class="flecha">${ICONO.flecha}</span>`)}</div>`;
+  }
+
+  function cuerpoHtml(m) {
+    const b = m.busqueda;
+    if (m.ia) return `<p class="redactada">${escapar(m.ia.respuesta)}</p>`;
+    let html = "";
+    for (const id of b.sinEscribir)
+      html += `<div class="aviso">${ICONO.alerta}<div><b>${titulo(id)} todavía no está escrito</b><span>El chat respondería: «Eso te lo confirma un asesor de núvara.»</span></div></div>`;
+    if (!b.nodos.length)
+      html += `<div class="aviso">${ICONO.alerta}<div><b>Ningún tema coincide con la pregunta</b><span>El chat respondería: «Eso te lo confirma un asesor de núvara.» Si la pregunta sí es de núvara, falta una palabra clave en <code>red/claves.json</code>.</span></div></div>`;
+    const nodos = nodosDe(b.resultado), fuentes = [];
+    for (const n of nodos) {
+      const { bloques, fuente } = leerNodo(n.texto);
+      if (fuente) fuentes.push(fuente);
+      for (const bl of bloques) {
+        html += `<div class="bloque"><h4>${escapar(bl.nombre)}${nodos.length > 1 ? ` · ${titulo(n.id)}` : ""}</h4>`;
+        html += bl.parrafos.map((p) => `<p class="texto">${enLinea(p)}</p>`).join("");
+        if (bl.hechos.length) html += `<ul class="hechos">${bl.hechos.map((h) => `<li><span class="t">${enLinea(h)}</span></li>`).join("")}</ul>`;
+        html += `</div>`;
+      }
     }
-    const b = c.busqueda, ia = c.ia;
+    if (fuentes.length) html += `<div class="fuente">${ICONO.doc}<span>${fuentes.map(enLinea).join(" · ")}</span></div>`;
+    return html;
+  }
+
+  function trazaHtml(m) {
+    const b = m.busqueda;
+    const max = Math.max(1, ...b.puntajes.map((p) => p.puntos));
+    const barras = b.puntajes.slice(0, 5).map((p) => `
+      <div class="barra-fila ${b.nodos.includes(p.id) ? "gana" : p.id === b.conexion ? "conecta" : ""}">
+        <span class="nombre">${titulo(p.id)}</span><span class="pts">${p.puntos}</span>
+        <span class="riel"><i style="width:${(100 * p.puntos) / max}%"></i></span>
+        <span class="claves">${escapar(p.claves.join(" · "))}</span>
+      </div>`).join("") || `<p class="nota">Ninguna palabra clave coincidió.</p>`;
     const nodos = nodosDe(b.resultado);
-    const ocultas = nodos.flatMap((n) => b.ocultas[n.id] || []);
-    const reglas = nodos.map((n) => partirNodo(n.texto).reglas).filter(Boolean).join("\n");
-    const tabla = b.puntajes.length
-      ? `<table><thead><tr><th>Nodo</th><th>Coincidió</th><th style="text-align:right">Pts</th></tr></thead><tbody>${
-          b.puntajes.slice(0, 5).map((p) => `<tr class="${b.nodos.includes(p.id) || p.id === b.conexion ? "gana" : ""}"><td>${p.id}</td><td>${escapar(p.claves.join(", "))}</td><td class="pts">${p.puntos}</td></tr>`).join("")
-        }</tbody></table>`
-      : `<p>Ninguna palabra clave coincidió.</p>`;
-    const paso = (ok, titulo, html) =>
-      `<li class="paso ${ok ? "" : "no"}"><span class="circulo">${ok ? CHECK : ""}</span><div><b>${titulo}</b>${html}</div></li>`;
-
-    $("detalle").innerHTML = `<ol class="pasos">
-      ${paso(true, "Pregunta", `<p>${PUBLICO[c.publico]} · ${hora(c.fecha)}</p>`)}
-      ${paso(true, "Enrutador", tabla)}
-      ${paso(nodos.length > 0, "Nodo filtrado", `<p>${
-        nodos.length
-          ? `${b.nodos.join(" + ")}${b.conexion ? `, con la conexión a ${b.conexion}` : ""}. ${ocultas.length ? `No visible para este público: ${escapar(ocultas.join(", "))}.` : "Se muestra completo."}`
-          : b.sinEscribir.length ? `${b.sinEscribir.join(", ")} está en el mapa pero no está escrito: se escala a un asesor.` : "No hay nodo para esta pregunta."
-      }</p>${reglas ? `<div class="md">${markdown(reglas)}</div>` : ""}`)}
-      ${paso(Boolean(ia), "Respuesta", `<p>${
-        ia ? `Claude eligió ${escapar(ia.ruta.nodos.join(" + ") || "ninguno")}${ia.ruta.conexion ? ` → ${escapar(ia.ruta.conexion)}` : ""}. ${ia.uso.entrada} tokens de entrada, ${ia.uso.salida} de salida.`
-           : "Con palabras clave se muestra el nodo tal cual, sin redactar."
-      }</p>`)}
-    </ol>`;
+    const ocultas = nodos.flatMap((n) => (b.ocultas[n.id] || []).map((t) => t.replace(/:.*$/, "")));
+    const reglas = nodos.flatMap((n) => leerNodo(n.texto).reglas);
+    return `<details class="traza">
+      <summary>Cómo se resolvió ${ICONO.abajo}</summary>
+      <div class="traza-cuerpo">
+        <div>
+          <h5>Puntaje por tema</h5>
+          <div class="barras">${barras}</div>
+          ${m.ia ? `<p class="nota" style="margin-top:12px">Claude eligió ${escapar(m.ia.ruta.nodos.map(titulo).join(" + ") || "ningún tema")}${m.ia.ruta.conexion ? ` + ${escapar(titulo(m.ia.ruta.conexion))}` : ""} · ${m.ia.uso.entrada + m.ia.uso.salida} tokens.</p>` : ""}
+        </div>
+        <div>
+          <h5>Oculto para ${PUBLICO[m.publico].toLowerCase()}</h5>
+          ${ocultas.length ? `<div class="lista-ocultas">${ocultas.map((t) => `<span>${ICONO.candado}${escapar(t)}</span>`).join("")}</div>` : `<p class="nota" style="margin-bottom:16px">Nada: este público ve el tema completo.</p>`}
+          ${reglas.length ? `<h5>Reglas para responder</h5><ul class="reglas">${reglas.map((r) => `<li>${enLinea(r)}</li>`).join("")}</ul>` : ""}
+        </div>
+      </div>
+    </details>`;
   }
 
-  function pintar() { pintarConsultas(); pintarDetalle(); }
+  function mensajeHtml(m) {
+    const yo = `<div class="yo"><div class="burbuja">${escapar(m.pregunta)}</div><span class="quien">${PUBLICO[m.publico]}</span></div>`;
+    let resp;
+    if (m.error) resp = `<div class="respuesta"><div class="respuesta-cuerpo"><div class="aviso error">${ICONO.alerta}<div><b>No se pudo consultar</b><span>${escapar(m.error)}</span></div></div></div></div>`;
+    else if (!m.busqueda) resp = `<div class="pensando-txt"><i></i><i></i><i></i>La red está buscando…</div>`;
+    else resp = `<article class="respuesta">
+        <header class="respuesta-cab"><h3>${escapar(m.busqueda.nodos.length ? m.busqueda.nodos.map(titulo).join(" y ") : "Sin tema")}</h3>${rutaHtml(m)}</header>
+        <div class="respuesta-cuerpo">${cuerpoHtml(m)}</div>
+        ${trazaHtml(m)}
+      </article>`;
+    return `${yo}<div class="nuvara"><div class="avatar"><img src="/logo/isotipo-azul.svg" alt=""></div>${resp}</div>`;
+  }
 
-  async function consultar(pregunta, publico = valor("publico")) {
-    pregunta = pregunta.trim();
-    if (!pregunta || estado.ocupado) return;
+  // =====================================================================
+  // Pintar
+  // =====================================================================
+  function pintarLista() {
+    if (!estado.conversaciones.length) { $("lista-conv").innerHTML = `<li><p class="sin-conv">Tus conversaciones aparecen aquí.</p></li>`; return; }
+    $("lista-conv").innerHTML = estado.conversaciones.map((c) => `
+      <li class="conv ${c.id === estado.activa ? "activa" : ""}">
+        <button type="button" class="abrir" data-id="${c.id}">
+          <span class="t">${escapar(c.titulo)}</span>
+          <span class="m">${c.mensajes.length} ${c.mensajes.length === 1 ? "pregunta" : "preguntas"} · ${cuando(c.actualizada)}</span>
+        </button>
+        <button type="button" class="borrar" data-borrar="${c.id}" aria-label="Borrar conversación">${ICONO.borrar}</button>
+      </li>`).join("");
+  }
+
+  function pintarChat() {
+    const c = conversacion();
+    const hay = Boolean(c && c.mensajes.length);
+    $("principal").classList.toggle("conversando", hay);
+    $("titulo-conv").textContent = c ? c.titulo : "Nueva conversación";
+    if (!hay) {
+      $("contenido").innerHTML = `
+        <div class="bienvenida">
+          <p class="ceja"><i></i>núvara · red de consulta</p>
+          <h2>Pregúntale al <em>cerebro</em> de núvara.</h2>
+          <p>Cada punto es un tema de lo que sabemos de núvara. Pregunta y mira qué camino sigue la red.</p>
+          <div class="sugerencias">${SUGERIDAS.map((s) => `<button type="button" data-pregunta="${escapar(s.pregunta)}"><span>${s.tipo}</span>${escapar(s.pregunta)}</button>`).join("")}</div>
+        </div>`;
+      $("lectura").textContent = "";
+      requestAnimationFrame(() => {
+        const bien = $("contenido").querySelector(".bienvenida > .ceja");
+        if (bien) cerebro.ubicar(bien.getBoundingClientRect().top - $("principal").getBoundingClientRect().top);
+      });
+      return;
+    }
+    cerebro.ubicar(0);
+    $("contenido").innerHTML = `<div class="mensajes">${c.mensajes.map(mensajeHtml).join("")}</div>`;
+    const ultimo = c.mensajes[c.mensajes.length - 1];
+    const b = ultimo.busqueda;
+    $("lectura").innerHTML = b ? (b.nodos.length ? `${PUBLICO[ultimo.publico]} → <b>${b.nodos.map(titulo).join(" + ")}</b>${b.conexion ? ` → ${titulo(b.conexion)}` : ""}` : "Sin tema · se escala a un asesor") : "";
+    requestAnimationFrame(() => { $("hilo").scrollTop = $("hilo").scrollHeight; });
+  }
+
+  function pintar() { pintarLista(); pintarChat(); }
+
+  function abrir(id) {
+    estado.activa = id;
+    mostrarPagina(null);
+    pintar();
+    const ultimo = conversacion()?.mensajes.at(-1);
+    cerebro.enfocar(ultimo?.busqueda?.nodos || [], ultimo?.busqueda?.conexion, false);
+    document.body.classList.remove("menu-abierto");
+  }
+
+  function nueva() {
+    estado.activa = null;
+    mostrarPagina(null);
+    pintar();
+    cerebro.enfocar([], null, false);
+    $("pregunta").focus();
+    document.body.classList.remove("menu-abierto");
+  }
+
+  async function preguntar(texto, publico = estado.publico) {
+    texto = texto.trim();
+    if (!texto || estado.ocupado) return;
+    let c = conversacion();
+    if (!c) {
+      c = { id: Date.now().toString(36), titulo: texto.length > 60 ? texto.slice(0, 57) + "…" : texto, mensajes: [], actualizada: new Date().toISOString() };
+      estado.conversaciones.unshift(c);
+      estado.activa = c.id;
+    }
+    const m = { pregunta: texto, publico, busqueda: null, ia: null, error: null, fecha: new Date().toISOString() };
+    c.mensajes.push(m);
+    c.actualizada = m.fecha;
+    // La conversación usada pasa arriba de la lista.
+    estado.conversaciones = [c, ...estado.conversaciones.filter((x) => x !== c)];
     estado.ocupado = true;
-    $("enviar").disabled = true;
-    $("enviar").textContent = "Consultando…";
-    const c = { pregunta, publico, fecha: new Date(), busqueda: null, ia: null, error: null };
-    estado.consultas.unshift(c);
-    estado.activa = 0;
+    $("pregunta").value = ""; ajustar();
+    mostrarPagina(null);
+    $("principal").classList.add("pensando");
     pintar();
     try {
-      const pedido = JSON.stringify({ pregunta, publico });
+      const pedido = JSON.stringify({ pregunta: texto, publico });
       const r = await fetch("/api/buscar", { method: "POST", body: pedido });
       const b = await r.json();
       if (!r.ok) throw new Error(b.error);
-      if (valor("modo") === "ia") {
+      if (estado.modo === "ia") {
         const ri = await fetch("/api/consultar", { method: "POST", body: pedido });
         const ia = await ri.json();
         if (!ri.ok) throw new Error(ia.error);
-        c.ia = ia;
+        m.ia = ia;
       }
-      c.busqueda = b;
-      $("pregunta").value = "";
+      m.busqueda = b;
+      cerebro.enfocar(b.nodos, b.conexion, true);
     } catch (err) {
-      c.error = err.message || String(err);
+      m.error = err.message || String(err);
     } finally {
       estado.ocupado = false;
-      $("enviar").disabled = false;
-      $("enviar").textContent = "Consultar";
+      guardar();
       pintar();
+      ajustar();
+      // Deja ver el camino en el cerebro un momento antes de atenuarlo.
+      setTimeout(() => $("principal").classList.remove("pensando"), 2600);
     }
   }
 
-  // ---------- Preguntas de prueba y mapa ----------
+  // ---------- Páginas de pruebas y mapa ----------
+  function mostrarPagina(nombre) {
+    $("pagina-pruebas").hidden = nombre !== "pruebas";
+    $("pagina-mapa").hidden = nombre !== "mapa";
+    $("hilo").hidden = $("redactar").hidden = Boolean(nombre);
+    for (const b of document.querySelectorAll(".herramientas [data-pagina]"))
+      if (b.dataset.pagina === nombre) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+    if (nombre) $("titulo-conv").textContent = nombre === "pruebas" ? "Preguntas de prueba" : "Mapa de la red";
+    else { const c = conversacion(); $("titulo-conv").textContent = c ? c.titulo : "Nueva conversación"; }
+  }
+
   function pintarPruebas() {
     $("tabla-pruebas").innerHTML = estado.ejemplos.map((x, i) => `
-      <tr><td>${escapar(x.pregunta)}</td><td>${PUBLICO[x.publico]}</td>
-      <td class="accion"><button type="button" class="outline" data-i="${i}">Probar</button></td></tr>`).join("");
+      <tr><td class="principal-c">${escapar(x.pregunta)}</td><td><span class="chip ${x.publico}">${PUBLICO[x.publico]}</span></td>
+      <td class="accion"><button type="button" class="enlace" data-i="${i}">Probar</button></td></tr>`).join("");
   }
 
   function pintarMapa() {
-    const filas = estado.nodos.filter((n) =>
-      estado.filtro === "todos" || (estado.filtro === "escritos" ? n.escrito : !n.escrito));
+    const escritos = estado.nodos.filter((n) => n.escrito).length;
+    $("resumen").innerHTML = `
+      <div class="kpi"><b>${estado.nodos.length}</b><span>temas en el mapa</span></div>
+      <div class="kpi"><b>${estado.conexiones.length}</b><span>conexiones entre temas</span></div>
+      <div class="kpi"><b>${escritos}</b><span>temas escritos</span></div>`;
+    const filas = estado.nodos.filter((n) => estado.filtro === "todos" || (estado.filtro === "escritos" ? n.escrito : !n.escrito));
     $("tabla-mapa").innerHTML = filas.map((n) => `
-      <tr><td class="principal">${n.id}</td><td>${PUBLICO[n.publico]}</td>
+      <tr><td class="principal-c">${titulo(n.id)}</td><td><span class="chip ${n.publico}">${PUBLICO[n.publico]}</span></td>
       <td class="ocultar-movil">${escapar(n.cuando)}</td>
-      <td>${n.escrito ? '<span class="badge ok">Escrito</span>' : '<span class="badge no">Sin escribir</span>'}</td></tr>`).join("");
+      <td>${n.escrito ? '<span class="chip ok">Escrito</span>' : '<span class="chip no">Sin escribir</span>'}</td></tr>`).join("");
   }
 
   // ---------- Eventos ----------
-  $("form").addEventListener("submit", (e) => { e.preventDefault(); consultar($("pregunta").value); });
-  window.addEventListener("hashchange", () => {
-    const vista = location.hash.slice(1);
-    if (MIGAS[vista]) irA(vista);
+  const segmentos = (id, valor) => { for (const b of $(id).querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.v === valor)); };
+  function ajustar() {
+    const t = $("pregunta");
+    t.style.height = "auto";
+    t.style.height = Math.min(t.scrollHeight, 160) + "px";
+    $("enviar").disabled = !t.value.trim() || estado.ocupado;
+  }
+
+  $("form").addEventListener("submit", (e) => { e.preventDefault(); preguntar($("pregunta").value); });
+  $("pregunta").addEventListener("input", ajustar);
+  $("pregunta").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); preguntar($("pregunta").value); }
   });
-  for (const a of document.querySelectorAll(".nav a"))
-    a.addEventListener("click", (e) => { e.preventDefault(); irA(a.dataset.vista); });
-  $("consultas").addEventListener("click", (e) => {
-    if (e.target.closest("[data-ir]")) return irA("pruebas");
-    const item = e.target.closest(".consulta");
-    if (item) { estado.activa = Number(item.dataset.i); pintar(); }
+  $("publicos").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; estado.publico = b.dataset.v; segmentos("publicos", estado.publico); });
+  $("modos").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b || b.disabled) return; estado.modo = b.dataset.v; segmentos("modos", estado.modo); });
+  $("contenido").addEventListener("click", (e) => { const b = e.target.closest("[data-pregunta]"); if (b) preguntar(b.dataset.pregunta); });
+  $("nueva").addEventListener("click", nueva);
+  $("lista-conv").addEventListener("click", (e) => {
+    const borrar = e.target.closest("[data-borrar]");
+    if (borrar) {
+      estado.conversaciones = estado.conversaciones.filter((c) => c.id !== borrar.dataset.borrar);
+      if (estado.activa === borrar.dataset.borrar) estado.activa = null;
+      guardar(); pintar(); return;
+    }
+    const abrirBtn = e.target.closest("[data-id]");
+    if (abrirBtn) abrir(abrirBtn.dataset.id);
   });
+  for (const b of document.querySelectorAll(".herramientas [data-pagina]"))
+    b.addEventListener("click", () => { mostrarPagina(b.dataset.pagina); document.body.classList.remove("menu-abierto"); });
+  for (const b of document.querySelectorAll("[data-volver]")) b.addEventListener("click", () => mostrarPagina(null));
   $("tabla-pruebas").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     const x = estado.ejemplos[b.dataset.i];
-    document.querySelector(`input[name="publico"][value="${x.publico}"]`).checked = true;
-    irA("consultar");
-    consultar(x.pregunta, x.publico);
+    estado.publico = x.publico; segmentos("publicos", x.publico);
+    preguntar(x.pregunta, x.publico);
   });
-  $("filtros").addEventListener("click", (e) => {
-    const b = e.target.closest("button"); if (!b) return;
-    estado.filtro = b.dataset.filtro;
-    for (const f of $("filtros").children) f.setAttribute("aria-pressed", String(f === b));
-    pintarMapa();
-  });
+  $("filtros").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; estado.filtro = b.dataset.v; segmentos("filtros", estado.filtro); pintarMapa(); });
+  addEventListener("resize", () => { if (!conversacion()?.mensajes.length) pintarChat(); });
+  $("cambiar-tema").addEventListener("click", () => aplicarTema(document.documentElement.dataset.tema === "claro" ? "oscuro" : "claro"));
+  $("abrir-menu").addEventListener("click", () => document.body.classList.add("menu-abierto"));
+  $("cerrar-menu").addEventListener("click", () => document.body.classList.remove("menu-abierto"));
+  $("velo").addEventListener("click", () => document.body.classList.remove("menu-abierto"));
 
   fetch("/api/estado").then((r) => r.json()).then((s) => {
-    estado.nodos = s.nodos;
-    estado.ejemplos = s.ejemplos;
+    estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia;
     $("modo-ia").disabled = !s.ia;
-    $("nota-ia").textContent = s.ia ? "" : "Con Claude se activa al poner ANTHROPIC_API_KEY en .env.";
-    $("estado-ia").textContent = s.ia ? "Claude disponible" : "Sin API key de Claude";
-    const escritos = s.nodos.filter((n) => n.escrito).length;
-    $("pie").textContent = `${s.nodos.length} nodos · ${escritos} escritos`;
-    pintarPruebas();
-    pintarMapa();
-    pintar();
-    irA(MIGAS[location.hash.slice(1)] ? location.hash.slice(1) : "consultar");
+    $("estado-ia").classList.toggle("on", s.ia);
+    $("estado-ia").querySelector("span").textContent = s.ia ? "Claude conectado" : "Claude sin conectar";
+    cerebro.iniciar(s.nodos, s.conexiones);
+    aplicarTema(leerTema());
+    pintarPruebas(); pintarMapa(); pintar();
   });
 </script>
 </body>
