@@ -17,3 +17,6 @@ conocimiento/grabaciones de reuniones nuvara/
 # Archivo crudo buscable de reuniones (texto completo con datos reales): solo local
 archivo-reuniones/
 __pycache__/
+
+# Resultados de las pruebas de la red (se regeneran en cada corrida)
+red/pruebas/*.resultado.json
