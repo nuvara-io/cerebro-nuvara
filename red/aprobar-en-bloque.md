@@ -5,7 +5,7 @@ titulo: Aprobar facturas en bloque
 tema: aprobacion-en-bloque
 publico: P
 estado: según capacitación
-ruta: [Operaciones, Causaciones, Precausadas, Vista agrupada, Aprobar grupo]
+ruta: [Operaciones, Causaciones, Pre-causadas, Vista agrupada, Aprobar grupo]
 url:
 siguiente: archivar-aprobadas
 actualizado: 2026-11-02
@@ -17,11 +17,11 @@ fuentes:
 # Aprobar facturas en bloque
 
 ## Antes de empezar
-- [P] Las facturas están en **Precausadas** y ya revisaste al menos una de cada grupo.
+- [P] Las facturas están en **Pre-causadas** y ya revisaste al menos una de cada grupo.
 - [P] Las cuentas están bien. Si no, corrígelas primero y pulsa **recausar**.
 
 ## Pasos
-1. [P] Entra a **Operaciones › Causaciones**, pestaña **Precausadas**, y usa la **vista agrupada**: junta las facturas con el mismo juego de cuentas.
+1. [P] Entra a **Operaciones › Causaciones**, pestaña **Pre-causadas**, y usa la **vista agrupada**: junta las facturas con el mismo juego de cuentas.
 2. [P] Expande un grupo con la flecha azul de la izquierda y revisa una o dos facturas con el ícono del ojo. Cierra el detalle.
 3. [P] Si hay excepciones, corrígelas una por una o sácalas del grupo con el filtro de proveedores.
 4. [P] Pulsa **Aprobar grupo**: aprueba todas las facturas del grupo de una vez. Sigue con el siguiente grupo hasta terminar.

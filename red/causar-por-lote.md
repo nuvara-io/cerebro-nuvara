@@ -28,8 +28,8 @@ fuentes:
 4. [P] Confirma. Las facturas se encolan y ves el porcentaje, las que se están causando y las que siguen en cola. Puedes seguir trabajando mientras tanto.
 
 ## Resultado
-- [P] Las facturas del rango pasan a **Precausadas**. Desde ahí se revisan y se aprueban, por ejemplo por grupos.
+- [P] Las facturas del rango pasan a **Pre-causadas**. Desde ahí se revisan y se aprueban, por ejemplo por grupos.
 
 ## Si algo falla
 - [P] Empieza por un solo mes: ahí la plataforma aprende y los meses siguientes salen mejor.
-- [P] Las facturas causadas antes de cargar el plan de cuentas o el balance no cambian solas: selecciónalas en Precausadas y pulsa **recausar** (no cobra).
+- [P] Las facturas causadas antes de cargar el plan de cuentas o el balance no cambian solas: selecciónalas en Pre-causadas y pulsa **recausar** (no cobra).

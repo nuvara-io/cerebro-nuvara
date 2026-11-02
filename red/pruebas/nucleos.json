@@ -1,0 +1,475 @@
+{
+  "descripcion": "Núcleos de Comercial, Configuración e inicio, Causación y Equipo interno: cada pregunta debe llegar a su núcleo con el fragmento que la responde. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": [
+      "870",
+      "\\b490\\b",
+      "271\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ]
+  },
+  "casos": [
+    {
+      "pregunta": "Me dicen que es caro",
+      "publico": "C",
+      "nodos": [
+        "objeciones"
+      ],
+      "incluye": [
+        [
+          "Compara con el costo de un auxiliar dedicado a causar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Ya tienen otro software, ¿qué les digo?",
+      "publico": "C",
+      "nodos": [
+        "objeciones"
+      ],
+      "incluye": [
+        [
+          "núvara no lo reemplaza, lo complementa"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿En qué se diferencia de Siigo?",
+      "publico": "C",
+      "nodos": [
+        "competencia"
+      ],
+      "incluye": [
+        [
+          "no reemplaza el programa contable"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué le digo a un contador con mucho volumen?",
+      "publico": "C",
+      "nodos": [
+        "argumentos-de-venta"
+      ],
+      "incluye": [
+        [
+          "se multiplica por cada empresa"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo armo una demostración?",
+      "publico": "C",
+      "nodos": [
+        "demostracion-en-vivo"
+      ],
+      "incluye": [
+        [
+          "Diagnóstico (5 a 10 min)"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué orden sigo en la capacitación?",
+      "publico": "I",
+      "nodos": [
+        "capacitar-usuarios"
+      ],
+      "incluye": [
+        [
+          "0-10 min"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Ese error ya pasó?",
+      "publico": "I",
+      "nodos": [
+        "problemas-conocidos"
+      ],
+      "incluye": [
+        [
+          "La carga del RUT falla de forma intermitente"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué viene en exportación?",
+      "publico": "I",
+      "nodos": [
+        "hoja-de-ruta"
+      ],
+      "incluye": [
+        [
+          "Exportación contable de la nómina"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo invito a un auxiliar?",
+      "publico": "P",
+      "nodos": [
+        "usuarios-roles-y-empresas"
+      ],
+      "incluye": [
+        [
+          "Agregar miembro"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Puedo tener varias empresas?",
+      "publico": "P",
+      "nodos": [
+        "usuarios-roles-y-empresas"
+      ],
+      "incluye": [
+        [
+          "Crear Empresa"
+        ]
+      ]
+    },
+    {
+      "pregunta": "el token no funciona",
+      "publico": "P",
+      "nodos": [
+        "conectar-dian"
+      ],
+      "incluye": [
+        [
+          "Solicitar token nuevo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué es la extensión?",
+      "publico": "P",
+      "nodos": [
+        "conectar-dian"
+      ],
+      "incluye": [
+        [
+          "CUFE"
+        ]
+      ]
+    },
+    {
+      "pregunta": "no llegan las facturas del correo",
+      "publico": "P",
+      "nodos": [
+        "conectar-correo"
+      ],
+      "incluye": [
+        [
+          "Probar conexión"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo conecto el correo?",
+      "publico": "P",
+      "nodos": [
+        "conectar-correo"
+      ],
+      "incluye": [
+        [
+          "Agregar nuevo correo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo empiezo?",
+      "publico": "P",
+      "nodos": [
+        "onboarding"
+      ],
+      "incluye": [
+        [
+          "balance de prueba por tercero"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué configuro primero?",
+      "publico": "P",
+      "nodos": [
+        "onboarding"
+      ],
+      "incluye": [
+        [
+          "Orden recomendado"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué hace núvara?",
+      "publico": "P",
+      "nodos": [
+        "que-es-nuvara"
+      ],
+      "incluye": [
+        [
+          "Causa **compras y ventas**"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Sirve para un contador independiente?",
+      "publico": "P",
+      "nodos": [
+        "para-quien"
+      ],
+      "incluye": [
+        [
+          "contador externo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Tienen nómina?",
+      "publico": "P",
+      "nodos": [
+        "modulos-disponibles"
+      ],
+      "incluye": [
+        [
+          "Cuenta › Módulos › Nómina › Activar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Se conecta con World Office?",
+      "publico": "P",
+      "nodos": [
+        "integraciones"
+      ],
+      "incluye": [
+        [
+          "World Office sale **por archivo**"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Mis datos están seguros?",
+      "publico": "P",
+      "nodos": [
+        "seguridad-y-soporte"
+      ],
+      "incluye": [
+        [
+          "AES-256-GCM"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo recargo?",
+      "publico": "P",
+      "nodos": [
+        "creditos-y-recargas"
+      ],
+      "incluye": [
+        [
+          "Cuenta › Saldo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿El saldo es por empresa?",
+      "publico": "P",
+      "nodos": [
+        "creditos-y-recargas"
+      ],
+      "incluye": [
+        [
+          "no tienes que recargar por empresa"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo causo una nota crédito?",
+      "publico": "P",
+      "nodos": [
+        "notas-credito-y-documento-soporte"
+      ],
+      "incluye": [
+        [
+          "movimiento inverso"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo legalizo gastos de un viaje al exterior?",
+      "publico": "P",
+      "nodos": [
+        "facturas-del-exterior"
+      ],
+      "incluye": [
+        [
+          "Legalización de gastos"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Me falta alguna factura frente a la DIAN?",
+      "publico": "P",
+      "nodos": [
+        "archivo-y-comparacion-dian"
+      ],
+      "incluye": [
+        [
+          "Solo en DIAN"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Borré una factura, ¿cómo la recupero?",
+      "publico": "P",
+      "nodos": [
+        "papelera-y-limpieza"
+      ],
+      "incluye": [
+        [
+          "Restaurar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo bloqueo facturas que no son mías?",
+      "publico": "P",
+      "nodos": [
+        "papelera-y-limpieza"
+      ],
+      "incluye": [
+        [
+          "Proveedores excluidos"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo asocio productos del inventario?",
+      "publico": "P",
+      "nodos": [
+        "inventario-y-productos"
+      ],
+      "incluye": [
+        [
+          "Mesa de asociación"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué significa precausar?",
+      "publico": "P",
+      "nodos": [
+        "glosario"
+      ],
+      "incluye": [
+        [
+          "Precausar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué significa cada estado?",
+      "publico": "P",
+      "nodos": [
+        "causar-y-revisar"
+      ],
+      "incluye": [
+        [
+          "Pre-causadas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo filtro por fecha?",
+      "publico": "P",
+      "nodos": [
+        "importar-facturas"
+      ],
+      "incluye": [
+        [
+          "Mes"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Puso mal la cuenta",
+      "publico": "P",
+      "nodos": [
+        "correcciones-y-aprendizaje"
+      ],
+      "incluye": [
+        [
+          "Crear cuenta"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo una regla fija?",
+      "publico": "P",
+      "nodos": [
+        "reglas-y-centros-de-costo"
+      ],
+      "incluye": [
+        [
+          "Crear regla y aprobar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Puedo aprobar varias a la vez?",
+      "publico": "P",
+      "nodos": [
+        "aprobacion-en-bloque"
+      ],
+      "incluye": [
+        [
+          "Aprobar grupo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿y si el proveedor es autorretenedor?",
+      "publico": "P",
+      "nodos": [
+        "proveedores-y-retenciones"
+      ],
+      "incluye": [
+        [
+          "Autorretenedor"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo manejo la autorretención?",
+      "publico": "P",
+      "nodos": [
+        "ventas-y-autorretencion"
+      ],
+      "incluye": [
+        [
+          "Autorrenta de la empresa"
+        ]
+      ]
+    }
+  ]
+}

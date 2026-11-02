@@ -29,7 +29,7 @@ fuentes:
 4. [P] Sigue el avance en la cola que se abre: cada factura toma cerca de 15 segundos y puedes seguir trabajando.
 
 ## Resultado
-- [P] Las facturas pasan a **Precausadas** con la causación que propone la plataforma, lista para que la revises.
+- [P] Las facturas pasan a **Pre-causadas** con la causación que propone la plataforma, lista para que la revises.
 - [P] Los créditos se cobran al causar. Borrar una factura pendiente no cobra.
 
 ## Si algo falla

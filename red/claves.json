@@ -31,7 +31,10 @@
     "hacen",
     "reporte",
     "informe",
-    "dashboard"
+    "dashboard",
+    "que modulos",
+    "informes contables",
+    "revision contable"
   ],
   "integraciones": [
     "integracion",
@@ -56,7 +59,11 @@
     "contactar",
     "contacto",
     "capacitacion",
-    "ayuda"
+    "ayuda",
+    "aes",
+    "chat de soporte",
+    "centro de ayuda",
+    "tutorial"
   ],
   "precios": [
     "precio",
@@ -97,7 +104,12 @@
     "tarjeta",
     "pse",
     "transferencia",
-    "alcanzan"
+    "alcanzan",
+    "bre-b",
+    "qr",
+    "capacidad",
+    "corte mensual",
+    "facturas me alcanzan"
   ],
   "competencia": [
     "competencia",
@@ -107,7 +119,9 @@
     "alternativa",
     "en vez de",
     "mejor que",
-    "por que no uso"
+    "por que no uso",
+    "diferencia con siigo",
+    "otra solucion"
   ],
   "argumentos-de-venta": [
     "argumento",
@@ -115,7 +129,8 @@
     "vender",
     "pitch",
     "que le digo",
-    "como le vendo"
+    "como le vendo",
+    "mucho volumen"
   ],
   "objeciones": [
     "objecion",
@@ -128,7 +143,11 @@
     "no confian",
     "desconfianza",
     "ya tienen",
-    "ya usan"
+    "ya usan",
+    "ya tienen otro software",
+    "es caro",
+    "probar antes",
+    "lo tengo que consultar"
   ],
   "demostracion-en-vivo": [
     "demostracion",
@@ -148,7 +167,13 @@
     "agregar empresa",
     "usuario nuevo",
     "otra empresa",
-    "usuario"
+    "usuario",
+    "miembro",
+    "operador",
+    "administrador",
+    "suspender",
+    "multiempresa",
+    "organizacion"
   ],
   "onboarding": [
     "empezar",
@@ -165,19 +190,30 @@
     "crear una empresa",
     "carga del balance",
     "digitos",
-    "configuracion"
+    "configuracion",
+    "rut",
+    "asistente",
+    "activar cuenta"
   ],
   "conectar-dian": [
     "dian",
     "token",
-    "extension"
+    "extension",
+    "chrome",
+    "cufe",
+    "portal dian",
+    "representante legal"
   ],
   "conectar-correo": [
     "correo",
     "email",
     "gmail",
     "outlook",
-    "buzon"
+    "buzon",
+    "imap",
+    "contrasena de aplicacion",
+    "sincronizar correo",
+    "yahoo"
   ],
   "importar-facturas": [
     "importar",
@@ -217,12 +253,17 @@
     "quedo mal",
     "corrijo",
     "corrige",
-    "editar"
+    "editar",
+    "recausar",
+    "aprendido"
   ],
   "reglas-y-centros-de-costo": [
     "regla",
     "regla fija",
-    "centro de costo"
+    "centro de costo",
+    "centros de costo",
+    "placa",
+    "etiqueta"
   ],
   "aprobacion-en-bloque": [
     "aprobar varias",
@@ -230,7 +271,7 @@
     "en bloque",
     "masivo",
     "masiva",
-    "lote"
+    "vista agrupada"
   ],
   "proveedores-y-retenciones": [
     "retencion",
@@ -240,16 +281,23 @@
     "proveedor",
     "autorretenedor",
     "iva",
-    "impuesto"
+    "impuesto",
+    "gran contribuyente",
+    "exento",
+    "acumulada"
   ],
   "ventas-y-autorretencion": [
     "venta",
     "autorretencion",
-    "mis ventas"
+    "mis ventas",
+    "autorrenta",
+    "cuentas de ventas"
   ],
   "notas-credito-y-documento-soporte": [
     "nota credito",
-    "documento soporte"
+    "documento soporte",
+    "devolucion",
+    "iva de devolucion"
   ],
   "facturas-del-exterior": [
     "exterior",
@@ -258,7 +306,11 @@
     "legalizar",
     "legalizacion",
     "legalizar gastos",
-    "legalizacion de gastos"
+    "legalizacion de gastos",
+    "trm",
+    "recibos de viaje",
+    "importacion manual",
+    "nacionalizacion"
   ],
   "archivo-y-comparacion-dian": [
     "archivo",
@@ -266,7 +318,10 @@
     "me falta",
     "faltan facturas",
     "donde quedan",
-    "frente a la dian"
+    "frente a la dian",
+    "comparar dian",
+    "comparar con dian",
+    "restablecer"
   ],
   "papelera-y-limpieza": [
     "papelera",
@@ -274,13 +329,21 @@
     "borrar",
     "eliminar",
     "bloquear",
-    "no son mias"
+    "no son mias",
+    "recuperar",
+    "restaurar",
+    "proveedor excluido",
+    "excluir proveedor",
+    "limpiar"
   ],
   "inventario-y-productos": [
     "inventario",
     "producto",
     "bodega",
-    "asociar productos"
+    "asociar productos",
+    "stock",
+    "aprobar productos",
+    "mesa de asociacion"
   ],
   "nomina": [
     "nomina",
@@ -321,7 +384,8 @@
     "que es un",
     "que es una",
     "definicion",
-    "significado"
+    "significado",
+    "que quiere decir"
   ],
   "capacitar-usuarios": [
     "dar una capacitacion",
@@ -335,7 +399,10 @@
     "falla",
     "bug",
     "no funciona",
-    "se cae"
+    "se cae",
+    "ya paso",
+    "reportado",
+    "se reporta"
   ],
   "hoja-de-ruta": [
     "hoja de ruta",
@@ -343,7 +410,8 @@
     "cuando sale",
     "proximo",
     "roadmap",
-    "que viene"
+    "que viene",
+    "proximamente"
   ],
   "causar-facturas": [
     "causar una factura",

@@ -53,7 +53,7 @@ Qué es núvara, para quién, precios, créditos y cómo se vende.
 |---|---|---|---|---|---|
 | `que-es-nuvara` | núcleo | P | "¿Qué hace núvara?", "¿qué es la causación?", "¿en qué me ayuda?" |  | `producto.md` §Qué hace, `sitio-web.md` §Posicionamiento y §Qué hace la causación |
 | `para-quien` | núcleo | P (dolores: C) | "¿Sirve para un contador independiente?", "¿para una firma?", "¿para mi empresa?" |  | `producto.md` §A quién va dirigido, `demostraciones-y-ventas.md` §Perfiles y §Posicionamiento, `objeciones-y-dolores.md` §Dolores y §Lo que mueve a cada perfil |
-| `modulos-disponibles` | núcleo | P (en desarrollo: I) | "¿Tienen nómina?", "¿hacen facturación electrónica?", "¿qué módulos hay?" |  | `producto.md` §Módulos y capacidades y §Mapa de menús, `sitio-web.md` §Otros módulos |
+| `modulos-disponibles` | núcleo | P (en desarrollo: I) | "¿Tienen nómina?", "¿qué más hace núvara?", "¿qué módulos hay?" |  | `producto.md` §Módulos y capacidades y §Mapa de menús, `sitio-web.md` §Otros módulos |
 | `integraciones` | núcleo | P | "¿Se conecta con Siigo?", "¿con Alegra?", "¿y si uso otro software?" |  | `sitio-web.md` §Integraciones, `preguntas-frecuentes.md` §Exportación y software contable |
 | `seguridad-y-soporte` | núcleo | P | "¿Mis datos están seguros?", "¿cómo los contacto?", "¿hay capacitación?" |  | `sitio-web.md` §Seguridad y soporte, `por-confirmar.md` §2 (capacitación incluida) |
 | `precios` | núcleo | P (pendientes: C, discusiones de modelo: I) | "¿Cuánto cuesta?", "¿cuánto vale causar una compra?", "¿hay mínimo?", "¿hay descuentos?" |  | `sitio-web.md` §Precios, `CLAUDE.md` §Datos confirmados, `por-confirmar.md` §1 y §2, `producto.md` §Planes y créditos, `preguntas-frecuentes.md` §Precios y comercial |

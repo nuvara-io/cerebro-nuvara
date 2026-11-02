@@ -110,7 +110,7 @@ export async function enrutar(
 }
 
 function sistemaRespuesta(publico: Publico) {
-  const voz = cargarNodo("voz-de-marca", publico) ?? "";
+  const voz = ["voz-de-marca", "limites"].map((id) => cargarNodo(id, publico) ?? "").join("\n\n");
   const porPublico: Record<Publico, string> = {
     P: `Quien pregunta es ${NOMBRE_PUBLICO.P}. Solo tienes datos oficiales. No menciones que existen datos internos o sin confirmar.`,
     C: `Quien pregunta es ${NOMBRE_PUBLICO.C}. Puedes usar los datos por confirmar, pero márcalos siempre como "sin confirmar" y aclara que no se le dicen a un prospecto. Si piden una cifra descartada, dilo y da la oficial.`,
