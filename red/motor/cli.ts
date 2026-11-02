@@ -27,7 +27,7 @@ if (conIa) {
   console.log(`Tokens: ${c.uso.entrada} de entrada, ${c.uso.salida} de salida`);
 } else {
   const b = buscar(pregunta, publico);
-  console.log(`Ruta: ${b.nodos.join(" + ") || "(ninguno)"}`);
+  console.log(`Ruta: ${b.nodos.join(" + ") || "(ninguno)"}${b.conexion ? ` → ${b.conexion}` : ""}`);
   console.log(
     `Puntajes: ${b.puntajes.slice(0, 4).map((p) => `${p.id} ${p.puntos} (${p.claves.join(", ")})`).join(" · ") || "-"}`,
   );

@@ -120,6 +120,12 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `facturas-del-exterior` | `notas-credito-y-documento-soporte` | Documento soporte de una compra al exterior |
 | `exportar-siigo`, `exportar-world-office` | `inventario-y-productos` | Productos o bodegas en la exportación |
 | `objeciones`, `demostracion-en-vivo` | `argumentos-de-venta` | Qué responder o qué mostrar |
+| `que-es-nuvara` | `seguridad-y-soporte` | "¿Es seguro?", "¿quién me ayuda si algo falla?" |
+| `integraciones` | `competencia` | Solo C: comparar con el programa contable que ya usa |
+| `competencia` | `argumentos-de-venta` | Qué decirle a quien ya usa otro programa |
+| `capacitar-usuarios` | `onboarding` | El orden de la configuración inicial en la sesión |
+| `problemas-conocidos` | `seguridad-y-soporte` | Cómo reportar el error o a quién escalarlo |
+| `modulos-disponibles` | `hoja-de-ruta` | Solo I: cuándo sale un módulo en desarrollo |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo se verá un nodo (ejemplo: `precios`)

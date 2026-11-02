@@ -3,12 +3,19 @@
     "target": "ESNext",
     "module": "Preserve",
     "moduleResolution": "Bundler",
-    "lib": ["ESNext"],
-    "types": ["bun"],
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "bun"
+    ],
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
     "noUnusedLocals": true
   },
-  "include": ["motor/**/*.ts"]
+  "include": [
+    "motor/**/*.ts",
+    "interfaz/**/*.ts"
+  ]
 }

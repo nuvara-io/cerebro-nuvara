@@ -51,7 +51,7 @@ async function ejecutar(caso: Caso): Promise<Salida> {
   const b = buscar(caso.pregunta, caso.publico);
   return {
     nodos: b.nodos,
-    conexion: null,
+    conexion: b.conexion,
     sinEscribir: b.sinEscribir,
     texto: b.resultado,
     uso: { entrada: 0, salida: 0 },

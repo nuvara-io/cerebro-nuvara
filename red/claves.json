@@ -1,39 +1,342 @@
 {
   "_como": "Palabras clave del enrutador sin IA. Una palabra suma 2 puntos; una frase suma 2 por cada palabra de más de dos letras (de, la o me no suman). Se comparan sin tildes, sin mayúsculas y sin plurales. Gana el nodo con más puntos; si empatan, se devuelven los dos.",
-  "que-es-nuvara": ["hace nuvara", "es nuvara", "sirve nuvara", "beneficio", "ventaja", "causacion automatica"],
-  "para-quien": ["contador", "contadora", "independiente", "firma", "empresario", "perfil", "me sirve", "dirigido"],
-  "modulos-disponibles": ["modulo", "funcionalidad", "que mas hace", "disponible", "en desarrollo"],
-  "integraciones": ["integracion", "integra", "conecta con", "alegra", "helisa", "contai", "siigo pyme", "software contable", "otro software", "otro programa"],
-  "seguridad-y-soporte": ["seguridad", "seguro", "datos", "cifrado", "respaldo", "soporte", "contactar", "contacto", "capacitacion", "ayuda"],
-  "precios": ["precio", "cuesta", "costo", "vale", "cobran", "cobra", "tarifa", "caro", "barato", "descuento", "referido", "promocion", "minimo", "consumo", "paquete", "plan", "incluye", "cuanto cuesta", "cuanto vale", "cuanto cobran", "me cuesta", "pago minimo", "recarga minima", "minimo mensual", "precio especial"],
-  "creditos-y-recargas": ["recargar", "recargo", "recarga", "saldo", "credito", "billetera", "monedero", "pagar", "pago", "tarjeta", "pse", "transferencia", "alcanzan"],
-  "competencia": ["competencia", "competidor", "diferencia", "comparar", "alternativa", "en vez de", "mejor que"],
-  "argumentos-de-venta": ["argumento", "convencer", "vender", "pitch", "que le digo", "como le vendo"],
-  "objeciones": ["objecion", "pone peros", "no confia", "desconfia", "miedo", "no quiere"],
-  "demostracion-en-vivo": ["demostracion", "demo", "presentar", "presentacion", "cierre", "cerrar"],
-  "usuarios-roles-y-empresas": ["rol", "permiso", "invitar", "auxiliar", "varias empresas", "crear empresa", "agregar empresa", "usuario nuevo"],
-  "onboarding": ["empezar", "empiezo", "inicio", "primeros pasos", "configurar", "configuracion inicial", "registrarme", "registro"],
-  "conectar-dian": ["dian", "token", "extension"],
-  "conectar-correo": ["correo", "email", "gmail", "outlook", "buzon"],
-  "importar-facturas": ["importar", "traer facturas", "descargar facturas", "cargar facturas", "filtrar", "no aparecen", "no llegan"],
-  "causar-y-revisar": ["causar", "causo", "causacion", "precausar", "revisar", "estado", "pendiente"],
-  "correcciones-y-aprendizaje": ["corregir", "correccion", "cuenta mal", "cambiar cuenta", "aprende", "aprendizaje"],
-  "reglas-y-centros-de-costo": ["regla", "regla fija", "centro de costo"],
-  "aprobacion-en-bloque": ["aprobar varias", "aprobar todas", "en bloque", "masivo", "masiva", "lote"],
-  "proveedores-y-retenciones": ["retencion", "retefuente", "reteica", "reteiva", "proveedor", "autorretenedor"],
-  "ventas-y-autorretencion": ["venta", "autorretencion"],
-  "notas-credito-y-documento-soporte": ["nota credito", "documento soporte"],
-  "facturas-del-exterior": ["exterior", "otro pais", "extranjero", "legalizar", "legalizacion", "gasto"],
-  "archivo-y-comparacion-dian": ["archivo", "comparar con la dian", "me falta", "faltan facturas", "donde quedan"],
-  "papelera-y-limpieza": ["papelera", "borre", "borrar", "eliminar", "bloquear", "no son mias"],
-  "exportar-siigo": ["siigo", "exportar a siigo", "pasar a siigo"],
-  "exportar-world-office": ["world office", "siigo escritorio"],
-  "inventario-y-productos": ["inventario", "producto", "bodega", "asociar productos"],
-  "nomina": ["nomina", "empleado", "historico"],
-  "facturacion-electronica-y-radian": ["facturacion electronica", "facturar", "radian"],
-  "conciliacion-bancaria": ["conciliacion", "conciliar", "banco", "extracto"],
-  "glosario": ["que significa", "que es un", "que es una", "definicion", "significado"],
-  "capacitar-usuarios": ["dar una capacitacion", "capacitar", "orden de la capacitacion"],
-  "problemas-conocidos": ["error", "falla", "bug", "no funciona", "se cae"],
-  "hoja-de-ruta": ["hoja de ruta", "viene", "cuando sale", "proximo", "roadmap"]
+  "que-es-nuvara": [
+    "hace nuvara",
+    "es nuvara",
+    "sirve nuvara",
+    "beneficio",
+    "ventaja",
+    "causacion automatica",
+    "que es la causacion",
+    "en que me ayuda"
+  ],
+  "para-quien": [
+    "contador",
+    "contadora",
+    "independiente",
+    "firma",
+    "empresario",
+    "perfil",
+    "me sirve",
+    "dirigido",
+    "mi empresa"
+  ],
+  "modulos-disponibles": [
+    "modulo",
+    "funcionalidad",
+    "que mas hace",
+    "disponible",
+    "en desarrollo",
+    "tienen",
+    "hacen",
+    "reporte",
+    "informe",
+    "dashboard"
+  ],
+  "integraciones": [
+    "integracion",
+    "integra",
+    "conecta con",
+    "alegra",
+    "helisa",
+    "contai",
+    "siigo pyme",
+    "software contable",
+    "otro software",
+    "otro programa",
+    "software",
+    "se conecta"
+  ],
+  "seguridad-y-soporte": [
+    "seguridad",
+    "seguro",
+    "datos",
+    "cifrado",
+    "respaldo",
+    "soporte",
+    "contactar",
+    "contacto",
+    "capacitacion",
+    "ayuda"
+  ],
+  "precios": [
+    "precio",
+    "cuesta",
+    "cobran",
+    "cobra",
+    "tarifa",
+    "caro",
+    "barato",
+    "descuento",
+    "referido",
+    "promocion",
+    "minimo",
+    "paquete",
+    "cuanto cuesta",
+    "cuanto vale",
+    "cuanto cobran",
+    "me cuesta",
+    "pago minimo",
+    "recarga minima",
+    "minimo mensual",
+    "precio especial",
+    "plan corporativo",
+    "que incluye el precio",
+    "costo de nuvara",
+    "cuanto es el costo"
+  ],
+  "creditos-y-recargas": [
+    "recargar",
+    "recargo",
+    "recarga",
+    "saldo",
+    "credito",
+    "billetera",
+    "monedero",
+    "pagar",
+    "pago",
+    "tarjeta",
+    "pse",
+    "transferencia",
+    "alcanzan"
+  ],
+  "competencia": [
+    "competencia",
+    "competidor",
+    "diferencia",
+    "comparar",
+    "alternativa",
+    "en vez de",
+    "mejor que",
+    "por que no uso"
+  ],
+  "argumentos-de-venta": [
+    "argumento",
+    "convencer",
+    "vender",
+    "pitch",
+    "que le digo",
+    "como le vendo"
+  ],
+  "objeciones": [
+    "objecion",
+    "pone peros",
+    "no confia",
+    "desconfia",
+    "miedo",
+    "no quiere",
+    "dicen que es caro",
+    "no confian",
+    "desconfianza",
+    "ya tienen",
+    "ya usan"
+  ],
+  "demostracion-en-vivo": [
+    "demostracion",
+    "demo",
+    "presentar",
+    "presentacion",
+    "cierre",
+    "cerrar"
+  ],
+  "usuarios-roles-y-empresas": [
+    "rol",
+    "permiso",
+    "invitar",
+    "auxiliar",
+    "varias empresas",
+    "crear empresa",
+    "agregar empresa",
+    "usuario nuevo",
+    "otra empresa",
+    "usuario"
+  ],
+  "onboarding": [
+    "empezar",
+    "empiezo",
+    "inicio",
+    "primeros pasos",
+    "configurar",
+    "configuracion inicial",
+    "registrarme",
+    "registro",
+    "balance",
+    "plan de cuentas",
+    "puc",
+    "crear una empresa",
+    "carga del balance",
+    "digitos",
+    "configuracion"
+  ],
+  "conectar-dian": [
+    "dian",
+    "token",
+    "extension"
+  ],
+  "conectar-correo": [
+    "correo",
+    "email",
+    "gmail",
+    "outlook",
+    "buzon"
+  ],
+  "importar-facturas": [
+    "importar",
+    "traer facturas",
+    "descargar facturas",
+    "cargar facturas",
+    "filtrar",
+    "no aparecen",
+    "no llegan",
+    "traer",
+    "traigo",
+    "importo"
+  ],
+  "causar-y-revisar": [
+    "causar",
+    "causo",
+    "causacion",
+    "precausar",
+    "revisar",
+    "estado",
+    "pendiente",
+    "cada estado",
+    "decide",
+    "cuenta contable",
+    "contrapartida",
+    "peaje",
+    "no son gasto"
+  ],
+  "correcciones-y-aprendizaje": [
+    "corregir",
+    "correccion",
+    "cuenta mal",
+    "cambiar cuenta",
+    "aprende",
+    "aprendizaje",
+    "puso mal",
+    "quedo mal",
+    "corrijo",
+    "corrige",
+    "editar"
+  ],
+  "reglas-y-centros-de-costo": [
+    "regla",
+    "regla fija",
+    "centro de costo"
+  ],
+  "aprobacion-en-bloque": [
+    "aprobar varias",
+    "aprobar todas",
+    "en bloque",
+    "masivo",
+    "masiva",
+    "lote"
+  ],
+  "proveedores-y-retenciones": [
+    "retencion",
+    "retefuente",
+    "reteica",
+    "reteiva",
+    "proveedor",
+    "autorretenedor",
+    "iva",
+    "impuesto"
+  ],
+  "ventas-y-autorretencion": [
+    "venta",
+    "autorretencion",
+    "mis ventas"
+  ],
+  "notas-credito-y-documento-soporte": [
+    "nota credito",
+    "documento soporte"
+  ],
+  "facturas-del-exterior": [
+    "exterior",
+    "otro pais",
+    "extranjero",
+    "legalizar",
+    "legalizacion",
+    "legalizar gastos",
+    "legalizacion de gastos"
+  ],
+  "archivo-y-comparacion-dian": [
+    "archivo",
+    "comparar con la dian",
+    "me falta",
+    "faltan facturas",
+    "donde quedan",
+    "frente a la dian"
+  ],
+  "papelera-y-limpieza": [
+    "papelera",
+    "borre",
+    "borrar",
+    "eliminar",
+    "bloquear",
+    "no son mias"
+  ],
+  "exportar-siigo": [
+    "siigo",
+    "exportar a siigo",
+    "pasar a siigo"
+  ],
+  "exportar-world-office": [
+    "world office",
+    "siigo escritorio"
+  ],
+  "inventario-y-productos": [
+    "inventario",
+    "producto",
+    "bodega",
+    "asociar productos"
+  ],
+  "nomina": [
+    "nomina",
+    "empleado",
+    "historico"
+  ],
+  "facturacion-electronica-y-radian": [
+    "facturacion electronica",
+    "radian",
+    "facturar electronicamente",
+    "emitir factura",
+    "factura electronica de venta"
+  ],
+  "conciliacion-bancaria": [
+    "conciliacion",
+    "conciliar",
+    "banco",
+    "extracto"
+  ],
+  "glosario": [
+    "que significa",
+    "que es un",
+    "que es una",
+    "definicion",
+    "significado"
+  ],
+  "capacitar-usuarios": [
+    "dar una capacitacion",
+    "capacitar",
+    "orden de la capacitacion",
+    "doy una capacitacion",
+    "que orden"
+  ],
+  "problemas-conocidos": [
+    "error",
+    "falla",
+    "bug",
+    "no funciona",
+    "se cae"
+  ],
+  "hoja-de-ruta": [
+    "hoja de ruta",
+    "viene",
+    "cuando sale",
+    "proximo",
+    "roadmap",
+    "que viene"
+  ]
 }

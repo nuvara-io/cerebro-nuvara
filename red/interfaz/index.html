@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Red de consulta · núvara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Tokens del sistema de diseño de núvara (modo claro) */
+  :root {
+    --blue-primary: #3082EE;
+    --blue-dark: #23357D;
+    --teal-primary: #4BCEA6;
+    --teal-dark: #09695C;
+    --blue-90: #E9F1FC;
+    --gray-900: #111827;
+    --gray-700: #404652;
+    --gray-500: #878B92;
+    --gray-300: #B6B8BD;
+    --gray-200: #CFCFCF;
+    --gray-100: #E5E6E8;
+    --white: #FFFFFF;
+    --warning: #F3C11B;
+    --danger: #E03E1A;
+    --success: #009D4E;
+    --radius: 5px;
+    --thin: 0.5px;
+    --default: 1.2px;
+    --nav: 240px;
+    --header: 88px;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { background: var(--white); }
+  body {
+    margin: 0;
+    color: var(--gray-900);
+    font: 400 16px/1.5 'Jost', system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: var(--nav) 1fr;
+    min-height: 100vh;
+  }
+  button, input { font-family: inherit; }
+
+  /* ---------- Menú lateral (modo claro) ---------- */
+  .nav {
+    background: var(--white);
+    border-right: var(--thin) solid var(--gray-200);
+    padding: 0 16px 24px;
+    position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column;
+  }
+  .nav .logo { height: var(--header); display: flex; align-items: center; padding-left: 8px; }
+  .nav .logo img { width: 124px; height: auto; display: block; }
+  .nav h6 { font: 400 14px/1 'Jost', sans-serif; color: var(--gray-500); margin: 16px 8px 10px; }
+  .nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .nav a {
+    display: flex; align-items: center; gap: 12px;
+    font: 300 18px/1.2 'Jost', sans-serif;
+    color: var(--blue-dark);
+    text-decoration: none;
+    border-radius: var(--radius);
+    padding: 10px 8px;
+  }
+  .nav a svg { flex: none; color: var(--blue-primary); }
+  .nav a:hover { background: var(--blue-90); }
+  .nav a[aria-current="page"] { background: var(--blue-90); color: var(--blue-primary); font-weight: 600; }
+  .nav .pie { margin-top: auto; font: 400 14px/1.4 'Jost', sans-serif; color: var(--gray-500); padding: 0 8px; }
+
+  /* ---------- Área de trabajo ---------- */
+  .area { min-width: 0; }
+  .cabecera {
+    height: var(--header);
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 0 32px;
+    border-bottom: var(--thin) solid var(--gray-200);
+  }
+  .migas { font: 300 16px/1 'Jost', sans-serif; color: var(--gray-900); }
+  .migas span { margin: 0 8px; color: var(--gray-500); }
+  .migas b { font-weight: 600; color: var(--blue-primary); }
+  .cabecera .ia { font: 400 14px/1 'Jost', sans-serif; color: var(--gray-500); }
+
+  .pagina { padding: 28px 32px 48px; max-width: 1200px; }
+  .pagina h1 { font: 700 26px/1.3 'Jost', sans-serif; color: var(--blue-dark); margin: 0; }
+  .vista > p { font: 300 18px/1.5 'Jost', sans-serif; color: var(--gray-700); margin: 6px 0 24px; }
+  .vista > p code { font: 400 16px/1 'Jost', sans-serif; color: var(--blue-primary); }
+  .vista[hidden] { display: none; }
+
+  /* Formulario de consulta */
+  .formulario { border: var(--thin) solid var(--gray-200); border-radius: var(--radius); padding: 20px; }
+  .fila { display: flex; gap: 12px; }
+  .etq { display: block; font: 600 16px/1 'Jost', sans-serif; color: var(--gray-700); margin-bottom: 10px; }
+  .campo {
+    flex: 1; min-width: 0;
+    font: 300 18px/1.4 'Jost', sans-serif;
+    color: var(--gray-900);
+    background: var(--white);
+    border: var(--thin) solid var(--gray-300);
+    border-radius: var(--radius);
+    padding: 11px 14px;
+    outline: none;
+  }
+  .campo::placeholder { color: var(--gray-300); }
+  .campo:hover, .campo:focus { border: var(--default) solid var(--blue-primary); padding: 10.3px 13.3px; }
+  .boton {
+    flex: none;
+    font: 600 18px/1 'Jost', sans-serif;
+    color: var(--white);
+    background: var(--blue-primary);
+    border: var(--default) solid var(--blue-primary);
+    border-radius: var(--radius);
+    padding: 0 28px;
+    cursor: pointer;
+  }
+  .boton:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+  .boton:disabled { background: var(--white); color: var(--gray-200); border-color: var(--gray-200); cursor: default; }
+  .opciones { display: flex; flex-wrap: wrap; gap: 20px 48px; margin-top: 20px; }
+  .radios { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .radio { display: flex; align-items: center; gap: 8px; font: 300 17px/1.2 'Jost', sans-serif; color: var(--gray-900); cursor: pointer; }
+  .radio input { appearance: none; width: 18px; height: 18px; margin: 0; border: var(--default) solid var(--gray-500); border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
+  .radio input:checked { border-color: var(--blue-primary); }
+  .radio input:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--blue-primary); }
+  .radio input:disabled { border-color: var(--gray-200); cursor: not-allowed; }
+  .radio:has(input:disabled) { color: var(--gray-300); cursor: not-allowed; }
+  .nota { font: 300 14px/1.4 'Jost', sans-serif; color: var(--gray-500); margin: 6px 0 0; }
+
+  /* Resultados */
+  .resultados { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; margin-top: 28px; align-items: start; }
+  h2 { font: 600 20px/1.4 'Jost', sans-serif; margin: 0 0 12px; color: var(--gray-900); }
+  .vacio { font: 300 17px/1.5 'Jost', sans-serif; color: var(--gray-500); border: var(--thin) dashed var(--gray-300); border-radius: var(--radius); padding: 24px; margin: 0; }
+  .vacio button { font: 600 17px/1 'Jost', sans-serif; color: var(--blue-primary); background: none; border: 0; padding: 0; cursor: pointer; }
+
+  .consulta { border: var(--default) solid var(--gray-200); border-radius: var(--radius); margin-bottom: 14px; cursor: pointer; }
+  .consulta:hover { border-color: var(--blue-primary); }
+  .consulta.activa { border: 1.8px solid var(--teal-primary); }
+  .consulta-cab { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: var(--thin) solid var(--gray-100); }
+  .consulta-cab h3 { font: 600 20px/1.35 'Jost', sans-serif; color: var(--blue-primary); margin: 0; }
+  .consulta-cab .meta { font: 400 14px/1.4 'Jost', sans-serif; color: var(--gray-500); text-align: right; flex: none; }
+  .consulta-cuerpo { padding: 16px 18px; }
+  .consulta-pie { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 18px; border-top: var(--thin) solid var(--gray-100); font: 400 14px/1.3 'Jost', sans-serif; color: var(--gray-700); }
+  .consulta-pie b { font-weight: 600; color: var(--gray-500); margin-right: 4px; }
+
+  .md { font: 300 17px/1.55 'Jost', sans-serif; color: var(--gray-900); }
+  .md h3 { display: none; }
+  .md h4 { font: 600 16px/1.3 'Jost', sans-serif; color: var(--gray-500); margin: 16px 0 6px; }
+  .md h4:first-child { margin-top: 0; }
+  .md p { margin: 0 0 8px; }
+  .md .fuente { font-size: 14px; color: var(--gray-500); }
+  .md ul { margin: 0 0 8px; padding-left: 20px; }
+  .md li { margin-bottom: 4px; }
+  .md strong { font-weight: 600; }
+  .md code { font: 400 15px/1 'Jost', sans-serif; color: var(--blue-primary); }
+  .respuesta { font: 300 18px/1.55 'Jost', sans-serif; margin: 0; white-space: pre-wrap; }
+
+  .alerta { display: flex; gap: 12px; align-items: flex-start; font: 300 17px/1.45 'Jost', sans-serif; border: var(--default) solid var(--blue-primary); border-radius: var(--radius); padding: 12px 14px; }
+  .alerta svg { flex: none; margin-top: 2px; color: var(--warning); }
+  .alerta.error svg { color: var(--danger); }
+
+  .badge { display: inline-block; font: 600 13px/1 'Jost', sans-serif; color: var(--white); border-radius: var(--radius); padding: 5px 8px; min-width: 73px; text-align: center; }
+  .badge.ok { background: var(--success); }
+  .badge.no { background: var(--gray-500); }
+
+  /* Detalle: indicador de pasos vertical */
+  .detalle { border: var(--thin) solid var(--gray-200); border-radius: var(--radius); padding: 18px 20px; position: sticky; top: 24px; }
+  .detalle h2 { margin-bottom: 16px; }
+  .pasos { list-style: none; margin: 0; padding: 0; }
+  .paso { position: relative; display: grid; grid-template-columns: 24px 1fr; gap: 12px; padding-bottom: 20px; }
+  .paso:last-child { padding-bottom: 0; }
+  .paso::before { content: ""; position: absolute; left: 11px; top: 26px; bottom: 2px; width: 2px; background: var(--teal-dark); }
+  .paso:last-child::before { display: none; }
+  .paso.no::before { background: var(--gray-500); }
+  .circulo { width: 24px; height: 24px; border-radius: 50%; background: var(--teal-primary); color: var(--white); display: grid; place-items: center; }
+  .paso.no .circulo { background: var(--gray-500); }
+  .paso b { display: block; font: 600 16px/1.3 'Jost', sans-serif; padding-top: 2px; }
+  .paso p { margin: 4px 0 0; font: 300 15px/1.45 'Jost', sans-serif; color: var(--gray-700); }
+  .paso .md { font-size: 15px; color: var(--gray-700); margin-top: 6px; }
+
+  /* Tablas */
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font: 600 16px/1.3 'Jost', sans-serif; color: var(--gray-900); padding: 12px 14px; background: var(--white); border-bottom: var(--default) solid var(--gray-200); }
+  td { padding: 12px 14px; border-bottom: var(--default) solid var(--gray-100); font: 300 17px/1.4 'Jost', sans-serif; vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.principal { font-weight: 600; color: var(--blue-primary); white-space: nowrap; }
+  td.accion { text-align: right; width: 1%; white-space: nowrap; }
+  tbody tr:hover td { background: rgba(220, 237, 251, .3); }
+  .tabla { border: var(--default) solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
+  .paso table th, .paso table td { padding: 6px 4px; font-size: 14px; }
+  .paso table th { font-weight: 600; color: var(--gray-500); }
+  .paso td.pts { text-align: right; font-weight: 600; }
+  .paso tr.gana td { background: var(--blue-90); }
+  .outline {
+    font: 600 15px/1 'Jost', sans-serif;
+    color: var(--blue-primary);
+    background: var(--white);
+    border: var(--default) solid var(--blue-primary);
+    border-radius: var(--radius);
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  .outline:hover { background: var(--blue-primary); color: var(--white); }
+
+  .filtros { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filtro { font: 600 16px/1 'Jost', sans-serif; color: var(--blue-primary); background: var(--white); border: var(--default) solid var(--blue-primary); border-radius: var(--radius); padding: 9px 16px; cursor: pointer; }
+  .filtro[aria-pressed="true"] { background: var(--blue-primary); color: var(--white); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1080px) { .resultados { grid-template-columns: 1fr; } .detalle { position: static; } }
+  @media (max-width: 760px) {
+    body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .nav { position: static; height: auto; flex-direction: row; align-items: center; gap: 8px; padding: 0 12px; border-right: 0; border-bottom: var(--thin) solid var(--gray-200); overflow-x: auto; }
+    .nav .logo { height: 60px; padding: 0 8px 0 0; }
+    .nav .logo img { width: 92px; }
+    .nav h6, .nav .pie { display: none; }
+    .nav ul { display: flex; gap: 2px; }
+    .nav a { font-size: 15px; padding: 8px; white-space: nowrap; }
+    .nav a svg { display: none; }
+    .cabecera { height: auto; padding: 14px 16px; }
+    .cabecera .ia { display: none; }
+    .pagina { padding: 20px 16px 40px; }
+    .fila { flex-direction: column; }
+    .boton { padding: 13px; }
+    .consulta-cab { flex-direction: column; }
+    .consulta-cab .meta { text-align: left; }
+    th, td { padding: 10px 8px; font-size: 15px; }
+    .ocultar-movil { display: none; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="logo"><img src="/logo/horizontal-azul.svg" alt="núvara"></div>
+  <h6>Conocimiento</h6>
+  <ul>
+    <li><a href="#consultar" data-vista="consultar" aria-current="page">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="9" r="5.5"/><path d="M13 13l4 4"/></svg>Consultar</a></li>
+    <li><a href="#pruebas" data-vista="pruebas">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="12" height="15" rx="1.5"/><path d="M7 8l1.5 1.5L11 7M7 13h6"/></svg>Preguntas de prueba</a></li>
+    <li><a href="#mapa" data-vista="mapa">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="5" cy="5" r="2"/><circle cx="15" cy="5" r="2"/><circle cx="10" cy="15" r="2"/><path d="M6.5 6.5l2.5 7M13.5 6.5l-2.5 7M7 5h6"/></svg>Mapa de la red</a></li>
+  </ul>
+  <p class="pie" id="pie"></p>
+</nav>
+
+<div class="area">
+  <header class="cabecera">
+    <div class="migas">Inicio<span>›</span>Conocimiento<span>›</span><b id="miga">Consultar</b></div>
+    <span class="ia" id="estado-ia"></span>
+  </header>
+
+  <main class="pagina">
+    <!-- Consultar -->
+    <section class="vista" id="vista-consultar">
+      <h1>Red de consulta</h1>
+      <p>Haz una pregunta y revisa qué nodo responde y qué información ve cada público.</p>
+
+      <form class="formulario" id="form">
+        <label class="etq" for="pregunta">Pregunta</label>
+        <div class="fila">
+          <input class="campo" id="pregunta" autocomplete="off" placeholder="Ej.: ¿Cuánto cuesta causar una factura de compra?">
+          <button class="boton" id="enviar" type="submit">Consultar</button>
+        </div>
+        <div class="opciones">
+          <fieldset style="border:0;margin:0;padding:0">
+            <legend class="etq">Quién pregunta</legend>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="publico" value="P" checked>Usuario o prospecto</label>
+              <label class="radio"><input type="radio" name="publico" value="C">Comercial</label>
+              <label class="radio"><input type="radio" name="publico" value="I">Equipo interno</label>
+            </div>
+          </fieldset>
+          <fieldset style="border:0;margin:0;padding:0">
+            <legend class="etq">Cómo se responde</legend>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="modo" value="claves" checked>Palabras clave</label>
+              <label class="radio"><input type="radio" name="modo" value="ia" id="modo-ia" disabled>Con Claude</label>
+            </div>
+            <p class="nota" id="nota-ia"></p>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="resultados">
+        <div>
+          <h2>Consultas</h2>
+          <div id="consultas"></div>
+        </div>
+        <aside class="detalle">
+          <h2>Detalle</h2>
+          <div id="detalle"><p class="nota">Selecciona una consulta para ver cómo se resolvió.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Preguntas de prueba -->
+    <section class="vista" id="vista-pruebas" hidden>
+      <h1>Preguntas de prueba</h1>
+      <p>Las preguntas de <code>red/pruebas/precios.json</code>. Al probar una, se abre en Consultar con su público.</p>
+      <div class="tabla">
+        <table>
+          <thead><tr><th>Pregunta</th><th>Público</th><th></th></tr></thead>
+          <tbody id="tabla-pruebas"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="vista" id="vista-mapa" hidden>
+      <h1>Mapa de la red</h1>
+      <p>Los nodos de <code>red/mapa.md</code>: para quién es cada uno y si ya está escrito.</p>
+      <div class="filtros" id="filtros">
+        <button type="button" class="filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-filtro="escritos" aria-pressed="false">Escritos</button>
+        <button type="button" class="filtro" data-filtro="pendientes" aria-pressed="false">Sin escribir</button>
+      </div>
+      <div class="tabla">
+        <table>
+          <thead><tr><th>Nodo</th><th>Público</th><th class="ocultar-movil">Cuándo se usa</th><th>Estado</th></tr></thead>
+          <tbody id="tabla-mapa"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  const PUBLICO = { P: "Usuario o prospecto", C: "Comercial", I: "Equipo interno" };
+  const ESCALAR = "Eso te lo confirma un asesor de núvara.";
+  const CHECK = '<svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5l2.5 2.5L11 4.5"/></svg>';
+  const ALERTA = '<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9"/><path d="M10 5.5v5.5M10 13.8v.2" stroke="#111827" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  const MIGAS = { consultar: "Consultar", pruebas: "Preguntas de prueba", mapa: "Mapa de la red" };
+  const estado = { nodos: [], ejemplos: [], consultas: [], activa: null, ocupado: false, filtro: "todos" };
+  const $ = (id) => document.getElementById(id);
+
+  const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const enLinea = (t) => escapar(t)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+
+  function markdown(texto) {
+    let html = "", lista = false;
+    for (const linea of texto.split("\n")) {
+      const vineta = linea.match(/^- (.*)/);
+      if (!vineta && lista) { html += "</ul>"; lista = false; }
+      if (vineta) { if (!lista) { html += "<ul>"; lista = true; } html += `<li>${enLinea(vineta[1])}</li>`; }
+      else if (linea.startsWith("## ")) html += `<h4>${enLinea(linea.slice(3))}</h4>`;
+      else if (linea.startsWith("# ")) html += `<h3>${enLinea(linea.slice(2))}</h3>`;
+      else if (/^Fuente:/.test(linea)) html += `<p class="fuente">${enLinea(linea)}</p>`;
+      else if (linea.trim()) html += `<p>${enLinea(linea)}</p>`;
+    }
+    return html + (lista ? "</ul>" : "");
+  }
+
+  const nodosDe = (resultado) =>
+    [...(resultado || "").matchAll(/<nodo id="([^"]+)">\n([\s\S]*?)\n<\/nodo>/g)].map(([, id, texto]) => ({ id, texto }));
+
+  // La introducción del nodo y "Cómo responder" son para el chat, no para quien pregunta.
+  function partirNodo(texto) {
+    const [, ...secciones] = texto.split(/\n(?=## )/);
+    const esRegla = (s) => s.startsWith("## Cómo responder");
+    return {
+      visible: secciones.filter((s) => !esRegla(s)).join("\n"),
+      reglas: secciones.filter(esRegla).join("\n"),
+    };
+  }
+
+  const hora = (d) => d.toLocaleTimeString("es-CO", { hour: "2-digit", minute: "2-digit" });
+  const valor = (nombre) => document.querySelector(`input[name="${nombre}"]:checked`).value;
+
+  function irA(vista) {
+    for (const v of Object.keys(MIGAS)) $(`vista-${v}`).hidden = v !== vista;
+    for (const a of document.querySelectorAll(".nav a"))
+      if (a.dataset.vista === vista) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    $("miga").textContent = MIGAS[vista];
+    if (location.hash !== `#${vista}`) history.replaceState(null, "", `#${vista}`);
+  }
+
+  // ---------- Consultar ----------
+  function pintarConsultas() {
+    if (!estado.consultas.length) {
+      $("consultas").innerHTML = `<p class="vacio">Aún no hay consultas. Escribe una pregunta o usa una de las <button type="button" data-ir="pruebas">preguntas de prueba</button>.</p>`;
+      return;
+    }
+    $("consultas").innerHTML = estado.consultas.map((c, i) => {
+      const b = c.busqueda;
+      const nodos = b ? nodosDe(b.resultado) : [];
+      let cuerpo;
+      if (c.error) cuerpo = `<div class="alerta error">${ALERTA}<span>${escapar(c.error)}</span></div>`;
+      else if (!b) cuerpo = `<p class="nota">Consultando…</p>`;
+      else if (c.ia) cuerpo = `<p class="respuesta">${escapar(c.ia.respuesta)}</p>`;
+      else if (nodos.length) cuerpo = nodos.map((n) => `<div class="md">${markdown(partirNodo(n.texto).visible)}</div>`).join("");
+      else cuerpo = `<div class="alerta">${ALERTA}<span>${ESCALAR}</span></div>`;
+
+      const ocultas = b ? nodos.reduce((s, n) => s + (b.ocultas[n.id] || []).length, 0) : 0;
+      const pie = b ? `<div class="consulta-pie">
+          <span><b>Nodo:</b>${b.nodos.length ? b.nodos.map((id) => `${id}${b.sinEscribir.includes(id) ? " (sin escribir)" : ""}`).join(", ") : "ninguno"}</span>
+          ${b.conexion ? `<span><b>Conexión:</b>${b.conexion}${b.sinEscribir.includes(b.conexion) ? " (sin escribir)" : ""}</span>` : ""}
+          <span><b>Secciones ocultas:</b>${ocultas}</span>
+          <span><b>Respuesta:</b>${c.ia ? "redactada por Claude" : "nodo sin redactar"}</span>
+        </div>` : "";
+      return `<article class="consulta ${estado.activa === i ? "activa" : ""}" data-i="${i}">
+        <div class="consulta-cab"><h3>${escapar(c.pregunta)}</h3><div class="meta">${PUBLICO[c.publico]}<br>${hora(c.fecha)}</div></div>
+        <div class="consulta-cuerpo">${cuerpo}</div>${pie}
+      </article>`;
+    }).join("");
+  }
+
+  function pintarDetalle() {
+    const c = estado.consultas[estado.activa];
+    if (!c || !c.busqueda) {
+      $("detalle").innerHTML = `<p class="nota">Selecciona una consulta para ver cómo se resolvió.</p>`;
+      return;
+    }
+    const b = c.busqueda, ia = c.ia;
+    const nodos = nodosDe(b.resultado);
+    const ocultas = nodos.flatMap((n) => b.ocultas[n.id] || []);
+    const reglas = nodos.map((n) => partirNodo(n.texto).reglas).filter(Boolean).join("\n");
+    const tabla = b.puntajes.length
+      ? `<table><thead><tr><th>Nodo</th><th>Coincidió</th><th style="text-align:right">Pts</th></tr></thead><tbody>${
+          b.puntajes.slice(0, 5).map((p) => `<tr class="${b.nodos.includes(p.id) || p.id === b.conexion ? "gana" : ""}"><td>${p.id}</td><td>${escapar(p.claves.join(", "))}</td><td class="pts">${p.puntos}</td></tr>`).join("")
+        }</tbody></table>`
+      : `<p>Ninguna palabra clave coincidió.</p>`;
+    const paso = (ok, titulo, html) =>
+      `<li class="paso ${ok ? "" : "no"}"><span class="circulo">${ok ? CHECK : ""}</span><div><b>${titulo}</b>${html}</div></li>`;
+
+    $("detalle").innerHTML = `<ol class="pasos">
+      ${paso(true, "Pregunta", `<p>${PUBLICO[c.publico]} · ${hora(c.fecha)}</p>`)}
+      ${paso(true, "Enrutador", tabla)}
+      ${paso(nodos.length > 0, "Nodo filtrado", `<p>${
+        nodos.length
+          ? `${b.nodos.join(" + ")}${b.conexion ? `, con la conexión a ${b.conexion}` : ""}. ${ocultas.length ? `No visible para este público: ${escapar(ocultas.join(", "))}.` : "Se muestra completo."}`
+          : b.sinEscribir.length ? `${b.sinEscribir.join(", ")} está en el mapa pero no está escrito: se escala a un asesor.` : "No hay nodo para esta pregunta."
+      }</p>${reglas ? `<div class="md">${markdown(reglas)}</div>` : ""}`)}
+      ${paso(Boolean(ia), "Respuesta", `<p>${
+        ia ? `Claude eligió ${escapar(ia.ruta.nodos.join(" + ") || "ninguno")}${ia.ruta.conexion ? ` → ${escapar(ia.ruta.conexion)}` : ""}. ${ia.uso.entrada} tokens de entrada, ${ia.uso.salida} de salida.`
+           : "Con palabras clave se muestra el nodo tal cual, sin redactar."
+      }</p>`)}
+    </ol>`;
+  }
+
+  function pintar() { pintarConsultas(); pintarDetalle(); }
+
+  async function consultar(pregunta, publico = valor("publico")) {
+    pregunta = pregunta.trim();
+    if (!pregunta || estado.ocupado) return;
+    estado.ocupado = true;
+    $("enviar").disabled = true;
+    $("enviar").textContent = "Consultando…";
+    const c = { pregunta, publico, fecha: new Date(), busqueda: null, ia: null, error: null };
+    estado.consultas.unshift(c);
+    estado.activa = 0;
+    pintar();
+    try {
+      const pedido = JSON.stringify({ pregunta, publico });
+      const r = await fetch("/api/buscar", { method: "POST", body: pedido });
+      const b = await r.json();
+      if (!r.ok) throw new Error(b.error);
+      if (valor("modo") === "ia") {
+        const ri = await fetch("/api/consultar", { method: "POST", body: pedido });
+        const ia = await ri.json();
+        if (!ri.ok) throw new Error(ia.error);
+        c.ia = ia;
+      }
+      c.busqueda = b;
+      $("pregunta").value = "";
+    } catch (err) {
+      c.error = err.message || String(err);
+    } finally {
+      estado.ocupado = false;
+      $("enviar").disabled = false;
+      $("enviar").textContent = "Consultar";
+      pintar();
+    }
+  }
+
+  // ---------- Preguntas de prueba y mapa ----------
+  function pintarPruebas() {
+    $("tabla-pruebas").innerHTML = estado.ejemplos.map((x, i) => `
+      <tr><td>${escapar(x.pregunta)}</td><td>${PUBLICO[x.publico]}</td>
+      <td class="accion"><button type="button" class="outline" data-i="${i}">Probar</button></td></tr>`).join("");
+  }
+
+  function pintarMapa() {
+    const filas = estado.nodos.filter((n) =>
+      estado.filtro === "todos" || (estado.filtro === "escritos" ? n.escrito : !n.escrito));
+    $("tabla-mapa").innerHTML = filas.map((n) => `
+      <tr><td class="principal">${n.id}</td><td>${PUBLICO[n.publico]}</td>
+      <td class="ocultar-movil">${escapar(n.cuando)}</td>
+      <td>${n.escrito ? '<span class="badge ok">Escrito</span>' : '<span class="badge no">Sin escribir</span>'}</td></tr>`).join("");
+  }
+
+  // ---------- Eventos ----------
+  $("form").addEventListener("submit", (e) => { e.preventDefault(); consultar($("pregunta").value); });
+  window.addEventListener("hashchange", () => {
+    const vista = location.hash.slice(1);
+    if (MIGAS[vista]) irA(vista);
+  });
+  for (const a of document.querySelectorAll(".nav a"))
+    a.addEventListener("click", (e) => { e.preventDefault(); irA(a.dataset.vista); });
+  $("consultas").addEventListener("click", (e) => {
+    if (e.target.closest("[data-ir]")) return irA("pruebas");
+    const item = e.target.closest(".consulta");
+    if (item) { estado.activa = Number(item.dataset.i); pintar(); }
+  });
+  $("tabla-pruebas").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const x = estado.ejemplos[b.dataset.i];
+    document.querySelector(`input[name="publico"][value="${x.publico}"]`).checked = true;
+    irA("consultar");
+    consultar(x.pregunta, x.publico);
+  });
+  $("filtros").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    estado.filtro = b.dataset.filtro;
+    for (const f of $("filtros").children) f.setAttribute("aria-pressed", String(f === b));
+    pintarMapa();
+  });
+
+  fetch("/api/estado").then((r) => r.json()).then((s) => {
+    estado.nodos = s.nodos;
+    estado.ejemplos = s.ejemplos;
+    $("modo-ia").disabled = !s.ia;
+    $("nota-ia").textContent = s.ia ? "" : "Con Claude se activa al poner ANTHROPIC_API_KEY en .env.";
+    $("estado-ia").textContent = s.ia ? "Claude disponible" : "Sin API key de Claude";
+    const escritos = s.nodos.filter((n) => n.escrito).length;
+    $("pie").textContent = `${s.nodos.length} nodos · ${escritos} escritos`;
+    pintarPruebas();
+    pintarMapa();
+    pintar();
+    irA(MIGAS[location.hash.slice(1)] ? location.hash.slice(1) : "consultar");
+  });
+</script>
+</body>
+</html>

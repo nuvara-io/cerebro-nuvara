@@ -35,7 +35,9 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc && tsc -p red",
     "red": "bun red/motor/cli.ts",
-    "red:probar": "bun red/motor/probar.ts"
+    "red:probar": "bun red/motor/probar.ts",
+    "red:interfaz": "bun red/interfaz/servidor.ts",
+    "red:validar": "bun red/motor/validar.ts"
   },
   "packageManager": "bun@1.3.14"
 }
