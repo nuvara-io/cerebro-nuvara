@@ -64,7 +64,7 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | `conectar-dian` | P | "¿Cómo conecto la DIAN?", "el token no funciona", "¿qué es la extensión?" | `flujos/02`, `preguntas-frecuentes.md` §DIAN y correo, `objeciones-y-dolores.md` §Descarga y DIAN, `por-confirmar.md` §DIAN y extensión |
 | `conectar-correo` | P | "¿Cómo conecto el correo?", "no llegan las facturas del correo" | `flujos/03`, `por-confirmar.md` §Correo |
 | `importar-facturas` | P | "¿Cómo traigo las facturas?", "¿cómo filtro por fecha?" | `flujos/04`, `producto.md` §Cómo entran las facturas |
-| `causar-y-revisar` | P | "¿Cómo causo?", "¿qué significa cada estado?", "¿cómo decide la cuenta?" | `flujos/05`, `producto.md` §Estados y §Cómo decide la causación, `preguntas-frecuentes.md` §Causación y revisión, `por-confirmar.md` §Causación |
+| `causar-y-revisar` | P | "¿Qué pasa cuando causo una factura?", "¿qué significa cada estado?", "¿cómo decide la cuenta?" | `flujos/05`, `producto.md` §Estados y §Cómo decide la causación, `preguntas-frecuentes.md` §Causación y revisión, `por-confirmar.md` §Causación |
 | `correcciones-y-aprendizaje` | P | "Puso mal la cuenta", "¿aprende de mis cambios?" | `flujos/06` |
 | `reglas-y-centros-de-costo` | P | "¿Cómo creo una regla fija?", "¿cómo asigno centros de costo?" | `flujos/07`, `preguntas-frecuentes.md` §Centros de costo y reglas, `objeciones-y-dolores.md` §Centros de costo, `por-confirmar.md` §Centros de costo |
 | `aprobacion-en-bloque` | P | "¿Puedo aprobar varias a la vez?" | `flujos/08` |
@@ -89,6 +89,20 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | `capacitar-usuarios` | I | "¿Cómo doy una capacitación?", "¿qué orden sigo?" | `capacitacion.md` (menos la plantilla de guion) |
 | `problemas-conocidos` | I | "¿Ese error ya pasó?", "¿qué falla se reporta más?" | `por-confirmar.md` §Interfaz, registro y estabilidad y §6, `objeciones-y-dolores.md` §Estabilidad y soporte, `producto.md` §Dudas de producto abiertas |
 | `hoja-de-ruta` | I | "¿Qué viene en desarrollo?", "¿cuándo sale X?" | `producto.md` §En desarrollo y §Ideas y visión, `por-confirmar.md` §Nómina, facturación electrónica, RADIAN… |
+
+## Capa 4: procedimientos (cómo se hace)
+
+Un procedimiento responde "¿cómo hago X?" con la **ruta en la plataforma** (menú › pantalla › botón) y los **pasos numerados**. Cada uno cuelga de un tema de la capa 2: si la pregunta pide hacer algo y el tema gana, el enrutador entrega su procedimiento. El tema y su procedimiento quedan conectados sin escribir la conexión abajo.
+
+Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estado: según capacitación` y los nombres de pantallas y botones son los que usa el asesor.
+
+| Nodo | Público | Cuándo se activa | Tema | Fuentes |
+|---|---|---|---|---|
+| `causar-facturas` | P | "¿Cómo causo una factura?", "¿cómo causo varias facturas?" | `causar-y-revisar` | `flujos/04`, `flujos/05` |
+| `causar-por-lote` | P | "¿Cómo causo por lote?", "¿cómo causo todo el mes de una vez?" | `causar-y-revisar` | `flujos/05` |
+| `revisar-causacion` | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
+| `aprobar-en-bloque` | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
+| `archivar-aprobadas` | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
 
 ## Fuera de la red
 

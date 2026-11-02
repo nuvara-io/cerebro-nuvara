@@ -2,8 +2,8 @@
 // y devuelve el nodo filtrado para el público. No llama a ningún modelo.
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { leerIndice, visiblesPara, RAIZ_RED, type Publico } from "./indice";
-import { cargarNodo } from "./nodos";
+import { leerIndice, visiblesPara, RAIZ_RED, RANGO, type Indice, type Publico } from "./indice";
+import { cargarNodo, leerProcedimiento, type Procedimiento } from "./nodos";
 
 export type Puntaje = { id: string; puntos: number; claves: string[] };
 
@@ -15,6 +15,8 @@ export type Busqueda = {
   puntajes: Puntaje[];
   sinEscribir: string[];
   resultado: string;
+  // Cuando la pregunta pide hacer algo y hay un procedimiento: ruta y pasos.
+  procedimiento: Procedimiento | null;
 };
 
 const PUNTOS_POR_PALABRA = 2;
@@ -93,9 +95,47 @@ export function puntuar(pregunta: string, publico: Publico): Puntaje[] {
 // palabras clave o una frase. Con una sola palabra suelta no basta.
 const PUNTOS_PARA_CONECTAR = 4;
 
+// "¿Cómo causo…?", "¿dónde se…?", "pasos para…" piden hacer algo; "¿cómo
+// funciona…?" o "¿qué es…?" piden una explicación y van al tema.
+const PIDE_HACER = /\b(como|donde|pasos?|paso a paso|que hago|que debo hacer|quiero|necesito|se hace|hago)\b/;
+const PIDE_EXPLICAR = /\b(como (funciona|decide|aprende|calcula|sabe)|que es|que significa|por que|cuanto|donde (quedan|estan|se guardan))\b/;
+
+export function pideHacer(pregunta: string) {
+  const t = pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return PIDE_HACER.test(t) && !PIDE_EXPLICAR.test(t);
+}
+
+// Entre los procedimientos, el que más puntos sacó con sus propias claves;
+// si ninguno puntuó, el primero del tema que ganó.
+function elegirProcedimiento(
+  puntajes: Puntaje[],
+  elegidos: string[],
+  indice: Indice,
+  publico: Publico,
+) {
+  const esProc = new Map(indice.nodos.filter((n) => n.procedimiento).map((n) => [n.id, n]));
+  const tema = elegidos.find((id) => !esProc.has(id)) ?? null;
+  const puntosTema = puntajes.find((p) => p.id === tema)?.puntos ?? 0;
+  const mejor = puntajes.find((p) => esProc.has(p.id));
+  if (mejor && (!tema || esProc.get(mejor.id)!.tema === tema || mejor.puntos >= puntosTema))
+    return mejor.id;
+  if (!tema) return null;
+  const delTema = indice.nodos.find(
+    (n) => n.procedimiento && n.tema === tema && RANGO[n.publico] <= RANGO[publico],
+  );
+  return delTema?.id ?? null;
+}
+
 export function buscar(pregunta: string, publico: Publico): Busqueda {
-  const puntajes = puntuar(pregunta, publico);
-  const { conexiones } = leerIndice();
+  const indice = leerIndice();
+  const { conexiones } = indice;
+  const hacer = pideHacer(pregunta);
+  // Si la pregunta no pide hacer algo, un procedimiento pesa un tercio: así
+  // "¿cuánto cuesta causar una factura?" va a precios y no a los pasos.
+  const procedimientos = new Set(indice.nodos.filter((n) => n.procedimiento).map((n) => n.id));
+  const puntajes = puntuar(pregunta, publico)
+    .map((p) => (hacer || !procedimientos.has(p.id) ? p : { ...p, puntos: p.puntos / 3 }))
+    .sort((a, b) => b.puntos - a.puntos);
   const conecta = (desde: string, hacia: string) =>
     conexiones.some((c) => (c.desde === desde || c.desde === "*") && c.hacia === hacia);
 
@@ -116,6 +156,12 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
       conexion = segundo.id;
   }
 
+  // Si la pregunta pide hacer algo, se responde con el procedimiento.
+  if (hacer) {
+    const proc = elegirProcedimiento(puntajes, [...nodos, ...(conexion ? [conexion] : [])], indice, publico);
+    if (proc) [nodos, conexion] = [[proc], null];
+  }
+
   const pedidos = [...nodos, ...(conexion ? [conexion] : [])];
   const textos = pedidos.map((id) => ({ id, texto: cargarNodo(id, publico) }));
   const sinEscribir = textos.filter((t) => !t.texto).map((t) => t.id);
@@ -124,5 +170,6 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
     .map((t) => `<nodo id="${t.id}">\n${t.texto}\n</nodo>`)
     .join("\n\n");
 
-  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado };
+  const procedimiento = nodos.length === 1 ? leerProcedimiento(nodos[0], publico) : null;
+  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento };
 }

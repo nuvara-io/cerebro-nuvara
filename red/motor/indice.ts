@@ -12,6 +12,9 @@ export type NodoIndice = {
   cuando: string;
   transversal: boolean;
   escrito: boolean;
+  // Los procedimientos (capa 4) dicen cómo se hace algo y cuelgan de un tema.
+  procedimiento: boolean;
+  tema?: string;
 };
 
 export type Conexion = { desde: string; hacia: string; cuando: string };
@@ -46,16 +49,22 @@ export function leerIndice(): Indice {
     if (!linea.startsWith("| ")) continue;
 
     if (seccion.startsWith("Capa")) {
-      const [nodo, publico, cuando] = celdas(linea);
+      const [nodo, publico, cuando, tema] = celdas(linea);
       const [id] = ids(nodo);
       if (!id) continue;
+      const procedimiento = seccion.startsWith("Capa 4");
+      const padre = procedimiento ? ids(tema ?? "")[0] : undefined;
       nodos.push({
         id,
         publico: publico.charAt(0) as Publico,
         cuando,
         transversal: seccion.startsWith("Capa 0"),
         escrito: existsSync(join(RAIZ_RED, `${id}.md`)),
+        procedimiento,
+        tema: padre,
       });
+      // El tema queda conectado con su procedimiento sin escribirlo en el mapa.
+      if (padre) conexiones.push({ desde: padre, hacia: id, cuando: "Cómo se hace" });
     } else if (seccion.startsWith("Conexiones")) {
       const [desde, hacia, cuando] = celdas(linea);
       const destinos = ids(hacia);

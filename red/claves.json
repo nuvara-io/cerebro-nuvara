@@ -338,5 +338,50 @@
     "proximo",
     "roadmap",
     "que viene"
+  ],
+  "causar-facturas": [
+    "causar una factura",
+    "causo una factura",
+    "causar facturas",
+    "causo las facturas",
+    "causar varias",
+    "causar las pendientes"
+  ],
+  "causar-por-lote": [
+    "por lote",
+    "causar por lote",
+    "causar en lote",
+    "todo el mes de una vez",
+    "causar todo el mes",
+    "causar todas"
+  ],
+  "revisar-causacion": [
+    "revisar una causacion",
+    "reviso una causacion",
+    "revisar la causacion",
+    "verificar la causacion",
+    "no cuadra",
+    "descuadre",
+    "indicador de cuadre",
+    "verifico",
+    "verificar",
+    "quedo bien causada"
+  ],
+  "aprobar-en-bloque": [
+    "aprobar grupo",
+    "apruebo un grupo",
+    "aprobar un grupo",
+    "aprobar de una vez",
+    "apruebo muchas",
+    "apruebo varias",
+    "al tiempo"
+  ],
+  "archivar-aprobadas": [
+    "archivar las aprobadas",
+    "archivo las facturas aprobadas",
+    "archivar por grupo",
+    "listo el mes",
+    "dejar listo el mes",
+    "dejo listo el mes"
   ]
 }

@@ -32,6 +32,16 @@ if (conIa) {
     `Puntajes: ${b.puntajes.slice(0, 4).map((p) => `${p.id} ${p.puntos} (${p.claves.join(", ")})`).join(" · ") || "-"}`,
   );
   if (b.sinEscribir.length) console.log(`Sin escribir: ${b.sinEscribir.join(", ")}`);
+  const p = b.procedimiento;
+  if (p) {
+    console.log(`\n${p.titulo} (${p.estado})`);
+    console.log(`Dónde: ${p.ruta.join(" › ")}${p.url ? `  ${p.url}` : ""}`);
+    if (p.antes.length) console.log(`\nAntes de empezar:\n${p.antes.map((x) => `  • ${x}`).join("\n")}`);
+    console.log(`\nPasos:\n${p.pasos.map((x, i) => `  ${i + 1}. ${x}`).join("\n")}`);
+    if (p.resultado.length) console.log(`\nResultado:\n${p.resultado.map((x) => `  • ${x}`).join("\n")}`);
+    if (p.siFalla.length) console.log(`\nSi algo falla:\n${p.siFalla.map((x) => `  • ${x}`).join("\n")}`);
+    process.exit(0);
+  }
   const vacio = b.nodos.length
     ? "(el nodo existe en el mapa pero todavía no está escrito)"
     : "(ningún nodo coincide con la pregunta)";

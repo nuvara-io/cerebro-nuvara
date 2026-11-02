@@ -126,6 +126,7 @@ Reglas:
 - Si la respuesta no está en <nodos>, responde exactamente: "${ESCALAR}"
 - No inventes cifras. Solo puedes multiplicar o sumar tarifas que estén en <nodos>.
 - Responde corto: de 1 a 4 oraciones, en español de Colombia, sin títulos.
+- Si un nodo trae "## Pasos", la persona quiere hacer algo: empieza con la ruta en la plataforma (Menú › Pantalla › Botón) y da los pasos numerados tal como están, sin resumirlos. Aquí sí puedes pasar de 4 oraciones.
 
 ${voz}`;
 }

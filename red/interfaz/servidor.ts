@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { buscar } from "../motor/buscar";
 import { leerIndice, RAIZ_RED, type Publico } from "../motor/indice";
-import { cargarNodo } from "../motor/nodos";
+import { cargarNodo, leerProcedimiento } from "../motor/nodos";
 
 const PUERTO = Number(process.env.PORT ?? 3100);
 const HAY_IA = Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
@@ -67,6 +67,15 @@ Bun.serve({
           [...b.nodos, ...(b.conexion ? [b.conexion] : [])].map((id) => [id, ocultas(id, publico)]),
         ),
       });
+    }
+
+    // Para otros agentes: la ruta y los pasos de un procedimiento en datos.
+    // GET /api/procedimiento/causar-por-lote?publico=P
+    const proc = pathname.match(/^\/api\/procedimiento\/([a-z0-9-]+)$/);
+    if (proc) {
+      const { publico } = leerPedido({ publico: new URL(req.url).searchParams.get("publico") ?? "P" });
+      const p = leerProcedimiento(proc[1], publico);
+      return p ? json(p) : json({ error: "No existe ese procedimiento." }, 404);
     }
 
     if (req.method === "POST" && pathname === "/api/consultar") {
