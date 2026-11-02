@@ -77,7 +77,7 @@ Cada nodo tiene un público máximo y cada dato dentro del nodo tiene su propio 
 | `exportar-siigo` | P | "¿Cómo paso los asientos a Siigo?", "error al exportar a Siigo" | `flujos/10`, `por-confirmar.md` §Exportación a Siigo |
 | `exportar-world-office` | P | "¿Cómo exporto a World Office?", "¿y a Siigo escritorio?" | `flujos/16`, `por-confirmar.md` §World Office |
 | `inventario-y-productos` | P | "¿Cómo asocio productos?", "¿maneja inventario?" | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
-| `nomina` | P | "¿Cómo funciona la nómina?", "¿cómo cargo el histórico?" | `flujos/18`, `preguntas-frecuentes.md` §Ventas, nómina y otros módulos |
+| `nomina` | P | "¿Cómo funciona la nómina?", "¿qué incluye el módulo de nómina?" | `flujos/18`, código de `platform` |
 | `facturacion-electronica-y-radian` | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" | `flujos/20`, código de `platform` |
 | `conciliacion-bancaria` | P (en desarrollo: lo disponible se dice, lo demás va a I) | "¿Concilian el banco?", "¿qué bancos leen?" | `flujos/21`, `sitio-web.md` §Otros módulos |
 | `glosario` | P | "¿Qué es un asiento?", "¿qué significa precausar?" | `glosario.md` |
@@ -110,6 +110,17 @@ Mientras no se verifiquen contra la plataforma, los procedimientos llevan `estad
 | `emitir-documento-soporte` | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
 | `registrar-eventos-radian` | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
 | `renovar-certificado` | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `activar-nomina` | P | "¿Cómo activo la nómina?", "¿dónde compro cupos de empleados?" | `nomina` | `flujos/18`, código de `platform` |
+| `configurar-nomina` | P | "¿Cómo configuro la nómina?", "¿dónde cambio la frecuencia de pago?" | `nomina` | `flujos/18`, código de `platform` |
+| `crear-empleado` | P | "¿Cómo creo un empleado?", "¿cómo importo los empleados?" | `nomina` | `flujos/18`, código de `platform` |
+| `importar-historico-nomina` | P | "¿Cómo traigo el histórico de nómina de Siigo?", "¿cómo migro la nómina de otro programa?" | `nomina` | `flujos/18`, código de `platform` |
+| `registrar-novedades` | P | "¿Cómo registro una incapacidad?", "¿dónde pongo las horas extra?" | `nomina` | `flujos/18`, código de `platform` |
+| `generar-nomina` | P | "¿Cómo genero la nómina de la quincena?", "¿cómo liquido la nómina del mes?" | `nomina` | `flujos/18`, código de `platform` |
+| `emitir-nomina-electronica` | P | "¿Cómo emito la nómina electrónica?", "¿cómo envío la nómina a la DIAN?" | `nomina` | `flujos/18`, código de `platform` |
+| `generar-planilla-pila` | P | "¿Cómo genero la planilla PILA?", "¿dónde descargo el archivo de la PILA?" | `nomina` | `flujos/18`, código de `platform` |
+| `causar-nomina` | P | "¿Cómo causo la nómina?", "¿cómo contabilizo la nómina?" | `nomina` | `flujos/18`, código de `platform` |
+| `liquidar-prestaciones` | P | "¿Cómo liquido la prima?", "¿cómo pago las cesantías?" | `nomina` | `flujos/18`, código de `platform` |
+| `liquidar-contrato` | P | "¿Cómo liquido a un empleado que se retira?", "¿cómo hago la liquidación de un contrato?" | `nomina` | `flujos/18`, código de `platform` |
 
 ## Fuera de la red
 
@@ -160,6 +171,20 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `emitir-documento-soporte` | `notas-credito-y-documento-soporte` | Cómo se causa un documento soporte recibido |
 | `emitir-documento-soporte` | `facturas-del-exterior` | Legalización de gastos |
 | `renovar-certificado` | `precios` | Precio de la renovación |
+| `activar-nomina` | `configurar-nomina` | Después de activar: dejarla lista |
+| `activar-nomina` | `creditos-y-recargas` | Pagar los cupos con el saldo |
+| `configurar-nomina` | `crear-empleado` | Ya configurada: cargar el personal |
+| `crear-empleado` | `registrar-novedades` | Novedades del empleado |
+| `importar-historico-nomina` | `crear-empleado` | Empleados que no vienen en el histórico |
+| `registrar-novedades` | `generar-nomina` | Las novedades entran en la liquidación |
+| `generar-nomina` | `emitir-nomina-electronica` | Enviar el periodo confirmado a la DIAN |
+| `generar-nomina` | `generar-planilla-pila` | Aportes del mes |
+| `generar-nomina` | `causar-nomina` | El asiento contable del periodo |
+| `generar-nomina` | `liquidar-prestaciones` | Prima y cesantías |
+| `emitir-nomina-electronica` | `habilitar-ante-la-dian` | La empresa aún no está habilitada para nómina |
+| `emitir-nomina-electronica` | `creditos-y-recargas` | Saldo para los documentos o módulo en pausa |
+| `liquidar-contrato` | `causar-nomina` | El asiento de la liquidación |
+| `crear-empleado` | `emitir-documento-soporte` | Contratistas por prestación de servicios |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo se verá un nodo (ejemplo: `precios`)

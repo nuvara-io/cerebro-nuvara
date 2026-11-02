@@ -35,6 +35,7 @@ Fuente: sitio oficial (página `/precios/`, que lo presenta como "precio de lanz
 - [P] El mínimo mensual **no es la recarga mínima**: son dos cosas distintas.
 - [P] **Facturación electrónica: habilitación de $150.000, pago único.** Incluye la configuración inicial y la firma digital por un año; luego el certificado se renueva cada año. El precio es el mismo sin importar cuántos tipos de documento habilites (factura de venta y sus notas, documento soporte y su nota, eventos RADIAN, nómina electrónica).
 - [P] **Cada documento electrónico emitido se cobra en créditos**, con un precio que depende del flujo de facturación de tu empresa: se pacta un acuerdo de facturas o se descuenta del saldo. Las pruebas ante la DIAN no se cobran.
+- [P] **Nómina: se cobra por cupos de empleados al mes.** Pagas los cupos que eliges, no los empleados reales, y hay precios por volumen. Se paga con el saldo o con un acuerdo mensual. Cada nómina electrónica emitida se cobra además como documento electrónico.
 
 ## Por confirmar
 
@@ -42,6 +43,7 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 
 - [C] **Recarga mínima:** sin definir. La billetera de la app dice $70.000 y la calculadora del sitio arranca en $200.000.
 - [C] **Si el mínimo mensual aplica desde el primer mes** o solo desde el segundo, y si aplica a los usuarios antiguos.
+- [C] **Precio por cupo de nómina:** no está publicado; depende del tramo de cupos. Confírmalo con el equipo.
 - [C] **Precio por documento electrónico:** no hay una tarifa única publicada; se define según el flujo de cada empresa. Confirma el valor con el equipo antes de dar una cifra.
 - [C] **Escalas por volumen:** si $510 es el precio de compra en todos los planes estándar y desde cuántas causaciones hay descuento por debajo de 1.500 al mes.
 - [C] **Si el crédito sigue valiendo $100** cuando haya paquetes.

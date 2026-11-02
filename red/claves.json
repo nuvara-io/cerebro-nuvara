@@ -295,7 +295,9 @@
   "nomina": [
     "nomina",
     "empleado",
-    "historico"
+    "historico",
+    "modulo de nomina",
+    "incluye la nomina"
   ],
   "facturacion-electronica-y-radian": [
     "facturacion electronica",
@@ -306,7 +308,6 @@
     "facturar desde nuvara",
     "documentos electronicos",
     "factura electronica",
-    "nomina electronica",
     "firma digital",
     "pos",
     "punto de venta",
@@ -466,5 +467,111 @@
     "se vence la firma",
     "vence el certificado",
     "renovar la firma"
+  ],
+  "activar-nomina": [
+    "activar la nomina",
+    "activo la nomina",
+    "activar nomina",
+    "cupos de empleados",
+    "cupo de empleados",
+    "comprar cupos",
+    "compro cupos"
+  ],
+  "configurar-nomina": [
+    "configurar la nomina",
+    "configuro la nomina",
+    "frecuencia de pago",
+    "parametros de nomina",
+    "conceptos de nomina",
+    "jornada laboral",
+    "doble aprobacion",
+    "quincenal o mensual"
+  ],
+  "crear-empleado": [
+    "crear un empleado",
+    "creo un empleado",
+    "nuevo empleado",
+    "agregar un empleado",
+    "agrego un empleado",
+    "registrar un empleado",
+    "importar empleados",
+    "importo los empleados",
+    "contrato laboral"
+  ],
+  "importar-historico-nomina": [
+    "historico de nomina",
+    "migrar la nomina",
+    "migro la nomina",
+    "nomina de siigo",
+    "centro de incorporacion",
+    "incorporar historico",
+    "nomina de otro programa"
+  ],
+  "registrar-novedades": [
+    "novedad",
+    "novedades",
+    "horas extra",
+    "incapacidad",
+    "licencia",
+    "vacaciones",
+    "prestamo a un empleado",
+    "ausentismo",
+    "bonificacion"
+  ],
+  "generar-nomina": [
+    "generar la nomina",
+    "genero la nomina",
+    "liquidar la nomina",
+    "liquido la nomina",
+    "calcular la nomina",
+    "nomina de la quincena",
+    "nomina del mes",
+    "confirmar la nomina"
+  ],
+  "emitir-nomina-electronica": [
+    "nomina electronica",
+    "emitir la nomina",
+    "emito la nomina",
+    "nomina a la dian",
+    "envio la nomina",
+    "nota de ajuste",
+    "ajuste de nomina"
+  ],
+  "generar-planilla-pila": [
+    "pila",
+    "planilla pila",
+    "planilla",
+    "seguridad social",
+    "aportes",
+    "radicar la planilla"
+  ],
+  "causar-nomina": [
+    "causar la nomina",
+    "causo la nomina",
+    "contabilizar la nomina",
+    "contabilizo la nomina",
+    "asiento de nomina",
+    "causacion de la nomina"
+  ],
+  "liquidar-prestaciones": [
+    "prima",
+    "cesantias",
+    "intereses a las cesantias",
+    "prestaciones sociales",
+    "liquido la prima",
+    "liquidar la prima"
+  ],
+  "liquidar-contrato": [
+    "liquidar un contrato",
+    "liquidacion de un contrato",
+    "liquidar a un empleado",
+    "liquido a un empleado",
+    "se retira",
+    "retiro de un empleado",
+    "despido",
+    "renuncia",
+    "indemnizacion",
+    "liquidacion laboral",
+    "terminar el contrato"
   ]
 }

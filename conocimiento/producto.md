@@ -123,7 +123,7 @@ La plataforma trabaja internamente todo como "causado"; los estados visibles son
 
 | Módulo | Estado según las reuniones | Última mención |
 |---|---|---|
-| Nómina y nómina electrónica | En pruebas con algunos usuarios; por archivo plano; novedades por Telegram o WhatsApp; el cuello de botella es la liquidación. | 01/08/2026 |
+| Nómina y nómina electrónica | **Disponible**: módulo por cupos de empleados al mes, con liquidación, PILA, causación y nómina electrónica bajo la habilitación DIAN. Ver flujo 18. | 02/11/2026 |
 | Conciliación bancaria | En desarrollo y pruebas: concilia por montos y fechas y explica lo no conciliado. El sitio ya la anuncia con extractos PDF o CSV (31/10/2026). | 01/08/2026 |
 | Egresos y pagos con bancos | En desarrollo: agrupa por proveedor, comprobantes de egreso, reparte pagos. | 14/05/2026 |
 | Cajas menores | En pruebas con usuarios: foto del comprobante por Telegram o WhatsApp, un custodio por caja. | 25/08/2026 |

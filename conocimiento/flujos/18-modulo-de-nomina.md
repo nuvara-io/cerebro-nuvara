@@ -1,53 +1,55 @@
 # Módulo de nómina y nómina electrónica
 
-El foco de núvara sigue siendo la causación. La nómina es un **módulo aparte**, que requiere una explicación detallada y es una venta más compleja. Trátalo como información en validación (ver `por-confirmar.md`): no lo presentes como disponible en un video sin confirmarlo con el equipo.
+## Estado: disponible
+Verificado en el código de la plataforma (repo `platform`, 02/11/2026) y confirmado por el equipo: la nómina electrónica sale de la misma habilitación DIAN que la facturación electrónica (flujo 20). Reemplaza la descripción de agosto de 2026, que daba la emisión como prevista.
 
-## Qué está disponible y qué está en desarrollo
-| Tema | Estado (fuente más reciente, agosto de 2026) |
-|---|---|
-| Módulo de nómina (empleados, novedades, liquidación) | Existe; hay que revisar con cada usuario cómo lo necesita para adaptarlo. El sitio lo anuncia como módulo propio. |
-| **Emisión de nómina electrónica a la DIAN** | **Prevista, todavía no disponible** según la sesión más reciente |
-| Carga de nómina por archivo plano (cuatro pasos hasta causar) | En desarrollo; lanzamiento estimado para finales de agosto de 2026, según el equipo |
-| Reporte de horas extra por Telegram o WhatsApp | En desarrollo, mismo plazo estimado |
-| Carga masiva de empleados y de bonificaciones por plantilla de Excel | Descrita por el asesor |
-| Radicación de incapacidades ante EPS o ARL | No se hace en núvara |
-
-Los pasos de abajo describen el módulo como lo presentó el equipo; los que implican emitir a la DIAN dependen de que esa emisión se lance.
-
-<!-- fuentes: h-4cae519c5dd0, h-3a9a315786c4, h-f093ed31e568, h-1b5ddf9047dc -->
-
-## Objetivo
-Registrar el personal, liquidar la nómina y, cuando la emisión esté disponible, emitir la nómina electrónica a la DIAN desde la plataforma, dejando en el software contable solo el asiento. La nómina saldrá antes que la facturación electrónica.
+## Cuánto cuesta
+- La administración de nómina se cobra por **cupos de empleados al mes**: pagas por los cupos que eliges, no por los empleados reales. Hay precios por volumen: el total de cupos define el precio de cada cupo. Se paga con el saldo o con un acuerdo mensual pactado con el equipo.
+- Si el saldo no alcanza para renovar los cupos, el módulo entra en un periodo de gracia de 3 días y luego se pausa; en pausa no se puede emitir a la DIAN.
+- Cada **nómina electrónica** y cada **nota de ajuste** emitida se cobra como documento electrónico (flujo 20).
+- Por confirmar con el equipo: el precio de cada cupo y sus tramos.
 
 ## Requisitos
-- Datos de los empleados (contratos, salarios, EPS, ARL) o plantilla de carga masiva en Excel.
-- Habilitación de la empresa ante la DIAN para emitir nómina electrónica.
-- Semana laboral de la empresa (por ejemplo, lunes a sábado) para calcular bien vacaciones.
+- Activar el módulo: **Cuenta › Módulos › Nómina › Activar** (o en Configuración › Operación › Módulos), eligiendo los cupos. Solo un administrador puede activarlo.
+- Para emitir nómina electrónica: la empresa habilitada ante la DIAN (flujo 20) con el tipo de documento nómina.
+- Generar, revisar y confirmar nómina: administrador u operador. Aprobar la causación y cerrar periodos: administrador.
 
-## Pasos
-1. Carga los **empleados** (masivo por plantilla o uno a uno). Revisa contratos activos y de prestación de servicios; estos últimos se manejan por **documento soporte**, no por nómina (ver flujo 13).
-2. Define **perfiles de cargo** (administrativo, operativo, producción) para asociar la actividad económica de ARL y los centros de trabajo; así salen las plantillas **PILA**.
-3. Registra **novedades**: horas extra, vacaciones, incapacidades, licencias (maternidad, paternidad, luto, matrimonio), ausencias injustificadas, préstamos y beneficios. La plataforma calcula los valores a cargo del empleador y de la EPS, y descuenta los días de salario y auxilio de transporte en ausencias injustificadas.
-4. Para incrementos salariales anuales usa la **actualización masiva de salarios**.
-5. Para bonificaciones, usa la **plantilla de Excel** de carga masiva; las que no deben ir a la DIAN requieren un manejo interno.
-6. Liquida por quincena o mes, valida y **emite** la nómina electrónica a la DIAN; llega al correo de cada empleado. *(Emisión: prevista, aún no disponible.)*
-7. Pide un archivo de Excel por quincena con todos los empleados para revisión de la gerencia.
-8. La radicación de incapacidades ante EPS/ARL se hace por fuera; núvara solo lleva el registro contable y las cuentas por cobrar.
+## Menú
+**Nómina** tiene: Resumen; Personal (Empleados, Perfiles de cargo, Estructura, Actualización masiva de salarios); Novedades (Incapacidades, Licencias, Vacaciones, Horas extra, Préstamos, Beneficios, Novedades, Ausentismo); Liquidación (Generar nómina, Prestaciones sociales, Liquidaciones); Obligaciones (Planillas PILA, Nómina electrónica); Contabilidad (Causación contable); Informes (Costo de nómina, Reportes de periodo, Informes y certificados); Configuración (Configuración, Parámetros, Conceptos de nómina, Retención en la fuente, Fondo de Solidaridad, Centro de incorporación).
 
-## Cómo se relaciona con la contabilidad
-- El pasivo de nómina es todo lo que se queda debiendo al empleado: sueldos no pagados y prestaciones sociales que se acumulan mes a mes. Las colillas de pago sirven además para causar gastos y detectar préstamos.
-- En el flujo mensual de una firma contable, la nómina y el pago de la seguridad social se hacen después de ventas, compras, recibos de caja, egresos y conciliación. En una sesión (diciembre de 2025) la contadora dijo que para esa etapa no hacía falta que la plataforma manejara nómina; otra usuaria preguntó por ella porque migrará las compras de un cliente suyo y todavía no empezaba con nómina.
-- Un documento de dotación del personal no es nómina de sueldos: va a otra cuenta de gasto de personal, aunque en una etapa temprana la plataforma no dejaba cambiarla.
+El **Resumen** muestra si el módulo está listo ("Módulo listo") o bloqueado ("Operación bloqueada"), con enlaces a lo que falta configurar.
 
-<!-- fuentes: h-66eba239a3cb, h-2eed69e6f27f, h-4cae519c5dd0, h-f7e9b0b7d233, h-f093ed31e568 -->
+## Pasos: configurar
+1. **Configuración**, pestaña Nómina: frecuencia de pago (quincenal o mensual), pago de horas extra, riesgos laborales (ARL), doble aprobación, visto bueno profesional y otras reglas. Otras pestañas: Prestaciones sociales, Vacaciones, Jornadas laborales, Fórmulas y Cumplimiento.
+2. **Parámetros** (valores legales del año), **Conceptos de nómina**, **Retención en la fuente** y **Fondo de Solidaridad**.
+3. Cuentas contables por concepto, desde Causación contable (se pueden usar las sugeridas del PUC), y las cuentas de liquidaciones.
+
+## Pasos: empleados
+- **Nómina › Empleados › Nuevo empleado**: pasos Personales, Laboral (relación laboral, fecha de ingreso, tipo de contrato, tipo de salario, modalidad, cargo), Salario, Bancarios y Seguridad social (estos dos son opcionales). Se puede adjuntar el contrato en PDF.
+- **Importar** carga empleados desde Excel o CSV con la plantilla. **Completar datos** muestra los que tienen información pendiente.
+- **Centro de incorporación**: trae el histórico ya liquidado desde World Office, Siigo Nómina, Helisa, Alegra Nómina, Contai u otro sistema. El histórico queda de solo lectura y no genera PILA, contabilidad ni documentos DIAN.
+- Los contratistas por prestación de servicios no van por nómina: se manejan con documento soporte (flujos 13 y 20).
+
+## Pasos: ciclo de cada periodo
+1. **Novedades**: incapacidades, licencias, vacaciones, horas extra, préstamos, beneficios y descuentos recurrentes, cada una en su pantalla. Los jefes de área pueden enviar solicitudes. Estados: Borrador, Aprobada, Rechazada, Consumida, Anulada.
+2. **Generar nómina**: elige año, mes y tipo de periodo (primera quincena, segunda quincena o mensual) y pulsa **Calcular vista previa**. Revisa a cada empleado y pulsa **Confirmar y generar nómina**. Un periodo confirmado se puede deshacer con **Anular o corregir período**, y se descarga en Excel.
+3. **Nómina electrónica**: desde Generar nómina, **Emitir a la DIAN** para el periodo o por empleado (o automático al confirmar, si se activa). Con pago quincenal se emite el acumulado del mes, un documento por empleado; con pago mensual se puede emitir cada liquidación. El estado por empleado se ve en Obligaciones › Nómina electrónica, y las correcciones se hacen con **notas de ajuste**.
+4. **Planillas PILA** (formato AT2-v09): **Generar planilla PILA** con el mes completo confirmado, **Descargar TXT**, **Radicar planilla** y **Marcar como pagada**.
+5. **Causación contable**: cuentas contables, vista previa del asiento, comprobante y **Aprobar causación** (se puede revertir).
+6. **Pago**: Tesorería › Pago de nómina, con desprendibles por correo y lotes bancarios (requiere Tesorería, que activa el equipo).
+7. **Prestaciones sociales**: prima (junio y diciembre), cesantías, intereses a las cesantías y anticipos.
+8. **Informes**: costo de nómina, reportes de periodo, certificado de ingresos y retenciones y formulario 2276.
+
+## Pasos: liquidar un contrato
+**Liquidación › Liquidaciones**: **Simular liquidación**, **Crear liquidación**, **Liquidar**, **Causar liquidación** y registrar el pago. Calcula cesantías, intereses, prima, vacaciones, salario pendiente e indemnización (sin justa causa o justa causa invocada por el trabajador). Se exporta en PDF o como tirilla.
 
 ## Errores comunes
-- PILA bloqueada por periodos faltantes: carga primero las quincenas atrasadas, contratos y métodos de pago.
-- Error de consecutivo al emitir: ya existe ese número; revisa la vista previa.
-- Cálculo de horas extra y recargos: depende de la plantilla de horarios de la empresa.
-- Diferencias de redondeo de decimales en salarios.
+- PILA bloqueada: necesita el mes completo confirmado.
+- Elegir "cada liquidación" con pago quincenal: la DIAN pide el acumulado del mes.
+- Saldo sin cubrir los cupos: el módulo se pausa y no deja emitir.
+- Diferencias de redondeo en salarios y horas extra según la jornada configurada.
+- La radicación de incapacidades ante EPS o ARL se hace por fuera; núvara lleva el registro y la cuenta por cobrar.
 
-## Tips del asesor
-- Cuando la emisión esté disponible, la nómina se emitirá directamente desde núvara a la DIAN; en el software contable solo se registra el asiento.
-- La migración desde otro software exige exportar el historial de datos; los datos incompletos se complementan en Excel.
-- Se pidieron mejoras de interfaz: selectores en español, formato de mayúsculas uniforme, guardar como borrador al crear un empleado y textos de ayuda por cada tipo de ausencia.
+## Para el equipo
+- El diálogo de activación se titula "Activar Nómina electrónica" aunque compra cupos de administración de nómina.
+- Los mensajes de saldo dicen "Nuvicoins"; por marca se dice créditos.

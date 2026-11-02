@@ -162,7 +162,7 @@ Una vez aprobados los documentos, a Excel o PDF. El balance de prueba por tercer
 Sí: se suben como las facturas, en un proceso separado de las compras porque la estructura es distinta, y la extensión sirve igual (el débito de créditos depende de si es compra o venta). La plataforma distingue compra de venta comparando el NIT de la empresa con el del emisor y el receptor. Se diseñó sobre todo para compras: si descargas menos ventas que las de la DIAN, envía el archivo y el token al soporte. Para ventas, descarga mes a mes.
 
 **¿Se emite la nómina electrónica desde núvara?**
-Hay un módulo de nómina que emite directo a la DIAN, con el asiento en el software contable (flujo 18); la carga es por archivo plano. En 2026 se habló de él como módulo por habilitar; trátalo como en validación (ver `por-confirmar.md`).
+Sí. Con la empresa habilitada ante la DIAN para nómina, se emite desde Nómina › Liquidación › Generar nómina › Emitir a la DIAN: con pago quincenal, un documento por empleado con el acumulado del mes. El módulo se cobra por cupos de empleados al mes y cada documento como documento electrónico (flujo 18).
 
 **¿Hay conciliación, egresos o cajas menores?**
 La conciliación bancaria (por montos y fechas, explicando lo no conciliado) y los egresos están en desarrollo o validación (ver `producto.md`). Escanear documentos de caja menor por WhatsApp o Telegram está en pruebas. Un informe para proyectar impuestos antes de causar está propuesto, sin construir.

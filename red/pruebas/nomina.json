@@ -1,0 +1,30 @@
+{
+  "descripcion": "Nómina: preguntas de «cómo hago X» que deben llegar al procedimiento, y otras que deben quedarse en el tema, en precios o en otro módulo. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": ["870", "\\b490\\b", "271\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara"],
+    "C": ["\\busted\\b", "Núvara", "Nuvara"],
+    "I": ["\\busted\\b", "Núvara", "Nuvara"]
+  },
+  "casos": [
+    { "pregunta": "¿Cómo activo la nómina?", "publico": "P", "nodos": ["activar-nomina"], "incluye": [["cupos"]] },
+    { "pregunta": "Quiero comprar cupos de empleados", "publico": "P", "nodos": ["activar-nomina"] },
+    { "pregunta": "¿Dónde cambio la frecuencia de pago a quincenal?", "publico": "P", "nodos": ["configurar-nomina"] },
+    { "pregunta": "¿Cómo creo un empleado nuevo?", "publico": "P", "nodos": ["crear-empleado"], "incluye": [["Nuevo empleado"]] },
+    { "pregunta": "Necesito importar los empleados desde Excel, ¿cómo lo hago?", "publico": "P", "nodos": ["crear-empleado"] },
+    { "pregunta": "¿Cómo migro la nómina que tenía en Siigo?", "publico": "P", "nodos": ["importar-historico-nomina"] },
+    { "pregunta": "¿Cómo registro una incapacidad?", "publico": "P", "nodos": ["registrar-novedades"] },
+    { "pregunta": "¿Dónde pongo las horas extra de un empleado?", "publico": "P", "nodos": ["registrar-novedades"] },
+    { "pregunta": "¿Cómo genero la nómina de la quincena?", "publico": "P", "nodos": ["generar-nomina"], "incluye": [["Calcular vista previa"]] },
+    { "pregunta": "¿Cómo liquido la nómina del mes?", "publico": "P", "nodos": ["generar-nomina"] },
+    { "pregunta": "¿Cómo envío la nómina a la DIAN?", "publico": "P", "nodos": ["emitir-nomina-electronica"] },
+    { "pregunta": "¿Cómo emito la nómina electrónica?", "publico": "P", "nodos": ["emitir-nomina-electronica"], "incluye": [["acumulado"]] },
+    { "pregunta": "¿Cómo genero la planilla PILA?", "publico": "P", "nodos": ["generar-planilla-pila"], "incluye": [["TXT"]] },
+    { "pregunta": "¿Cómo contabilizo la nómina?", "publico": "P", "nodos": ["causar-nomina"] },
+    { "pregunta": "¿Cómo liquido la prima de junio?", "publico": "P", "nodos": ["liquidar-prestaciones"] },
+    { "pregunta": "¿Cómo liquido a un empleado que renunció?", "publico": "P", "nodos": ["liquidar-contrato"] },
+    { "pregunta": "¿Cómo funciona la nómina?", "publico": "P", "nodos": ["nomina"], "noNodos": ["generar-nomina"] },
+    { "pregunta": "¿Qué incluye el módulo de nómina?", "publico": "P", "nodos": ["nomina"] },
+    { "pregunta": "¿Cuánto cuesta la nómina?", "publico": "P", "nodos": ["precios"], "noNodos": ["activar-nomina"] },
+    { "pregunta": "¿Cómo causo una factura?", "publico": "P", "nodos": ["causar-facturas"], "noNodos": ["causar-nomina"] }
+  ]
+}
