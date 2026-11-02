@@ -69,7 +69,7 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
 - `src/scenes/`: los tres actos (`IntroScene`, `StepScene`, `OutroScene`), creados con `Interactive.create` para que se editen desde Studio.
 - `src/tutorials/`: un archivo por video, que encadena escenas con `TransitionSeries` y fade de `motion.exit`.
 - Las grabaciones de la plataforma van en `public/recordings/` y se pasan en `recording` de `StepScene`. Si el campo está vacío, se muestra la vista ilustrativa.
-- Studio: `npm run dev`.
+- Studio: `bun run dev`. Las dependencias se instalan con `bun install` (no usar npm: el lockfile es `bun.lock`).
 
 ## Formato
 
