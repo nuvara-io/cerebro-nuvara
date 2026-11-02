@@ -949,7 +949,13 @@
     const ultimo = c.mensajes[c.mensajes.length - 1];
     const b = ultimo.busqueda;
     $("lectura").innerHTML = b ? (b.nodos.length ? `${PUBLICO[ultimo.publico]} → <b>${b.nodos.map(titulo).join(" + ")}</b>${b.conexion ? ` → ${titulo(b.conexion)}` : ""}` : "Sin tema · se escala a un asesor") : "";
-    requestAnimationFrame(() => { $("hilo").scrollTop = $("hilo").scrollHeight; });
+    // La última pregunta queda arriba, así la respuesta se lee desde su
+    // primera línea y no desde el final.
+    requestAnimationFrame(() => {
+      const preguntas = $("contenido").querySelectorAll(".yo");
+      const ultima = preguntas[preguntas.length - 1];
+      if (ultima) $("hilo").scrollTop = ultima.offsetTop - 12;
+    });
   }
 
   function pintar() { pintarLista(); pintarChat(); }
