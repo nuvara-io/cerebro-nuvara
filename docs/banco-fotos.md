@@ -3,9 +3,16 @@
 Sesión de fotografía oficial con personas reales. Hay 97 fotos JPG: las horizontales (H) son de 6000×4000 y las verticales (V) de 4000×6000.
 
 - **Drive:** "2. Sesión de fotografía núvara" (https://drive.google.com/drive/folders/1x1kZL9_c5bmwgGctAdkHs98uySHUMRDc)
-- **Local:** `Imagenes nuvara/2. Sesión de fotografía núvara-20261031T224237Z-1-001/2. Sesión de fotografía núvara/` (excluida de git)
+- **Local (opcional):** `Imagenes nuvara/2. Sesión de fotografía núvara-20261031T224237Z-1-001/2. Sesión de fotografía núvara/` (excluida de git)
+- **Índice:** `docs/banco-fotos.json` tiene el ID de Drive de cada foto, así que cualquiera que clone el repo puede traerlas sin descargar el banco completo (1,1 GB).
 
-Para usar una foto en Remotion, se copia a `public/posts/` y se reduce: con 1600px de alto alcanza para 1080×1350 o 1080×1920.
+Para usar una foto en Remotion:
+
+```bash
+uv run --no-project --with pillow python -I scripts/foto.py 172
+```
+
+Eso la deja en `public/posts/banco-172.jpg` con la orientación corregida y 1600px de alto, que alcanza para 1080×1350 o 1080×1920. Si el banco está descargado, usa la copia local; si no, la baja de Drive y la guarda en `~/.cache/cerebro-nuvara/fotos`. Sin `uv` también funciona con `python3 scripts/foto.py 172`, pero copia el original sin reducirlo.
 
 Hay tres locaciones:
 
@@ -30,7 +37,7 @@ Hay tres locaciones:
 | 135–142 | V | Arcos beige, sillón verde | Hombre de camisa a rayas azul con laptop en las piernas | Trabajo diario. Ya usada en "o realmente entiende?" |
 | 149–152 | V | Arcos beige | Mujer de blazer terracota de pie mirando la tablet | **Portada con texto a la izquierda**: la persona queda a la derecha y hay pared libre |
 | 153–160 | V/H | Arcos beige | Dupla (hombre de camisa a rayas y mujer de pelo crespo) que mira la laptop junta | Colaboración, "mira esto", resultados en equipo |
-| 161 | V | Arcos beige | Mujer de pelo lacio, gafas y blusa blanca, brazos cruzados, sonriente | Retrato de confianza, testimonio |
+| 161 | V | Arcos beige | Mujer de pelo lacio, gafas y blusa blanca, brazos cruzados, sonriente | Retrato de confianza, testimonio. **No está en Drive**: solo funciona con el banco local, hasta que alguien la suba a la carpeta. |
 | 163–166 | V | Arcos beige | Hombre de gafas y chaqueta de jean, brazos cruzados | Retrato de confianza |
 | 167–169 | V | Arcos beige | Hombre de camisa negra, de frente y con los brazos cruzados | Retrato, "seguro, no arrogante" |
 | 170–175 | V | Arcos beige | Mujer de pelo crespo largo y vestido a rayas, brazos cruzados, sonriente | **Portada con texto a la izquierda**: pared libre a la izquierda |

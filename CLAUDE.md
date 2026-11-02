@@ -28,7 +28,10 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
   - el logo maestro `.ai`, ya extraído a `public/brand/logo/` (15 SVG);
   - íconos oficiales, la guía del personaje y dos reels publicados;
   - en `Demos/`, grabaciones de demostraciones en vivo (1920×1080, 24 fps, 26–80 min), que son la fuente para las capturas de los tutoriales recortando el área de la app.
-- **Banco de fotos oficial con personas reales** ("2. Sesión de fotografía núvara", 50 JPG): https://drive.google.com/drive/folders/1x1kZL9_c5bmwgGctAdkHs98uySHUMRDc. Cuando se pida una portada o una pieza con foto, se usa primero este banco. Solo si no hay una escena adecuada se genera una imagen con IA, y en ese caso hay que avisar que tiene costo en créditos. El banco ya está descargado en `Imagenes nuvara/` (excluido de git) y catalogado por escena en [docs/banco-fotos.md](docs/banco-fotos.md): primero se elige la foto desde el catálogo.
+- **Banco de fotos oficial con personas reales** ("2. Sesión de fotografía núvara", 97 JPG): https://drive.google.com/drive/folders/1x1kZL9_c5bmwgGctAdkHs98uySHUMRDc.
+  - Cuando se pida una portada o una pieza con foto, se usa primero este banco. Solo si no hay una escena adecuada se genera una imagen con inteligencia artificial, y en ese caso hay que avisar que tiene costo en créditos.
+  - **Cómo se usa:** se elige la foto por escena en [docs/banco-fotos.md](docs/banco-fotos.md) y se trae con `uv run --no-project --with pillow python -I scripts/foto.py <número>`, que la deja en `public/posts/banco-<número>.jpg` (orientación corregida y 1600px de alto).
+  - **No hace falta tener el banco descargado:** si no está en `Imagenes nuvara/` (excluido de git), el script la baja de Drive con el índice `docs/banco-fotos.json`. Para eso la carpeta de Drive tiene que seguir compartida por link.
 
 ## Reglas de marca que no se negocian
 
