@@ -85,6 +85,7 @@ Cada agente lee su paquete de `destinos/` y el archivo real de `conocimiento/`, 
 ### 6. Registro y cierre
 - `reuniones.py registrar --origen "<descripción genérica de la carpeta>"` agrega la tanda a `fuentes-procesadas.md`.
 - Actualizá los conteos de `conocimiento/README.md`: fuentes analizadas y tabla por tipo.
+- Rearmá el archivo crudo para que las reuniones nuevas se puedan buscar: `python3 -I .claude/skills/consultar-reuniones/scripts/archivo.py construir "<carpeta>"`.
 - Si existe `conocimiento/preguntas-de-control.md`, respondé cada pregunta solo con `conocimiento/` y reportá cuáles fallan.
 - Mostrale al usuario el resumen (incluidas y descartadas, archivos tocados, hechos nuevos, contradicciones nuevas) y preguntá antes de hacer commit.
 

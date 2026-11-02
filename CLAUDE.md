@@ -8,6 +8,7 @@ El cerebro de **núvara**: todo lo que se sabe de la marca y del producto, y las
 |---|---|---|
 | **Cerebro de diseño** | `diseno/` (fuente versionada) y el artifact https://claude.ai/artifact/44mTTe4PPiDv33UWqWsaPL (vista navegable) | **Cómo se ve y cómo suena** núvara: fundamentos, tutoriales, redes, reels, tokens y componentes. Ver `diseno/COMO-USAR.md`. |
 | **Cerebro de conocimiento** | `conocimiento/` | **Qué es y cómo se usa** núvara: producto, flujos paso a paso, preguntas de usuarios, objeciones, glosario e ideas de tutoriales. Sale de las capacitaciones y está anonimizado. Las reuniones nuevas se suman **siempre** con la skill `procesar-reuniones` (`.claude/skills/procesar-reuniones/`). |
+| **Archivo crudo de reuniones** | `archivo-reuniones/` (local, excluido de git) | El **texto completo** de las 185 reuniones de núvara (~1,5 millones de palabras), para buscar detalles, verificar datos y citar la fuente. Se consulta con la skill `consultar-reuniones` cuando `conocimiento/` no alcanza. Nunca se copia al repo. |
 | **Producción** | `src/` (Remotion), `public/` (recursos), `docs/banco-fotos.md` | Las piezas: `src/brand/` es el espejo en código del cerebro de diseño. |
 
 Para escribir un guion, primero se lee `conocimiento/` (qué decir) y después `diseno/` (cómo mostrarlo).
