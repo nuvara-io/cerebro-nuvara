@@ -68,6 +68,9 @@ El plan de marketing y pauta de núvara según lo que está pasando en Colombia 
 - [C] **Febrero:** retención y renta de grandes contribuyentes; casos de firmas con varios programas contables.
 - [C] **1 de marzo:** Día del Contador, con piezas de marca y manifiesto ("el verdadero valor estuvo siempre en las decisiones"), sin oferta.
 
+## Primera prueba de pauta (semana del 3 de noviembre)
+- [C] Campaña "Llega al cierre con todo causado": 5 conceptos distintos (reel de revisar y aprobar, carrusel de la comparación con la DIAN, 500 causaciones en una hora, varios programas en un solo panel y pagas lo que causas), objetivo conversaciones por WhatsApp y presupuesto pequeño de prueba durante 7 días. Cada anuncio lleva su propio código de activación para medir hasta la cuenta habilitada. El plan completo, con textos, códigos y reglas de decisión, está en `docs/campana-cierre-iva-2026-11.md`.
+
 ## Cómo medir
 - [C] La plataforma no guarda UTM ni la fuente del registro: **cada canal o anuncio lleva su propio código de activación** (por ejemplo, uno para Meta, uno para LinkedIn y uno para correo). El embudo del código (canjes, causaron, crédito agotado, habilitadas) mide la campaña.
 - [C] El WhatsApp del sitio se mide con el evento de clic en Tag Manager.
