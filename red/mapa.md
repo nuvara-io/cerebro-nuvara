@@ -175,6 +175,25 @@ Bancos, cobros, pagos, pago de nómina, conciliación y cajas.
 | `conciliacion-bancaria` | neurona | P | "¿Cómo concilio el banco?", "¿cómo cargo el extracto?" | `tesoreria` | `flujos/21`, código de `platform` |
 | `manejar-caja` | neurona | P | "¿Cómo hago el arqueo de caja?", "¿cómo repongo la caja menor?" | `tesoreria` | `flujos/21`, código de `platform` |
 
+## Red neuronal: Marketing y adquisición
+
+Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código de activación y el camino de un prospecto hasta su cuenta habilitada.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `marketing-y-adquisicion` | núcleo | C (pauta y atribución: I) | "¿Por qué canales conseguimos usuarios?", "¿hay programa de referidos?", "¿tenemos píxel de Meta?" |  | `diseno/README.md`, `demostraciones-y-ventas.md` §Posicionamiento, `sitio-web.md`, código de `platform` |
+| `linea-grafica` | núcleo | C | "¿Qué tipografía usan las piezas?", "¿qué tamaño lleva una historia?", "¿qué fondo uso en un post?" |  | `diseno/README.md`, `diseno/redes.md`, `diseno/reels.md`, `diseno/tutoriales.md`, `docs/banco-fotos.md` |
+| `crear-pieza-de-redes` | neurona | C | "¿Cómo hago un post para Instagram?", "¿cómo renderizo una pieza en Remotion?" | `linea-grafica` | `diseno/redes.md`, `CLAUDE.md` §Código, `src/posts/` |
+| `elegir-foto-del-banco` | neurona | C | "¿Cómo elijo la foto de una portada?", "¿cómo traigo una foto del banco?" | `linea-grafica` | `docs/banco-fotos.md`, `scripts/foto.py` |
+| `revisar-pieza-antes-de-publicar` | neurona | C | "¿Cómo reviso un anuncio antes de publicarlo?", "¿cómo reviso una pieza antes de publicarla?" | `linea-grafica` | `diseno/README.md`, `diseno/redes.md` §Desvíos, `diseno/reels.md` §Lo que no se repite |
+| `mensajes-y-afirmaciones` | núcleo | C (desvíos del sitio: I) | "¿Qué cifras puedo poner en un anuncio?", "¿puedo decir 90 % menos tiempo?", "¿qué llamado a la acción uso?" |  | `diseno/README.md` §Voz y §Vocabulario, `sitio-web.md` §Cifras de marketing, `por-confirmar.md` §4 |
+| `embudo-de-adquisicion` | núcleo | C (métricas: I) | "¿Cómo llega un prospecto a ser usuario?", "¿cuándo se considera activa una cuenta?", "¿qué pasa cuando se acaba la prueba?" |  | `demostraciones-y-ventas.md` §Cierre típico, código de `platform` |
+| `ver-embudo-de-activacion` | neurona | I | "¿Dónde veo el embudo de activación?", "¿dónde veo las organizaciones atascadas?" | `embudo-de-adquisicion` | código de `platform` |
+| `campanas-de-activacion` | núcleo | C (administración: I) | "¿Qué es un código de activación?", "¿cuántas facturas regala un código?", "¿a quién le puedo mandar el correo de campaña?" |  | código de `platform` |
+| `crear-campana-de-activacion` | neurona | I | "¿Cómo creo un código de activación?", "¿cómo armo una campaña nueva?" | `campanas-de-activacion` | código de `platform` |
+| `enviar-campana-por-correo` | neurona | I | "¿Cómo envío la campaña por correo?", "¿cómo subo la lista de contactos?" | `campanas-de-activacion` | código de `platform` |
+| `habilitar-cuenta-en-prueba` | neurona | I | "¿Cómo habilito una cuenta en prueba?", "¿cómo saco una cuenta de la prueba?" | `campanas-de-activacion` | código de `platform` |
+
 ## Red neuronal: Equipo interno
 
 Lo que solo usa el equipo de núvara.
@@ -271,6 +290,17 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `generar-nomina` | `pagar-nomina` | Pagar el periodo confirmado |
 | `pagar-nomina` | `conciliacion-bancaria` | El lote aparece en el extracto |
 | `manejar-caja` | `crear-cuenta-bancaria` | Fondear la caja desde el banco |
+| `marketing-y-adquisicion` | `demostracion-en-vivo` | La demostración como etapa de venta |
+| `linea-grafica` | `voz-de-marca` | Cómo se escribe el texto de la pieza |
+| `mensajes-y-afirmaciones` | `precios` | Qué tarifas se pueden publicar |
+| `mensajes-y-afirmaciones` | `argumentos-de-venta` | Qué mensaje mueve a cada perfil |
+| `revisar-pieza-antes-de-publicar` | `mensajes-y-afirmaciones` | Si una cifra se puede publicar |
+| `embudo-de-adquisicion` | `onboarding` | Lo que ve el usuario al registrarse y activar |
+| `embudo-de-adquisicion` | `campanas-de-activacion` | La prueba con código |
+| `embudo-de-adquisicion` | `demostracion-en-vivo` | La etapa que más cierra |
+| `campanas-de-activacion` | `mensajes-y-afirmaciones` | Qué se dice en el correo de campaña |
+| `enviar-campana-por-correo` | `revisar-pieza-antes-de-publicar` | Revisar el correo de prueba |
+| `habilitar-cuenta-en-prueba` | `precios` | El mínimo mensual que se empieza a cobrar |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo agregar una red neuronal

@@ -1,0 +1,34 @@
+{
+  "descripcion": "Marketing y adquisición: piezas gráficas, mensajes de pauta, campañas con código de activación y embudo. Las preguntas del usuario sobre registro deben seguir yendo a onboarding. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": ["\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "NUVARA", "nuvicoin"],
+    "C": ["\\busted\\b", "Núvara", "Nuvara", "NUVARA", "superadministrador", "Organizaciones atascadas"],
+    "I": ["\\busted\\b", "Núvara", "Nuvara", "NUVARA"]
+  },
+  "casos": [
+    { "pregunta": "¿Por qué canales conseguimos usuarios?", "publico": "C", "nodos": ["marketing-y-adquisicion"], "incluye": [["WhatsApp"]] },
+    { "pregunta": "¿Hay programa de referidos?", "publico": "C", "nodos": ["marketing-y-adquisicion"], "incluye": [["no está en la plataforma"]] },
+    { "pregunta": "¿Tenemos píxel de Meta?", "publico": "I", "nodos": ["marketing-y-adquisicion"], "incluye": [["Tag Manager"]] },
+    { "pregunta": "¿Qué tipografía usan las piezas?", "publico": "C", "nodos": ["linea-grafica"], "incluye": [["Poppins"]] },
+    { "pregunta": "¿Qué tamaño lleva una historia?", "publico": "C", "nodos": ["linea-grafica"], "incluye": [["1080×1920"]] },
+    { "pregunta": "¿Cómo hago un post para Instagram?", "publico": "C", "nodos": ["crear-pieza-de-redes"], "incluye": [["src/posts"]] },
+    { "pregunta": "¿Cómo renderizo una pieza en Remotion?", "publico": "C", "nodos": ["crear-pieza-de-redes"], "incluye": [["remotion still"]] },
+    { "pregunta": "¿Cómo traigo una foto del banco?", "publico": "C", "nodos": ["elegir-foto-del-banco"], "incluye": [["scripts/foto.py"]] },
+    { "pregunta": "¿Cómo elijo la foto de una portada?", "publico": "C", "nodos": ["elegir-foto-del-banco"], "incluye": [["docs/banco-fotos.md"]] },
+    { "pregunta": "¿Cómo reviso un anuncio antes de publicarlo?", "publico": "C", "nodos": ["revisar-pieza-antes-de-publicar"], "incluye": [["minúscula y con tilde"]] },
+    { "pregunta": "¿Qué cifras puedo poner en un anuncio?", "publico": "C", "nodos": ["mensajes-y-afirmaciones"], "incluye": [["15 segundos"]] },
+    { "pregunta": "¿Puedo decir 90 % menos tiempo en un anuncio?", "publico": "C", "nodos": ["mensajes-y-afirmaciones"], "incluye": [["no van en pauta"]] },
+    { "pregunta": "¿Qué llamado a la acción uso?", "publico": "C", "nodos": ["mensajes-y-afirmaciones"], "incluye": [["Agendar demostración"]] },
+    { "pregunta": "¿Cómo llega un prospecto a ser usuario?", "publico": "C", "nodos": ["embudo-de-adquisicion"], "incluye": [["Activa tu cuenta"]] },
+    { "pregunta": "¿Qué pasa cuando se acaba la prueba?", "publico": "C", "nodos": ["embudo-de-adquisicion"], "incluye": [["Habilitar mi cuenta"]] },
+    { "pregunta": "¿Dónde veo el embudo de activación?", "publico": "I", "nodos": ["ver-embudo-de-activacion"], "incluye": [["Retención y activación"]] },
+    { "pregunta": "¿Qué es un código de activación?", "publico": "C", "nodos": ["campanas-de-activacion"], "incluye": [["crédito de bienvenida"]] },
+    { "pregunta": "¿A quién le puedo mandar el correo de campaña?", "publico": "C", "nodos": ["campanas-de-activacion"], "incluye": [["autorización previa"]] },
+    { "pregunta": "¿Cómo creo un código de activación?", "publico": "I", "nodos": ["crear-campana-de-activacion"], "incluye": [["Nueva campaña"]] },
+    { "pregunta": "¿Cómo subo la lista de contactos?", "publico": "I", "nodos": ["enviar-campana-por-correo"], "incluye": [["base de consentimiento"]] },
+    { "pregunta": "¿Cómo habilito una cuenta en prueba?", "publico": "I", "nodos": ["habilitar-cuenta-en-prueba"], "incluye": [["Habilitar"]] },
+    { "pregunta": "¿Cómo me registro?", "publico": "P", "nodos": ["onboarding"], "noNodos": ["embudo-de-adquisicion"] },
+    { "pregunta": "¿Cómo conecto mi correo?", "publico": "P", "nodos": ["conectar-correo"], "noNodos": ["enviar-campana-por-correo", "campanas-de-activacion"] },
+    { "pregunta": "¿Cuánto cuesta causar una factura?", "publico": "P", "nodos": ["precios"], "noNodos": ["mensajes-y-afirmaciones"] }
+  ]
+}
