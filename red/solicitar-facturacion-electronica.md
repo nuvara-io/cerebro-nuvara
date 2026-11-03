@@ -2,16 +2,16 @@
 id: solicitar-facturacion-electronica
 tipo: procedimiento
 titulo: Solicitar la facturación electrónica
-tema: facturacion-electronica-y-radian
+tema: configuracion-facturacion-electronica
 publico: P
 estado: verificado en el código
 ruta: [Cuenta, Módulos, Facturación electrónica, Activar]
 url: /{organización}/cuenta/modulos
 siguiente: habilitar-ante-la-dian
-actualizado: 2026-11-02
+actualizado: 2026-11-03
 fuentes:
   - conocimiento/flujos/20-facturacion-electronica-de-venta-y-radian.md
-  - platform@6fdbceaba
+  - platform@5241b3430
 ---
 
 # Solicitar la facturación electrónica

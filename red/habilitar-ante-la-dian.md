@@ -2,16 +2,16 @@
 id: habilitar-ante-la-dian
 tipo: procedimiento
 titulo: Habilitar la empresa ante la DIAN
-tema: facturacion-electronica-y-radian
+tema: configuracion-facturacion-electronica
 publico: P
 estado: verificado en el código
 ruta: [Facturación Electrónica, Ajustes, Configuración, Habilitación DIAN]
 url: /{organización}/companies/{empresa}/electronic-billing/configuracion
 siguiente: emitir-factura-de-venta
-actualizado: 2026-11-02
+actualizado: 2026-11-03
 fuentes:
   - conocimiento/flujos/20-facturacion-electronica-de-venta-y-radian.md
-  - platform@6fdbceaba
+  - platform@5241b3430
 ---
 
 # Habilitar la empresa ante la DIAN

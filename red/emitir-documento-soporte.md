@@ -2,16 +2,16 @@
 id: emitir-documento-soporte
 tipo: procedimiento
 titulo: Emitir un documento soporte
-tema: facturacion-electronica-y-radian
+tema: documento-soporte-electronico
 publico: P
 estado: verificado en el código
 ruta: [Facturación Electrónica, Emitir, Documento soporte]
 url: /{organización}/companies/{empresa}/electronic-billing/documento-soporte/nueva
-siguiente: 
-actualizado: 2026-11-02
+siguiente: emitir-nota-de-ajuste-ds
+actualizado: 2026-11-03
 fuentes:
   - conocimiento/flujos/20-facturacion-electronica-de-venta-y-radian.md
-  - platform@6fdbceaba
+  - platform@5241b3430
 ---
 
 # Emitir un documento soporte
@@ -22,7 +22,7 @@ fuentes:
 
 ## Pasos
 1. [P] Entra a **Facturación Electrónica › Emitir** y elige **Documento soporte**.
-2. [P] **Proveedor:** los datos de quien te vendió.
+2. [P] **Proveedor:** identificación, nombre, dirección, municipio y régimen de quien te vendió. Si es del exterior, su país y la TRM.
 3. [P] **Líneas:** lo que compraste, con cantidades y valores.
 4. [P] **Pago y numeración:** forma y medio de pago, y la numeración. Emite.
 

@@ -348,7 +348,6 @@
   ],
   "facturacion-electronica-y-radian": [
     "facturacion electronica",
-    "radian",
     "facturar electronicamente",
     "emitir factura",
     "factura electronica de venta",
@@ -358,7 +357,16 @@
     "firma digital",
     "pos",
     "punto de venta",
-    "documento equivalente"
+    "documento equivalente",
+    "retencion en la fuente en la factura",
+    "retefuente en la factura",
+    "reteica en la factura",
+    "descuento global",
+    "impuesto al consumo en la factura",
+    "factura de exportacion",
+    "factura por contingencia",
+    "endoso",
+    "aval"
   ],
   "conciliacion-bancaria": [
     "conciliacion",
@@ -485,10 +493,7 @@
     "testsetid",
     "software propio",
     "software id",
-    "pasar a produccion",
-    "resolucion de facturacion",
-    "rango de numeracion",
-    "prefijo"
+    "pasar a produccion"
   ],
   "emitir-nota-credito-o-debito": [
     "nota debito",
@@ -516,8 +521,7 @@
     "aceptacion expresa",
     "recibo del bien",
     "reclamo",
-    "rechazar una factura",
-    "reglas radian"
+    "rechazar una factura"
   ],
   "renovar-certificado": [
     "renovar el certificado",
@@ -1070,5 +1074,129 @@
     "medir una campana",
     "campana de pauta",
     "medir la pauta"
+  ],
+  "eventos-radian": [
+    "radian",
+    "que es radian",
+    "aceptacion tacita",
+    "tacita",
+    "para que sirve el acuse",
+    "eventos de mis ventas",
+    "eventos sobre mis ventas",
+    "costo deducible"
+  ],
+  "activar-radian": [
+    "activar radian",
+    "activo radian",
+    "habilito los eventos",
+    "habilitar los eventos",
+    "habilitar radian",
+    "registrarme en radian"
+  ],
+  "configurar-reglas-radian": [
+    "reglas radian",
+    "regla radian",
+    "automatizo el acuse",
+    "automatizar el acuse",
+    "automatizar radian",
+    "reglas recomendadas",
+    "automatizacion radian",
+    "acuse automatico",
+    "se envie solo",
+    "envien solos",
+    "se envien solos",
+    "vienen activas",
+    "reglas vienen"
+  ],
+  "revisar-cumplimiento-radian": [
+    "sin acuse",
+    "por vencer",
+    "cumplimiento radian",
+    "compras por vencer",
+    "sin recibo",
+    "ventana de aceptacion"
+  ],
+  "configuracion-facturacion-electronica": [
+    "configurar antes de facturar",
+    "antes de facturar",
+    "estados de la habilitacion",
+    "configuracion de la facturacion",
+    "configurar la facturacion"
+  ],
+  "configurar-resoluciones": [
+    "resolucion de facturacion",
+    "rango de numeracion",
+    "prefijo",
+    "cargo la resolucion",
+    "cargar la resolucion",
+    "consecutivo inicial",
+    "resolucion vencida",
+    "rango agotado",
+    "resoluciones dian",
+    "muisca"
+  ],
+  "personalizar-pdf-y-notas": [
+    "logo",
+    "mi logo",
+    "plantilla del pdf",
+    "plantilla pdf",
+    "notas por defecto",
+    "pie de la factura"
+  ],
+  "factura-de-venta-y-notas": [
+    "datos lleva una factura",
+    "que lleva una factura",
+    "estados tiene una factura",
+    "estados de una factura",
+    "motivos tiene una nota",
+    "motivos de la nota",
+    "consumidor final"
+  ],
+  "crear-producto-para-facturar": [
+    "producto para facturar",
+    "catalogo de productos",
+    "servicio al catalogo",
+    "productos y servicios",
+    "creo un producto",
+    "crear un producto"
+  ],
+  "consultar-y-reintentar-documentos": [
+    "reenvio una factura",
+    "reenviar una factura",
+    "factura rechazada",
+    "reintento",
+    "reintentar",
+    "fallo el envio",
+    "verificar en la dian",
+    "no reemitas"
+  ],
+  "documento-soporte-electronico": [
+    "que es el documento soporte",
+    "emitir un documento soporte cuando",
+    "debo emitir un documento soporte",
+    "documento soporte electronico",
+    "cuds"
+  ],
+  "emitir-nota-de-ajuste-ds": [
+    "nota de ajuste del documento soporte",
+    "corrijo un documento soporte",
+    "corregir un documento soporte",
+    "anular un documento soporte",
+    "nc documento soporte"
+  ],
+  "facturacion-electronica-pendientes": [
+    "implementamos",
+    "implementar",
+    "que falta para emitir",
+    "que hay que tocar",
+    "titulo valor",
+    "contingencia",
+    "allowance",
+    "descuentos y cargos",
+    "tax id",
+    "implementamos la reteica",
+    "implementar la reteica",
+    "implementar la retencion",
+    "implementamos la retencion"
   ]
 }

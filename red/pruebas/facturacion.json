@@ -1,5 +1,5 @@
 {
-  "descripcion": "Facturación electrónica, documento soporte, RADIAN y renovación: preguntas de «cómo hago X» que deben llegar al procedimiento, y otras que deben quedarse en el tema o en precios. Mismo formato que precios.json.",
+  "descripcion": "Facturación electrónica por partes (habilitación y configuración, factura de venta y notas, documento soporte y eventos RADIAN): cada pregunta llega a su núcleo o neurona. Mismo formato que precios.json.",
   "excluyeSiempre": {
     "P": [
       "870",
@@ -172,7 +172,7 @@
       "pregunta": "¿Qué es RADIAN?",
       "publico": "P",
       "nodos": [
-        "facturacion-electronica-y-radian"
+        "eventos-radian"
       ],
       "noNodos": [
         "registrar-eventos-radian"
@@ -225,6 +225,249 @@
         [
           "se cotiza"
         ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué tengo que configurar antes de facturar?",
+      "publico": "P",
+      "nodos": [
+        "configuracion-facturacion-electronica"
+      ],
+      "incluye": [
+        [
+          "Resoluciones"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo cargo la resolución de facturación?",
+      "publico": "P",
+      "nodos": [
+        "configurar-resoluciones"
+      ],
+      "incluye": [
+        [
+          "MUISCA"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Se me agotó el rango de numeración, ¿cómo cargo la nueva resolución?",
+      "publico": "P",
+      "nodos": [
+        "configurar-resoluciones"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo pongo mi logo en la factura?",
+      "publico": "P",
+      "nodos": [
+        "personalizar-pdf-y-notas"
+      ],
+      "incluye": [
+        [
+          "2 MB"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué datos lleva una factura de venta?",
+      "publico": "P",
+      "nodos": [
+        "factura-de-venta-y-notas"
+      ],
+      "incluye": [
+        [
+          "Comprador"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué estados tiene una factura emitida?",
+      "publico": "P",
+      "nodos": [
+        "factura-de-venta-y-notas"
+      ],
+      "incluye": [
+        [
+          "Aceptado"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo un producto para facturar?",
+      "publico": "P",
+      "nodos": [
+        "crear-producto-para-facturar"
+      ],
+      "noNodos": [
+        "asociar-productos"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo reenvío una factura al comprador?",
+      "publico": "P",
+      "nodos": [
+        "consultar-y-reintentar-documentos"
+      ],
+      "incluye": [
+        [
+          "Reenviar por email"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo reintento una factura rechazada?",
+      "publico": "P",
+      "nodos": [
+        "consultar-y-reintentar-documentos"
+      ],
+      "incluye": [
+        [
+          "Editar y reintentar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué es el documento soporte?",
+      "publico": "P",
+      "nodos": [
+        "documento-soporte-electronico"
+      ],
+      "incluye": [
+        [
+          "no obligados a facturar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo corrijo un documento soporte?",
+      "publico": "P",
+      "nodos": [
+        "emitir-nota-de-ajuste-ds"
+      ],
+      "incluye": [
+        [
+          "NC documento soporte"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué es la aceptación tácita?",
+      "publico": "P",
+      "nodos": [
+        "eventos-radian"
+      ],
+      "incluye": [
+        [
+          "034"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo activo RADIAN?",
+      "publico": "P",
+      "nodos": [
+        "activar-radian"
+      ],
+      "incluye": [
+        [
+          "Activar RADIAN"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo configuro las reglas RADIAN?",
+      "publico": "P",
+      "nodos": [
+        "configurar-reglas-radian"
+      ],
+      "incluye": [
+        [
+          "Reglas recomendadas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Las reglas RADIAN vienen activas?",
+      "publico": "P",
+      "nodos": [
+        "eventos-radian"
+      ],
+      "incluye": [
+        [
+          "no se aplican solas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Dónde veo las facturas sin acuse?",
+      "publico": "P",
+      "nodos": [
+        "revisar-cumplimiento-radian"
+      ],
+      "incluye": [
+        [
+          "Cumplimiento"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Puedo poner retención en la fuente en la factura de venta?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "incluye": [
+        [
+          "solo se aplica"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo implementamos la ReteICA en la factura?",
+      "publico": "I",
+      "nodos": [
+        "facturacion-electronica-pendientes"
+      ],
+      "incluye": [
+        [
+          "cruzados"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué falta para emitir con impuesto al consumo?",
+      "publico": "I",
+      "nodos": [
+        "facturacion-electronica-pendientes"
+      ],
+      "incluye": [
+        [
+          "tax_id: 4"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué hay que tocar para los eventos de título valor?",
+      "publico": "I",
+      "nodos": [
+        "facturacion-electronica-pendientes"
+      ],
+      "incluye": [
+        [
+          "send-event-data"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Puedo hacer un endoso de una factura?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "noNodos": [
+        "facturacion-electronica-pendientes"
       ]
     }
   ]

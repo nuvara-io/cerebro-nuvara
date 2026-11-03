@@ -2,13 +2,13 @@
 id: legalizar-gastos
 tipo: procedimiento
 titulo: Legalizar gastos de viaje o de tarjeta
-tema: facturas-del-exterior
+tema: documento-soporte-electronico
 publico: P
 estado: verificado en el código
 ruta: [Operaciones, Causaciones, Acciones, Legalización de gastos]
 url: /{organización}/companies/{empresa}/legalizaciones
 siguiente: emitir-documento-soporte
-actualizado: 2026-11-02
+actualizado: 2026-11-03
 fuentes:
   - conocimiento/flujos/15-facturas-del-exterior-y-legalizacion-de-gastos.md
   - platform@5241b3430

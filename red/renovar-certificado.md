@@ -2,16 +2,16 @@
 id: renovar-certificado
 tipo: procedimiento
 titulo: Renovar el certificado de firma digital
-tema: facturacion-electronica-y-radian
+tema: configuracion-facturacion-electronica
 publico: P
 estado: verificado en el código
 ruta: [Facturación Electrónica, Ajustes, Estado, Renovar certificado]
 url: /{organización}/companies/{empresa}/electronic-billing/wallet
 siguiente: 
-actualizado: 2026-11-02
+actualizado: 2026-11-03
 fuentes:
   - conocimiento/flujos/20-facturacion-electronica-de-venta-y-radian.md
-  - platform@6fdbceaba
+  - platform@5241b3430
 ---
 
 # Renovar el certificado de firma digital

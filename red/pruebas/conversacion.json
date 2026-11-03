@@ -59,7 +59,12 @@
         "emitir-factura-de-venta"
       ],
       "nodos": [
-        "facturacion-electronica-y-radian"
+        "factura-de-venta-y-notas"
+      ],
+      "incluye": [
+        [
+          "operador"
+        ]
       ]
     },
     {

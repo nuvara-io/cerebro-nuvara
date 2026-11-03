@@ -104,7 +104,6 @@ Traer las facturas, causarlas, revisarlas, aprobarlas y archivarlas.
 | `comparar-con-la-dian` | neurona | P | "¿Cómo comparo mis facturas con el listado de la DIAN?", "¿Cómo sé qué facturas me faltan frente a la DIAN?" | `archivo-y-comparacion-dian` | `flujos/11`, código de `platform` |
 | `restaurar-factura-eliminada` | neurona | P | "¿Cómo recupero una factura que eliminé?", "¿Cómo restauro varias facturas de la papelera a la vez?" | `papelera-y-limpieza` | `flujos/17`, código de `platform` |
 | `excluir-proveedor` | neurona | P | "¿Cómo excluyo un proveedor para que no entren sus facturas?", "¿Cómo vuelvo a dejar entrar las facturas de un proveedor excluido?" | `papelera-y-limpieza` | `flujos/17`, código de `platform` |
-| `legalizar-gastos` | neurona | P | "¿Cómo legalizo los gastos de un viaje?", "¿Cómo paso los recibos de la tarjeta a un comprobante para Siigo?" | `facturas-del-exterior` | `flujos/15`, código de `platform` |
 | `asociar-productos` | neurona | P | "¿Cómo asocio varios productos del proveedor a uno de mi catálogo?", "¿Cómo uso la mesa de asociación?" | `inventario-y-productos` | `flujos/19`, código de `platform` |
 | `configurar-proveedor` | neurona | P | "¿Cómo marco a un proveedor como autorretenedor?", "¿Cómo hago para retenerle solo la mitad a un proveedor?" | `proveedores-y-retenciones` | `flujos/09`, código de `platform` |
 | `configurar-reteica` | neurona | P | "¿Cómo configuro la ReteICA por municipio?", "¿Cómo pongo la tarifa de ReteICA por actividad?" | `proveedores-y-retenciones` | `flujos/09`, código de `platform` |
@@ -128,18 +127,32 @@ Llevar las causaciones y los comprobantes al software contable: por archivo o, c
 
 ## Red neuronal: Facturación electrónica
 
-Emitir documentos electrónicos ante la DIAN y registrar eventos RADIAN.
+Emitir documentos electrónicos ante la DIAN (factura de venta y notas, documento soporte y su nota de ajuste) y registrar los eventos RADIAN de las facturas que recibes. La nómina electrónica sale de la misma habilitación, pero vive en la red de Nómina.
 
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
-| `facturacion-electronica-y-radian` | núcleo | P | "¿Puedo facturar desde núvara?", "¿qué es RADIAN?", "¿qué documentos electrónicos emiten?" |  | `flujos/20`, código de `platform` |
-| `emitir-factura-de-venta` | neurona | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `solicitar-facturacion-electronica` | neurona | P | "¿Cómo activo la facturación electrónica?", "¿dónde solicito la habilitación?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `habilitar-ante-la-dian` | neurona | P | "¿Cómo me habilito ante la DIAN?", "¿dónde pongo el TestSetID?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `emitir-nota-credito-o-debito` | neurona | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `emitir-documento-soporte` | neurona | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `registrar-eventos-radian` | neurona | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
-| `renovar-certificado` | neurona | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `facturacion-electronica-y-radian` | `flujos/20`, código de `platform` |
+| `facturacion-electronica-y-radian` | núcleo | P | "¿Puedo facturar desde núvara?", "¿qué documentos electrónicos emiten?", "¿emiten documentos POS?" |  | `flujos/20`, código de `platform` |
+| `configuracion-facturacion-electronica` | núcleo | P | "¿Qué tengo que configurar antes de facturar?", "¿cuáles son los estados de la habilitación DIAN?" |  | `flujos/20`, código de `platform` |
+| `solicitar-facturacion-electronica` | neurona | P | "¿Cómo activo la facturación electrónica?", "¿dónde solicito la habilitación?" | `configuracion-facturacion-electronica` | `flujos/20`, código de `platform` |
+| `habilitar-ante-la-dian` | neurona | P | "¿Cómo me habilito ante la DIAN?", "¿dónde pongo el TestSetID?" | `configuracion-facturacion-electronica` | `flujos/20`, código de `platform` |
+| `configurar-resoluciones` | neurona | P | "¿Cómo cargo la resolución de facturación?", "¿cómo cambio el consecutivo inicial?" | `configuracion-facturacion-electronica` | código de `platform` |
+| `personalizar-pdf-y-notas` | neurona | P | "¿Cómo pongo mi logo en la factura?", "¿cómo cambio la plantilla del PDF?" | `configuracion-facturacion-electronica` | código de `platform` |
+| `renovar-certificado` | neurona | P | "¿Cómo renuevo el certificado de firma digital?", "¿qué hago si se vence la firma?" | `configuracion-facturacion-electronica` | `flujos/20`, código de `platform` |
+| `factura-de-venta-y-notas` | núcleo | P | "¿Qué datos lleva una factura de venta?", "¿qué estados tiene una factura emitida?", "¿qué motivos tiene una nota crédito?" |  | `flujos/20`, código de `platform` |
+| `emitir-factura-de-venta` | neurona | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `factura-de-venta-y-notas` | `flujos/20`, código de `platform` |
+| `emitir-nota-credito-o-debito` | neurona | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `factura-de-venta-y-notas` | `flujos/20`, código de `platform` |
+| `crear-producto-para-facturar` | neurona | P | "¿Cómo creo un producto para facturar?", "¿dónde agrego un servicio al catálogo?" | `factura-de-venta-y-notas` | código de `platform` |
+| `consultar-y-reintentar-documentos` | neurona | P | "¿Cómo reenvío una factura al comprador?", "¿cómo reintento una factura rechazada?" | `factura-de-venta-y-notas` | código de `platform` |
+| `documento-soporte-electronico` | núcleo | P | "¿Qué es el documento soporte?", "¿cuándo debo emitir un documento soporte?" |  | `flujos/20`, código de `platform` |
+| `emitir-documento-soporte` | neurona | P | "¿Cómo emito un documento soporte?", "¿cómo soporto una compra a un no obligado a facturar?" | `documento-soporte-electronico` | `flujos/20`, código de `platform` |
+| `emitir-nota-de-ajuste-ds` | neurona | P | "¿Cómo corrijo un documento soporte?", "¿cómo emito la nota de ajuste del documento soporte?" | `documento-soporte-electronico` | código de `platform` |
+| `legalizar-gastos` | neurona | P | "¿Cómo legalizo los gastos de un viaje?", "¿Cómo paso los recibos de la tarjeta a un comprobante para Siigo?" | `documento-soporte-electronico` | `flujos/15`, código de `platform` |
+| `facturacion-electronica-pendientes` | núcleo | I | "¿Cómo implementamos la ReteICA en la factura?", "¿qué falta para emitir con impuesto al consumo?", "¿qué hay que tocar para los eventos de título valor?" |  | código de `platform` |
+| `eventos-radian` | núcleo | P | "¿Qué es RADIAN?", "¿para qué sirve el acuse de recibo?", "¿qué es la aceptación tácita?" |  | `flujos/20`, código de `platform` |
+| `activar-radian` | neurona | P | "¿Cómo activo RADIAN?", "¿cómo habilito los eventos RADIAN?" | `eventos-radian` | código de `platform` |
+| `registrar-eventos-radian` | neurona | P | "¿Cómo hago el acuse de recibo?", "¿cómo registro un evento RADIAN?" | `eventos-radian` | `flujos/20`, código de `platform` |
+| `configurar-reglas-radian` | neurona | P | "¿Cómo configuro las reglas RADIAN?", "¿cómo hago que el acuse se envíe solo?" | `eventos-radian` | código de `platform` |
+| `revisar-cumplimiento-radian` | neurona | P | "¿Dónde veo las facturas sin acuse?", "¿dónde veo las compras por vencer en RADIAN?" | `eventos-radian` | código de `platform` |
 
 ## Red neuronal: Nómina
 
@@ -304,6 +317,18 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `habilitar-cuenta-en-prueba` | `precios` | El mínimo mensual que se empieza a cobrar |
 | `planeacion-de-marketing` | `competencia` | Qué decirle a un prospecto que viene de otra solución |
 | `planeacion-de-marketing` | `campanas-de-activacion` | Crear el código que mide la campaña |
+| `facturacion-electronica-y-radian` | `configuracion-facturacion-electronica`, `factura-de-venta-y-notas`, `documento-soporte-electronico`, `eventos-radian` | La parte del módulo por la que pregunta |
+| `configurar-resoluciones` | `emitir-factura-de-venta` | Ya cargada la resolución: emitir |
+| `crear-producto-para-facturar` | `emitir-factura-de-venta` | Usar el producto en una factura |
+| `consultar-y-reintentar-documentos` | `emitir-nota-credito-o-debito` | Corregir un documento ya aceptado |
+| `factura-de-venta-y-notas` | `ventas-y-autorretencion` | Cómo queda causada la venta emitida |
+| `documento-soporte-electronico` | `notas-credito-y-documento-soporte` | Cómo se causa el documento soporte |
+| `emitir-documento-soporte` | `emitir-nota-de-ajuste-ds` | Corregir o anular el documento soporte |
+| `eventos-radian` | `causar-y-revisar` | El costo deducible de las compras a crédito |
+| `activar-radian` | `habilitar-ante-la-dian` | La factura aún no está en producción |
+| `configurar-reglas-radian` | `revisar-cumplimiento-radian` | Ver qué envió la automatización y qué falta |
+| `revisar-cumplimiento-radian` | `registrar-eventos-radian` | Enviar a mano el evento que falta |
+| `facturacion-electronica-pendientes` | `hoja-de-ruta` | Cuándo se planea implementarlo |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo agregar una red neuronal
