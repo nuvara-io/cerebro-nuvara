@@ -605,7 +605,7 @@
   const nombreRed = (red) => estado.redes.find((r) => r.id === red)?.nombre || "";
   const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
   const enLinea = (t) => escapar(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>").replace(/`(.+?)`/g, "<code>$1</code>");
-  const titulo = (id) => { const t = id.split("-").map((p) => TILDES[p] || p).join(" "); return t.charAt(0).toUpperCase() + t.slice(1); };
+  const titulo = (id) => { if (estado?.titulos?.[id]) return estado.titulos[id]; const t = id.split("-").map((p) => TILDES[p] || p).join(" "); return t.charAt(0).toUpperCase() + t.slice(1); };
   const nodosDe = (resultado) => [...(resultado || "").matchAll(/<nodo id="([^"]+)">\n([\s\S]*?)\n<\/nodo>/g)].map(([, id, texto]) => ({ id, texto }));
   const cuando = (iso) => {
     const d = new Date(iso), hoy = new Date();
@@ -960,6 +960,7 @@
     const red = b.nodos.length ? redDelNodo(b.nodos[0]) : null;
     const partes = [`<span class="paso-ruta">${PUBLICO[m.publico]}</span>`];
     if (red) partes.push(`<span class="paso-ruta red-chip"><i style="background:rgb(${colorRed(red)})"></i>${escapar(nombreRed(red))}</span>`);
+    if (b.porContexto) partes.push(`<span class="paso-ruta filtro" title="La pregunta sola no alcanzaba: se usó el tema de la respuesta anterior">Sigue el tema anterior</span>`);
     if (!b.nodos.length) partes.push(`<span class="paso-ruta pendiente">Sin tema</span>`);
     for (const id of b.nodos) partes.push(`<span class="paso-ruta ${b.sinEscribir.includes(id) ? "pendiente" : "nodo"}">${titulo(id)}</span>`);
     if (b.conexion) partes.push(`<span class="paso-ruta conexion">+ ${titulo(b.conexion)}</span>`);
@@ -1133,6 +1134,10 @@
       estado.conversaciones.unshift(c);
       estado.activa = c.id;
     }
+    // Memoria de la conversación: los nodos de la última respuesta deciden las
+    // preguntas de seguimiento ("¿y dónde lo veo?").
+    const anterior = [...c.mensajes].reverse().find((x) => x.busqueda?.nodos?.length)?.busqueda;
+    const contexto = anterior ? [...(anterior.procedimiento ? [anterior.procedimiento.id] : []), ...anterior.nodos, ...(anterior.conexion ? [anterior.conexion] : [])] : [];
     const m = { pregunta: texto, publico, busqueda: null, ia: null, error: null, fecha: new Date().toISOString() };
     c.mensajes.push(m);
     c.actualizada = m.fecha;
@@ -1145,7 +1150,7 @@
     pintar();
     try {
       const pedido = JSON.stringify({ pregunta: texto, publico });
-      const r = await fetch("/api/buscar", { method: "POST", body: pedido });
+      const r = await fetch("/api/buscar", { method: "POST", body: JSON.stringify({ pregunta: texto, publico, contexto: [...new Set(contexto)] }) });
       const b = await r.json();
       if (!r.ok) throw new Error(b.error);
       if (estado.modo === "ia") {
@@ -1211,6 +1216,11 @@
       <tbody>${v.porRed.map((r) => `<tr><td class="principal-c"><i style="display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;background:rgb(${colorRed(r.id)})"></i>${escapar(r.nombre)}</td>
         <td>${r.nucleos}</td><td>${r.neuronas}</td><td class="ocultar-movil">${r.escritas}</td><td class="ocultar-movil">${r.internas}</td><td class="ocultar-movil">${r.externas}</td>
         <td>${r.acierto === null ? "—" : `${r.acierto} %`}</td></tr>`).join("")}</tbody></table></div></div>`;
+
+    const st = d.sinTema || [];
+    h += `<div class="bloque-prueba"><h3>Preguntas sin tema</h3>
+      <details class="set" ${st.length ? "open" : ""}><summary><span class="marcador ${st.length ? "mal" : "ok"}">${st.length}</span>Registro del chat<small>preguntas que no encontraron nodo o quedaron en empate: dicen qué neurona o qué clave falta (también con bun run red:sin-tema)</small>${ICONO.abajo}</summary><ul class="casos">${st.map((r) => fila(false, r.publico, r.pregunta,
+        `${r.veces > 1 ? `${r.veces} veces · ` : ""}${r.motivo === "empate" ? `empate entre ${escapar(r.nodos.map(titulo).join(" y "))}` : "sin tema"}`, "")).join("") || `<li><span></span><span></span><span>Todavía no hay preguntas sin tema.</span><span></span></li>`}</ul></details></div>`;
 
     h += `<div class="bloque-prueba"><h3>Validador</h3>`;
     h += bloque("Fragmentos", "de un núcleo solo debe llegar lo que aplica", v.fragmentos.ok, v.fragmentos.total,
@@ -1330,7 +1340,7 @@
   $("velo").addEventListener("click", () => document.body.classList.remove("menu-abierto"));
 
   fetch("/api/estado").then((r) => r.json()).then((s) => {
-    estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia; estado.redes = s.redes;
+    estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia; estado.redes = s.redes; estado.titulos = s.titulos || {};
     pintarRedes();
     $("modo-ia").disabled = !s.ia;
     $("estado-ia").classList.toggle("on", s.ia);

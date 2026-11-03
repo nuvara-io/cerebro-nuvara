@@ -218,6 +218,8 @@ export type Caso = {
   incluye?: string[][];
   excluye?: string[];
   noAplicarExcluyeSiempre?: string[];
+  // Nodos de la respuesta anterior, para probar preguntas de seguimiento.
+  contexto?: string[];
 };
 
 type Prueba = { descripcion?: string; excluyeSiempre: Record<Publico, string[]>; casos: Caso[] };
@@ -248,7 +250,7 @@ export async function correrPrueba(nombre: string, conIa = false) {
       const c = await consultar(caso.pregunta, caso.publico);
       return { ...c.ruta, sinEscribir: c.sinEscribir, texto: c.respuesta, uso: c.uso };
     }
-    const b = buscar(caso.pregunta, caso.publico);
+    const b = buscar(caso.pregunta, caso.publico, caso.contexto);
     return { nodos: b.nodos, conexion: b.conexion, sinEscribir: b.sinEscribir, texto: b.resultado, uso: { entrada: 0, salida: 0 } };
   }
 

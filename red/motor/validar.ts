@@ -48,7 +48,7 @@ for (const c of e.conexiones.suben)
 console.log(`  Preguntas de ejemplo que siguen una conexión: ${e.conexiones.conConexion}/${e.conexiones.muestras}`);
 
 console.log(`\nVELOCIDAD`);
-console.log(`  ${e.msPorConsulta.toFixed(2)} ms por consulta sin IA (lee mapa y claves en cada consulta)`);
+console.log(`  ${e.msPorConsulta.toFixed(2)} ms por consulta sin IA (mapa, claves y nodos en caché; se releen si cambian)`);
 
 const m = e.minimos;
 console.log(`\nMÍNIMOS (mapa ${m.mapa} %, ajuste ${m.ajuste} %, control ${m.control} %, fragmentos ${m.fragmentos} %, sin conexiones rotas ni nodos aislados)`);

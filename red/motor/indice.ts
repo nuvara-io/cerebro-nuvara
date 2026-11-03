@@ -1,5 +1,6 @@
 // Lee red/mapa.md y arma el índice que usa el enrutador: nodos y conexiones.
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
+import { leerTexto, marcaDe } from "./archivos";
 import { join } from "node:path";
 
 export type Publico = "P" | "C" | "I";
@@ -48,8 +49,19 @@ const celdas = (fila: string) =>
 const ids = (celda: string) =>
   [...celda.matchAll(/`([a-z0-9-]+)`/g)].map((m) => m[1]);
 
+let indiceGuardado: { marca: string; indice: Indice } | null = null;
+
+// El índice se rearma solo si cambió el mapa o se creó o borró un nodo.
 export function leerIndice(): Indice {
-  const mapa = readFileSync(join(RAIZ_RED, "mapa.md"), "utf8");
+  const marca = marcaDe(join(RAIZ_RED, "mapa.md"), RAIZ_RED);
+  if (indiceGuardado?.marca === marca) return indiceGuardado.indice;
+  const indice = armarIndice();
+  indiceGuardado = { marca, indice };
+  return indice;
+}
+
+function armarIndice(): Indice {
+  const mapa = leerTexto(join(RAIZ_RED, "mapa.md"));
   const nodos: NodoIndice[] = [];
   const conexiones: Conexion[] = [];
   const redes: RedNeuronal[] = [];

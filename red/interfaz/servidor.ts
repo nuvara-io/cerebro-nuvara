@@ -6,13 +6,14 @@ import { buscar } from "../motor/buscar";
 import { correrPrueba, evaluarRed, listarPruebas } from "../motor/evaluacion";
 import { leerIndice, RAIZ_RED, type Publico } from "../motor/indice";
 import { cargarNodo, leerProcedimiento } from "../motor/nodos";
+import { leerRegistro, registrar } from "../motor/registro";
 
 const PUERTO = Number(process.env.PORT ?? 3100);
 const HAY_IA = Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
 const PAGINA = join(import.meta.dir, "index.html");
 const LOGOS = join(RAIZ_RED, "..", "public", "brand", "logo");
 
-type Pedido = { pregunta?: string; publico?: string };
+type Pedido = { pregunta?: string; publico?: string; contexto?: string[] };
 
 const titulos = (texto: string) =>
   [...texto.matchAll(/^## (.+)$/gm)].map((m) => m[1]);
@@ -55,14 +56,20 @@ Bun.serve({
         nodos: indice.nodos,
         conexiones: indice.conexiones,
         redes: indice.redes,
+        titulos: Object.fromEntries(
+          indice.nodos.map((n) => [n.id, cargarNodo(n.id, "I")?.match(/^# (.+)$/m)?.[1] ?? null]).filter(([, t]) => t),
+        ),
         ejemplos: prueba.casos.map((c: Pedido) => ({ pregunta: c.pregunta, publico: c.publico })),
       });
     }
 
     if (req.method === "POST" && pathname === "/api/buscar") {
-      const { pregunta, publico } = leerPedido((await req.json()) as Pedido);
+      const cuerpo = (await req.json()) as Pedido;
+      const { pregunta, publico } = leerPedido(cuerpo);
       if (!pregunta) return json({ error: "Escribe una pregunta." }, 400);
-      const b = buscar(pregunta, publico);
+      const contexto = Array.isArray(cuerpo.contexto) ? cuerpo.contexto.filter((x) => typeof x === "string").slice(0, 3) : [];
+      const b = buscar(pregunta, publico, contexto);
+      registrar(b);
       return json({
         ...b,
         ocultas: Object.fromEntries(
@@ -93,7 +100,7 @@ Bun.serve({
           })),
         });
       }
-      return json({ validador, pruebas, ms: Math.round(performance.now() - inicio) });
+      return json({ validador, pruebas, sinTema: leerRegistro().slice(0, 50), ms: Math.round(performance.now() - inicio) });
     }
 
     // Para otros agentes: la ruta y los pasos de un procedimiento en datos.

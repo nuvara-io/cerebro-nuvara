@@ -20,3 +20,6 @@ __pycache__/
 
 # Resultados de las pruebas de la red (se regeneran en cada corrida)
 red/pruebas/*.resultado.json
+
+# Preguntas sin tema que registra la interfaz (pueden traer datos de quien escribe)
+red/registro/

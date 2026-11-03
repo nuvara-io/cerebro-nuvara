@@ -1,0 +1,159 @@
+{
+  "descripcion": "Conversación: preguntas de seguimiento que se deciden por el tema de la respuesta anterior (contexto), y preguntas con tema propio que no deben dejarse llevar por él. Mismo formato que precios.json, más contexto.",
+  "excluyeSiempre": {
+    "P": [
+      "870",
+      "\\b490\\b",
+      "271\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ]
+  },
+  "casos": [
+    {
+      "pregunta": "¿Y dónde lo veo?",
+      "publico": "P",
+      "contexto": [
+        "tesoreria"
+      ],
+      "nodos": [
+        "tesoreria"
+      ]
+    },
+    {
+      "pregunta": "¿Y si falla?",
+      "publico": "P",
+      "contexto": [
+        "enviar-a-siigo"
+      ],
+      "nodos": [
+        "exportacion"
+      ],
+      "incluye": [
+        [
+          "Anular en Siigo y reenviar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Quién lo puede hacer?",
+      "publico": "P",
+      "contexto": [
+        "emitir-factura-de-venta"
+      ],
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ]
+    },
+    {
+      "pregunta": "¿Se puede deshacer?",
+      "publico": "P",
+      "contexto": [
+        "aprobar-en-bloque"
+      ],
+      "nodos": [
+        "aprobacion-en-bloque"
+      ]
+    },
+    {
+      "pregunta": "¿Y las ventas?",
+      "publico": "P",
+      "contexto": [
+        "exportar-archivo"
+      ],
+      "nodos": [
+        "exportacion"
+      ],
+      "noNodos": [
+        "ventas-y-autorretencion"
+      ]
+    },
+    {
+      "pregunta": "¿Y eso cuánto cuesta?",
+      "publico": "P",
+      "contexto": [
+        "facturacion-electronica-y-radian"
+      ],
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "150.000"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo conecto Siigo?",
+      "publico": "P",
+      "contexto": [
+        "nomina"
+      ],
+      "nodos": [
+        "conectar-siigo"
+      ],
+      "noNodos": [
+        "nomina"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo pago la nómina por el banco?",
+      "publico": "P",
+      "contexto": [
+        "exportacion"
+      ],
+      "nodos": [
+        "pagar-nomina"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta causar una factura de venta?",
+      "publico": "P",
+      "contexto": [
+        "tesoreria"
+      ],
+      "nodos": [
+        "precios"
+      ],
+      "noNodos": [
+        "tesoreria"
+      ]
+    },
+    {
+      "pregunta": "¿Y dónde lo veo?",
+      "publico": "P",
+      "nodos": [],
+      "noNodos": [
+        "tesoreria"
+      ]
+    },
+    {
+      "pregunta": "¿Me cuentas un chiste?",
+      "publico": "P",
+      "contexto": [
+        "tesoreria"
+      ],
+      "nodos": [],
+      "noNodos": [
+        "tesoreria"
+      ]
+    }
+  ]
+}

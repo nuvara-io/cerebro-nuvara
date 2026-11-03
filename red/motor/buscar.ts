@@ -1,6 +1,6 @@
 // Enrutador sin IA: elige el nodo por palabras clave (red/claves.json)
 // y devuelve el nodo filtrado para el público. No llama a ningún modelo.
-import { readFileSync } from "node:fs";
+import { leerTexto } from "./archivos";
 import { join } from "node:path";
 import { leerIndice, visiblesPara, RAIZ_RED, RANGO, type Indice, type Publico } from "./indice";
 import { cargarNodo, fragmentar, leerProcedimiento, type Procedimiento } from "./nodos";
@@ -22,6 +22,10 @@ export type Busqueda = {
   procedimiento: Procedimiento | null;
   // Por nodo fragmentado: cuántos fragmentos tiene y cuántos se entregaron.
   fragmentos: Record<string, { total: number; mostrados: number }>;
+  // Quedó en dos temas sin conexión: la pregunta no alcanzó para decidir.
+  empate: boolean;
+  // Se decidió por el tema de la respuesta anterior de la conversación.
+  porContexto: boolean;
 };
 
 const PUNTOS_POR_PALABRA = 2;
@@ -34,11 +38,25 @@ function contiene(texto: string[], frase: string[]) {
   return false;
 }
 
-function leerClaves(): Record<string, string[]> {
-  const { _como, ...claves } = JSON.parse(
-    readFileSync(join(RAIZ_RED, "claves.json"), "utf8"),
-  );
+type Clave = { texto: string; raices: string[]; llave: string; largas: number };
+let clavesGuardadas: { fuente: string; claves: Record<string, Clave[]> } | null = null;
+
+// Las claves se normalizan una sola vez por versión de claves.json.
+function leerClaves(): Record<string, Clave[]> {
+  const fuente = leerTexto(join(RAIZ_RED, "claves.json"));
+  if (clavesGuardadas?.fuente === fuente) return clavesGuardadas.claves;
+  const { _como, ...crudas } = JSON.parse(fuente) as Record<string, string[]>;
   void _como;
+  const claves = Object.fromEntries(
+    Object.entries(crudas).map(([id, lista]) => [
+      id,
+      lista.map((texto) => {
+        const raices = palabras(texto);
+        return { texto, raices, llave: raices.join(" "), largas: raices.filter((p) => p.length > 2).length };
+      }),
+    ]),
+  );
+  clavesGuardadas = { fuente, claves };
   return claves;
 }
 
@@ -52,23 +70,19 @@ export function puntuar(pregunta: string, publico: Publico): Puntaje[] {
       // "recarga" y "recargo" tienen la misma raíz: cuentan una sola vez.
       const vistas = new Set<string>();
       const encontradas = (claves[id] ?? []).filter((c) => {
-        const raices = palabras(c);
-        const llave = raices.join(" ");
-        if (vistas.has(llave) || !contiene(texto, raices)) return false;
-        vistas.add(llave);
+        if (vistas.has(c.llave) || !contiene(texto, c.raices)) return false;
+        vistas.add(c.llave);
         return true;
       });
       // Las palabras cortas ("de", "la", "me") ayudan a encajar la frase
       // pero no suman puntos.
-      let puntos = encontradas.reduce(
-        (s, c) => s + PUNTOS_POR_PALABRA * palabras(c).filter((p) => p.length > 2).length,
-        0,
-      );
+      let puntos = encontradas.reduce((s, c) => s + PUNTOS_POR_PALABRA * c.largas, 0);
+      const nombres = encontradas.map((c) => c.texto);
       if (id === "precios" && /\$\s?\d/.test(pregunta)) {
         puntos += PUNTOS_CIFRA_EN_PESOS;
-        encontradas.push("cifra en pesos");
+        nombres.push("cifra en pesos");
       }
-      return { id, puntos, claves: encontradas };
+      return { id, puntos, claves: nombres };
     })
     .filter((p) => p.puntos > 0)
     .sort((a, b) => b.puntos - a.puntos);
@@ -122,7 +136,18 @@ function elegirProcedimiento(
   return elegida;
 }
 
-export function buscar(pregunta: string, publico: Publico): Busqueda {
+// contexto: los nodos de la respuesta anterior de la misma conversación. Solo
+// decide cuando la pregunta sola no alcanza: "¿y dónde lo veo?" no tiene tema
+// propio, y en un empate gana el tema del que se venía hablando.
+// Una pregunta corta que empieza con "y" o que señala algo ya dicho ("lo",
+// "eso", "ahí"). Solo esas se responden con el tema anterior sin claves propias.
+const SENALA = /\b(y|se|lo|la|los|las|le|eso|esto|ese|esa|ahi|alli|aqui|tambien|entonces)\b/;
+function esSeguimiento(pregunta: string) {
+  const normal = pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[¿?¡!.,]/g, " ").trim();
+  return normal.split(/\s+/).length <= 6 && SENALA.test(normal);
+}
+
+export function buscar(pregunta: string, publico: Publico, contexto: string[] = []): Busqueda {
   const indice = leerIndice();
   const { conexiones } = indice;
   const hacer = pideHacer(pregunta);
@@ -138,18 +163,40 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
   const [primero, segundo] = puntajes;
   let nodos: string[] = [];
   let conexion: string | null = null;
+  let porContexto = false;
+  const visibles = new Set(visiblesPara(indice, publico).map((n) => n.id));
+  const previo = contexto.filter((id) => visibles.has(id));
+  const redDe = (id: string) => indice.nodos.find((n) => n.id === id)?.red;
 
   if (primero && segundo && segundo.puntos === primero.puntos) {
     // Empate: si el mapa conecta los dos, se responde desde el nodo de
     // origen y se sigue la conexión; si no, se devuelven los dos.
     if (conecta(primero.id, segundo.id)) [nodos, conexion] = [[primero.id], segundo.id];
     else if (conecta(segundo.id, primero.id)) [nodos, conexion] = [[segundo.id], primero.id];
-    else nodos = [primero.id, segundo.id];
+    else {
+      // Sin conexión: si uno de los dos es del tema anterior, gana ese.
+      const redesPrevias = new Set(previo.map(redDe));
+      const delTema = [primero.id, segundo.id].filter((id) => previo.includes(id) || redesPrevias.has(redDe(id)));
+      if (delTema.length === 1) [nodos, porContexto] = [delTema, true];
+      else nodos = [primero.id, segundo.id];
+    }
   } else if (primero) {
     nodos = [primero.id];
     // La pregunta también toca el segundo tema y el mapa lo permite.
     if (segundo && segundo.puntos >= PUNTOS_PARA_CONECTAR && conecta(primero.id, segundo.id))
       conexion = segundo.id;
+  } else if (previo.length && esSeguimiento(pregunta)) {
+    // Ninguna clave: es una pregunta de seguimiento del tema anterior.
+    [nodos, porContexto] = [[previo[0]], true];
+  }
+
+  // "¿Y las ventas?" después de exportar: la pregunta empieza con "y", toca
+  // apenas una palabra de otro tema y se sigue hablando del anterior. Responde
+  // el tema anterior y el nuevo llega como conexión.
+  const seguimiento = /^[¿¡\s]*y\s/i.test(pregunta);
+  if (seguimiento && previo.length && primero && primero.puntos < PUNTOS_PARA_CONECTAR &&
+      !previo.includes(primero.id) && redDe(primero.id) !== redDe(previo[0])) {
+    [nodos, conexion, porContexto] = [[previo[0]], primero.id, true];
   }
 
   // Si la pregunta no pide hacer algo y solo puntuaron procedimientos, se
@@ -185,5 +232,6 @@ export function buscar(pregunta: string, publico: Publico): Busqueda {
     .join("\n\n");
 
   const procedimiento = nodos.length === 1 ? leerProcedimiento(nodos[0], publico) : null;
-  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento, fragmentos };
+  const empate = nodos.length > 1;
+  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento, fragmentos, empate, porContexto };
 }

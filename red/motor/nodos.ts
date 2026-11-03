@@ -1,5 +1,6 @@
 // Carga un nodo de red/ y deja solo lo que el público puede ver.
-import { readFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
+import { leerTexto } from "./archivos";
 import { join } from "node:path";
 import { RAIZ_RED, RANGO, type Publico } from "./indice";
 import { palabras } from "./texto";
@@ -14,7 +15,7 @@ export function cargarNodo(id: string, publico: Publico): string | null {
   const ruta = join(RAIZ_RED, `${id}.md`);
   if (!existsSync(ruta)) return null;
 
-  const texto = readFileSync(ruta, "utf8").replace(/^---\n[\s\S]*?\n---\n/, "");
+  const texto = leerTexto(ruta).replace(/^---\n[\s\S]*?\n---\n/, "");
   const secciones = texto.split(/\n(?=## )/);
   const salida: string[] = [];
 
@@ -58,7 +59,7 @@ export type Procedimiento = {
 
 // Lee la cabecera de un nodo: "clave: valor" y listas "[a, b]".
 function cabecera(id: string): Record<string, string> {
-  const texto = readFileSync(join(RAIZ_RED, `${id}.md`), "utf8");
+  const texto = leerTexto(join(RAIZ_RED, `${id}.md`));
   const bloque = texto.match(/^---\n([\s\S]*?)\n---\n/)?.[1] ?? "";
   return Object.fromEntries(
     bloque
