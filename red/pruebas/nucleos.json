@@ -470,6 +470,18 @@
           "Autorrenta de la empresa"
         ]
       ]
+    },
+    {
+      "pregunta": "ofrecen mas servicios aparte de causacion?",
+      "publico": "P",
+      "nodos": [
+        "modulos-disponibles"
+      ],
+      "incluye": [
+        [
+          "Facturación electrónica|FACTURACIÓN ELECTRÓNICA|facturación electrónica"
+        ]
+      ]
     }
   ]
 }

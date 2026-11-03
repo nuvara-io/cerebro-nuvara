@@ -469,6 +469,62 @@
       "noNodos": [
         "facturacion-electronica-pendientes"
       ]
+    },
+    {
+      "pregunta": "tienen funcionamiento de acuse de facturas?",
+      "publico": "P",
+      "nodos": [
+        "eventos-radian"
+      ],
+      "noNodos": [
+        "modulos-disponibles"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo un comprador nuevo?",
+      "publico": "P",
+      "nodos": [
+        "crear-comprador"
+      ],
+      "incluye": [
+        [
+          "Desde RUT"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo envío la factura desde mi propio correo?",
+      "publico": "P",
+      "nodos": [
+        "configuracion-facturacion-electronica"
+      ],
+      "noNodos": [
+        "conectar-correo"
+      ]
+    },
+    {
+      "pregunta": "¿Qué pasa si la DIAN rechaza mi factura?",
+      "publico": "P",
+      "nodos": [
+        "factura-de-venta-y-notas"
+      ],
+      "incluye": [
+        [
+          "Rechazado"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo veo si mi comprador aceptó la factura?",
+      "publico": "P",
+      "nodos": [
+        "eventos-radian"
+      ],
+      "incluye": [
+        [
+          "Ver eventos RADIAN"
+        ]
+      ]
     }
   ]
 }

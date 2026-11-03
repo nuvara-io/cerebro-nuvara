@@ -6,6 +6,7 @@ import { buscar } from "../motor/buscar";
 import { correrPrueba, evaluarRed, listarPruebas } from "../motor/evaluacion";
 import { leerIndice, RAIZ_RED, type Publico } from "../motor/indice";
 import { cargarNodo, leerProcedimiento } from "../motor/nodos";
+import { consultarLocal, hayModeloLocal, MODELO_LOCAL } from "../motor/local";
 import { leerRegistro, registrar } from "../motor/registro";
 
 const PUERTO = Number(process.env.PORT ?? 3100);
@@ -51,8 +52,11 @@ Bun.serve({
     if (pathname === "/api/estado") {
       const prueba = JSON.parse(readFileSync(join(RAIZ_RED, "pruebas", "precios.json"), "utf8"));
       const indice = leerIndice();
+      // Con la llave de Claude redacta Claude; sin ella, el modelo local de Ollama si está corriendo.
+      const local = !HAY_IA && (await hayModeloLocal());
       return json({
-        ia: HAY_IA,
+        ia: HAY_IA || local,
+        motorIa: HAY_IA ? "Claude" : local ? MODELO_LOCAL : null,
         nodos: indice.nodos,
         conexiones: indice.conexiones,
         redes: indice.redes,
@@ -113,12 +117,17 @@ Bun.serve({
     }
 
     if (req.method === "POST" && pathname === "/api/consultar") {
-      if (!HAY_IA)
-        return json({ error: "Falta ANTHROPIC_API_KEY en .env para usar el modo con IA." }, 503);
-      const { pregunta, publico } = leerPedido((await req.json()) as Pedido);
+      const cuerpo = (await req.json()) as Pedido;
+      const { pregunta, publico } = leerPedido(cuerpo);
       if (!pregunta) return json({ error: "Escribe una pregunta." }, 400);
-      const { consultar } = await import("../motor/red");
       try {
+        if (!HAY_IA) {
+          if (!(await hayModeloLocal()))
+            return json({ error: `Falta ANTHROPIC_API_KEY en .env, o Ollama corriendo con ${MODELO_LOCAL}.` }, 503);
+          const contexto = Array.isArray(cuerpo.contexto) ? cuerpo.contexto.filter((x) => typeof x === "string").slice(0, 3) : [];
+          return json(await consultarLocal(pregunta, publico, contexto));
+        }
+        const { consultar } = await import("../motor/red");
         return json(await consultar(pregunta, publico));
       } catch (e) {
         return json({ error: e instanceof Error ? e.message : String(e) }, 502);
@@ -129,4 +138,4 @@ Bun.serve({
   },
 });
 
-console.log(`Red de consulta en http://localhost:${PUERTO} (${HAY_IA ? "con" : "sin"} IA disponible)`);
+console.log(`Red de consulta en http://localhost:${PUERTO} (${HAY_IA ? "redacta Claude" : `redacta ${MODELO_LOCAL} si Ollama está corriendo`})`);

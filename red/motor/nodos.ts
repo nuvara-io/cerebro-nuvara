@@ -170,6 +170,10 @@ export function fragmentar(texto: string, pregunta: string): Fragmentado {
   for (const i of elegidos)
     if (NUMERADA.test(i.linea))
       for (const j of items) if (j.seccion === i.seccion && NUMERADA.test(j.linea)) quedan.add(j);
+  // Una línea que termina en ":" presenta una lista: viaja con el resto de su sección.
+  for (const i of elegidos)
+    if (i.linea.trimEnd().endsWith(":"))
+      for (const j of items) if (j.seccion === i.seccion) quedan.add(j);
 
   const salida = [titulo];
   secciones.forEach((sec, n) => {

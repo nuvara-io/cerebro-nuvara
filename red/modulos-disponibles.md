@@ -26,8 +26,8 @@ fuentes:
 
 Qué hace núvara hoy, módulo por módulo. La causación viene con la cuenta; facturación electrónica, nómina, tesorería y caja se activan aparte en **Cuenta › Módulos**.
 
-## Qué módulos tiene núvara
-- [P] **Causación** de compras y ventas: viene con la cuenta.
+## Qué módulos y servicios tiene núvara
+- [P] **Causación** de compras y ventas: viene con la cuenta. Aparte de la causación hay más módulos y servicios, que se activan por separado:
 - [P] **Facturación electrónica y RADIAN**: emitir documentos electrónicos ante la DIAN.
 - [P] **Nómina**: empleados, liquidación, nómina electrónica y PILA.
 - [P] **Tesorería** y **Caja**: bancos, cobros, pagos, conciliación bancaria y cajas.

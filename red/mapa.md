@@ -141,6 +141,7 @@ Emitir documentos electrónicos ante la DIAN (factura de venta y notas, document
 | `factura-de-venta-y-notas` | núcleo | P | "¿Qué datos lleva una factura de venta?", "¿qué estados tiene una factura emitida?", "¿qué motivos tiene una nota crédito?" |  | `flujos/20`, código de `platform` |
 | `emitir-factura-de-venta` | neurona | P | "¿Cómo emito una factura de venta?", "¿cómo hago una factura electrónica?" | `factura-de-venta-y-notas` | `flujos/20`, código de `platform` |
 | `emitir-nota-credito-o-debito` | neurona | P | "¿Cómo anulo una factura de venta?", "¿cómo emito una nota débito?" | `factura-de-venta-y-notas` | `flujos/20`, código de `platform` |
+| `crear-comprador` | neurona | P | "¿Cómo creo un comprador nuevo?", "¿cómo agrego a quien le voy a facturar?" | `factura-de-venta-y-notas` | código de `platform` |
 | `crear-producto-para-facturar` | neurona | P | "¿Cómo creo un producto para facturar?", "¿dónde agrego un servicio al catálogo?" | `factura-de-venta-y-notas` | código de `platform` |
 | `consultar-y-reintentar-documentos` | neurona | P | "¿Cómo reenvío una factura al comprador?", "¿cómo reintento una factura rechazada?" | `factura-de-venta-y-notas` | código de `platform` |
 | `documento-soporte-electronico` | núcleo | P | "¿Qué es el documento soporte?", "¿cuándo debo emitir un documento soporte?" |  | `flujos/20`, código de `platform` |

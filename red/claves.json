@@ -34,7 +34,16 @@
     "dashboard",
     "que modulos",
     "informes contables",
-    "revision contable"
+    "revision contable",
+    "mas servicios",
+    "otros servicios",
+    "que servicios",
+    "aparte de",
+    "ademas de",
+    "que mas ofrecen",
+    "ofrecen",
+    "otros modulos",
+    "solo causacion"
   ],
   "integraciones": [
     "integracion",
@@ -89,7 +98,11 @@
     "plan corporativo",
     "que incluye el precio",
     "costo de nuvara",
-    "cuanto es el costo"
+    "cuanto es el costo",
+    "cuestan",
+    "cuanto me cuestan",
+    "cuanto me sale",
+    "cuanto pagaria"
   ],
   "creditos-y-recargas": [
     "recargar",
@@ -1073,7 +1086,17 @@
     "medimos una campana",
     "medir una campana",
     "campana de pauta",
-    "medir la pauta"
+    "medir la pauta",
+    "cifrato",
+    "causapp",
+    "back contable",
+    "payana",
+    "pactos",
+    "ax1",
+    "contabilidad online",
+    "en pauta",
+    "hace cifrato",
+    "anuncios de cifrato"
   ],
   "eventos-radian": [
     "radian",
@@ -1083,7 +1106,11 @@
     "para que sirve el acuse",
     "eventos de mis ventas",
     "eventos sobre mis ventas",
-    "costo deducible"
+    "costo deducible",
+    "comprador acepto",
+    "acepto la factura",
+    "mi comprador acepto",
+    "acepto mi factura"
   ],
   "activar-radian": [
     "activar radian",
@@ -1121,7 +1148,11 @@
     "antes de facturar",
     "estados de la habilitacion",
     "configuracion de la facturacion",
-    "configurar la facturacion"
+    "configurar la facturacion",
+    "desde mi propio correo",
+    "mi propio correo",
+    "correo de envio",
+    "desde que correo"
   ],
   "configurar-resoluciones": [
     "resolucion de facturacion",
@@ -1168,7 +1199,11 @@
     "reintentar",
     "fallo el envio",
     "verificar en la dian",
-    "no reemitas"
+    "no reemitas",
+    "dian rechaza mi factura",
+    "rechaza mi factura",
+    "rechazo mi factura",
+    "me rechazo la factura"
   ],
   "documento-soporte-electronico": [
     "que es el documento soporte",
@@ -1198,5 +1233,14 @@
     "implementar la reteica",
     "implementar la retencion",
     "implementamos la retencion"
+  ],
+  "crear-comprador": [
+    "comprador nuevo",
+    "creo un comprador",
+    "crear un comprador",
+    "agrego un comprador",
+    "agregar un comprador",
+    "a quien le voy a facturar",
+    "datos del comprador"
   ]
 }

@@ -5,19 +5,14 @@ import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
 import { leerIndice, visiblesPara, type Indice, type Publico } from "./indice";
 import { cargarNodo, fragmentar } from "./nodos";
+import { calculoDePrecio, ESCALAR, sistemaRespuesta } from "./redaccion";
+
+export { ESCALAR };
 
 const MODELO = "claude-opus-5-5";
 const RESPALDO = {
   betas: ["server-side-fallback-2026-07-01"],
   fallbacks: "default" as const,
-};
-
-export const ESCALAR = "Eso te lo confirma un asesor de núvara.";
-
-const NOMBRE_PUBLICO: Record<Publico, string> = {
-  P: "un usuario o prospecto (chat abierto)",
-  C: "alguien del equipo comercial",
-  I: "alguien del equipo interno de núvara",
 };
 
 export type Ruta = {
@@ -109,28 +104,6 @@ export async function enrutar(
   return { ruta, uso: r.usage };
 }
 
-function sistemaRespuesta(publico: Publico) {
-  const voz = ["voz-de-marca", "limites"].map((id) => cargarNodo(id, publico) ?? "").join("\n\n");
-  const porPublico: Record<Publico, string> = {
-    P: `Quien pregunta es ${NOMBRE_PUBLICO.P}. Solo tienes datos oficiales. No menciones que existen datos internos o sin confirmar.`,
-    C: `Quien pregunta es ${NOMBRE_PUBLICO.C}. Puedes usar los datos por confirmar, pero márcalos siempre como "sin confirmar" y aclara que no se le dicen a un prospecto. Si piden una cifra descartada, dilo y da la oficial.`,
-    I: `Quien pregunta es ${NOMBRE_PUBLICO.I}. Puedes usar todo lo que tienes, marcando qué es oficial, qué está sin confirmar y qué es interno.`,
-  };
-
-  return `Eres el cerebro de núvara: respondes preguntas sobre qué hace núvara y cómo se usa.
-
-${porPublico[publico]}
-
-Reglas:
-- Responde solo con lo que está en <nodos>. No uses lo que sabes por fuera.
-- Si la respuesta no está en <nodos>, responde exactamente: "${ESCALAR}"
-- No inventes cifras. Solo puedes multiplicar o sumar tarifas que estén en <nodos>.
-- Responde corto: de 1 a 4 oraciones, en español de Colombia, sin títulos.
-- Si un nodo trae "## Pasos", la persona quiere hacer algo: empieza con la ruta en la plataforma (Menú › Pantalla › Botón) y da los pasos numerados tal como están, sin resumirlos. Aquí sí puedes pasar de 4 oraciones.
-
-${voz}`;
-}
-
 export async function consultar(
   pregunta: string,
   publico: Publico,
@@ -171,6 +144,7 @@ export async function consultar(
     .map((t) => `<nodo id="${t.id}">\n${t.texto}\n</nodo>`)
     .join("\n\n");
 
+  const calculo = cargados.includes("precios") ? calculoDePrecio(pregunta) : null;
   const r = await client.beta.messages.create({
     model: MODELO,
     max_tokens: 8000,
@@ -180,7 +154,7 @@ export async function consultar(
     messages: [
       {
         role: "user",
-        content: `<nodos>\n${nodos}\n</nodos>\n\n<pregunta>${pregunta}</pregunta>`,
+        content: `<nodos>\n${nodos}\n</nodos>\n\n${calculo ? `<calculo>${calculo}</calculo>\n\n` : ""}<pregunta>${pregunta}</pregunta>`,
       },
     ],
   });

@@ -365,6 +365,18 @@
       "noNodos": [
         "planeacion-de-marketing"
       ]
+    },
+    {
+      "pregunta": "¿Qué hace Cifrato en pauta?",
+      "publico": "C",
+      "nodos": [
+        "planeacion-de-marketing"
+      ],
+      "incluye": [
+        [
+          "40 anuncios"
+        ]
+      ]
     }
   ]
 }

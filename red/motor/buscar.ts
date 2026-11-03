@@ -97,6 +97,13 @@ const PUNTOS_PARA_CONECTAR = 4;
 const PIDE_HACER = /\b(como|donde|pasos?|paso a paso|que hago|que debo hacer|quiero|necesito|se hace|hago)\b/;
 const PIDE_EXPLICAR = /\b(como (funciona|decide|aprende|calcula|sabe)|que es|que significa|por que|cuanto|donde (quedan|estan|se guardan))\b/;
 
+const PREGUNTA_SI_EXISTE = /\b(tienen|tiene|hacen|hace|manejan|maneja|hay|ofrecen|existe|incluye|soportan?|permite)\b/;
+// Claves de módulos disponibles que solo dicen "¿existe?", sin tema propio.
+const GENERICAS = new Set(["tienen", "hacen", "ofrecen", "disponible", "funcionalidad"]);
+function preguntaSiExiste(pregunta: string) {
+  return PREGUNTA_SI_EXISTE.test(pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+}
+
 export function pideHacer(pregunta: string) {
   const t = pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   return PIDE_HACER.test(t) && !PIDE_EXPLICAR.test(t);
@@ -154,7 +161,21 @@ export function buscar(pregunta: string, publico: Publico, contexto: string[] = 
   // Si la pregunta no pide hacer algo, un procedimiento pesa un tercio: así
   // "¿cuánto cuesta causar una factura?" va a precios y no a los pasos.
   const procedimientos = new Set(indice.nodos.filter((n) => n.procedimiento).map((n) => n.id));
-  const puntajes = puntuar(pregunta, publico)
+  const crudos = puntuar(pregunta, publico);
+  // "¿Tienen acuse de facturas?" pregunta si existe algo que nombra una
+  // neurona: su núcleo recibe los puntos completos de la neurona, para que la
+  // palabra genérica de módulos disponibles ("tienen") no le gane.
+  const visiblesIds = new Set(visiblesPara(indice, publico).map((n) => n.id));
+  if (!hacer && preguntaSiExiste(pregunta)) {
+    for (const p of [...crudos]) {
+      const tema = indice.nodos.find((n) => n.id === p.id && n.procedimiento)?.tema;
+      if (!tema || !visiblesIds.has(tema)) continue;
+      const delTema = crudos.find((x) => x.id === tema);
+      if (!delTema) crudos.push({ id: tema, puntos: p.puntos, claves: [`${p.claves[0]} (de ${p.id})`] });
+      else if (delTema.puntos < p.puntos) delTema.puntos = p.puntos;
+    }
+  }
+  const puntajes = crudos
     .map((p) => (hacer || !procedimientos.has(p.id) ? p : { ...p, puntos: p.puntos / 3 }))
     .sort((a, b) => b.puntos - a.puntos);
   const conecta = (desde: string, hacia: string) =>
@@ -177,7 +198,11 @@ export function buscar(pregunta: string, publico: Publico, contexto: string[] = 
       // Sin conexión: si uno de los dos es del tema anterior, gana ese.
       const redesPrevias = new Set(previo.map(redDe));
       const delTema = [primero.id, segundo.id].filter((id) => previo.includes(id) || redesPrevias.has(redDe(id)));
+      // "¿Tienen acuse de facturas?": módulos disponibles empata solo por
+      // "tienen" o "hacen"; responde el tema concreto.
+      const generico = [primero, segundo].find((p) => p.id === "modulos-disponibles" && p.claves.every((c) => GENERICAS.has(c)));
       if (delTema.length === 1) [nodos, porContexto] = [delTema, true];
+      else if (generico) nodos = [primero, segundo].filter((p) => p !== generico).map((p) => p.id);
       else nodos = [primero.id, segundo.id];
     }
   } else if (primero) {

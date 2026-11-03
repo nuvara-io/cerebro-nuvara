@@ -327,6 +327,13 @@
           "80\\.000"
         ]
       ]
+    },
+    {
+      "pregunta": "¿Cuánto me cuestan 300 facturas de compra al mes?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ]
     }
   ]
 }

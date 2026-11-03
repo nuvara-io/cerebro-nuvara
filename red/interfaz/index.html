@@ -400,6 +400,7 @@
     background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)), var(--noche-2);
     border: 1px solid var(--borde-noche); box-shadow: 0 10px 40px rgba(0,0,0,.35);
   }
+  [data-tema="oscuro"] .respuesta details.traza { background: rgba(255,255,255,.03); }
   [data-tema="oscuro"] .respuesta .paso-ruta.filtro, [data-tema="oscuro"] .respuesta .resultado { border-color: rgba(75,206,166,.28); }
   [data-tema="oscuro"] .respuesta .paso-ruta.pendiente, [data-tema="oscuro"] .respuesta .aviso { border-color: rgba(243,193,27,.3); }
   [data-tema="oscuro"] .respuesta .paso-ruta.pendiente, [data-tema="oscuro"] .respuesta .verificacion { color: #F3D36B; }
@@ -523,7 +524,7 @@
           <span>Respuesta</span>
           <div class="segmentos" id="modos">
             <button type="button" data-v="claves" aria-pressed="true">Palabras clave</button>
-            <button type="button" data-v="ia" aria-pressed="false" id="modo-ia" disabled title="Necesita ANTHROPIC_API_KEY en .env">Claude</button>
+            <button type="button" data-v="ia" aria-pressed="false" id="modo-ia" disabled title="Necesita ANTHROPIC_API_KEY en .env u Ollama corriendo">Redactar</button>
           </div>
         </div>
       </div>
@@ -1033,7 +1034,7 @@
         <div>
           <h5>Puntaje por tema</h5>
           <div class="barras">${barras}</div>
-          ${m.ia ? `<p class="nota" style="margin-top:12px">Claude eligió ${escapar(m.ia.ruta.nodos.map(titulo).join(" + ") || "ningún tema")}${m.ia.ruta.conexion ? ` + ${escapar(titulo(m.ia.ruta.conexion))}` : ""} · ${m.ia.uso.entrada + m.ia.uso.salida} tokens.</p>` : ""}
+          ${m.ia ? `<p class="nota" style="margin-top:12px">${escapar(m.ia.modelo || "Claude")} leyó ${escapar(m.ia.ruta.nodos.map(titulo).join(" + ") || "ningún tema")}${m.ia.ruta.conexion ? ` + ${escapar(titulo(m.ia.ruta.conexion))}` : ""} · ${m.ia.uso.entrada + m.ia.uso.salida} tokens.</p>` : ""}
         </div>
         <div>
           <h5>Oculto para ${PUBLICO[m.publico].toLowerCase()}</h5>
@@ -1150,7 +1151,7 @@
     $("principal").classList.add("pensando");
     pintar();
     try {
-      const pedido = JSON.stringify({ pregunta: texto, publico });
+      const pedido = JSON.stringify({ pregunta: texto, publico, contexto: [...new Set(contexto)] });
       const r = await fetch("/api/buscar", { method: "POST", body: JSON.stringify({ pregunta: texto, publico, contexto: [...new Set(contexto)] }) });
       const b = await r.json();
       if (!r.ok) throw new Error(b.error);
@@ -1345,7 +1346,7 @@
     pintarRedes();
     $("modo-ia").disabled = !s.ia;
     $("estado-ia").classList.toggle("on", s.ia);
-    $("estado-ia").querySelector("span").textContent = s.ia ? "Claude conectado" : "Claude sin conectar";
+    $("estado-ia").querySelector("span").textContent = s.ia ? `Redacta ${s.motorIa}` : "Sin modelo para redactar";
     cerebro.iniciar(s.nodos, s.conexiones, s.redes);
     aplicarTema(leerTema());
     pintarPruebas(); pintarMapa(); pintar();
