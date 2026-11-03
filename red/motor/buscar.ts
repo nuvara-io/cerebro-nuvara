@@ -199,6 +199,13 @@ export function buscar(pregunta: string, publico: Publico, contexto: string[] = 
     [nodos, conexion, porContexto] = [[previo[0]], primero.id, true];
   }
 
+  // El precio de un módulo ("¿cuánto cuesta la facturación electrónica?"):
+  // responde el módulo, que sabe cómo se cobra, y sigue a precios.
+  if (nodos.length === 1 && nodos[0] === "precios") {
+    const modulo = puntajes.find((p) => p.id !== "precios" && conecta(p.id, "precios"));
+    if (modulo) [nodos, conexion] = [[modulo.id], "precios"];
+  }
+
   // Si la pregunta no pide hacer algo y solo puntuaron procedimientos, se
   // responde desde su tema y el procedimiento llega como conexión.
   const nodoDe = (id: string) => indice.nodos.find((n) => n.id === id);

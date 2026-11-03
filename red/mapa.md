@@ -260,6 +260,7 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `crear-empleado` | `emitir-documento-soporte` | Contratistas por prestación de servicios |
 | `tesoreria` | `facturacion-electronica-y-radian` | Las ventas emitidas llegan a cartera |
 | `tesoreria` | `precios` | Cómo se cobra la tesorería |
+| `nomina` | `precios` | Cuánto cuestan los cupos o la nómina electrónica |
 | `solicitar-tesoreria` | `crear-cuenta-bancaria` | Ya activa: crear las cuentas |
 | `crear-cuenta-bancaria` | `conciliacion-bancaria` | Conciliar la cuenta con el extracto |
 | `emitir-factura-de-venta` | `registrar-cobro` | Una venta a crédito queda en cuentas por cobrar |

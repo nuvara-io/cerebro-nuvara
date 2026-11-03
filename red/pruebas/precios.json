@@ -204,7 +204,7 @@
       "pregunta": "¿Cuánto cuesta el módulo de nómina?",
       "publico": "P",
       "nodos": [
-        "precios"
+        "nomina"
       ],
       "incluye": [
         [
@@ -299,7 +299,7 @@
       "pregunta": "¿Cuánto cuesta la tesorería?",
       "publico": "P",
       "nodos": [
-        "precios"
+        "tesoreria"
       ],
       "incluye": [
         [

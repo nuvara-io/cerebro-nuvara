@@ -25,8 +25,12 @@ Bancos, cobros, pagos a proveedores, pago de nómina, conciliación bancaria y c
 - [P] **Cajas** (módulo Caja): cajas operativas y menores, arqueos, fondeos y reposiciones.
 - [P] Cada movimiento deja su comprobante contable, listo para exportar.
 
+## Cuánto cuesta
+- [P] Tesorería y Caja son módulos aparte de la causación: se cobran **según el acuerdo** que pactes con núvara, así que **se cotizan** con el equipo.
+- [P] Para cotizarlos, pídelos en **Cuenta › Módulos › Solicitar habilitación**.
+
 ## Cómo se activa
-- [P] Se pide en **Cuenta › Módulos › Tesorería › Solicitar habilitación**, que abre el chat con el equipo. La activa el equipo de núvara y se cobra según el acuerdo que se pacte.
+- [P] Se pide en **Cuenta › Módulos › Tesorería › Solicitar habilitación**, que abre el chat con el equipo. La activa el equipo de núvara.
 - [P] **Caja** es un módulo aparte, con su propia tarjeta en Cuenta › Módulos.
 
 ## Dónde está en la plataforma

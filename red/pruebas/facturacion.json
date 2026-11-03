@@ -1,30 +1,231 @@
 {
   "descripcion": "Facturación electrónica, documento soporte, RADIAN y renovación: preguntas de «cómo hago X» que deben llegar al procedimiento, y otras que deben quedarse en el tema o en precios. Mismo formato que precios.json.",
   "excluyeSiempre": {
-    "P": ["870", "\\b490\\b", "271\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "APIDIAN", "Nubempresa", "\\b1\\.000 por documento"],
-    "C": ["\\busted\\b", "Núvara", "Nuvara"],
-    "I": ["\\busted\\b", "Núvara", "Nuvara"]
+    "P": [
+      "870",
+      "\\b490\\b",
+      "271\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara",
+      "APIDIAN",
+      "Nubempresa",
+      "\\b1\\.000 por documento"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ]
   },
   "casos": [
-    { "pregunta": "¿Cómo emito una factura de venta?", "publico": "P", "nodos": ["emitir-factura-de-venta"], "incluye": [["Emitir"], ["Contado"]] },
-    { "pregunta": "Necesito hacerle una factura a un comprador, ¿cómo lo hago?", "publico": "P", "nodos": ["emitir-factura-de-venta"] },
-    { "pregunta": "¿Dónde creo una factura electrónica nueva?", "publico": "P", "nodos": ["emitir-factura-de-venta"] },
-    { "pregunta": "¿Cómo activo la facturación electrónica?", "publico": "P", "nodos": ["solicitar-facturacion-electronica"], "incluye": [["Cuenta"], ["150\\.000"]] },
-    { "pregunta": "Quiero solicitar la habilitación de facturación", "publico": "P", "nodos": ["solicitar-facturacion-electronica"] },
-    { "pregunta": "¿Cómo me habilito ante la DIAN para facturar?", "publico": "P", "nodos": ["habilitar-ante-la-dian"], "incluye": [["Software propio"], ["TestSetID"]] },
-    { "pregunta": "¿Dónde pongo el TestSetID?", "publico": "P", "nodos": ["habilitar-ante-la-dian"] },
-    { "pregunta": "¿Cómo paso a producción la facturación?", "publico": "P", "nodos": ["habilitar-ante-la-dian"] },
-    { "pregunta": "¿Cómo anulo una factura de venta?", "publico": "P", "nodos": ["emitir-nota-credito-o-debito"] },
-    { "pregunta": "¿Cómo emito una nota débito?", "publico": "P", "nodos": ["emitir-nota-credito-o-debito"] },
-    { "pregunta": "¿Cómo emito un documento soporte?", "publico": "P", "nodos": ["emitir-documento-soporte"] },
-    { "pregunta": "Le compré a alguien no obligado a facturar, ¿cómo lo soporto?", "publico": "P", "nodos": ["emitir-documento-soporte"] },
-    { "pregunta": "¿Cómo hago el acuse de recibo de una factura?", "publico": "P", "nodos": ["registrar-eventos-radian"], "incluye": [["CUFE"]] },
-    { "pregunta": "¿Cómo registro un evento RADIAN?", "publico": "P", "nodos": ["registrar-eventos-radian"] },
-    { "pregunta": "¿Cómo rechazo una factura que me llegó mal?", "publico": "P", "nodos": ["registrar-eventos-radian"] },
-    { "pregunta": "¿Cómo renuevo el certificado de firma digital?", "publico": "P", "nodos": ["renovar-certificado"] },
-    { "pregunta": "¿Qué es RADIAN?", "publico": "P", "nodos": ["facturacion-electronica-y-radian"], "noNodos": ["registrar-eventos-radian"] },
-    { "pregunta": "¿Puedo facturar desde núvara?", "publico": "P", "nodos": ["facturacion-electronica-y-radian"] },
-    { "pregunta": "¿Emiten documentos POS?", "publico": "P", "nodos": ["facturacion-electronica-y-radian"], "incluye": [["POS"]] },
-    { "pregunta": "¿Cuánto cuesta la habilitación de facturación electrónica?", "publico": "P", "nodos": ["precios"], "noNodos": ["solicitar-facturacion-electronica"], "incluye": [["150\\.000"]] }
+    {
+      "pregunta": "¿Cómo emito una factura de venta?",
+      "publico": "P",
+      "nodos": [
+        "emitir-factura-de-venta"
+      ],
+      "incluye": [
+        [
+          "Emitir"
+        ],
+        [
+          "Contado"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Necesito hacerle una factura a un comprador, ¿cómo lo hago?",
+      "publico": "P",
+      "nodos": [
+        "emitir-factura-de-venta"
+      ]
+    },
+    {
+      "pregunta": "¿Dónde creo una factura electrónica nueva?",
+      "publico": "P",
+      "nodos": [
+        "emitir-factura-de-venta"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo activo la facturación electrónica?",
+      "publico": "P",
+      "nodos": [
+        "solicitar-facturacion-electronica"
+      ],
+      "incluye": [
+        [
+          "Cuenta"
+        ],
+        [
+          "150\\.000"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Quiero solicitar la habilitación de facturación",
+      "publico": "P",
+      "nodos": [
+        "solicitar-facturacion-electronica"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo me habilito ante la DIAN para facturar?",
+      "publico": "P",
+      "nodos": [
+        "habilitar-ante-la-dian"
+      ],
+      "incluye": [
+        [
+          "Software propio"
+        ],
+        [
+          "TestSetID"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Dónde pongo el TestSetID?",
+      "publico": "P",
+      "nodos": [
+        "habilitar-ante-la-dian"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo paso a producción la facturación?",
+      "publico": "P",
+      "nodos": [
+        "habilitar-ante-la-dian"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo anulo una factura de venta?",
+      "publico": "P",
+      "nodos": [
+        "emitir-nota-credito-o-debito"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo emito una nota débito?",
+      "publico": "P",
+      "nodos": [
+        "emitir-nota-credito-o-debito"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo emito un documento soporte?",
+      "publico": "P",
+      "nodos": [
+        "emitir-documento-soporte"
+      ]
+    },
+    {
+      "pregunta": "Le compré a alguien no obligado a facturar, ¿cómo lo soporto?",
+      "publico": "P",
+      "nodos": [
+        "emitir-documento-soporte"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo hago el acuse de recibo de una factura?",
+      "publico": "P",
+      "nodos": [
+        "registrar-eventos-radian"
+      ],
+      "incluye": [
+        [
+          "CUFE"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo registro un evento RADIAN?",
+      "publico": "P",
+      "nodos": [
+        "registrar-eventos-radian"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo rechazo una factura que me llegó mal?",
+      "publico": "P",
+      "nodos": [
+        "registrar-eventos-radian"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo renuevo el certificado de firma digital?",
+      "publico": "P",
+      "nodos": [
+        "renovar-certificado"
+      ]
+    },
+    {
+      "pregunta": "¿Qué es RADIAN?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "noNodos": [
+        "registrar-eventos-radian"
+      ]
+    },
+    {
+      "pregunta": "¿Puedo facturar desde núvara?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ]
+    },
+    {
+      "pregunta": "¿Emiten documentos POS?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "incluye": [
+        [
+          "POS"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta la habilitación de facturación electrónica?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "noNodos": [
+        "solicitar-facturacion-electronica"
+      ],
+      "incluye": [
+        [
+          "150\\.000"
+        ]
+      ]
+    },
+    {
+      "pregunta": "cuanto cuesta la facturacion electronica",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "incluye": [
+        [
+          "150.000"
+        ],
+        [
+          "se cotiza"
+        ]
+      ]
+    }
   ]
 }

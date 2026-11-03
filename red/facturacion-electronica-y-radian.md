@@ -23,10 +23,15 @@ Emitir documentos electrónicos ante la DIAN desde núvara y registrar los event
 - [P] **Nómina electrónica** y sus notas de ajuste.
 - [P] núvara **no emite POS** (documento equivalente).
 
+## Cuánto cuesta
+- [P] La facturación electrónica es un módulo aparte de la causación: **se cotiza** con el equipo.
+- [P] **Habilitación: $150.000, pago único.** Incluye la configuración inicial y la firma digital por un año; luego el certificado se renueva cada año. Cubre todos los tipos de documento: factura de venta y sus notas, documento soporte, eventos RADIAN y nómina electrónica.
+- [P] **Cada documento emitido** se descuenta en créditos, con un precio que se cotiza según el volumen de facturación de tu empresa: se pacta un acuerdo de facturas o se descuenta del saldo.
+- [P] Las pruebas ante la DIAN no se cobran.
+
 ## Cómo se activa
-- [P] Se solicita desde **Cuenta › Módulos › Facturación electrónica** o pidiéndolo al equipo. La habilitación cuesta **$150.000, pago único**, e incluye la configuración inicial y la firma digital por un año.
+- [P] Se solicita desde **Cuenta › Módulos › Facturación electrónica** o pidiéndolo al equipo, y se paga la habilitación.
 - [P] Después, la empresa se habilita ante la DIAN en modo "Software propio" desde **Facturación Electrónica › Ajustes › Configuración › Habilitación DIAN**. Las pruebas las envía la plataforma y no se cobran.
-- [P] Cada documento emitido se cobra en créditos, según el flujo de facturación de tu empresa: con un acuerdo de facturas o descontando del saldo.
 
 ## Dónde está en la plataforma
 - [P] Menú **Facturación Electrónica**, que aparece cuando el módulo está activo: **Emitir**, **Legalización de gastos**, **Documentos** (con la pestaña **Eventos RADIAN**), **Productos y servicios**, **Nómina electrónica** y **Ajustes** (Configuración y Estado).
