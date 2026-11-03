@@ -999,8 +999,12 @@
     let html = "";
     for (const id of b.sinEscribir)
       html += `<div class="aviso">${ICONO.alerta}<div><b>${titulo(id)} todavía no está escrito</b><span>El chat respondería: «Eso te lo confirma un asesor de núvara.»</span></div></div>`;
-    if (!b.nodos.length)
+    if (!b.nodos.length && b.fueraDeTema)
+      html += `<div class="aviso">${ICONO.alerta}<div><b>La pregunta no es de núvara</b><span>El chat respondería que solo ayuda con núvara y ofrecería los temas. Si sí es de núvara, falta una palabra del tema en <code>DOMINIO</code> (red/motor/buscar.ts) o una clave en <code>red/claves.json</code>.</span></div></div>`;
+    else if (!b.nodos.length)
       html += `<div class="aviso">${ICONO.alerta}<div><b>Ningún tema coincide con la pregunta</b><span>El chat respondería: «Eso te lo confirma un asesor de núvara.» Si la pregunta sí es de núvara, falta una palabra clave en <code>red/claves.json</code>.</span></div></div>`;
+    if (b.aclarar)
+      html += `<div class="aviso">${ICONO.alerta}<div><b>Empate entre dos temas</b><span>El chat preguntaría: «${escapar(b.aclarar)}» Abajo están los dos.</span></div></div>`;
     const nodos = nodosDe(b.resultado), fuentes = [];
     for (const n of nodos) {
       const { bloques, fuente } = leerNodo(n.texto);
@@ -1222,7 +1226,7 @@
     const st = d.sinTema || [];
     h += `<div class="bloque-prueba"><h3>Preguntas sin tema</h3>
       <details class="set" ${st.length ? "open" : ""}><summary><span class="marcador ${st.length ? "mal" : "ok"}">${st.length}</span>Registro del chat<small>preguntas que no encontraron nodo o quedaron en empate: dicen qué neurona o qué clave falta (también con bun run red:sin-tema)</small>${ICONO.abajo}</summary><ul class="casos">${st.map((r) => fila(false, r.publico, r.pregunta,
-        `${r.veces > 1 ? `${r.veces} veces · ` : ""}${r.motivo === "empate" ? `empate entre ${escapar(r.nodos.map(titulo).join(" y "))}` : "sin tema"}`, "")).join("") || `<li><span></span><span></span><span>Todavía no hay preguntas sin tema.</span><span></span></li>`}</ul></details></div>`;
+        `${r.veces > 1 ? `${r.veces} veces · ` : ""}${r.motivo === "empate" ? `empate entre ${escapar(r.nodos.map(titulo).join(" y "))}` : escapar(r.motivo)}`, "")).join("") || `<li><span></span><span></span><span>Todavía no hay preguntas sin tema.</span><span></span></li>`}</ul></details></div>`;
 
     h += `<div class="bloque-prueba"><h3>Validador</h3>`;
     h += bloque("Fragmentos", "de un núcleo solo debe llegar lo que aplica", v.fragmentos.ok, v.fragmentos.total,

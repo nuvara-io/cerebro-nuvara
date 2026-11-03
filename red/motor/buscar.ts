@@ -26,7 +26,18 @@ export type Busqueda = {
   empate: boolean;
   // Se decidió por el tema de la respuesta anterior de la conversación.
   porContexto: boolean;
+  // Sin tema y sin ninguna palabra contable o de núvara: no es una pregunta de
+  // núvara ("¿me cuentas un chiste?"). Se responde que solo se ayuda con núvara.
+  fueraDeTema: boolean;
+  // En un empate, la pregunta para que la persona elija el tema.
+  aclarar: string | null;
 };
+
+// Raíces que delatan una pregunta de núvara o de contabilidad aunque ninguna
+// clave coincida: sin tema, esa pregunta se escala a un asesor; las demás,
+// no son de núvara.
+const DOMINIO = /^(nuvar|factur|caus|dian|contab|contador|iva|retenc|credit|recarg|nomin|emplead|empres|siig|world|alegr|helis|export|import|plataform|puc|tercer|proveed|comprador|vent|compr|pag|banc|caj|tesor|radian|acus|document|soport|preci|cuest|cobr|plan|modul|usuari|corre|certific|resolu|impuest|declar|exogen|asient|saldo|asesor|demostra|capacit|integra|program|softwar|regl|aprob|proveedor|cufe|nit|rut|celul|movil|app|aplicac|navegad|chrom|extens|contrasen|sesion|acces|miembr|rol|segur|dato|xml|pdf|excel)/;
+const esDeNuvara = (pregunta: string) => palabras(pregunta).some((p) => DOMINIO.test(p));
 
 const PUNTOS_POR_PALABRA = 2;
 // Una cifra en pesos ("$870") delata una pregunta de precios.
@@ -265,5 +276,8 @@ export function buscar(pregunta: string, publico: Publico, contexto: string[] = 
 
   const procedimiento = nodos.length === 1 ? leerProcedimiento(nodos[0], publico) : null;
   const empate = nodos.length > 1;
-  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento, fragmentos, empate, porContexto };
+  const fueraDeTema = nodos.length === 0 && !esDeNuvara(pregunta);
+  const tituloDe = (id: string) => cargarNodo(id, "I")?.match(/^# (.+)$/m)?.[1] ?? id;
+  const aclarar = empate ? `¿Te refieres a ${nodos.map((id) => `«${tituloDe(id)}»`).join(" o a ")}?` : null;
+  return { pregunta, publico, nodos, conexion, puntajes, sinEscribir, resultado, procedimiento, fragmentos, empate, porContexto, fueraDeTema, aclarar };
 }

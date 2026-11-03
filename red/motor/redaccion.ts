@@ -4,6 +4,8 @@ import type { Publico } from "./indice";
 import { cargarNodo } from "./nodos";
 
 export const ESCALAR = "Eso te lo confirma un asesor de núvara.";
+export const FUERA_DE_TEMA =
+  "Solo puedo ayudarte con núvara: la causación de tus facturas, la facturación electrónica, la nómina, la tesorería y cómo usar la plataforma. ¿En qué de eso te ayudo?";
 
 export const NOMBRE_PUBLICO: Record<Publico, string> = {
   P: "un usuario o prospecto (chat abierto)",

@@ -7,10 +7,19 @@ function raiz(palabra: string) {
   let p = palabra;
   if (p.length > 5 && p.endsWith("es")) p = p.slice(0, -2);
   else if (p.length > 3 && p.endsWith("s")) p = p.slice(0, -1);
+  // Verbos en plural: "cuestan", "tienen" y "ofrecen" se leen como "cuesta",
+  // "tiene" y "ofrece".
+  else if (p.length > 4 && /[ae]n$/.test(p)) p = p.slice(0, -1);
   if (p.length > 4 && /[aei]r$/.test(p)) p = p.slice(0, -2);
   else if (p.length > 3 && /[aeiou]$/.test(p)) p = p.slice(0, -1);
-  return p;
+  return SINONIMOS[p] ?? p;
 }
+
+// Raíces distintas que en una pregunta dicen lo mismo. "Costo" no entra:
+// en contabilidad "costo de ventas" no es un precio.
+const SINONIMOS: Record<string, string> = {
+  val: "cuest", // "¿cuánto vale?" / "¿cuánto valen?" = "¿cuánto cuesta?"
+};
 
 export function palabras(texto: string) {
   return texto

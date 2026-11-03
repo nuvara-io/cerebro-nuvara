@@ -16,7 +16,7 @@ export type Registro = {
   fecha: string;
   pregunta: string;
   publico: string;
-  motivo: "sin tema" | "empate";
+  motivo: "sin tema" | "empate" | "fuera de tema";
   nodos: string[];
   claves: string[];
 };
@@ -27,7 +27,7 @@ export function registrar(b: Busqueda) {
     fecha: new Date().toISOString(),
     pregunta: b.pregunta,
     publico: b.publico,
-    motivo: b.nodos.length ? "empate" : "sin tema",
+    motivo: b.nodos.length ? "empate" : b.fueraDeTema ? "fuera de tema" : "sin tema",
     nodos: b.nodos,
     claves: b.puntajes.slice(0, 3).flatMap((p) => p.claves),
   };
@@ -55,5 +55,5 @@ if (import.meta.main) {
   const lista = leerRegistro();
   if (!lista.length) console.log("Todavía no hay preguntas sin tema ni empates registrados.");
   for (const r of lista)
-    console.log(`${String(r.veces).padStart(3)}× [${r.publico}] ${r.motivo === "empate" ? `empate ${r.nodos.join(" / ")}` : "sin tema"}  ${r.pregunta}`);
+    console.log(`${String(r.veces).padStart(3)}× [${r.publico}] ${r.motivo === "empate" ? `empate ${r.nodos.join(" / ")}` : r.motivo}  ${r.pregunta}`);
 }
