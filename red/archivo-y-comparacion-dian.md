@@ -27,13 +27,13 @@ El **Archivo** es donde quedan las facturas aprobadas y archivadas, ordenadas po
 1. [P] Descarga del portal de la DIAN el listado del mes, **solo recibidas** (compras) o **solo emitidas** (ventas), sin mezclar.
 2. [P] Elige compras o ventas, y el año y el mes.
 3. [P] Arrastra el archivo: sirve el .zip de la DIAN o el Excel directo (.xlsx o .xls). La columna que manda es el **CUFE**.
-4. [P] Revisa el resultado: **Conciliadas**, **Solo en DIAN** (te faltan en núvara), **Solo en núvara** y **Diferencias**, con los totales de los dos lados.
+4. [P] Revisa el resultado en las pestañas **Todas**, **Conciliadas** y **Diferencias** (abre en Diferencias). En cada una, las columnas **Solo en DIAN** (te faltan en núvara) y **Solo en núvara**, con los totales arriba.
 5. [P] Resuelve lo que falta (ver la sección siguiente) y vuelve a comparar hasta que todo cuadre.
 6. [P] Si lo necesitas, descarga el reporte de la comparación.
 
 ## Qué hacer con las que faltan
 - [P] **La eliminaste en núvara**: pulsa **Restablecer factura** (botón verde) en la fila y vuelve a la lista sin pedir nada a la DIAN.
-- [P] **Nunca se descargó**: copia el CUFE con **Copiar CUFE**, descarga el .zip de esa factura en la DIAN y súbelo con **Subir ZIP**.
+- [P] **Nunca se descargó**: copia el CUFE con **Copiar CUFE**, descarga el .zip de esa factura en la DIAN y súbelo con **Subir ZIPs**.
 - [P] También puedes volver a descargar con la extensión de la DIAN el rango de fechas del mes para que traiga lo que falta.
 - [P] Después ve a **Causaciones › Pendientes**, filtra por el mes, causa y revisa.
 - [P] Importar por CUFE ya no existe: el CUFE sirve para buscarla en la DIAN o copiarla.

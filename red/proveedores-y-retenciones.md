@@ -75,5 +75,5 @@ núvara calcula la retención en la fuente, la ReteICA y la ReteIVA de cada comp
 - [C] Las tarifas que citan usuarios o asesores en las capacitaciones no son datos de la plataforma; no las des como oficiales.
 - [C] ReteIVA automática todavía no es confiable según las capacitaciones (sin confirmar con el equipo).
 - [I] Discrepancias con `conocimiento/`: el selector "siempre retener sin importar el monto" figuraba en desarrollo y ya existe (Cuándo retener › Siempre); "retener solo la mitad" hoy es el % de la retención calculada; la tarifa de ReteICA se escribe en por mil, no en porcentaje; la ruta "Configuración › Tributaria" ahora es la pestaña Impuestos y retenciones.
-- [I] La retención acumulada es diaria en el código (pantalla «Ajustes de Retención», `/retention-adjustments`, oculta del menú de Operaciones). Una usuaria la practicaba sobre el mes: no está cubierto.
+- [I] La retención acumulada es diaria en el código (pantalla «Ajustes de Retención», `/retention-adjustments`, visible en el menú de Operaciones). Una usuaria la practicaba sobre el mes: no está cubierto.
 - [I] Bugs reportados en 2026, sin confirmar si siguen: ReteICA que toma otra cuenta de la familia 2368, ReteIVA aplicada a régimen ordinario, productos elaborados leídos como agrícolas.

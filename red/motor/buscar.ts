@@ -109,10 +109,17 @@ function elegirProcedimiento(
     return mejor.id;
   const normal = pregunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   if (!tema || !PIDE_PASOS.test(normal)) return null;
-  const delTema = indice.nodos.find(
-    (n) => n.procedimiento && n.tema === tema && RANGO[n.publico] <= RANGO[publico],
-  );
-  return delTema?.id ?? null;
+  // Sin claves de ninguna neurona, se toma la del tema cuyo nombre comparte
+  // una palabra con la pregunta ("pasos para causar" → causar-facturas). Si
+  // ninguna la comparte, responde el núcleo: "¿cómo recargo?" no es pagar el corte.
+  const buscadas = new Set(palabras(pregunta).filter((p) => p.length > 3));
+  let elegida: string | null = null, mas = 0;
+  for (const n of indice.nodos) {
+    if (!n.procedimiento || n.tema !== tema || RANGO[n.publico] > RANGO[publico]) continue;
+    const comunes = palabras(n.id.replace(/-/g, " ")).filter((p) => buscadas.has(p)).length;
+    if (comunes > mas) { mas = comunes; elegida = n.id; }
+  }
+  return elegida;
 }
 
 export function buscar(pregunta: string, publico: Publico): Busqueda {

@@ -1,30 +1,208 @@
 {
   "descripcion": "Preguntas de tipo «cómo hago X» que deben llegar al procedimiento con la ruta y los pasos, y otras que no deben convertirse en pasos (qué es, cómo funciona, cuánto cuesta). Mismo formato que precios.json.",
   "excluyeSiempre": {
-    "P": ["870", "\\b490\\b", "271\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara"],
-    "C": ["\\busted\\b", "Núvara", "Nuvara"],
-    "I": ["\\busted\\b", "Núvara", "Nuvara"]
+    "P": [
+      "870",
+      "\\b490\\b",
+      "271\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ]
   },
   "casos": [
-    { "pregunta": "¿Cómo causo una factura?", "publico": "P", "nodos": ["causar-facturas"], "incluye": [["Operaciones"], ["Pendientes"]] },
-    { "pregunta": "¿Qué hago para causar las facturas pendientes?", "publico": "P", "nodos": ["causar-facturas"] },
-    { "pregunta": "Necesito causar varias facturas, ¿cómo lo hago?", "publico": "P", "nodos": ["causar-facturas"] },
-    { "pregunta": "pasos para causar", "publico": "P", "nodos": ["causar-facturas"] },
-    { "pregunta": "¿Cómo causo por lote?", "publico": "P", "nodos": ["causar-por-lote"], "incluye": [["Causar por lote"], ["un año"]] },
-    { "pregunta": "Quiero causar todo el mes de una vez", "publico": "P", "nodos": ["causar-por-lote"] },
-    { "pregunta": "¿Dónde está la opción de causar en lote?", "publico": "P", "nodos": ["causar-por-lote"] },
-    { "pregunta": "¿Cómo reviso una causación?", "publico": "P", "nodos": ["revisar-causacion"], "incluye": [["cuadre", "cuadra"]] },
-    { "pregunta": "¿Qué hago si la causación no cuadra?", "publico": "P", "nodos": ["revisar-causacion"] },
-    { "pregunta": "¿Cómo verifico que una factura quedó bien causada?", "publico": "P", "nodos": ["revisar-causacion"] },
-    { "pregunta": "¿Cómo apruebo un grupo de facturas?", "publico": "P", "nodos": ["aprobar-en-bloque"], "incluye": [["Aprobar grupo"]] },
-    { "pregunta": "¿Cómo apruebo muchas a la vez?", "publico": "P", "nodos": ["aprobar-en-bloque"] },
-    { "pregunta": "¿Dónde apruebo varias facturas al tiempo?", "publico": "P", "nodos": ["aprobar-en-bloque"] },
-    { "pregunta": "¿Cómo archivo las facturas aprobadas?", "publico": "P", "nodos": ["archivar-aprobadas"] },
-    { "pregunta": "¿Cómo dejo listo el mes para exportar?", "publico": "P", "nodos": ["archivar-aprobadas"] },
-    { "pregunta": "¿Qué es causar?", "publico": "P", "nodos": ["causar-y-revisar"], "noNodos": ["causar-facturas", "causar-por-lote"] },
-    { "pregunta": "¿Cómo funciona la causación?", "publico": "P", "nodos": ["causar-y-revisar"], "noNodos": ["causar-facturas"] },
-    { "pregunta": "¿Cuánto cuesta causar una factura?", "publico": "P", "nodos": ["precios"], "noNodos": ["causar-facturas"] },
-    { "pregunta": "¿Cómo funciona la aprobación en bloque?", "publico": "P", "nodos": ["aprobacion-en-bloque"], "noNodos": ["aprobar-en-bloque"] },
-    { "pregunta": "¿Cómo conecto la DIAN?", "publico": "P", "nodos": ["conectar-dian"] }
+    {
+      "pregunta": "¿Cómo causo una factura?",
+      "publico": "P",
+      "nodos": [
+        "causar-facturas"
+      ],
+      "incluye": [
+        [
+          "Operaciones"
+        ],
+        [
+          "Pendientes"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué hago para causar las facturas pendientes?",
+      "publico": "P",
+      "nodos": [
+        "causar-facturas"
+      ]
+    },
+    {
+      "pregunta": "Necesito causar varias facturas, ¿cómo lo hago?",
+      "publico": "P",
+      "nodos": [
+        "causar-facturas"
+      ]
+    },
+    {
+      "pregunta": "pasos para causar",
+      "publico": "P",
+      "nodos": [
+        "causar-facturas"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo causo por lote?",
+      "publico": "P",
+      "nodos": [
+        "causar-por-lote"
+      ],
+      "incluye": [
+        [
+          "Causar por lote"
+        ],
+        [
+          "un año"
+        ]
+      ]
+    },
+    {
+      "pregunta": "Quiero causar todo el mes de una vez",
+      "publico": "P",
+      "nodos": [
+        "causar-por-lote"
+      ]
+    },
+    {
+      "pregunta": "¿Dónde está la opción de causar en lote?",
+      "publico": "P",
+      "nodos": [
+        "causar-por-lote"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo reviso una causación?",
+      "publico": "P",
+      "nodos": [
+        "revisar-causacion"
+      ],
+      "incluye": [
+        [
+          "cuadre",
+          "cuadra"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué hago si la causación no cuadra?",
+      "publico": "P",
+      "nodos": [
+        "revisar-causacion"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo verifico que una factura quedó bien causada?",
+      "publico": "P",
+      "nodos": [
+        "revisar-causacion"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo apruebo un grupo de facturas?",
+      "publico": "P",
+      "nodos": [
+        "aprobar-en-bloque"
+      ],
+      "incluye": [
+        [
+          "Aprobar grupo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo apruebo muchas a la vez?",
+      "publico": "P",
+      "nodos": [
+        "aprobar-en-bloque"
+      ]
+    },
+    {
+      "pregunta": "¿Dónde apruebo varias facturas al tiempo?",
+      "publico": "P",
+      "nodos": [
+        "aprobar-en-bloque"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo archivo las facturas aprobadas?",
+      "publico": "P",
+      "nodos": [
+        "archivar-aprobadas"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo dejo listo el mes para exportar?",
+      "publico": "P",
+      "nodos": [
+        "archivar-aprobadas"
+      ]
+    },
+    {
+      "pregunta": "¿Qué es causar?",
+      "publico": "P",
+      "nodos": [
+        "causar-y-revisar"
+      ],
+      "noNodos": [
+        "causar-facturas",
+        "causar-por-lote"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo funciona la causación?",
+      "publico": "P",
+      "nodos": [
+        "causar-y-revisar"
+      ],
+      "noNodos": [
+        "causar-facturas"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta causar una factura?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "noNodos": [
+        "causar-facturas"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo funciona la aprobación en bloque?",
+      "publico": "P",
+      "nodos": [
+        "aprobacion-en-bloque"
+      ],
+      "noNodos": [
+        "aprobar-en-bloque"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo conecto la DIAN?",
+      "publico": "P",
+      "nodos": [
+        "conectar-extension-dian"
+      ]
+    }
   ]
 }

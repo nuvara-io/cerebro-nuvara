@@ -40,7 +40,7 @@ Las **reglas fijas** hacen que la causación siga siempre el mismo criterio cuan
 
 ## Dónde ver y editar las reglas
 - [P] Están en **Administración › Configuración › Agente inteligente › Historial de reglas**.
-- [P] Desde ahí ves el efecto de cada regla, la aplicas a facturas anteriores o la eliminas.
+- [P] Desde ahí ves el efecto de cada regla o la eliminas. **Aplicar a anteriores** solo aparece en las reglas de prefijo de venta a centro de costo.
 - [P] Prueba siempre una regla con facturas reales antes de dejarla y borra las de prueba.
 - [P] Ponles nombres claros y edita la existente en vez de crear una nueva por cada caso.
 

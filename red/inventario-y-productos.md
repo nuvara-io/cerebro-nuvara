@@ -28,7 +28,7 @@ Para que las compras sumen unidades al inventario de tu programa contable, cada 
 **Inventario › Aprobar productos**
 1. [P] Abre la vista **Por factura** para ver los productos que llegaron en cada compra, o la **Mesa de asociación** para trabajar en dos columnas con buscador.
 2. [P] En la mesa, marca a la izquierda los pendientes, elige a la derecha el producto del catálogo y pulsa **Asociar**. Puedes asociar varias líneas a un mismo producto de una vez.
-3. [P] Si el producto no existe, usa **Crear nuevo producto**; con Siigo puedes marcar **Crear también en Siigo**.
+3. [P] Si el producto no existe, en la vista **Por factura** pulsa **Crear** (abre «Crear nuevo producto»); con Siigo puedes marcar **Crear también en Siigo**.
 4. [P] Si una línea no es inventario (servicio, arriendo, flete), pulsa **No es inventario**: se descarta sin tocar el stock y queda en **Rechazados**, de donde la puedes recuperar.
 5. [P] La asociación se hace **una sola vez por producto**: las facturas siguientes ya la reconocen.
 

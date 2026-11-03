@@ -1,0 +1,343 @@
+{
+  "descripcion": "Neuronas de configuración, saldo, papelera, gastos, inventario, retenciones, reglas, centros de costo y ventas: preguntas de «cómo hago X» que deben llegar a su procedimiento. Mismo formato que precios.json.",
+  "excluyeSiempre": {
+    "P": [
+      "870",
+      "\\b490\\b",
+      "271\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "NUVARA"
+    ]
+  },
+  "casos": [
+    {
+      "pregunta": "¿Cómo agrego a mi auxiliar contable para que solo vea dos empresas?",
+      "publico": "P",
+      "nodos": [
+        "invitar-miembro"
+      ],
+      "incluye": [
+        [
+          "Empresas asignadas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo la cuenta de un nuevo miembro?",
+      "publico": "P",
+      "nodos": [
+        "invitar-miembro"
+      ],
+      "incluye": [
+        [
+          "Crear cuenta y agregar miembro"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo instalo la extensión de la DIAN?",
+      "publico": "P",
+      "nodos": [
+        "conectar-extension-dian"
+      ],
+      "incluye": [
+        [
+          "Descargar extensión"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo obtengo el token de la DIAN desde mi correo?",
+      "publico": "P",
+      "nodos": [
+        "conectar-extension-dian"
+      ],
+      "incluye": [
+        [
+          "Obtener token del correo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo comparo mis compras con el listado de la DIAN?",
+      "publico": "P",
+      "nodos": [
+        "comparar-con-la-dian"
+      ],
+      "incluye": [
+        [
+          "Solo en DIAN"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo veo qué facturas me faltan frente al Excel de la DIAN?",
+      "publico": "P",
+      "nodos": [
+        "comparar-con-la-dian"
+      ],
+      "incluye": [
+        [
+          "Faltan en núvara"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo pago el corte mensual?",
+      "publico": "P",
+      "nodos": [
+        "pagar-corte-mensual"
+      ],
+      "incluye": [
+        [
+          "Pagar ahora"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo pago el consumo mínimo pendiente para que no me suspendan la cuenta?",
+      "publico": "P",
+      "nodos": [
+        "pagar-corte-mensual"
+      ],
+      "incluye": [
+        [
+          "Valor a pagar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo recupero una factura que eliminé por error?",
+      "publico": "P",
+      "nodos": [
+        "restaurar-factura-eliminada"
+      ],
+      "incluye": [
+        [
+          "Restaurar N"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo restauro una factura de la papelera que ya estaba exportada?",
+      "publico": "P",
+      "nodos": [
+        "restaurar-factura-eliminada"
+      ],
+      "incluye": [
+        [
+          "vuelve al **Archivo** tal como estaba"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo excluyo un proveedor para que sus facturas no entren?",
+      "publico": "P",
+      "nodos": [
+        "excluir-proveedor"
+      ],
+      "incluye": [
+        [
+          "No está en la lista — escribir el NIT"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo hago para que vuelvan a entrar las facturas de un proveedor excluido?",
+      "publico": "P",
+      "nodos": [
+        "excluir-proveedor"
+      ],
+      "incluye": [
+        [
+          "sincroniza otra vez ese periodo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo legalizo los gastos de un viaje?",
+      "publico": "P",
+      "nodos": [
+        "legalizar-gastos"
+      ],
+      "incluye": [
+        [
+          "Leer N archivos"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo paso los recibos de la tarjeta a un comprobante para Siigo?",
+      "publico": "P",
+      "nodos": [
+        "legalizar-gastos"
+      ],
+      "incluye": [
+        [
+          "Descargar Excel para Siigo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo asocio varios productos del proveedor a un solo producto del catálogo?",
+      "publico": "P",
+      "nodos": [
+        "asociar-productos"
+      ],
+      "incluye": [
+        [
+          "Mesa de asociación"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo asocio de una vez todos los productos que ya coinciden?",
+      "publico": "P",
+      "nodos": [
+        "asociar-productos"
+      ],
+      "incluye": [
+        [
+          "Asociar coincidencias (N)"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo hago para retenerle solo la mitad a un proveedor?",
+      "publico": "P",
+      "nodos": [
+        "configurar-proveedor"
+      ],
+      "incluye": [
+        [
+          "% de la retención calculada"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo marco a un proveedor como autorretenedor?",
+      "publico": "P",
+      "nodos": [
+        "configurar-proveedor"
+      ],
+      "incluye": [
+        [
+          "Guardar Cambios"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo configuro la ReteICA por municipio?",
+      "publico": "P",
+      "nodos": [
+        "configurar-reteica"
+      ],
+      "incluye": [
+        [
+          "Tarifa x 1.000"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo uso detectar de mis cuentas para las reglas ICA?",
+      "publico": "P",
+      "nodos": [
+        "configurar-reteica"
+      ],
+      "incluye": [
+        [
+          "Guardar reglas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo una regla fija desde una factura?",
+      "publico": "P",
+      "nodos": [
+        "crear-regla-fija"
+      ],
+      "incluye": [
+        [
+          "Crear regla y aprobar"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Dónde veo el historial de reglas que creé?",
+      "publico": "P",
+      "nodos": [
+        "crear-regla-fija"
+      ],
+      "incluye": [
+        [
+          "Agente inteligente › Historial de reglas"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo divido una factura entre varios centros de costo?",
+      "publico": "P",
+      "nodos": [
+        "asignar-centro-de-costo"
+      ],
+      "incluye": [
+        [
+          "Partes iguales"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo le asigno un centro de costo a una factura?",
+      "publico": "P",
+      "nodos": [
+        "asignar-centro-de-costo"
+      ],
+      "incluye": [
+        [
+          "Distribución de la factura"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo configuro la autorrenta de la empresa?",
+      "publico": "P",
+      "nodos": [
+        "configurar-cuentas-de-ventas"
+      ],
+      "incluye": [
+        [
+          "Cuenta débito (anticipo 1355)"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo configuro las cuentas de ingreso de mis ventas?",
+      "publico": "P",
+      "nodos": [
+        "configurar-cuentas-de-ventas"
+      ],
+      "incluye": [
+        [
+          "Causar con reglas"
+        ]
+      ]
+    }
+  ]
+}

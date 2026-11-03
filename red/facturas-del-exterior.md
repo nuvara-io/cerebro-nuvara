@@ -24,7 +24,7 @@ Cómo causar lo que no llega por la DIAN ni como factura electrónica: facturas 
 
 ## Cómo se legaliza un gasto
 **Operaciones › Causaciones › Acciones › Legalización de gastos**
-1. [P] Arrastra los recibos del viaje o de la tarjeta y pulsa **Leer archivos**.
+1. [P] Arrastra los recibos del viaje o de la tarjeta y pulsa **Leer N archivos** (hasta 50 MB por archivo).
 2. [P] Revisa cada recibo: proveedor, fecha, moneda, valores, categoría del gasto y cuenta. Corrige lo que haga falta.
 3. [P] Elige la TRM: **Fecha del gasto** o **Fecha de la legalización**. Se aplica a las filas donde no escribiste la TRM a mano.
 4. [P] En la pestaña **Enviar a causación**, elige **Una factura por recibo** o **Un solo comprobante**, y pulsa enviar.

@@ -291,7 +291,8 @@
     "autorretencion",
     "mis ventas",
     "autorrenta",
-    "cuentas de ventas"
+    "cuentas de ventas",
+    "causa mis ventas"
   ],
   "notas-credito-y-documento-soporte": [
     "nota credito",
@@ -305,7 +306,6 @@
     "extranjero",
     "legalizar",
     "legalizacion",
-    "legalizar gastos",
     "legalizacion de gastos",
     "trm",
     "recibos de viaje",
@@ -329,21 +329,15 @@
     "borrar",
     "eliminar",
     "bloquear",
-    "no son mias",
     "recuperar",
-    "restaurar",
-    "proveedor excluido",
-    "excluir proveedor",
     "limpiar"
   ],
   "inventario-y-productos": [
     "inventario",
     "producto",
     "bodega",
-    "asociar productos",
     "stock",
-    "aprobar productos",
-    "mesa de asociacion"
+    "aprobar productos"
   ],
   "nomina": [
     "nomina",
@@ -795,5 +789,119 @@
     "reenviar",
     "lotes de exportacion",
     "vuelvo a exportar"
+  ],
+  "invitar-miembro": [
+    "agregar miembro",
+    "agregar un auxiliar",
+    "nuevo miembro",
+    "dar acceso",
+    "empresas asignadas",
+    "doy acceso",
+    "otra persona",
+    "agrego a mi auxiliar",
+    "agrego un auxiliar"
+  ],
+  "conectar-extension-dian": [
+    "instalar la extension",
+    "descargar extension",
+    "obtener token",
+    "token del correo",
+    "abrir dian"
+  ],
+  "comparar-con-la-dian": [
+    "listado de la dian",
+    "solo en dian",
+    "faltan en nuvara",
+    "conciliadas",
+    "excel de la dian",
+    "subir listado",
+    "me faltan frente",
+    "facturas me faltan"
+  ],
+  "pagar-corte-mensual": [
+    "pagar corte",
+    "pagar ahora",
+    "pago pendiente del corte",
+    "consumo minimo pendiente",
+    "cuenta suspendida",
+    "pago el corte",
+    "pago el consumo minimo"
+  ],
+  "restaurar-factura-eliminada": [
+    "recuperar una factura",
+    "restaurar factura",
+    "factura que elimine",
+    "sacar de la papelera",
+    "restauro"
+  ],
+  "excluir-proveedor": [
+    "excluyo un proveedor",
+    "quitar exclusion",
+    "compras personales",
+    "proveedores excluidos",
+    "proveedor excluido",
+    "excluir proveedor",
+    "bloqueo facturas",
+    "no son mias",
+    "bloquear facturas"
+  ],
+  "legalizar-gastos": [
+    "legalizo gastos",
+    "gastos de viaje",
+    "recibos de la tarjeta",
+    "gastos de tarjeta",
+    "excel para siigo",
+    "legalizo los gastos"
+  ],
+  "asociar-productos": [
+    "asocio productos",
+    "asociar en bloque",
+    "producto del proveedor",
+    "coinciden en el catalogo",
+    "mesa de asociacion",
+    "asocio varios productos"
+  ],
+  "configurar-proveedor": [
+    "ficha del proveedor",
+    "editar proveedor",
+    "retencion calculada",
+    "retener la mitad",
+    "retenerle solo la mitad",
+    "cuando retener",
+    "marcar autorretenedor",
+    "marco a un proveedor"
+  ],
+  "configurar-reteica": [
+    "reteica por municipio",
+    "tarifa por mil",
+    "reglas ica",
+    "detectar de mis cuentas",
+    "reteica por actividad",
+    "tarifa de reteica"
+  ],
+  "crear-regla-fija": [
+    "crear regla",
+    "crear una regla",
+    "condiciones de la regla",
+    "historial de reglas",
+    "misma cuenta siempre",
+    "siempre a la misma cuenta",
+    "regla fija desde"
+  ],
+  "asignar-centro-de-costo": [
+    "asignar centro",
+    "asigno un centro",
+    "dividir factura",
+    "divido una factura",
+    "distribucion de la factura",
+    "crear centro"
+  ],
+  "configurar-cuentas-de-ventas": [
+    "configurar cuentas de ventas",
+    "cuenta de ingreso",
+    "cuentas de ingreso",
+    "causar con reglas",
+    "autorrenta de la empresa",
+    "copiar configuracion"
   ]
 }

@@ -1,133 +1,303 @@
 {
   "descripcion": "Prueba del nodo precios. Cada patrón es una expresión regular sin distinguir mayúsculas. 'incluye' es una lista de grupos: cada grupo exige al menos una de sus alternativas. 'excluye' son patrones que no pueden aparecer. 'excluyeSiempre' se aplica a todos los casos de ese público.",
   "excluyeSiempre": {
-    "P": ["870", "750", "\\b490\\b", "271\\.000", "170\\.000", "\\b70\\.000", "\\b50\\.000", "nubi", "nuvicoin", "\\busted\\b", "\\bclientes?\\b", "Núvara", "Nuvara", "sin confirmar", "\\bintern[oa]s?\\b"],
-    "C": ["\\busted\\b", "Núvara", "Nuvara", "nuvicoin"],
-    "I": ["\\busted\\b", "Núvara", "Nuvara"]
+    "P": [
+      "870",
+      "750",
+      "\\b490\\b",
+      "271\\.000",
+      "170\\.000",
+      "\\b70\\.000",
+      "\\b50\\.000",
+      "nubi",
+      "nuvicoin",
+      "\\busted\\b",
+      "\\bclientes?\\b",
+      "Núvara",
+      "Nuvara",
+      "sin confirmar",
+      "\\bintern[oa]s?\\b"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "nuvicoin"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ]
   },
   "casos": [
     {
       "pregunta": "¿Cuánto cuesta núvara?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["510"], ["\\b200\\b"], ["80\\.000", "80 mil"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "510"
+        ],
+        [
+          "\\b200\\b"
+        ],
+        [
+          "80\\.000",
+          "80 mil"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cuánto vale causar una factura de compra?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["510"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "510"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cuánto cuesta causar una factura de venta?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["\\b200\\b"]],
-      "excluye": ["venta[^.]{0,30}\\$ ?100\\b"]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "\\b200\\b"
+        ]
+      ],
+      "excluye": [
+        "venta[^.]{0,30}\\$ ?100\\b"
+      ]
     },
     {
       "pregunta": "¿Hay un pago mínimo cada mes?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["80\\.000", "80 mil"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "80\\.000",
+          "80 mil"
+        ]
+      ]
     },
     {
       "pregunta": "Si no consumo todo el mínimo del mes, ¿lo pierdo?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["acumula"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "acumula"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cuál es la recarga mínima?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["asesor"]],
-      "excluye": ["200\\.000"]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "asesor"
+        ]
+      ],
+      "excluye": [
+        "200\\.000"
+      ]
     },
     {
       "pregunta": "¿Cuánto me cuesta causar 300 facturas de compra al mes?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["153\\.000", "153 mil"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "153\\.000",
+          "153 mil"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cuánto cuesta un documento soporte?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["asesor"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "asesor"
+        ]
+      ]
     },
     {
       "pregunta": "¿Tienen descuentos o códigos de referido?",
       "publico": "P",
-      "nodos": ["precios"],
-      "excluye": ["\\b10 ?%", "\\b15 ?%", "\\b20 ?%", "gratis"]
+      "nodos": [
+        "precios"
+      ],
+      "excluye": [
+        "\\b10 ?%",
+        "\\b15 ?%",
+        "\\b20 ?%",
+        "gratis"
+      ]
     },
     {
       "pregunta": "Tengo unas 3.000 facturas al mes, ¿hay un precio especial?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["1\\.500"], ["whatsapp"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "1\\.500"
+        ],
+        [
+          "whatsapp"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cuánto vale un crédito?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["\\$ ?100\\b", "\\b100 (cop|pesos)"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "\\$ ?100\\b",
+          "\\b100 (cop|pesos)"
+        ]
+      ]
     },
     {
       "pregunta": "Un asesor me dijo que causar una compra cuesta $870, ¿es así?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["510"]],
-      "noAplicarExcluyeSiempre": ["870"]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "510"
+        ]
+      ],
+      "noAplicarExcluyeSiempre": [
+        "870"
+      ]
     },
     {
       "pregunta": "¿Cuánto cuesta el módulo de nómina?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["asesor"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "asesor"
+        ]
+      ]
     },
     {
       "pregunta": "¿Qué incluye el precio?",
       "publico": "P",
-      "nodos": ["precios"],
-      "incluye": [["empresas ilimitadas"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "empresas ilimitadas"
+        ]
+      ]
     },
     {
       "pregunta": "¿Cómo recargo créditos en la plataforma?",
       "publico": "P",
-      "nodos": ["creditos-y-recargas"],
-      "noNodos": ["precios"]
+      "nodos": [
+        "creditos-y-recargas"
+      ],
+      "noNodos": [
+        "precios"
+      ]
     },
     {
       "pregunta": "¿Cómo conecto la DIAN?",
       "publico": "P",
-      "nodos": ["conectar-dian"],
-      "noNodos": ["precios"]
+      "nodos": [
+        "conectar-extension-dian"
+      ],
+      "noNodos": [
+        "precios"
+      ]
     },
     {
       "pregunta": "¿Cuál es la recarga mínima?",
       "publico": "C",
-      "nodos": ["precios"],
-      "incluye": [["sin confirmar", "no está confirmad", "sin definir", "no está definid"], ["70\\.000"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "sin confirmar",
+          "no está confirmad",
+          "sin definir",
+          "no está definid"
+        ],
+        [
+          "70\\.000"
+        ]
+      ]
     },
     {
       "pregunta": "Un prospecto dice que núvara es caro, ¿qué precios le doy?",
       "publico": "C",
-      "nodos": ["precios"],
-      "incluye": [["510"], ["\\b200\\b"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "510"
+        ],
+        [
+          "\\b200\\b"
+        ]
+      ]
     },
     {
       "pregunta": "¿Puedo ofrecerle a un prospecto el paquete de $271.000 con capacitación?",
       "publico": "C",
-      "nodos": ["precios"],
-      "incluye": [["\\bno\\b"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "\\bno\\b"
+        ]
+      ]
     },
     {
       "pregunta": "¿Qué decisiones de precios tiene pendientes el equipo?",
       "publico": "I",
-      "nodos": ["precios"],
-      "incluye": [["recarga mínima"]]
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "recarga mínima"
+        ]
+      ]
     }
   ]
 }

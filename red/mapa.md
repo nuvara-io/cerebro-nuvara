@@ -62,6 +62,7 @@ Qué es núvara, para quién, precios, créditos y cómo se vende.
 | `argumentos-de-venta` | núcleo | C | "¿Qué le digo a un contador con mucho volumen?", "¿qué argumentos funcionan?" |  | `demostraciones-y-ventas.md` §Argumentos y §Qué decir y qué evitar |
 | `objeciones` | núcleo | C | "Me dicen que es caro", "no confían en la automatización", "ya tienen otro software" |  | `objeciones-y-dolores.md` §Objeciones y dudas, `demostraciones-y-ventas.md` §Objeciones y §Preguntas de prospectos |
 | `demostracion-en-vivo` | núcleo | C | "¿Cómo armo una demostración?", "¿cómo cierro?" |  | `demostraciones-y-ventas.md` §Cómo se estructura y §Cierre típico, `capacitacion.md` §Cómo adaptar según el perfil |
+| `pagar-corte-mensual` | neurona | P | "¿Cómo pago el corte mensual?", "¿Cómo pago el consumo mínimo que tengo pendiente?" | `creditos-y-recargas` | `flujos/12`, código de `platform` |
 
 ## Red neuronal: Configuración e inicio
 
@@ -70,9 +71,11 @@ Crear la empresa y dejarla lista: usuarios, DIAN y correo.
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
 | `onboarding` | núcleo | P | "¿Cómo empiezo?", "¿qué configuro primero?" |  | `flujos/01`, `preguntas-frecuentes.md` §Configuración inicial, `capacitacion.md` §Los cuatro pasos iniciales |
-| `usuarios-roles-y-empresas` | núcleo | P | "¿Puedo tener varias empresas?", "¿cómo invito a un auxiliar?" |  | `producto.md` §Tipos de cuenta y roles |
-| `conectar-dian` | núcleo | P | "¿Cómo conecto la DIAN?", "el token no funciona", "¿qué es la extensión?" |  | `flujos/02`, `preguntas-frecuentes.md` §DIAN y correo, `objeciones-y-dolores.md` §Descarga y DIAN, `por-confirmar.md` §DIAN y extensión |
+| `usuarios-roles-y-empresas` | núcleo | P | "¿Puedo tener varias empresas?", "¿qué puede hacer un operador?" |  | `producto.md` §Tipos de cuenta y roles |
+| `conectar-dian` | núcleo | P | "el token no funciona", "¿qué es la extensión?" |  | `flujos/02`, `preguntas-frecuentes.md` §DIAN y correo, `objeciones-y-dolores.md` §Descarga y DIAN, `por-confirmar.md` §DIAN y extensión |
 | `conectar-correo` | núcleo | P | "¿Cómo conecto el correo?", "no llegan las facturas del correo" |  | `flujos/03`, `por-confirmar.md` §Correo |
+| `invitar-miembro` | neurona | P | "¿Cómo agrego a mi auxiliar a núvara?", "¿Cómo le doy acceso a otra persona solo a algunas empresas?" | `usuarios-roles-y-empresas` | `flujos/01`, código de `platform` |
+| `conectar-extension-dian` | neurona | P | "¿Cómo instalo la extensión de la DIAN?", "¿Cómo obtengo el token de la DIAN desde mi correo?" | `conectar-dian` | `flujos/02`, código de `platform` |
 
 ## Red neuronal: Causación
 
@@ -83,21 +86,31 @@ Traer las facturas, causarlas, revisarlas, aprobarlas y archivarlas.
 | `causar-y-revisar` | núcleo | P | "¿Qué pasa cuando causo una factura?", "¿qué significa cada estado?", "¿cómo decide la cuenta?" |  | `flujos/05`, `producto.md` §Estados y §Cómo decide la causación, `preguntas-frecuentes.md` §Causación y revisión, `por-confirmar.md` §Causación |
 | `importar-facturas` | núcleo | P | "¿Cómo traigo las facturas?", "¿cómo filtro por fecha?" |  | `flujos/04`, `producto.md` §Cómo entran las facturas |
 | `correcciones-y-aprendizaje` | núcleo | P | "Puso mal la cuenta", "¿aprende de mis cambios?" |  | `flujos/06` |
-| `reglas-y-centros-de-costo` | núcleo | P | "¿Cómo creo una regla fija?", "¿cómo asigno centros de costo?" |  | `flujos/07`, `preguntas-frecuentes.md` §Centros de costo y reglas, `objeciones-y-dolores.md` §Centros de costo, `por-confirmar.md` §Centros de costo |
+| `reglas-y-centros-de-costo` | núcleo | P | "¿qué regla gana si hay varias?", "¿para qué sirven los centros de costo?" |  | `flujos/07`, `preguntas-frecuentes.md` §Centros de costo y reglas, `objeciones-y-dolores.md` §Centros de costo, `por-confirmar.md` §Centros de costo |
 | `aprobacion-en-bloque` | núcleo | P | "¿Puedo aprobar varias a la vez?" |  | `flujos/08` |
-| `proveedores-y-retenciones` | núcleo | P | "¿Cómo configuro las retenciones de un proveedor?", "¿y si es autorretenedor?" |  | `flujos/09`, `preguntas-frecuentes.md` §Retenciones, `objeciones-y-dolores.md` §Cuentas, IVA y retenciones, `por-confirmar.md` §Retenciones e IVA y §5 |
-| `ventas-y-autorretencion` | núcleo | P | "¿Cómo causo mis ventas?", "¿cómo manejo la autorretención?" |  | `flujos/14` |
+| `proveedores-y-retenciones` | núcleo | P | "¿qué retenciones calcula núvara?", "¿y si es autorretenedor?" |  | `flujos/09`, `preguntas-frecuentes.md` §Retenciones, `objeciones-y-dolores.md` §Cuentas, IVA y retenciones, `por-confirmar.md` §Retenciones e IVA y §5 |
+| `ventas-y-autorretencion` | núcleo | P | "¿también causa mis ventas?", "¿cómo manejo la autorretención?" |  | `flujos/14` |
 | `notas-credito-y-documento-soporte` | núcleo | P | "¿Cómo causo una nota crédito?", "¿qué hago con un documento soporte?" |  | `flujos/13` |
-| `facturas-del-exterior` | núcleo | P | "Tengo facturas de otro país", "¿cómo legalizo gastos?" |  | `flujos/15` |
+| `facturas-del-exterior` | núcleo | P | "Tengo facturas de otro país", "¿qué TRM usa una factura del exterior?" |  | `flujos/15` |
 | `archivo-y-comparacion-dian` | núcleo | P | "¿Me falta alguna factura frente a la DIAN?", "¿dónde quedan las facturas?" |  | `flujos/11` |
-| `papelera-y-limpieza` | núcleo | P | "Borré una factura", "¿cómo bloqueo facturas que no son mías?" |  | `flujos/17` |
-| `inventario-y-productos` | núcleo | P | "¿Cómo asocio productos?", "¿maneja inventario?" |  | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
+| `papelera-y-limpieza` | núcleo | P | "Borré una factura", "¿qué pasa con lo que elimino?" |  | `flujos/17` |
+| `inventario-y-productos` | núcleo | P | "¿maneja inventario?", "¿cómo se mueve el stock?" |  | `flujos/19`, `preguntas-frecuentes.md` §Productos e inventario, `objeciones-y-dolores.md` §Inventario, `por-confirmar.md` §Inventario |
 | `glosario` | núcleo | P | "¿Qué es un asiento?", "¿qué significa precausar?" |  | `glosario.md` |
 | `causar-facturas` | neurona | P | "¿Cómo causo una factura?", "¿cómo causo varias facturas?" | `causar-y-revisar` | `flujos/04`, `flujos/05` |
 | `causar-por-lote` | neurona | P | "¿Cómo causo por lote?", "¿cómo causo todo el mes de una vez?" | `causar-y-revisar` | `flujos/05` |
 | `revisar-causacion` | neurona | P | "¿Cómo reviso una causación?", "¿qué hago si no cuadra?" | `causar-y-revisar` | `flujos/05`, `flujos/06` |
 | `aprobar-en-bloque` | neurona | P | "¿Cómo apruebo un grupo de facturas?", "¿cómo apruebo muchas a la vez?" | `aprobacion-en-bloque` | `flujos/08` |
 | `archivar-aprobadas` | neurona | P | "¿Cómo archivo las facturas aprobadas?", "¿cómo dejo listo el mes para exportar?" | `archivo-y-comparacion-dian` | `flujos/05`, `flujos/08` |
+| `comparar-con-la-dian` | neurona | P | "¿Cómo comparo mis facturas con el listado de la DIAN?", "¿Cómo sé qué facturas me faltan frente a la DIAN?" | `archivo-y-comparacion-dian` | `flujos/11`, código de `platform` |
+| `restaurar-factura-eliminada` | neurona | P | "¿Cómo recupero una factura que eliminé?", "¿Cómo restauro varias facturas de la papelera a la vez?" | `papelera-y-limpieza` | `flujos/17`, código de `platform` |
+| `excluir-proveedor` | neurona | P | "¿Cómo excluyo un proveedor para que no entren sus facturas?", "¿Cómo vuelvo a dejar entrar las facturas de un proveedor excluido?" | `papelera-y-limpieza` | `flujos/17`, código de `platform` |
+| `legalizar-gastos` | neurona | P | "¿Cómo legalizo los gastos de un viaje?", "¿Cómo paso los recibos de la tarjeta a un comprobante para Siigo?" | `facturas-del-exterior` | `flujos/15`, código de `platform` |
+| `asociar-productos` | neurona | P | "¿Cómo asocio varios productos del proveedor a uno de mi catálogo?", "¿Cómo uso la mesa de asociación?" | `inventario-y-productos` | `flujos/19`, código de `platform` |
+| `configurar-proveedor` | neurona | P | "¿Cómo marco a un proveedor como autorretenedor?", "¿Cómo hago para retenerle solo la mitad a un proveedor?" | `proveedores-y-retenciones` | `flujos/09`, código de `platform` |
+| `configurar-reteica` | neurona | P | "¿Cómo configuro la ReteICA por municipio?", "¿Cómo pongo la tarifa de ReteICA por actividad?" | `proveedores-y-retenciones` | `flujos/09`, código de `platform` |
+| `crear-regla-fija` | neurona | P | "¿Cómo creo una regla fija desde una factura?", "¿Cómo hago para que un ítem vaya siempre a la misma cuenta?" | `reglas-y-centros-de-costo` | `flujos/07`, código de `platform` |
+| `asignar-centro-de-costo` | neurona | P | "¿Cómo le asigno un centro de costo a una factura?", "¿Cómo divido una factura entre varios centros de costo?" | `reglas-y-centros-de-costo` | `flujos/07`, código de `platform` |
+| `configurar-cuentas-de-ventas` | neurona | P | "¿Cómo configuro las cuentas de ingreso de mis ventas?", "¿Cómo configuro la autorrenta de la empresa?" | `ventas-y-autorretencion` | `flujos/14`, código de `platform` |
 
 ## Red neuronal: Exportación
 

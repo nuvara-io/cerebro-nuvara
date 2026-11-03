@@ -127,7 +127,7 @@
       "pregunta": "¿Cómo invito a un auxiliar?",
       "publico": "P",
       "nodos": [
-        "usuarios-roles-y-empresas"
+        "invitar-miembro"
       ],
       "incluye": [
         [
@@ -319,7 +319,7 @@
       "pregunta": "¿Cómo legalizo gastos de un viaje al exterior?",
       "publico": "P",
       "nodos": [
-        "facturas-del-exterior"
+        "legalizar-gastos"
       ],
       "incluye": [
         [
@@ -343,7 +343,7 @@
       "pregunta": "Borré una factura, ¿cómo la recupero?",
       "publico": "P",
       "nodos": [
-        "papelera-y-limpieza"
+        "restaurar-factura-eliminada"
       ],
       "incluye": [
         [
@@ -355,7 +355,7 @@
       "pregunta": "¿Cómo bloqueo facturas que no son mías?",
       "publico": "P",
       "nodos": [
-        "papelera-y-limpieza"
+        "excluir-proveedor"
       ],
       "incluye": [
         [
@@ -367,7 +367,7 @@
       "pregunta": "¿Cómo asocio productos del inventario?",
       "publico": "P",
       "nodos": [
-        "inventario-y-productos"
+        "asociar-productos"
       ],
       "incluye": [
         [
@@ -427,7 +427,7 @@
       "pregunta": "¿Cómo creo una regla fija?",
       "publico": "P",
       "nodos": [
-        "reglas-y-centros-de-costo"
+        "crear-regla-fija"
       ],
       "incluye": [
         [
