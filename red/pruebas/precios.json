@@ -7,7 +7,6 @@
       "\\b490\\b",
       "271\\.000",
       "170\\.000",
-      "\\b70\\.000",
       "\\b50\\.000",
       "nubi",
       "nuvicoin",
@@ -110,7 +109,10 @@
       ],
       "incluye": [
         [
-          "asesor"
+          "70\\.000"
+        ],
+        [
+          "Cuenta › Saldo"
         ]
       ],
       "excluye": [
@@ -206,7 +208,7 @@
       ],
       "incluye": [
         [
-          "asesor"
+          "cotiza"
         ]
       ]
     },
@@ -250,12 +252,6 @@
       ],
       "incluye": [
         [
-          "sin confirmar",
-          "no está confirmad",
-          "sin definir",
-          "no está definid"
-        ],
-        [
           "70\\.000"
         ]
       ]
@@ -296,6 +292,39 @@
       "incluye": [
         [
           "recarga mínima"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta la tesorería?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "Tesorería y Caja"
+        ],
+        [
+          "cotizan"
+        ]
+      ],
+      "excluye": [
+        "\\$150\\.000"
+      ]
+    },
+    {
+      "pregunta": "¿La recarga mínima es lo mismo que el mínimo mensual?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "70\\.000"
+        ],
+        [
+          "80\\.000"
         ]
       ]
     }

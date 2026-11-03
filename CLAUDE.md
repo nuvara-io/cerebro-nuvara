@@ -60,7 +60,8 @@ Drive raíz: https://drive.google.com/drive/folders/1BSpmQP46BTnjgQ-gIYb9LR7Jxlp
 ## Datos confirmados por el equipo (31/10/2026)
 
 - **Causar una venta:** $200 COP. El $100 del Brand OS está desactualizado.
-- **Mínimo mensual de consumo:** $80.000 COP. Es lo mínimo que se descuenta del saldo cada mes; lo que no se consume se acumula. **No es la recarga mínima**: esa sigue sin confirmar (la billetera de la app dice $70.000).
+- **Mínimo mensual de consumo:** $80.000 COP. Es lo mínimo que se descuenta del saldo cada mes; lo que no se consume se acumula. **No es la recarga mínima**, que es de $70.000 (700 créditos): así la cobra y la muestra la billetera de la plataforma (parámetro global `billing_settings.min_recharge_cop`, verificado en el código el 03/11/2026).
+- **Modelo de cobro:** la causación se paga con créditos (compra, venta, recarga mínima y mínimo mensual); los módulos (facturación electrónica, nómina, tesorería y caja) se cotizan aparte con el equipo.
 - **Azul petróleo:** resuelto. Es `#09695c`, el del logo maestro, que coincide con la app. El `#005256` del PDF del key visual no se usa.
 
 ## Código (Remotion)

@@ -61,8 +61,8 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 - [P] Si trabajas en volumen, recarga antes de empezar el mes para no frenar el trabajo.
 
 ## Cuál es la recarga mínima
-- [P] La plataforma te muestra la recarga mínima en la tarjeta de compra al recargar. Si quieres saberla antes, te la confirma un asesor de núvara.
-- [C] **Recarga mínima, sin confirmar:** la plataforma hoy pide $70.000 y la calculadora del sitio arranca en $200.000. No la des a usuarios ni prospectos.
+- [P] La recarga mínima es de **$70.000** (700 créditos); la plataforma te la muestra en la tarjeta de compra al recargar.
+- [P] No es lo mismo que el mínimo mensual de $80.000: ese es lo mínimo que se consume del saldo cada mes (ver `precios`).
 
 ## Para el equipo
 - [C] **Sin confirmar:** si recausar una factura vuelve a cobrar y si eliminar una precausada devuelve los créditos. Ver `precios`.
