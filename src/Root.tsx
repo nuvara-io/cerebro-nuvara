@@ -1,4 +1,9 @@
 import { Composition, Folder, Still } from "remotion";
+import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
+import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
+import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
+import { NominaCompleta } from "./posts/modulos/NominaCompleta";
+import { TesoreriaConciliada } from "./posts/modulos/TesoreriaConciliada";
 import { PortadaCausaciones } from "./posts/PortadaCausaciones";
 import { Post500Causaciones } from "./posts/Post500Causaciones";
 import { QueEsNuvara } from "./posts/QueEsNuvara";
@@ -24,6 +29,18 @@ export const RemotionRoot: React.FC = () => {
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
         <Still id="PortadaCausaciones" component={PortadaCausaciones} width={1080} height={1350} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
+      </Folder>
+      <Folder name="Campana-modulos">
+        <Still id="M0-MasQueCausacion" component={MasQueCausacion} width={1080} height={1350} />
+        <Still id="M1-Causacion" component={CausacionAprobar} width={1080} height={1350} />
+        <Still id="M2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1350} />
+        <Still id="M3-Nomina" component={NominaCompleta} width={1080} height={1350} />
+        <Still id="M4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1350} />
+        <Still id="H0-MasQueCausacion" component={MasQueCausacion} width={1080} height={1920} />
+        <Still id="H1-Causacion" component={CausacionAprobar} width={1080} height={1920} />
+        <Still id="H2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1920} />
+        <Still id="H3-Nomina" component={NominaCompleta} width={1080} height={1920} />
+        <Still id="H4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1920} />
       </Folder>
       <Folder name="Escenas">
         <Composition

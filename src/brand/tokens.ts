@@ -34,9 +34,17 @@ export const color = {
   white: "#ffffff",
 } as const;
 
+// Degradado de marca (gradient-03 del cerebro gráfico): azul → turquesa
+const GRADIENTE_03 = { inicio: "#328be5", fin: "#45c3ae" } as const;
+
 export const gradient = {
   // Fondo de toda escena: gris claro arriba a la izquierda, blanco abajo a la derecha
   backdrop: "linear-gradient(135deg, #dbdbdb 0%, #efefef 45%, #fefefe 100%)",
+  // Palabra con degradado, bordes de comparativas y bloque degradado
+  marca: `linear-gradient(135deg, ${GRADIENTE_03.inicio} 0%, ${GRADIENTE_03.fin} 100%)`,
+  // Fondo de piezas de producto: turquesa arriba, redes-azul abajo. El turquesa
+  // queda en la franja del wordmark: el blanco sobre él no llega a 3:1.
+  fondoMarca: `linear-gradient(180deg, ${GRADIENTE_03.fin} 0%, ${GRADIENTE_03.inicio} 24%, ${color.accent} 100%)`,
 } as const;
 
 // Escala para 1080p. Todo en Poppins: Bold para lo que se destaca, Regular para el resto.
