@@ -23,3 +23,6 @@ red/pruebas/*.resultado.json
 
 # Preguntas sin tema que registra la interfaz (pueden traer datos de quien escribe)
 red/registro/
+
+# Muestras de voz grabadas (audio personal, fuera de git)
+docs/voz/muestras/

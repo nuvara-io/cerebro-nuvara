@@ -1,4 +1,5 @@
 import { Composition, Folder, Still } from "remotion";
+import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
@@ -11,6 +12,7 @@ import { IntroScene } from "./scenes/IntroScene";
 import { OutroScene } from "./scenes/OutroScene";
 import { StepScene } from "./scenes/StepScene";
 import { CausarFactura } from "./tutorials/CausarFactura";
+import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -23,6 +25,14 @@ export const RemotionRoot: React.FC = () => {
           height={1080}
           fps={30}
           durationInFrames={1074}
+        />
+        <Composition
+          id="FlujoCausacion"
+          component={FlujoCausacion}
+          width={1920}
+          height={1080}
+          fps={30}
+          durationInFrames={Math.round(DURACION_FLUJO * 30)}
         />
       </Folder>
       <Folder name="Redes">
@@ -41,6 +51,11 @@ export const RemotionRoot: React.FC = () => {
         <Still id="H2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1920} />
         <Still id="H3-Nomina" component={NominaCompleta} width={1080} height={1920} />
         <Still id="H4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1920} />
+      </Folder>
+      <Folder name="Brochure">
+        {DIAPOSITIVAS.map((D, i) => (
+          <Still key={i} id={`Brochure-${String(i + 1).padStart(2, "0")}`} component={D} width={1920} height={1080} />
+        ))}
       </Folder>
       <Folder name="Escenas">
         <Composition
