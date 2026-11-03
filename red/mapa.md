@@ -186,6 +186,7 @@ Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código d
 | `crear-pieza-de-redes` | neurona | C | "¿Cómo hago un post para Instagram?", "¿cómo renderizo una pieza en Remotion?" | `linea-grafica` | `diseno/redes.md`, `CLAUDE.md` §Código, `src/posts/` |
 | `elegir-foto-del-banco` | neurona | C | "¿Cómo elijo la foto de una portada?", "¿cómo traigo una foto del banco?" | `linea-grafica` | `docs/banco-fotos.md`, `scripts/foto.py` |
 | `revisar-pieza-antes-de-publicar` | neurona | C | "¿Cómo reviso un anuncio antes de publicarlo?", "¿cómo reviso una pieza antes de publicarla?" | `linea-grafica` | `diseno/README.md`, `diseno/redes.md` §Desvíos, `diseno/reels.md` §Lo que no se repite |
+| `planeacion-de-marketing` | núcleo | C (pendientes: I) | "¿Qué campañas hacemos este mes?", "¿qué está haciendo la competencia en pauta?", "¿qué fechas del contador aprovechamos?" |  | Calendario DIAN 2026, Actualícese, INCP, Meta Ad Library y sitios de la competencia (03/11/2026), código de `platform` |
 | `mensajes-y-afirmaciones` | núcleo | C (desvíos del sitio: I) | "¿Qué cifras puedo poner en un anuncio?", "¿puedo decir 90 % menos tiempo?", "¿qué llamado a la acción uso?" |  | `diseno/README.md` §Voz y §Vocabulario, `sitio-web.md` §Cifras de marketing, `por-confirmar.md` §4 |
 | `embudo-de-adquisicion` | núcleo | C (métricas: I) | "¿Cómo llega un prospecto a ser usuario?", "¿cuándo se considera activa una cuenta?", "¿qué pasa cuando se acaba la prueba?" |  | `demostraciones-y-ventas.md` §Cierre típico, código de `platform` |
 | `ver-embudo-de-activacion` | neurona | I | "¿Dónde veo el embudo de activación?", "¿dónde veo las organizaciones atascadas?" | `embudo-de-adquisicion` | código de `platform` |
@@ -301,6 +302,8 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `campanas-de-activacion` | `mensajes-y-afirmaciones` | Qué se dice en el correo de campaña |
 | `enviar-campana-por-correo` | `revisar-pieza-antes-de-publicar` | Revisar el correo de prueba |
 | `habilitar-cuenta-en-prueba` | `precios` | El mínimo mensual que se empieza a cobrar |
+| `planeacion-de-marketing` | `competencia` | Qué decirle a un prospecto que viene de otra solución |
+| `planeacion-de-marketing` | `campanas-de-activacion` | Crear el código que mide la campaña |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 
 ## Cómo agregar una red neuronal

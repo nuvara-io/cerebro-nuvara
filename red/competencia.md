@@ -5,6 +5,7 @@ publico: C
 actualizado: 2026-11-02
 conexiones:
   - argumentos-de-venta   # qué decirle a quien ya usa otro programa
+  - planeacion-de-marketing # qué hace hoy cada competidor
 fuentes:
   - conocimiento/sitio-web.md#comparativa-con-competidores
   - conocimiento/sitio-web.md#posicionamiento
@@ -36,7 +37,7 @@ Cómo se diferencia núvara de otras soluciones de causación y del programa con
 ## Comparar costo con otra solución
 - [C] Si dicen que otra solución cobra menos por factura, se compara el **costo total**: soporte, errores de IVA, duplicados y tiempo de corrección. En las sesiones no se bajó el precio.
 - [C] El costo también se compara con el de un auxiliar dedicado a causar, no solo con otro software.
-- [C] No hay precios de competidores en las fuentes de núvara: **no des cifras de otros programas**. Si el prospecto trae una, compárala con la tarifa oficial de núvara (ver `precios`).
+- [C] **No des cifras de otros programas** al prospecto. Los precios y ofertas que publican hoy las otras soluciones están en `planeacion-de-marketing`, solo para el equipo, y cambian sin aviso. Si el prospecto trae una cifra, compárala con la tarifa oficial de núvara (ver `precios`).
 - [C] Los programas contables grandes cobran por conector o por transacción; el consejo recibido fue priorizar los programas abiertos y fáciles de integrar.
 
 ## Lo que se dice de otras soluciones y no está verificado
