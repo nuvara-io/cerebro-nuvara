@@ -15,7 +15,7 @@ fuentes:
 
 # App móvil de núvara
 
-La parte móvil de núvara, para iOS y Android: lleva la operación del día a día a quien no entra a la plataforma web. Cada persona entra con su propio acceso y solo ve lo que le corresponde.
+La parte móvil de núvara, próximamente para iOS y Android: lleva la operación del día a día a quien no entra a la plataforma web. Cada persona entra con su propio acceso y solo ve lo que le corresponde.
 
 ## A quién le puedes dar acceso
 - [P] **A tus clientes, si eres contador o firma contable:** ven cómo va su empresa, aprueban pagos y te envían comprobantes.
@@ -42,7 +42,8 @@ La parte móvil de núvara, para iOS y Android: lleva la operación del día a d
 - [P] Si retiras a un empleado en Nómina, su acceso se suspende solo.
 
 ## Para el equipo
-- [C] **Sin confirmar:** si la app ya está publicada en App Store y Google Play, y si tiene costo o va incluida. No se promete fecha ni precio.
+- [C] **Lanzamiento:** las apps de iOS y Android están en proceso de publicación. El equipo estima unos 7 días desde el 04/11/2026, sin fecha confirmada. Hasta que estén en las tiendas se comunica como «próximamente», sin fecha.
+- [C] **Sin confirmar:** si tiene costo o va incluida. No se promete precio.
 - [C] El acceso de cliente existe solo para organizaciones con plan de firma contable. Una empresa que no es firma entra con su administrador y le da acceso a su equipo.
 - [C] Emitir desde la app necesita facturación electrónica activa y el permiso de esa persona.
 - [I] Verificado el 04/11/2026 en iOS con una empresa ficticia: ingreso de cliente y de operador, Inicio, Tesorería, pago aprobado desde la app y caja asignada. No se probaron en vivo Android, Face ID, notificaciones, modo sin señal, facturar ni jefe de área: salen del código y de la ficha de tienda.

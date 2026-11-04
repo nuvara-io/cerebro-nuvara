@@ -27,7 +27,7 @@ import { GRABACIONES } from "./FlujoCausacion";
 // Texto arriba de los 420 px de abajo, que tapa la app. Sin Nuvi: pueden ir a pauta.
 const voz = (n: string) => staticFile(`voz/reels/${n}.wav`);
 const sonido = (n: string) => staticFile(`sonido/${n}.wav`);
-const DURACION_VOZ: Record<string, number> = {"r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 4.66, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67};
+const DURACION_VOZ: Record<string, number> = {"p1": 2.41, "r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 4.66, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67};
 
 const MX = 48;
 const MARCO = { left: MX, top: 420, ancho: 1080 - MX * 2, alto: 920 };
@@ -59,7 +59,7 @@ type Telefono = Base & {
   readonly dura: number;
 };
 type Pareja = Base & { readonly tipo: "pareja"; readonly lead: string; readonly rest: string; readonly subtitulo: string; readonly dura: number };
-type Cierre = Base & { readonly tipo: "cierre"; readonly dura: number };
+type Cierre = Base & { readonly tipo: "cierre"; readonly dura: number; readonly aviso?: string };
 type Escena = Gancho | Pantalla | Telefono | Pareja | Cierre;
 
 const duracion = (e: Escena) =>
@@ -137,9 +137,17 @@ const APP: Escena[] = [
   { tipo: "cierre", dura: 3.2 },
 ];
 
+// Hasta que la app esté en las tiendas: sin fecha ni precio
+const APP_PROXIMAMENTE: Escena[] = [
+  { tipo: "gancho", linea1: "Próximamente:", linea2: "núvara en tu celular.", dura: 2.6, voz: "a1", vozEn: 0.2 },
+  ...APP.slice(1, -1),
+  { tipo: "cierre", dura: 3.2, voz: "p1", vozEn: 0.2, aviso: "Muy pronto en iOS y Android" },
+];
+
 export const DURACION_REEL_CAUSACION = duracionReel(CAUSACION);
 export const DURACION_REEL_RADIAN = duracionReel(RADIAN);
 export const DURACION_REEL_APP = duracionReel(APP);
+export const DURACION_REEL_APP_PROXIMAMENTE = duracionReel(APP_PROXIMAMENTE);
 
 const Titulo: React.FC<{ readonly lead: string; readonly rest: string }> = ({ lead, rest }) => (
   <div style={{ position: "absolute", left: MX, top: 216, width: 1080 - MX * 2 }}>
@@ -189,7 +197,7 @@ const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
           <TwoToneTitle lead="Tú mantienes" rest="el control." size="tagline" delay={4} />
           <FadeUp delay={12}>
             <span style={{ display: "inline-block", padding: "22px 40px", borderRadius: radius.pill, background: color.accent, color: color.white, fontFamily: font.sans, ...type.button, fontSize: 38 }}>
-              Agenda tu demostración en vivo
+              {e.aviso ?? "Agenda tu demostración en vivo"}
             </span>
           </FadeUp>
           <FadeUp delay={16}>
@@ -277,3 +285,4 @@ const Reel: React.FC<{ readonly escenas: readonly Escena[] }> = ({ escenas }) =>
 export const ReelCausacion = () => <Reel escenas={CAUSACION} />;
 export const ReelRadian = () => <Reel escenas={RADIAN} />;
 export const ReelApp = () => <Reel escenas={APP} />;
+export const ReelAppProximamente = () => <Reel escenas={APP_PROXIMAMENTE} />;

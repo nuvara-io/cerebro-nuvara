@@ -3,6 +3,7 @@ import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { DIAPOSITIVAS_NOMINA } from "./brochure/Nomina";
 import { DIAPOSITIVAS_TESORERIA } from "./brochure/Tesoreria";
+import { AppDisponible, AppProximamente } from "./posts/modulos/AppMovil";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
@@ -18,7 +19,7 @@ import { CausarFactura } from "./tutorials/CausarFactura";
 import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
-import { DURACION_REEL_APP, DURACION_REEL_CAUSACION, DURACION_REEL_RADIAN, ReelApp, ReelCausacion, ReelRadian } from "./tutorials/Reels";
+import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_RADIAN, ReelApp, ReelAppProximamente, ReelCausacion, ReelRadian } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -60,6 +61,7 @@ export const RemotionRoot: React.FC = () => {
       <Folder name="Reels">
         <Composition id="ReelCausacion" component={ReelCausacion} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CAUSACION * 30)} />
         <Composition id="ReelRadian" component={ReelRadian} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN * 30)} />
+        <Composition id="ReelAppProximamente" component={ReelAppProximamente} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP_PROXIMAMENTE * 30)} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
       <Folder name="Redes">
@@ -73,6 +75,10 @@ export const RemotionRoot: React.FC = () => {
         <Still id="M2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1350} />
         <Still id="M3-Nomina" component={NominaCompleta} width={1080} height={1350} />
         <Still id="M4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1350} />
+        <Still id="M5-AppProximamente" component={AppProximamente} width={1080} height={1350} />
+        <Still id="M5-AppDisponible" component={AppDisponible} width={1080} height={1350} />
+        <Still id="H5-AppProximamente" component={AppProximamente} width={1080} height={1920} />
+        <Still id="H5-AppDisponible" component={AppDisponible} width={1080} height={1920} />
         <Still id="H0-MasQueCausacion" component={MasQueCausacion} width={1080} height={1920} />
         <Still id="H1-Causacion" component={CausacionAprobar} width={1080} height={1920} />
         <Still id="H2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1920} />
