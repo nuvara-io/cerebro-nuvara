@@ -393,6 +393,19 @@
       "excluye": [
         "pago único"
       ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta un evento RADIAN?",
+      "publico": "P",
+      "nodos": [],
+      "incluye": [
+        [
+          "\\$100"
+        ]
+      ],
+      "excluye": [
+        "consumen cupo"
+      ]
     }
   ]
 }

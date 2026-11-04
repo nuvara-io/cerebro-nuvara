@@ -100,6 +100,17 @@ export function puntuar(pregunta: string, publico: Publico): Puntaje[] {
     .sort((a, b) => b.puntos - a.puntos);
 }
 
+// Temas que pueden responder la pregunta, juntando claves y contenido: los usan
+// el modelo local y los agentes para elegir por significado.
+export function candidatos(pregunta: string, publico: Publico, cantidad = 8) {
+  const visibles = new Map(visiblesPara(leerIndice(), publico).map((n) => [n.id, n]));
+  const ids = [...puntuar(pregunta, publico).slice(0, 4).map((p) => p.id), ...recuperar(pregunta, publico).slice(0, 6).map((r) => r.id)];
+  return [...new Set(ids)]
+    .map((id) => visibles.get(id))
+    .filter((n) => n && !n.transversal)
+    .slice(0, cantidad) as ReturnType<typeof visiblesPara>;
+}
+
 // Puntos mínimos del segundo nodo para seguir la conexión hacia él: dos
 // palabras clave o una frase. Con una sola palabra suelta no basta.
 const PUNTOS_PARA_CONECTAR = 4;

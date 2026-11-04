@@ -234,7 +234,7 @@ export const PreciosFE: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Consumen la bolsa la factura, las *notas*, el *documento soporte* y cada *evento RADIAN*. Si renuevas la habilitación, tu saldo sigue vigente; si no, lo que quede en la bolsa se pierde." />
+        <Emphasis text="Consumen la bolsa la factura, las *notas* y el *documento soporte*. Cada *evento RADIAN* vale *$100* en créditos. Si renuevas la habilitación, tu saldo sigue vigente; si no, lo que quede en la bolsa se pierde." />
       </p>
     </div>
   </Slide>

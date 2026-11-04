@@ -67,7 +67,8 @@ Fuente: modelo definido por el equipo el 03/11/2026, sobre la base del sitio ofi
   - Más de 5.000 documentos: **se cotiza**
 - [P] **Por documento con créditos:** **$1.500** (15 créditos) por documento, descontados del saldo de la cuenta.
 - [P] La bolsa se descuenta **en documentos**, no en pesos. Si se acaba, compras otra.
-- [P] **Qué consume la bolsa:** la factura de venta, las notas crédito y débito, el documento soporte y su nota de ajuste, y cada evento RADIAN (030 a 034).
+- [P] **Qué consume la bolsa:** la factura de venta, las notas crédito y débito, el documento soporte y su nota de ajuste.
+- [P] **Eventos RADIAN:** **$100 por evento** (1 crédito), descontados del saldo. Cada acuse o evento se cobra aparte y no consume la bolsa.
 - [P] **Si renuevas la habilitación, tu saldo sigue vigente.** Si no renuevas, lo que quede en la bolsa se pierde; los créditos los puedes usar en otros módulos.
 - [P] Las pruebas ante la DIAN no se cobran.
 
@@ -95,6 +96,7 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 - [C] **Si el mínimo mensual aplica desde el primer mes** o solo desde el segundo, y si aplica a los usuarios antiguos.
 - [C] **A quién aplica el modelo nuevo:** falta definir si cambia las condiciones de los usuarios actuales o solo de los nuevos.
 - [C] **Casos 3 y 4 del mínimo mensual:** el tablero los deja incompletos ("causó 80" y "recargó más de…").
+- [C] **Aceptación tácita (034):** la registra la DIAN y núvara solo la trae; falta confirmar si también se cobra.
 - [C] **Tesorería y Caja sin suscripción:** falta definir si Tesorería se puede tomar con créditos y cómo se cobra Caja.
 - [C] **Escalas por volumen:** si $510 es el precio de compra en todos los planes estándar y desde cuántas causaciones hay descuento por debajo de 1.500 al mes.
 - [C] **Si el crédito sigue valiendo $100** cuando haya paquetes.
@@ -107,9 +109,10 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 ## Interno
 
 - [I] **Modelos de negocio (03/11/2026):** el modelo **por recarga** (los créditos nunca vencen, sin mínimo) **ya no se vende**. Se venden **suscripción + recarga** (consumo mínimo de $80.000) y **suscripción** de precio fijo para empresas y firmas contables grandes.
+- [I] **Requisito para la plataforma (04/11/2026):** el precio de cada acuse o evento RADIAN debe ser configurable desde el super admin, evento por evento. El precio inicial es $100. Si cambia, se actualiza aquí.
 - [I] **Falta alinear con el modelo nuevo:** el sitio oficial y la plataforma siguen con las reglas anteriores (lo no consumido se acumula, módulos sin tarifa publicada). Revisar además el tema con asesoría legal, que estaba pendiente.
 - [I] Diseño del monedero (04/05/2026): una sola moneda interna, los "paquetes" son solo sugerencias por tamaño de empresa y la nómina se cobraría por empleado activo al inicio de cada mes.
-- [I] En la plataforma, la tarifa base sembrada es de $1.000 por documento electrónico y $0 por evento RADIAN, distinta del modelo nuevo ($1.500 y consumo de cupo); se puede ajustar por empresa. El mensaje de saldo insuficiente todavía dice "Nuvicoins".
+- [I] En la plataforma, la tarifa base sembrada es de $1.000 por documento electrónico y $0 por evento RADIAN, distinta del modelo nuevo ($1.500 por documento y $100 por evento); se puede ajustar por empresa. El mensaje de saldo insuficiente todavía dice "Nuvicoins".
 - [I] La recarga mínima ($70.000) y el mínimo mensual ($80.000) son parámetros globales de la plataforma (`billing_settings`); el mínimo mensual y los días de gracia se pueden cambiar por organización. El modo por defecto de las cuentas nuevas es `MINIMUM_MONTHLY`.
 - [I] **Decisiones pendientes del equipo:** precio de compra y escalas, precio de las variantes de 2.000 a más de 4.000, descuentos y referidos, vencimiento, mínimo en el primer mes, medios de pago y regla de cobro y devolución.
 

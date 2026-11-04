@@ -38,7 +38,8 @@
     "red:probar": "bun red/motor/probar.ts",
     "red:interfaz": "bun red/interfaz/servidor.ts",
     "red:validar": "bun red/motor/validar.ts",
-    "red:sin-tema": "bun red/motor/registro.ts"
+    "red:sin-tema": "bun red/motor/registro.ts",
+    "red:mcp": "bun red/motor/mcp.ts"
   },
   "packageManager": "bun@1.3.14"
 }

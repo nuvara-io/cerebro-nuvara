@@ -2,8 +2,7 @@
 // y un modelo local de Ollama redacta la respuesta con las mismas reglas que
 // Claude. Los datos no salen del computador.
 // Se enciende con Ollama corriendo (ollama serve) y el modelo descargado.
-import { buscar, PIDE_PRECIO, puntuar, sinTildes } from "./buscar";
-import { recuperar } from "./recuperar";
+import { buscar, candidatos, PIDE_PRECIO, sinTildes } from "./buscar";
 import { leerIndice, visiblesPara, type Publico } from "./indice";
 import { cargarNodo, fragmentar } from "./nodos";
 import { calculoDePrecio, ESCALAR, FUERA_DE_TEMA, revisarRespuesta, sistemaRespuesta } from "./redaccion";
@@ -71,15 +70,12 @@ async function elegirTema(pregunta: string, publico: Publico) {
 // alguien que no factura" es documento soporte aunque no compartan palabras. Solo
 // vale un id de la lista; si no responde uno, se queda lo que decidió la búsqueda.
 export async function elegirCandidato(pregunta: string, publico: Publico) {
-  const visibles = new Map(visiblesPara(leerIndice(), publico).map((n) => [n.id, n]));
-  const ids = [...new Set([...puntuar(pregunta, publico).slice(0, 4).map((p) => p.id), ...recuperar(pregunta, publico).slice(0, 6).map((r) => r.id)])]
-    .filter((id) => visibles.has(id) && !visibles.get(id)!.transversal)
-    .slice(0, 8);
+  const opciones = candidatos(pregunta, publico);
+  const ids = opciones.map((n) => n.id);
   if (ids.length < 2) return ids[0] ?? null;
-  const lista = ids.map((id) => {
-    const n = visibles.get(id)!;
-    return `- ${id} (${n.procedimiento ? "pasos para hacer algo" : "explicación de un tema"}): ${n.cuando}`;
-  }).join("\n");
+  const lista = opciones
+    .map((n) => `- ${n.id} (${n.procedimiento ? "pasos para hacer algo" : "explicación de un tema"}): ${n.cuando}`)
+    .join("\n");
   const r = await chat(
     [
       {

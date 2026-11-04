@@ -29,7 +29,7 @@ Qué son los eventos RADIAN, cuáles envía núvara, cómo se activan, cómo se 
 
 ## Cómo se activa
 - [P] La factura electrónica de la empresa debe estar **en producción**. Luego te registras en RADIAN en el portal de la DIAN con el mismo software y pulsas **Activar RADIAN** en la Habilitación DIAN. Solo el administrador.
-- [P] Desde ese momento los eventos de tus compras son reales y cada uno se descuenta de tu saldo.
+- [P] Desde ese momento los eventos de tus compras son reales y cada uno cuesta **$100** (1 crédito), que se descuentan de tu saldo.
 
 ## Reglas RADIAN
 - [P] **Cada empresa configura sus reglas.** núvara trae **reglas recomendadas** (acuse cuando llega la compra y recibo cuando apruebas la causación), pero no se aplican solas: tienes que habilitarlas o crear las tuyas.

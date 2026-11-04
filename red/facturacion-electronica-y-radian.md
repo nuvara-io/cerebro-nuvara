@@ -34,7 +34,8 @@ El módulo para emitir documentos electrónicos ante la DIAN desde núvara y reg
 ## Cuánto cuesta
 - [P] La facturación electrónica es un módulo aparte de la causación, con precio propio (detalle en `precios`).
 - [P] **Habilitación: $150.000 al año.** Incluye la firma digital, la configuración inicial ante la DIAN y 20 documentos electrónicos.
-- [P] **Cada documento** (factura, nota, documento soporte o evento RADIAN) se paga con una **bolsa de documentos**, desde $180.000 por 120, o **con créditos**, a $1.500 por documento.
+- [P] **Cada documento** (factura, nota o documento soporte) se paga con una **bolsa de documentos**, desde $180.000 por 120, o **con créditos**, a $1.500 por documento.
+- [P] **Cada evento RADIAN** cuesta **$100** (1 crédito) y se descuenta del saldo.
 - [P] El saldo se reserva al enviar y se descuenta solo si la DIAN acepta; si rechaza, se devuelve. Las pruebas ante la DIAN no se cobran. Reintentar un documento que falló vuelve a cobrar.
 
 ## Dónde está en la plataforma
