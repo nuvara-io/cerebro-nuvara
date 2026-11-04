@@ -2,6 +2,7 @@ import { Composition, Folder, Still } from "remotion";
 import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { DIAPOSITIVAS_NOMINA } from "./brochure/Nomina";
+import { DIAPOSITIVAS_TESORERIA } from "./brochure/Tesoreria";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
@@ -14,7 +15,9 @@ import { IntroScene } from "./scenes/IntroScene";
 import { OutroScene } from "./scenes/OutroScene";
 import { StepScene } from "./scenes/StepScene";
 import { CausarFactura } from "./tutorials/CausarFactura";
+import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
+import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -35,6 +38,22 @@ export const RemotionRoot: React.FC = () => {
           height={1080}
           fps={30}
           durationInFrames={Math.round(DURACION_FLUJO * 30)}
+        />
+        <Composition
+          id="EventosRadian"
+          component={EventosRadian}
+          width={1920}
+          height={1080}
+          fps={30}
+          durationInFrames={Math.round(DURACION_RADIAN * 30)}
+        />
+        <Composition
+          id="FlujoTesoreria"
+          component={FlujoTesoreria}
+          width={1920}
+          height={1080}
+          fps={30}
+          durationInFrames={Math.round(DURACION_TESORERIA * 30)}
         />
       </Folder>
       <Folder name="Redes">
@@ -62,6 +81,11 @@ export const RemotionRoot: React.FC = () => {
       <Folder name="Brochure-facturacion">
         {DIAPOSITIVAS_FE.map((D, i) => (
           <Still key={i} id={`BrochureFE-${String(i + 1).padStart(2, "0")}`} component={D} width={1920} height={1080} />
+        ))}
+      </Folder>
+      <Folder name="Brochure-tesoreria">
+        {DIAPOSITIVAS_TESORERIA.map((D, i) => (
+          <Still key={i} id={`BrochureTesoreria-${String(i + 1).padStart(2, "0")}`} component={D} width={1920} height={1080} />
         ))}
       </Folder>
       <Folder name="Brochure-nomina">
