@@ -18,11 +18,11 @@ fuentes:
 
 ## Antes de empezar
 - [P] Tienes **Tesorería** activa. Sin ella no aparecen Egresos ni Ingresos.
-- [P] Tu programa es **Siigo** o **Contai**: por ahora solo ellos reciben estos comprobantes.
+- [P] El formato de estos comprobantes ya está listo para **Siigo** y **Contai**. Si usas otro programa, lo generamos: escríbele al equipo.
 - [P] Los comprobantes están contabilizados: los borradores no salen.
 
 ## Pasos
-1. [P] Entra a **Operaciones › Exportar** y elige Siigo o Contai.
+1. [P] Entra a **Operaciones › Exportar** y elige tu programa.
 2. [P] En **Documento** elige **Egresos** o **Ingresos**.
 3. [P] En **Mostrar** deja **Solo pendientes**, o **Incluir exportados** si quieres repetir alguno.
 4. [P] Revisa la vista previa y pulsa **Exportar**.
@@ -32,5 +32,5 @@ fuentes:
 
 ## Si algo falla
 - [P] «Hay comprobantes en borrador»: pulsa **Ir a contabilizar** y vuelve.
-- [P] Con otro programa aparece «aún no se pueden exportar»: por ahora solo salen para Siigo o Contai.
+- [P] Con otro programa aparece «aún no se pueden exportar»: escríbele al equipo y generamos su formato.
 - [P] Un lote admite hasta 500 comprobantes.

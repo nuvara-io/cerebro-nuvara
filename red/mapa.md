@@ -174,6 +174,16 @@ Empleados, novedades, liquidación, nómina electrónica, PILA y causación de l
 | `liquidar-prestaciones` | neurona | P | "¿Cómo liquido la prima?", "¿cómo pago las cesantías?" | `nomina` | `flujos/18`, código de `platform` |
 | `liquidar-contrato` | neurona | P | "¿Cómo liquido a un empleado que se retira?", "¿cómo hago la liquidación de un contrato?" | `nomina` | `flujos/18`, código de `platform` |
 
+## Red neuronal: App móvil
+
+Acceso desde el celular para clientes del contador y para el equipo.
+
+| Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
+|---|---|---|---|---|---|
+| `app-movil` | núcleo | P (sin confirmar: C) | "¿Tienen app?", "¿mi cliente puede ver su empresa en el celular?", "¿qué hace la app móvil?" |  | código de `platform`, app ejecutada en iOS |
+| `dar-acceso-app-clientes` | neurona | P | "¿Cómo le doy acceso a la app a mi cliente?" | `app-movil` | código de `platform` |
+| `dar-acceso-app-equipo` | neurona | P | "¿Cómo le doy la app a mi equipo?", "¿cómo creo un operador de caja?" | `app-movil` | código de `platform` |
+
 ## Red neuronal: Tesorería
 
 Bancos, cobros, pagos, pago de nómina, conciliación y cajas.
@@ -305,6 +315,12 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `generar-nomina` | `pagar-nomina` | Pagar el periodo confirmado |
 | `pagar-nomina` | `conciliacion-bancaria` | El lote aparece en el extracto |
 | `manejar-caja` | `crear-cuenta-bancaria` | Fondear la caja desde el banco |
+| `app-movil` | `dar-acceso-app-clientes` | Darle acceso a un cliente del contador |
+| `app-movil` | `dar-acceso-app-equipo` | Darle acceso a operadores y jefes de área |
+| `app-movil` | `manejar-caja` | Las cajas que se trabajan desde el celular |
+| `app-movil` | `registrar-pago-proveedor` | Los pagos que se aprueban en la app |
+| `dar-acceso-app-equipo` | `manejar-caja` | Crear la caja que se le asigna |
+| `modulos-disponibles` | `app-movil` | Qué hace la app móvil |
 | `marketing-y-adquisicion` | `demostracion-en-vivo` | La demostración como etapa de venta |
 | `linea-grafica` | `voz-de-marca` | Cómo se escribe el texto de la pieza |
 | `mensajes-y-afirmaciones` | `precios` | Qué tarifas se pueden publicar |

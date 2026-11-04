@@ -29,6 +29,7 @@ núvara está hecha para quien causa facturas electrónicas en Colombia: firmas 
 ## Si eres una firma contable
 - [P] Manejas todas tus empresas desde una sola cuenta, y cada una conserva su plan de cuentas, sus reglas y sus centros de costo.
 - [P] Invitas a tus auxiliares y les asignas solo las empresas que les tocan.
+- [P] Le das a tus clientes acceso a la app móvil para que vean su empresa, aprueben pagos y te envíen comprobantes.
 - [P] El saldo de créditos es de tu cuenta y se reparte entre las empresas que quieras: no recargas por empresa.
 - [P] Revisas y apruebas por grupos de causaciones iguales, lo que rinde más cuanto más empresas llevas.
 

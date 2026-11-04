@@ -1241,5 +1241,34 @@
     "agregar un comprador",
     "a quien le voy a facturar",
     "datos del comprador"
+  ],
+  "app-movil": [
+    "app movil",
+    "app móvil",
+    "aplicacion movil",
+    "aplicación móvil",
+    "app del celular",
+    "desde el celular",
+    "tienen app",
+    "hay app",
+    "aprobar pagos desde el celular",
+    "face id"
+  ],
+  "dar-acceso-app-clientes": [
+    "acceso a la app a mi cliente",
+    "acceso a mi cliente",
+    "acceso a mis clientes",
+    "app a mi cliente",
+    "nuevo cliente en la app",
+    "que mi cliente vea"
+  ],
+  "dar-acceso-app-equipo": [
+    "acceso a la app a mi equipo",
+    "app a mi equipo",
+    "operador de caja",
+    "crear operador",
+    "jefe de area",
+    "jefe de área",
+    "acceso a la app a un empleado"
   ]
 }

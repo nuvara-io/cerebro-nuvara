@@ -8,6 +8,7 @@ conexiones:
   - facturacion-electronica-y-radian   # cómo funciona la facturación electrónica
   - conciliacion-bancaria              # cómo se concilia el banco
   - tesoreria                          # bancos, cobros, pagos y cajas
+  - app-movil                          # acceso desde el celular
   - exportacion                        # cómo se lleva al programa contable
   - precios                            # precio de un módulo
   - hoja-de-ruta                       # solo I: cuándo sale un módulo en desarrollo
@@ -32,6 +33,7 @@ Qué hace núvara hoy, módulo por módulo. La causación viene con la cuenta; f
 - [P] **Nómina**: empleados, liquidación, nómina electrónica y PILA.
 - [P] **Tesorería** y **Caja**: bancos, cobros, pagos, conciliación bancaria y cajas.
 - [P] **Exportación** al programa contable: por archivo o con envío directo a Siigo Nube.
+- [P] **App móvil**: aprobar pagos, enviar comprobantes y registrar gastos de caja desde el celular.
 - [P] **Informes contables**: balance, estado de resultados y libros.
 
 ## Causación de compras y ventas

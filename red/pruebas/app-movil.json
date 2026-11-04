@@ -1,0 +1,51 @@
+{
+  "descripcion": "App móvil: qué es y cómo se da acceso a clientes del contador y al equipo.",
+  "excluyeSiempre": {
+    "P": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara",
+      "nuvicoin"
+    ],
+    "C": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ],
+    "I": [
+      "\\busted\\b",
+      "Núvara",
+      "Nuvara"
+    ]
+  },
+  "casos": [
+    {
+      "pregunta": "¿Tienen app móvil?",
+      "publico": "P",
+      "nodos": [
+        "app-movil"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo le doy acceso a la app a mi cliente?",
+      "publico": "P",
+      "nodos": [
+        "dar-acceso-app-clientes"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo le doy la app a mi equipo?",
+      "publico": "P",
+      "nodos": [
+        "dar-acceso-app-equipo"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo creo un operador de caja?",
+      "publico": "P",
+      "nodos": [
+        "dar-acceso-app-equipo"
+      ]
+    }
+  ]
+}

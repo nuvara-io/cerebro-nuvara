@@ -20,11 +20,12 @@ Llevar al programa contable lo que causaste en núvara: por archivo para cualqui
 ## Qué se puede exportar
 - [P] **Compras**: facturas de compra, notas crédito y débito, documentos soporte y documentos equivalentes ya causados.
 - [P] **Ventas** causadas.
-- [P] **Egresos e ingresos** de Tesorería, por ahora solo para Siigo y Contai.
+- [P] **Egresos e ingresos** de Tesorería: el formato ya está listo para Siigo y Contai, y para otro programa lo generamos.
 - [P] La nómina todavía no se exporta al programa contable.
 
 ## Las dos vías
 - [P] **Archivo**: núvara arma el Excel con el formato de tu programa y tú lo importas allá. Sirve para todos los programas.
+- [P] Si el formato de tu programa aún no existe, lo generamos: escríbele al equipo.
 - [P] **Envío directo a Siigo Nube**: conectas Siigo una vez y envías el mes desde el Archivo. Solo van compras y notas archivadas; las ventas salen por archivo.
 - [P] **World Office** sale por archivo. La conexión por token de World Office hoy solo lee el catálogo y valida; todavía no envía documentos.
 

@@ -39,7 +39,7 @@ Con qué se conecta núvara: la DIAN y tu correo para traer las facturas, tu pro
 ## Alegra, Contai, Helisa y otros programas
 - [P] Salen **por archivo**: núvara arma el Excel con el formato de tu programa y tú lo importas allá.
 - [P] Formatos disponibles: Alegra (comprobante o facturas de proveedor), Contai, Helisa, Avansys (en CSV), SEDI y una plantilla **Genérico** para cualquier otro programa que importe archivos.
-- [P] Si tu programa no está en la lista, elige **Otro** en **Sistema contable externo** y escribe cuál usas: el equipo evalúa la integración.
+- [P] Si tu programa no está en la lista, elige **Otro** en **Sistema contable externo** y escribe cuál usas: el equipo genera el formato.
 - [P] Cómo se hace: `exportar-archivo`.
 
 ## DIAN y correo

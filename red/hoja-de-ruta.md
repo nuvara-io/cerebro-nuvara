@@ -53,7 +53,7 @@ Lo que está en desarrollo, en pruebas o prometido y todavía no está construid
 ## Ideas sin fecha de entrega
 - [I] Etapa de **cruce de cuentas** después de causar, para asociar cada factura con su caja o banco. El bot de Telegram para ese reporte se descontinuó (16/06).
 - [I] Cajas menores con foto del comprobante por Telegram o WhatsApp: estaba en pruebas el 25/08; sin confirmar si salió con el módulo Caja.
-- [I] Asistente conversacional por voz o chat, aplicación móvil, traducción de idiomas asiáticos y legalización masiva de gastos.
+- [I] Asistente conversacional por voz o chat, traducción de idiomas asiáticos y legalización masiva de gastos.
 - [I] Control de inventario de restaurantes por recetas y sector público con registro presupuestal como llave.
 - [I] Calendario tributario con alertas (el calendario por empresa ya existe) y monitoreo de errores en el panel del superadministrador.
 - [I] Paquetes por módulo y cambio de modelo de cobro: en discusión, ver `precios`.

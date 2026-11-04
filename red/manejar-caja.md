@@ -22,7 +22,7 @@ fuentes:
 
 ## Pasos
 1. [P] Entra a **Tesorería › Bancos y cajas › Cajas** y crea la caja: nombre, código, centro de costo, **custodio**, si opera con efectivo o con cuenta bancaria, **cuenta contable**, cada cuánto se liquida y se hace el arqueo, y el tope de descuadre.
-2. [P] Si alguien la maneja desde el celular, agrégalo en **Operadores**.
+2. [P] Si alguien la maneja desde la app móvil, agrégalo en **Operadores** y asígnale la caja.
 3. [P] Para darle dinero, usa **Fondear desde el banco**.
 4. [P] Para contar el efectivo, usa **Registrar arqueo**.
 5. [P] Para recuperar lo gastado en una caja menor, usa **Reponer caja**.
