@@ -21,10 +21,11 @@ export const t = (fontSize: number, extra: React.CSSProperties = {}): React.CSSP
 });
 
 // Diapositiva de fondo gris con wordmark arriba a la izquierda y número abajo
-export const Slide: React.FC<{ readonly n: number; readonly children: React.ReactNode; readonly fondo?: "gris" | "azul" }> = ({
+export const Slide: React.FC<{ readonly n: number; readonly children: React.ReactNode; readonly fondo?: "gris" | "azul"; readonly total?: number }> = ({
   n,
   children,
   fondo = "gris",
+  total = TOTAL,
 }) => (
   <AbsoluteFill style={{ background: fondo === "azul" ? color.accent : undefined, overflow: "hidden" }}>
     {fondo === "gris" ? <Backdrop /> : null}
@@ -39,7 +40,7 @@ export const Slide: React.FC<{ readonly n: number; readonly children: React.Reac
         fontVariantNumeric: "tabular-nums",
       })}
     >
-      {String(n).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
+      {String(n).padStart(2, "0")} / {String(total).padStart(2, "0")}
     </p>
     <p
       style={t(22, {

@@ -1,5 +1,6 @@
 import { Composition, Folder, Still } from "remotion";
 import { DIAPOSITIVAS } from "./brochure/Diapositivas";
+import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
@@ -55,6 +56,11 @@ export const RemotionRoot: React.FC = () => {
       <Folder name="Brochure">
         {DIAPOSITIVAS.map((D, i) => (
           <Still key={i} id={`Brochure-${String(i + 1).padStart(2, "0")}`} component={D} width={1920} height={1080} />
+        ))}
+      </Folder>
+      <Folder name="Brochure-facturacion">
+        {DIAPOSITIVAS_FE.map((D, i) => (
+          <Still key={i} id={`BrochureFE-${String(i + 1).padStart(2, "0")}`} component={D} width={1920} height={1080} />
         ))}
       </Folder>
       <Folder name="Escenas">
