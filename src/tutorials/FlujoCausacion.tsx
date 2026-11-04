@@ -47,7 +47,7 @@ type Grabacion = {
 
 // Tres grabaciones de la cuenta de prueba (scratchpad grab/video, grab/extra y grab/extra2).
 // Ninguna causa, aprueba, guarda ni exporta: solo abren, seleccionan y pasan el mouse.
-const GRABACIONES: Record<"flujo" | "extra" | "agrupada", Grabacion> = {
+export const GRABACIONES: Record<"flujo" | "extra" | "agrupada", Grabacion> = {
   // Bandeja, detalle de la factura, proveedor y Aprobar
   flujo: {
     src: "recordings/causacion-flujo.mp4",

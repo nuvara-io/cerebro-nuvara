@@ -20,13 +20,14 @@ type Props = {
   readonly cursor: readonly Punto[];
   // Instantes de clic (halo)
   readonly clics: readonly number[];
+  // Dónde va el marco; por defecto, el de la línea de tutoriales
+  readonly marco?: { readonly left: number; readonly top: number; readonly ancho: number; readonly alto: number };
 };
 
 const ANCHO = 1920;
 const ALTO = 1080;
 // La grabación entra al marco de la línea de tutoriales (1536 px de ancho)
-const ESCALA = space.frameWidth / ANCHO;
-const ALTO_MARCO = 1080 - space.frameTop - space.s48;
+const MARCO = { left: space.marginX, top: space.frameTop, ancho: space.frameWidth, alto: 1080 - space.frameTop - space.s48 };
 const suave = Easing.bezier(0.45, 0, 0.2, 1);
 
 const tramo = <T extends { t: number }>(lista: readonly T[], t: number) => {
@@ -56,17 +57,17 @@ const cursorEn = (puntos: readonly Punto[], t: number) => {
 };
 
 // La plataforma real dentro del marco, con zoom de cámara, cursor y halo de clic.
-export const PantallaReal: React.FC<Props> = ({ recording, desde, hasta, velocidad = 1, camara, cursor, clics }) => {
+export const PantallaReal: React.FC<Props> = ({ recording, desde, hasta, velocidad = 1, camara, cursor, clics, marco = MARCO }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = desde + (frame / fps) * velocidad;
   const c = camaraEn(camara, t);
 
   // Escala total y desplazamiento para que (c.x, c.y) quede al centro sin mostrar bordes
-  const s = ESCALA * c.zoom;
-  const ancho = space.frameWidth;
+  const { ancho, alto } = marco;
+  const s = (ancho / ANCHO) * c.zoom;
   const dx = Math.min(0, Math.max(ancho - ANCHO * s, ancho / 2 - c.x * s));
-  const dy = Math.min(0, Math.max(ALTO_MARCO - ALTO * s, ALTO_MARCO / 2 - c.y * s));
+  const dy = Math.min(0, Math.max(alto - ALTO * s, alto / 2 - c.y * s));
 
   const m = cursorEn(cursor, t);
   const ultimoClic = [...clics].reverse().find((k) => k <= t);
@@ -76,10 +77,10 @@ export const PantallaReal: React.FC<Props> = ({ recording, desde, hasta, velocid
     <div
       style={{
         position: "absolute",
-        left: space.marginX,
-        top: space.frameTop,
+        left: marco.left,
+        top: marco.top,
         width: ancho,
-        height: ALTO_MARCO,
+        height: alto,
         borderRadius: radius.frame,
         boxShadow: shadow.frame,
         overflow: "hidden",

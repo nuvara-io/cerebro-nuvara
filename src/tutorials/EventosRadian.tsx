@@ -42,7 +42,7 @@ const DURACION_VOZ: Record<string, number> = {
 };
 
 const GRABACION = "recordings/radian-usuario.mp4";
-const CURSOR: Punto[] = [
+export const CURSOR: Punto[] = [
   { t: 6.4, x: 960, y: 540 },
   { t: 6.9, x: 620, y: 360 },
   { t: 9.4, x: 1812, y: 436 },
@@ -77,7 +77,7 @@ const CURSOR: Punto[] = [
   { t: 191.5, x: 1851, y: 216 },
   { t: 193.2, x: 1500, y: 1014 },
 ];
-const CLICS = [
+export const CLICS = [
   9.7, 12.9, 32.0, 34.4, 36.5, 38.5, 40.8, 54.2, 60.4, 62.5, 66.2, 68.2, 83.6,
   88.1, 90.1, 93.3, 95.2, 98.5, 101.1, 103.2, 105.8, 174.4, 177.2, 191.8,
 ];

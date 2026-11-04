@@ -18,6 +18,7 @@ import { CausarFactura } from "./tutorials/CausarFactura";
 import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
+import { DURACION_REEL_APP, DURACION_REEL_CAUSACION, DURACION_REEL_RADIAN, ReelApp, ReelCausacion, ReelRadian } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -55,6 +56,11 @@ export const RemotionRoot: React.FC = () => {
           fps={30}
           durationInFrames={Math.round(DURACION_TESORERIA * 30)}
         />
+      </Folder>
+      <Folder name="Reels">
+        <Composition id="ReelCausacion" component={ReelCausacion} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CAUSACION * 30)} />
+        <Composition id="ReelRadian" component={ReelRadian} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN * 30)} />
+        <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
