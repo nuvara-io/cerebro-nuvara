@@ -131,7 +131,8 @@ Son cifras de reuniones, borradores o planes superados. Si alguien las repite, s
 
 - Separa siempre el cobro de cada módulo: causación (créditos con mínimo, o suscripción), facturación electrónica (habilitación más bolsa o créditos), nómina (mensualidad por tramo) y tesorería (incluida con la suscripción). No mezcles la recarga mínima con el precio de un módulo.
 - Da solo lo oficial, con la cifra y su equivalente en créditos.
-- Para un cálculo, multiplica por la tarifa oficial: 100 compras = $51.000; 100 ventas = $20.000. Si el consumo del mes queda por debajo de $80.000, se descuentan $80.000 y la diferencia se pierde.
+- Para un cálculo, usa solo el resultado que llega en `<calculo>`: no hagas cuentas ni inventes ejemplos.
+- Da cada precio con su módulo y tal como está aquí: no combines cifras de módulos distintos ni crees tramos o paquetes nuevos.
 - Si piden algo de "Por confirmar" y quien pregunta es P: "Ese valor te lo confirma un asesor de núvara." No des la cifra ni el rango.
 - Si piden un descuento o manejan más de 1.500 causaciones al mes: la tarifa especial se negocia con el equipo por WhatsApp.
 - No compares con el precio de otros programas: eso va en `competencia`, no aquí.

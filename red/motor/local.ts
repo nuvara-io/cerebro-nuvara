@@ -2,10 +2,11 @@
 // y un modelo local de Ollama redacta la respuesta con las mismas reglas que
 // Claude. Los datos no salen del computador.
 // Se enciende con Ollama corriendo (ollama serve) y el modelo descargado.
-import { buscar } from "./buscar";
+import { buscar, PIDE_PRECIO, puntuar, sinTildes } from "./buscar";
+import { recuperar } from "./recuperar";
 import { leerIndice, visiblesPara, type Publico } from "./indice";
 import { cargarNodo, fragmentar } from "./nodos";
-import { calculoDePrecio, ESCALAR, FUERA_DE_TEMA, sistemaRespuesta } from "./redaccion";
+import { calculoDePrecio, ESCALAR, FUERA_DE_TEMA, revisarRespuesta, sistemaRespuesta } from "./redaccion";
 
 export const OLLAMA = process.env.OLLAMA_URL ?? "http://localhost:11434";
 export const MODELO_LOCAL = process.env.OLLAMA_MODEL ?? "qwen2.5:7b";
@@ -66,6 +67,37 @@ async function elegirTema(pregunta: string, publico: Publico) {
   return { nodo, uso: { entrada: r.entrada, salida: r.salida } };
 }
 
+// La búsqueda propone candidatos y el modelo elige por significado: "le compro a
+// alguien que no factura" es documento soporte aunque no compartan palabras. Solo
+// vale un id de la lista; si no responde uno, se queda lo que decidió la búsqueda.
+export async function elegirCandidato(pregunta: string, publico: Publico) {
+  const visibles = new Map(visiblesPara(leerIndice(), publico).map((n) => [n.id, n]));
+  const ids = [...new Set([...puntuar(pregunta, publico).slice(0, 4).map((p) => p.id), ...recuperar(pregunta, publico).slice(0, 6).map((r) => r.id)])]
+    .filter((id) => visibles.has(id) && !visibles.get(id)!.transversal)
+    .slice(0, 8);
+  if (ids.length < 2) return ids[0] ?? null;
+  const lista = ids.map((id) => {
+    const n = visibles.get(id)!;
+    return `- ${id} (${n.procedimiento ? "pasos para hacer algo" : "explicación de un tema"}): ${n.cuando}`;
+  }).join("\n");
+  const r = await chat(
+    [
+      {
+        role: "system",
+        content: `Eres el enrutador de núvara, un software contable colombiano. Eliges qué tema responde mejor una pregunta. No respondes la pregunta.\nPiensa qué quiere lograr la persona, no solo qué palabras usa. Si quiere hacer algo, prefiere "pasos para hacer algo"; si pregunta qué es, para qué sirve o si existe, prefiere "explicación de un tema".\nEjemplos: anular o corregir una factura emitida es una nota crédito. Comprarle a quien no factura es documento soporte. Borrar una factura sin querer es restaurarla.\nDevuelve solo JSON: {"tema": "<id>"} con un id de la lista.\n\nTemas:\n${lista}`,
+      },
+      { role: "user", content: pregunta },
+    ],
+    "json",
+  );
+  try {
+    const tema = (JSON.parse(r.texto) as { tema?: string }).tema;
+    return tema && ids.includes(tema) ? tema : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function consultarLocal(pregunta: string, publico: Publico, contexto: string[] = []) {
   const b = buscar(pregunta, publico, contexto);
   const ruta = { nodos: b.nodos, conexion: b.conexion, aclarar: b.aclarar, porModelo: false };
@@ -74,9 +106,21 @@ export async function consultarLocal(pregunta: string, publico: Publico, context
   // Estas no llaman al modelo para redactar, para que no invente: fuera de
   // núvara o empate entre dos temas (se pregunta cuál).
   if (b.fueraDeTema) return { ...base, respuesta: FUERA_DE_TEMA, uso };
-  if (b.aclarar) return { ...base, respuesta: b.aclarar, uso };
 
+  // El modelo elige el tema por significado. Los precios y los seguimientos de
+  // una conversación se quedan con lo que decidió el enrutador.
   let resultado = b.resultado;
+  if (!b.porContexto && !PIDE_PRECIO.test(sinTildes(pregunta))) {
+    const elegido = await elegirCandidato(pregunta, publico).catch(() => null);
+    const nodo = visiblesPara(leerIndice(), publico).find((n) => n.id === elegido);
+    const texto = nodo ? cargarNodo(nodo.id, publico) : null;
+    if (nodo && texto && !(b.nodos.length === 1 && b.nodos[0] === nodo.id)) {
+      resultado = `<nodo id="${nodo.id}">\n${nodo.procedimiento ? texto : fragmentar(texto, pregunta).texto}\n</nodo>`;
+      Object.assign(ruta, { nodos: [nodo.id], conexion: null, aclarar: null, porModelo: true });
+    }
+  }
+  if (ruta.aclarar) return { ...base, respuesta: ruta.aclarar, uso };
+
   if (!b.nodos.length) {
     const { nodo, uso: u } = await elegirTema(pregunta, publico);
     [uso.entrada, uso.salida] = [u.entrada, u.salida];
@@ -97,5 +141,6 @@ export async function consultarLocal(pregunta: string, publico: Publico, context
   ]);
   uso.entrada += r.entrada;
   uso.salida += r.salida;
-  return { ...base, respuesta: r.texto, uso };
+  const { respuesta, inventadas } = revisarRespuesta(r.texto, resultado, calculo);
+  return { ...base, respuesta, inventadas, uso };
 }

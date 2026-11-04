@@ -4,6 +4,7 @@ import { leerTexto } from "./archivos";
 import { join } from "node:path";
 import { leerIndice, visiblesPara, RAIZ_RED, RANGO, type Indice, type Publico } from "./indice";
 import { cargarNodo, fragmentar, leerProcedimiento, type Procedimiento } from "./nodos";
+import { recuperar, terminos } from "./recuperar";
 import { palabras } from "./texto";
 
 export { palabras };
@@ -103,6 +104,11 @@ export function puntuar(pregunta: string, publico: Publico): Puntaje[] {
 // palabras clave o una frase. Con una sola palabra suelta no basta.
 const PUNTOS_PARA_CONECTAR = 4;
 
+// Puntaje BM25 mínimo para tomar en serio la búsqueda por contenido.
+const MINIMO_CONTENIDO = 1;
+export const PIDE_PRECIO = /\b(cuanto|cuantos|precio|precios|vale|valen|cuesta|cuestan|cobran|tarifa|tarifas)\b/;
+export const sinTildes = (t: string) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 // "¿Cómo causo…?", "¿dónde se…?", "pasos para…" piden hacer algo; "¿cómo
 // funciona…?" o "¿qué es…?" piden una explicación y van al tema.
 const PIDE_HACER = /\b(como|donde|pasos?|paso a paso|que hago|que debo hacer|quiero|necesito|se hace|hago)\b/;
@@ -168,11 +174,36 @@ function esSeguimiento(pregunta: string) {
 export function buscar(pregunta: string, publico: Publico, contexto: string[] = []): Busqueda {
   const indice = leerIndice();
   const { conexiones } = indice;
-  const hacer = pideHacer(pregunta);
+  let hacer = pideHacer(pregunta);
   // Si la pregunta no pide hacer algo, un procedimiento pesa un tercio: así
   // "¿cuánto cuesta causar una factura?" va a precios y no a los pasos.
   const procedimientos = new Set(indice.nodos.filter((n) => n.procedimiento).map((n) => n.id));
   const crudos = puntuar(pregunta, publico);
+  // Las claves deciden. El contenido de los nodos solo entra en dos casos seguros:
+  // ninguna clave coincide, o el tema ya está claro y la pregunta pide hacer algo,
+  // y baja a la neurona de ese tema ("¿cómo habilito facturación?"). Sin tema de
+  // núvara no entra ("¿me cuentas un chiste?" comparte "cuent" con medio cerebro).
+  const delContenido = crudos.length || esDeNuvara(pregunta) ? recuperar(pregunta, publico) : [];
+  const propuesto = delContenido[0];
+  const ganadorClaves = crudos.reduce<Puntaje | null>((m, p) => (!m || p.puntos > m.puntos ? p : m), null);
+  if (propuesto && propuesto.puntos >= MINIMO_CONTENIDO && !PIDE_PRECIO.test(sinTildes(pregunta))) {
+    if (!ganadorClaves) {
+      crudos.push({ id: propuesto.id, puntos: 2, claves: ["contenido"] });
+      if (procedimientos.has(propuesto.id) && !PIDE_EXPLICAR.test(sinTildes(pregunta))) hacer = true;
+    } else if (hacer && !procedimientos.has(ganadorClaves.id)) {
+      // Su nombre debe compartir con la pregunta una palabra que no sea del tema:
+      // "habilito" apunta a solicitar; "pasos para causar" no elige ninguna.
+      const buscados = terminos(pregunta);
+      const delTema = terminos(ganadorClaves.id.replace(/-/g, " "));
+      const neurona = delContenido.find(
+        (h) =>
+          indice.nodos.find((n) => n.id === h.id)?.tema === ganadorClaves.id &&
+          terminos(h.id.replace(/-/g, " ")).some((t) => buscados.includes(t) && !delTema.includes(t)),
+      );
+      if (neurona && !crudos.some((p) => procedimientos.has(p.id)))
+        crudos.push({ id: neurona.id, puntos: ganadorClaves.puntos, claves: ["contenido"] });
+    }
+  }
   // "¿Tienen acuse de facturas?" pregunta si existe algo que nombra una
   // neurona: su núcleo recibe los puntos completos de la neurona, para que la
   // palabra genérica de módulos disponibles ("tienen") no le gane.

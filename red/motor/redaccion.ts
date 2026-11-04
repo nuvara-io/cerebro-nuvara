@@ -35,6 +35,39 @@ Reglas:
 ${voz}`;
 }
 
+// Control de cifras: el prompt no basta para que un modelo no invente. Cada
+// número de la respuesta tiene que estar en los nodos consultados o en el cálculo.
+const CIFRA = /\d[\d.,]*\d|\d/g;
+const limpiarCifra = (c: string) => c.replace(/[.,]/g, "");
+export function cifrasInventadas(respuesta: string, fuente: string) {
+  const conocidas = new Set((fuente.match(CIFRA) ?? []).map(limpiarCifra));
+  // Los números de una lista ("1. Entra a…") no son datos.
+  const sinListas = respuesta.replace(/^\s*\d+[.)]\s/gm, "");
+  return [...new Set((sinListas.match(CIFRA) ?? []).map(limpiarCifra))].filter((c) => !conocidas.has(c));
+}
+
+// Lo que dicen los nodos, sin redactar: se usa cuando la respuesta no pasa el control.
+export function textoOficial(resultado: string) {
+  return resultado
+    .replace(/<\/?nodo[^>]*>/g, "")
+    .split(/\n(?=## )/)
+    .filter((s) => !/^## (Cómo responder|Si no está aquí)/.test(s.trim()))
+    .join("\n")
+    .replace(/^# .+$/gm, "")
+    .replace(/^## (.+)$/gm, "**$1**")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+// Revisa lo redactado: sin cifras inventadas y sin el "te lo confirma un asesor"
+// pegado al final de una respuesta que sí tenía contenido.
+export function revisarRespuesta(respuesta: string, resultado: string, calculo: string | null) {
+  const inventadas = cifrasInventadas(respuesta, `${resultado} ${calculo ?? ""}`);
+  if (inventadas.length) return { respuesta: textoOficial(resultado), inventadas };
+  const limpia = respuesta.endsWith(ESCALAR) && respuesta !== ESCALAR ? respuesta.slice(0, -ESCALAR.length).trim() : respuesta;
+  return { respuesta: limpia, inventadas };
+}
+
 // Las cuentas de precio no las hace el modelo: se calculan aquí con las tarifas
 // oficiales de red/precios.md y se le pasan hechas. "300 facturas de compra"
 // → 300 × $510 = $153.000 (1.530 créditos).

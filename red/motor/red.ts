@@ -5,7 +5,7 @@ import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { z } from "zod";
 import { leerIndice, visiblesPara, type Indice, type Publico } from "./indice";
 import { cargarNodo, fragmentar } from "./nodos";
-import { calculoDePrecio, ESCALAR, sistemaRespuesta } from "./redaccion";
+import { calculoDePrecio, ESCALAR, revisarRespuesta, sistemaRespuesta } from "./redaccion";
 
 export { ESCALAR };
 
@@ -162,13 +162,14 @@ export async function consultar(
   uso.entrada += r.usage.input_tokens;
   uso.salida += r.usage.output_tokens;
 
-  const respuesta =
+  const redactada =
     r.stop_reason === "refusal"
       ? ESCALAR
       : r.content
           .flatMap((b) => (b.type === "text" ? [b.text] : []))
           .join("")
           .trim();
+  const { respuesta, inventadas } = revisarRespuesta(redactada, nodos, calculo);
 
-  return { ...base, cargados, sinEscribir, respuesta };
+  return { ...base, cargados, sinEscribir, respuesta, inventadas };
 }

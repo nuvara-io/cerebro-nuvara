@@ -995,7 +995,7 @@
 
   function cuerpoHtml(m) {
     const b = m.busqueda;
-    if (m.ia) return `<p class="redactada">${escapar(m.ia.respuesta)}</p>`;
+    if (m.ia) return m.ia.respuesta.split(/\n{2,}/).map((b) => `<p class="redactada">${b.split("\n").map(enLinea).join("<br>")}</p>`).join("");
     if (b.procedimiento) return procedimientoHtml(b.procedimiento);
     let html = "";
     for (const id of b.sinEscribir)
@@ -1350,6 +1350,8 @@
     estado.nodos = s.nodos; estado.conexiones = s.conexiones; estado.ejemplos = s.ejemplos; estado.ia = s.ia; estado.redes = s.redes; estado.titulos = s.titulos || {};
     pintarRedes();
     $("modo-ia").disabled = !s.ia;
+    // Con modelo disponible se empieza redactando: es el modo que entiende el lenguaje.
+    if (s.ia) { estado.modo = "ia"; segmentos("modos", "ia"); }
     $("estado-ia").classList.toggle("on", s.ia);
     $("estado-ia").querySelector("span").textContent = s.ia ? `Redacta ${s.motorIa}` : "Sin modelo para redactar";
     cerebro.iniciar(s.nodos, s.conexiones, s.redes);

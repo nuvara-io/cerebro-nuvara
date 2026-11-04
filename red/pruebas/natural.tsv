@@ -1,0 +1,87 @@
+# Preguntas en lenguaje natural: sin tildes, con otras palabras, como las escribe un usuario.
+# grupo <tab> pregunta <tab> nodos aceptados (coma). "ajuste" se usa para mejorar; "reserva" solo para medir.
+ajuste	como habilito facturacion electronica?	solicitar-facturacion-electronica,habilitar-ante-la-dian
+ajuste	quiero empezar a facturar electronicamente con ustedes	solicitar-facturacion-electronica,habilitar-ante-la-dian,facturacion-electronica-y-radian
+reserva	que necesito para sacar facturas electronicas?	solicitar-facturacion-electronica,habilitar-ante-la-dian,configuracion-facturacion-electronica,facturacion-electronica-y-radian
+ajuste	como hago una factura de venta	emitir-factura-de-venta
+reserva	necesito generar una factura a un cliente	emitir-factura-de-venta
+ajuste	me equivoque en una factura ya emitida como la corrijo	emitir-nota-credito-o-debito
+reserva	como anulo una factura que ya envie a la dian	emitir-nota-credito-o-debito
+ajuste	donde pongo el numero de resolucion de la dian	configurar-resoluciones
+reserva	se me vencio la resolucion de facturacion que hago	configurar-resoluciones
+ajuste	se me vencio el certificado digital	renovar-certificado
+reserva	como renuevo la firma	renovar-certificado
+ajuste	puedo poner mi logo en la factura?	personalizar-pdf-y-notas
+reserva	quiero cambiar como se ve el pdf de la factura	personalizar-pdf-y-notas
+ajuste	la dian rechazo mi factura que hago	consultar-y-reintentar-documentos
+reserva	una factura quedo en error como la reenvio	consultar-y-reintentar-documentos
+ajuste	como le compro a alguien que no factura	emitir-documento-soporte,documento-soporte-electronico
+reserva	tengo un proveedor no obligado a facturar	emitir-documento-soporte,documento-soporte-electronico
+ajuste	como acepto una factura en radian	registrar-eventos-radian,eventos-radian
+reserva	como hago el acuse de recibo de una factura	registrar-eventos-radian,eventos-radian
+ajuste	como prendo radian	activar-radian
+reserva	quiero automatizar los eventos de radian	configurar-reglas-radian
+ajuste	agregar un cliente nuevo para facturarle	crear-comprador
+reserva	donde creo los productos que vendo	crear-producto-para-facturar
+ajuste	como subo mis facturas	importar-facturas
+reserva	como traigo las facturas de la dian	conectar-extension-dian,conectar-dian,importar-facturas
+ajuste	no me llegan las facturas del correo	conectar-correo
+reserva	como conecto mi correo electronico	conectar-correo
+ajuste	instalar la extension de chrome	conectar-extension-dian
+reserva	el navegador me pide un complemento para la dian	conectar-extension-dian
+ajuste	como causo una factura	causar-facturas
+reserva	quiero causar una compra	causar-facturas
+ajuste	causar todas las facturas del mes de una vez	causar-por-lote
+reserva	se pueden causar muchas facturas al tiempo?	causar-por-lote
+ajuste	como apruebo varias facturas juntas	aprobar-en-bloque,aprobacion-en-bloque
+reserva	para que sirve la vista agrupada	aprobacion-en-bloque,aprobar-en-bloque
+ajuste	la cuenta quedo mal en el asiento como la cambio	revisar-causacion,correcciones-y-aprendizaje
+reserva	el asiento no cuadra	revisar-causacion,causar-y-revisar
+ajuste	como le digo que siempre use una cuenta para un proveedor	crear-regla-fija,configurar-proveedor
+reserva	quiero que un proveedor siempre vaya a la misma cuenta	crear-regla-fija,configurar-proveedor
+ajuste	como configuro la reteica de un municipio	configurar-reteica
+reserva	donde cambio el porcentaje de retencion de un proveedor	configurar-proveedor,proveedores-y-retenciones
+ajuste	borre una factura sin querer	restaurar-factura-eliminada
+reserva	como recupero una factura de la papelera	restaurar-factura-eliminada
+ajuste	como se cuales facturas me faltan frente a la dian	comparar-con-la-dian
+reserva	quiero verificar que tengo todas las facturas del mes	comparar-con-la-dian
+ajuste	como separo por centro de costo	asignar-centro-de-costo
+reserva	donde asigno el centro de costos a una factura	asignar-centro-de-costo
+ajuste	como paso las facturas a siigo	enviar-a-siigo,exportar-archivo
+reserva	como conecto siigo nube	conectar-siigo
+ajuste	como saco el archivo para world office	exportar-world-office
+reserva	necesito bajar el plano para mi software contable	exportar-archivo
+ajuste	mi programa contable no aparece en la lista	exportacion,integraciones,exportar-archivo
+reserva	con que programas contables trabajan	integraciones,exportacion
+ajuste	como meto un empleado	crear-empleado
+reserva	agregar trabajador a la nomina	crear-empleado
+ajuste	como liquido la nomina del mes	generar-nomina
+reserva	quiero sacar la nomina de esta quincena	generar-nomina
+ajuste	como registro una incapacidad	registrar-novedades
+reserva	un empleado tuvo horas extra donde las pongo	registrar-novedades
+ajuste	como saco la pila	generar-planilla-pila
+reserva	generar planilla de seguridad social	generar-planilla-pila
+ajuste	liquidar a un empleado que se retiro	liquidar-contrato
+reserva	como pago la prima de servicios	liquidar-prestaciones
+ajuste	como envio la nomina electronica a la dian	emitir-nomina-electronica
+reserva	como activo el modulo de nomina	activar-nomina
+ajuste	como concilio el banco	conciliacion-bancaria
+reserva	subir el extracto bancario	conciliacion-bancaria
+ajuste	como registro un pago a un proveedor	registrar-pago-proveedor
+reserva	me pagaron una factura donde lo registro	registrar-cobro
+ajuste	como agrego una cuenta bancaria	crear-cuenta-bancaria
+reserva	como manejo la caja menor	manejar-caja
+ajuste	cuanto vale nuvara	precios
+reserva	que precio tiene causar una factura de compra	precios
+ajuste	cuanto cuesta la nomina para 12 empleados	nomina,precios
+reserva	cuanto valen las bolsas de facturacion	facturacion-electronica-y-radian,precios
+ajuste	como compro creditos	creditos-y-recargas
+reserva	se me acabo el saldo como recargo	creditos-y-recargas
+ajuste	como invito a mi auxiliar contable	invitar-miembro
+reserva	quiero darle acceso a otra persona de la oficina	invitar-miembro,usuarios-roles-y-empresas
+ajuste	puedo tener varias empresas en la misma cuenta	usuarios-roles-y-empresas
+reserva	manejo 20 clientes me sirve	para-quien,usuarios-roles-y-empresas
+ajuste	mis datos estan seguros?	seguridad-y-soporte
+reserva	con quien hablo si tengo un problema	seguridad-y-soporte
+ajuste	que es nuvara	que-es-nuvara
+reserva	para que sirve esta plataforma	que-es-nuvara
