@@ -56,7 +56,7 @@ El plan de marketing y pauta de núvara según lo que está pasando en Colombia 
 - [C] **Conciliación fiscal con la DIAN:** "¿te falta alguna factura?" nadie lo tiene como bandera, y engancha con la fiscalización y la exógena.
 - [C] **Firmas con clientes en varios programas:** núvara exporta a Siigo, World Office, Alegra, Helisa, Contai y otros desde un solo panel; la causación de Siigo solo sirve dentro de Siigo Nube.
 - [C] **Compras y ventas**, con precio distinto: la competencia habla solo de compras.
-- [C] **Precio por causación sin plan forzado:** $510 la compra contra $750–900 de otra solución por unidad. El mínimo mensual ($80.000) se comunica como consumo que se acumula, no como mensualidad.
+- [C] **Precio por causación sin plan forzado:** $510 la compra contra $750–900 de otra solución por unidad. El mínimo mensual ($80.000) se comunica como consumo mínimo, no como mensualidad.
 - [C] **Segmentos que nadie ataca:** empresas con centros de costo, firmas con muchos NIT, World Office con bodegas. Mejor que copiar el formato "sin digitar en [programa]", que ya ocupa otro.
 - [C] **Gremio:** no se encontraron alianzas de los competidores directos con el INCP, Actualícese o universidades.
 

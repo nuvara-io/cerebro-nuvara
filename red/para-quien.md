@@ -49,7 +49,7 @@ núvara está hecha para quien causa facturas electrónicas en Colombia: firmas 
 - [C] **Firma que viene de otra solución:** soporte lento, captchas de la DIAN e IVA mal calculado. Muéstrale la descarga por extensión, el cálculo por bases y el archivo para su programa contable.
 - [C] **Empresa con centros de costo, sedes o bodegas:** asignar cada compra a mano. Muéstrale las reglas por centro de costo y la exportación con bodega.
 - [C] **Empresa o constructora con mucha caja menor y atraso:** muchas facturas pequeñas y cuentas variadas. Muéstrale la causación por lote y la agrupación por proveedor.
-- [C] **Contador con poco volumen:** duda del mínimo mensual frente a sus facturas. Haz la cuenta con él (ver `precios`) y muéstrale que lo no consumido se acumula.
+- [C] **Contador con poco volumen:** duda del mínimo mensual frente a sus facturas. Haz la cuenta con él (ver `precios`) y explícale que solo aplica si usa únicamente causación.
 - [C] **Facturas que no llegan al correo:** conectar DIAN y correo y comparar con la DIAN muestra qué falta y qué proveedor corregir.
 
 ## Lo que mueve a cada perfil

@@ -435,7 +435,7 @@ export const Precios: React.FC = () => (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
         <Precio valor="$510" que="Factura de compra" nota="5,1 créditos por causación." destacado />
         <Precio valor="$200" que="Factura de venta" nota="2 créditos por causación." />
-        <Precio valor="$80.000" que="Mínimo mensual" nota="Lo que no consumes se acumula para el mes siguiente." />
+        <Precio valor="$80.000" que="Mínimo mensual" nota="Solo si usas únicamente causación. Lo no consumido del mínimo se pierde." />
         <Precio valor="$70.000" que="Recarga mínima" nota="Recargas créditos y los usas cuando causas." />
       </div>
       <div style={{ display: "grid", gap: 14 }}>
@@ -443,7 +443,7 @@ export const Precios: React.FC = () => (
           <Emphasis text="1 crédito = $100. Se cobra *al causar*, una sola vez por factura: descargar no cuesta y recausar no vuelve a cobrar." />
         </p>
         <p style={t(26)}>
-          <Emphasis text="¿Manejas un flujo mayor? Desde *1.500 causaciones al mes* puedes optar por una *cotización mensual*. Facturación electrónica, nómina y tesorería *se cotizan aparte*." />
+          <Emphasis text="¿Manejas un flujo mayor? Desde *1.500 causaciones al mes* puedes optar por una *cotización mensual*. La facturación electrónica y la nómina tienen *precio propio*." />
         </p>
       </div>
     </div>

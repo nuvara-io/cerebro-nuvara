@@ -28,7 +28,7 @@ Graba cada frase en un archivo aparte, en el mismo lugar y con el mismo micrófo
 9. Cuando corriges una cuenta, núvara aprende y la próxima factura de ese proveedor ya llega bien.
 10. Exportas a Siigo, World Office, Alegra, Helisa o Contai con un archivo, o con envío directo a Siigo Nube.
 11. Pagas lo que causas: quinientos diez pesos por factura de compra y doscientos por factura de venta.
-12. El mínimo mensual es de ochenta mil pesos, y lo que no consumes se acumula para el mes siguiente.
+12. El mínimo mensual es de ochenta mil pesos, y solo aplica si usas únicamente causación.
 13. Todas tus empresas en una sola cuenta, cada una con su información separada.
 14. Compara tus facturas con el listado de la DIAN y mira cuáles te faltan antes de presentar el IVA.
 15. núvara también emite factura electrónica, documento soporte y eventos RADIAN.

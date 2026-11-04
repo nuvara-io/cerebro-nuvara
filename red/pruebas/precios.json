@@ -303,10 +303,7 @@
       ],
       "incluye": [
         [
-          "Tesorería y Caja"
-        ],
-        [
-          "cotizan"
+          "Tesorería va incluida"
         ]
       ],
       "excluye": [
@@ -333,6 +330,68 @@
       "publico": "P",
       "nodos": [
         "precios"
+      ]
+    },
+    {
+      "pregunta": "¿Qué pasa con mi saldo si no renuevo la facturación?",
+      "publico": "P",
+      "nodos": [
+        "creditos-y-recargas"
+      ],
+      "incluye": [
+        [
+          "bolsa de documentos se pierde"
+        ]
+      ],
+      "excluye": []
+    },
+    {
+      "pregunta": "¿Qué pasa si no consumo el mínimo mensual?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "se pierde"
+        ]
+      ],
+      "excluye": [
+        "se acumula"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto cuesta la nómina para 8 empleados?",
+      "publico": "P",
+      "nodos": [
+        "nomina"
+      ],
+      "incluye": [
+        [
+          "tramo de empleados"
+        ],
+        [
+          "\\$960\\.000"
+        ]
+      ],
+      "excluye": []
+    },
+    {
+      "pregunta": "¿Cuánto cuesta la facturación electrónica?",
+      "publico": "P",
+      "nodos": [
+        "facturacion-electronica-y-radian"
+      ],
+      "incluye": [
+        [
+          "\\$150\\.000 al año"
+        ],
+        [
+          "\\$1\\.500"
+        ]
+      ],
+      "excluye": [
+        "pago único"
       ]
     }
   ]

@@ -39,7 +39,7 @@ const FRAGMENTOS: { pregunta: string; publico: Publico; incluye: RegExp; excluye
   { pregunta: "¿Quién puede emitir facturas?", publico: "P", incluye: /administrador, operador o contador/, excluye: /Documento soporte/ },
   { pregunta: "¿Qué hace la tesorería?", publico: "P", incluye: /Cuentas bancarias/, excluye: /Solicitar habilitación/ },
   { pregunta: "¿Dónde está la nómina en la plataforma?", publico: "P", incluye: /Menú \*\*Nómina/, excluye: /cupos/ },
-  { pregunta: "¿La nómina se cobra por empleado?", publico: "P", incluye: /cupos de empleados al mes/, excluye: /Tesorería › Pago de nómina/ },
+  { pregunta: "¿La nómina se cobra por empleado?", publico: "P", incluye: /tramo de empleados/, excluye: /Tesorería › Pago de nómina/ },
   { pregunta: "¿Cuál es la recarga mínima?", publico: "P", incluye: /70\.000/, excluye: /150\.000/ },
   { pregunta: "¿Cuánto cuesta la tesorería?", publico: "P", incluye: /Tesorería y Caja/, excluye: /\$150\.000/ },
 ];

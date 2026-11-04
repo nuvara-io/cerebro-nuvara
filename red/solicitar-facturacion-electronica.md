@@ -19,7 +19,7 @@ fuentes:
 ## Antes de empezar
 - [P] Eres administrador de la organización.
 - [P] Tienes a mano el RUT actualizado, la cédula del representante legal y el certificado de existencia y representación (de máximo 28 días).
-- [P] La habilitación cuesta **$150.000, pago único**, e incluye la configuración inicial y la firma digital por un año.
+- [P] La habilitación cuesta **$150.000 al año** e incluye la configuración inicial, la firma digital y 20 documentos electrónicos.
 
 ## Pasos
 1. [P] Entra a **Cuenta › Módulos** y busca la tarjeta **Facturación electrónica**.

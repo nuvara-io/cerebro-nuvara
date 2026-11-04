@@ -26,8 +26,8 @@ Bancos, cobros, pagos a proveedores, pago de nómina, conciliación bancaria y c
 - [P] Cada movimiento deja su comprobante contable, listo para exportar.
 
 ## Cuánto cuesta
-- [P] Tesorería y Caja son módulos aparte de la causación: se cobran **según el acuerdo** que pactes con núvara, así que **se cotizan** con el equipo.
-- [P] Para cotizarlos, pídelos en **Cuenta › Módulos › Solicitar habilitación**.
+- [P] Tesorería va incluida con la suscripción de causación.
+- [P] Para activarla, pídela en **Cuenta › Módulos › Solicitar habilitación**.
 
 ## Cómo se activa
 - [P] Se pide en **Cuenta › Módulos › Tesorería › Solicitar habilitación**, que abre el chat con el equipo. La activa el equipo de núvara.

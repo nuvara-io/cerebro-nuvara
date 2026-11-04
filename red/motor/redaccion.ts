@@ -62,7 +62,7 @@ export function calculoDePrecio(pregunta: string) {
   if (!partes.length) return null;
   const creditos = (total / credito).toLocaleString("es-CO", { maximumFractionDigits: 1 });
   const cobro = total < minimo
-    ? ` Como es menos que el mínimo mensual, ese mes se descuentan ${pesos(minimo)} y lo no consumido se acumula.`
+    ? ` Como es menos que el mínimo mensual, ese mes se descuentan ${pesos(minimo)} y la diferencia se pierde.`
     : "";
   return `Cálculo ya hecho con las tarifas oficiales (úsalo tal cual, no lo rehagas): ${partes.join("; ")}. Total: ${pesos(total)} (${creditos} créditos).${cobro}`;
 }

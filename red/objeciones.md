@@ -18,7 +18,7 @@ fuentes:
 Las objeciones que más se escuchan en las demostraciones en vivo y cómo se responden. Los precios oficiales están en `precios`.
 
 ## Cuando dicen que es caro
-- [C] Explica el cobro por uso: compra $510, venta $200 y mínimo mensual de $80.000; lo no consumido se acumula para el mes siguiente.
+- [C] Explica el cobro por uso: compra $510, venta $200 y mínimo mensual de $80.000, que solo aplica a quien usa únicamente causación; lo no consumido del mínimo se pierde.
 - [C] Se cobra por causación, no por descarga. Lo que se deja en pendientes o se elimina (peajes, compras personales) no cuesta créditos.
 - [C] Compara con el costo de un auxiliar dedicado a causar, no solo con otro software.
 - [C] Con volumen bajo, muestra el efecto del mínimo mensual con sus números reales y deja que decida; en las sesiones no se dio descuento.

@@ -42,14 +42,14 @@ Qué hace núvara hoy, módulo por módulo. La causación viene con la cuenta; f
 
 ## Facturación electrónica y RADIAN
 - [P] Emites factura de venta con sus notas crédito y débito, documento soporte con su nota y nómina electrónica, y registras los eventos RADIAN de las facturas que recibes.
-- [P] Se activa con una habilitación de pago único que incluye la firma digital por un año; cada documento emitido se cobra en créditos. Las cifras están en `precios`.
+- [P] Se activa con una habilitación de $150.000 al año, que incluye la firma digital y 20 documentos; los demás se pagan con bolsas o con créditos.
 - [P] núvara no emite POS (documento equivalente).
 - [P] Cómo funciona por dentro: `facturacion-electronica-y-radian`.
 
 ## Nómina
 - [P] Empleados, novedades, liquidación quincenal o mensual, prestaciones, liquidación de contratos, nómina electrónica, planillas PILA y causación de la nómina.
 - [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo cupos de empleados; solo un administrador puede activarla.
-- [P] Se cobra por cupos de empleados al mes, y cada nómina electrónica como documento electrónico.
+- [P] Se cobra una mensualidad por tramo de empleados; con la habilitación, la nómina electrónica va incluida.
 - [P] Cómo funciona por dentro: `nomina`.
 
 ## Tesorería y Caja

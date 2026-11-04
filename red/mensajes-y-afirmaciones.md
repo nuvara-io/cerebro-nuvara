@@ -37,7 +37,7 @@ Qué se dice en un anuncio, un post o un correo de campaña, y qué cifras se pu
 ## Cifras que se pueden publicar
 - [C] Precios del sitio: crédito $100; causar una compra $510 (5,1 créditos); causar una venta $200; mínimo mensual $80.000; recarga mínima $70.000; tarifa especial desde 1.500 causaciones al mes.
 - [C] Tiempos sustentados por la marca: "cerca de 15 segundos por causación" y "500 causaciones en una hora o menos".
-- [C] Los módulos (facturación electrónica, nómina, tesorería) no llevan precio en la pieza: **se cotizan** con el equipo. La habilitación de facturación electrónica ($150.000) sí es pública.
+- [C] Precios de módulos que se pueden publicar: habilitación de facturación electrónica y nómina electrónica ($150.000 al año), bolsas de documentos desde $180.000 y nómina por tramos (ver `precios`).
 
 ## Lo que no se afirma
 - [C] Cifras de ahorro sin validar: el sitio dice 80 %, 88 % y 90 % según la página, "+20 horas semanales", "99 % de precisión" y "+216 empresas activas". No coinciden entre sí y no hay medición oficial: no van en pauta.

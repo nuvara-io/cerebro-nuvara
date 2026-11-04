@@ -25,8 +25,8 @@ Administrar empleados, novedades y liquidaciones, emitir la nómina electrónica
 
 ## Cómo se activa y cuánto cuesta
 - [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo los **cupos de empleados**. Solo un administrador puede activarla.
-- [P] Es un módulo aparte de la causación. Se cobra **por cupos de empleados al mes**: pagas los cupos que eliges, no los empleados reales, y el precio por tramo de cupos se cotiza con el equipo. Se paga con el saldo o con un acuerdo mensual con el equipo.
-- [P] Cada nómina electrónica y cada nota de ajuste se cobra como documento electrónico. Para emitirla, la empresa debe estar habilitada ante la DIAN con el tipo de documento nómina.
+- [P] Es un módulo aparte de la causación. Se cobra una **mensualidad por tramo de empleados**: hasta 5 son $480.000 al año o $44.000 mes a mes, hasta 10 son $960.000 o $88.000, hasta 30 son $2.160.000 o $198.000 y hasta 50 son $3.000.000 o $275.000. Hasta 100 se cotiza. Pagas el tramo completo, aunque tengas menos empleados.
+- [P] Con la habilitación de $150.000 al año, si no la tienes ya, las nóminas electrónicas van incluidas en el plan. Para emitirlas, la empresa debe estar habilitada ante la DIAN con el tipo de documento nómina.
 - [P] Si el saldo no cubre los cupos, el módulo tiene 3 días de gracia y luego se pausa: en pausa no se emite a la DIAN.
 
 ## Dónde está en la plataforma

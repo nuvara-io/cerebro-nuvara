@@ -25,7 +25,7 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 - [P] El saldo es de tu cuenta, no de cada empresa: lo compartes entre todas tus empresas y no tienes que recargar por empresa.
 - [P] Una compra consume más créditos que una venta, por eso los créditos no equivalen a un número fijo de facturas.
 - [P] Traer las facturas de la DIAN o del correo no gasta créditos: se descuentan cuando núvara causa la factura. Lo que eliminas de **Pendientes** antes de causar no cuesta.
-- [P] Lo que no consumes se acumula para el mes siguiente.
+- [P] Lo que no alcanzas a consumir del mínimo mensual se pierde; el resto de tu saldo sigue disponible.
 
 ## Cómo recargo
 1. [P] Entra a **Cuenta › Saldo** desde la barra lateral. También llegas desde tu saldo en la parte superior (**Ver cuenta**) o desde el aviso de saldo bajo.
@@ -56,6 +56,7 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 ## Qué pasa si se acaba el saldo
 - [P] Cuando te estás quedando sin créditos, la plataforma te avisa con un botón para recargar.
 - [P] Con el saldo en cero no puedes causar ni emitir documentos electrónicos hasta que recargues.
+- [P] Si no renuevas la habilitación de facturación electrónica, lo que quede en tu bolsa de documentos se pierde; si renuevas, sigue vigente. Los créditos del saldo los puedes usar en otros módulos.
 - [P] Si lanzas una causación por lote con más facturas de las que cubre tu saldo, núvara te avisa: recarga o reduce el rango de fechas.
 - [P] Si tienes la nómina activa y el saldo no cubre los cupos del mes, el módulo tiene 3 días de gracia y luego se pausa.
 - [P] Si trabajas en volumen, recarga antes de empezar el mes para no frenar el trabajo.
