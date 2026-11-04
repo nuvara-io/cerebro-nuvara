@@ -789,7 +789,8 @@
     // Neón: se copia el cuadro a media resolución, se desenfoca y satura, y se
     // suma encima (oscuro) o se pone detrás de las partículas (claro).
     function neon() {
-      if (!hayFiltro) return;
+      // Con el panel oculto el lienzo mide 0: drawImage fallaría y mataría la animación.
+      if (!hayFiltro || !lienzo.width || !lienzo.height) return;
       const n = paleta.neon;
       ctx.save();
       ctx.setTransform(1, 0, 0, 1, 0, 0);
