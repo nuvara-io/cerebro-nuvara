@@ -1,4 +1,4 @@
-import { Audio } from "@remotion/media";
+import { Audio, Video } from "@remotion/media";
 import { linearTiming, TransitionSeries } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import {
@@ -8,11 +8,15 @@ import {
   staticFile,
   useVideoConfig,
 } from "remotion";
-import { motion } from "../brand/tokens";
+import { font } from "../brand/fonts";
+import { color, motion, radius, shadow, space, type } from "../brand/tokens";
 import { Backdrop } from "../components/Backdrop";
 import { Caption } from "../components/Caption";
+import { FadeUp } from "../components/FadeUp";
+import { Highlight } from "../components/Highlight";
 import { PantallaReal, type Toma } from "../components/PantallaReal";
 import { StepHeader } from "../components/StepHeader";
+import { TwoToneTitle } from "../components/TwoToneTitle";
 import { IntroScene } from "../scenes/IntroScene";
 import { OutroScene } from "../scenes/OutroScene";
 import GRABACIONES from "./tesoreria-grabaciones.json";
@@ -33,6 +37,7 @@ const DURACION_VOZ: Record<string, number> = {
   "06-concilia": 10.7,
   "07-caja": 5.32,
   "08-comprobantes": 6.71,
+  "10-app": 9.32,
   "09-cierre": 4.44,
 };
 
@@ -281,6 +286,8 @@ const PASOS: Paso[] = [
 ];
 
 const INTRO = 3.5;
+const APP = 10.4;
+const VOZ_APP = 0.3;
 const CIERRE = 5.5;
 const VOZ_INTRO = 0.3;
 const VOZ_CIERRE = 0.4;
@@ -291,8 +298,9 @@ const duracionPaso = (p: Paso) =>
 export const DURACION_TESORERIA =
   INTRO +
   PASOS.reduce((s, p) => s + duracionPaso(p), 0) +
+  APP +
   CIERRE -
-  (PASOS.length + 1) * motion.exit;
+  (PASOS.length + 2) * motion.exit;
 
 // Dónde empieza cada escena en el video (los fundidos se solapan)
 const INICIOS = PASOS.reduce<number[]>(
@@ -302,10 +310,11 @@ const INICIOS = PASOS.reduce<number[]>(
   ],
   [0],
 ).slice(1);
-const INICIO_CIERRE =
+const INICIO_APP =
   INICIOS[INICIOS.length - 1] +
   duracionPaso(PASOS[PASOS.length - 1]) -
   motion.exit;
+const INICIO_CIERRE = INICIO_APP + APP - motion.exit;
 // Tramos con voz: la música baja para que se entienda
 const CON_VOZ: [number, number][] = [
   [VOZ_INTRO, VOZ_INTRO + DURACION_VOZ["00-intro"]],
@@ -315,6 +324,7 @@ const CON_VOZ: [number, number][] = [
       INICIOS[i] + v.en + DURACION_VOZ[v.archivo],
     ]),
   ),
+  [INICIO_APP + VOZ_APP, INICIO_APP + VOZ_APP + DURACION_VOZ["10-app"]],
   [
     INICIO_CIERRE + VOZ_CIERRE,
     INICIO_CIERRE + VOZ_CIERRE + DURACION_VOZ["09-cierre"],
@@ -427,6 +437,103 @@ const EscenaPaso: React.FC<{ readonly paso: Paso; readonly n: number }> = ({
   );
 };
 
+// Un teléfono con la app real; no es un paso numerado porque el formato llega hasta 5
+const Telefono: React.FC<{
+  readonly recording: string;
+  readonly etiqueta: string;
+  readonly desde: number;
+  readonly velocidad: number;
+}> = ({ recording, etiqueta, desde, velocidad }) => {
+  const { fps } = useVideoConfig();
+  return (
+    <div style={{ display: "grid", gap: space.s24, justifyItems: "center" }}>
+      <div
+        style={{
+          width: 380,
+          height: 822,
+          borderRadius: radius.frame * 3,
+          border: `10px solid ${color.gray700}`,
+          boxShadow: shadow.frame,
+          overflow: "hidden",
+          background: color.white,
+        }}
+      >
+        <Video
+          src={staticFile(recording)}
+          muted
+          trimBefore={Math.round(desde * fps)}
+          playbackRate={velocidad}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      </div>
+      <p style={{ margin: 0, fontFamily: font.sans, ...type.badge, color: color.textTitle }}>
+        {etiqueta}
+      </p>
+    </div>
+  );
+};
+
+// La app móvil: el cliente aprueba un pago y el operador registra en su caja
+const EscenaApp: React.FC = () => {
+  const { fps } = useVideoConfig();
+  return (
+    <>
+      <Backdrop />
+      <div
+        style={{
+          position: "absolute",
+          left: space.marginX,
+          top: 0,
+          bottom: 0,
+          width: 720,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          gap: space.s48,
+        }}
+      >
+        <TwoToneTitle lead="Y en tu celular," rest="la app móvil." size="sceneTitle" delay={4} />
+        <FadeUp delay={Math.round(7 * fps)}>
+          <Highlight text="cada uno ve solo lo suyo" />
+        </FadeUp>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          right: space.marginX,
+          top: 56,
+          display: "flex",
+          gap: space.s64,
+          alignItems: "flex-start",
+        }}
+      >
+        <FadeUp delay={8}>
+          <Telefono
+            recording="recordings/tesoreria-app-cliente.mp4"
+            etiqueta="Tus clientes"
+            desde={0}
+            velocidad={1.25}
+          />
+        </FadeUp>
+        <Sequence from={Math.round(4.4 * fps)} layout="none">
+          <FadeUp>
+            <Telefono
+              recording="recordings/tesoreria-app-operador.mp4"
+              etiqueta="Tu equipo"
+              desde={0}
+              velocidad={1}
+            />
+          </FadeUp>
+        </Sequence>
+      </div>
+      <Sequence from={Math.round(VOZ_APP * fps)} layout="none">
+        <Audio src={voz("10-app")} />
+      </Sequence>
+    </>
+  );
+};
+
 export const FlujoTesoreria = () => {
   const { fps } = useVideoConfig();
   const fundido = (clave: string) => (
@@ -467,6 +574,13 @@ export const FlujoTesoreria = () => {
             <EscenaPaso paso={p} n={i + 1} />
           </TransitionSeries.Sequence>,
         ])}
+        {fundido("f-app")}
+        <TransitionSeries.Sequence
+          name="App móvil"
+          durationInFrames={Math.round(APP * fps)}
+        >
+          <EscenaApp />
+        </TransitionSeries.Sequence>
         {fundido("f-cierre")}
         <TransitionSeries.Sequence
           name="Cierre"
@@ -485,7 +599,7 @@ export const FlujoTesoreria = () => {
         </TransitionSeries.Sequence>
       </TransitionSeries>
       <Audio src={sonido("musica")} loop volume={(f) => volumenMusica(f / fps)} />
-      {[...INICIOS, INICIO_CIERRE].map((s) => (
+      {[...INICIOS, INICIO_APP, INICIO_CIERRE].map((s) => (
         <Sequence
           key={`whoosh-${s}`}
           name="Whoosh"

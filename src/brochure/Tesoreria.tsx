@@ -6,11 +6,11 @@ import { color, radius } from "../brand/tokens";
 import { Emphasis } from "../components/Emphasis";
 import { Circulo, Dividida as DivididaBase, Inicio, MX, PanelReal, Pill, Slide, t, Tarjeta, Titular } from "./kit";
 
-// Brochure comercial de tesorería (11 diapositivas 1920×1080 → PDF). Copy desde
+// Brochure comercial de tesorería (12 diapositivas 1920×1080 → PDF). Copy desde
 // red/tesoreria.md, sus neuronas y red/precios.md. Los paneles son capturas reales
 // de la empresa ficticia de la semilla local (Comercializadora Andina).
 
-const TOTAL_TESORERIA = 11;
+const TOTAL_TESORERIA = 12;
 const icono = { size: 34, color: color.white, strokeWidth: 2.1 } as const;
 const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total">> = (props) => <DivididaBase total={TOTAL_TESORERIA} {...props} />;
 
@@ -193,9 +193,33 @@ export const Comprobantes: React.FC = () => (
   </Dividida>
 );
 
-// 10 · Precio
+const Telefono: React.FC<{ readonly src: string }> = ({ src }) => (
+  <Img src={staticFile(src)} style={{ width: 268, borderRadius: radius.frame * 2, border: `6px solid ${color.gray700}` }} />
+);
+
+// 10 · App móvil
+export const AppMovil: React.FC = () => (
+  <Dividida
+    n={10}
+    pill="APP MÓVIL"
+    azul="Tus clientes y tu equipo,"
+    gris="también en el celular."
+    lineas={[
+      "Tus clientes ven su empresa y *aprueban los pagos*.",
+      "Tu equipo registra gastos con la *foto del soporte*.",
+      "Cada uno ve *solo lo que le asignas*.",
+    ]}
+  >
+    <div style={{ display: "flex", justifyContent: "center", gap: 36 }}>
+      <Telefono src="brochure-tesoreria/app-cliente.png" />
+      <Telefono src="brochure-tesoreria/app-operador.png" />
+    </div>
+  </Dividida>
+);
+
+// 11 · Precio
 export const PrecioTesoreria: React.FC = () => (
-  <Slide n={10} total={TOTAL_TESORERIA}>
+  <Slide n={11} total={TOTAL_TESORERIA}>
     <div style={{ position: "absolute", left: MX, right: MX, top: 200, display: "grid", gap: 44 }}>
       <div style={{ display: "grid", gap: 18 }}>
         <Pill>PRECIO</Pill>
@@ -225,12 +249,12 @@ export const PrecioTesoreria: React.FC = () => (
   </Slide>
 );
 
-// 11 · Cómo empezamos
+// 12 · Cómo empezamos
 export const EmpezamosTesoreria: React.FC = () => {
   const i = { size: 32, color: color.accent, strokeWidth: 2.1 } as const;
   const circulo: React.CSSProperties = { background: color.white, borderRadius: "50%", padding: 16, display: "grid" };
   return (
-    <Slide n={11} total={TOTAL_TESORERIA} fondo="azul">
+    <Slide n={12} total={TOTAL_TESORERIA} fondo="azul">
       <div style={{ position: "absolute", left: MX, right: MX, top: 200, display: "grid", gap: 56 }}>
         <div style={{ display: "grid", gap: 24 }}>
           <Pill blanco>CÓMO EMPEZAMOS</Pill>
@@ -255,4 +279,4 @@ export const EmpezamosTesoreria: React.FC = () => {
   );
 };
 
-export const DIAPOSITIVAS_TESORERIA = [PortadaTesoreria, QueIncluyeTesoreria, ComoEmpiezasTesoreria, Cobros, Pagos, PagoNomina, Conciliacion, Cajas, Comprobantes, PrecioTesoreria, EmpezamosTesoreria] as const;
+export const DIAPOSITIVAS_TESORERIA = [PortadaTesoreria, QueIncluyeTesoreria, ComoEmpiezasTesoreria, Cobros, Pagos, PagoNomina, Conciliacion, Cajas, Comprobantes, AppMovil, PrecioTesoreria, EmpezamosTesoreria] as const;
