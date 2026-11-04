@@ -1,47 +1,22 @@
-import { ArrowRight, BadgeCheck, FileCheck2, FileText, Landmark, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
+import { ArrowRight, FileCheck2, FileText, Landmark, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { logo } from "../brand/assets";
 import { font } from "../brand/fonts";
 import { color, radius } from "../brand/tokens";
 import { Emphasis } from "../components/Emphasis";
-import { Circulo, MX, Pill, Slide, t, Tarjeta, Titular } from "./kit";
-import { PanelCumplimiento, PanelDocumentos, PanelEventos, PanelFactura, PanelSoporte } from "./PanelesFE";
+import { Circulo, Dividida as DivididaBase, Inicio, MX, PanelReal, Pill, Slide, t, Tarjeta, Titular } from "./kit";
+import { PanelCumplimiento, PanelEventos, PanelSoporte } from "./PanelesFE";
 
 // Brochure comercial de facturación electrónica (10 diapositivas 1920×1080 → PDF).
 // Copy desde red/facturacion-electronica-y-radian.md, configuracion-facturacion-
 // electronica.md, factura-de-venta-y-notas.md, documento-soporte-electronico.md,
-// eventos-radian.md y precios.md.
+// eventos-radian.md y precios.md. Factura y Documentos son capturas reales
+// anonimizadas; soporte y RADIAN son ilustrativos porque no están habilitados.
 
 const TOTAL_FE = 10;
 const icono = { size: 34, color: color.white, strokeWidth: 2.1 } as const;
 
-const Linea: React.FC<{ readonly texto: string }> = ({ texto }) => (
-  <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-    <BadgeCheck size={34} color={color.accent} strokeWidth={2} style={{ flexShrink: 0, marginTop: 2 }} />
-    <p style={t(27, { lineHeight: 1.35 })}>
-      <Emphasis text={texto} />
-    </p>
-  </div>
-);
-
-// Diapositiva de texto a la izquierda y panel a la derecha
-const Dividida: React.FC<{ readonly n: number; readonly pill: string; readonly azul: string; readonly gris: string; readonly lineas: string[]; readonly children: React.ReactNode }> = ({ n, pill, azul, gris, lineas, children }) => (
-  <Slide n={n} total={TOTAL_FE}>
-    <div style={{ position: "absolute", left: MX, top: 200, width: 640, display: "grid", gap: 34 }}>
-      <Pill>{pill}</Pill>
-      <Titular azul={azul} gris={gris} size={60} />
-      <div style={{ display: "grid", gap: 20 }}>
-        {lineas.map((l) => (
-          <Linea key={l} texto={l} />
-        ))}
-      </div>
-    </div>
-    {/* zoom: los paneles se dibujan a 738 px y se ven a 960 */}
-    <div style={{ position: "absolute", right: MX, top: 190, width: 960 }}>
-      <div style={{ zoom: 1.3 }}>{children}</div>
-    </div>
-  </Slide>
-);
+const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total">> = (props) => <DivididaBase total={TOTAL_FE} {...props} />;
 
 // 01 · Portada
 export const PortadaFE: React.FC = () => (
@@ -145,7 +120,7 @@ export const EmitirFactura: React.FC = () => (
       "Contado o crédito, con *IVA y ReteIVA*.",
     ]}
   >
-    <PanelFactura />
+    <PanelReal src={staticFile("brochure-fe/factura.png")} etiqueta="nueva factura electrónica" proporcion={980 / 928} ancho={560} />
   </Dividida>
 );
 
@@ -163,7 +138,7 @@ export const Documentos: React.FC = () => (
       "Exportas a *Excel* o al libro auxiliar.",
     ]}
   >
-    <PanelDocumentos />
+    <PanelReal src={staticFile("brochure-fe/documentos.png")} etiqueta="documentos" proporcion={1260 / 444} />
   </Dividida>
 );
 
@@ -263,14 +238,6 @@ export const PreciosFE: React.FC = () => (
       </p>
     </div>
   </Slide>
-);
-
-const Inicio: React.FC<{ readonly icon: React.ReactNode; readonly titulo: string; readonly texto: string }> = ({ icon, titulo, texto }) => (
-  <div style={{ display: "grid", gap: 16, alignContent: "start" }}>
-    <Circulo size={64}>{icon}</Circulo>
-    <p style={t(30, { fontWeight: 700, color: color.white, lineHeight: 1.15 })}>{titulo}</p>
-    <p style={t(24, { color: color.white })}>{texto}</p>
-  </div>
 );
 
 // 10 · Cómo empezamos

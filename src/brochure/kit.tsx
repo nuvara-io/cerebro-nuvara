@@ -1,8 +1,10 @@
+import { BadgeCheck } from "lucide-react";
 import { AbsoluteFill, Img } from "remotion";
 import { logo } from "../brand/assets";
 import { font } from "../brand/fonts";
 import { color, radius, shadow } from "../brand/tokens";
 import { Backdrop } from "../components/Backdrop";
+import { Emphasis } from "../components/Emphasis";
 
 // Piezas compartidas del brochure comercial (diapositivas 1920×1080 que se
 // exportan juntas a PDF). Misma línea gráfica de redes llevada a 16:9.
@@ -125,4 +127,46 @@ export const Captura: React.FC<{ readonly src?: string; readonly style?: React.C
       <p style={t(24, { color: color.gray500, textAlign: "center", padding: 40 })}>Captura de la plataforma: {etiqueta}</p>
     )}
   </div>
+);
+
+export const Linea: React.FC<{ readonly texto: string }> = ({ texto }) => (
+  <div style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+    <BadgeCheck size={34} color={color.accent} strokeWidth={2} style={{ flexShrink: 0, marginTop: 2 }} />
+    <p style={t(27, { lineHeight: 1.35 })}>
+      <Emphasis text={texto} />
+    </p>
+  </div>
+);
+
+// Diapositiva de texto a la izquierda y panel a la derecha
+export const Dividida: React.FC<{ readonly n: number; readonly total: number; readonly pill: string; readonly azul: string; readonly gris: string; readonly lineas: string[]; readonly children: React.ReactNode }> = ({ n, total, pill, azul, gris, lineas, children }) => (
+  <Slide n={n} total={total}>
+    <div style={{ position: "absolute", left: MX, top: 200, width: 640, display: "grid", gap: 34 }}>
+      <Pill>{pill}</Pill>
+      <Titular azul={azul} gris={gris} size={60} />
+      <div style={{ display: "grid", gap: 20 }}>
+        {lineas.map((l) => (
+          <Linea key={l} texto={l} />
+        ))}
+      </div>
+    </div>
+    {/* zoom: los paneles se dibujan a 738 px y se ven a 960 */}
+    <div style={{ position: "absolute", right: MX, top: 190, width: 960 }}>
+      <div style={{ zoom: 1.3 }}>{children}</div>
+    </div>
+  </Slide>
+);
+
+// Paso del cierre, sobre fondo azul
+export const Inicio: React.FC<{ readonly icon: React.ReactNode; readonly titulo: string; readonly texto: string }> = ({ icon, titulo, texto }) => (
+  <div style={{ display: "grid", gap: 16, alignContent: "start" }}>
+    <Circulo size={64}>{icon}</Circulo>
+    <p style={t(30, { fontWeight: 700, color: color.white, lineHeight: 1.15 })}>{titulo}</p>
+    <p style={t(24, { color: color.white })}>{texto}</p>
+  </div>
+);
+
+// Captura real dentro de una Dividida: ancho en las unidades del panel (738 = todo)
+export const PanelReal: React.FC<{ readonly src: string; readonly etiqueta: string; readonly proporcion: number; readonly ancho?: number }> = ({ src, etiqueta, proporcion, ancho = 738 }) => (
+  <Captura src={src} etiqueta={etiqueta} style={{ width: ancho, aspectRatio: proporcion, marginLeft: "auto" }} />
 );
