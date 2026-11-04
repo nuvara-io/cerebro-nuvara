@@ -46,7 +46,7 @@ const Dividida: React.FC<{ readonly n: number; readonly pill: string; readonly a
 // 01 · Portada
 export const PortadaFE: React.FC = () => (
   <AbsoluteFill style={{ background: color.accentDeep, overflow: "hidden" }}>
-    <Img src={staticFile("posts/banco-94.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
+    <Img src={staticFile("posts/banco-156.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
     <div
       style={{
         position: "absolute",
