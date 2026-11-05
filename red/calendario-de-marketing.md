@@ -24,7 +24,8 @@ Un solo calendario para lo que se publica en pauta, en redes y en el sitio. Los 
 - [C] **Redes** (`plan-de-redes`): publicaciones orgánicas con canal, hora, archivo y texto.
 - [C] **SEO** (`plan-seo`): artículos, páginas y ajustes del sitio, con palabra clave, título y descripción.
 - [C] Cada propuesta lleva su **tema** y sus **relaciones**: por ejemplo, el artículo de RADIAN se publica antes del video y el reel de RADIAN, para que estos tengan a dónde llevar.
-- [C] Las tres líneas se ven en la misma página, en vista de mes o de semanas, y se filtran por línea, canal y estado.
+- [C] Cada propuesta lleva la etiqueta de su **módulo**: Causación, Facturación electrónica, RADIAN, Nómina, Tesorería, App móvil o General, cuando habla de núvara en conjunto.
+- [C] Las tres líneas se ven en la misma página, en vista de mes o de semanas, y se filtran por línea, módulo, canal y estado.
 
 ## Dónde está
 - [C] **Calendario:** https://claude.ai/artifact/EMSaCGkJ5C6t9H1e7mwLvr. Ahí viven la revisión, las notas y la aprobación.

@@ -26,6 +26,7 @@ const LINEAS: Record<string, string[]> = {
   SEO: ["url", "palabraClave", "intencion", "tituloSeo", "metaDescripcion"],
 };
 const ESTADOS = ["porhacer", "corte", "bloqueada", "lista"];
+const MODULOS = ["Causación", "Facturación electrónica", "RADIAN", "Nómina", "Tesorería", "App móvil", "General"];
 const COMUNES = ["fecha", "hora", "orden", "pieza", "formato", "canales", "tema", "porque", "copy", "estadoPieza"];
 const FESTIVOS = ["2026-11-16", "2026-12-08", "2026-12-25", "2027-01-01", "2027-01-11"];
 
@@ -56,6 +57,7 @@ for (const f of filas) {
     continue;
   }
   for (const c of [...COMUNES, ...campos]) if (f[c] === undefined || f[c] === "") mal(`falta ${c}`);
+  if (!MODULOS.includes(String(f.modulo))) mal(`módulo desconocido "${f.modulo}"`);
   if (!ESTADOS.includes(f.estadoPieza)) mal(`estado de pieza desconocido "${f.estadoPieza}"`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(f.fecha)) mal(`fecha inválida "${f.fecha}"`);
   if (FESTIVOS.includes(f.fecha)) mal(`cae en festivo (${f.fecha})`);

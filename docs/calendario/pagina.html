@@ -76,7 +76,7 @@ dialog::backdrop{background:rgba(12,16,22,.72)}
 .ds{background:var(--panel);font-size:12px;font-weight:600;color:var(--muted);padding:6px 8px}
 .celda{background:var(--panel);min-height:96px;padding:6px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .celda.fuera{background:var(--bg)}.celda>b{font-size:12px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
-.chip{all:unset;box-sizing:border-box;cursor:pointer;display:block;font-size:12px;line-height:1.3;padding:3px 6px;border-radius:6px;background:var(--bg);border-left:3px solid var(--redes);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow-wrap:anywhere}
+.chip{all:unset;box-sizing:border-box;cursor:pointer;display:block;font-size:12px;line-height:1.3;padding:3px 6px;border-radius:6px;background:var(--bg);border-left:3px solid var(--redes);overflow-wrap:anywhere}.chip small{display:block;font-size:10px;font-weight:600;opacity:.75}.chip span{overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.etiquetas{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.tagmod{font-size:12px;font-weight:500;padding:1px 8px;border-radius:8px;background:var(--tint);color:var(--accent)}
 .chip:focus-visible{outline:2px solid var(--accent)}.chip.Pauta{border-left-color:var(--pauta)}.chip.SEO{border-left-color:var(--seo)}
 .chip.Aprobada{background:var(--okbg);color:var(--ok)}.chip.cambios{background:var(--warnbg);color:var(--warn)}.chip.Rechazada{background:var(--badbg);color:var(--bad);text-decoration:line-through}
 .linea{font-size:12px;font-weight:600}.linea.Pauta{color:var(--pauta)}.linea.Redes{color:var(--redes)}.linea.SEO{color:var(--seo)}
@@ -127,10 +127,10 @@ const MEDIA={"p01": {"t": "img", "src": "media/p01.jpg", "r": "4/5"}, "p02": {"t
 const ESTADOS={lista:"Lista",corte:"Falta corte",bloqueada:"Bloqueada",porhacer:"Por hacer"};
 const PUB=["Por programar","Programada","Publicada"];
 const LINEAS=["Todas","Pauta","Redes","SEO"],REVS=["Todo","Por revisar","Con cambios pedidos","Aprobada","Rechazada"],VISTAS=["Mes","Semanas"];
-const CANALES=["Todos los canales","Instagram","Facebook","LinkedIn","TikTok","Sitio web"];
+const CANALES=["Todos los canales","Instagram","Facebook","LinkedIn","TikTok","Sitio web"],MODULOS=["Todos los módulos","Causación","Facturación electrónica","RADIAN","Nómina","Tesorería","App móvil","General"];
 const EQUIPOS=["Marketing","Diseño","Comercial","Producto","Contable","Legal"],TIPOS=["Observación","Cambio requerido","Visto bueno"];
 let filas=[],notas=[],db=null,usuario=null,yo=null,operador=false,puedeNotar=true,nombres={};
-let fLinea="Todas",fRev="Todo",fCanal=CANALES[0],modo="Mes";
+let fLinea="Todas",fRev="Todo",fCanal=CANALES[0],fMod=MODULOS[0],modo="Mes";
 const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
 const fecha=f=>new Date(f+"T12:00:00").toLocaleDateString("es-CO",{weekday:"short",day:"numeric",month:"short"});
 const notasDe=id=>notas.filter(n=>n.pieza===id).sort((a,b)=>(a.fecha||"").localeCompare(b.fecha||""));
@@ -138,17 +138,17 @@ const abiertos=id=>notasDe(id).filter(n=>n.tipo==="Cambio requerido"&&!n.resuelt
 function revDe(r){if(abiertos(r.id))return"Con cambios pedidos";return r.revision||"Por revisar"}
 const claseRev=v=>v==="Con cambios pedidos"?"cambios":v==="Por revisar"?"rev":v;
 const quien=id=>nombres[id]||"Alguien del equipo";
-function pasa(r){return(fLinea==="Todas"||r.linea===fLinea)&&(fRev==="Todo"||revDe(r)===fRev)&&(fCanal===CANALES[0]||r.canales.includes(fCanal))}
+function pasa(r){return(fLinea==="Todas"||r.linea===fLinea)&&(fRev==="Todo"||revDe(r)===fRev)&&(fCanal===CANALES[0]||r.canales.includes(fCanal))&&(fMod===MODULOS[0]||r.modulo===fMod)}
 function resumen(){const c=document.getElementById("cifras");c.replaceChildren();const n=f=>filas.filter(f).length;
 [[filas.length,"publicaciones"],[n(r=>revDe(r)==="Por revisar"),"por revisar"],[n(r=>revDe(r)==="Con cambios pedidos"),"con cambios"],[n(r=>revDe(r)==="Aprobada"),"aprobadas"],[n(r=>r.publicacion==="Programada"),"programadas"],[n(r=>r.publicacion==="Publicada"),"publicadas"],[n(r=>r.estadoPieza==="porhacer"),"piezas por hacer"]].forEach(([v,l])=>{const d=el("div");d.append(el("b",null,v),el("span",null,l));c.append(d)})}
 function grupo(t,ops,val,fn){const g=el("div","grupo");g.append(el("b",null,t));ops.forEach(x=>{const b=el("button",null,x);b.type="button";b.dataset.l=x;b.setAttribute("aria-pressed",x===val);b.onclick=()=>{fn(x);botones();pintar()};g.append(b)});return g}
 function botones(){const f=document.getElementById("filtros");f.replaceChildren();f.className="filtros dobles";
-const g=grupo("Vista",VISTAS,modo,x=>modo=x);const lb=el("label","sr","Filtrar por canal");lb.htmlFor="canal";const s=el("select");s.id="canal";CANALES.forEach(c=>{const o=el("option",null,c);o.selected=c===fCanal;s.append(o)});s.onchange=()=>{fCanal=s.value;pintar()};g.append(lb,s);
+const g=grupo("Vista",VISTAS,modo,x=>modo=x);const lb=el("label","sr","Filtrar por canal");lb.htmlFor="canal";const s=el("select");s.id="canal";CANALES.forEach(c=>{const o=el("option",null,c);o.selected=c===fCanal;s.append(o)});s.onchange=()=>{fCanal=s.value;pintar()};g.append(lb,s);const l2=el("label","sr","Filtrar por módulo");l2.htmlFor="modulo";const m=el("select");m.id="modulo";MODULOS.forEach(c=>{const o=el("option",null,c);o.selected=c===fMod;m.append(o)});m.onchange=()=>{fMod=m.value;pintar()};g.append(l2,m);
 f.append(g,grupo("Línea",LINEAS,fLinea,x=>fLinea=x),grupo("Revisión",REVS,fRev,x=>fRev=x))}
 function fila(r){const a=el("article","fila"+(r.publicacion==="Publicada"?" hecha":""));
 const d=el("div","dia");d.append(el("b",null,fecha(r.fecha)),el("span",null,r.hora));
 const i=el("button","ver");i.type="button";i.setAttribute("aria-label","Ver la publicación "+r.pieza);if(THUMBS[r.thumb]){const im=el("img");im.src=THUMBS[r.thumb];im.alt="";im.loading="lazy";i.append(im,el("span",null,"Ampliar"))}else i.append(el("div","miniatura",r.linea));i.onclick=()=>abrir(r.id);
-const c=el("div","cuerpo");c.append(el("div","linea "+r.linea,r.linea),el("h3",null,r.pieza),el("div","meta",r.formato+" · "+r.canales.join(", ")),el("div","ruta",r.archivo));
+const c=el("div","cuerpo");const et=el("div","etiquetas");et.append(el("span","linea "+r.linea,r.linea),el("span","tagmod",r.modulo));c.append(et,el("h3",null,r.pieza),el("div","meta",r.formato+" · "+r.canales.join(", ")),el("div","ruta",r.archivo));
 if(r.nota)c.append(el("div","nota",r.nota));
 const vb=el("button","abrir","Ver cómo queda");vb.type="button";vb.onclick=()=>abrir(r.id);c.append(vb);const det=el("details");det.append(el("summary",null,"Ver texto"),el("div","copy",r.copy));
 const b=el("button","copiar","Copiar texto");b.type="button";b.onclick=async()=>{try{await navigator.clipboard.writeText(r.copy);b.textContent="Copiado"}catch{const s=getSelection(),g=document.createRange();g.selectNodeContents(det.querySelector(".copy"));s.removeAllRanges();s.addRange(g);b.textContent="Texto seleccionado"}setTimeout(()=>b.textContent="Copiar texto",1800)};det.append(b);c.append(det);
@@ -160,7 +160,7 @@ const lunes=f=>{const d=new Date(f+"T12:00:00");d.setDate(d.getDate()-(d.getDay(
 const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 function mes(box,v){const w=el("div");w.style.cssText="display:grid;gap:28px";[...new Set(v.map(r=>r.fecha.slice(0,7)))].sort().forEach(m=>{const s=el("section","mes"),[y,k]=m.split("-").map(Number),p=new Date(y,k-1,1,12);s.append(el("h2",null,p.toLocaleDateString("es-CO",{month:"long",year:"numeric"})));
 const g=el("div","rejilla");["Lun","Mar","Mié","Jue","Vie","Sáb","Dom"].forEach(x=>g.append(el("div","ds",x)));const d=new Date(y,k-1,1-(p.getDay()+6)%7,12);
-do{for(let i=0;i<7;i++){const f=iso(d),rs=v.filter(r=>r.fecha===f),dentro=d.getMonth()===k-1,c=el("div","celda"+(dentro?"":" fuera")+(rs.length?"":" sin"));c.append(el("b",null,dentro?(innerWidth<=760?fecha(f):d.getDate()):""));if(dentro)rs.forEach(r=>{const x=revDe(r),b=el("button","chip "+r.linea+" "+claseRev(x),r.pieza);b.type="button";b.title=r.linea+" · "+x+" · "+r.pieza;b.setAttribute("aria-label",r.linea+": "+r.pieza+". "+x);b.onclick=()=>abrir(r.id);c.append(b)});g.append(c);d.setDate(d.getDate()+1)}}while(d.getMonth()===k-1);
+do{for(let i=0;i<7;i++){const f=iso(d),rs=v.filter(r=>r.fecha===f),dentro=d.getMonth()===k-1,c=el("div","celda"+(dentro?"":" fuera")+(rs.length?"":" sin"));c.append(el("b",null,dentro?(innerWidth<=760?fecha(f):d.getDate()):""));if(dentro)rs.forEach(r=>{const x=revDe(r),b=el("button","chip "+r.linea+" "+claseRev(x));b.append(el("small",null,r.modulo),el("span",null,r.pieza));b.type="button";b.title=r.linea+" · "+r.modulo+" · "+x+" · "+r.pieza;b.setAttribute("aria-label",r.linea+", "+r.modulo+": "+r.pieza+". "+x);b.onclick=()=>abrir(r.id);c.append(b)});g.append(c);d.setDate(d.getDate()+1)}}while(d.getMonth()===k-1);
 s.append(g);w.append(s)});box.append(w)}
 function pintar(){const box=document.getElementById("lista");box.replaceChildren();const v=filas.filter(pasa);
 if(!v.length){box.append(el("p","vacio",filas.length?"Ninguna publicación con ese filtro.":"Aquí aparecerán las publicaciones del calendario."));return}
@@ -193,7 +193,7 @@ const a=el("button","nav","Anterior"),b=el("button","nav","Siguiente"),x=el("but
 const cu=el("div","vcuerpo"),es=el("div","escena");if(r.linea==="SEO")serp(r,es);else if(!m)es.append(vacia(r));else es.append(m.r==="9/16"?vertical(r,m):feed(r,m));
 const l=el("div","lat"),tb=el("div","tabs");r.canales.forEach(c=>{const k=el("button",null,c);k.type="button";k.setAttribute("aria-pressed",c===canal);k.onclick=()=>{canal=c;vista()};tb.append(k)});
 const w=el("div");w.append(el("h3",null,"Canal"),tb);l.append(w);
-const st=el("div");st.append(el("h3",null,"Estado"),el("span","estado "+r.estadoPieza,ESTADOS[r.estadoPieza]));st.append(document.createTextNode(" "+(r.publicacion||PUB[0])));l.append(st);
+const md=el("div");md.append(el("h3",null,"Módulo"),el("span","tagmod",r.modulo));l.append(md);const st=el("div");st.append(el("h3",null,"Estado"),el("span","estado "+r.estadoPieza,ESTADOS[r.estadoPieza]));st.append(document.createTextNode(" "+(r.publicacion||PUB[0])));l.append(st);
 const dat=datos(r);if(dat)l.append(dat);
 if(r.relaciones&&r.relaciones.length){const q=el("div"),z=el("div","rel");q.append(el("h3",null,"Conectada con"));r.relaciones.forEach(id=>{const o=filas.find(x=>x.id===id);if(!o)return;const k=el("button",null,o.linea+": "+o.pieza);k.type="button";k.onclick=()=>abrir(id);z.append(k)});q.append(z);l.append(q)}
 if(r.nota)l.append(el("div","nota",r.nota));

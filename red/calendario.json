@@ -2,6 +2,7 @@
   {
     "id": "a01",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-06",
     "hora": "08:00",
     "semana": 0,
@@ -31,6 +32,7 @@
   {
     "id": "a02",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-06",
     "hora": "08:00",
     "semana": 0,
@@ -60,6 +62,7 @@
   {
     "id": "a03",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-06",
     "hora": "08:00",
     "semana": 0,
@@ -89,6 +92,7 @@
   {
     "id": "a04",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-06",
     "hora": "08:00",
     "semana": 0,
@@ -116,6 +120,7 @@
   {
     "id": "a05",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-06",
     "hora": "08:00",
     "semana": 0,
@@ -143,6 +148,7 @@
   {
     "id": "p01",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-09",
     "hora": "12:00",
     "semana": 1,
@@ -167,6 +173,7 @@
   {
     "id": "p02",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-09",
     "hora": "12:00",
     "semana": 1,
@@ -189,6 +196,7 @@
   {
     "id": "s01",
     "linea": "SEO",
+    "modulo": "Causación",
     "fecha": "2026-11-10",
     "hora": "08:00",
     "semana": 0,
@@ -218,6 +226,7 @@
   {
     "id": "p23",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-11-10",
     "hora": "12:00",
     "semana": 1,
@@ -241,6 +250,7 @@
   {
     "id": "p24",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-11-10",
     "hora": "12:00",
     "semana": 1,
@@ -263,6 +273,7 @@
   {
     "id": "p03",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-11",
     "hora": "08:00",
     "semana": 1,
@@ -285,6 +296,7 @@
   {
     "id": "s02",
     "linea": "SEO",
+    "modulo": "General",
     "fecha": "2026-11-12",
     "hora": "08:00",
     "semana": 0,
@@ -311,6 +323,7 @@
   {
     "id": "p25",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-11-12",
     "hora": "12:00",
     "semana": 1,
@@ -334,6 +347,7 @@
   {
     "id": "s11",
     "linea": "SEO",
+    "modulo": "App móvil",
     "fecha": "2026-11-13",
     "hora": "08:00",
     "semana": 0,
@@ -362,6 +376,7 @@
   {
     "id": "p04",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
@@ -387,6 +402,7 @@
   {
     "id": "p26",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
@@ -412,6 +428,7 @@
   {
     "id": "p27",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
@@ -434,6 +451,7 @@
   {
     "id": "p05",
     "linea": "Redes",
+    "modulo": "General",
     "fecha": "2026-11-17",
     "hora": "12:00",
     "semana": 2,
@@ -457,6 +475,7 @@
   {
     "id": "p06",
     "linea": "Redes",
+    "modulo": "General",
     "fecha": "2026-11-17",
     "hora": "12:00",
     "semana": 2,
@@ -479,6 +498,7 @@
   {
     "id": "p07",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-18",
     "hora": "12:00",
     "semana": 2,
@@ -504,6 +524,7 @@
   {
     "id": "p08",
     "linea": "Redes",
+    "modulo": "Causación",
     "fecha": "2026-11-19",
     "hora": "08:00",
     "semana": 2,
@@ -525,6 +546,7 @@
   {
     "id": "s03",
     "linea": "SEO",
+    "modulo": "Facturación electrónica",
     "fecha": "2026-11-20",
     "hora": "08:00",
     "semana": 0,
@@ -555,6 +577,7 @@
   {
     "id": "p09",
     "linea": "Redes",
+    "modulo": "General",
     "fecha": "2026-11-20",
     "hora": "12:00",
     "semana": 2,
@@ -578,6 +601,7 @@
   {
     "id": "p10",
     "linea": "Redes",
+    "modulo": "Facturación electrónica",
     "fecha": "2026-11-23",
     "hora": "12:00",
     "semana": 3,
@@ -603,6 +627,7 @@
   {
     "id": "p11",
     "linea": "Redes",
+    "modulo": "Facturación electrónica",
     "fecha": "2026-11-23",
     "hora": "12:00",
     "semana": 3,
@@ -625,6 +650,7 @@
   {
     "id": "p12",
     "linea": "Redes",
+    "modulo": "Facturación electrónica",
     "fecha": "2026-11-25",
     "hora": "08:00",
     "semana": 3,
@@ -648,6 +674,7 @@
   {
     "id": "a06",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-11-26",
     "hora": "08:00",
     "semana": 0,
@@ -675,6 +702,7 @@
   {
     "id": "s04",
     "linea": "SEO",
+    "modulo": "RADIAN",
     "fecha": "2026-11-26",
     "hora": "08:00",
     "semana": 0,
@@ -705,6 +733,7 @@
   {
     "id": "s05",
     "linea": "SEO",
+    "modulo": "Nómina",
     "fecha": "2026-11-27",
     "hora": "08:00",
     "semana": 0,
@@ -734,6 +763,7 @@
   {
     "id": "p13",
     "linea": "Redes",
+    "modulo": "RADIAN",
     "fecha": "2026-11-27",
     "hora": "12:00",
     "semana": 3,
@@ -758,6 +788,7 @@
   {
     "id": "p14",
     "linea": "Redes",
+    "modulo": "Nómina",
     "fecha": "2026-11-30",
     "hora": "12:00",
     "semana": 4,
@@ -783,6 +814,7 @@
   {
     "id": "p15",
     "linea": "Redes",
+    "modulo": "Nómina",
     "fecha": "2026-11-30",
     "hora": "12:00",
     "semana": 4,
@@ -805,6 +837,7 @@
   {
     "id": "p16",
     "linea": "Redes",
+    "modulo": "RADIAN",
     "fecha": "2026-12-01",
     "hora": "12:00",
     "semana": 4,
@@ -830,6 +863,7 @@
   {
     "id": "p17",
     "linea": "Redes",
+    "modulo": "Nómina",
     "fecha": "2026-12-02",
     "hora": "08:00",
     "semana": 4,
@@ -853,6 +887,7 @@
   {
     "id": "s07",
     "linea": "SEO",
+    "modulo": "Tesorería",
     "fecha": "2026-12-03",
     "hora": "08:00",
     "semana": 0,
@@ -884,6 +919,7 @@
   {
     "id": "s08",
     "linea": "SEO",
+    "modulo": "Tesorería",
     "fecha": "2026-12-04",
     "hora": "08:00",
     "semana": 0,
@@ -913,6 +949,7 @@
   {
     "id": "p18",
     "linea": "Redes",
+    "modulo": "Tesorería",
     "fecha": "2026-12-04",
     "hora": "12:00",
     "semana": 4,
@@ -938,6 +975,7 @@
   {
     "id": "p19",
     "linea": "Redes",
+    "modulo": "Tesorería",
     "fecha": "2026-12-04",
     "hora": "12:00",
     "semana": 4,
@@ -960,6 +998,7 @@
   {
     "id": "p20",
     "linea": "Redes",
+    "modulo": "Tesorería",
     "fecha": "2026-12-07",
     "hora": "08:00",
     "semana": 5,
@@ -985,6 +1024,7 @@
   {
     "id": "p21",
     "linea": "Redes",
+    "modulo": "Tesorería",
     "fecha": "2026-12-09",
     "hora": "08:00",
     "semana": 5,
@@ -1008,6 +1048,7 @@
   {
     "id": "a07",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2026-12-10",
     "hora": "08:00",
     "semana": 0,
@@ -1037,6 +1078,7 @@
   {
     "id": "s06",
     "linea": "SEO",
+    "modulo": "Causación",
     "fecha": "2026-12-10",
     "hora": "08:00",
     "semana": 0,
@@ -1065,6 +1107,7 @@
   {
     "id": "p22",
     "linea": "Redes",
+    "modulo": "App móvil",
     "fecha": "2026-12-11",
     "hora": "12:00",
     "semana": 5,
@@ -1088,6 +1131,7 @@
   {
     "id": "s09",
     "linea": "SEO",
+    "modulo": "Causación",
     "fecha": "2026-12-15",
     "hora": "08:00",
     "semana": 0,
@@ -1116,6 +1160,7 @@
   {
     "id": "s10",
     "linea": "SEO",
+    "modulo": "Causación",
     "fecha": "2027-01-04",
     "hora": "08:00",
     "semana": 0,
@@ -1144,6 +1189,7 @@
   {
     "id": "a08",
     "linea": "Pauta",
+    "modulo": "Causación",
     "fecha": "2027-01-05",
     "hora": "08:00",
     "semana": 0,
