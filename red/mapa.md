@@ -211,6 +211,10 @@ Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código d
 | `elegir-foto-del-banco` | neurona | C | "¿Cómo elijo la foto de una portada?", "¿cómo traigo una foto del banco?" | `linea-grafica` | `docs/banco-fotos.md`, `scripts/foto.py` |
 | `revisar-pieza-antes-de-publicar` | neurona | C | "¿Cómo reviso un anuncio antes de publicarlo?", "¿cómo reviso una pieza antes de publicarla?" | `linea-grafica` | `diseno/README.md`, `diseno/redes.md` §Desvíos, `diseno/reels.md` §Lo que no se repite |
 | `planeacion-de-marketing` | núcleo | C (pendientes: I) | "¿Qué campañas hacemos este mes?", "¿qué está haciendo la competencia en pauta?", "¿qué fechas del contador aprovechamos?" |  | Calendario DIAN 2026, Actualícese, INCP, Meta Ad Library y sitios de la competencia (03/11/2026), código de `platform` |
+| `calendario-de-marketing` | núcleo | C (detalle técnico: I) | "¿Dónde está el calendario de marketing?", "¿qué estados tiene una publicación?", "¿quién aprueba lo que se publica?" |  | `red/calendario.json`, `docs/campana-cierre-iva-2026-11.md` |
+| `aprobar-publicacion` | neurona | C | "¿Cómo apruebo una publicación?", "¿cómo dejo una nota en el calendario?" | `calendario-de-marketing` | `red/calendario-de-marketing.md`, `red/revisar-pieza-antes-de-publicar.md` |
+| `plan-de-redes` | núcleo | C (pendientes: I) | "¿Cuál es el plan de redes?", "¿qué tema va cada semana en redes?", "¿a qué hora publicamos?" |  | `red/calendario.json`, `diseno/redes.md`, `diseno/reels.md` |
+| `plan-seo` | núcleo | C (pendientes: I) | "¿Cuál es el plan SEO?", "¿qué artículos faltan en el blog?", "¿cómo medimos el SEO?" |  | `red/calendario.json`, `conocimiento/sitio-web.md`, código de `platform` |
 | `mensajes-y-afirmaciones` | núcleo | C (desvíos del sitio: I) | "¿Qué cifras puedo poner en un anuncio?", "¿puedo decir 90 % menos tiempo?", "¿qué llamado a la acción uso?" |  | `diseno/README.md` §Voz y §Vocabulario, `sitio-web.md` §Cifras de marketing, `por-confirmar.md` §4 |
 | `embudo-de-adquisicion` | núcleo | C (métricas: I) | "¿Cómo llega un prospecto a ser usuario?", "¿cuándo se considera activa una cuenta?", "¿qué pasa cuando se acaba la prueba?" |  | `demostraciones-y-ventas.md` §Cierre típico, código de `platform` |
 | `ver-embudo-de-activacion` | neurona | I | "¿Dónde veo el embudo de activación?", "¿dónde veo las organizaciones atascadas?" | `embudo-de-adquisicion` | código de `platform` |
@@ -334,6 +338,16 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `habilitar-cuenta-en-prueba` | `precios` | El mínimo mensual que se empieza a cobrar |
 | `planeacion-de-marketing` | `competencia` | Qué decirle a un prospecto que viene de otra solución |
 | `planeacion-de-marketing` | `campanas-de-activacion` | Crear el código que mide la campaña |
+| `planeacion-de-marketing` | `calendario-de-marketing` | Donde se aprueba cada anuncio |
+| `plan-de-redes` | `calendario-de-marketing` | Donde se aprueba cada publicación |
+| `plan-seo` | `calendario-de-marketing` | Donde se aprueba cada artículo o página |
+| `plan-de-redes` | `planeacion-de-marketing` | Las fechas y temas del mes |
+| `plan-seo` | `planeacion-de-marketing` | Las fechas que dan tema a los artículos |
+| `plan-seo` | `mensajes-y-afirmaciones` | Qué se puede afirmar en el sitio |
+| `plan-seo` | `modulos-disponibles` | No se posiciona lo que no está disponible |
+| `plan-de-redes` | `linea-grafica` | Cómo se ven las piezas |
+| `plan-de-redes` | `mensajes-y-afirmaciones` | Qué se puede afirmar en redes |
+| `calendario-de-marketing` | `revisar-pieza-antes-de-publicar` | La lista que se revisa en cada pieza |
 | `facturacion-electronica-y-radian` | `configuracion-facturacion-electronica`, `factura-de-venta-y-notas`, `documento-soporte-electronico`, `eventos-radian` | La parte del módulo por la que pregunta |
 | `configurar-resoluciones` | `emitir-factura-de-venta` | Ya cargada la resolución: emitir |
 | `crear-producto-para-facturar` | `emitir-factura-de-venta` | Usar el producto en una factura |

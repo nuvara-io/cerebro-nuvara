@@ -65,11 +65,11 @@ Cada uno es un concepto distinto (ángulo, formato y primera imagen), porque Met
 - Título: 500 causaciones en una hora o menos
 
 **N4 · Varios programas**
-- Texto principal: Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a Siigo, World Office, Alegra y otros. Una sola forma de trabajar para todas tus empresas.
+- Texto principal: Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a su programa contable. Si aún no tenemos el formato, lo generamos. Una sola forma de trabajar para todas tus empresas.
 - Título: Todas tus empresas, un solo panel
 
 **N5 · Pagas lo que causas**
-- Texto principal: Causar una compra cuesta $510 y una venta $200, sin plan forzado ni permanencia. El mínimo mensual de $80.000 es consumo que se acumula, no una mensualidad. Pagas lo que causas.
+- Texto principal: Causar una compra cuesta $510 y una venta $200, sin permanencia. El mínimo mensual de consumo es $80.000 y, si causas más, pagas tu consumo real.
 - Título: Pagas lo que causas
 
 Botón en todos: **Enviar mensaje** (WhatsApp). El llamado en las piezas es "Escríbenos y agenda tu demostración en vivo" o "Prueba núvara con 20 facturas".

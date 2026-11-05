@@ -2,12 +2,13 @@
 id: planeacion-de-marketing
 titulo: Planeación de marketing y pauta
 publico: C
-actualizado: 2026-11-03
+actualizado: 2026-11-04
 vigencia: revisar cada mes; el contexto y la competencia cambian rápido
 conexiones:
   - competencia             # cómo responder a un prospecto que usa otra solución
   - mensajes-y-afirmaciones # qué se puede afirmar en cada pieza
   - campanas-de-activacion  # el código que mide cada campaña
+  - calendario-de-marketing # donde se revisa y se aprueba cada anuncio
 fuentes:
   # Contexto (consultado el 03/11/2026)
   - https://www.dian.gov.co/Calendarios/Calendario_Tributario_2026.pdf
@@ -70,6 +71,9 @@ El plan de marketing y pauta de núvara según lo que está pasando en Colombia 
 
 ## Primera prueba de pauta (semana del 3 de noviembre)
 - [C] Campaña "Llega al cierre con todo causado": 5 conceptos distintos (reel de revisar y aprobar, carrusel de la comparación con la DIAN, 500 causaciones en una hora, varios programas en un solo panel y pagas lo que causas), objetivo conversaciones por WhatsApp y presupuesto pequeño de prueba durante 7 días. Cada anuncio lleva su propio código de activación para medir hasta la cuenta habilitada. El plan completo, con textos, códigos y reglas de decisión, está en `docs/campana-cierre-iva-2026-11.md`.
+
+## Dónde se aprueba
+- [C] Cada anuncio de este plan entra como propuesta al **calendario de marketing**, junto con las publicaciones de redes y los artículos del sitio. No se pauta nada sin la aprobación del operador.
 
 ## Cómo medir
 - [C] La plataforma no guarda UTM ni la fuente del registro: **cada canal o anuncio lleva su propio código de activación** (por ejemplo, uno para Meta, uno para LinkedIn y uno para correo). El embudo del código (canjes, causaron, crédito agotado, habilitadas) mide la campaña.

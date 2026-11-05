@@ -1270,5 +1270,51 @@
     "jefe de area",
     "jefe de área",
     "acceso a la app a un empleado"
+  ],
+  "calendario-de-marketing": [
+    "calendario de marketing",
+    "calendario de publicaciones",
+    "calendario de contenido",
+    "calendario editorial",
+    "parrilla",
+    "parrilla de contenido",
+    "que se publica",
+    "quien aprueba lo que se publica",
+    "estados tiene una publicacion",
+    "estado de una publicacion"
+  ],
+  "aprobar-publicacion": [
+    "aprobar una publicacion",
+    "apruebo una publicacion",
+    "dejo una nota",
+    "dejar una nota",
+    "dejar notas",
+    "nota en el calendario",
+    "visto bueno",
+    "observaciones del calendario",
+    "pedir un cambio en una pieza"
+  ],
+  "plan-de-redes": [
+    "plan de redes",
+    "redes organico",
+    "organico en redes",
+    "contenido organico",
+    "tema va cada semana",
+    "a que hora publicamos",
+    "cada cuanto publicamos",
+    "publicamos en redes"
+  ],
+  "plan-seo": [
+    "plan seo",
+    "seo",
+    "posicionamiento web",
+    "posicionar el sitio",
+    "palabras clave del sitio",
+    "articulos faltan",
+    "articulos del blog",
+    "blog de nuvara",
+    "faltan en el blog",
+    "search console",
+    "medimos el seo"
   ]
 }

@@ -377,6 +377,88 @@
           "40 anuncios"
         ]
       ]
+    },
+    {
+      "pregunta": "¿Dónde está el calendario de marketing?",
+      "publico": "C",
+      "nodos": [
+        "calendario-de-marketing"
+      ],
+      "incluye": [
+        [
+          "claude.ai/artifact"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Quién aprueba lo que se publica?",
+      "publico": "C",
+      "nodos": [
+        "calendario-de-marketing"
+      ],
+      "incluye": [
+        [
+          "operador"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo dejo una nota en el calendario?",
+      "publico": "C",
+      "nodos": [
+        "aprobar-publicacion"
+      ],
+      "incluye": [
+        [
+          "Cambio requerido"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el plan de redes?",
+      "publico": "C",
+      "nodos": [
+        "plan-de-redes"
+      ],
+      "incluye": [
+        [
+          "Llega al cierre"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuál es el plan SEO?",
+      "publico": "C",
+      "nodos": [
+        "plan-seo"
+      ],
+      "incluye": [
+        [
+          "palabra clave"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué artículos faltan en el blog?",
+      "publico": "C",
+      "nodos": [
+        "plan-seo"
+      ],
+      "incluye": [
+        [
+          "RADIAN"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué campañas hacemos este mes?",
+      "publico": "C",
+      "nodos": [
+        "planeacion-de-marketing"
+      ],
+      "noNodos": [
+        "plan-seo"
+      ]
     }
   ]
 }

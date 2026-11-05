@@ -1,0 +1,1173 @@
+[
+  {
+    "id": "a01",
+    "linea": "Pauta",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 1,
+    "pieza": "Anuncio N1: revisas y apruebas, no digitas",
+    "formato": "Reel 9:16, 20 a 25 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "Por hacer",
+    "copy": "Del 11 al 25 de noviembre vence el IVA. núvara trae tus facturas de la DIAN y del correo y prepara la causación con PUC, IVA y retenciones. Tú revisas, validas y apruebas. Nada se exporta sin tu aprobación.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "nota": "Sin Nuvi. Gancho del primer segundo: «Del 11 al 25 vence el IVA. ¿Ya causaste todo?».",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p07"
+    ],
+    "titulo": "Llega al cierre con todo causado",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
+    "codigo": "CIERRE-REEL",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a02",
+    "linea": "Pauta",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 2,
+    "pieza": "Anuncio N2: ¿te falta alguna factura?",
+    "formato": "Carrusel 4:5, 5 placas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "Por hacer",
+    "copy": "Antes de presentar el IVA, compara las facturas del mes con el listado de la DIAN. núvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran, y las que faltan quedan listas para causar.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s01"
+    ],
+    "titulo": "¿Te falta alguna factura?",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
+    "codigo": "CIERRE-DIAN",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a03",
+    "linea": "Pauta",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 3,
+    "pieza": "Anuncio N3: 500 causaciones",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/redes/Post500Causaciones.png",
+    "copy": "500 causaciones en una hora o menos, cerca de 15 segundos por causación. núvara interpreta y prepara; tú apruebas por grupos, no una por una. Llega al cierre de IVA con el tiempo de tu lado.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "nota": "El arte es el mismo del post orgánico del 9 de noviembre.",
+    "estadoPieza": "lista",
+    "thumb": "p500",
+    "relaciones": [
+      "p01"
+    ],
+    "titulo": "500 causaciones en una hora o menos",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
+    "codigo": "CIERRE-500",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a04",
+    "linea": "Pauta",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 4,
+    "pieza": "Anuncio N4: todas tus empresas, un solo panel",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "Por hacer",
+    "copy": "Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a su programa contable. Si aún no tenemos el formato, lo generamos. Una sola forma de trabajar para todas tus empresas.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [],
+    "titulo": "Todas tus empresas, un solo panel",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
+    "codigo": "CIERRE-PROGRAMAS",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a05",
+    "linea": "Pauta",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 5,
+    "pieza": "Anuncio N5: pagas lo que causas",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "Por hacer",
+    "copy": "Causar una compra cuesta $510 y una venta $200, sin permanencia. El mínimo mensual de consumo es $80.000 y, si causas más, pagas tu consumo real.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "nota": "Texto corregido: el plan decía que el mínimo se acumula y ya no es así. El sitio aún tiene la regla anterior: alinéalo antes de pautar este anuncio.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [],
+    "titulo": "Pagas lo que causas",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
+    "codigo": "CIERRE-PRECIO",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "p01",
+    "linea": "Redes",
+    "fecha": "2026-11-09",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 6,
+    "pieza": "500 causaciones en una hora o menos",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/redes/Post500Causaciones.png",
+    "copy": "500 causaciones en una hora o menos, cerca de 15 segundos por causación. núvara interpreta cada factura y prepara el asiento con PUC, IVA y retenciones. Tú revisas y apruebas.\n\nDel 11 al 25 de noviembre vence el IVA. Llega al cierre con todo causado.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "p500",
+    "relaciones": [
+      "a03"
+    ]
+  },
+  {
+    "id": "p02",
+    "linea": "Redes",
+    "fecha": "2026-11-09",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 7,
+    "pieza": "Historia de causación",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/campana-modulos/H1-Causacion.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "h1",
+    "relaciones": []
+  },
+  {
+    "id": "s01",
+    "linea": "SEO",
+    "fecha": "2026-11-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 8,
+    "pieza": "Comparar tus facturas con el listado de la DIAN",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "/blog/comparar-facturas-con-la-dian/",
+    "copy": "Sale del nodo comparar-con-la-dian: para qué sirve, qué listado se sube, cómo leer las diferencias y qué hacer con las que faltan. Cierra con la demostración en vivo.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "a02",
+      "p04"
+    ],
+    "url": "/blog/comparar-facturas-con-la-dian/",
+    "palabraClave": "comparar facturas con la DIAN",
+    "intencion": "Informativa",
+    "tituloSeo": "Cómo comparar tus facturas con la DIAN antes del IVA",
+    "metaDescripcion": "Antes de presentar el IVA, compara tus facturas del mes con el listado de la DIAN y encuentra las que te faltan. Te mostramos cómo hacerlo paso a paso."
+  },
+  {
+    "id": "p23",
+    "linea": "Redes",
+    "fecha": "2026-11-10",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 9,
+    "pieza": "App móvil: próximamente",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/app/M5-AppProximamente.png",
+    "copy": "Muy pronto, tus clientes y tu equipo también en el celular. La app móvil de núvara llega a iOS y Android: tus clientes aprueban pagos y tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Sin fecha ni precio. No programar si la app ya salió.",
+    "estadoPieza": "lista",
+    "thumb": "ap",
+    "relaciones": []
+  },
+  {
+    "id": "p24",
+    "linea": "Redes",
+    "fecha": "2026-11-10",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 10,
+    "pieza": "Historia: app próximamente",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/app/H5-AppProximamente.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "No programar si la app ya salió.",
+    "estadoPieza": "lista",
+    "thumb": "hp",
+    "relaciones": []
+  },
+  {
+    "id": "p03",
+    "linea": "Redes",
+    "fecha": "2026-11-11",
+    "hora": "08:00",
+    "semana": 1,
+    "orden": 11,
+    "pieza": "Así causas en núvara",
+    "formato": "Video 16:9, 1 min",
+    "canales": [
+      "LinkedIn",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/flujo-causacion.mp4",
+    "copy": "Así se ve causar en núvara, con el flujo real de la plataforma: traes tus facturas, causas en lote o en automático, revisas el asiento, apruebas en grupo y exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nHoy empieza a vencer el IVA bimestral. Nada se exporta sin tu aprobación.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Solo orgánico: el video lleva a Nuvi, que no va en anuncios.",
+    "estadoPieza": "lista",
+    "thumb": "vc",
+    "relaciones": []
+  },
+  {
+    "id": "s02",
+    "linea": "SEO",
+    "fecha": "2026-11-12",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 12,
+    "pieza": "Corregir títulos y textos del sitio",
+    "formato": "Ajuste técnico",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Base del sitio",
+    "porque": "El título de portada rompe la marca y aparece en cada resultado de búsqueda.",
+    "archivo": "/",
+    "copy": "Corrige el nombre de marca, la sigla sola y las frases que quitan el control en portada, páginas y artículos, según la lista de desvíos de conocimiento/sitio-web.md. Aprovecha para alinear las reglas del mínimo mensual.",
+    "nota": "Se hace en apps/landing de platform.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [],
+    "url": "/",
+    "palabraClave": "causación de facturas",
+    "intencion": "Comercial",
+    "tituloSeo": "Causación de facturas con inteligencia artificial | núvara",
+    "metaDescripcion": "núvara trae tus facturas de la DIAN y prepara la causación con PUC, IVA y retenciones. Tú revisas y apruebas. Para contadores y empresas en Colombia."
+  },
+  {
+    "id": "p25",
+    "linea": "Redes",
+    "fecha": "2026-11-12",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 13,
+    "pieza": "Reel: app próximamente",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/reels/reel-app-proximamente.mp4",
+    "copy": "Próximamente: núvara en tu celular. Tus clientes ven cómo va su empresa y aprueban pagos, y tu equipo registra los gastos de caja.\n\nMuy pronto en iOS y Android.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "No programar si la app ya salió.",
+    "estadoPieza": "lista",
+    "thumb": "rp",
+    "relaciones": []
+  },
+  {
+    "id": "s11",
+    "linea": "SEO",
+    "fecha": "2026-11-13",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 14,
+    "pieza": "Página de la app móvil",
+    "formato": "Página",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Lanzamiento de la app.",
+    "archivo": "/app/",
+    "copy": "Página de la app: qué ve cada perfil y enlaces a las tiendas.",
+    "nota": "Fecha estimada: sale el día que la app esté en las tiendas.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p26"
+    ],
+    "url": "/app/",
+    "palabraClave": "app contable para empresarios",
+    "intencion": "Comercial",
+    "tituloSeo": "App móvil para tu contabilidad y tus clientes | núvara",
+    "metaDescripcion": "Dale acceso a tus clientes y a tu equipo desde el celular para ver su empresa y aprobar pagos. Descarga la app de núvara."
+  },
+  {
+    "id": "p04",
+    "linea": "Redes",
+    "fecha": "2026-11-13",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 15,
+    "pieza": "Causación: revisa y aprueba",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/campana-modulos/M1-Causacion.png",
+    "copy": "Una sola factura puede implicar más de diez decisiones contables. núvara las prepara y tú revisas, validas y apruebas.\n\nCon núvara, siempre mantienes el control de tu operación.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "m1",
+    "relaciones": [
+      "s01"
+    ]
+  },
+  {
+    "id": "p26",
+    "linea": "Redes",
+    "fecha": "2026-11-13",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 16,
+    "pieza": "Lanzamiento: app ya disponible",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/app/M5-AppDisponible.png",
+    "copy": "Ya está aquí la app móvil de núvara. Tus clientes ven su empresa y aprueban pagos, y tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Fecha estimada: va el día que la app esté en las tiendas.",
+    "estadoPieza": "lista",
+    "thumb": "ad",
+    "relaciones": [
+      "s11"
+    ]
+  },
+  {
+    "id": "p27",
+    "linea": "Redes",
+    "fecha": "2026-11-13",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 17,
+    "pieza": "Historia: app ya disponible",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/app/H5-AppDisponible.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "Fecha estimada: va el día que la app esté en las tiendas.",
+    "estadoPieza": "lista",
+    "thumb": "hd",
+    "relaciones": []
+  },
+  {
+    "id": "p05",
+    "linea": "Redes",
+    "fecha": "2026-11-17",
+    "hora": "12:00",
+    "semana": 2,
+    "orden": 18,
+    "pieza": "¿Qué es núvara?",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "archivo": "out/redes/QueEsNuvara.png",
+    "copy": "núvara trae tus facturas desde la DIAN y tu correo, arma la causación con PUC, IVA, retenciones y bases, y tú apruebas antes de exportar a tu programa contable.\n\nTodas tus empresas en una cuenta y pagas tu consumo real.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Lunes 16 es festivo: la semana arranca el martes.",
+    "estadoPieza": "lista",
+    "thumb": "que",
+    "relaciones": []
+  },
+  {
+    "id": "p06",
+    "linea": "Redes",
+    "fecha": "2026-11-17",
+    "hora": "12:00",
+    "semana": 2,
+    "orden": 19,
+    "pieza": "Historia: más que causación",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "archivo": "out/campana-modulos/H0-MasQueCausacion.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "h0",
+    "relaciones": []
+  },
+  {
+    "id": "p07",
+    "linea": "Redes",
+    "fecha": "2026-11-18",
+    "hora": "12:00",
+    "semana": 2,
+    "orden": 20,
+    "pieza": "Reel: revisar y aprobar",
+    "formato": "Reel 9:16, 36 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "archivo": "out/reels/reel-causacion.mp4",
+    "copy": "Del 11 al 25 vence el IVA. ¿Ya causaste todo?\n\nnúvara prepara la causación y tú revisas con la factura original al lado. Nada se exporta sin tu aprobación.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "vc",
+    "relaciones": [
+      "a01"
+    ]
+  },
+  {
+    "id": "p08",
+    "linea": "Redes",
+    "fecha": "2026-11-19",
+    "hora": "08:00",
+    "semana": 2,
+    "orden": 21,
+    "pieza": "Brochure de causación",
+    "formato": "Documento PDF",
+    "canales": [
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "archivo": "out/brochure/nuvara-causacion-propuesta.pdf",
+    "copy": "Todo lo que hace núvara en causación, en un documento: de la factura al asiento, con tu revisión en cada paso.\n\nCompártelo con quien lleva la contabilidad en tu equipo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Revisa la portada: dice «Propuesta comercial».",
+    "estadoPieza": "lista",
+    "thumb": "bc",
+    "relaciones": []
+  },
+  {
+    "id": "s03",
+    "linea": "SEO",
+    "fecha": "2026-11-20",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 22,
+    "pieza": "Página de facturación electrónica",
+    "formato": "Página",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Más que causación",
+    "porque": "Las redes hablan del módulo desde el 23 de noviembre.",
+    "archivo": "/facturacion-electronica/",
+    "copy": "Página del módulo: qué se emite, RADIAN, habilitación y precios permitidos. Lleva al brochure y a la demostración en vivo.",
+    "nota": "Sale antes de la semana de facturación en redes.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p10",
+      "p12",
+      "s04"
+    ],
+    "url": "/facturacion-electronica/",
+    "palabraClave": "facturación electrónica para contadores",
+    "intencion": "Comercial",
+    "tituloSeo": "Facturación electrónica para contadores y empresas | núvara",
+    "metaDescripcion": "Emite facturas, notas y documento soporte electrónicos y registra eventos RADIAN desde la misma plataforma donde causas. Conoce núvara en Colombia."
+  },
+  {
+    "id": "p09",
+    "linea": "Redes",
+    "fecha": "2026-11-20",
+    "hora": "12:00",
+    "semana": 2,
+    "orden": 23,
+    "pieza": "Más que causación",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "archivo": "out/campana-modulos/M0-MasQueCausacion.png",
+    "copy": "Causación, facturación electrónica, nómina y tesorería en un solo lugar. núvara prepara el trabajo de cada módulo y tú revisas y apruebas.\n\nY exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "m0",
+    "relaciones": []
+  },
+  {
+    "id": "p10",
+    "linea": "Redes",
+    "fecha": "2026-11-23",
+    "hora": "12:00",
+    "semana": 3,
+    "orden": 24,
+    "pieza": "Factura donde ya causas",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Más que causación",
+    "porque": "Módulo por módulo, cuando termina el IVA.",
+    "archivo": "out/campana-modulos/M2-FacturacionElectronica.png",
+    "copy": "Emite ante la DIAN desde la misma plataforma donde causas: factura de venta, notas, documento soporte y eventos RADIAN, con una sola habilitación.\n\nTus ventas emitidas quedan listas para causar.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "m2",
+    "relaciones": [
+      "s03"
+    ]
+  },
+  {
+    "id": "p11",
+    "linea": "Redes",
+    "fecha": "2026-11-23",
+    "hora": "12:00",
+    "semana": 3,
+    "orden": 25,
+    "pieza": "Historia de facturación electrónica",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Más que causación",
+    "porque": "Módulo por módulo, cuando termina el IVA.",
+    "archivo": "out/campana-modulos/H2-FacturacionElectronica.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "h2",
+    "relaciones": []
+  },
+  {
+    "id": "p12",
+    "linea": "Redes",
+    "fecha": "2026-11-25",
+    "hora": "08:00",
+    "semana": 3,
+    "orden": 26,
+    "pieza": "Brochure de facturación electrónica",
+    "formato": "Documento PDF",
+    "canales": [
+      "LinkedIn"
+    ],
+    "tema": "Más que causación",
+    "porque": "Módulo por módulo, cuando termina el IVA.",
+    "archivo": "out/brochure-fe/nuvara-facturacion-electronica.pdf",
+    "copy": "Facturación electrónica en núvara: qué emites, cómo empiezas y cuánto cuesta, en un documento.\n\nTambién responde tus eventos RADIAN desde la misma plataforma.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Incluye el precio de $100 por evento RADIAN.",
+    "estadoPieza": "lista",
+    "thumb": "bf",
+    "relaciones": [
+      "s03"
+    ]
+  },
+  {
+    "id": "a06",
+    "linea": "Pauta",
+    "fecha": "2026-11-26",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 27,
+    "pieza": "Ronda 2: proyecto de ley y facturas que no cumplen",
+    "formato": "Por definir",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Proyecto de ley: facturas que no cumplen",
+    "porque": "El proyecto se discute en el Congreso hasta mediados de diciembre.",
+    "archivo": "Por hacer",
+    "copy": "Por escribir después de leer la primera prueba. Contenido educativo que lleva a la causación con la factura original al lado.",
+    "nota": "Se habla de «el proyecto», nunca de ley vigente. Fecha sugerida: depende de la lectura del 13 de noviembre.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [],
+    "titulo": "Por definir",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Por definir",
+    "codigo": "Por crear",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "s04",
+    "linea": "SEO",
+    "fecha": "2026-11-26",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 28,
+    "pieza": "Eventos RADIAN: cuáles son y cómo registrarlos",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Más que causación",
+    "porque": "El video de RADIAN sale el 27 de noviembre y necesita a dónde llevar.",
+    "archivo": "/blog/eventos-radian/",
+    "copy": "Sale de los nodos eventos-radian y registrar-eventos-radian. Lleva a la página de facturación electrónica.",
+    "nota": "El precio por evento va solo si se confirma que se puede publicar.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p13",
+      "p16",
+      "s03"
+    ],
+    "url": "/blog/eventos-radian/",
+    "palabraClave": "eventos RADIAN",
+    "intencion": "Informativa",
+    "tituloSeo": "Eventos RADIAN: qué son y cómo registrarlos",
+    "metaDescripcion": "Qué son los eventos RADIAN, para qué sirven en tus facturas de compra a crédito y cómo registrarlos con control. Guía para contadores en Colombia."
+  },
+  {
+    "id": "s05",
+    "linea": "SEO",
+    "fecha": "2026-11-27",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 29,
+    "pieza": "Página de nómina electrónica",
+    "formato": "Página",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Las redes hablan del módulo desde el 30 de noviembre.",
+    "archivo": "/nomina-electronica/",
+    "copy": "Página del módulo: qué cubre de principio a fin y precios por tramo permitidos. Lleva al brochure y a la demostración en vivo.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p14",
+      "p17"
+    ],
+    "url": "/nomina-electronica/",
+    "palabraClave": "nómina electrónica",
+    "intencion": "Comercial",
+    "tituloSeo": "Nómina electrónica para empresas en Colombia | núvara",
+    "metaDescripcion": "Liquida, emite y causa tu nómina electrónica en la misma plataforma de tu contabilidad, con prestaciones, novedades y PILA. Conoce núvara."
+  },
+  {
+    "id": "p13",
+    "linea": "Redes",
+    "fecha": "2026-11-27",
+    "hora": "12:00",
+    "semana": 3,
+    "orden": 30,
+    "pieza": "Eventos RADIAN en núvara",
+    "formato": "Video 16:9, 1 min",
+    "canales": [
+      "LinkedIn",
+      "Facebook"
+    ],
+    "tema": "Más que causación",
+    "porque": "Módulo por módulo, cuando termina el IVA.",
+    "archivo": "out/eventos-radian.mp4",
+    "copy": "¿Recibes facturas a crédito? Los eventos RADIAN soportan el costo y el IVA descontable de esas compras.\n\nEn núvara los envías a mano o con reglas, y vigilas lo que está por vencer. El reclamo siempre lo decides tú.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Facturas ya tapadas. Dice $100 por evento: confirma que se puede publicar. No es promoción de Black Friday.",
+    "estadoPieza": "lista",
+    "thumb": "vr",
+    "relaciones": [
+      "s04"
+    ]
+  },
+  {
+    "id": "p14",
+    "linea": "Redes",
+    "fecha": "2026-11-30",
+    "hora": "12:00",
+    "semana": 4,
+    "orden": 31,
+    "pieza": "Nómina de principio a fin",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/campana-modulos/M3-Nomina.png",
+    "copy": "Empleados y novedades, liquidación y prestaciones, nómina electrónica y PILA, y la causación de la nómina.\n\nTraes tu histórico desde tu programa actual y sigues desde ahí. Tú revisas y apruebas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "m3",
+    "relaciones": [
+      "s05"
+    ]
+  },
+  {
+    "id": "p15",
+    "linea": "Redes",
+    "fecha": "2026-11-30",
+    "hora": "12:00",
+    "semana": 4,
+    "orden": 32,
+    "pieza": "Historia de nómina",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/campana-modulos/H3-Nomina.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "h3",
+    "relaciones": []
+  },
+  {
+    "id": "p16",
+    "linea": "Redes",
+    "fecha": "2026-12-01",
+    "hora": "12:00",
+    "semana": 4,
+    "orden": 33,
+    "pieza": "Reel: eventos RADIAN",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/reels/reel-radian.mp4",
+    "copy": "Si recibes facturas a crédito, esto te interesa: acuse, recibo y aceptación desde núvara, a mano o con reglas.\n\nEl reclamo nunca se envía solo: siempre lo decides tú.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "vr",
+    "relaciones": [
+      "s04"
+    ]
+  },
+  {
+    "id": "p17",
+    "linea": "Redes",
+    "fecha": "2026-12-02",
+    "hora": "08:00",
+    "semana": 4,
+    "orden": 34,
+    "pieza": "Brochure de nómina",
+    "formato": "Documento PDF",
+    "canales": [
+      "LinkedIn"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/brochure-nomina/nuvara-nomina.pdf",
+    "copy": "Se acerca la prima de servicios. Mira cómo llevas la nómina en núvara, de la novedad al asiento: liquidación, nómina electrónica, PILA y precios por tramo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "bn",
+    "relaciones": [
+      "s05"
+    ]
+  },
+  {
+    "id": "s07",
+    "linea": "SEO",
+    "fecha": "2026-12-03",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 35,
+    "pieza": "Página de tesorería",
+    "formato": "Página",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Las redes hablan del módulo desde el 4 de diciembre.",
+    "archivo": "/tesoreria/",
+    "copy": "Página del módulo: bancos, cobros, pagos, caja, conciliación y exportación a tu programa contable. Si no tenemos el formato, lo generamos.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p18",
+      "p20",
+      "p21",
+      "s08"
+    ],
+    "url": "/tesoreria/",
+    "palabraClave": "software de tesorería",
+    "intencion": "Comercial",
+    "tituloSeo": "Tesorería para empresas y contadores en Colombia | núvara",
+    "metaDescripcion": "Registra cobros y pagos, concilia tus bancos y maneja tu caja donde ya causas. Exporta los comprobantes a tu programa contable. Conoce núvara."
+  },
+  {
+    "id": "s08",
+    "linea": "SEO",
+    "fecha": "2026-12-04",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 36,
+    "pieza": "Conciliación bancaria paso a paso",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "El video completo de tesorería sale el 7 de diciembre.",
+    "archivo": "/blog/conciliacion-bancaria/",
+    "copy": "Sale del nodo conciliacion-bancaria. Lleva a la página de tesorería.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "p20",
+      "s07"
+    ],
+    "url": "/blog/conciliacion-bancaria/",
+    "palabraClave": "conciliación bancaria",
+    "intencion": "Informativa",
+    "tituloSeo": "Conciliación bancaria: qué es y cómo hacerla paso a paso",
+    "metaDescripcion": "Qué es la conciliación bancaria, cómo cargar el extracto y cómo resolver las diferencias del mes. Guía práctica para contadores en Colombia."
+  },
+  {
+    "id": "p18",
+    "linea": "Redes",
+    "fecha": "2026-12-04",
+    "hora": "12:00",
+    "semana": 4,
+    "orden": 37,
+    "pieza": "Bancos, cobros y pagos conciliados",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/campana-modulos/M4-Tesoreria.png",
+    "copy": "Cuentas por cobrar y por pagar, pago de nómina y cajas con arqueo. Concilia con el extracto de tu banco y cada movimiento deja su comprobante contable.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "m4",
+    "relaciones": [
+      "s07"
+    ]
+  },
+  {
+    "id": "p19",
+    "linea": "Redes",
+    "fecha": "2026-12-04",
+    "hora": "12:00",
+    "semana": 4,
+    "orden": 38,
+    "pieza": "Historia de tesorería",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Cierre de año: prima antes del 18 de diciembre.",
+    "archivo": "out/campana-modulos/H4-Tesoreria.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "",
+    "estadoPieza": "lista",
+    "thumb": "h4",
+    "relaciones": []
+  },
+  {
+    "id": "p20",
+    "linea": "Redes",
+    "fecha": "2026-12-07",
+    "hora": "08:00",
+    "semana": 5,
+    "orden": 39,
+    "pieza": "Tesorería: el flujo completo",
+    "formato": "Video 16:9, 2 min",
+    "canales": [
+      "LinkedIn",
+      "Facebook"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Tesorería completa y app móvil.",
+    "archivo": "out/tesoreria-flujo.mp4",
+    "copy": "Tu tesorería completa, en dos minutos: creas tus cuentas, cobras, pagas, preparas el lote de nómina, concilias el banco y controlas tus cajas.\n\nCada movimiento deja su comprobante y lo exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Lleva la escena de la app: publicar solo si ya está en las tiendas.",
+    "estadoPieza": "lista",
+    "thumb": "vt",
+    "relaciones": [
+      "s07",
+      "s08"
+    ]
+  },
+  {
+    "id": "p21",
+    "linea": "Redes",
+    "fecha": "2026-12-09",
+    "hora": "08:00",
+    "semana": 5,
+    "orden": 40,
+    "pieza": "Brochure de tesorería",
+    "formato": "Documento PDF",
+    "canales": [
+      "LinkedIn"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Tesorería completa y app móvil.",
+    "archivo": "out/brochure-tesoreria/nuvara-tesoreria.pdf",
+    "copy": "Cobra, paga, concilia y controla tus cajas, con su asiento contable. Tú revisas y apruebas.\n\nEn este documento está todo lo que incluye tesorería en núvara.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Lleva la página de la app y precios de suscripción: publicar con la app en tiendas y esos precios confirmados.",
+    "estadoPieza": "lista",
+    "thumb": "bt",
+    "relaciones": [
+      "s07"
+    ]
+  },
+  {
+    "id": "a07",
+    "linea": "Pauta",
+    "fecha": "2026-12-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 41,
+    "pieza": "Ronda 3: cierre anual sin trasnochar",
+    "formato": "Por definir",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Cierre anual sin trasnochar",
+    "porque": "La retención de noviembre vence del 10 al 23 de diciembre.",
+    "archivo": "Por hacer",
+    "copy": "Por escribir con el ángulo que gane la primera prueba: núvara prepara, tú apruebas, y te vas de vacaciones con el mes listo.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s09"
+    ],
+    "titulo": "Cierre anual sin trasnochar",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Por definir",
+    "codigo": "Por crear",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "s06",
+    "linea": "SEO",
+    "fecha": "2026-12-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 42,
+    "pieza": "Exógena 2026: qué dejar listo antes del cierre",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Cierre anual sin trasnochar",
+    "porque": "Los expertos recomiendan dejar terceros y conceptos listos antes del cierre.",
+    "archivo": "/blog/exogena-2026-antes-del-cierre/",
+    "copy": "Sale de planeacion-de-marketing. Formatos nuevos y cambios; terceros y conceptos ordenados desde la causación.",
+    "nota": "Verifica formatos y fechas contra la DIAN el día de publicar. Las fechas de 2027 aún no están publicadas.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "a07"
+    ],
+    "url": "/blog/exogena-2026-antes-del-cierre/",
+    "palabraClave": "exógena 2026",
+    "intencion": "Informativa",
+    "tituloSeo": "Exógena 2026: qué dejar listo antes del cierre contable",
+    "metaDescripcion": "La exógena del año gravable 2026 estrena formatos. Revisa qué terceros y conceptos conviene dejar ordenados antes del cierre contable."
+  },
+  {
+    "id": "p22",
+    "linea": "Redes",
+    "fecha": "2026-12-11",
+    "hora": "12:00",
+    "semana": 5,
+    "orden": 43,
+    "pieza": "Reel: la app móvil",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Tesorería completa y app móvil.",
+    "archivo": "out/reels/reel-app.mp4",
+    "copy": "Tus clientes ven su empresa y aprueban pagos desde el celular. Tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Publicar solo si la app ya está en las tiendas. Si se atrasa, usa el reel de próximamente.",
+    "estadoPieza": "lista",
+    "thumb": "va",
+    "relaciones": []
+  },
+  {
+    "id": "s09",
+    "linea": "SEO",
+    "fecha": "2026-12-15",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 44,
+    "pieza": "Cierre contable de fin de año",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Cierre anual sin trasnochar",
+    "porque": "Los usuarios preparan el cierre antes de vacaciones.",
+    "archivo": "/blog/cierre-contable-fin-de-ano/",
+    "copy": "Lista práctica de cierre desde la causación: facturas del mes, comparación con la DIAN, notas y aprobación.",
+    "nota": "",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "a07"
+    ],
+    "url": "/blog/cierre-contable-fin-de-ano/",
+    "palabraClave": "cierre contable",
+    "intencion": "Informativa",
+    "tituloSeo": "Cierre contable de fin de año: qué debe quedar causado",
+    "metaDescripcion": "Lo que debe quedar causado y revisado antes del cierre contable, para llegar a enero con las facturas al día y sin trasnochar."
+  },
+  {
+    "id": "s10",
+    "linea": "SEO",
+    "fecha": "2027-01-04",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 45,
+    "pieza": "Vencimientos del 13 al 26 de enero",
+    "formato": "Artículo",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Del 13 al 26 de enero vence casi todo",
+    "porque": "Es el pico del año.",
+    "archivo": "/blog/vencimientos-enero-2027/",
+    "copy": "Calendario de enero y qué debe estar causado. Lleva a la campaña de enero.",
+    "nota": "Verifica las fechas contra el calendario de la DIAN.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "a08"
+    ],
+    "url": "/blog/vencimientos-enero-2027/",
+    "palabraClave": "vencimientos DIAN enero 2027",
+    "intencion": "Informativa",
+    "tituloSeo": "Vencimientos DIAN de enero 2027: qué debes tener causado",
+    "metaDescripcion": "Del 13 al 26 de enero coinciden IVA, retención y anticipo del régimen simple. Revisa qué debes tener causado antes de la primera fecha."
+  },
+  {
+    "id": "a08",
+    "linea": "Pauta",
+    "fecha": "2027-01-05",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 46,
+    "pieza": "Ronda 4: vence casi todo en enero",
+    "formato": "Por definir",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Del 13 al 26 de enero vence casi todo",
+    "porque": "Coinciden IVA bimestral y cuatrimestral, retención y anticipo del régimen simple.",
+    "archivo": "Por hacer",
+    "copy": "Por escribir: «Del 13 al 26 de enero vence casi todo. Causa diciembre ya».",
+    "nota": "La campaña fuerte del plan. Confirma el presupuesto antes de diciembre.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s10"
+    ],
+    "titulo": "Causa diciembre ya",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Por definir",
+    "codigo": "Por crear",
+    "destino": "WhatsApp del asesor"
+  }
+]
