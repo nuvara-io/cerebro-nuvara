@@ -340,7 +340,7 @@
       ],
       "incluye": [
         [
-          "bolsa de documentos se pierde"
+          "se descuentan en documentos"
         ]
       ],
       "excluye": []
@@ -371,7 +371,7 @@
           "tramo de empleados"
         ],
         [
-          "\\$960\\.000"
+          "\\$480\\.000"
         ]
       ],
       "excluye": []
@@ -384,15 +384,28 @@
       ],
       "incluye": [
         [
-          "\\$150\\.000 al año"
+          "\\$150\\.000 por 30"
         ],
         [
-          "\\$1\\.500"
+          "\\$1\\.350\\.000"
         ]
       ],
       "excluye": [
         "pago único"
       ]
+    },
+    {
+      "pregunta": "¿Si se me acaban los documentos antes del año tengo descuento?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "10 % de descuento"
+        ]
+      ],
+      "excluye": []
     },
     {
       "pregunta": "¿Cuánto cuesta un evento RADIAN?",

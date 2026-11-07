@@ -97,7 +97,7 @@ export const ComoEmpiezas: React.FC = () => (
         <Titular azul="Lo dejas listo una vez" gris="y empiezas a emitir." />
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
-        <Etapa n="01" titulo="Solicitas el módulo" texto="Con la *habilitación*, que incluye firma digital y configuración." />
+        <Etapa n="01" titulo="Solicitas el módulo" texto="Con tu *paquete anual*, que incluye firma digital y configuración." />
         <Etapa n="02" titulo="Habilitas ante la DIAN" texto="Pruebas, aprobación y producción. *Las pruebas no se cobran.*" />
         <Etapa n="03" titulo="Cargas tus resoluciones" texto="La de factura se puede *sincronizar desde MUISCA*." />
         <Etapa ultima n="04" titulo="Personalizas y emites" texto="Tu *logo*, tu plantilla de PDF y tus notas al pie." />
@@ -194,11 +194,10 @@ export const Reglas: React.FC = () => (
   </Dividida>
 );
 
-const BOLSAS = [
-  ["Hasta 120", "$180.000"],
-  ["121 a 500", "$425.000"],
-  ["501 a 1.500", "$525.000"],
-  ["1.501 a 5.000", "$1.000.000"],
+const PAQUETES = [
+  ["120", "$198.000"],
+  ["1.000", "$580.000"],
+  ["3.000", "$1.350.000"],
 ] as const;
 
 // 09 · Precios
@@ -207,34 +206,34 @@ export const PreciosFE: React.FC = () => (
     <div style={{ position: "absolute", left: MX, right: MX, top: 170, display: "grid", gap: 30 }}>
       <div style={{ display: "grid", gap: 18 }}>
         <Pill>PRECIOS</Pill>
-        <Titular azul="Una habilitación al año." gris="Documentos a tu medida." size={60} />
+        <Titular azul="Paquetes anuales." gris="Con el certificado incluido." size={60} />
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1fr", gap: 28 }}>
         <Tarjeta style={{ background: color.accent, display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
           <Landmark {...icono} />
           <p style={t(56, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$150.000</p>
-          <p style={t(28, { fontWeight: 700, color: color.white })}>Habilitación al año</p>
-          <p style={t(23, { color: color.white })}>Firma digital, configuración ante la DIAN y 20 documentos. Sirve también para nómina electrónica.</p>
+          <p style={t(28, { fontWeight: 700, color: color.white })}>Paquete inicial</p>
+          <p style={t(23, { color: color.white })}>30 documentos, certificado digital y configuración ante la DIAN.</p>
         </Tarjeta>
         <Tarjeta style={{ display: "grid", gap: 10, alignContent: "start", padding: 30 }}>
-          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Bolsas de documentos</p>
-          {BOLSAS.map(([docs, precio]) => (
+          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Más documentos al año</p>
+          {PAQUETES.map(([docs, precio]) => (
             <div key={docs} style={{ display: "flex", justifyContent: "space-between", paddingBottom: 8, borderBottom: `1px solid ${color.gray200}` }}>
               <span style={t(25)}>{docs} documentos</span>
               <strong style={t(27, { fontWeight: 700, color: color.accent })}>{precio}</strong>
             </div>
           ))}
-          <p style={t(22)}>Más de 5.000 documentos: se cotiza.</p>
+          <p style={t(22)}>Más de 3.000 documentos: se cotiza.</p>
         </Tarjeta>
         <Tarjeta style={{ display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
           <Wallet size={34} color={color.accent} strokeWidth={2.1} />
-          <p style={t(56, { fontWeight: 700, color: color.accent, lineHeight: 1 })}>$1.500</p>
-          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Por documento</p>
-          <p style={t(23)}>Con créditos, sin comprar bolsa: 15 créditos por documento.</p>
+          <p style={t(56, { fontWeight: 700, color: color.accent, lineHeight: 1 })}>$100</p>
+          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Por evento RADIAN</p>
+          <p style={t(23)}>100 créditos por cada acuse o evento. No consume el paquete.</p>
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Consumen la bolsa la factura, las *notas* y el *documento soporte*. Cada *evento RADIAN* vale *$100* en créditos. Si renuevas la habilitación, tu saldo sigue vigente; si no, lo que quede en la bolsa se pierde." />
+        <Emphasis text="Consumen el paquete la factura, las *notas* y el *documento soporte*. Vigencia de *un año*: si se acaban antes, el siguiente tiene *10 % de descuento*. El certificado sirve también para *nómina electrónica*." />
       </p>
     </div>
   </Slide>

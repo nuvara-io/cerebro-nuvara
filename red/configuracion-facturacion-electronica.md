@@ -15,7 +15,7 @@ fuentes:
 Todo lo que se deja listo una vez antes de emitir: la solicitud, la habilitación ante la DIAN por tipo de documento, las resoluciones de numeración, la apariencia del PDF y el certificado de firma.
 
 ## El camino para empezar a emitir
-1. [P] **Solicitar** el módulo y pagar la habilitación ($150.000).
+1. [P] **Solicitar** el módulo y pagar el paquete anual, desde $150.000.
 2. [P] **Habilitar ante la DIAN** cada grupo de documentos: pruebas, aprobación de la DIAN y producción.
 3. [P] **Cargar las resoluciones** de numeración de cada tipo de documento.
 4. [P] Opcional: logo, plantilla del PDF y notas por defecto.

@@ -43,7 +43,7 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 ## Cómo veo mi saldo y cuántas facturas me alcanzan
 - [P] Tu saldo se ve siempre en la parte superior de la plataforma.
 - [P] Al pulsarlo aparece la **Capacidad de causación**: cuántas facturas de **Ventas** y cuántas de **Compras** alcanzas a causar con el saldo que tienes. Es el mismo saldo expresado en ventas o en compras.
-- [P] Para calcularlo a mano: créditos ÷ 5,1 = facturas de compra; créditos ÷ 2 = facturas de venta.
+- [P] Para calcularlo a mano: créditos ÷ 510 = facturas de compra; créditos ÷ 200 = facturas de venta.
 - [P] En **Cuenta › Saldo** ves el saldo disponible, lo consumido y una gráfica del consumo de cada mes.
 - [P] En **Cuenta › Cobros** está el **Historial de pagos y consumos**.
 
@@ -56,13 +56,13 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 ## Qué pasa si se acaba el saldo
 - [P] Cuando te estás quedando sin créditos, la plataforma te avisa con un botón para recargar.
 - [P] Con el saldo en cero no puedes causar ni emitir documentos electrónicos hasta que recargues.
-- [P] Si no renuevas la habilitación de facturación electrónica, lo que quede en tu bolsa de documentos se pierde; si renuevas, sigue vigente. Los créditos del saldo los puedes usar en otros módulos.
+- [P] Los paquetes de facturación electrónica se descuentan en documentos, no del saldo. Los créditos del saldo los puedes usar en otros módulos.
 - [P] Si lanzas una causación por lote con más facturas de las que cubre tu saldo, núvara te avisa: recarga o reduce el rango de fechas.
 - [P] Si tienes la nómina activa y el saldo no cubre los cupos del mes, el módulo tiene 3 días de gracia y luego se pausa.
 - [P] Si trabajas en volumen, recarga antes de empezar el mes para no frenar el trabajo.
 
 ## Cuál es la recarga mínima
-- [P] La recarga mínima es de **$70.000** (700 créditos); la plataforma te la muestra en la tarjeta de compra al recargar.
+- [P] La recarga mínima es de **$70.000** (70.000 créditos); la plataforma te la muestra en la tarjeta de compra al recargar.
 - [P] No es lo mismo que el mínimo mensual de $80.000: ese es lo mínimo que se consume del saldo cada mes (ver `precios`).
 
 ## Para el equipo
@@ -71,7 +71,7 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 - [C] Hay cuentas de prueba gratis que solo se abren con un código de activación que entrega el equipo. No ofrezcas prueba gratis por tu cuenta.
 - [I] La recarga mínima es un parámetro de la plataforma (`billing_settings.min_recharge_cop`, $70.000 por defecto); también lo son el mínimo mensual ($80.000) y los días de gracia del corte (5).
 - [I] El cobro se encola al confirmar la causación (`confirm-causation.use-case.ts`) con una clave por factura, así que una factura no debería cobrarse dos veces. `precios.md` aún lo tiene por confirmar.
-- [I] El código tiene rangos de **Bonificación por recarga** configurables; no hay ninguno oficial: no se ofrecen. A las organizaciones con acuerdo comercial no se les muestra bonificación.
+- [I] El código tiene rangos de **Bonificación por recarga** configurables; no hay ninguno oficial: no se ofrecen. La promoción de primera recarga de `precios` se aplica a mano, no con esos rangos. A las organizaciones con acuerdo comercial no se les muestra bonificación.
 - [I] La cuenta de prueba (`TRIAL`) admite una empresa y hasta 20 facturas traídas del correo; recargar el mínimo la pasa al plan de causaciones.
 - [I] La interfaz de **Cuenta** y de la billetera todavía llama a los créditos con el nombre viejo de la unidad, escribe la marca con mayúscula y trata de usted ("Su saldo…"). Hay que pasarlo a créditos, núvara y tú.
 - [I] Diferencia con `conocimiento/`: el flujo 12 habla de **Ver billetera** y de pagar por transferencia con comprobante por el grupo de soporte. En el código la billetera es **Cuenta › Saldo** y los medios son PSE y otros medios (Wompi), Bre-B y el QR compartible.

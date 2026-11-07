@@ -25,8 +25,8 @@ Administrar empleados, novedades y liquidaciones, emitir la nómina electrónica
 
 ## Cómo se activa y cuánto cuesta
 - [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo los **cupos de empleados**. Solo un administrador puede activarla.
-- [P] Es un módulo aparte de la causación. Se cobra una **mensualidad por tramo de empleados**: hasta 5 son $480.000 al año o $44.000 mes a mes, hasta 10 son $960.000 o $88.000, hasta 30 son $2.160.000 o $198.000 y hasta 50 son $3.000.000 o $275.000. Hasta 100 se cotiza. Pagas el tramo completo, aunque tengas menos empleados.
-- [P] Con la habilitación de $150.000 al año, si no la tienes ya, las nóminas electrónicas van incluidas en el plan. Para emitirlas, la empresa debe estar habilitada ante la DIAN con el tipo de documento nómina.
+- [P] Es un módulo aparte de la causación. Se cobra un **valor anual por tramo de empleados**: el plan inicial de hasta 5 es $300.000 + IVA e incluye la habilitación de facturación electrónica; de 1 a 10 son $260.000 solo emisión o $480.000 con todo; de 11 a 20, $771.000; de 21 a 45, $1.400.000, y de 46 a 90, $2.480.000. Con más de 90 se cotiza. Pagas el tramo completo, aunque tengas menos empleados.
+- [P] Los tramos incluyen el certificado digital, el mismo de la facturación electrónica. Para emitirla, la empresa debe estar habilitada ante la DIAN con el tipo de documento nómina.
 - [P] Si el saldo no cubre los cupos, el módulo tiene 3 días de gracia y luego se pausa: en pausa no se emite a la DIAN.
 
 ## Dónde está en la plataforma
@@ -38,5 +38,5 @@ Administrar empleados, novedades y liquidaciones, emitir la nómina electrónica
 - [P] Activar el módulo, aprobar la causación y cerrar periodos: administrador.
 
 ## Para el equipo
-- [C] El precio de cada cupo y sus tramos no está publicado: confírmalo con el equipo antes de darlo.
+- [C] Los tramos vigentes son los de `precios`; lo que falta confirmar de cada uno está ahí.
 - [I] El diálogo de activación se titula "Activar Nómina electrónica" aunque compra cupos de administración; los mensajes de saldo dicen "Nuvicoins".
