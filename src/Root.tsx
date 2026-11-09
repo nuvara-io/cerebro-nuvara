@@ -12,6 +12,7 @@ import { NominaCompleta } from "./posts/modulos/NominaCompleta";
 import { PonteAlDia } from "./posts/modulos/PonteAlDia";
 import { HistoriaPonteHasta30, HistoriaVenceIva } from "./posts/modulos/Semana";
 import { TesoreriaConciliada } from "./posts/modulos/TesoreriaConciliada";
+import { BlogCompararDian } from "./posts/BlogCompararDian";
 import { PortadaCausaciones } from "./posts/PortadaCausaciones";
 import { Post500Causaciones } from "./posts/Post500Causaciones";
 import { QueEsNuvara } from "./posts/QueEsNuvara";
@@ -74,6 +75,10 @@ export const RemotionRoot: React.FC = () => {
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
         <Still id="PortadaCausaciones" component={PortadaCausaciones} width={1080} height={1350} />
+        {/* Portadas del artículo s01 del blog: hero, miniatura y para compartir */}
+        <Still id="Blog-CompararDian-Hero" component={BlogCompararDian} width={1536} height={864} />
+        <Still id="Blog-CompararDian-Card" component={BlogCompararDian} width={920} height={517} />
+        <Still id="Blog-CompararDian-OG" component={BlogCompararDian} width={1200} height={630} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
         <Still id="N2-Dian1" component={DianPlaca1} width={1080} height={1350} />
         <Still id="N2-Dian2" component={DianPlaca2} width={1080} height={1350} />
