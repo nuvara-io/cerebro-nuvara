@@ -1,24 +1,27 @@
-import { Calculator, CalendarClock, FileCheck2, Landmark, MessageCircle, Rocket, Send, ShieldCheck, Users } from "lucide-react";
+import { BarChart3, Banknote, BookOpenCheck, Calculator, CalendarClock, FileCheck2, Landmark, MessageCircle, Network, Rocket, Send, ShieldCheck, Users } from "lucide-react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { logo } from "../brand/assets";
 import { font } from "../brand/fonts";
 import { color, radius } from "../brand/tokens";
 import { Emphasis } from "../components/Emphasis";
 import { Circulo, Dividida as DivididaBase, Inicio, MX, PanelReal, Pill, Slide, t, Tarjeta, Titular } from "./kit";
-import { PanelAsiento, PanelObligaciones } from "./PanelesNomina";
+import { PanelAsiento, PanelCosto, PanelNovedades, PanelObligaciones, PanelPago } from "./PanelesNomina";
 
-// Brochure comercial de nómina (10 diapositivas 1920×1080 → PDF). Copy desde
-// red/nomina.md, sus neuronas y red/precios.md. Resumen, empleados, generar y
-// liquidación son capturas reales anonimizadas; obligaciones y asiento, ilustrativos.
+// Brochure comercial de nómina (13 diapositivas 1920×1080 → PDF). Copy desde
+// red/nomina.md, sus neuronas y red/precios.md, y lo que tiene la plataforma en
+// apps/web/.../payroll (verificado el 09/11/2026: estructura, historia laboral,
+// incremento salarial, pactos no salariales, recargos, costo e informes).
+// Resumen, empleados, generar y liquidación son capturas reales anonimizadas;
+// novedades, obligaciones, pago, asiento y costo son ilustrativos.
 
-const TOTAL_NOMINA = 10;
+const TOTAL_NOMINA = 13;
 const icono = { size: 34, color: color.white, strokeWidth: 2.1 } as const;
 const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total">> = (props) => <DivididaBase total={TOTAL_NOMINA} {...props} />;
 
 // 01 · Portada
 export const PortadaNomina: React.FC = () => (
   <AbsoluteFill style={{ background: color.accentDeep, overflow: "hidden" }}>
-    <Img src={staticFile("posts/banco-37.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
+    <Img src={staticFile("posts/banco-45.jpg")} style={{ position: "absolute", top: 0, right: 0, width: 1240, height: "100%", objectFit: "cover", objectPosition: "100% 50%" }} />
     <div
       style={{
         position: "absolute",
@@ -44,28 +47,34 @@ export const PortadaNomina: React.FC = () => (
 );
 
 const Parte: React.FC<{ readonly icon: React.ReactNode; readonly titulo: string; readonly texto: string }> = ({ icon, titulo, texto }) => (
-  <Tarjeta style={{ display: "grid", gap: 18, alignContent: "start", padding: 32 }}>
-    <Circulo size={64}>{icon}</Circulo>
-    <p style={t(30, { fontWeight: 700, color: color.textTitle, lineHeight: 1.15 })}>{titulo}</p>
-    <p style={t(24)}>
+  <Tarjeta style={{ display: "grid", gap: 12, alignContent: "start", padding: 26 }}>
+    <Circulo size={54}>{icon}</Circulo>
+    <p style={t(26, { fontWeight: 700, color: color.textTitle, lineHeight: 1.15 })}>{titulo}</p>
+    <p style={t(21)}>
       <Emphasis text={texto} />
     </p>
   </Tarjeta>
 );
 
+const chico = { ...icono, size: 28 } as const;
+
 // 02 · Qué incluye
 export const QueIncluye: React.FC = () => (
   <Slide n={2} total={TOTAL_NOMINA}>
-    <div style={{ position: "absolute", left: MX, right: MX, top: 230, display: "grid", gap: 56 }}>
-      <div style={{ display: "grid", gap: 24 }}>
+    <div style={{ position: "absolute", left: MX, right: MX, top: 170, display: "grid", gap: 40 }}>
+      <div style={{ display: "grid", gap: 20 }}>
         <Pill>QUÉ INCLUYE</Pill>
-        <Titular azul="Todo el ciclo de la nómina," gris="en un solo lugar." />
+        <Titular azul="Todo el ciclo de la nómina," gris="en un solo lugar." size={60} />
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
-        <Parte icon={<Users {...icono} />} titulo="Personal" texto="*Empleados* con contrato, salario y seguridad social, uno a uno o desde Excel." />
-        <Parte icon={<CalendarClock {...icono} />} titulo="Novedades" texto="Incapacidades, licencias, vacaciones, *horas extra* y préstamos." />
-        <Parte icon={<Calculator {...icono} />} titulo="Liquidación" texto="*Quincenal o mensual*, prestaciones y liquidación de contratos." />
-        <Parte icon={<FileCheck2 {...icono} />} titulo="Obligaciones" texto="*Nómina electrónica*, planillas *PILA* y causación contable." />
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 22 }}>
+        <Parte icon={<Users {...chico} />} titulo="Personal" texto="Empleados, contratos, *historia laboral* e incrementos salariales." />
+        <Parte icon={<Network {...chico} />} titulo="Estructura" texto="*Áreas, cargos y sedes* de trabajo, con sus asignaciones." />
+        <Parte icon={<CalendarClock {...chico} />} titulo="Novedades" texto="Incapacidades, vacaciones, *recargos*, préstamos y embargos." />
+        <Parte icon={<Calculator {...chico} />} titulo="Liquidación" texto="Quincenal o mensual, con *retención en la fuente* incluida." />
+        <Parte icon={<BookOpenCheck {...chico} />} titulo="Prestaciones y retiros" texto="Prima, cesantías, intereses y *liquidación de contratos*." />
+        <Parte icon={<FileCheck2 {...chico} />} titulo="DIAN y PILA" texto="*Nómina electrónica*, notas de ajuste y planilla PILA." />
+        <Parte icon={<Banknote {...chico} />} titulo="Pago y contabilidad" texto="*Lote bancario*, desprendibles por correo y asiento contable." />
+        <Parte icon={<BarChart3 {...chico} />} titulo="Informes" texto="*Costo de nómina*, ausentismo y certificado de ingresos." />
       </div>
     </div>
   </Slide>
@@ -80,45 +89,68 @@ export const ComoEmpiezasNomina: React.FC = () => (
     gris="y sigues desde ahí."
     lineas={[
       "Activas el módulo eligiendo tu *tramo de empleados*.",
+      "Configuras con los *valores legales del año* y las cuentas del *PUC sugeridas*.",
+      "Traes tu histórico desde *World Office, Siigo Nómina, Helisa, Alegra Nómina o Contai*, y lo validas antes de cargarlo.",
       "El *Resumen* te dice si está lista o qué falta.",
-      "Traes tu histórico desde *World Office, Siigo Nómina, Helisa, Alegra Nómina o Contai*.",
-      "Todas las pantallas, *a un clic*.",
     ]}
   >
     <PanelReal src={staticFile("brochure-nomina/resumen.png")} etiqueta="funciones de nómina" proporcion={1270 / 439} />
   </Dividida>
 );
 
-// 04 · Personal y novedades
-export const Novedades: React.FC = () => (
+// 04 · Personal y estructura
+export const PersonalEstructura: React.FC = () => (
   <Dividida
     n={4}
-    pill="PERSONAL Y NOVEDADES"
-    azul="Tu equipo"
-    gris="y sus novedades."
-    lineas={["*Empleados* con contrato, salario y seguridad social.", "*Incapacidades*, licencias, vacaciones y horas extra.", "*Préstamos*, beneficios y descuentos recurrentes.", "Te avisa qué empleados tienen *datos pendientes*."]}
+    pill="PERSONAL Y ESTRUCTURA"
+    azul="Tu equipo,"
+    gris="bien organizado."
+    lineas={[
+      "*Empleados* con contrato, salario, banco y seguridad social, uno a uno o *desde Excel*.",
+      "*Áreas, cargos y sedes* de trabajo, con las asignaciones de cada persona.",
+      "La *historia laboral* de cada empleado: cambios de cargo, salario y contrato.",
+      "*Incremento salarial* a varios empleados a la vez, con vista previa antes de aplicar.",
+    ]}
   >
     <PanelReal src={staticFile("brochure-nomina/empleados.png")} etiqueta="empleados" proporcion={1260 / 750} />
   </Dividida>
 );
 
-// 05 · Liquidación
-export const Liquidacion: React.FC = () => (
+// 05 · Novedades
+export const NovedadesTiempo: React.FC = () => (
   <Dividida
     n={5}
+    pill="NOVEDADES"
+    azul="Todo lo que pasa"
+    gris="en el periodo."
+    lineas={[
+      "*Incapacidades y licencias*, con quién asume cada una.",
+      "*Vacaciones* con sus documentos, y *horas extra y recargos* nocturnos, dominicales y festivos según la jornada.",
+      "*Préstamos, embargos*, beneficios y *pactos no salariales*.",
+      "Las *solicitudes de los jefes* llegan para que las apruebes antes de liquidar.",
+    ]}
+  >
+    <PanelNovedades />
+  </Dividida>
+);
+
+// 06 · Liquidación
+export const Liquidacion: React.FC = () => (
+  <Dividida
+    n={6}
     pill="LIQUIDACIÓN"
     azul="Revisas antes"
     gris="de confirmar."
-    lineas={["*Primera quincena, segunda o mensual*.", "*Vista previa* por empleado antes de generar.", "Te dice si está *lista* o *requiere ajustes*.", "Si tu empresa lo pide, con *doble aprobación*."]}
+    lineas={["*Primera quincena, segunda o mensual*, con *vista previa* por empleado.", "Calcula la *retención en la fuente* y el *Fondo de Solidaridad*.", "Si tu empresa lo pide, con *doble aprobación* o visto bueno profesional.", "Si confirmaste con un error, *anulas o corriges* el periodo."]}
   >
     <PanelReal src={staticFile("brochure-nomina/generar.png")} etiqueta="generar nómina" proporcion={1280 / 720} />
   </Dividida>
 );
 
-// 06 · Prestaciones y liquidaciones
+// 07 · Prestaciones y liquidaciones
 export const Prestaciones: React.FC = () => (
   <Dividida
-    n={6}
+    n={7}
     pill="PRESTACIONES Y RETIROS"
     azul="Prima, cesantías"
     gris="y liquidaciones."
@@ -128,29 +160,65 @@ export const Prestaciones: React.FC = () => (
   </Dividida>
 );
 
-// 07 · Obligaciones
+// 08 · Obligaciones
 export const Obligaciones: React.FC = () => (
   <Dividida
-    n={7}
+    n={8}
     pill="DIAN Y PILA"
     azul="Tus obligaciones,"
     gris="al día."
-    lineas={["Emites la *nómina electrónica* del periodo o por empleado.", "Corriges con *notas de ajuste*.", "Generas la *planilla PILA* y la subes a tu operador.", "Registras cuándo la *radicas* y la *pagas*."]}
+    lineas={["Emites la *nómina electrónica* del periodo o por empleado, o *sola al confirmar*.", "Ves el estado de cada documento y corriges con *notas de ajuste*.", "Generas la *planilla PILA* y la subes a tu operador.", "Registras cuándo la *radicas* y la *pagas*."]}
   >
     <PanelObligaciones />
   </Dividida>
 );
 
-// 08 · Contabilidad
+// 09 · Pago a empleados
+export const PagoEmpleados: React.FC = () => (
+  <Dividida
+    n={9}
+    pill="PAGO A EMPLEADOS"
+    azul="Pagas y concilias"
+    gris="desde tesorería."
+    lineas={[
+      "Registras el pago de cada empleado con su *egreso*.",
+      "*Lote bancario*: lo apruebas, descargas el archivo *PAB* y lo subes a tu banco.",
+      "Registras el resultado del banco y *concilias el lote*.",
+      "Envías los *desprendibles por correo* a todo el equipo.",
+    ]}
+  >
+    <PanelPago />
+  </Dividida>
+);
+
+// 10 · Contabilidad
 export const Contabilidad: React.FC = () => (
   <Dividida
-    n={8}
+    n={10}
     pill="CONTABILIDAD"
     azul="La nómina,"
     gris="lista para causar."
-    lineas={["Revisas la *cuenta de cada concepto*.", "*Vista previa del asiento* antes de aprobar.", "Informes de *costo de nómina* y de periodo.", "*Certificado de ingresos y retenciones* y formulario 2276."]}
+    lineas={["Revisas la *cuenta de cada concepto*, con las del PUC sugeridas.", "*Vista previa del asiento* antes de aprobar.", "Las *liquidaciones de contrato* también quedan causadas.", "Si hace falta, *reviertes* la causación y vuelves a causar."]}
   >
     <PanelAsiento />
+  </Dividida>
+);
+
+// 11 · Informes y costo
+export const Informes: React.FC = () => (
+  <Dividida
+    n={11}
+    pill="INFORMES"
+    azul="Sabes cuánto cuesta"
+    gris="y en qué se va."
+    lineas={[
+      "*Tablero de costo*: qué requiere atención, en qué se va la nómina y cómo cambia.",
+      "*Rotación, ausentismo* y composición del equipo.",
+      "Informes de *horas extra, aportes, deducciones, incapacidades* y provisiones.",
+      "*Certificado de ingresos y retenciones*, y exportes para tu programa contable.",
+    ]}
+  >
+    <PanelCosto />
   </Dividida>
 );
 
@@ -163,9 +231,9 @@ const TRAMOS = [
 ] as const;
 const COLUMNAS = "1fr 1.2fr 1fr";
 
-// 09 · Precios
+// 12 · Precios
 export const PreciosNomina: React.FC = () => (
-  <Slide n={9} total={TOTAL_NOMINA}>
+  <Slide n={12} total={TOTAL_NOMINA}>
     <div style={{ position: "absolute", left: MX, right: MX, top: 170, display: "grid", gap: 30 }}>
       <div style={{ display: "grid", gap: 18 }}>
         <Pill>PRECIOS</Pill>
@@ -198,12 +266,12 @@ export const PreciosNomina: React.FC = () => (
   </Slide>
 );
 
-// 10 · Cómo empezamos
+// 13 · Cómo empezamos
 export const EmpezamosNomina: React.FC = () => {
   const i = { size: 32, color: color.accent, strokeWidth: 2.1 } as const;
   const circulo: React.CSSProperties = { background: color.white, borderRadius: "50%", padding: 16, display: "grid" };
   return (
-    <Slide n={10} total={TOTAL_NOMINA} fondo="azul">
+    <Slide n={13} total={TOTAL_NOMINA} fondo="azul">
       <div style={{ position: "absolute", left: MX, right: MX, top: 200, display: "grid", gap: 56 }}>
         <div style={{ display: "grid", gap: 24 }}>
           <Pill blanco>CÓMO EMPEZAMOS</Pill>
@@ -228,4 +296,4 @@ export const EmpezamosNomina: React.FC = () => {
   );
 };
 
-export const DIAPOSITIVAS_NOMINA = [PortadaNomina, QueIncluye, ComoEmpiezasNomina, Novedades, Liquidacion, Prestaciones, Obligaciones, Contabilidad, PreciosNomina, EmpezamosNomina] as const;
+export const DIAPOSITIVAS_NOMINA = [PortadaNomina, QueIncluye, ComoEmpiezasNomina, PersonalEstructura, NovedadesTiempo, Liquidacion, Prestaciones, Obligaciones, PagoEmpleados, Contabilidad, Informes, PreciosNomina, EmpezamosNomina] as const;

@@ -22,6 +22,11 @@ Administrar empleados, novedades y liquidaciones, emitir la nómina electrónica
 - [P] **Nómina electrónica** a la DIAN con sus notas de ajuste, **planillas PILA** y **causación contable** de la nómina.
 - [P] **Informes**: costo de nómina, reportes de periodo, certificado de ingresos y retenciones y formulario 2276.
 - [P] Trae el histórico desde World Office, Siigo Nómina, Helisa, Alegra Nómina o Contai.
+- [P] **Estructura** de la empresa: áreas, cargos y sedes de trabajo, con la asignación de cada empleado (verificado en el código el 09/11/2026).
+- [P] **Historia laboral** de cada empleado e **incremento salarial** a varios empleados a la vez, con vista previa obligatoria antes de aplicar.
+- [P] **Horas extra y recargos** nocturnos, dominicales y festivos según la jornada; **embargos** y **pactos no salariales**.
+- [P] **Pago a empleados** desde Tesorería: pago uno a uno con su egreso o **lote bancario** con archivo PAB, conciliación del lote y desprendibles por correo.
+- [P] **Tablero de costo**: qué requiere atención, en qué se va la nómina, cómo cambia, rotación y ausentismo. La **biblioteca de informes** trae horas extra y recargos, aportes, deducciones, incapacidades por quién las asume y provisiones.
 
 ## Cómo se activa y cuánto cuesta
 - [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo tu **tramo de empleados**. Solo un administrador puede activarla.

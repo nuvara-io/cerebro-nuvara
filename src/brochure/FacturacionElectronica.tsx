@@ -21,7 +21,7 @@ const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total"
 // 01 · Portada
 export const PortadaFE: React.FC = () => (
   <AbsoluteFill style={{ background: color.accentDeep, overflow: "hidden" }}>
-    <Img src={staticFile("posts/banco-156.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
+    <Img src={staticFile("posts/banco-138.jpg")} style={{ position: "absolute", top: 0, right: 0, width: 1240, height: "100%", objectFit: "cover", objectPosition: "50% 12%" }} />
     <div
       style={{
         position: "absolute",
