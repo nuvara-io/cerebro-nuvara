@@ -23,7 +23,7 @@ import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
-import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian } from "./tutorials/Reels";
+import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -66,6 +66,7 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelCausacion" component={ReelCausacion} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CAUSACION * 30)} />
         <Composition id="ReelCierreIva" component={ReelCierreIva} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CIERRE_IVA * 30)} />
         <Composition id="ReelRadian" component={ReelRadian} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN * 30)} />
+        <Composition id="ReelRadianPauta" component={ReelRadianPauta} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN_PAUTA * 30)} />
         <Composition id="ReelAppProximamente" component={ReelAppProximamente} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP_PROXIMAMENTE * 30)} />
         <Composition id="ReelPonteAlDia" component={PonteAlDiaVideo} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
         <Composition id="VideoPonteAlDia" component={PonteAlDiaVideo} width={1920} height={1080} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />

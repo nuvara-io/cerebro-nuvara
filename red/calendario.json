@@ -1700,17 +1700,17 @@
     },
     "orden": 59,
     "modulo": "RADIAN",
-    "thumb": "vr",
+    "thumb": "vrp",
     "pieza": "Anuncio: eventos RADIAN, reel",
-    "formato": "Reel 9:16, 30 s",
-    "archivo": "out/reels/reel-radian.mp4",
-    "titulo": "Tus eventos RADIAN al día",
+    "formato": "Reel 9:16, 29 s",
+    "archivo": "out/reels/reel-radian-pauta.mp4 (Remotion: ReelRadianPauta)",
+    "titulo": "¿Y el acuse de tus compras a crédito?",
     "relaciones": [
       "p16",
       "p13"
     ],
     "porque": "Probar en frío si RADIAN trae conversaciones de quien recibe facturas a crédito.",
-    "copy": "¿Recibes facturas a crédito? 📩\n\nLos eventos RADIAN soportan el costo y el IVA descontable de esas compras. En núvara envías el acuse, el recibo y la aceptación a mano o con reglas, y ves lo que está por vencer.\n\nEl reclamo nunca se envía solo: siempre lo decides tú.\n\nEscríbenos y te mostramos cómo 👇",
-    "nota": "Entra al laboratorio Ponte al día IVA por decisión del 09/11/2026, dentro del mismo tope de $30.000 diarios: no suma presupuesto. Es el reel de p16 en versión para pauta, sin hashtags y con WhatsApp. No menciona los $100 por evento: si se quiere, se agrega después de confirmarlo. El reel ya está renderizado (out/reels/reel-radian.mp4) y se ve en la vista previa. Falta subirlo a Meta."
+    "copy": "¿Compraste a crédito y no enviaste el acuse a la DIAN? ⚠️\n\nEn una fiscalización te pueden desconocer el costo y el IVA descontable de esas compras.\n\nCon núvara lo envías en un clic o lo dejas con reglas, y ves lo que está por vencer antes de que venza. El reclamo siempre lo decides tú.\n\nEscríbenos y te lo mostramos con tus facturas 👇",
+    "nota": "Reel propio de pauta, hecho el 09/11/2026 porque el de p16 se sentía flojo: mostraba botones sin el problema. Arranca por lo que se pierde: gancho «¿Compraste a crédito? ¿Y el acuse?», luego «En una fiscalización te pueden desconocer el costo y el IVA descontable» (red/eventos-radian.md), después acusar en un clic, reglas recomendadas y Cumplimiento, y cierra con «Escríbenos por WhatsApp». Voz nueva de Eduardo (ElevenLabs). No menciona los $100 por evento hasta confirmarlo. Entra al laboratorio Ponte al día IVA dentro del mismo tope de $30.000 diarios: no suma presupuesto. Falta subirlo a Meta."
   }
 ]
