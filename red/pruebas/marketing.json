@@ -557,6 +557,42 @@
           "de a poco"
         ]
       ]
+    },
+    {
+      "pregunta": "¿Qué creativo va para un público frío, tibio o caliente?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "tibio"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo reparto el presupuesto entre las tres campañas?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "40 % laboratorio"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué aprendimos de NUVARA20?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "$12.648"
+        ]
+      ]
     }
   ]
 }

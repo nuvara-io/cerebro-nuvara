@@ -39,10 +39,25 @@ Cómo se monta y se decide la pauta de núvara en Meta (Facebook e Instagram). E
 - [C] Meta se optimiza al evento más profundo que tenga volumen. Con presupuesto pequeño se empieza por la conversación de WhatsApp y se mide la calidad aguas abajo con el código de activación de cada anuncio.
 - [I] Para optimizar a un evento más profundo (registro o código canjeado) hace falta enviarlo a Meta por la API de Conversiones; hoy la plataforma no tiene píxel de Meta ni guarda UTM.
 
+## El embudo: frío, tibio y caliente
+- [C] **Arriba (TOFU), frío:** no conoce núvara y quizá ni sabe que su problema tiene solución. Se le habla al **dolor**: facturas acumuladas, el cierre o el IVA encima, horas digitando.
+- [C] **Medio (MOFU), tibio:** ya vio un anuncio, entró al perfil o al sitio. Se le muestra **cómo funciona**: la causación con la factura al lado, la comparación con la DIAN, un tutorial corto, un caso real.
+- [C] **Abajo (BOFU), caliente:** conoce núvara y está decidiendo. Se le da **la razón para escribir hoy**: la oferta vigente (crédito de prueba o descuento de primera recarga), "pagas lo que causas", testimonios y el llamado directo a WhatsApp.
+- [C] **Cada creativo se hace para una sola etapa** y va a la campaña de esa etapa. Mezclar etapas en una misma campaña confunde a Meta: un anuncio de oferta le llega en frío a quien todavía no sabe qué es núvara.
+
 ## Estructura de la cuenta: tres campañas
-- [C] **Laboratorio (frío):** todo creativo nuevo entra aquí. Un conjunto de anuncios por formato (video modular, gráfico estático, contenido reciclado).
+- [C] **Laboratorio (frío, TOFU):** todo creativo nuevo entra aquí. Un conjunto de anuncios por formato (video modular, gráfico estático, contenido reciclado), con público amplio.
 - [C] **Escala:** solo los ganadores del laboratorio, con más presupuesto, hasta que se fatiguen.
-- [C] **Remarketing (caliente):** visitantes del sitio de los últimos 90 días, seguidores y quienes vieron más de 3 segundos de un video. Aquí van los ángulos de solución: cómo se causa, la prueba con código, los créditos.
+- [C] **Remarketing (tibio y caliente, MOFU y BOFU):** visitantes del sitio de los últimos 90 días, seguidores, quienes interactuaron con el perfil y quienes vieron más de 3 segundos de un video. Aquí van los creativos de cómo funciona y de oferta.
+- [C] **Cómo circula:** lo nuevo entra al laboratorio, lo que gana pasa a escala y quien interactúa con cualquiera de los dos cae al remarketing.
+
+## Cómo se reparte el presupuesto
+- [C] **Con las tres campañas andando:** 40 % laboratorio, 40 % escala y 20 % remarketing. Es una proporción, no un monto: se aplica a lo que haya para pautar.
+- [C] **Por fases**, porque escala y remarketing no tienen en qué gastar al principio:
+  1. **Arranque:** 100 % laboratorio hasta que aparezca el primer ganador. Mientras tanto, redes y el sitio tienen que estar publicando para que se forme el público tibio.
+  2. **Con un ganador:** 60 % laboratorio y 40 % escala.
+  3. **Con público de remarketing** (unas mil personas que vieron un video o visitaron el sitio): 40 % laboratorio, 40 % escala y 20 % remarketing.
+- [C] **El mínimo por campaña:** cada campaña tiene que poder pagar su costo objetivo varias veces por semana. Si el presupuesto no da para las tres, se juntan escala y laboratorio en una sola antes que dejar campañas con migajas.
 - [C] Presupuesto **a nivel de campaña** (CBO): Meta reparte entre conjuntos y anuncios. Público amplio; un público similar a los usuarios habilitados se puede probar como conjunto aparte.
 - [C] Mejor tres campañas bien llevadas que treinta sueltas. Las campañas **se apagan, nunca se borran**: borrar pierde el aprendizaje y el histórico.
 
@@ -78,4 +93,16 @@ Cómo se monta y se decide la pauta de núvara en Meta (Facebook e Instagram). E
 - [C] Probar sin anotar aprendizajes.
 - [C] Anuncios rechazados por un botón que no corresponde al destino (por ejemplo, "Comprar" hacia WhatsApp): se revisa antes de publicar.
 - [C] Publicar imágenes generadas sin revisar la política de Meta sobre contenido creado con inteligencia artificial.
-- [I] Las cifras del curso (gasto diario, CPA, umbrales en dólares, reparto de presupuesto) son de un negocio de suscripción con venta en línea y no se usan para núvara.
+- [C] Meter creativos de las tres etapas en una sola campaña fría.
+- [I] Las cifras del curso (gasto diario, CPA y umbrales en dólares) son de un negocio de suscripción con venta en línea y no se usan para núvara. El reparto 40/40/20 sí, porque es una proporción.
+
+## Lo que aprendimos (NUVARA20, del 1 de octubre al 8 de noviembre de 2026)
+- [C] **Resultado:** $164.428 gastados, 13 conversaciones por WhatsApp y $12.648 por conversación, tres veces el objetivo. Se apagó el 9 de noviembre.
+- [C] **Lo que funcionó:** el **video con una oferta concreta**. Las 13 conversaciones salieron de dos videos: "Oferta 20 facturas" (7, a $10.964) y el reel de "Ponte al día" (6, a $8.452). Ninguna imagen trajo conversaciones.
+- [C] **Lo que falló:**
+  - 11 anuncios en un solo conjunto con $30.000 al día: Meta puso el 78 % del gasto en dos videos y los demás casi no se probaron.
+  - Un público estrecho (cinco ciudades y el interés "contadores") con un costo por mil impresiones de $22.549.
+  - Creativos de dolor, de producto y de oferta mezclados en una sola campaña fría.
+  - Redes y SEO sin nada publicado: no había perfil que respaldara el anuncio ni público para remarketing.
+- [C] **Para la próxima:** pocos videos, un solo tema, público amplio, creativos separados por etapa y redes y sitio publicando al mismo tiempo.
+- [I] Falta cruzarlo con el embudo del código NUVARA20 en **Códigos de activación** (canjes, causaron, habilitadas) para saber cuánto costó cada cuenta habilitada.
