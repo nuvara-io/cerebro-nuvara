@@ -323,8 +323,8 @@
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "/blog/comparar-facturas-con-la-dian/",
     "copy": "Sale del nodo comparar-con-la-dian: para qué sirve, qué listado se sube, cómo leer las diferencias y qué hacer con las que faltan. Cierra con la demostración en vivo.",
-    "nota": "",
-    "estadoPieza": "porhacer",
+    "nota": "Borrador en out/sitio/blog/comparar-facturas-con-la-dian.md, con el formato del blog de apps/landing. Falta la imagen de portada y subirlo al sitio.",
+    "estadoPieza": "lista",
     "thumb": "",
     "relaciones": [
       "a02",
