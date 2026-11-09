@@ -113,6 +113,16 @@ const VACIAS = new Set(
       "muchas porque estoy estan hay",
   ),
 );
+// Palabras que dicen qué tipo de pregunta es (precio, panorama) pero no de
+// qué parte del nodo: no eligen fragmento. Si son lo único que coincide
+// ("¿cuánto cuesta núvara?", "¿qué temas hay en general?"), llega la primera
+// sección como resumen, en vez de la línea suelta que repite la palabra.
+const GENERICAS = new Set(
+  palabras(
+    "cuesta cuestan costo costos vale valen precio precios tarifa tarifas " +
+      "general generales tema temas indice resumen",
+  ),
+);
 // Secciones con instrucciones para el chat: siempre viajan completas.
 const SIEMPRE = /^(Cómo responder|Si no está aquí)/;
 // Un fragmento entra si llega a esta parte del mejor puntaje.
@@ -133,7 +143,7 @@ export function fragmentar(texto: string, pregunta: string): Fragmentado {
   const titulo = cabeza.split("\n").find((l) => l.startsWith("# ")) ?? "";
   const delNodo = new Set(palabras(titulo));
   const buscadas = new Set(
-    palabras(pregunta).filter((p) => p.length > 3 && !VACIAS.has(p) && !delNodo.has(p)),
+    palabras(pregunta).filter((p) => p.length > 3 && !VACIAS.has(p) && !GENERICAS.has(p) && !delNodo.has(p)),
   );
 
   type Item = { seccion: number; linea: string; propias: Set<string>; titulo: string; puntos: number };

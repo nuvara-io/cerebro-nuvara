@@ -18,11 +18,11 @@ fuentes:
 Las objeciones que más se escuchan en las demostraciones en vivo y cómo se responden. Los precios oficiales están en `precios`.
 
 ## Cuando dicen que es caro
-- [C] Explica el cobro por uso: compra $510, venta $200 y mínimo mensual de $80.000, que solo aplica a quien usa únicamente causación; lo no consumido del mínimo se pierde.
+- [C] Explica el cobro por uso: compra $510, venta $200 y mínimo mensual de $80.000, que aplica a quien causa sin un plan de causación, aunque tenga otros módulos; lo no consumido del mínimo se pierde.
 - [C] Se cobra por causación, no por descarga. Lo que se deja en pendientes o se elimina (peajes, compras personales) no cuesta créditos.
 - [C] Compara con el costo de un auxiliar dedicado a causar, no solo con otro software.
 - [C] Con volumen bajo, muestra el efecto del mínimo mensual con sus números reales y deja que decida; en las sesiones no se dio descuento.
-- [C] Desde 1.500 causaciones al mes hay tarifa especial por WhatsApp. Descuentos, bonos y referidos: no hay ninguno oficial.
+- [C] Desde 1.500 causaciones al mes hay tarifa especial por WhatsApp. Descuentos, bonos y referidos: solo está la promoción de primera recarga de `precios`; no hay otro oficial.
 - [C] "¿Me van a subir el precio?": el sitio lo presenta como precio de lanzamiento; un asesor dijo que no hay aumento previsto, **sin confirmar**.
 
 ## Cuando no confían en la automatización
@@ -56,4 +56,4 @@ Las objeciones que más se escuchan en las demostraciones en vivo y cómo se res
 - [C] "No tengo tiempo todavía" o "es temporada de cierre": propón empezar con una empresa y una sesión de seguimiento con fecha.
 - [C] "Quiero esperar a que esté estable": empezar con una sola empresa y avisar de las fallas; no capacitar dos veces a los auxiliares.
 - [C] "No sé de contabilidad": hace falta el contador de la empresa para definir IVA y cuentas; agenda una sesión con él.
-- [C] "Quiero ver nómina o conciliación": hoy están disponibles: nómina se activa por cupos de empleados en Cuenta › Módulos y Tesorería la habilita el equipo por solicitud. Aclara desde el inicio qué está disponible y qué no.
+- [C] "Quiero ver nómina o conciliación": hoy están disponibles: nómina se activa por tramo de empleados en Cuenta › Módulos y Tesorería la habilita el equipo por solicitud. Aclara desde el inicio qué está disponible y qué no.

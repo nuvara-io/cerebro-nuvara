@@ -30,7 +30,7 @@ núvara está hecha para quien causa facturas electrónicas en Colombia: firmas 
 - [P] Manejas todas tus empresas desde una sola cuenta, y cada una conserva su plan de cuentas, sus reglas y sus centros de costo.
 - [P] Invitas a tus auxiliares y les asignas solo las empresas que les tocan.
 - [P] Le das a tus clientes acceso a la app móvil para que vean su empresa, aprueben pagos y te envíen comprobantes.
-- [P] El saldo de créditos es de tu cuenta y se reparte entre las empresas que quieras: no recargas por empresa.
+- [P] El saldo de créditos es de tu cuenta y se reparte entre las empresas que quieras: no recargas por empresa. Los paquetes de facturación electrónica y los tramos de nómina sí se compran por empresa.
 - [P] Revisas y apruebas por grupos de causaciones iguales, lo que rinde más cuanto más empresas llevas.
 
 ## Si eres contador independiente
@@ -50,7 +50,7 @@ núvara está hecha para quien causa facturas electrónicas en Colombia: firmas 
 - [C] **Firma que viene de otra solución:** soporte lento, captchas de la DIAN e IVA mal calculado. Muéstrale la descarga por extensión, el cálculo por bases y el archivo para su programa contable.
 - [C] **Empresa con centros de costo, sedes o bodegas:** asignar cada compra a mano. Muéstrale las reglas por centro de costo y la exportación con bodega.
 - [C] **Empresa o constructora con mucha caja menor y atraso:** muchas facturas pequeñas y cuentas variadas. Muéstrale la causación por lote y la agrupación por proveedor.
-- [C] **Contador con poco volumen:** duda del mínimo mensual frente a sus facturas. Haz la cuenta con él (ver `precios`) y explícale que solo aplica si usa únicamente causación.
+- [C] **Contador con poco volumen:** duda del mínimo mensual frente a sus facturas. Haz la cuenta con él (ver `precios`) y explícale que aplica si causa sin un plan de causación, y que no aplica con la suscripción.
 - [C] **Facturas que no llegan al correo:** conectar DIAN y correo y comparar con la DIAN muestra qué falta y qué proveedor corregir.
 
 ## Lo que mueve a cada perfil

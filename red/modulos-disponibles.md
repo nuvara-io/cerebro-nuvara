@@ -44,20 +44,20 @@ Qué hace núvara hoy, módulo por módulo. La causación viene con la cuenta; f
 
 ## Facturación electrónica y RADIAN
 - [P] Emites factura de venta con sus notas crédito y débito, documento soporte con su nota y nómina electrónica, y registras los eventos RADIAN de las facturas que recibes.
-- [P] Se paga con paquetes anuales desde $150.000 por 30 documentos, con el certificado digital incluido.
+- [P] Se paga con paquetes anuales por empresa, desde $150.000 por 30 documentos, con el certificado digital incluido.
 - [P] núvara no emite POS (documento equivalente).
 - [P] Cómo funciona por dentro: `facturacion-electronica-y-radian`.
 
 ## Nómina
 - [P] Empleados, novedades, liquidación quincenal o mensual, prestaciones, liquidación de contratos, nómina electrónica, planillas PILA y causación de la nómina.
-- [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo cupos de empleados; solo un administrador puede activarla.
+- [P] Se activa en **Cuenta › Módulos › Nómina › Activar**, eligiendo tu tramo de empleados; solo un administrador puede activarla.
 - [P] Se cobra un valor anual por tramo de empleados; incluye el certificado digital, el mismo de la facturación electrónica.
 - [P] Cómo funciona por dentro: `nomina`.
 
 ## Tesorería y Caja
 - [P] **Tesorería**: cuentas bancarias, cuentas por cobrar y por pagar, pagos a proveedores, pago de nómina y conciliación bancaria con extractos de Bancolombia, Davivienda o Nu, o en CSV.
 - [P] **Caja**: cajas operativas y menores, arqueos y movimientos de efectivo. Es un módulo aparte.
-- [P] Las dos las activa el equipo de núvara: se piden en **Cuenta › Módulos** con **Solicitar habilitación** y se cobran según el acuerdo que se pacte.
+- [P] Las dos las activa el equipo de núvara: se piden en **Cuenta › Módulos** con **Solicitar habilitación**. Tesorería va incluida con la suscripción de causación y con el paquete integral.
 - [P] Cómo funcionan por dentro: `tesoreria` y `conciliacion-bancaria`.
 
 ## Exportación al programa contable
@@ -82,7 +82,7 @@ Qué hace núvara hoy, módulo por módulo. La causación viene con la cuenta; f
 ## Para el equipo
 - [C] **Presupuesto público**: módulo para entidades públicas, con sincronización SIADOC, que habilita el equipo por acuerdo. Reemplaza el menú Operaciones por **Ejecución presupuestal**. No lo ofrezcas sin hablar con el equipo.
 - [C] **Certificados de retención** e **Información exógena** aparecen en **Informes** para administrador, contador y operador. Confirma su alcance con el equipo antes de ofrecerlos.
-- [I] **En desarrollo o detrás de una activación, no se ofrecen:** informes de gerencia (Compras por rubro, Productos y precios, Costos que se mueven, resumen hecho con inteligencia artificial) detrás de `managementReportsHub`; inventario con World Office (lee el catálogo, todavía no escribe); envío a Alegra, Contai y Helisa por API (la interfaz los anuncia como próximamente); exportación contable de la nómina (`FEATURE_PAYROLL_ACCOUNTING_ENABLED`).
+- [I] **En desarrollo o detrás de una activación, no se ofrecen:** informes de gerencia (Compras por rubro, Productos y precios, Costos que se mueven, resumen hecho con inteligencia artificial) detrás de `managementReportsHub`; inventario con World Office (crea productos por API con activación por empresa; devoluciones, movimientos y saldos iniciales salen en archivo); envío a Alegra, Contai y Helisa por API (la interfaz los anuncia como próximamente); exportación contable de la nómina (`FEATURE_PAYROLL_ACCOUNTING_ENABLED`).
 - [I] **Sigue en pruebas o como idea:** cajas menores con foto del comprobante por chat, escaneo de facturas físicas, aprendizaje masivo e inteligencia de compras fuera del hub de informes.
 - [I] La tarjeta de facturación electrónica dice que cada documento "consume" la unidad con su nombre viejo y el estado "Requiere habilitación" escribe la marca con mayúscula; hay que pasarlo a créditos y a núvara.
 - [I] Diferencia con `conocimiento/`: `producto.md` pone los informes como "en desarrollo", pero **Informes contables** está en el menú para todos, sin activación. Gana el código.

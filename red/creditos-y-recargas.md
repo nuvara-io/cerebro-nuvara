@@ -6,7 +6,7 @@ actualizado: 2026-11-02
 conexiones:
   - precios                     # cuánto cuesta cada causación y el mínimo mensual
   - emitir-factura-de-venta     # saldo insuficiente para emitir
-  - activar-nomina              # pagar los cupos con el saldo
+  - activar-nomina              # comprar el tramo de nómina
   - emitir-nomina-electronica   # saldo para los documentos o módulo en pausa
 fuentes:
   - conocimiento/flujos/12-creditos-y-recargas.md
@@ -21,7 +21,7 @@ fuentes:
 núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo recargar, cómo ver el saldo y cuántas facturas te alcanzan. Cuánto cuesta cada cosa está en `precios`.
 
 ## Cómo funcionan los créditos
-- [P] Recargas créditos una vez y cada causación, documento electrónico o cupo de nómina se descuenta de tu saldo.
+- [P] Recargas créditos una vez y cada causación o evento RADIAN se descuenta de tu saldo.
 - [P] El saldo es de tu cuenta, no de cada empresa: lo compartes entre todas tus empresas y no tienes que recargar por empresa.
 - [P] Una compra consume más créditos que una venta, por eso los créditos no equivalen a un número fijo de facturas.
 - [P] Traer las facturas de la DIAN o del correo no gasta créditos: se descuentan cuando núvara causa la factura. Lo que eliminas de **Pendientes** antes de causar no cuesta.
@@ -56,9 +56,8 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 ## Qué pasa si se acaba el saldo
 - [P] Cuando te estás quedando sin créditos, la plataforma te avisa con un botón para recargar.
 - [P] Con el saldo en cero no puedes causar ni emitir documentos electrónicos hasta que recargues.
-- [P] Los paquetes de facturación electrónica se descuentan en documentos, no del saldo. Los créditos del saldo los puedes usar en otros módulos.
+- [P] Los paquetes de facturación electrónica y los tramos de nómina se pagan completos, no con el saldo. Tus créditos sirven para causar y para los eventos RADIAN.
 - [P] Si lanzas una causación por lote con más facturas de las que cubre tu saldo, núvara te avisa: recarga o reduce el rango de fechas.
-- [P] Si tienes la nómina activa y el saldo no cubre los cupos del mes, el módulo tiene 3 días de gracia y luego se pausa.
 - [P] Si trabajas en volumen, recarga antes de empezar el mes para no frenar el trabajo.
 
 ## Cuál es la recarga mínima

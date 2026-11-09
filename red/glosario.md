@@ -94,7 +94,7 @@ Qué significa cada término contable, tributario o de la plataforma que aparece
 - [P] **Costeo mensual**: proceso de Siigo que recalcula el costo del inventario; si no se corre, los saldos pueden salir negativos.
 
 ## Créditos y cobro
-- [P] **Créditos**: la unidad de cobro por uso de núvara. 1 crédito equivale a $100 COP.
+- [P] **Créditos**: la unidad de cobro por uso de núvara. 1 crédito equivale a $1 COP.
 - [P] **Billetera**: el saldo de créditos de la empresa o de la organización, con su historial de movimientos.
 - [P] **Mínimo mensual de consumo**: $80.000 COP que se descuentan del saldo cada mes como mínimo; lo que no alcanzas a consumir de ese mínimo se pierde. No es la recarga mínima.
 - [P] **Organización**: la cuenta de una firma contable que agrupa varias empresas.

@@ -30,6 +30,8 @@ Más de 3.000 documentos se cotiza por WhatsApp.
 
 **Reglas**
 - Cualquier paquete incluye el certificado digital y la configuración inicial. No se cobra habilitación aparte.
+- Paquete y certificado son de una sola empresa: no se venden por firma ni se comparten.
+- El paquete se paga completo, no con el saldo. En facturación, el saldo solo se usa para RADIAN.
 - El paquete y el certificado valen un año desde la compra inicial.
 - Un paquete comprado después, dentro de ese año, tiene **10 % de descuento** y vence con el certificado inicial. Ejemplo: 120 documentos en enero y otro de 120 en junio por $178.200.
 - El paquete se descuenta en documentos, no en pesos.
@@ -45,6 +47,8 @@ Más de 3.000 documentos se cotiza por WhatsApp.
 - Una empresa sin certificado compra el paquete de 30 por $150.000 y puede emitir sin otro cobro.
 - En el mes 6, la compra de otro paquete de 120 muestra y cobra $178.200, y ese paquete vence con el certificado.
 - Pasado el año, la compra vuelve al precio completo.
+- Una empresa con certificado por nómina paga su primer paquete completo.
+- Una organización con dos empresas compra un paquete para cada una, y el descuento de una no aplica a la otra.
 - El super admin puede editar precios, documentos y porcentaje de descuento sin desplegar.
 
 ## 2. Nómina
@@ -64,6 +68,7 @@ Con más de 90 empleados se cotiza por WhatsApp.
 - **Solo emisión:** emitir la nómina electrónica, sin el resto del módulo.
 - **Con todo:** empleados y novedades, liquidación y prestaciones, PILA, nómina electrónica y causación de la nómina.
 - Todos los tramos incluyen el certificado, el mismo de facturación electrónica.
+- Cada tramo es de una sola empresa y se paga completo, no con el saldo.
 - Se paga el tramo completo, aunque haya menos empleados que el tope.
 - El usuario escribe cuántos empleados tiene y la plataforma le sugiere el tramo. De 1 a 10 muestra las dos opciones.
 - "Solo emisión" debe bloquear el resto del módulo de nómina.
@@ -93,6 +98,14 @@ Con más de 90 empleados se cotiza por WhatsApp.
 - El botón **Solicitar habilitación** de **Cuenta › Módulos** debe volver a su flujo; hoy abre soporte.
 - Validar que siguen debitando $510 por compra y $200 por venta con 1 crédito = $1, y cambiar "coin" y "Nuvicoins" por créditos.
 
+## 5. Mínimo mensual y capacitación
+
+- El mínimo de $80.000 aplica a quien causa sin un plan de causación, aunque tenga otros módulos. Si factura y causa $10.000, se descuentan $80.000.
+- No aplica con la suscripción de causación, con el paquete integral ni a quien usa otros módulos sin causar.
+- En **Activa tu cuenta**, la entrada es de $80.000 de saldo. La capacitación es opcional: si se pide, el pago es de $230.000, con $150.000 de capacitación y $80.000 que entran al saldo.
+
+**Hecho cuando** una cuenta nueva con capacitación paga $230.000 y queda con $80.000 de saldo para causar.
+
 ## Validar antes de empezar
 
 - Si se puede generar el volumen de certificados de los planes anuales.
@@ -108,6 +121,7 @@ Dejar estos valores configurables o fuera de esta entrega:
 - "10 personas a $3.000 por empleado".
 - Qué precios van con IVA: falta revisarlo con el contador.
 - Límites y permanencia del paquete integral.
+- Si el plan inicial de nómina trae documentos de facturación.
 
 ## Orden sugerido
 

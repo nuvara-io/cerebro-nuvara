@@ -24,7 +24,7 @@ Lo que está en desarrollo, en pruebas o prometido y todavía no está construid
 
 ## Qué viene en exportación e integraciones
 - [I] **Exportación contable de la nómina:** no está construida; `FEATURE_PAYROLL_ACCOUNTING_ENABLED` muestra un grupo vacío.
-- [I] **World Office por API con escritura:** hoy está fijo en solo validación (`VALIDATION_ONLY`, `canWrite=false`). El envío de inventario hacia World Office también está en desarrollo.
+- [I] **World Office por API:** ya escribe compras, productos y centros de costo, con activación por empresa. Falta escribir ventas, notas, documento soporte, documento equivalente y nómina.
 - [I] **Alegra, Contai y Helisa por API:** la página de integraciones los anuncia como próximamente, sin fecha. Hoy salen por archivo.
 - [I] **Envío automático a Siigo al aprobar:** existe, pero está apagado (`ACCOUNTING_AUTO_PUSH_ON_APPROVE`).
 - [I] **Verificar contra Siigo antes de causar** y **vista de trazabilidad por auxiliar:** prometidos (30/06).
@@ -56,7 +56,7 @@ Lo que está en desarrollo, en pruebas o prometido y todavía no está construid
 - [I] Asistente conversacional por voz o chat, traducción de idiomas asiáticos y legalización masiva de gastos.
 - [I] Control de inventario de restaurantes por recetas y sector público con registro presupuestal como llave.
 - [I] Calendario tributario con alertas (el calendario por empresa ya existe) y monitoreo de errores en el panel del superadministrador.
-- [I] Paquetes por módulo y cambio de modelo de cobro: en discusión, ver `precios`.
+- [I] Paquetes por módulo: el modelo ya está en `precios`; falta llevarlo a la plataforma con `docs/encargo-precios-plataforma-2026-11.md`.
 
 ## Cómo responder sobre fechas
 - [I] No hay fechas comprometidas: no las des a usuarios ni prospectos.

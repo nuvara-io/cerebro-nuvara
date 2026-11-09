@@ -408,6 +408,45 @@
       "excluye": []
     },
     {
+      "pregunta": "¿El paquete de facturación sirve para varias empresas?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "una sola empresa"
+        ]
+      ],
+      "excluye": []
+    },
+    {
+      "pregunta": "¿La capacitación es obligatoria?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "opcional"
+        ]
+      ],
+      "excluye": []
+    },
+    {
+      "pregunta": "Si facturo con núvara y causo poco, ¿pago el mínimo mensual?",
+      "publico": "P",
+      "nodos": [
+        "precios"
+      ],
+      "incluye": [
+        [
+          "sin un plan de causación"
+        ]
+      ],
+      "excluye": []
+    },
+    {
       "pregunta": "¿Cuánto cuesta un evento RADIAN?",
       "publico": "P",
       "nodos": [],

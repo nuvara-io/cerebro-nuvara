@@ -28,7 +28,7 @@ Cuánto cuesta núvara. Cómo se recarga, con qué se paga y cómo se ve el sald
 Fuente: modelo definido por el equipo el 03/11/2026 y ajustado el 06/11/2026, sobre la base del sitio oficial (página `/precios/`) y la plataforma (Cuenta › Saldo y Cuenta › Módulos).
 
 - [P] Cada módulo tiene su forma de cobro: la **causación** se paga con créditos y un mínimo mensual, o con una suscripción si manejas mucho volumen; la **facturación electrónica** con paquetes anuales que ya incluyen el certificado; la **nómina** con un valor anual por tramo de empleados, y **tesorería** va incluida con la suscripción de causación. También hay un **paquete integral** con todos los módulos.
-- [P] El **mínimo mensual de $80.000** solo aplica a quien usa únicamente causación, sin otros módulos ni mensualidad.
+- [P] El **mínimo mensual de $80.000** aplica a quien causa sin un plan de causación, aunque también tenga facturación electrónica, nómina u otro módulo.
 
 ## Causación: se paga con créditos
 
@@ -37,7 +37,8 @@ Fuente: modelo definido por el equipo el 03/11/2026 y ajustado el 06/11/2026, so
 - [P] **Causar una factura de compra: $510 COP** (510 créditos).
 - [P] **Causar una factura de venta: $200 COP** (200 créditos).
 - [P] **Qué incluye el precio:** traer las facturas del correo y de la DIAN, empresas ilimitadas, cálculo de retenciones e IVA, generación del archivo de exportación y causación en lotes.
-- [P] **Para empezar:** capacitación de $150.000 más $80.000 del primer mes, en total **$230.000**.
+- [P] **Para empezar:** pagas **$80.000** de saldo para causar.
+- [P] **La capacitación es opcional** y vale **$150.000**. Si la pides, pagas **$230.000**: $150.000 de la capacitación y $80.000 de saldo para causar.
 
 ## Suscripción de causación: para empresas y firmas contables grandes
 
@@ -53,7 +54,8 @@ Fuente: modelo definido por el equipo el 03/11/2026 y ajustado el 06/11/2026, so
 - [P] **Lo que no alcanzas a consumir del mínimo se pierde.** Si causas $60.000, se descuentan $80.000 y los $20.000 de diferencia no pasan al mes siguiente. El resto de tu saldo sigue disponible.
 - [P] Si no causas nada en el mes, se descuentan igual los $80.000. Si tu saldo no alcanza, debes recargar y tienes **5 días** para hacerlo.
 - [P] El mínimo mensual cubre el procesamiento y el almacenamiento de las facturas de la DIAN durante el mes.
-- [P] Si tienes otro módulo o una mensualidad, no pagas el mínimo mensual.
+- [P] **Ejemplo:** si facturas con núvara y causas $10.000 en el mes, se descuentan $80.000.
+- [P] No pagas el mínimo mensual si tienes la suscripción de causación o el paquete integral, ni si usas otros módulos sin causar.
 - [P] La recarga mínima y el mínimo mensual **son dos cosas distintas**: una es lo mínimo que pagas al recargar; la otra, lo mínimo que se consume del saldo cada mes.
 
 ## Promoción de primera recarga
@@ -69,6 +71,8 @@ Definida por el equipo el 05/11/2026 para la pauta "Ponte al día", dirigida a c
 ## Facturación electrónica
 
 - [P] Se paga con **paquetes anuales de documentos**. Cada paquete **ya incluye el certificado digital**: no hay un cobro de habilitación aparte.
+- [P] **Cada paquete y su certificado son de una sola empresa.** No se venden por firma ni se comparten entre empresas: cada empresa compra el suyo.
+- [P] El paquete se paga completo, no con el saldo de créditos.
 - [P] **Paquetes:**
   - Paquete inicial, 30 documentos: **$150.000**
   - 120 documentos: **$198.000**
@@ -76,16 +80,16 @@ Definida por el equipo el 05/11/2026 para la pauta "Ponte al día", dirigida a c
   - 3.000 documentos: **$1.350.000**
   - Más de 3.000 documentos: **se cotiza**
 - [P] Los paquetes y el certificado tienen **vigencia de un año**.
-- [P] **Si se te acaban los documentos antes del año**, compras otro paquete con **10 % de descuento**, porque ya tienes el certificado. Ese paquete queda atado a la vigencia del certificado inicial. Por ejemplo, si compras 120 documentos en enero y se acaban en junio, otro paquete de 120 te cuesta $178.200.
-- [P] El mismo certificado sirve para facturación electrónica y nómina electrónica: si ya lo tienes, no lo pagas otra vez.
+- [P] **Si se te acaban los documentos antes del año**, compras otro paquete con **10 % de descuento** sobre el paquete que ya tienes. Ese paquete queda atado a la vigencia del certificado inicial. Por ejemplo, si compras 120 documentos en enero y se acaban en junio, otro paquete de 120 te cuesta $178.200.
+- [P] El certificado de una empresa sirve para su facturación y su nómina electrónica. Si ya lo tienes por nómina y quieres facturar, pagas el paquete completo.
 - [P] El paquete se descuenta **en documentos**, no en pesos. Si se acaba, compras otro.
 - [P] **Qué consume el paquete:** la factura de venta, las notas crédito y débito, el documento soporte y su nota de ajuste.
-- [P] **Eventos RADIAN:** **$100 por evento** (100 créditos), descontados del saldo. Cada acuse o evento se cobra aparte y no consume el paquete.
+- [P] **Eventos RADIAN:** **$100 por evento** (100 créditos), descontados del saldo. Cada acuse o evento se cobra aparte y no consume el paquete. En facturación electrónica, el saldo solo se usa para RADIAN.
 - [P] Las pruebas ante la DIAN no se cobran.
 
 ## Nómina
 
-- [P] Se paga un **valor anual por tramo de empleados**, con el **certificado digital incluido**. Pagas el tramo completo, aunque tengas menos empleados que el tope.
+- [P] Se paga un **valor anual por tramo de empleados**, con el **certificado digital incluido**. Cada tramo es de una sola empresa y se paga completo, no con el saldo. Pagas el tramo entero, aunque tengas menos empleados que el tope.
 - [P] **Plan inicial, hasta 5 empleados:** **$300.000 + IVA al año** ($5.000 por empleado al mes). Incluye la habilitación de facturación electrónica.
 - [P] **De 1 a 10 empleados:** **$260.000 al año** solo emisión, o **$480.000 al año** con todo.
 - [P] **Solo emisión** es para emitir la nómina electrónica, sin el resto del módulo. **Con todo** trae el módulo completo: empleados y novedades, liquidación y prestaciones, PILA, nómina electrónica y causación de la nómina.
@@ -111,6 +115,8 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 - [C] **Paquetes:** falta definir qué pasa con lo no usado al renovar y si los documentos equivalentes y de nómina también consumen el paquete.
 - [C] **IVA:** solo el plan inicial de nómina dice "+ IVA". Falta revisar con el contador qué precios van gravados.
 - [C] **Nómina:** falta confirmar si sigue el pago mes a mes con 10 % adicional. "10 personas a $3.000 por empleado" queda por definir. El límite de "más de 90 se cotiza" se dedujo del último tramo.
+- [C] **Capacitación:** falta definir su duración y qué incluye.
+- [C] **Plan inicial de nómina:** falta saber si trae documentos de facturación.
 - [C] **Paquete integral:** falta definir el límite de empresas y de causaciones, y si tiene permanencia.
 - [C] La calculadora del sitio arranca en $200.000: es un ejemplo de recarga, no la recarga mínima. La plataforma pide $70.000; el equipo puede cambiar ese valor.
 - [C] **Si el mínimo mensual aplica desde el primer mes** o solo desde el segundo, y si aplica a los usuarios antiguos.
@@ -123,11 +129,11 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
 - [C] **Descuentos, bonos y referidos:** aparte de la promoción de primera recarga, no hay ninguno oficial y el sitio no publica descuentos. No ofrecer otros.
 - [C] **Vencimiento de créditos:** los créditos del saldo no vencen; lo que se pierde es la parte no consumida del mínimo mensual. Falta decidir si algún día caducan.
 - [C] **Cuándo se cobra una factura:** en las sesiones recientes, al precausar; descargar no cobra y lo que queda en *Pendientes* no cobra. Falta confirmar si recausar vuelve a cobrar y si eliminar una precausada devuelve los créditos.
-- [C] **Capacitación:** vale $150.000 en la entrada; falta definir su duración y qué incluye.
 - [C] Registrarse y explorar la plataforma sin pagar; solo se puede causar después de recargar (dicho en una sesión del 30/07/2026).
 
 ## Interno
 
+- [I] **Costos (07/11/2026):** el certificado cuesta $85.000 al año. El paquete inicial deja $65.000 antes de IVA, soporte y pasarela: no se vende por margen, sino para que la empresa entre y sume otros módulos (ver `argumentos-de-venta`).
 - [I] **Requisitos para la plataforma (06/11/2026):**
   - Cambiar la habilitación de $150.000 y las bolsas por los 4 paquetes anuales, con el certificado incluido.
   - Atar los paquetes adicionales a la vigencia del certificado inicial y aplicarles 10 % de descuento dentro de ese año.

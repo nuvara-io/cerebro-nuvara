@@ -40,11 +40,11 @@ Cómo cuida núvara tus datos, cómo pides ayuda y qué capacitación hay.
 ## Capacitación y tutoriales
 - [P] **Centro de ayuda** (también con **Ctrl+K**) busca tutoriales en video y acciones desde la pantalla donde estás.
 - [P] La pantalla de causación tiene un **recorrido guiado** que te muestra cada parte.
-- [P] Las firmas contables tienen además capacitación en vivo con el equipo.
+- [P] La capacitación en vivo con el equipo es opcional y vale $150.000.
 - [P] Si quieres conocer núvara antes de empezar, pide una demostración en vivo con un asesor.
 
 ## Para el equipo
-- [C] **Sin confirmar:** la duración de la capacitación en vivo (se ha dicho de 30 minutos a 2 horas más 1 de acompañamiento) y si va incluida en la primera recarga. No la prometas con duración ni precio.
+- [C] **Sin confirmar:** la duración de la capacitación en vivo (se ha dicho de 30 minutos a 2 horas más 1 de acompañamiento). Su valor está en `precios`. No prometas una duración.
 - [C] **Sin confirmar:** tiempos de respuesta. Se ha dicho "menos de 10 minutos" y también un promedio de dos días; el horario de 8:00 a. m. a 5:00 p. m. y sábados hasta mediodía no está formalizado. No des un tiempo de respuesta.
 - [C] El sitio anuncia soporte por chat, correo y teléfono; en la práctica el canal oficial es el chat de **Soporte** de la plataforma.
 - [C] Si preguntan por estabilidad: hubo semanas de lentitud y cambios de versión que preocuparon a usuarios. Reconócelo, explica la revisión antes de aprobar y escala al equipo.

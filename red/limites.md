@@ -24,7 +24,7 @@ Nodo transversal: se carga en todas las respuestas. Dice qué no se afirma y cu�
 
 ## Módulos disponibles y en desarrollo
 - [P] Hoy están disponibles la causación de compras y ventas, la exportación al programa contable, la facturación electrónica con RADIAN, la nómina con nómina electrónica y PILA, y la tesorería con conciliación bancaria y cajas.
-- [P] Facturación electrónica y tesorería se activan con una solicitud; la nómina, con la compra de cupos de empleados.
+- [P] Facturación electrónica y tesorería se activan con una solicitud; la nómina, con la compra de un tramo de empleados.
 - [P] Lo que no esté en esa lista no se ofrece como disponible ni se le pone fecha. Se responde que no está disponible hoy y, si el usuario quiere saber más, se pasa a un asesor.
 - [P] Hoy no se declara renta ni se hacen ajustes tributarios desde núvara: por eso lo causado se exporta al programa contable.
 - [C] No ofrecer como disponibles: inteligencia de compras y visión ejecutiva, cambios de precio, envío de inventario a World Office, aprendizaje masivo, escaneo de facturas físicas, integración directa con Alegra (hoy es por archivo), informes y exógena, entrevista de configuración por chat, cuentas de 10 dígitos y aplicación móvil.
