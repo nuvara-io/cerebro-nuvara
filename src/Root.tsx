@@ -6,7 +6,7 @@ import { DIAPOSITIVAS_TESORERIA } from "./brochure/Tesoreria";
 import { AppDisponible, AppProximamente } from "./posts/modulos/AppMovil";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { DianPlaca1, DianPlaca2, DianPlaca3, DianPlaca4, DianPlaca5, PagasLoQueCausas, VariosProgramas } from "./posts/modulos/CierreIva";
-import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
+import { FacturacionElectronica, FacturacionElectronicaPauta } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
 import { NominaCompleta } from "./posts/modulos/NominaCompleta";
 import { PonteAlDia } from "./posts/modulos/PonteAlDia";
@@ -100,6 +100,8 @@ export const RemotionRoot: React.FC = () => {
         <Still id="H0-MasQueCausacion" component={MasQueCausacion} width={1080} height={1920} />
         <Still id="H1-Causacion" component={CausacionAprobar} width={1080} height={1920} />
         <Still id="H2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1920} />
+        <Still id="Pauta-FacturacionElectronica" component={FacturacionElectronicaPauta} width={1080} height={1350} />
+        <Still id="Pauta-FacturacionElectronica-Historia" component={FacturacionElectronicaPauta} width={1080} height={1920} />
         <Still id="H3-Nomina" component={NominaCompleta} width={1080} height={1920} />
         <Still id="H4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1920} />
       </Folder>

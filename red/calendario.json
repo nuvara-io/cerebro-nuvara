@@ -1660,10 +1660,10 @@
     },
     "orden": 58,
     "modulo": "Facturación electrónica",
-    "thumb": "m2",
+    "thumb": "m2p",
     "pieza": "Anuncio: factura donde ya causas",
     "formato": "Imagen 4:5 (feed) y 9:16 (historias)",
-    "archivo": "out/campana-modulos/M2-FacturacionElectronica.png y out/campana-modulos/H2-FacturacionElectronica.png",
+    "archivo": "out/pauta/Pauta-FacturacionElectronica.png y out/pauta/Pauta-FacturacionElectronica-Historia.png (Remotion: Pauta-FacturacionElectronica)",
     "titulo": "Factura donde ya causas",
     "relaciones": [
       "p10",
@@ -1671,7 +1671,7 @@
     ],
     "porque": "Probar en frío si facturación electrónica trae conversaciones mientras la cuenta aprende, sin abrir otra campaña.",
     "copy": "¿Facturas en un programa y causas en otro? 🧾\n\nCon núvara emites ante la DIAN desde la misma plataforma donde causas: factura de venta, notas y documento soporte. Tus ventas emitidas quedan listas para causar.\n\nPaquete inicial: 30 documentos por $150.000 al año, con el certificado incluido.\n\nEscríbenos y te mostramos cómo 👇",
-    "nota": "Entra al laboratorio Ponte al día IVA por decisión del 09/11/2026, dentro del mismo tope de $30.000 diarios: no suma presupuesto. Es TOFU de módulo; Meta reparte entre los cinco anuncios y puede darle poco. Usa el arte de p10 en feed y el de p11 en historias. Precio del paquete inicial según red/precios.md. Antecedente: la imagen de módulos «Más que causación» gastó $9.986 en NUVARA20 sin conversaciones; por eso este anuncio lleva un precio concreto. Falta subirlo a Meta: el archivo no está en este computador."
+    "nota": "Pieza propia de pauta, hecha el 09/11/2026 a partir de p10: lleva el precio grande (paquete inicial de 30 documentos, $150.000 al año, con el certificado incluido y sin cobro de habilitación aparte) y el llamado «Escríbenos y agenda tu demostración en vivo». Deja fuera nómina y RADIAN, que se cobran aparte, para que nadie crea que entran en el paquete. Entra al laboratorio Ponte al día IVA dentro del mismo tope de $30.000 diarios: no suma presupuesto. Es TOFU de módulo y Meta reparte entre cinco anuncios, así que puede darle poco. Antecedente: la imagen de módulos «Más que causación» gastó $9.986 en NUVARA20 sin conversaciones; por eso este lleva un precio concreto. Falta subirlo a Meta."
   },
   {
     "id": "a18",
@@ -1711,6 +1711,6 @@
     ],
     "porque": "Probar en frío si RADIAN trae conversaciones de quien recibe facturas a crédito.",
     "copy": "¿Recibes facturas a crédito? 📩\n\nLos eventos RADIAN soportan el costo y el IVA descontable de esas compras. En núvara envías el acuse, el recibo y la aceptación a mano o con reglas, y ves lo que está por vencer.\n\nEl reclamo nunca se envía solo: siempre lo decides tú.\n\nEscríbenos y te mostramos cómo 👇",
-    "nota": "Entra al laboratorio Ponte al día IVA por decisión del 09/11/2026, dentro del mismo tope de $30.000 diarios: no suma presupuesto. Es el reel de p16 en versión para pauta, sin hashtags y con WhatsApp. No menciona los $100 por evento: si se quiere, se agrega después de confirmarlo. Falta subirlo a Meta: el archivo no está en este computador."
+    "nota": "Entra al laboratorio Ponte al día IVA por decisión del 09/11/2026, dentro del mismo tope de $30.000 diarios: no suma presupuesto. Es el reel de p16 en versión para pauta, sin hashtags y con WhatsApp. No menciona los $100 por evento: si se quiere, se agrega después de confirmarlo. El reel ya está renderizado (out/reels/reel-radian.mp4) y se ve en la vista previa. Falta subirlo a Meta."
   }
 ]

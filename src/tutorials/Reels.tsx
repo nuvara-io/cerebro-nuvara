@@ -117,19 +117,28 @@ const RADIAN: Escena[] = [
   {
     tipo: "pantalla", lead: "Acusa en", rest: "un momento.", subtitulo: "Pulsas *Acusar*, revisas y envías",
     recording: "recordings/radian-usuario.mp4", desde: 6.4, hasta: 18, velocidad: 2,
-    camara: [{ t: 6.4, x: 1300, y: 460, zoom: 1.75 }, { t: 10.4, x: 1560, y: 400, zoom: 1.85 }, { t: 12.8, x: 1560, y: 860, zoom: 1.85 }],
+    camara: [
+      { t: 6.4, x: 780, y: 440, zoom: 2 }, { t: 9.4, x: 1600, y: 460, zoom: 2.8 },
+      { t: 10.6, x: 1640, y: 330, zoom: 3.2 }, { t: 12.6, x: 1640, y: 820, zoom: 3.2 }, { t: 14.6, x: 800, y: 800, zoom: 2 },
+    ],
     cursor: CURSOR, clics: CLICS, voz: "r2", vozEn: 0.2,
   },
   {
     tipo: "pantalla", lead: "Con reglas,", rest: "se envían solos.", subtitulo: "*Acuse* y *recibo* con tus reglas",
     recording: "recordings/radian-usuario.mp4", desde: 80.7, hasta: 100, velocidad: 2.2,
-    camara: [{ t: 80.7, x: 1300, y: 500, zoom: 1.75 }, { t: 88, x: 1450, y: 680, zoom: 1.85 }],
+    camara: [
+      { t: 80.7, x: 1300, y: 560, zoom: 2.3 }, { t: 84.5, x: 1150, y: 820, zoom: 2.3 }, { t: 87.6, x: 1560, y: 680, zoom: 2.9 },
+      { t: 91, x: 1250, y: 820, zoom: 2.4 }, { t: 94.6, x: 1560, y: 700, zoom: 2.9 }, { t: 98.4, x: 1350, y: 620, zoom: 2.2 },
+    ],
     cursor: CURSOR, clics: CLICS, voz: "r3", vozEn: 0.2,
   },
   {
     tipo: "pantalla", lead: "Vigila lo", rest: "que vence.", subtitulo: "El *reclamo* siempre lo decides tú",
     recording: "recordings/radian-usuario.mp4", desde: 53.1, hasta: 64, velocidad: 1.6,
-    camara: [{ t: 53.1, x: 900, y: 420, zoom: 1.75 }, { t: 60, x: 1400, y: 860, zoom: 1.85 }],
+    camara: [
+      { t: 53.1, x: 700, y: 400, zoom: 2.2 }, { t: 57.5, x: 900, y: 700, zoom: 2.3 },
+      { t: 60.2, x: 1550, y: 860, zoom: 2.6 }, { t: 62.9, x: 1000, y: 860, zoom: 2.1 },
+    ],
     cursor: CURSOR, clics: CLICS,
   },
   { tipo: "cierre", dura: 4.3, voz: "r4", vozEn: 0.2 },
