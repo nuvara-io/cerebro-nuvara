@@ -188,7 +188,7 @@ export const PreciosNomina: React.FC = () => (
           <Landmark {...icono} />
           <p style={t(52, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$300.000</p>
           <p style={t(26, { fontWeight: 700, color: color.white })}>Plan inicial al año + IVA</p>
-          <p style={t(22, { color: color.white })}>Hasta 5 empleados. Incluye la habilitación de facturación electrónica.</p>
+          <p style={t(22, { color: color.white })}>Hasta 5 empleados, con el certificado digital incluido.</p>
         </Tarjeta>
       </div>
       <p style={t(24)}>

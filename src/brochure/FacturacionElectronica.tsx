@@ -1,4 +1,4 @@
-import { ArrowRight, FileCheck2, FileText, Landmark, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
+import { ArrowRight, FileCheck2, FileText, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { logo } from "../brand/assets";
 import { font } from "../brand/fonts";
@@ -194,10 +194,13 @@ export const Reglas: React.FC = () => (
   </Dividida>
 );
 
+// Paquetes anuales de facturación electrónica (red/precios.md, 06/11/2026).
+// El valor por documento es el precio del paquete dividido entre sus documentos.
 const PAQUETES = [
-  ["120", "$198.000"],
-  ["1.000", "$580.000"],
-  ["3.000", "$1.350.000"],
+  ["30", "$150.000", "$5.000"],
+  ["120", "$198.000", "$1.650"],
+  ["1.000", "$580.000", "$580"],
+  ["3.000", "$1.350.000", "$450"],
 ] as const;
 
 // 09 · Precios
@@ -208,19 +211,24 @@ export const PreciosFE: React.FC = () => (
         <Pill>PRECIOS</Pill>
         <Titular azul="Paquetes anuales." gris="Con el certificado incluido." size={60} />
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1fr", gap: 28 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1.7fr 1fr", gap: 28 }}>
         <Tarjeta style={{ background: color.accent, display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
-          <Landmark {...icono} />
-          <p style={t(56, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$150.000</p>
-          <p style={t(28, { fontWeight: 700, color: color.white })}>Paquete inicial</p>
-          <p style={t(23, { color: color.white })}>30 documentos, certificado digital y configuración ante la DIAN.</p>
+          <FileText {...icono} />
+          <p style={t(56, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$5.000</p>
+          <p style={t(28, { fontWeight: 700, color: color.white })}>Por documento</p>
+          <p style={t(23, { color: color.white })}>Con el paquete inicial: 30 documentos al año por $150.000. Sin costo de habilitación.</p>
         </Tarjeta>
         <Tarjeta style={{ display: "grid", gap: 10, alignContent: "start", padding: 30 }}>
-          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Más documentos al año</p>
-          {PAQUETES.map(([docs, precio]) => (
-            <div key={docs} style={{ display: "flex", justifyContent: "space-between", paddingBottom: 8, borderBottom: `1px solid ${color.gray200}` }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", gap: 12, paddingBottom: 6 }}>
+            <span style={t(20, { fontWeight: 600, color: color.textBody })}>Documentos al año</span>
+            <span style={t(20, { fontWeight: 600, color: color.textBody, textAlign: "right" })}>Paquete</span>
+            <span style={t(20, { fontWeight: 600, color: color.textBody, textAlign: "right" })}>Por documento</span>
+          </div>
+          {PAQUETES.map(([docs, precio, unidad]) => (
+            <div key={docs} style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", gap: 12, alignItems: "baseline", paddingBottom: 8, borderBottom: `1px solid ${color.gray200}` }}>
               <span style={t(25)}>{docs} documentos</span>
-              <strong style={t(27, { fontWeight: 700, color: color.accent })}>{precio}</strong>
+              <strong style={t(26, { fontWeight: 700, color: color.textTitle, textAlign: "right" })}>{precio}</strong>
+              <strong style={t(26, { fontWeight: 700, color: color.accent, textAlign: "right" })}>{unidad}</strong>
             </div>
           ))}
           <p style={t(22)}>Más de 3.000 documentos: se cotiza.</p>
@@ -233,7 +241,7 @@ export const PreciosFE: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Consumen el paquete la factura, las *notas* y el *documento soporte*. Cada paquete es *por empresa* y vale *un año*: si se acaban antes, el siguiente tiene *10 % de descuento*." />
+        <Emphasis text="Cada paquete trae el *certificado digital* y vale *un año*. Consumen el paquete la factura, las *notas* y el *documento soporte*. Es *por empresa*: si se acaban antes, el siguiente tiene *10 % de descuento*." />
       </p>
     </div>
   </Slide>
