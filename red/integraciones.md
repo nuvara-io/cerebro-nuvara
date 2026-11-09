@@ -21,7 +21,7 @@ Con qué se conecta núvara: la DIAN y tu correo para traer las facturas, tu pro
 ## Con qué se conecta núvara
 - [P] **DIAN**: para traer las facturas que recibes y emites, y para emitir documentos electrónicos si activas la facturación electrónica.
 - [P] **Correo**: Gmail, Outlook y otros correos por IMAP, para traer las facturas que te llegan por correo.
-- [P] **Programa contable**: Siigo Nube con envío directo; Siigo Contador, Siigo Pyme, World Office, Alegra, Contai, Helisa y otros por archivo.
+- [P] **Programa contable**: Siigo Nube con envío directo; World Office nube con envío de compras por API; Siigo Contador, Siigo Pyme, World Office, Alegra, Contai, Helisa y otros por archivo.
 - [P] **Bancos**: los extractos se cargan en la conciliación bancaria de Tesorería.
 - [P] Todas se configuran por empresa en **Administración › Configuración › Integraciones**, con las secciones **DIAN**, **Correos electrónicos** y **Sistema contable externo**.
 
@@ -32,8 +32,8 @@ Con qué se conecta núvara: la DIAN y tu correo para traer las facturas, tu pro
 - [P] Cómo conectar y enviar: `conectar-siigo` y `enviar-a-siigo`.
 
 ## World Office
-- [P] World Office sale **por archivo**: una nota de contabilidad que importas en World Office, y un archivo opcional de ítems de inventario.
-- [P] La conexión por token de World Office hoy solo lee tu catálogo y valida la conexión; todavía no envía documentos.
+- [P] World Office, escritorio o nube, sale **por archivo**: una nota de contabilidad que importas en World Office, y un archivo opcional de ítems de inventario.
+- [P] Con World Office nube, las **facturas de compra** también se pueden enviar por API con tu token, junto con los productos y los centros de costo. Se activa por empresa y pide relacionar los productos, las bodegas y los terceros que ya existen en World Office. Las ventas y las notas salen por archivo.
 - [P] Cómo se hace: `exportar-world-office`.
 
 ## Alegra, Contai, Helisa y otros programas
@@ -55,8 +55,8 @@ Con qué se conecta núvara: la DIAN y tu correo para traer las facturas, tu pro
 
 ## Para el equipo
 - [C] La pantalla de integraciones anuncia Alegra, Contai y Helisa por API como **próximamente**, sin fecha. Hoy salen por archivo: no prometas conexión directa.
-- [C] El sitio dice que World Office se conecta por API y escribe las facturas. Hoy no es así: solo valida. Si el prospecto usa World Office, ofrécele el archivo.
+- [C] El sitio dice que World Office se conecta por API y escribe las facturas. Es cierto solo para las facturas de compra en World Office nube, con la activación por empresa; las ventas y las notas salen por archivo.
 - [C] SINCO y Distribuciones Riogrande son formatos a medida que activa el equipo por empresa. Un formato propio para otro programa se negocia con el equipo.
 - [C] Los extractos de BBVA, Banco de Bogotá y Daviplata todavía no se leen; usa el CSV.
-- [I] La tarjeta de World Office en **Sistema contable externo** dice "Push automático de documentos y catálogos", pero la integración está en `VALIDATION_ONLY` (`canWrite=false`). Hay que corregir el texto.
+- [I] La tarjeta de World Office en **Sistema contable externo** dice "Push automático de documentos y catálogos": hoy van compras, productos y centros de costo; ventas y notas no. Detalle en `exportacion`.
 - [I] Integraciones que no son contables: SIADOC y TNS solo aparecen con presupuesto público (`siadoc_scraper`, `public_budget`). La sección **Telegram** (notificaciones y registro de pagos) aparece en todas las empresas, pero el bot de Telegram para el cruce de pagos se había descontinuado: no se ofrece.

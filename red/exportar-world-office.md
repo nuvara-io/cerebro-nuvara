@@ -35,4 +35,4 @@ fuentes:
 ## Si algo falla
 - [P] Si el asistente de World Office da error de empresa, revisa que el nombre sea idéntico al de allá.
 - [P] El archivo de ítems solo toma compras ya exportadas y con número de comprobante; para activarlo se sube una vez el INVENTARIO.xlsx de World Office en **Ítems para escritorio**.
-- [P] La conexión por token de World Office todavía no envía documentos: usa el archivo.
+- [P] Con World Office escritorio usa el archivo. En World Office nube las facturas de compra también se pueden enviar por API; las ventas y las notas, por archivo.

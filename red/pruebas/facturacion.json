@@ -525,6 +525,42 @@
           "Ver eventos RADIAN"
         ]
       ]
+    },
+    {
+      "pregunta": "mi solicitud de facturación tiene observaciones, ¿qué hago?",
+      "publico": "P",
+      "nodos": [
+        "solicitar-facturacion-electronica"
+      ],
+      "incluye": [
+        [
+          "Corregir y reenviar"
+        ],
+        [
+          "no pagas de nuevo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿cómo creo el cliente antes de facturar?",
+      "publico": "P",
+      "nodos": [
+        "crear-comprador"
+      ]
+    },
+    {
+      "pregunta": "¿cómo agrego un producto y lo facturo?",
+      "publico": "P",
+      "nodos": [
+        "crear-producto-para-facturar"
+      ]
+    },
+    {
+      "pregunta": "¿cómo reenvío la factura por correo?",
+      "publico": "P",
+      "nodos": [
+        "consultar-y-reintentar-documentos"
+      ]
     }
   ]
 }

@@ -427,23 +427,26 @@ const Precio: React.FC<{ readonly valor: string; readonly que: string; readonly 
 // 12 · Precios
 export const Precios: React.FC = () => (
   <Slide n={12}>
-    <div style={{ position: "absolute", left: MX, right: MX, top: 200, display: "grid", gap: 48 }}>
+    <div style={{ position: "absolute", left: MX, right: MX, top: 180, display: "grid", gap: 40 }}>
       <div style={{ display: "grid", gap: 24 }}>
         <Pill>PRECIOS</Pill>
         <Titular azul="Pagas lo que causas." gris="Sin plan forzado." />
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 28 }}>
-        <Precio valor="$510" que="Factura de compra" nota="5,1 créditos por causación." destacado />
-        <Precio valor="$200" que="Factura de venta" nota="2 créditos por causación." />
-        <Precio valor="$80.000" que="Mínimo mensual" nota="Solo si usas únicamente causación. Lo no consumido del mínimo se pierde." />
+        <Precio valor="$510" que="Factura de compra" nota="510 créditos por causación." destacado />
+        <Precio valor="$200" que="Factura de venta" nota="200 créditos por causación." />
+        <Precio valor="$80.000" que="Mínimo mensual" nota="Si causas sin un plan de causación. Lo no consumido se pierde." />
         <Precio valor="$70.000" que="Recarga mínima" nota="Recargas créditos y los usas cuando causas." />
       </div>
       <div style={{ display: "grid", gap: 14 }}>
         <p style={t(26)}>
-          <Emphasis text="1 crédito = $100. Se cobra *al causar*, una sola vez por factura: descargar no cuesta y recausar no vuelve a cobrar." />
+          <Emphasis text="1 crédito = $1. Se cobra *al causar*; descargar facturas no cuesta." />
         </p>
         <p style={t(26)}>
-          <Emphasis text="¿Manejas un flujo mayor? Desde *1.500 causaciones al mes* puedes optar por una *cotización mensual*. La facturación electrónica y la nómina tienen *precio propio*." />
+          <Emphasis text="¿Causas más? Suscripción de *500 causaciones por $270.000* o *1.000 por $510.000* al mes, con tesorería y sin mínimo. Desde *1.500 al mes*, tarifa especial." />
+        </p>
+        <p style={t(26)}>
+          <Emphasis text="Facturación electrónica y nómina tienen precio propio. Todos los módulos van en el *paquete integral* de *$990.000 al mes*." />
         </p>
       </div>
     </div>
@@ -485,8 +488,8 @@ export const ComoEmpezamos: React.FC = () => {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 40 }}>
           <Inicio icon={<MessageCircle {...i} />} titulo="Demostración en vivo" texto="Te mostramos núvara con tus propias facturas." />
           <Inicio icon={<Building2 {...i} />} titulo="Creas tu empresa" texto="Con el RUT y el balance de prueba por tercero de tu programa contable." />
-          <Inicio icon={<Sparkles {...i} />} titulo="Pruebas gratis" texto="Causas tus primeras 20 facturas sin costo." />
-          <Inicio icon={<GraduationCap {...i} />} titulo="Capacitación y piloto" texto="Te acompañamos con una empresa antes de pasar las demás." />
+          <Inicio icon={<Sparkles {...i} />} titulo="Pruebas gratis" texto="Con tu código, causas tus primeras 20 facturas sin costo." />
+          <Inicio icon={<GraduationCap {...i} />} titulo="Capacitación y piloto" texto="Opcional, por $150.000: te acompañamos con una empresa." />
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
           <span

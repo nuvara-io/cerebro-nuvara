@@ -127,7 +127,7 @@ Llevar las causaciones y los comprobantes al software contable: por archivo o, c
 
 ## Red neuronal: Facturación electrónica
 
-Emitir documentos electrónicos ante la DIAN (factura de venta y notas, documento soporte y su nota de ajuste) y registrar los eventos RADIAN de las facturas que recibes. La nómina electrónica sale de la misma habilitación, pero vive en la red de Nómina.
+Emitir documentos electrónicos ante la DIAN (factura de venta y notas, documento soporte y su nota de ajuste) y registrar los eventos RADIAN de las facturas que recibes. La nómina electrónica usa el mismo certificado, pero vive en la red de Nómina.
 
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
@@ -162,7 +162,7 @@ Empleados, novedades, liquidación, nómina electrónica, PILA y causación de l
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
 | `nomina` | núcleo | P | "¿Cómo funciona la nómina?", "¿qué incluye el módulo de nómina?" |  | `flujos/18`, código de `platform` |
-| `activar-nomina` | neurona | P | "¿Cómo activo la nómina?", "¿dónde compro cupos de empleados?" | `nomina` | `flujos/18`, código de `platform` |
+| `activar-nomina` | neurona | P | "¿Cómo activo la nómina?", "¿dónde compro el tramo de empleados?" | `nomina` | `flujos/18`, código de `platform` |
 | `configurar-nomina` | neurona | P | "¿Cómo configuro la nómina?", "¿dónde cambio la frecuencia de pago?" | `nomina` | `flujos/18`, código de `platform` |
 | `crear-empleado` | neurona | P | "¿Cómo creo un empleado?", "¿cómo importo los empleados?" | `nomina` | `flujos/18`, código de `platform` |
 | `importar-historico-nomina` | neurona | P | "¿Cómo traigo el histórico de nómina de Siigo?", "¿cómo migro la nómina de otro programa?" | `nomina` | `flujos/18`, código de `platform` |
@@ -279,8 +279,8 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `capacitar-usuarios` | `onboarding` | El orden de la configuración inicial en la sesión |
 | `problemas-conocidos` | `seguridad-y-soporte` | Cómo reportar el error o a quién escalarlo |
 | `modulos-disponibles` | `hoja-de-ruta` | Solo I: cuándo sale un módulo en desarrollo |
-| `facturacion-electronica-y-radian` | `precios` | Cuánto cuesta la habilitación o cada documento |
-| `facturacion-electronica-y-radian` | `nomina` | La nómina electrónica sale de la misma habilitación |
+| `facturacion-electronica-y-radian` | `precios` | Cuánto cuestan los paquetes de documentos |
+| `facturacion-electronica-y-radian` | `nomina` | La nómina electrónica usa el mismo certificado |
 | `solicitar-facturacion-electronica` | `habilitar-ante-la-dian` | Después de pagar: el paso ante la DIAN |
 | `habilitar-ante-la-dian` | `emitir-factura-de-venta` | Ya en producción: emitir |
 | `emitir-factura-de-venta` | `emitir-nota-credito-o-debito` | Anular o ajustar una factura emitida |
@@ -291,9 +291,9 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `registrar-eventos-radian` | `causar-y-revisar` | El costo deducible de las compras a crédito |
 | `emitir-documento-soporte` | `notas-credito-y-documento-soporte` | Cómo se causa un documento soporte recibido |
 | `emitir-documento-soporte` | `facturas-del-exterior` | Legalización de gastos |
-| `renovar-certificado` | `precios` | Precio de la renovación |
+| `renovar-certificado` | `precios` | Precio del paquete del nuevo año |
 | `activar-nomina` | `configurar-nomina` | Después de activar: dejarla lista |
-| `activar-nomina` | `creditos-y-recargas` | Pagar los cupos con el saldo |
+| `activar-nomina` | `creditos-y-recargas` | Comprar el tramo de nómina |
 | `configurar-nomina` | `crear-empleado` | Ya configurada: cargar el personal |
 | `crear-empleado` | `registrar-novedades` | Novedades del empleado |
 | `importar-historico-nomina` | `crear-empleado` | Empleados que no vienen en el histórico |
@@ -308,7 +308,7 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `crear-empleado` | `emitir-documento-soporte` | Contratistas por prestación de servicios |
 | `tesoreria` | `facturacion-electronica-y-radian` | Las ventas emitidas llegan a cartera |
 | `tesoreria` | `precios` | Cómo se cobra la tesorería |
-| `nomina` | `precios` | Cuánto cuestan los cupos o la nómina electrónica |
+| `nomina` | `precios` | Cuánto cuestan los tramos o la nómina electrónica |
 | `solicitar-tesoreria` | `crear-cuenta-bancaria` | Ya activa: crear las cuentas |
 | `crear-cuenta-bancaria` | `conciliacion-bancaria` | Conciliar la cuenta con el extracto |
 | `emitir-factura-de-venta` | `registrar-cobro` | Una venta a crédito queda en cuentas por cobrar |
@@ -359,6 +359,14 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `activar-radian` | `habilitar-ante-la-dian` | La factura aún no está en producción |
 | `configurar-reglas-radian` | `revisar-cumplimiento-radian` | Ver qué envió la automatización y qué falta |
 | `revisar-cumplimiento-radian` | `registrar-eventos-radian` | Enviar a mano el evento que falta |
+| `habilitar-ante-la-dian` | `configurar-resoluciones` | Ya en producción: la resolución de numeración |
+| `crear-comprador` | `emitir-factura-de-venta` | Seguir con la factura al comprador creado |
+| `emitir-factura-de-venta` | `crear-comprador`, `crear-producto-para-facturar` | El comprador o el producto que la factura necesita |
+| `emitir-factura-de-venta` | `consultar-y-reintentar-documentos` | Rechazada, falló el envío o reenviarla por email |
+| `emitir-nota-credito-o-debito` | `consultar-y-reintentar-documentos` | Ver el estado de la nota emitida |
+| `emitir-documento-soporte` | `legalizar-gastos` | Emitirlo desde la legalización de gastos |
+| `legalizar-gastos` | `emitir-documento-soporte` | El recibo de un no obligado a facturar lleva documento soporte |
+| `activar-radian` | `configurar-reglas-radian` | Que los eventos se envíen solos |
 | `facturacion-electronica-pendientes` | `hoja-de-ruta` | Cuándo se planea implementarlo |
 | cualquiera | `glosario` | La respuesta usa un término que el usuario no entiende |
 

@@ -21,7 +21,7 @@ fuentes:
 
 ## Pasos
 1. [P] Entra a **Facturación Electrónica › Ajustes**, pestaña **Estado**.
-2. [P] Pulsa **Renovar certificado** y completa el pago al precio vigente.
+2. [P] Pulsa **Renovar certificado** y paga el paquete del nuevo año, que incluye el certificado.
 
 ## Resultado
 - [P] El certificado queda vigente un año más y sigues emitiendo sin interrupciones.

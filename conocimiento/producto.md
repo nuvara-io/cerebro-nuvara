@@ -127,7 +127,7 @@ La plataforma trabaja internamente todo como "causado"; los estados visibles son
 | Conciliación bancaria | **Disponible** en Tesorería (la activa el equipo): extractos PDF de Bancolombia, Davivienda o Nu, o CSV; conciliación automática y manual, partidas y cierre. Ver flujo 21. | 02/11/2026 |
 | Egresos y pagos con bancos | **Disponible** en Tesorería: comprobantes de ingreso y egreso, cuentas por cobrar y por pagar, aprobaciones y pago de nómina. Ver flujo 21. | 02/11/2026 |
 | Cajas menores | En pruebas con usuarios: foto del comprobante por Telegram o WhatsApp, un custodio por caja. | 25/08/2026 |
-| Facturación electrónica, documento soporte | **Disponible** desde el menú Facturación Electrónica, tras solicitar la habilitación ($150.000). Ver flujo 20. | 02/11/2026 |
+| Facturación electrónica, documento soporte | **Disponible** desde el menú Facturación Electrónica, tras comprar un paquete anual desde $150.000. Ver flujo 20. | 02/11/2026 |
 | Eventos RADIAN | **Disponible** con la facturación electrónica en producción (Documentos › Eventos RADIAN). Ver flujo 20. | 02/11/2026 |
 | Inventario con World Office | En pruebas con una empresa real: productos, bodegas, kardex, mapeo y cola de revisión de productos con sugerencias hechas con inteligencia artificial. Bodegas, proveedores y centros se leen; el envío hacia World Office está en desarrollo. | 11/08/2026 |
 | Inteligencia de compras y Visión ejecutiva | Procesa facturas con inteligencia artificial: gasto, precio promedio y variación por proveedor y producto, categorías con subcategorías, exportación a Excel. Independiente de Siigo. En refinamiento. | 08/07/2026 |

@@ -8,8 +8,8 @@ conexiones:
   - factura-de-venta-y-notas               # emitir y ajustar ventas
   - documento-soporte-electronico          # compras a no obligados a facturar
   - eventos-radian                         # eventos sobre las facturas que recibes
-  - precios                                # habilitación y cobro por documento
-  - nomina                                 # la nómina electrónica sale de la misma habilitación
+  - precios                                # paquetes de documentos
+  - nomina                                 # la nómina electrónica usa el mismo certificado
 fuentes:
   - conocimiento/flujos/20-facturacion-electronica-de-venta-y-radian.md
   - platform@5241b3430     # verificado en el código el 03/11/2026
@@ -33,9 +33,9 @@ El módulo para emitir documentos electrónicos ante la DIAN desde núvara y reg
 
 ## Cuánto cuesta
 - [P] La facturación electrónica es un módulo aparte de la causación, con precio propio (detalle en `precios`).
-- [P] **Habilitación: $150.000 al año.** Incluye la firma digital, la configuración inicial ante la DIAN y 20 documentos electrónicos.
-- [P] **Cada documento** (factura, nota o documento soporte) se paga con una **bolsa de documentos**, desde $180.000 por 120, o **con créditos**, a $1.500 por documento.
-- [P] **Cada evento RADIAN** cuesta **$100** (1 crédito) y se descuenta del saldo.
+- [P] **Paquetes anuales por empresa, con el certificado incluido:** 30 documentos por $150.000, 120 por $198.000, 1.000 por $580.000 y 3.000 por $1.350.000.
+- [P] **Cada documento** (factura, nota o documento soporte) se descuenta del paquete. Si se acaba antes del año, el siguiente paquete tiene 10 % de descuento.
+- [P] **Cada evento RADIAN** cuesta **$100** (100 créditos) y se descuenta del saldo.
 - [P] El saldo se reserva al enviar y se descuenta solo si la DIAN acepta; si rechaza, se devuelve. Las pruebas ante la DIAN no se cobran. Reintentar un documento que falló vuelve a cobrar.
 
 ## Dónde está en la plataforma
@@ -48,5 +48,5 @@ El módulo para emitir documentos electrónicos ante la DIAN desde núvara y reg
 
 ## Para el equipo
 - [C] Retefuente y ReteICA en la factura de venta todavía no tienen pantalla; hoy solo se elige ReteIVA. El contexto para implementarlo está en `facturacion-electronica-pendientes`.
-- [I] Proveedor tecnológico: APIDIAN (Factura LATAM). El certificado digital lo carga el equipo desde el panel de superadministrador. Los tipos de documento se encienden por empresa (al encender la factura se encienden sus notas; al encender el documento soporte, su nota).
+- [I] No hay proveedor externo: APIDIAN (Factura LATAM) lo operamos nosotros, y los PDF y XML emitidos quedan en ese servidor. El certificado digital lo carga el equipo desde el panel de superadministrador. Los tipos de documento se encienden por empresa (al encender la factura se encienden sus notas; al encender el documento soporte, su nota).
 - [I] La plataforma llama «Cliente» al primer paso de la factura y al botón de crear comprador; por marca, en el chat se dice comprador.

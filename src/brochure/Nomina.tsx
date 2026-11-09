@@ -155,12 +155,13 @@ export const Contabilidad: React.FC = () => (
 );
 
 const TRAMOS = [
-  ["Hasta 5", "$8.000", "$480.000", "$44.000"],
-  ["Hasta 10", "$8.000", "$960.000", "$88.000"],
-  ["Hasta 30", "$6.000", "$2.160.000", "$198.000"],
-  ["Hasta 50", "$5.000", "$3.000.000", "$275.000"],
+  ["1 a 10", "Solo emisión", "$260.000"],
+  ["1 a 10", "Con todo", "$480.000"],
+  ["11 a 20", "Con todo", "$771.000"],
+  ["21 a 45", "Con todo", "$1.400.000"],
+  ["46 a 90", "Con todo", "$2.480.000"],
 ] as const;
-const COLUMNAS = "1.3fr 1.2fr 1fr 1fr";
+const COLUMNAS = "1fr 1.2fr 1fr";
 
 // 09 · Precios
 export const PreciosNomina: React.FC = () => (
@@ -168,31 +169,30 @@ export const PreciosNomina: React.FC = () => (
     <div style={{ position: "absolute", left: MX, right: MX, top: 170, display: "grid", gap: 30 }}>
       <div style={{ display: "grid", gap: 18 }}>
         <Pill>PRECIOS</Pill>
-        <Titular azul="Un plan por tramo." gris="Pagas al año o mes a mes." size={60} />
+        <Titular azul="Un plan por tramo." gris="Pagas al año." size={60} />
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "2.3fr 1fr", gap: 28 }}>
         <Tarjeta style={{ display: "grid", gap: 10, alignContent: "start", padding: 30 }}>
           <div style={{ display: "grid", gridTemplateColumns: COLUMNAS, gap: 12, ...t(22, { fontWeight: 600, color: color.textBody }) }}>
-            <span>Empleados</span><span>Por empleado</span><span>Al año</span><span>Mes a mes</span>
+            <span>Empleados</span><span>Incluye</span><span>Al año</span>
           </div>
-          {TRAMOS.map(([tramo, unidad, anual, mensual]) => (
-            <div key={tramo} style={{ display: "grid", gridTemplateColumns: COLUMNAS, gap: 12, paddingBottom: 8, borderBottom: `1px solid ${color.gray200}`, ...t(26) }}>
-              <span>{tramo}</span><span>{unidad}</span>
+          {TRAMOS.map(([tramo, incluye, anual]) => (
+            <div key={tramo + incluye} style={{ display: "grid", gridTemplateColumns: COLUMNAS, gap: 12, paddingBottom: 8, borderBottom: `1px solid ${color.gray200}`, ...t(26) }}>
+              <span>{tramo}</span><span>{incluye}</span>
               <strong style={{ fontWeight: 700, color: color.accent }}>{anual}</strong>
-              <span>{mensual}</span>
             </div>
           ))}
-          <p style={t(22)}>Hasta 100 empleados: se cotiza.</p>
+          <p style={t(22)}>Más de 90 empleados: se cotiza.</p>
         </Tarjeta>
         <Tarjeta style={{ background: color.accent, display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
           <Landmark {...icono} />
-          <p style={t(52, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$150.000</p>
-          <p style={t(26, { fontWeight: 700, color: color.white })}>Habilitación al año</p>
-          <p style={t(22, { color: color.white })}>Para nómina electrónica, si no la tienes ya. Con ella, las nóminas electrónicas van incluidas.</p>
+          <p style={t(52, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$300.000</p>
+          <p style={t(26, { fontWeight: 700, color: color.white })}>Plan inicial al año + IVA</p>
+          <p style={t(22, { color: color.white })}>Hasta 5 empleados. Incluye la habilitación de facturación electrónica.</p>
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Pagas el *tramo completo*, aunque tengas menos empleados. Mes a mes tiene un *10 % adicional*. La habilitación sirve también para facturación electrónica." />
+        <Emphasis text="Cada tramo es *por empresa* e incluye el *certificado*. Pagas el tramo completo, aunque tengas menos empleados." />
       </p>
     </div>
   </Slide>
@@ -214,7 +214,7 @@ export const EmpezamosNomina: React.FC = () => {
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
           <Inicio icon={<div style={circulo}><MessageCircle {...i} /></div>} titulo="Demostración en vivo" texto="Te mostramos el módulo y resolvemos tus dudas." />
-          <Inicio icon={<div style={circulo}><ShieldCheck {...i} /></div>} titulo="Eliges tu tramo" texto="Según tus empleados, al año o mes a mes." />
+          <Inicio icon={<div style={circulo}><ShieldCheck {...i} /></div>} titulo="Eliges tu tramo" texto="Según tus empleados, con pago anual." />
           <Inicio icon={<div style={circulo}><Send {...i} /></div>} titulo="Primera liquidación" texto="Traes tu histórico y liquidas tu primer periodo." />
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}>

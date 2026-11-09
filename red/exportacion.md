@@ -27,7 +27,7 @@ Llevar al programa contable lo que causaste en núvara: por archivo para cualqui
 - [P] **Archivo**: núvara arma el Excel con el formato de tu programa y tú lo importas allá. Sirve para todos los programas.
 - [P] Si el formato de tu programa aún no existe, lo generamos: escríbele al equipo.
 - [P] **Envío directo a Siigo Nube**: conectas Siigo una vez y envías el mes desde el Archivo. Solo van compras y notas archivadas; las ventas salen por archivo.
-- [P] **World Office** sale por archivo. La conexión por token de World Office hoy solo lee el catálogo y valida; todavía no envía documentos.
+- [P] **World Office**: la versión escritorio sale por archivo. En World Office nube, además del archivo, las **facturas de compra** se pueden enviar por API con el token de World Office; se activa por empresa. Ventas, notas y documento soporte salen por archivo.
 
 ## Programas y formatos
 - [P] Por archivo: Siigo Nube, Siigo Contador, Siigo Pyme, World Office, Alegra (comprobante o facturas de proveedor), Contai, Helisa, Avansys, SEDI y una plantilla **Genérico** para formatos propios.
@@ -54,7 +54,7 @@ Llevar al programa contable lo que causaste en núvara: por archivo para cualqui
 ## Para el equipo
 - [C] La página de integraciones anuncia Alegra, Contai y Helisa por API como próximamente, sin fecha. Hoy salen por archivo.
 - [I] El envío automático a Siigo al aprobar existe pero está apagado (`ACCOUNTING_AUTO_PUSH_ON_APPROVE`).
-- [I] World Office por API está fijo en solo validación (`VALIDATION_ONLY`, `canWrite=false`); escribir devuelve `WORLD_OFFICE_CAPABILITY_DENIED`.
+- [I] World Office nube escribe por API solo compras (`crearCompra`, `contabilizarCompra`, `anularCompra`), productos (`crearInventario`, `editarInventario`) y centros de costo (`crearCentroCosto`), desde la PR #1234 (05/08/2026). Se activa por empresa, con rol ADMIN, en los interruptores **Escritura de documentos**, **Envío automático** y **Contabilización automática** (todos apagados por defecto); no hay variable de entorno. Ventas, notas, documento soporte, documento equivalente y nómina devuelven `*_NOT_ENABLED` (`world-office-document-compatibility.ts`). El perfil guardado sigue en `VALIDATION_ONLY` (`canWrite=false`): la escritura usa una autorización aparte por empresa.
 - [I] La numeración por programa contable depende de `ERP_VOUCHER_TYPES_ENABLED_COMPANIES`, apagada si no se configura. La exportación contable de la nómina no está construida (`FEATURE_PAYROLL_ACCOUNTING_ENABLED` muestra un grupo vacío).
 - [I] En el código no hay cobro de créditos por exportar ni por enviar a Siigo.
 - [I] La integración con TNS es para presupuesto público (sale con `public_budget`), no es una exportación contable.

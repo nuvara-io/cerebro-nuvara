@@ -22,7 +22,7 @@ Causar las facturas de venta de tu empresa, con las retenciones que te practican
 - [P] Revisa, aprueba y archiva igual que una compra.
 
 ## Cuánto cuesta causar una venta
-- [P] Causar una venta cuesta **$200 COP** (2 créditos), menos que una compra porque requiere menos interpretación.
+- [P] Causar una venta cuesta **$200 COP** (200 créditos), menos que una compra porque requiere menos interpretación.
 - [P] Las ventas que llegan solas de la DIAN también consumen créditos si las causas. Si no las necesitas, no las causes o bloquea su descarga.
 - [P] Para dejar de descargar las ventas de una empresa: **Administración › Configuración › Bloqueos › Ingesta de ventas**.
 

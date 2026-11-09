@@ -42,6 +42,9 @@ const FRAGMENTOS: { pregunta: string; publico: Publico; incluye: RegExp; excluye
   { pregunta: "¿La nómina se cobra por empleado?", publico: "P", incluye: /tramo de empleados/, excluye: /Tesorería › Pago de nómina/ },
   { pregunta: "¿Cuál es la recarga mínima?", publico: "P", incluye: /70\.000/, excluye: /150\.000/ },
   { pregunta: "¿Cuánto cuesta la tesorería?", publico: "P", incluye: /Tesorería y Caja/, excluye: /\$150\.000/ },
+  // Preguntas generales: llega el resumen, no la línea suelta que repite "cuesta" o "general".
+  { pregunta: "¿Cuánto cuesta núvara?", publico: "P", incluye: /Cada módulo tiene su forma de cobro/, excluye: /\$178\.200/ },
+  { pregunta: "índice general de módulos", publico: "P", incluye: /Facturación electrónica y RADIAN/ },
 ];
 
 const pct = (a: number, b: number) => `${Math.round((100 * a) / b)} %`;

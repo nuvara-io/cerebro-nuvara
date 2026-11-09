@@ -74,6 +74,12 @@
     "tutorial"
   ],
   "precios": [
+    "paquete de facturacion",
+    "paquetes de facturacion",
+    "capacitacion obligatoria",
+    "capacitacion es obligatoria",
+    "cuanto vale la capacitacion",
+    "cuanto cuesta la capacitacion",
     "precio",
     "cuesta",
     "cobran",
@@ -101,7 +107,10 @@
     "cuestan",
     "cuanto me cuestan",
     "cuanto me sale",
-    "cuanto pagaria"
+    "cuanto pagaria",
+    "descuento en la primera recarga",
+    "primera recarga",
+    "promoción"
   ],
   "creditos-y-recargas": [
     "recargar",
@@ -494,7 +503,17 @@
     "solicitar habilitacion",
     "complemento",
     "addon",
-    "cuenta modulos"
+    "cuenta modulos",
+    "observaciones de la solicitud",
+    "solicitud tiene observaciones",
+    "corregir la solicitud",
+    "corrijo la solicitud",
+    "requiere correcciones",
+    "reenviar la solicitud",
+    "ya pague la facturacion",
+    "observaciones",
+    "corregir y reenviar",
+    "solicitud de facturacion"
   ],
   "habilitar-ante-la-dian": [
     "habilitar ante la dian",
@@ -523,7 +542,9 @@
     "hacer un documento soporte",
     "hago un documento soporte",
     "no obligado a facturar",
-    "no obligados a facturar"
+    "no obligados a facturar",
+    "alguien que no factura",
+    "proveedor no obligado"
   ],
   "registrar-eventos-radian": [
     "acuse de recibo",
@@ -541,7 +562,10 @@
     "renovar certificado",
     "se vence la firma",
     "vence el certificado",
-    "renovar la firma"
+    "renovar la firma",
+    "certificado de firma",
+    "vencio el certificado",
+    "vencio la firma"
   ],
   "activar-nomina": [
     "activar la nomina",
@@ -1140,7 +1164,10 @@
     "cumplimiento radian",
     "compras por vencer",
     "sin recibo",
-    "ventana de aceptacion"
+    "ventana de aceptacion",
+    "faltan por acuse",
+    "pendientes de acuse",
+    "me faltan por acuse"
   ],
   "configuracion-facturacion-electronica": [
     "configurar antes de facturar",
@@ -1188,7 +1215,9 @@
     "servicio al catalogo",
     "productos y servicios",
     "creo un producto",
-    "crear un producto"
+    "crear un producto",
+    "agrego un producto",
+    "agregar un producto"
   ],
   "consultar-y-reintentar-documentos": [
     "reenvio una factura",
@@ -1202,7 +1231,10 @@
     "dian rechaza mi factura",
     "rechaza mi factura",
     "rechazo mi factura",
-    "me rechazo la factura"
+    "me rechazo la factura",
+    "reenvio la factura",
+    "reenviar la factura",
+    "factura por correo"
   ],
   "documento-soporte-electronico": [
     "que es el documento soporte",
@@ -1240,7 +1272,11 @@
     "agrego un comprador",
     "agregar un comprador",
     "a quien le voy a facturar",
-    "datos del comprador"
+    "datos del comprador",
+    "creo el cliente",
+    "crear el cliente",
+    "creo un cliente",
+    "cliente para facturar"
   ],
   "app-movil": [
     "app movil",

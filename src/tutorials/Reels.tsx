@@ -5,7 +5,9 @@ import {
   interpolate,
   Sequence,
   Series,
+  spring,
   staticFile,
+  useCurrentFrame,
   useVideoConfig,
 } from "remotion";
 import { logo } from "../brand/assets";
@@ -27,7 +29,7 @@ import { GRABACIONES } from "./FlujoCausacion";
 // Texto arriba de los 420 px de abajo, que tapa la app. Sin Nuvi: pueden ir a pauta.
 const voz = (n: string) => staticFile(`voz/reels/${n}.wav`);
 const sonido = (n: string) => staticFile(`sonido/${n}.wav`);
-const DURACION_VOZ: Record<string, number> = {"p1": 2.41, "r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 4.66, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67};
+const DURACION_VOZ: Record<string, number> = {"n1": 2.8, "n2": 4.64, "p1": 2.41, "r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 5.04, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67};
 
 const MX = 48;
 const MARCO = { left: MX, top: 420, ancho: 1080 - MX * 2, alto: 920 };
@@ -35,7 +37,7 @@ const TOP_SUBTITULO = 1362;
 const TELEFONO = { ancho: 425, alto: 920 };
 
 type Base = { readonly voz?: string; readonly vozEn?: number };
-type Gancho = Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string; readonly dura: number };
+type Gancho = Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string; readonly dura: number; readonly fuerte?: boolean };
 type Pantalla = Base & {
   readonly tipo: "pantalla";
   readonly lead: string;
@@ -100,6 +102,16 @@ const CAUSACION: Escena[] = [
   { tipo: "cierre", dura: 3.6 },
 ];
 
+// N1 de la pauta de cierre: arranca más fuerte y sin tramos largos sin voz
+const CIERRE_IVA: Escena[] = [
+  { tipo: "gancho", linea1: "Faltan días para el IVA.", linea2: "¿Y tus facturas?", dura: 3.1, voz: "n1", vozEn: 0.1, fuerte: true },
+  CAUSACION[1],
+  { ...(CAUSACION[2] as Pantalla), velocidad: 2.4 },
+  { ...(CAUSACION[3] as Pantalla), velocidad: 2.28, voz: "n2", vozEn: 0.1 },
+  CAUSACION[4],
+  CAUSACION[5],
+];
+
 const RADIAN: Escena[] = [
   { tipo: "gancho", linea1: "¿Recibes facturas", linea2: "a crédito?", dura: 4.4, voz: "r1", vozEn: 0.2 },
   {
@@ -145,6 +157,7 @@ const APP_PROXIMAMENTE: Escena[] = [
 ];
 
 export const DURACION_REEL_CAUSACION = duracionReel(CAUSACION);
+export const DURACION_REEL_CIERRE_IVA = duracionReel(CIERRE_IVA);
 export const DURACION_REEL_RADIAN = duracionReel(RADIAN);
 export const DURACION_REEL_APP = duracionReel(APP);
 export const DURACION_REEL_APP_PROXIMAMENTE = duracionReel(APP_PROXIMAMENTE);
@@ -171,8 +184,27 @@ const MarcoTelefono: React.FC<{ readonly children: React.ReactNode; readonly esc
   </div>
 );
 
+// Primer segundo: la frase entra de golpe, grande, con un pop
+export const GanchoFuerte: React.FC<{ readonly linea1: string; readonly linea2: string }> = ({ linea1, linea2 }) => {
+  const frame = useCurrentFrame();
+  const { fps, width, height } = useVideoConfig();
+  const vertical = height > width;
+  const golpe = spring({ frame: frame - 18, fps, config: { damping: 11, stiffness: 190 } });
+  return (
+    <AbsoluteFill style={{ background: color.accentDeep, display: "grid", alignContent: "center", justifyItems: "center", gap: 26, padding: 48, textAlign: "center" }}>
+      <Img src={logo.wordmarkWhite} style={{ position: "absolute", top: vertical ? 240 : 80, left: (width - 250) / 2, width: 250 }} />
+      <p style={{ margin: 0, fontFamily: font.sans, fontSize: vertical ? 74 : 84, fontWeight: 500, lineHeight: 1.1, color: color.white, scale: String(interpolate(frame, [0, 6], [1.25, 1], { extrapolateRight: "clamp" })) }}>{linea1}</p>
+      <p style={{ margin: 0, fontFamily: font.sans, fontSize: vertical ? 138 : 170, fontWeight: 700, lineHeight: 1.05, color: color.white, opacity: golpe, scale: String(interpolate(golpe, [0, 1], [2.1, 1])) }}>{linea2}</p>
+      <Sequence from={18} layout="none">
+        <Audio src={staticFile("sonido/pop.wav")} volume={0.6} />
+      </Sequence>
+    </AbsoluteFill>
+  );
+};
+
 const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
   const { fps } = useVideoConfig();
+  if (e.tipo === "gancho" && e.fuerte) return <GanchoFuerte linea1={e.linea1} linea2={e.linea2} />;
   if (e.tipo === "gancho") {
     return (
       <AbsoluteFill style={{ background: gradient.fondoMarca }}>
@@ -283,6 +315,7 @@ const Reel: React.FC<{ readonly escenas: readonly Escena[] }> = ({ escenas }) =>
 };
 
 export const ReelCausacion = () => <Reel escenas={CAUSACION} />;
+export const ReelCierreIva = () => <Reel escenas={CIERRE_IVA} />;
 export const ReelRadian = () => <Reel escenas={RADIAN} />;
 export const ReelApp = () => <Reel escenas={APP} />;
 export const ReelAppProximamente = () => <Reel escenas={APP_PROXIMAMENTE} />;

@@ -117,7 +117,7 @@ const PUNTOS_PARA_CONECTAR = 4;
 
 // Puntaje BM25 mínimo para tomar en serio la búsqueda por contenido.
 const MINIMO_CONTENIDO = 1;
-export const PIDE_PRECIO = /\b(cuanto|cuantos|precio|precios|vale|valen|cuesta|cuestan|cobran|tarifa|tarifas)\b/;
+export const PIDE_PRECIO = /\b(cuanto|cuantos|precio|precios|vale|valen|cuesta|cuestan|cobran|tarifa|tarifas|descuento|descuentos|promocion)\b/;
 export const sinTildes = (t: string) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
 // "¿Cómo causo…?", "¿dónde se…?", "pasos para…" piden hacer algo; "¿cómo

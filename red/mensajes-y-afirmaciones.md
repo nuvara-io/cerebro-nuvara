@@ -35,14 +35,19 @@ Qué se dice en un anuncio, un post o un correo de campaña, y qué cifras se pu
 - [C] **Hechos de producto verificados:** trae facturas de la DIAN y del correo; arma PUC, IVA, retenciones y bases; varias empresas en una cuenta; exporta a Siigo, World Office, Alegra y otros; pagas tu consumo real, sin permanencia.
 
 ## Cifras que se pueden publicar
-- [C] Precios del sitio: crédito $100; causar una compra $510 (5,1 créditos); causar una venta $200; mínimo mensual $80.000; recarga mínima $70.000; tarifa especial desde 1.500 causaciones al mes.
+- [C] Precios del sitio: 1 crédito = $1; causar una compra $510 (510 créditos); causar una venta $200 (200 créditos); mínimo mensual $80.000; recarga mínima $70.000; tarifa especial desde 1.500 causaciones al mes.
 - [C] Tiempos sustentados por la marca: "cerca de 15 segundos por causación" y "500 causaciones en una hora o menos".
-- [C] Precios de módulos que se pueden publicar: habilitación de facturación electrónica y nómina electrónica ($150.000 al año), bolsas de documentos desde $180.000 y nómina por tramos (ver `precios`).
+- [C] Precios de módulos que se pueden publicar: paquetes de facturación electrónica desde $150.000 por 30 documentos con el certificado incluido, nómina por tramos desde $260.000 al año y paquete integral de $990.000 al mes (ver `precios`).
+
+## Mensaje "Ponte al día"
+- [C] **Dolor:** las causaciones se acumulan porque hacerlas a mano toma tiempo. Se dice sin regañar: "¿Se te acumularon las causaciones?".
+- [C] **Qué se promete:** núvara trae las facturas y prepara la causación por lotes; tú revisas y apruebas. No se dan cifras de cuántas atrasadas se han procesado.
+- [C] **Oferta:** la promoción de primera recarga de `precios`, con el "solo en la primera recarga" y la fecha de fin a la vista.
 
 ## Lo que no se afirma
 - [C] Cifras de ahorro sin validar: el sitio dice 80 %, 88 % y 90 % según la página, "+20 horas semanales", "99 % de precisión" y "+216 empresas activas". No coinciden entre sí y no hay medición oficial: no van en pauta.
 - [C] Velocidades dichas en reuniones (facturas por minuto, miles de atrasadas), precisión del 85 % o 90 %, tiempos de respuesta del soporte y número de usuarios.
-- [C] Descuentos, bonos, paquetes, prueba gratis por cantidad de facturas, garantía de devolución y condiciones de referidos: hoy no hay una tabla oficial.
+- [C] Descuentos, bonos, paquetes (salvo la promoción de primera recarga de `precios`, siempre con sus condiciones y su fecha), prueba gratis por cantidad de facturas, garantía de devolución y condiciones de referidos: hoy no hay una tabla oficial.
 - [C] Módulos en desarrollo ofrecidos como disponibles, y comparaciones con nombre de un competidor.
 - [C] Frases que quitan el control: "sin intervención manual", "sin revisión", "núvara ejecuta todo".
 

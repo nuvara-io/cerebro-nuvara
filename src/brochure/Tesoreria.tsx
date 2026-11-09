@@ -17,7 +17,7 @@ const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total"
 // 01 · Portada
 export const PortadaTesoreria: React.FC = () => (
   <AbsoluteFill style={{ background: color.accentDeep, overflow: "hidden" }}>
-    <Img src={staticFile("posts/banco-45.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
+    <Img src={staticFile("posts/banco-33.jpg")} style={{ position: "absolute", top: 0, right: -300, height: "100%" }} />
     <div
       style={{
         position: "absolute",
@@ -223,7 +223,7 @@ export const PrecioTesoreria: React.FC = () => (
     <div style={{ position: "absolute", left: MX, right: MX, top: 200, display: "grid", gap: 44 }}>
       <div style={{ display: "grid", gap: 18 }}>
         <Pill>PRECIO</Pill>
-        <Titular azul="Tesorería va incluida" gris="con tu suscripción de causación." size={60} />
+        <Titular azul="Tesorería va incluida" gris="con tu suscripción o el paquete integral." size={60} />
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
         <Tarjeta style={{ background: color.accent, display: "grid", gap: 12, alignContent: "start", padding: 32 }}>
@@ -243,7 +243,7 @@ export const PrecioTesoreria: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(26)}>
-        <Emphasis text="La activas en *Cuenta › Módulos › Solicitar habilitación*, que abre el chat con el equipo." />
+        <Emphasis text="También va en el *paquete integral* de *$990.000 al mes*, con todos los módulos. La activas en *Cuenta › Módulos › Solicitar habilitación*." />
       </p>
     </div>
   </Slide>

@@ -39,11 +39,18 @@ Qué argumentos funcionan para vender núvara, qué decirle a cada perfil y qué
 - [C] Una firma contable es las dos cosas: profesional que valora su tiempo y empresario que paga equipo.
 
 ## Argumentos de acompañamiento y compatibilidad
-- [C] **Capacitación en vivo** con datos reales del usuario y sesión de seguimiento; sin cláusula de permanencia. Duración e inclusión en la primera recarga: sin confirmar (ver `precios`).
+- [C] **Capacitación en vivo** con datos reales del usuario y sesión de seguimiento; sin cláusula de permanencia. Es opcional y vale $150.000; su duración está sin confirmar (ver `precios`).
 - [C] **Soporte** por chat integrado y por grupo de WhatsApp; se vende como parte del producto porque una plataforma nueva exige aprendizaje.
 - [C] **Compatibilidad:** Siigo por API, World Office por API con token y otros programas por archivo de exportación.
 - [C] **Documentos que no quieres causar** (peajes, compras personales) se eliminan de pendientes y no cuestan créditos.
 - [C] **Dos vías de descarga** (correo y DIAN) y comparación con la DIAN, para no perder IVA descontable por facturas no vistas.
+
+## Facturación electrónica como puerta de entrada
+- [C] Facturación electrónica es la forma de que una empresa entre a núvara y después sume causación, nómina o el paquete integral. La ganancia está en el segundo módulo, no en el paquete inicial.
+- [C] Mensaje: "Empieza facturando y suma lo demás cuando lo necesites". Hacia afuera nunca se llama gancho.
+- [C] Momentos para ofrecer el siguiente paso: al emitir las primeras ventas, causación; al ver que tiene empleados, nómina; al acabarse el paquete, otro paquete o el paquete integral.
+- [C] El contador de la empresa suele decidir si causa en núvara: inclúyelo en la conversación.
+- [I] Se mide con el porcentaje que activa un segundo módulo en 90 días, el ingreso por empresa en 12 meses, las horas de soporte en la habilitación y la renovación del segundo año.
 
 ## Qué no se promete al vender
 - [C] **Sin cifras de ahorro ni de precisión:** no hay mediciones oficiales. No uses "88 %", "90 %", "99 % de precisión", "85 % correctas desde el inicio" ni "+20 horas semanales".

@@ -60,10 +60,10 @@ Para que las compras sumen unidades al inventario de tu programa contable, cada 
 - [P] **Inventario en negativo o inflado en Siigo**: suele ser el costeo mensual que no se corrió en Siigo.
 
 ## Para el equipo
-- [C] No prometas que núvara escribe el inventario en World Office por API: hoy solo lee el catálogo y valida.
+- [C] En World Office nube, núvara crea y edita productos por API cuando la empresa activa la sincronización de productos. Devoluciones, movimientos manuales y saldos iniciales no van por API: salen en el archivo oficial de World Office.
 - [C] Asignar bodega y prefijo en bloque para World Office se prometió en agosto de 2026, sin fecha.
 - [I] El módulo depende de `companies.use_inventory` (interruptor **Inventario**, "Activa el módulo de gestión de inventario en el menú"). Sin él, el grupo Inventario no aparece en el menú.
-- [I] La pantalla de crear producto ofrece **Crear también en World Office** ("queda en cola"), pero la cuenta de World Office está fija en `VALIDATION_ONLY` con `canWrite=false`; escribir devuelve `WORLD_OFFICE_CAPABILITY_DENIED`. Coherente con `exportacion`.
+- [I] La pantalla de crear producto ofrece **Crear también en World Office** ("queda en cola"), y se envía con `crearInventario` si la empresa activó la escritura de productos (ADMIN). La importación del libro de inventario sigue bloqueada (`canImport=false`). Coherente con `exportacion`.
 - [I] `flujos/19` decía que asociar varios productos en bloque estaba en desarrollo; en el código la Mesa de asociación ya asocia varias líneas seleccionadas a un producto. Gana el código.
 - [I] La tarjeta **Stock en Siigo** muestra encendido cuando no hay dato guardado (`enabled ?? true`); el valor por defecto real en el servidor no se verificó.
 - [I] La página Aprobar productos habla de "staging", trata al usuario de forma formal y usa la sigla de inteligencia artificial sola; no copiar ese texto.

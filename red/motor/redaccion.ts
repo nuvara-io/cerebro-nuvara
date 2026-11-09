@@ -70,7 +70,7 @@ export function revisarRespuesta(respuesta: string, resultado: string, calculo: 
 
 // Las cuentas de precio no las hace el modelo: se calculan aquí con las tarifas
 // oficiales de red/precios.md y se le pasan hechas. "300 facturas de compra"
-// → 300 × $510 = $153.000 (1.530 créditos).
+// → 300 × $510 = $153.000 (153.000 créditos).
 const pesos = (n: number) => `$${Math.round(n).toLocaleString("es-CO")}`;
 const leerTarifa = (texto: string, re: RegExp) => Number(texto.match(re)?.[1].replace(/\./g, "") ?? NaN);
 

@@ -18,14 +18,13 @@ fuentes:
 
 ## Antes de empezar
 - [P] Eres administrador de la empresa.
-- [P] Sabes cuántos empleados vas a manejar: se compran **cupos**, no empleados reales.
-- [P] Tienes saldo para el primer mes, o un acuerdo mensual con el equipo.
+- [P] Sabes cuántos empleados vas a manejar: eliges el **tramo** que los cubre.
 
 ## Pasos
 1. [P] Entra a **Cuenta › Módulos** y busca la tarjeta **Nómina**.
 2. [P] Pulsa **Activar**. Si tu plan no la incluye, verás **Solicitar habilitación**: el equipo te ayuda.
-3. [P] Elige los **cupos de empleados**. Verás el precio por cupo, el total mensual y los precios por volumen.
-4. [P] Confirma el pago con tu saldo. Si no alcanza, la plataforma te lleva a recargar.
+3. [P] Elige tu tramo de empleados y revisa el precio del año.
+4. [P] Confirma el pago.
 
 ## Resultado
 - [P] Aparece el menú **Nómina** y el **Resumen** te dice qué falta configurar.
@@ -33,3 +32,6 @@ fuentes:
 ## Si algo falla
 - [P] Si ves "Solo un administrador puede activarla", pídeselo a un administrador.
 - [P] También se activa desde **Configuración › Operación › Módulos**, con el interruptor Nómina.
+
+## Para el equipo
+- [I] Hasta aplicar `docs/encargo-precios-plataforma-2026-11.md`, la pantalla sigue vendiendo cupos al mes, pagados con el saldo.

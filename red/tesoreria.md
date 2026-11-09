@@ -26,7 +26,7 @@ Bancos, cobros, pagos a proveedores, pago de nómina, conciliación bancaria y c
 - [P] Cada movimiento deja su comprobante contable, listo para exportar.
 
 ## Cuánto cuesta
-- [P] Tesorería va incluida con la suscripción de causación.
+- [P] Tesorería va incluida con la suscripción de causación y con el paquete integral.
 - [P] Para activarla, pídela en **Cuenta › Módulos › Solicitar habilitación**.
 
 ## Cómo se activa
