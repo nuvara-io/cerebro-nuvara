@@ -201,7 +201,7 @@ Bancos, cobros, pagos, pago de nómina, conciliación y cajas.
 
 ## Red neuronal: Marketing y adquisición
 
-Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código de activación y el camino de un prospecto hasta su cuenta habilitada.
+Piezas gráficas, pauta (método de creativos y campañas en Meta), mensajes que se pueden afirmar, campañas con código de activación y el camino de un prospecto hasta su cuenta habilitada.
 
 | Nodo | Tipo | Público | Cuándo se activa | Núcleo | Fuentes |
 |---|---|---|---|---|---|
@@ -215,6 +215,8 @@ Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código d
 | `aprobar-publicacion` | neurona | C | "¿Cómo apruebo una publicación?", "¿cómo dejo una nota en el calendario?" | `calendario-de-marketing` | `red/calendario-de-marketing.md`, `red/revisar-pieza-antes-de-publicar.md` |
 | `plan-de-redes` | núcleo | C (pendientes: I) | "¿Cuál es el plan de redes?", "¿qué tema va cada semana en redes?", "¿a qué hora publicamos?" |  | `red/calendario.json`, `diseno/redes.md`, `diseno/reels.md` |
 | `plan-seo` | núcleo | C (pendientes: I) | "¿Cuál es el plan SEO?", "¿qué artículos faltan en el blog?", "¿cómo medimos el SEO?" |  | `red/calendario.json`, `conocimiento/sitio-web.md`, código de `platform` |
+| `pauta-en-meta` | núcleo | C (techo de CPA y cifras del curso: I) | "¿Cómo armamos las campañas en Meta?", "¿cuándo apago un anuncio?", "¿cómo hago un creativo que funcione?", "¿por qué subió el costo por resultado?" |  | Curso "META ADS con CLAUDE" de Benjamín Cordero (YouTube, procesado el 09/11/2026), `planeacion-de-marketing`, `marketing-y-adquisicion` |
+| `operar-pauta-con-claude` | neurona | I | "¿Cómo conecto Meta Ads a Claude Code?", "¿cómo corro el juez de la pauta?" | `pauta-en-meta` | Curso "META ADS con CLAUDE" (YouTube), `pauta-en-meta` |
 | `mensajes-y-afirmaciones` | núcleo | C (desvíos del sitio: I) | "¿Qué cifras puedo poner en un anuncio?", "¿puedo decir 90 % menos tiempo?", "¿qué llamado a la acción uso?" |  | `diseno/README.md` §Voz y §Vocabulario, `sitio-web.md` §Cifras de marketing, `por-confirmar.md` §4 |
 | `embudo-de-adquisicion` | núcleo | C (métricas: I) | "¿Cómo llega un prospecto a ser usuario?", "¿cuándo se considera activa una cuenta?", "¿qué pasa cuando se acaba la prueba?" |  | `demostraciones-y-ventas.md` §Cierre típico, código de `platform` |
 | `ver-embudo-de-activacion` | neurona | I | "¿Dónde veo el embudo de activación?", "¿dónde veo las organizaciones atascadas?" | `embudo-de-adquisicion` | código de `platform` |
@@ -348,6 +350,12 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `plan-de-redes` | `linea-grafica` | Cómo se ven las piezas |
 | `plan-de-redes` | `mensajes-y-afirmaciones` | Qué se puede afirmar en redes |
 | `calendario-de-marketing` | `revisar-pieza-antes-de-publicar` | La lista que se revisa en cada pieza |
+| `pauta-en-meta` | `mensajes-y-afirmaciones` | Qué se puede decir en el anuncio |
+| `pauta-en-meta` | `campanas-de-activacion` | El código que mide cada anuncio |
+| `pauta-en-meta` | `crear-pieza-de-redes` | Producir el creativo |
+| `planeacion-de-marketing` | `pauta-en-meta` | Cómo se monta y se decide la campaña del mes |
+| `marketing-y-adquisicion` | `pauta-en-meta` | Cómo se lleva la pauta paga |
+| `operar-pauta-con-claude` | `revisar-pieza-antes-de-publicar` | Revisar el creativo antes de subirlo |
 | `facturacion-electronica-y-radian` | `configuracion-facturacion-electronica`, `factura-de-venta-y-notas`, `documento-soporte-electronico`, `eventos-radian` | La parte del módulo por la que pregunta |
 | `configurar-resoluciones` | `emitir-factura-de-venta` | Ya cargada la resolución: emitir |
 | `crear-producto-para-facturar` | `emitir-factura-de-venta` | Usar el producto en una factura |

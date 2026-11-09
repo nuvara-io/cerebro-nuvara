@@ -8,6 +8,7 @@ conexiones:
   - mensajes-y-afirmaciones # qué se puede afirmar en pauta
   - embudo-de-adquisicion   # del primer contacto a la cuenta habilitada
   - campanas-de-activacion  # códigos y correos de campaña
+  - pauta-en-meta           # cómo se montan y deciden las campañas en Meta
 fuentes:
   - diseno/README.md
   - conocimiento/demostraciones-y-ventas.md#posicionamiento-y-público
