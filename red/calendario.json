@@ -8,25 +8,25 @@
     "semana": 0,
     "orden": 1,
     "pieza": "Anuncio N1: revisas y apruebas, no digitas",
-    "formato": "Reel 9:16, 20 a 25 s",
+    "formato": "Reel 9:16, 31 s",
     "canales": [
       "Instagram",
       "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
-    "archivo": "Por hacer",
-    "copy": "Del 11 al 25 de noviembre vence el IVA. núvara trae tus facturas de la DIAN y del correo y prepara la causación con PUC, IVA y retenciones. Tú revisas, validas y apruebas. Nada se exporta sin tu aprobación.\n\nEscríbenos y agenda tu demostración en vivo.",
-    "nota": "Sin Nuvi. Gancho del primer segundo: «Del 11 al 25 vence el IVA. ¿Ya causaste todo?».",
-    "estadoPieza": "porhacer",
-    "thumb": "",
+    "archivo": "out/reels/reel-cierre-iva.mp4",
+    "copy": "⏳ Del 11 al 25 de noviembre vence el IVA.\n\nnúvara trae tus facturas de la DIAN y del correo y prepara la causación con PUC, IVA y retenciones.\n\nTú revisas, validas y apruebas. Nada se exporta sin tu aprobación.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Sin Nuvi. Versión para pauta: gancho nuevo y voz en todo el reel, sin el tramo sin voz.",
+    "estadoPieza": "lista",
+    "thumb": "n1",
     "relaciones": [
       "p07"
     ],
     "titulo": "Llega al cierre con todo causado",
     "objetivo": "Conversaciones por WhatsApp",
-    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
-    "codigo": "CIERRE-REEL",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
     "destino": "WhatsApp del asesor"
   },
   {
@@ -45,18 +45,18 @@
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
-    "archivo": "Por hacer",
-    "copy": "Antes de presentar el IVA, compara las facturas del mes con el listado de la DIAN. núvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran, y las que faltan quedan listas para causar.\n\nEscríbenos y agenda tu demostración en vivo.",
-    "nota": "",
-    "estadoPieza": "porhacer",
-    "thumb": "",
+    "archivo": "out/redes/cierre/N2-Dian1.png",
+    "copy": "🔎 Antes de presentar el IVA, compara las facturas del mes con el listado de la DIAN.\n\nnúvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran.\n\nLas que faltan quedan listas para causar.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Las cifras de la placa 3 son de ejemplo y la pieza lo dice.",
+    "estadoPieza": "lista",
+    "thumb": "n2",
     "relaciones": [
       "s01"
     ],
     "titulo": "¿Te falta alguna factura?",
     "objetivo": "Conversaciones por WhatsApp",
-    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
-    "codigo": "CIERRE-DIAN",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
     "destino": "WhatsApp del asesor"
   },
   {
@@ -76,7 +76,7 @@
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/redes/Post500Causaciones.png",
-    "copy": "500 causaciones en una hora o menos, cerca de 15 segundos por causación. núvara interpreta y prepara; tú apruebas por grupos, no una por una. Llega al cierre de IVA con el tiempo de tu lado.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "copy": "500 causaciones en una hora o menos, cerca de 15 segundos por causación.\n\nnúvara interpreta y prepara; tú apruebas por grupos, no una por una.\n\nLlega al cierre de IVA con el tiempo de tu lado.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
     "nota": "El arte es el mismo del post orgánico del 9 de noviembre.",
     "estadoPieza": "lista",
     "thumb": "p500",
@@ -85,8 +85,8 @@
     ],
     "titulo": "500 causaciones en una hora o menos",
     "objetivo": "Conversaciones por WhatsApp",
-    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
-    "codigo": "CIERRE-500",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
     "destino": "WhatsApp del asesor"
   },
   {
@@ -105,16 +105,16 @@
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
-    "archivo": "Por hacer",
-    "copy": "Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a su programa contable. Si aún no tenemos el formato, lo generamos. Una sola forma de trabajar para todas tus empresas.\n\nEscríbenos y agenda tu demostración en vivo.",
+    "archivo": "out/redes/cierre/N4-VariosProgramas.png",
+    "copy": "Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a su programa contable.\n\nSi aún no tenemos el formato, lo generamos.\n\nUna sola forma de trabajar para todas tus empresas.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
     "nota": "",
-    "estadoPieza": "porhacer",
-    "thumb": "",
+    "estadoPieza": "lista",
+    "thumb": "n4",
     "relaciones": [],
     "titulo": "Todas tus empresas, un solo panel",
     "objetivo": "Conversaciones por WhatsApp",
-    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
-    "codigo": "CIERRE-PROGRAMAS",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
     "destino": "WhatsApp del asesor"
   },
   {
@@ -133,16 +133,104 @@
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
-    "archivo": "Por hacer",
-    "copy": "Causar una compra cuesta $510 y una venta $200, sin permanencia. El mínimo mensual de consumo es $80.000 y, si causas más, pagas tu consumo real.\n\nEscríbenos y agenda tu demostración en vivo.",
-    "nota": "Texto corregido: el plan decía que el mínimo se acumula y ya no es así. El sitio aún tiene la regla anterior: alinéalo antes de pautar este anuncio.",
-    "estadoPieza": "porhacer",
-    "thumb": "",
+    "archivo": "out/redes/cierre/N5-PagasLoQueCausas.png",
+    "copy": "Causar una compra cuesta $510 y una venta $200, sin permanencia.\n\nEl mínimo mensual de consumo es $80.000, unas 156 facturas de compra. Si causas más, pagas tu consumo real.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Sale el 6 de noviembre por decisión del equipo, aunque la plataforma y el sitio aún muestren la equivalencia anterior del crédito. El asesor debe explicarlo si preguntan. El mínimo equivale a unas 156 facturas de compra: 156 × $510 = $79.560.",
+    "estadoPieza": "lista",
+    "thumb": "n5",
     "relaciones": [],
     "titulo": "Pagas lo que causas",
     "objetivo": "Conversaciones por WhatsApp",
-    "presupuesto": "Parte de $8.000 diarios para toda la campaña, 7 días",
-    "codigo": "CIERRE-PRECIO",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a09",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 6,
+    "pieza": "Anuncio: Ponte al día",
+    "formato": "Post 4:5 e historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Muchos contadores dejan acumular las causaciones porque hacerlas a mano toma tiempo.",
+    "archivo": "out/redes/PonteAlDia.png",
+    "copy": "¿Se te acumularon las causaciones? Hacerlas a mano toma tiempo y por eso se van quedando para después.\n\nPonte al día con núvara: trae tus facturas de la DIAN y del correo y prepara la causación por lotes.\n\nTú revisas y apruebas.\n\n🎁 Descuento en tu primera recarga: 10 % desde 500 facturas y 20 % desde 1.000. Solo en la primera recarga, hasta el 30 de noviembre de 2026.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Va en el conjunto de NUVARA20. La promoción va hasta el 30 de noviembre y los anuncios hasta el 15. El asesor aplica el descuento a mano. Falta confirmar cómo se cuentan las facturas.",
+    "estadoPieza": "lista",
+    "thumb": "ponte",
+    "relaciones": [],
+    "titulo": "Ponte al día: hasta 20 % en tu primera recarga",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a10",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 7,
+    "pieza": "Anuncio: Ponte al día, reel",
+    "formato": "Reel 9:16, 33 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Muchos contadores dejan acumular las causaciones porque hacerlas a mano toma tiempo.",
+    "archivo": "out/reels/ReelPonteAlDia.mp4",
+    "copy": "¿Se te acumularon las causaciones? Hacerlas a mano toma tiempo y por eso se van quedando para después.\n\nPonte al día con núvara: trae tus facturas de la DIAN y del correo y prepara la causación por lotes.\n\nTú revisas y apruebas.\n\n🎁 Descuento en tu primera recarga: 10 % desde 500 facturas y 20 % desde 1.000. Solo en la primera recarga, hasta el 30 de noviembre de 2026.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Sin Nuvi. Voz de Eduardo, todavía sin confirmar. Va en el conjunto de NUVARA20. El asesor aplica el descuento a mano.",
+    "estadoPieza": "lista",
+    "thumb": "pr",
+    "relaciones": [
+      "a09"
+    ],
+    "titulo": "Ponte al día: hasta 20 % en tu primera recarga",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor"
+  },
+  {
+    "id": "a11",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-06",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 8,
+    "pieza": "Anuncio: Ponte al día, video",
+    "formato": "Video 16:9, 33 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Muchos contadores dejan acumular las causaciones porque hacerlas a mano toma tiempo.",
+    "archivo": "out/videos/VideoPonteAlDia.mp4",
+    "copy": "¿Se te acumularon las causaciones? Hacerlas a mano toma tiempo y por eso se van quedando para después.\n\nPonte al día con núvara: trae tus facturas de la DIAN y del correo y prepara la causación por lotes.\n\nTú revisas y apruebas.\n\n🎁 Descuento en tu primera recarga: 10 % desde 500 facturas y 20 % desde 1.000. Solo en la primera recarga, hasta el 30 de noviembre de 2026.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Sin Nuvi. Mismas escenas y voz del reel, en horizontal. Va en el conjunto de NUVARA20. El asesor aplica el descuento a mano.",
+    "estadoPieza": "lista",
+    "thumb": "pv",
+    "relaciones": [
+      "a09"
+    ],
+    "titulo": "Ponte al día: hasta 20 % en tu primera recarga",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
     "destino": "WhatsApp del asesor"
   },
   {
@@ -152,7 +240,7 @@
     "fecha": "2026-11-09",
     "hora": "12:00",
     "semana": 1,
-    "orden": 6,
+    "orden": 9,
     "pieza": "500 causaciones en una hora o menos",
     "formato": "Post 4:5",
     "canales": [
@@ -177,7 +265,7 @@
     "fecha": "2026-11-09",
     "hora": "12:00",
     "semana": 1,
-    "orden": 7,
+    "orden": 10,
     "pieza": "Historia de causación",
     "formato": "Historia 9:16",
     "canales": [
@@ -194,13 +282,38 @@
     "relaciones": []
   },
   {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La promoción de primera recarga va hasta el 30 de noviembre.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a09"
+    ],
+    "nota": "Misma pieza aprobada para pauta, en versión orgánica.",
+    "id": "p28",
+    "fecha": "2026-11-09",
+    "hora": "18:00",
+    "pieza": "Historia: Ponte al día",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "archivo": "out/redes/PonteAlDia-Historia.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace al WhatsApp del asesor.",
+    "thumb": "ponte",
+    "orden": 11
+  },
+  {
     "id": "s01",
     "linea": "SEO",
     "modulo": "Causación",
     "fecha": "2026-11-10",
     "hora": "08:00",
     "semana": 0,
-    "orden": 8,
+    "orden": 12,
     "pieza": "Comparar tus facturas con el listado de la DIAN",
     "formato": "Artículo",
     "canales": [
@@ -230,18 +343,17 @@
     "fecha": "2026-11-10",
     "hora": "12:00",
     "semana": 1,
-    "orden": 9,
+    "orden": 13,
     "pieza": "App móvil: próximamente",
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/app/M5-AppProximamente.png",
-    "copy": "Muy pronto, tus clientes y tu equipo también en el celular. La app móvil de núvara llega a iOS y Android: tus clientes aprueban pagos y tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "copy": "📱 Muy pronto, tus clientes y tu equipo también en el celular. La app móvil de núvara llega a iOS y Android: tus clientes aprueban pagos y tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\n👉 Agenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
     "nota": "Sin fecha ni precio. No programar si la app ya salió.",
     "estadoPieza": "lista",
     "thumb": "ap",
@@ -254,7 +366,7 @@
     "fecha": "2026-11-10",
     "hora": "12:00",
     "semana": 1,
-    "orden": 10,
+    "orden": 14,
     "pieza": "Historia: app próximamente",
     "formato": "Historia 9:16",
     "canales": [
@@ -277,21 +389,71 @@
     "fecha": "2026-11-11",
     "hora": "08:00",
     "semana": 1,
-    "orden": 11,
+    "orden": 15,
     "pieza": "Así causas en núvara",
     "formato": "Video 16:9, 1 min",
     "canales": [
-      "LinkedIn",
       "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/flujo-causacion.mp4",
-    "copy": "Así se ve causar en núvara, con el flujo real de la plataforma: traes tus facturas, causas en lote o en automático, revisas el asiento, apruebas en grupo y exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nHoy empieza a vencer el IVA bimestral. Nada se exporta sin tu aprobación.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Solo orgánico: el video lleva a Nuvi, que no va en anuncios.",
+    "copy": "🎬 Así se ve causar en núvara, con el flujo real de la plataforma: traes tus facturas, causas en lote o en automático, revisas el asiento, apruebas en grupo y exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nHoy empieza a vencer el IVA bimestral. Nada se exporta sin tu aprobación.\n\n👉 Agenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Solo orgánico: el video lleva a Nuvi, que no va en anuncios. Esta semana sale solo en Facebook: LinkedIn queda fuera.",
     "estadoPieza": "lista",
     "thumb": "vc",
     "relaciones": []
+  },
+  {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "p03"
+    ],
+    "nota": "",
+    "id": "p29",
+    "fecha": "2026-11-11",
+    "hora": "08:00",
+    "pieza": "Historia: hoy empieza a vencer el IVA",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "archivo": "out/redes/semana-09-11/H6-VenceIva.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "thumb": "",
+    "orden": 16
+  },
+  {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Es el anuncio con el menor costo por conversación de la pauta.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a10"
+    ],
+    "nota": "Mismo reel aprobado para pauta. Voz de Eduardo, todavía sin confirmar.",
+    "id": "p30",
+    "fecha": "2026-11-11",
+    "hora": "18:00",
+    "pieza": "Reel: ¿se te acumularon las causaciones?",
+    "formato": "Reel 9:16, 33 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "archivo": "out/reels/ReelPonteAlDia.mp4",
+    "copy": "¿Se te acumularon las causaciones? Hacerlas a mano toma tiempo y por eso se van quedando para después.\n\nPonte al día con núvara: trae tus facturas de la DIAN y del correo y prepara la causación por lotes. Tú revisas y apruebas.\n\nDescuento en tu primera recarga: 10 % desde 500 facturas y 20 % desde 1.000, hasta el 30 de noviembre.\n\nEscríbenos y agenda tu demostración en vivo.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "thumb": "pr",
+    "orden": 17
   },
   {
     "id": "s02",
@@ -300,7 +462,7 @@
     "fecha": "2026-11-12",
     "hora": "08:00",
     "semana": 0,
-    "orden": 12,
+    "orden": 18,
     "pieza": "Corregir títulos y textos del sitio",
     "formato": "Ajuste técnico",
     "canales": [
@@ -327,7 +489,7 @@
     "fecha": "2026-11-12",
     "hora": "12:00",
     "semana": 1,
-    "orden": 13,
+    "orden": 19,
     "pieza": "Reel: app próximamente",
     "formato": "Reel 9:16, 30 s",
     "canales": [
@@ -345,13 +507,39 @@
     "relaciones": []
   },
   {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a02",
+      "s01"
+    ],
+    "nota": "Mismo carrusel aprobado para pauta. Las cifras de la placa 3 son de ejemplo y la pieza lo dice. Placas N2-Dian1 a N2-Dian5.",
+    "id": "p31",
+    "fecha": "2026-11-12",
+    "hora": "18:00",
+    "pieza": "Carrusel: ¿te falta alguna factura?",
+    "formato": "Carrusel 4:5, 5 placas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "archivo": "out/redes/cierre/N2-Dian1.png",
+    "copy": "Antes de presentar el IVA, compara las facturas del mes con el listado de la DIAN.\n\nnúvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran. Las que faltan quedan listas para causar.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "thumb": "n2",
+    "orden": 20
+  },
+  {
     "id": "s11",
     "linea": "SEO",
     "modulo": "App móvil",
     "fecha": "2026-11-13",
     "hora": "08:00",
     "semana": 0,
-    "orden": 14,
+    "orden": 21,
     "pieza": "Página de la app móvil",
     "formato": "Página",
     "canales": [
@@ -380,13 +568,12 @@
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
-    "orden": 15,
+    "orden": 22,
     "pieza": "Causación: revisa y aprueba",
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
@@ -406,13 +593,12 @@
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
-    "orden": 16,
+    "orden": 23,
     "pieza": "Lanzamiento: app ya disponible",
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
@@ -432,7 +618,7 @@
     "fecha": "2026-11-13",
     "hora": "12:00",
     "semana": 1,
-    "orden": 17,
+    "orden": 24,
     "pieza": "Historia: app ya disponible",
     "formato": "Historia 9:16",
     "canales": [
@@ -449,13 +635,63 @@
     "relaciones": []
   },
   {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a05"
+    ],
+    "nota": "Mismo arte aprobado para pauta. La plataforma y el sitio aún muestran la equivalencia anterior del crédito.",
+    "id": "p32",
+    "fecha": "2026-11-14",
+    "hora": "10:00",
+    "pieza": "Pagas lo que causas",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "archivo": "out/redes/cierre/N5-PagasLoQueCausas.png",
+    "copy": "Causar una compra cuesta $510 y una venta $200, sin permanencia.\n\nEl mínimo mensual de consumo es $80.000. Si causas más, pagas tu consumo real.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "thumb": "n5",
+    "orden": 25
+  },
+  {
+    "linea": "Redes",
+    "modulo": "Causación",
+    "semana": 1,
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Hoy termina la campaña NUVARA20 y la promoción sigue hasta el 30 de noviembre.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a09"
+    ],
+    "nota": "",
+    "id": "p33",
+    "fecha": "2026-11-15",
+    "hora": "10:00",
+    "pieza": "Historia: tu descuento sigue hasta el 30",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "archivo": "out/redes/semana-09-11/H7-PonteHasta30.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace al WhatsApp del asesor.",
+    "thumb": "",
+    "orden": 26
+  },
+  {
     "id": "p05",
     "linea": "Redes",
     "modulo": "General",
     "fecha": "2026-11-17",
     "hora": "12:00",
     "semana": 2,
-    "orden": 18,
+    "orden": 27,
     "pieza": "¿Qué es núvara?",
     "formato": "Post 4:5",
     "canales": [
@@ -479,7 +715,7 @@
     "fecha": "2026-11-17",
     "hora": "12:00",
     "semana": 2,
-    "orden": 19,
+    "orden": 28,
     "pieza": "Historia: más que causación",
     "formato": "Historia 9:16",
     "canales": [
@@ -502,7 +738,7 @@
     "fecha": "2026-11-18",
     "hora": "12:00",
     "semana": 2,
-    "orden": 20,
+    "orden": 29,
     "pieza": "Reel: revisar y aprobar",
     "formato": "Reel 9:16, 36 s",
     "canales": [
@@ -528,7 +764,7 @@
     "fecha": "2026-11-19",
     "hora": "08:00",
     "semana": 2,
-    "orden": 21,
+    "orden": 30,
     "pieza": "Brochure de causación",
     "formato": "Documento PDF",
     "canales": [
@@ -550,7 +786,7 @@
     "fecha": "2026-11-20",
     "hora": "08:00",
     "semana": 0,
-    "orden": 22,
+    "orden": 31,
     "pieza": "Página de facturación electrónica",
     "formato": "Página",
     "canales": [
@@ -581,7 +817,7 @@
     "fecha": "2026-11-20",
     "hora": "12:00",
     "semana": 2,
-    "orden": 23,
+    "orden": 32,
     "pieza": "Más que causación",
     "formato": "Post 4:5",
     "canales": [
@@ -605,7 +841,7 @@
     "fecha": "2026-11-23",
     "hora": "12:00",
     "semana": 3,
-    "orden": 24,
+    "orden": 33,
     "pieza": "Factura donde ya causas",
     "formato": "Post 4:5",
     "canales": [
@@ -631,7 +867,7 @@
     "fecha": "2026-11-23",
     "hora": "12:00",
     "semana": 3,
-    "orden": 25,
+    "orden": 34,
     "pieza": "Historia de facturación electrónica",
     "formato": "Historia 9:16",
     "canales": [
@@ -654,7 +890,7 @@
     "fecha": "2026-11-25",
     "hora": "08:00",
     "semana": 3,
-    "orden": 26,
+    "orden": 35,
     "pieza": "Brochure de facturación electrónica",
     "formato": "Documento PDF",
     "canales": [
@@ -678,7 +914,7 @@
     "fecha": "2026-11-26",
     "hora": "08:00",
     "semana": 0,
-    "orden": 27,
+    "orden": 36,
     "pieza": "Ronda 2: proyecto de ley y facturas que no cumplen",
     "formato": "Por definir",
     "canales": [
@@ -706,7 +942,7 @@
     "fecha": "2026-11-26",
     "hora": "08:00",
     "semana": 0,
-    "orden": 28,
+    "orden": 37,
     "pieza": "Eventos RADIAN: cuáles son y cómo registrarlos",
     "formato": "Artículo",
     "canales": [
@@ -737,7 +973,7 @@
     "fecha": "2026-11-27",
     "hora": "08:00",
     "semana": 0,
-    "orden": 29,
+    "orden": 38,
     "pieza": "Página de nómina electrónica",
     "formato": "Página",
     "canales": [
@@ -767,7 +1003,7 @@
     "fecha": "2026-11-27",
     "hora": "12:00",
     "semana": 3,
-    "orden": 30,
+    "orden": 39,
     "pieza": "Eventos RADIAN en núvara",
     "formato": "Video 16:9, 1 min",
     "canales": [
@@ -792,7 +1028,7 @@
     "fecha": "2026-11-30",
     "hora": "12:00",
     "semana": 4,
-    "orden": 31,
+    "orden": 40,
     "pieza": "Nómina de principio a fin",
     "formato": "Post 4:5",
     "canales": [
@@ -818,7 +1054,7 @@
     "fecha": "2026-11-30",
     "hora": "12:00",
     "semana": 4,
-    "orden": 32,
+    "orden": 41,
     "pieza": "Historia de nómina",
     "formato": "Historia 9:16",
     "canales": [
@@ -841,7 +1077,7 @@
     "fecha": "2026-12-01",
     "hora": "12:00",
     "semana": 4,
-    "orden": 33,
+    "orden": 42,
     "pieza": "Reel: eventos RADIAN",
     "formato": "Reel 9:16, 30 s",
     "canales": [
@@ -867,7 +1103,7 @@
     "fecha": "2026-12-02",
     "hora": "08:00",
     "semana": 4,
-    "orden": 34,
+    "orden": 43,
     "pieza": "Brochure de nómina",
     "formato": "Documento PDF",
     "canales": [
@@ -891,7 +1127,7 @@
     "fecha": "2026-12-03",
     "hora": "08:00",
     "semana": 0,
-    "orden": 35,
+    "orden": 44,
     "pieza": "Página de tesorería",
     "formato": "Página",
     "canales": [
@@ -923,7 +1159,7 @@
     "fecha": "2026-12-04",
     "hora": "08:00",
     "semana": 0,
-    "orden": 36,
+    "orden": 45,
     "pieza": "Conciliación bancaria paso a paso",
     "formato": "Artículo",
     "canales": [
@@ -953,7 +1189,7 @@
     "fecha": "2026-12-04",
     "hora": "12:00",
     "semana": 4,
-    "orden": 37,
+    "orden": 46,
     "pieza": "Bancos, cobros y pagos conciliados",
     "formato": "Post 4:5",
     "canales": [
@@ -979,7 +1215,7 @@
     "fecha": "2026-12-04",
     "hora": "12:00",
     "semana": 4,
-    "orden": 38,
+    "orden": 47,
     "pieza": "Historia de tesorería",
     "formato": "Historia 9:16",
     "canales": [
@@ -1002,7 +1238,7 @@
     "fecha": "2026-12-07",
     "hora": "08:00",
     "semana": 5,
-    "orden": 39,
+    "orden": 48,
     "pieza": "Tesorería: el flujo completo",
     "formato": "Video 16:9, 2 min",
     "canales": [
@@ -1028,7 +1264,7 @@
     "fecha": "2026-12-09",
     "hora": "08:00",
     "semana": 5,
-    "orden": 40,
+    "orden": 49,
     "pieza": "Brochure de tesorería",
     "formato": "Documento PDF",
     "canales": [
@@ -1052,7 +1288,7 @@
     "fecha": "2026-12-10",
     "hora": "08:00",
     "semana": 0,
-    "orden": 41,
+    "orden": 50,
     "pieza": "Ronda 3: cierre anual sin trasnochar",
     "formato": "Por definir",
     "canales": [
@@ -1082,7 +1318,7 @@
     "fecha": "2026-12-10",
     "hora": "08:00",
     "semana": 0,
-    "orden": 42,
+    "orden": 51,
     "pieza": "Exógena 2026: qué dejar listo antes del cierre",
     "formato": "Artículo",
     "canales": [
@@ -1111,7 +1347,7 @@
     "fecha": "2026-12-11",
     "hora": "12:00",
     "semana": 5,
-    "orden": 43,
+    "orden": 52,
     "pieza": "Reel: la app móvil",
     "formato": "Reel 9:16, 30 s",
     "canales": [
@@ -1135,7 +1371,7 @@
     "fecha": "2026-12-15",
     "hora": "08:00",
     "semana": 0,
-    "orden": 44,
+    "orden": 53,
     "pieza": "Cierre contable de fin de año",
     "formato": "Artículo",
     "canales": [
@@ -1164,7 +1400,7 @@
     "fecha": "2027-01-04",
     "hora": "08:00",
     "semana": 0,
-    "orden": 45,
+    "orden": 54,
     "pieza": "Vencimientos del 13 al 26 de enero",
     "formato": "Artículo",
     "canales": [
@@ -1193,7 +1429,7 @@
     "fecha": "2027-01-05",
     "hora": "08:00",
     "semana": 0,
-    "orden": 46,
+    "orden": 55,
     "pieza": "Ronda 4: vence casi todo en enero",
     "formato": "Por definir",
     "canales": [
