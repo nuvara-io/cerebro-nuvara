@@ -222,6 +222,9 @@ Piezas gráficas, pauta, mensajes que se pueden afirmar, campañas con código d
 | `crear-campana-de-activacion` | neurona | I | "¿Cómo creo un código de activación?", "¿cómo armo una campaña nueva?" | `campanas-de-activacion` | código de `platform` |
 | `enviar-campana-por-correo` | neurona | I | "¿Cómo envío la campaña por correo?", "¿cómo subo la lista de contactos?" | `campanas-de-activacion` | código de `platform` |
 | `habilitar-cuenta-en-prueba` | neurona | I | "¿Cómo habilito una cuenta en prueba?", "¿cómo saco una cuenta de la prueba?" | `campanas-de-activacion` | código de `platform` |
+| `compartir-post-en-grupos` | neurona | C | "¿Cómo comparto un post en grupos de Facebook?", "¿cómo publico en la página de Facebook?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
+| `preparar-whatsapp-business` | neurona | C | "¿Cómo armo el catálogo de WhatsApp?", "¿cómo creo las respuestas rápidas de WhatsApp?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
+| `recontactar-leads-sin-respuesta` | neurona | I | "¿Cómo recontacto los leads que no respondieron?", "¿qué hago con los prospectos que dejaron de contestar?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
 
 ## Red neuronal: Equipo interno
 

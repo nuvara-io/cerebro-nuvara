@@ -2,12 +2,14 @@
 id: marketing-y-adquisicion
 titulo: Marketing y adquisición
 publico: C
-actualizado: 2026-11-03
+actualizado: 2026-11-09
 conexiones:
   - linea-grafica           # cómo se ven las piezas
   - mensajes-y-afirmaciones # qué se puede afirmar en pauta
   - embudo-de-adquisicion   # del primer contacto a la cuenta habilitada
   - campanas-de-activacion  # códigos y correos de campaña
+  - compartir-post-en-grupos  # post de página compartido en grupos
+  - preparar-whatsapp-business  # catálogo y respuestas rápidas
 fuentes:
   - diseno/README.md
   - conocimiento/demostraciones-y-ventas.md#posicionamiento-y-público
@@ -33,6 +35,7 @@ Cómo núvara sale a buscar usuarios: las piezas gráficas y la pauta, los mensa
 ## Canales
 - [C] **Redes:** Instagram, Facebook, TikTok y LinkedIn, con posts, carruseles, historias y reels.
 - [C] **Sitio** nuvara.com.co: sus llamados a la acción llevan a **WhatsApp** ("Agendar demostración", "Hablar con un asesor") o a iniciar sesión. No tiene un botón directo de registro.
+- [C] **Grupos de Facebook:** un post general de la página se comparte, como página, en grupos de contadores y empresarios, uno a la vez (ver `compartir-post-en-grupos`). Es orgánico y no cuesta. Jugada replicada de Axioma POS.
 - [C] **Demostración en vivo:** es donde más se cierra. Los sábados convierten bien.
 - [C] **Correo de campaña** con código de activación, solo a contactos con autorización previa o relación comercial.
 - [C] **Enlace con código:** `app.nuvara.com.co/signup?code=<CÓDIGO>` registra a la persona y le aplica el código en un paso.
@@ -42,6 +45,10 @@ Cómo núvara sale a buscar usuarios: las piezas gráficas y la pauta, los mensa
 - [I] El sitio carga Google Tag Manager con el modo de consentimiento (denegado por defecto, Ley 1581) y registra el evento `whatsapp_click`. En el código no hay píxel de Meta; las etiquetas que se configuren en Tag Manager viven fuera del repo.
 - [I] El guion del agente de WhatsApp (Vocero CRM) reparte un código de 20 facturas con su enlace de registro. Si ese código está activo se ve en **Códigos de activación**; los códigos no están en el repo.
 - [I] Presupuestos, segmentaciones, resultados por campaña y costo por registro no están en el cerebro.
+
+## Lo que aprendimos en Axioma POS (noviembre de 2026)
+- [I] La pauta optimizada a **conversaciones de WhatsApp** trajo curiosos que preguntaban y no se registraban. Un formulario instantáneo que pregunta perfil y tamaño filtra mejor.
+- [I] Antes de más pauta conviene trabajar lo orgánico: post general compartido en grupos, WhatsApp Business con catálogo y respuestas rápidas, y recontacto de los prospectos sin respuesta (ver `recontactar-leads-sin-respuesta`).
 
 ## Lo que hoy no existe
 - [C] **Programa de referidos:** no está en la plataforma; las condiciones que se dijeron en reuniones no son oficiales.
