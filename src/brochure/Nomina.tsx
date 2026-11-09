@@ -192,7 +192,7 @@ export const PreciosNomina: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Pagas el *tramo completo*, aunque tengas menos empleados. Los tramos incluyen el *certificado*, que sirve también para facturación electrónica." />
+        <Emphasis text="Cada tramo es *por empresa* e incluye el *certificado*. Pagas el tramo completo, aunque tengas menos empleados." />
       </p>
     </div>
   </Slide>

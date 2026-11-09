@@ -233,7 +233,7 @@ export const PreciosFE: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Consumen el paquete la factura, las *notas* y el *documento soporte*. Vigencia de *un año*: si se acaban antes, el siguiente tiene *10 % de descuento*. El certificado sirve también para *nómina electrónica*." />
+        <Emphasis text="Consumen el paquete la factura, las *notas* y el *documento soporte*. Cada paquete es *por empresa* y vale *un año*: si se acaban antes, el siguiente tiene *10 % de descuento*." />
       </p>
     </div>
   </Slide>

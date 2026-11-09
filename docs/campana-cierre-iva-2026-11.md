@@ -2,6 +2,8 @@
 
 Primera pauta de prueba de núvara, para la semana del 3 al 9 de noviembre de 2026 y hasta el cierre de IVA. Presupuesto pequeño y 5 anuncios distintos para ver cuál atrae más; después la plata va al que gane. Sale del plan de noviembre de `red/planeacion-de-marketing.md`.
 
+> **Cambio del 05/11/2026:** N1 a N5 no salen en una campaña aparte de $8.000 diarios. Se suman a NUVARA20 (cuenta de Proyeckta), con $30.000 diarios hasta el 15/11/2026 y el código NUVARA20, junto al anuncio "Ponte al día".
+
 ## Por qué ahora
 
 - **IVA bimestral (septiembre-octubre):** vence del 11 al 25 de noviembre de 2026 según el último dígito del NIT. Las facturas tienen que estar causadas antes.
@@ -41,11 +43,11 @@ Cada uno es un concepto distinto (ángulo, formato y primera imagen), porque Met
 
 | # | Concepto | Pieza | Estado |
 |---|---|---|---|
-| N1 | **Vence el IVA: revisas y apruebas, no digitas** | Reel 9:16 de 20 a 25 s | Por hacer |
-| N2 | **¿Te falta alguna factura frente a la DIAN?** | Carrusel 4:5 de 5 placas con la comparación | Por hacer |
+| N1 | **Vence el IVA: revisas y apruebas, no digitas** | Reel 9:16 de 36 s | Listo: `out/reels/reel-causacion.mp4` |
+| N2 | **¿Te falta alguna factura frente a la DIAN?** | Carrusel 4:5 de 5 placas con la comparación | Listo: `src/posts/modulos/CierreIva.tsx` |
 | N3 | **500 causaciones en una hora o menos** | Post 4:5 | Base: `src/posts/Post500Causaciones.tsx` |
-| N4 | **Clientes en varios programas, un solo panel** | Post 4:5 | Por hacer |
-| N5 | **Pagas lo que causas** | Post 4:5 | Por hacer |
+| N4 | **Clientes en varios programas, un solo panel** | Post 4:5 | Listo: `src/posts/modulos/CierreIva.tsx` |
+| N5 | **Pagas lo que causas** | Post 4:5 | Listo: `src/posts/modulos/CierreIva.tsx` |
 
 ### Textos
 
