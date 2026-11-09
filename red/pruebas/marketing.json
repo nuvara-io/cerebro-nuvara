@@ -521,6 +521,42 @@
       "nodos": [
         "operar-pauta-con-claude"
       ]
+    },
+    {
+      "pregunta": "¿Cuánto debo pautar la primera semana?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "límite de gasto diario"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué es la fase de aprendizaje?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "50 resultados en 7 días"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuándo puedo subir el presupuesto?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "de a poco"
+        ]
+      ]
     }
   ]
 }

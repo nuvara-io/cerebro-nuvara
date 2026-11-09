@@ -13,6 +13,8 @@ conexiones:
 fuentes:
   # Referencia externa, adaptada a núvara (procesada el 09/11/2026)
   - https://www.youtube.com/watch?v=rVnDx6aTovg  # "META ADS con CLAUDE: Curso Completo en Español (2026)", Benjamín Cordero
+  - https://www.facebook.com/business/help/112167992830700  # fase de aprendizaje (Meta Business Help Center)
+  - https://www.jonloomer.com/glossary/daily-spending-limit/  # límite de gasto diario de cuentas nuevas
   - red/planeacion-de-marketing.md
   - red/marketing-y-adquisicion.md
 ---
@@ -59,6 +61,16 @@ Cómo se monta y se decide la pauta de núvara en Meta (Facebook e Instagram). E
 - [C] **Pasar a escala:** al menos 2 resultados por debajo del CPA objetivo, y que esos registros sí canjeen el código o causen su primera factura.
 - [C] Lo demás sigue corriendo. Con presupuesto pequeño se prueban 2 o 3 creativos a la vez, no lotes grandes.
 - [C] **Escalar** es mover el ganador a la campaña de escala con más presupuesto, crear variaciones y abrir remarketing; cuando el CPA sube por fatiga, se repite el ciclo.
+
+## Lo que hay que tener presente
+- [C] **Cuenta publicitaria nueva:** Meta le pone un límite de gasto diario que sube a medida que la cuenta acumula pagos al día y anuncios sin rechazos. La primera semana se pauta poco, con el método de pago al día, y el presupuesto se sube de a poco. Un salto grande de gasto en una cuenta nueva puede frenar la entrega o disparar una revisión.
+- [C] **Fase de aprendizaje:** es de **cada conjunto de anuncios**, no de la cuenta. Meta necesita unos 50 resultados en 7 días para estabilizar un conjunto; mientras aprende, el costo por resultado sube y baja. En esa semana no se juzga ni se toca el conjunto.
+- [C] **Aprendizaje limitado:** si el conjunto no llega a esos resultados, Meta lo marca así y sigue entregando, con menos datos. Con presupuesto pequeño pasa seguido. La salida es tener **pocos conjuntos** y optimizar a un resultado más frecuente (la conversación de WhatsApp), no repartir poca plata en muchos conjuntos.
+- [C] **Cuánto necesita un conjunto para salir del aprendizaje:** el CPA objetivo × 50 ÷ 7, al día. Si no alcanza, se acepta el aprendizaje limitado y se decide con más días de datos.
+- [C] **Lo que reinicia el aprendizaje:** cambiar la segmentación, las ubicaciones, el resultado que se optimiza o la puja, agregar un anuncio nuevo al conjunto y pausarlo 7 días o más. Los cambios se agrupan y se hacen de una vez, no uno por día.
+- [C] **Subir presupuesto:** de a poco, porque un salto grande reinicia el aprendizaje (las guías de pauta hablan de más del 20 % de una vez). Para crecer rápido se lleva el ganador a la campaña de escala en vez de inflar el conjunto que ya funciona.
+- [C] **Antes de juzgar un anuncio** tienen que pasar los 7 días de aprendizaje o tiene que haber gastado lo suficiente según la regla de apagado. Un día malo no es una tendencia.
+- [C] **La revisión de Meta** tarda: un anuncio nuevo puede quedar en revisión hasta un día. Se sube con tiempo antes de una fecha clave (por ejemplo, antes de un vencimiento de IVA).
 
 ## Errores que se evitan
 - [C] Borrar campañas en vez de apagarlas.
