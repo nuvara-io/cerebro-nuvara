@@ -325,7 +325,7 @@
     "copy": "Sale del nodo comparar-con-la-dian: para qué sirve, qué listado se sube, cómo leer las diferencias y qué hacer con las que faltan. Cierra con la demostración en vivo.",
     "nota": "Borrador en out/sitio/blog/comparar-facturas-con-la-dian.md, con el formato del blog de apps/landing. Falta la imagen de portada y subirlo al sitio.",
     "estadoPieza": "lista",
-    "thumb": "",
+    "thumb": "blogdian",
     "relaciones": [
       "a02",
       "p04"
@@ -426,7 +426,7 @@
     ],
     "archivo": "out/redes/semana-09-11/H6-VenceIva.png",
     "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
-    "thumb": "",
+    "thumb": "h6",
     "orden": 16
   },
   {
@@ -565,21 +565,21 @@
     "id": "p04",
     "linea": "Redes",
     "modulo": "Causación",
-    "fecha": "2026-11-13",
+    "fecha": "2026-11-19",
     "hora": "12:00",
-    "semana": 1,
-    "orden": 22,
+    "semana": 2,
+    "orden": 30.5,
     "pieza": "Causación: revisa y aprueba",
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
       "Facebook"
     ],
-    "tema": "Llega al cierre con todo causado",
-    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Es la semana de «Revisa, valida y aprueba» y la pieza habla justo de eso.",
     "archivo": "out/campana-modulos/M1-Causacion.png",
     "copy": "Una sola factura puede implicar más de diez decisiones contables. núvara las prepara y tú revisas, validas y apruebas.\n\nCon núvara, siempre mantienes el control de tu operación.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "",
+    "nota": "Se movió del 13 de noviembre: su lugar lo toma el post de facturación electrónica (p10).",
     "estadoPieza": "lista",
     "thumb": "m1",
     "relaciones": [
@@ -681,8 +681,79 @@
     ],
     "archivo": "out/redes/semana-09-11/H7-PonteHasta30.png",
     "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace al WhatsApp del asesor.",
-    "thumb": "",
+    "thumb": "h7",
     "orden": 26
+  },
+  {
+    "id": "p34",
+    "linea": "Redes",
+    "modulo": "Facturación electrónica",
+    "fecha": "2026-11-12",
+    "hora": "10:00",
+    "semana": 1,
+    "orden": 18.5,
+    "pieza": "Historia: facturación electrónica",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
+    "archivo": "out/campana-modulos/H2-FacturacionElectronica.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "Misma historia de p11, que vuelve a salir en la semana de su módulo: las historias duran 24 horas.",
+    "estadoPieza": "lista",
+    "thumb": "h2",
+    "relaciones": [
+      "p10"
+    ]
+  },
+  {
+    "id": "p35",
+    "linea": "Redes",
+    "modulo": "Nómina",
+    "fecha": "2026-11-13",
+    "hora": "18:00",
+    "semana": 1,
+    "orden": 24.5,
+    "pieza": "Historia: nómina electrónica",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
+    "archivo": "out/campana-modulos/H3-Nomina.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "Misma historia de p15, que vuelve a salir en la semana de su módulo: las historias duran 24 horas.",
+    "estadoPieza": "lista",
+    "thumb": "h3",
+    "relaciones": []
+  },
+  {
+    "id": "p36",
+    "linea": "Redes",
+    "modulo": "Tesorería",
+    "fecha": "2026-11-14",
+    "hora": "12:00",
+    "semana": 1,
+    "orden": 25.5,
+    "pieza": "Historia: tesorería",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
+    "archivo": "out/campana-modulos/H4-Tesoreria.png",
+    "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
+    "nota": "Misma historia de p19, que vuelve a salir en la semana de su módulo: las historias duran 24 horas.",
+    "estadoPieza": "lista",
+    "thumb": "h4",
+    "relaciones": []
   },
   {
     "id": "p05",
@@ -814,10 +885,10 @@
     "id": "p09",
     "linea": "Redes",
     "modulo": "General",
-    "fecha": "2026-11-20",
-    "hora": "12:00",
-    "semana": 2,
-    "orden": 32,
+    "fecha": "2026-11-10",
+    "hora": "18:00",
+    "semana": 1,
+    "orden": 14.5,
     "pieza": "Más que causación",
     "formato": "Post 4:5",
     "canales": [
@@ -825,11 +896,11 @@
       "Facebook",
       "LinkedIn"
     ],
-    "tema": "Revisa, valida y aprueba",
-    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
     "archivo": "out/campana-modulos/M0-MasQueCausacion.png",
     "copy": "Causación, facturación electrónica, nómina y tesorería en un solo lugar. núvara prepara el trabajo de cada módulo y tú revisas y apruebas.\n\nY exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "",
+    "nota": "Se adelantó del 20 de noviembre para que la semana del IVA muestre todos los módulos.",
     "estadoPieza": "lista",
     "thumb": "m0",
     "relaciones": []
@@ -838,10 +909,10 @@
     "id": "p10",
     "linea": "Redes",
     "modulo": "Facturación electrónica",
-    "fecha": "2026-11-23",
+    "fecha": "2026-11-13",
     "hora": "12:00",
-    "semana": 3,
-    "orden": 33,
+    "semana": 1,
+    "orden": 22,
     "pieza": "Factura donde ya causas",
     "formato": "Post 4:5",
     "canales": [
@@ -849,11 +920,11 @@
       "Facebook",
       "LinkedIn"
     ],
-    "tema": "Más que causación",
-    "porque": "Módulo por módulo, cuando termina el IVA.",
+    "tema": "Llega al cierre con todo causado",
+    "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
     "archivo": "out/campana-modulos/M2-FacturacionElectronica.png",
     "copy": "Emite ante la DIAN desde la misma plataforma donde causas: factura de venta, notas, documento soporte y eventos RADIAN, con una sola habilitación.\n\nTus ventas emitidas quedan listas para causar.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "",
+    "nota": "Se adelantó del 23 de noviembre para que la semana no sea solo de causación. Toma el lugar de p04, que pasa al 19. La página de facturación (s03) sale el 20: mientras tanto el texto lleva a nuvara.com.co. Si sale la app el 13, este post pasa a las 18:00.",
     "estadoPieza": "lista",
     "thumb": "m2",
     "relaciones": [
