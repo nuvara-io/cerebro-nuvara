@@ -6,7 +6,7 @@ import { DIAPOSITIVAS_TESORERIA } from "./brochure/Tesoreria";
 import { AppDisponible, AppProximamente } from "./posts/modulos/AppMovil";
 import { CausacionAprobar } from "./posts/modulos/CausacionAprobar";
 import { DianPlaca1, DianPlaca2, DianPlaca3, DianPlaca4, DianPlaca5, PagasLoQueCausas, VariosProgramas } from "./posts/modulos/CierreIva";
-import { FacturacionElectronica } from "./posts/modulos/FacturacionElectronica";
+import { FacturacionElectronica, FacturacionElectronicaPauta } from "./posts/modulos/FacturacionElectronica";
 import { MasQueCausacion } from "./posts/modulos/MasQueCausacion";
 import { NominaCompleta } from "./posts/modulos/NominaCompleta";
 import { PonteAlDia } from "./posts/modulos/PonteAlDia";
@@ -26,7 +26,7 @@ import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
 import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
-import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian } from "./tutorials/Reels";
+import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -69,6 +69,7 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelCausacion" component={ReelCausacion} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CAUSACION * 30)} />
         <Composition id="ReelCierreIva" component={ReelCierreIva} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_CIERRE_IVA * 30)} />
         <Composition id="ReelRadian" component={ReelRadian} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN * 30)} />
+        <Composition id="ReelRadianPauta" component={ReelRadianPauta} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_RADIAN_PAUTA * 30)} />
         <Composition id="ReelAppProximamente" component={ReelAppProximamente} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP_PROXIMAMENTE * 30)} />
         <Composition id="ReelPonteAlDia" component={PonteAlDiaVideo} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
         <Composition id="VideoPonteAlDia" component={PonteAlDiaVideo} width={1920} height={1080} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
@@ -112,6 +113,8 @@ export const RemotionRoot: React.FC = () => {
         <Still id="H0-MasQueCausacion" component={MasQueCausacion} width={1080} height={1920} />
         <Still id="H1-Causacion" component={CausacionAprobar} width={1080} height={1920} />
         <Still id="H2-FacturacionElectronica" component={FacturacionElectronica} width={1080} height={1920} />
+        <Still id="Pauta-FacturacionElectronica" component={FacturacionElectronicaPauta} width={1080} height={1350} />
+        <Still id="Pauta-FacturacionElectronica-Historia" component={FacturacionElectronicaPauta} width={1080} height={1920} />
         <Still id="H3-Nomina" component={NominaCompleta} width={1080} height={1920} />
         <Still id="H4-Tesoreria" component={TesoreriaConciliada} width={1080} height={1920} />
       </Folder>

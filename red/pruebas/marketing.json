@@ -496,6 +496,140 @@
           "WhatsApp"
         ]
       ]
+    },
+    {
+      "pregunta": "¿Cómo armamos las campañas en Meta?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "Laboratorio"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuándo apago un anuncio?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "CPA objetivo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo hago un creativo que funcione?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "Gancho"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Por qué subió el costo por resultado?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "fatiga"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo conecto Meta Ads a Claude Code?",
+      "publico": "I",
+      "nodos": [
+        "operar-pauta-con-claude"
+      ]
+    },
+    {
+      "pregunta": "¿Cómo corro el juez de la pauta?",
+      "publico": "I",
+      "nodos": [
+        "operar-pauta-con-claude"
+      ]
+    },
+    {
+      "pregunta": "¿Cuánto debo pautar la primera semana?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "límite de gasto diario"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué es la fase de aprendizaje?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "50 resultados en 7 días"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cuándo puedo subir el presupuesto?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "de a poco"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué creativo va para un público frío, tibio o caliente?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "tibio"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo reparto el presupuesto entre las tres campañas?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "40 % laboratorio"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué aprendimos de NUVARA20?",
+      "publico": "C",
+      "nodos": [
+        "pauta-en-meta"
+      ],
+      "incluye": [
+        [
+          "$12.648"
+        ]
+      ]
     }
   ]
 }

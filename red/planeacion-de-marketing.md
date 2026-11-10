@@ -9,6 +9,7 @@ conexiones:
   - mensajes-y-afirmaciones # qué se puede afirmar en cada pieza
   - campanas-de-activacion  # el código que mide cada campaña
   - calendario-de-marketing # donde se revisa y se aprueba cada anuncio
+  - pauta-en-meta           # método de creativos, campañas y decisiones
 fuentes:
   # Contexto (consultado el 03/11/2026)
   - https://www.dian.gov.co/Calendarios/Calendario_Tributario_2026.pdf

@@ -32,6 +32,10 @@ export const color = {
   gray200: "#e5e7eb",
   gray100: "#f3f4f6",
   white: "#ffffff",
+
+  // Solo para marcar un riesgo (lo que se pierde sin hacer algo), nunca como color de marca
+  riesgo: "#d92d20",
+  riesgoTint: "#fee4e2",
 } as const;
 
 // Degradado de marca (gradient-03 del cerebro gráfico): azul → turquesa

@@ -10,6 +10,7 @@ conexiones:
   - campanas-de-activacion  # códigos y correos de campaña
   - compartir-post-en-grupos  # post de página compartido en grupos
   - preparar-whatsapp-business  # catálogo y respuestas rápidas
+  - pauta-en-meta           # cómo se montan y deciden las campañas en Meta
 fuentes:
   - diseno/README.md
   - conocimiento/demostraciones-y-ventas.md#posicionamiento-y-público

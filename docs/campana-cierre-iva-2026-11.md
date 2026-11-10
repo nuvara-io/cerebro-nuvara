@@ -3,6 +3,8 @@
 Primera pauta de prueba de núvara, para la semana del 3 al 9 de noviembre de 2026 y hasta el cierre de IVA. Presupuesto pequeño y 5 anuncios distintos para ver cuál atrae más; después la plata va al que gane. Sale del plan de noviembre de `red/planeacion-de-marketing.md`.
 
 > **Cambio del 05/11/2026:** N1 a N5 no salen en una campaña aparte de $8.000 diarios. Se suman a NUVARA20 (cuenta de Proyeckta), con $30.000 diarios hasta el 15/11/2026 y el código NUVARA20, junto al anuncio "Ponte al día".
+>
+> **Cambio del 09/11/2026:** NUVARA20 queda apagada. La pauta del 10 al 25 de noviembre va en una campaña nueva, `NV | Laboratorio | Ponte al día IVA | WhatsApp | 2026-11` (borrador en la cuenta de Proyeckta, sin publicar hasta que los socios aprueben en el calendario de marketing). Son $30.000 diarios con un límite total de $480.000 y tres videos: Ponte al día, Cierre IVA y Oferta 20 facturas. N2 a N5 quedan en reserva. El detalle está en el calendario y en `red/pauta-en-meta.md`.
 
 ## Por qué ahora
 

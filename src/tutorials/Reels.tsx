@@ -29,7 +29,7 @@ import { GRABACIONES } from "./FlujoCausacion";
 // Texto arriba de los 420 px de abajo, que tapa la app. Sin Nuvi: pueden ir a pauta.
 const voz = (n: string) => staticFile(`voz/reels/${n}.wav`);
 const sonido = (n: string) => staticFile(`sonido/${n}.wav`);
-const DURACION_VOZ: Record<string, number> = {"n1": 2.8, "n2": 4.64, "p1": 2.41, "r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 5.04, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67};
+const DURACION_VOZ: Record<string, number> = {"n1": 2.8, "n2": 4.64, "p1": 2.41, "r1": 4.16, "r3": 6.56, "r2": 4.53, "r4": 3.87, "a2": 5.04, "a3": 5.9, "a1": 1.91, "a4": 4.08, "c3": 4.0, "c2": 6.55, "c1": 3.42, "c4": 5.67, "rp1": 2.9, "rp2": 4.15, "rp3": 2.21, "rp4": 5.63, "rp5": 5.32, "rp6": 2.97};
 
 const MX = 48;
 const MARCO = { left: MX, top: 420, ancho: 1080 - MX * 2, alto: 920 };
@@ -62,7 +62,9 @@ type Telefono = Base & {
 };
 type Pareja = Base & { readonly tipo: "pareja"; readonly lead: string; readonly rest: string; readonly subtitulo: string; readonly dura: number };
 type Cierre = Base & { readonly tipo: "cierre"; readonly dura: number; readonly aviso?: string };
-type Escena = Gancho | Pantalla | Telefono | Pareja | Cierre;
+// Lo que se pierde: tarjetas que se tachan una tras otra
+type Riesgo = Base & { readonly tipo: "riesgo"; readonly lead: string; readonly rest: string; readonly tarjetas: readonly string[]; readonly dura: number };
+type Escena = Gancho | Pantalla | Telefono | Pareja | Cierre | Riesgo;
 
 const duracion = (e: Escena) =>
   e.tipo === "pantalla" ? (e.hasta - e.desde) / e.velocidad : e.dura;
@@ -117,22 +119,41 @@ const RADIAN: Escena[] = [
   {
     tipo: "pantalla", lead: "Acusa en", rest: "un momento.", subtitulo: "Pulsas *Acusar*, revisas y envías",
     recording: "recordings/radian-usuario.mp4", desde: 6.4, hasta: 18, velocidad: 2,
-    camara: [{ t: 6.4, x: 1300, y: 460, zoom: 1.75 }, { t: 10.4, x: 1560, y: 400, zoom: 1.85 }, { t: 12.8, x: 1560, y: 860, zoom: 1.85 }],
+    camara: [
+      { t: 6.4, x: 780, y: 440, zoom: 2 }, { t: 9.4, x: 1600, y: 460, zoom: 2.8 },
+      { t: 10.6, x: 1640, y: 330, zoom: 3.2 }, { t: 12.6, x: 1640, y: 820, zoom: 3.2 }, { t: 14.6, x: 800, y: 800, zoom: 2 },
+    ],
     cursor: CURSOR, clics: CLICS, voz: "r2", vozEn: 0.2,
   },
   {
     tipo: "pantalla", lead: "Con reglas,", rest: "se envían solos.", subtitulo: "*Acuse* y *recibo* con tus reglas",
     recording: "recordings/radian-usuario.mp4", desde: 80.7, hasta: 100, velocidad: 2.2,
-    camara: [{ t: 80.7, x: 1300, y: 500, zoom: 1.75 }, { t: 88, x: 1450, y: 680, zoom: 1.85 }],
+    camara: [
+      { t: 80.7, x: 1300, y: 560, zoom: 2.3 }, { t: 84.5, x: 1150, y: 820, zoom: 2.3 }, { t: 87.6, x: 1560, y: 680, zoom: 2.9 },
+      { t: 91, x: 1250, y: 820, zoom: 2.4 }, { t: 94.6, x: 1560, y: 700, zoom: 2.9 }, { t: 98.4, x: 1350, y: 620, zoom: 2.2 },
+    ],
     cursor: CURSOR, clics: CLICS, voz: "r3", vozEn: 0.2,
   },
   {
     tipo: "pantalla", lead: "Vigila lo", rest: "que vence.", subtitulo: "El *reclamo* siempre lo decides tú",
     recording: "recordings/radian-usuario.mp4", desde: 53.1, hasta: 64, velocidad: 1.6,
-    camara: [{ t: 53.1, x: 900, y: 420, zoom: 1.75 }, { t: 60, x: 1400, y: 860, zoom: 1.85 }],
+    camara: [
+      { t: 53.1, x: 700, y: 400, zoom: 2.2 }, { t: 57.5, x: 900, y: 700, zoom: 2.3 },
+      { t: 60.2, x: 1550, y: 860, zoom: 2.6 }, { t: 62.9, x: 1000, y: 860, zoom: 2.1 },
+    ],
     cursor: CURSOR, clics: CLICS,
   },
   { tipo: "cierre", dura: 4.3, voz: "r4", vozEn: 0.2 },
+];
+
+// Versión de pauta (a18): arranca por lo que se pierde y no por la función
+const RADIAN_PAUTA: Escena[] = [
+  { tipo: "gancho", linea1: "¿Compraste a crédito?", linea2: "¿Y el acuse?", dura: 3.4, voz: "rp1", vozEn: 0.1, fuerte: true },
+  { tipo: "riesgo", lead: "En una fiscalización", rest: "te pueden desconocer:", tarjetas: ["El costo", "El IVA descontable"], dura: 4.6, voz: "rp2", vozEn: 0.1 },
+  { ...(RADIAN[1] as Pantalla), lead: "Lo envías", rest: "en un clic.", subtitulo: "Pulsas *Acusar* y listo", velocidad: 2.4, voz: "rp3", vozEn: 0.1 },
+  { ...(RADIAN[2] as Pantalla), subtitulo: "*Acuse* al llegar, *recibo* al causar", velocidad: 2.6, voz: "rp4", vozEn: 0.1 },
+  { ...(RADIAN[3] as Pantalla), velocidad: 1.9, voz: "rp5", vozEn: 0.1 },
+  { tipo: "cierre", dura: 3.4, voz: "rp6", vozEn: 0.1, aviso: "Escríbenos por WhatsApp" },
 ];
 
 const APP: Escena[] = [
@@ -159,6 +180,7 @@ const APP_PROXIMAMENTE: Escena[] = [
 export const DURACION_REEL_CAUSACION = duracionReel(CAUSACION);
 export const DURACION_REEL_CIERRE_IVA = duracionReel(CIERRE_IVA);
 export const DURACION_REEL_RADIAN = duracionReel(RADIAN);
+export const DURACION_REEL_RADIAN_PAUTA = duracionReel(RADIAN_PAUTA);
 export const DURACION_REEL_APP = duracionReel(APP);
 export const DURACION_REEL_APP_PROXIMAMENTE = duracionReel(APP_PROXIMAMENTE);
 
@@ -202,6 +224,41 @@ export const GanchoFuerte: React.FC<{ readonly linea1: string; readonly linea2: 
   );
 };
 
+// Cada tarjeta entra y, un momento después, una línea roja la tacha
+const EscenaRiesgo: React.FC<{ readonly e: Riesgo }> = ({ e }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return (
+    <>
+      <Backdrop />
+      <Titulo lead={e.lead} rest={e.rest} />
+      <div style={{ position: "absolute", left: MX, right: MX, top: 520, display: "grid", gap: 48 }}>
+        {e.tarjetas.map((t, i) => {
+          // Entran juntas; cada tacha cae cuando la voz nombra la tarjeta
+          const entra = 6 + i * 8;
+          const golpe = 72 + i * 30;
+          const tacha = spring({ frame: frame - golpe, fps, config: { damping: 16, stiffness: 170 } });
+          return (
+            <FadeUp key={t} delay={entra}>
+              <div style={{ position: "relative", padding: "56px 48px", borderRadius: radius.card, background: tacha > 0.5 ? color.riesgoTint : color.white, boxShadow: shadow.card }}>
+                <p style={{ margin: 0, fontFamily: font.sans, fontSize: 92, fontWeight: 700, lineHeight: 1.05, color: color.textTitle }}>
+                  <span style={{ position: "relative", display: "inline-block" }}>
+                    {t}
+                    <span style={{ position: "absolute", left: -12, top: "54%", height: 12, borderRadius: 6, background: color.riesgo, width: `calc((100% + 24px) * ${tacha})`, rotate: "-2deg" }} />
+                  </span>
+                </p>
+              </div>
+              <Sequence from={golpe} layout="none">
+                <Audio src={sonido("clic")} volume={0.5} />
+              </Sequence>
+            </FadeUp>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
 const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
   const { fps } = useVideoConfig();
   if (e.tipo === "gancho" && e.fuerte) return <GanchoFuerte linea1={e.linea1} linea2={e.linea2} />;
@@ -220,6 +277,7 @@ const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
       </AbsoluteFill>
     );
   }
+  if (e.tipo === "riesgo") return <EscenaRiesgo e={e} />;
   if (e.tipo === "cierre") {
     return (
       <>
@@ -317,5 +375,6 @@ const Reel: React.FC<{ readonly escenas: readonly Escena[] }> = ({ escenas }) =>
 export const ReelCausacion = () => <Reel escenas={CAUSACION} />;
 export const ReelCierreIva = () => <Reel escenas={CIERRE_IVA} />;
 export const ReelRadian = () => <Reel escenas={RADIAN} />;
+export const ReelRadianPauta = () => <Reel escenas={RADIAN_PAUTA} />;
 export const ReelApp = () => <Reel escenas={APP} />;
 export const ReelAppProximamente = () => <Reel escenas={APP_PROXIMAMENTE} />;
