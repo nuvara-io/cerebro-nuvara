@@ -234,6 +234,126 @@
     "destino": "WhatsApp del asesor"
   },
   {
+    "id": "a12",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 56,
+    "pieza": "Anuncio N2, versión Reels con voz",
+    "formato": "Reel 9:16, 25 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/reels/pauta/Pauta-N2-Dian.mp4",
+    "copy": "🔎 Antes de presentar el IVA, compara las facturas del mes con el listado de la DIAN.\n\nnúvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran.\n\nLas que faltan quedan listas para causar.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Va en la ubicación de Stories y Reels del anuncio N2 (Personalizar contenido por ubicación); la imagen sigue en los feeds. Así el anuncio no sale mudo en Reels. Voz de Eduardo, todavía sin confirmar: revisar que diga NÚ-va-ra. Mismo texto principal del anuncio.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a02"
+    ],
+    "titulo": "¿Te falta alguna factura?",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor",
+    "thumb": "n2"
+  },
+  {
+    "id": "a13",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 57,
+    "pieza": "Anuncio N3, versión Reels con voz",
+    "formato": "Reel 9:16, 18 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/reels/pauta/Pauta-N3-500Causaciones.mp4",
+    "copy": "500 causaciones en una hora o menos, cerca de 15 segundos por causación.\n\nnúvara interpreta y prepara; tú apruebas por grupos, no una por una.\n\nLlega al cierre de IVA con el tiempo de tu lado.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Va en la ubicación de Stories y Reels del anuncio N3 (Personalizar contenido por ubicación); la imagen sigue en los feeds. Así el anuncio no sale mudo en Reels. Voz de Eduardo, todavía sin confirmar: revisar que diga NÚ-va-ra. Mismo texto principal del anuncio.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a03"
+    ],
+    "titulo": "500 causaciones en una hora o menos",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor",
+    "thumb": "p500"
+  },
+  {
+    "id": "a14",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 58,
+    "pieza": "Anuncio N4, versión Reels con voz",
+    "formato": "Reel 9:16, 18 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/reels/pauta/Pauta-N4-VariosProgramas.mp4",
+    "copy": "Si tus clientes llevan la contabilidad en programas distintos, núvara causa desde un solo panel y exporta a su programa contable.\n\nSi aún no tenemos el formato, lo generamos.\n\nUna sola forma de trabajar para todas tus empresas.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Va en la ubicación de Stories y Reels del anuncio N4 (Personalizar contenido por ubicación); la imagen sigue en los feeds. Así el anuncio no sale mudo en Reels. Voz de Eduardo, todavía sin confirmar: revisar que diga NÚ-va-ra. Mismo texto principal del anuncio.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a04"
+    ],
+    "titulo": "Todas tus empresas, un solo panel",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor",
+    "thumb": "n4"
+  },
+  {
+    "id": "a15",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-11-10",
+    "hora": "08:00",
+    "semana": 0,
+    "orden": 59,
+    "pieza": "Anuncio N5, versión Reels con voz",
+    "formato": "Reel 9:16, 18 s",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
+    "archivo": "out/reels/pauta/Pauta-N5-PagasLoQueCausas.mp4",
+    "copy": "Causar una compra cuesta $510 y una venta $200, sin permanencia.\n\nEl mínimo mensual de consumo es $80.000, unas 156 facturas de compra. Si causas más, pagas tu consumo real.\n\n👉 Escríbenos y agenda tu demostración en vivo.",
+    "nota": "Va en la ubicación de Stories y Reels del anuncio N5 (Personalizar contenido por ubicación); la imagen sigue en los feeds. Así el anuncio no sale mudo en Reels. Voz de Eduardo, todavía sin confirmar: revisar que diga NÚ-va-ra. Mismo texto principal del anuncio.",
+    "estadoPieza": "lista",
+    "relaciones": [
+      "a05"
+    ],
+    "titulo": "Pagas lo que causas",
+    "objetivo": "Conversaciones por WhatsApp",
+    "presupuesto": "Parte de $30.000 diarios de NUVARA20, hasta el 15 de noviembre",
+    "codigo": "NUVARA20",
+    "destino": "WhatsApp del asesor",
+    "thumb": "n5"
+  },
+  {
     "id": "p01",
     "linea": "Redes",
     "modulo": "Causación",
@@ -354,7 +474,7 @@
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/app/M5-AppProximamente.png",
     "copy": "📱 Muy pronto, tus clientes y tu equipo también en el celular. La app móvil de núvara llega a iOS y Android: tus clientes aprueban pagos y tu equipo registra los gastos de caja con la foto del soporte.\n\nCada uno ve solo lo que le asignas.\n\n👉 Agenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Sin fecha ni precio. No programar si la app ya salió.",
+    "nota": "Sin fecha ni precio. No programar si la app ya salió. Programado en Business Suite (FB + IG nuvaracol) el 10/11 para las 12:00.",
     "estadoPieza": "lista",
     "thumb": "ap",
     "relaciones": []
@@ -377,7 +497,7 @@
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/app/H5-AppProximamente.png",
     "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
-    "nota": "No programar si la app ya salió.",
+    "nota": "No programar si la app ya salió. Programada en Business Suite (historia FB + IG) el 10/11 para las 12:00, con enlace a nuvara.com.co (el enlace solo se ve en FB).",
     "estadoPieza": "lista",
     "thumb": "hp",
     "relaciones": []
@@ -900,7 +1020,7 @@
     "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
     "archivo": "out/campana-modulos/M0-MasQueCausacion.png",
     "copy": "Causación, facturación electrónica, nómina y tesorería en un solo lugar. núvara prepara el trabajo de cada módulo y tú revisas y apruebas.\n\nY exportas a tu programa contable. Si aún no tenemos tu formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Se adelantó del 20 de noviembre para que la semana del IVA muestre todos los módulos.",
+    "nota": "Se adelantó del 20 de noviembre para que la semana del IVA muestre todos los módulos. Programado en Business Suite (FB + IG) el 10/11 para las 6:00 p. m., sin LinkedIn.",
     "estadoPieza": "lista",
     "thumb": "m0",
     "relaciones": []

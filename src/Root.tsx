@@ -25,6 +25,7 @@ import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
+import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
 import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
@@ -71,6 +72,10 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelAppProximamente" component={ReelAppProximamente} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP_PROXIMAMENTE * 30)} />
         <Composition id="ReelPonteAlDia" component={PonteAlDiaVideo} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
         <Composition id="VideoPonteAlDia" component={PonteAlDiaVideo} width={1920} height={1080} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
+        <Composition id="Pauta-N2-Dian" component={ReelN2} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N2} />
+        <Composition id="Pauta-N3-500Causaciones" component={ReelN3} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N3} />
+        <Composition id="Pauta-N4-VariosProgramas" component={ReelN4} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N4} />
+        <Composition id="Pauta-N5-PagasLoQueCausas" component={ReelN5} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N5} />
         <Composition id="ReelCreditos" component={ReelCreditos} width={1080} height={1920} fps={30} durationInFrames={DURACION_REEL_CREDITOS} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
