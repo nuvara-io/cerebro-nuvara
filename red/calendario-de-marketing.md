@@ -35,7 +35,7 @@ Un solo calendario para lo que se publica en pauta, en redes y en el sitio. Los 
 ## Quién hace qué
 - [C] **Operador del calendario:** quien aprueba, programa y marca como publicado. Necesita acceso de edición a la página.
 - [C] **Equipos que revisan:** Marketing, Diseño, Comercial, Producto, Contable y Legal. Dejan observaciones, piden cambios y dan su visto bueno. Necesitan acceso de colaborador; con acceso de solo lectura no pueden escribir.
-- [C] **Claude:** propone, ajusta y aplica las notas. Nunca aprueba, programa ni publica.
+- [C] **Claude:** propone, ajusta y aplica las notas. Solo marca **Aprobada** cuando el operador se lo pide explícitamente en el chat, nombrando las piezas, y con las mismas condiciones de siempre (pieza Lista y sin cambios pedidos abiertos). Nunca aprueba por su cuenta, ni programa ni publica en el calendario.
 
 ## Estados de una publicación
 - [C] **Pieza:** Por hacer, Falta corte, Bloqueada o Lista.
