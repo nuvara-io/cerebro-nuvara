@@ -218,6 +218,7 @@ Piezas gráficas, pauta (método de creativos y campañas en Meta), mensajes que
 | `pauta-en-meta` | núcleo | C (techo de CPA y cifras del curso: I) | "¿Cómo armamos las campañas en Meta?", "¿cuándo apago un anuncio?", "¿cómo hago un creativo que funcione?", "¿por qué subió el costo por resultado?" |  | Curso "META ADS con CLAUDE" de Benjamín Cordero (YouTube, procesado el 09/11/2026), `planeacion-de-marketing`, `marketing-y-adquisicion` |
 | `operar-pauta-con-claude` | neurona | I | "¿Cómo conecto Meta Ads a Claude Code?", "¿cómo corro el juez de la pauta?" | `pauta-en-meta` | Curso "META ADS con CLAUDE" (YouTube), `pauta-en-meta` |
 | `mensajes-y-afirmaciones` | núcleo | C (desvíos del sitio: I) | "¿Qué cifras puedo poner en un anuncio?", "¿puedo decir 90 % menos tiempo?", "¿qué llamado a la acción uso?" |  | `diseno/README.md` §Voz y §Vocabulario, `sitio-web.md` §Cifras de marketing, `por-confirmar.md` §4 |
+| `tecnicas-de-persuasion` | núcleo | C (riesgo legal: I) | "¿Qué técnica de venta uso en este anuncio?", "¿puedo poner últimos cupos?", "¿cómo uso testimonios?", "¿cómo presento los precios?" |  | Video "7 Técnicas de psicología oscura para vender" de Pedro Buerbaum (YouTube, procesado el 10/11/2026), `mensajes-y-afirmaciones`, `precios` |
 | `embudo-de-adquisicion` | núcleo | C (métricas: I) | "¿Cómo llega un prospecto a ser usuario?", "¿cuándo se considera activa una cuenta?", "¿qué pasa cuando se acaba la prueba?" |  | `demostraciones-y-ventas.md` §Cierre típico, código de `platform` |
 | `ver-embudo-de-activacion` | neurona | I | "¿Dónde veo el embudo de activación?", "¿dónde veo las organizaciones atascadas?" | `embudo-de-adquisicion` | código de `platform` |
 | `campanas-de-activacion` | núcleo | C (administración: I) | "¿Qué es un código de activación?", "¿cuántas facturas regala un código?", "¿a quién le puedo mandar el correo de campaña?" |  | código de `platform` |
@@ -331,6 +332,9 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `linea-grafica` | `voz-de-marca` | Cómo se escribe el texto de la pieza |
 | `mensajes-y-afirmaciones` | `precios` | Qué tarifas se pueden publicar |
 | `mensajes-y-afirmaciones` | `argumentos-de-venta` | Qué mensaje mueve a cada perfil |
+| `tecnicas-de-persuasion` | `mensajes-y-afirmaciones` | Qué cifras y frases se pueden usar en cada técnica |
+| `tecnicas-de-persuasion` | `pauta-en-meta` | En qué etapa del embudo va cada técnica |
+| `revisar-pieza-antes-de-publicar` | `tecnicas-de-persuasion` | Si la urgencia, el testimonio o el tercero que usa la pieza son reales |
 | `revisar-pieza-antes-de-publicar` | `mensajes-y-afirmaciones` | Si una cifra se puede publicar |
 | `embudo-de-adquisicion` | `onboarding` | Lo que ve el usuario al registrarse y activar |
 | `embudo-de-adquisicion` | `campanas-de-activacion` | La prueba con código |

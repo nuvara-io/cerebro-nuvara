@@ -27,3 +27,4 @@ fuentes:
 6. [C] **Línea gráfica:** Poppins; un solo fondo; titular en dos tonos o dos pesos; una sola palabra con degradado; wordmark arriba al centro; texto sobre velo cuando hay foto; sin emojis.
 7. [C] **Legibilidad:** cuerpo de 30px o más sobre fondo gris; blanco sobre turquesa solo en Bold de 40px o más; en historias y reels, nada en las zonas que tapa la app.
 8. [C] **Nuvi:** solo en contenido educativo o de comunidad, nunca en un anuncio de producto o de cobro, y con el nombre bien escrito.
+9. [C] **Persuasión honesta:** si la pieza usa urgencia, cupos, testimonios o el nombre de un tercero, todo es real y vigente el día que sale, y usa una o dos técnicas, no más (ver `tecnicas-de-persuasion`).
