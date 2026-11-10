@@ -461,6 +461,43 @@
       ]
     },
     {
+      "pregunta": "¿Cómo comparto un post en grupos de Facebook?",
+      "publico": "C",
+      "nodos": [
+        "compartir-post-en-grupos"
+      ],
+      "incluye": [
+        [
+          "Compartir"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo armo el catálogo de WhatsApp?",
+      "publico": "C",
+      "nodos": [
+        "preparar-whatsapp-business"
+      ],
+      "incluye": [
+        [
+          "catálogo",
+          "Catálogo"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué hago con los leads que no respondieron?",
+      "publico": "I",
+      "nodos": [
+        "recontactar-leads-sin-respuesta"
+      ],
+      "incluye": [
+        [
+          "WhatsApp"
+        ]
+      ]
+    },
+    {
       "pregunta": "¿Cómo armamos las campañas en Meta?",
       "publico": "C",
       "nodos": [

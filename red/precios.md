@@ -79,6 +79,8 @@ Definida por el equipo el 05/11/2026 para la pauta "Ponte al día", dirigida a c
   - 1.000 documentos: **$580.000**
   - 3.000 documentos: **$1.350.000**
   - Más de 3.000 documentos: **se cotiza**
+- [P] Los **$150.000 del paquete inicial** son sus 30 facturas del año con el certificado: no son una habilitación (09/11/2026).
+- [I] **No se comunica un valor por documento** de los paquetes: se venden y se anuncian por paquete (decisión del 09/11/2026).
 - [P] Los paquetes y el certificado tienen **vigencia de un año**.
 - [P] **Si se te acaban los documentos antes del año**, compras otro paquete con **10 % de descuento** sobre el paquete que ya tienes. Ese paquete queda atado a la vigencia del certificado inicial. Por ejemplo, si compras 120 documentos en enero y se acaban en junio, otro paquete de 120 te cuesta $178.200.
 - [P] El certificado de una empresa sirve para su facturación y su nómina electrónica. Si ya lo tienes por nómina y quieres facturar, pagas el paquete completo.

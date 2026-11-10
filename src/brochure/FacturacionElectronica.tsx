@@ -1,4 +1,4 @@
-import { ArrowRight, FileCheck2, FileText, Landmark, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
+import { ArrowRight, FileCheck2, FileText, MessageCircle, Receipt, Rocket, Send, ShieldCheck, Users, Wallet } from "lucide-react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import { logo } from "../brand/assets";
 import { font } from "../brand/fonts";
@@ -21,7 +21,7 @@ const Dividida: React.FC<Omit<React.ComponentProps<typeof DivididaBase>, "total"
 // 01 · Portada
 export const PortadaFE: React.FC = () => (
   <AbsoluteFill style={{ background: color.accentDeep, overflow: "hidden" }}>
-    <Img src={staticFile("posts/banco-156.jpg")} style={{ position: "absolute", top: 0, right: -400, height: "100%" }} />
+    <Img src={staticFile("posts/banco-138.jpg")} style={{ position: "absolute", top: 0, right: 0, width: 1240, height: "100%", objectFit: "cover", objectPosition: "50% 12%" }} />
     <div
       style={{
         position: "absolute",
@@ -194,6 +194,8 @@ export const Reglas: React.FC = () => (
   </Dividida>
 );
 
+// Paquetes anuales de facturación electrónica (red/precios.md, 06/11/2026).
+// Se venden por paquete: no se muestra un valor por documento.
 const PAQUETES = [
   ["120", "$198.000"],
   ["1.000", "$580.000"],
@@ -210,10 +212,10 @@ export const PreciosFE: React.FC = () => (
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr 1fr", gap: 28 }}>
         <Tarjeta style={{ background: color.accent, display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
-          <Landmark {...icono} />
+          <FileText {...icono} />
           <p style={t(56, { fontWeight: 700, color: color.white, lineHeight: 1 })}>$150.000</p>
           <p style={t(28, { fontWeight: 700, color: color.white })}>Paquete inicial</p>
-          <p style={t(23, { color: color.white })}>30 documentos, certificado digital y configuración ante la DIAN.</p>
+          <p style={t(23, { color: color.white })}>30 facturas al año, con el certificado digital incluido.</p>
         </Tarjeta>
         <Tarjeta style={{ display: "grid", gap: 10, alignContent: "start", padding: 30 }}>
           <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Más documentos al año</p>
@@ -233,7 +235,7 @@ export const PreciosFE: React.FC = () => (
         </Tarjeta>
       </div>
       <p style={t(24)}>
-        <Emphasis text="Consumen el paquete la factura, las *notas* y el *documento soporte*. Cada paquete es *por empresa* y vale *un año*: si se acaban antes, el siguiente tiene *10 % de descuento*." />
+        <Emphasis text="Cada paquete trae el *certificado digital* y vale *un año*. Consumen el paquete la factura, las *notas* y el *documento soporte*. Es *por empresa*: si se acaban antes, el siguiente tiene *10 % de descuento*." />
       </p>
     </div>
   </Slide>

@@ -12,6 +12,7 @@ import { NominaCompleta } from "./posts/modulos/NominaCompleta";
 import { PonteAlDia } from "./posts/modulos/PonteAlDia";
 import { HistoriaPonteHasta30, HistoriaVenceIva } from "./posts/modulos/Semana";
 import { TesoreriaConciliada } from "./posts/modulos/TesoreriaConciliada";
+import { BlogCompararDian } from "./posts/BlogCompararDian";
 import { PortadaCausaciones } from "./posts/PortadaCausaciones";
 import { Post500Causaciones } from "./posts/Post500Causaciones";
 import { QueEsNuvara } from "./posts/QueEsNuvara";
@@ -23,6 +24,8 @@ import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
+import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
+import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
 import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
@@ -70,11 +73,20 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelAppProximamente" component={ReelAppProximamente} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP_PROXIMAMENTE * 30)} />
         <Composition id="ReelPonteAlDia" component={PonteAlDiaVideo} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
         <Composition id="VideoPonteAlDia" component={PonteAlDiaVideo} width={1920} height={1080} fps={30} durationInFrames={Math.round(DURACION_PONTE_AL_DIA * 30)} />
+        <Composition id="Pauta-N2-Dian" component={ReelN2} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N2} />
+        <Composition id="Pauta-N3-500Causaciones" component={ReelN3} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N3} />
+        <Composition id="Pauta-N4-VariosProgramas" component={ReelN4} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N4} />
+        <Composition id="Pauta-N5-PagasLoQueCausas" component={ReelN5} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N5} />
+        <Composition id="ReelCreditos" component={ReelCreditos} width={1080} height={1920} fps={30} durationInFrames={DURACION_REEL_CREDITOS} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
         <Still id="PortadaCausaciones" component={PortadaCausaciones} width={1080} height={1350} />
+        {/* Portadas del artículo s01 del blog: hero, miniatura y para compartir */}
+        <Still id="Blog-CompararDian-Hero" component={BlogCompararDian} width={1536} height={864} />
+        <Still id="Blog-CompararDian-Card" component={BlogCompararDian} width={920} height={517} />
+        <Still id="Blog-CompararDian-OG" component={BlogCompararDian} width={1200} height={630} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
         <Still id="N2-Dian1" component={DianPlaca1} width={1080} height={1350} />
         <Still id="N2-Dian2" component={DianPlaca2} width={1080} height={1350} />
