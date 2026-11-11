@@ -23,7 +23,7 @@ Entender cómo se cobra y cómo recargar la billetera.
 - Documentos eliminados antes de precausar no se cobran.
 - Una compra consume más créditos que una venta (menos interpretación en la venta). El costo depende del tipo de operación, por eso **créditos no equivale a facturas**.
 - Los créditos **no tienen fecha de vencimiento**: se pueden gastar en un día o en meses. Los no consumidos se acumulan (ver `por-confirmar.md` por la vigencia).
-- Eventos RADIAN costarían una fracción mayor por evento.
+- RADIAN ya no se cobra por evento: desde el 11/11/2026 es un plan anual de $200.000 por empresa con eventos ilimitados (ver `red/precios.md`).
 - Los créditos se compran una vez y se comparten entre **todas las empresas** del usuario: no hay que recargar por empresa. núvara cobra por causación, no por empresa.
 - La automatización de la asociación de anticipos no tiene costo adicional.
 

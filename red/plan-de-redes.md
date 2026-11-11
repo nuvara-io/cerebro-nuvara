@@ -39,6 +39,6 @@ Qué publica núvara en redes sin pauta, en qué orden y con qué ritmo. Va del 
 - [C] Cuando una publicación tenga artículo relacionado en el sitio, el artículo sale primero y el texto lleva a él.
 
 ## Para el equipo
-- [I] Por confirmar: si existe la cuenta de TikTok, los enlaces de tiendas de la app y si se pueden publicar el precio de $100 por evento RADIAN y los de suscripción.
+- [I] Por confirmar: si existe la cuenta de TikTok, los enlaces de tiendas de la app y si se pueden publicar el precio de $200.000 al año del plan RADIAN y los de suscripción.
 - [I] Antes de programar hay que corregir el nombre de la página de Facebook.
 - [I] No hay medición de resultados orgánicos en el cerebro. Falta definir quién la lleva y cada cuánto.

@@ -86,7 +86,8 @@ Definida por el equipo el 05/11/2026 para la pauta "Ponte al día", dirigida a c
 - [P] El certificado de una empresa sirve para su facturación y su nómina electrónica. Si ya lo tienes por nómina y quieres facturar, pagas el paquete completo.
 - [P] El paquete se descuenta **en documentos**, no en pesos. Si se acaba, compras otro.
 - [P] **Qué consume el paquete:** la factura de venta, las notas crédito y débito, el documento soporte y su nota de ajuste.
-- [P] **Eventos RADIAN:** **$100 por evento** (100 créditos), descontados del saldo. Cada acuse o evento se cobra aparte y no consume el paquete. En facturación electrónica, el saldo solo se usa para RADIAN.
+- [P] **RADIAN:** **$200.000 al año por empresa**, con **eventos ilimitados** (11/11/2026). Se paga completo, no con el saldo, y los eventos no consumen el paquete de documentos.
+- [I] **Por definir de RADIAN:** si exige tener un paquete de facturación o el certificado, si su año va atado al del certificado, si entra en el paquete integral y si el precio lleva IVA.
 - [P] Las pruebas ante la DIAN no se cobran.
 
 ## Nómina
@@ -146,10 +147,10 @@ No se dicen al público. A comerciales y agentes se les muestran marcadas como "
   - Terminar Caja e informes, que el paquete integral necesita.
 - [I] **Equivalencia del crédito (05/11/2026):** el equipo decidió que 1 crédito vale $1 para que no haya conversiones. Es un requisito para la plataforma y el sitio; los precios en pesos no cambian.
 - [I] **Modelos de negocio (03/11/2026):** el modelo **por recarga** (los créditos nunca vencen, sin mínimo) **ya no se vende**. Se venden **suscripción + recarga** (consumo mínimo de $80.000) y **suscripción** de precio fijo para empresas y firmas contables grandes.
-- [I] **Requisito para la plataforma (04/11/2026):** el precio de cada acuse o evento RADIAN debe ser configurable desde el super admin, evento por evento. El precio inicial es $100. Si cambia, se actualiza aquí.
+- [I] **Requisito para la plataforma (11/11/2026):** RADIAN pasa de cobro por evento a un plan anual por empresa de $200.000 con eventos ilimitados. El precio debe ser configurable desde el super admin y los eventos dejan de descontarse del saldo. Reemplaza el requisito del 04/11/2026 (precio por evento de $100).
 - [I] **Falta alinear con el modelo nuevo:** el sitio oficial y la plataforma siguen con las reglas anteriores (lo no consumido se acumula, módulos sin tarifa publicada). Revisar además el tema con asesoría legal, que estaba pendiente.
 - [I] Diseño del monedero (04/05/2026): una sola moneda interna, los "paquetes" son solo sugerencias por tamaño de empresa y la nómina se cobraría por empleado activo al inicio de cada mes.
-- [I] En la plataforma, la tarifa base sembrada es de $1.000 por documento electrónico y $0 por evento RADIAN, distinta del modelo nuevo (paquetes y $100 por evento); se puede ajustar por empresa. El mensaje de saldo insuficiente todavía dice "Nuvicoins".
+- [I] En la plataforma, la tarifa base sembrada es de $1.000 por documento electrónico y $0 por evento RADIAN, distinta del modelo nuevo (paquetes y plan RADIAN anual); se puede ajustar por empresa. El mensaje de saldo insuficiente todavía dice "Nuvicoins".
 - [I] La recarga mínima ($70.000) y el mínimo mensual ($80.000) son parámetros globales de la plataforma (`billing_settings`); el mínimo mensual y los días de gracia se pueden cambiar por organización. El modo por defecto de las cuentas nuevas es `MINIMUM_MONTHLY`.
 - [I] **Decisiones pendientes del equipo:** precio de compra y escalas, precio de las variantes de 2.000 a más de 4.000, descuentos y referidos, vencimiento, mínimo en el primer mes, medios de pago y regla de cobro y devolución.
 
@@ -168,6 +169,7 @@ Son cifras de reuniones, borradores o planes superados. Si alguien las repite, s
 - Crédito a **$100**, compra a **5,1 créditos**, venta a **2 créditos** o recarga mínima de **700 créditos**: fue la equivalencia anterior al 05/11/2026.
 - **Habilitación de $150.000 al año con 20 documentos**, documento a **$1.500** y bolsas de **$180.000, $425.000, $525.000 o $1.000.000**: fue el modelo anterior al 06/11/2026.
 - Nómina a **$8.000, $6.000 o $5.000** por empleado en tramos de 5, 10, 30 y 50, con **$44.000, $88.000, $198.000 o $275.000** mes a mes: fue el modelo anterior al 06/11/2026.
+- Evento RADIAN a **$100** (100 créditos) descontado del saldo: fue el modelo anterior al 11/11/2026.
 - Nombres de la unidad distintos de **créditos**: Nubi Coins, Nubic Coins, monedas, nuvicoins.
 
 ## Cómo responder

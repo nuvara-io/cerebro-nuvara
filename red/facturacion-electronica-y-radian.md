@@ -35,7 +35,7 @@ El módulo para emitir documentos electrónicos ante la DIAN desde núvara y reg
 - [P] La facturación electrónica es un módulo aparte de la causación, con precio propio (detalle en `precios`).
 - [P] **Paquetes anuales por empresa, con el certificado incluido:** 30 documentos por $150.000, 120 por $198.000, 1.000 por $580.000 y 3.000 por $1.350.000.
 - [P] **Cada documento** (factura, nota o documento soporte) se descuenta del paquete. Si se acaba antes del año, el siguiente paquete tiene 10 % de descuento.
-- [P] **Cada evento RADIAN** cuesta **$100** (100 créditos) y se descuenta del saldo.
+- [P] **RADIAN** cuesta **$200.000 al año por empresa**, con **eventos ilimitados**. Se paga completo, no con el saldo, y no consume el paquete.
 - [P] El saldo se reserva al enviar y se descuenta solo si la DIAN acepta; si rechaza, se devuelve. Las pruebas ante la DIAN no se cobran. Reintentar un documento que falló vuelve a cobrar.
 
 ## Dónde está en la plataforma

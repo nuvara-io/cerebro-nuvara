@@ -229,9 +229,9 @@ export const PreciosFE: React.FC = () => (
         </Tarjeta>
         <Tarjeta style={{ display: "grid", gap: 12, alignContent: "start", padding: 30 }}>
           <Wallet size={34} color={color.accent} strokeWidth={2.1} />
-          <p style={t(56, { fontWeight: 700, color: color.accent, lineHeight: 1 })}>$100</p>
-          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>Por evento RADIAN</p>
-          <p style={t(23)}>100 créditos por cada acuse o evento. No consume el paquete.</p>
+          <p style={t(56, { fontWeight: 700, color: color.accent, lineHeight: 1 })}>$200.000</p>
+          <p style={t(28, { fontWeight: 700, color: color.textTitle })}>RADIAN al año</p>
+          <p style={t(23)}>Eventos ilimitados por empresa. No consume el paquete.</p>
         </Tarjeta>
       </div>
       <p style={t(24)}>

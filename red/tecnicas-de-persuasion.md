@@ -57,7 +57,7 @@ Siete técnicas de venta que vienen de un video público sobre "psicología oscu
 
 ## 5. Contraste
 - [C] **Qué es:** el cerebro no evalúa en absoluto sino en comparación con lo que vio al lado.
-- [C] **En núvara:** el contraste más fuerte no es de precio sino de trabajo: **digitar factura por factura frente a revisar y aprobar** lo que núvara ya preparó. En precio, las opciones son reales (créditos, suscripción de 500 o de 1.000 causaciones) y su diferencia es la previsibilidad del gasto, no un ahorro por factura: la suscripción de 1.000 por $510.000 sale al mismo valor que causar por créditos. Después de la causación, un módulo pequeño (eventos RADIAN a $100) se presenta junto al valor de lo que ya se compró.
+- [C] **En núvara:** el contraste más fuerte no es de precio sino de trabajo: **digitar factura por factura frente a revisar y aprobar** lo que núvara ya preparó. En precio, las opciones son reales (créditos, suscripción de 500 o de 1.000 causaciones) y su diferencia es la previsibilidad del gasto, no un ahorro por factura: la suscripción de 1.000 por $510.000 sale al mismo valor que causar por créditos. Después de la causación, un módulo complementario (RADIAN, $200.000 al año con eventos ilimitados) se presenta junto al valor de lo que ya se compró.
 - [C] **No se hace:** un paquete "señuelo" diseñado para que nadie lo elija, ni prometer un ahorro por factura que las tarifas no dan.
 
 ## 6. Autoridad prestada
