@@ -25,7 +25,7 @@ El camino de un prospecto desde que ve una pieza hasta que su cuenta queda habil
 4. [C] **Activación** en **Activa tu cuenta**: paga la **recarga inicial**, que es el mínimo mensual ($80.000), por Wompi, Bre-B o QR. Si pide capacitación, paga $230.000: $150.000 de la capacitación y esos $80.000 de saldo. Si tiene un código, lo escribe en **Tengo un código** y entra a la **prueba** sin pagar.
 5. [C] **Prueba:** causa con el crédito de bienvenida (por defecto, 20 facturas) en una sola empresa, con hasta 20 facturas traídas del correo y sin la extensión de la DIAN. La guía **Primeros pasos** lo acompaña: configurar la empresa, importar facturas y causar la primera.
 6. [C] **Habilitación:** cuando se acaba el crédito, la plataforma le muestra "Se acabó tu prueba gratis" con el botón **Habilitar mi cuenta**. Al recargar al menos el mínimo mensual, la cuenta pasa sola al plan de mínimo mensual, conserva su saldo y desbloquea la extensión.
-7. [C] **Capacitación y piloto:** si la pidió, se agenda la capacitación (unas 2 horas) y se empieza con una empresa antes de pasar las demás.
+7. [C] **Capacitación y piloto:** si la pidió, se agenda la capacitación y se empieza con una empresa antes de pasar las demás.
 
 ## Qué cuenta como cuenta activa
 - [C] Una organización está **activa** cuando alguna de sus empresas causó al menos 2 facturas en un mes.

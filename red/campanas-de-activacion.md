@@ -2,7 +2,7 @@
 id: campanas-de-activacion
 titulo: Campañas con código de activación
 publico: C
-actualizado: 2026-11-03
+actualizado: 2026-11-12
 conexiones:
   - embudo-de-adquisicion   # dónde entra la prueba en el camino
   - mensajes-y-afirmaciones # qué se dice en el correo
@@ -18,6 +18,11 @@ Un código de activación le regala a quien se registra un número de facturas p
 - [C] Un **crédito de bienvenida** para causar el número de facturas de la campaña (por defecto, 20), que se carga a su saldo.
 - [C] Su cuenta entra en **prueba**: una empresa, hasta 20 facturas traídas del correo y sin la extensión de la DIAN. No vence por tiempo; dura lo que el crédito.
 - [C] Un código sirve una vez por organización y una vez por persona. No distingue mayúsculas ni espacios.
+
+## Campaña NUVARA20 (pauta)
+- [C] Es el código de los anuncios de 20 facturas gratis: `app.nuvara.com.co/signup?code=NUVARA20`. Da 20 causaciones sin tarjeta ni recarga, en una empresa y solo para causación: facturación electrónica, nómina y tesorería no entran en la prueba.
+- [C] En la prueba las facturas se suben a mano (ZIP o XML de la DIAN) o llegan por el correo conectado; la extensión de la DIAN se habilita al activar la cuenta.
+- [C] Se manda solo a quien viene de un anuncio de causación o de 20 facturas, o pide el código. A quien llega por un anuncio de facturación electrónica, RADIAN o «Ponte al día» se le responde por ese tema.
 
 ## Cómo se usa
 - [C] Con un enlace: `app.nuvara.com.co/signup?code=<CÓDIGO>` registra a la persona y le aplica el código al crear su organización.
