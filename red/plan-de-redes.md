@@ -2,13 +2,14 @@
 id: plan-de-redes
 titulo: Plan de redes orgánico
 publico: C
-actualizado: 2026-11-04
+actualizado: 2026-11-12
 vigencia: revisar cada mes, junto con la planeación de marketing
 conexiones:
   - calendario-de-marketing # donde se revisa y se aprueba cada publicación
   - planeacion-de-marketing # las fechas y los temas del mes
   - linea-grafica           # cómo se ven las piezas
   - mensajes-y-afirmaciones # qué se puede afirmar
+  - crecimiento-en-instagram # cómo ganar alcance en Instagram
 fuentes:
   - red/calendario.json
   - diseno/redes.md
@@ -39,6 +40,6 @@ Qué publica núvara en redes sin pauta, en qué orden y con qué ritmo. Va del 
 - [C] Cuando una publicación tenga artículo relacionado en el sitio, el artículo sale primero y el texto lleva a él.
 
 ## Para el equipo
-- [I] Por confirmar: si existe la cuenta de TikTok, los enlaces de tiendas de la app y si se pueden publicar el precio de $100 por evento RADIAN y los de suscripción.
+- [I] Por confirmar: si existe la cuenta de TikTok, los enlaces de tiendas de la app y si se pueden publicar el precio de $200.000 al año del plan RADIAN y los de suscripción.
 - [I] Antes de programar hay que corregir el nombre de la página de Facebook.
 - [I] No hay medición de resultados orgánicos en el cerebro. Falta definir quién la lleva y cada cuánto.

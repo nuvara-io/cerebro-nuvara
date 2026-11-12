@@ -12,7 +12,7 @@ Revisado por lectura contra `platform` en `3926e8adb` (06/11/2026). Las rutas so
 | Certificado | Renovación anual cobrada aparte | Incluido en el paquete y en los tramos de nómina |
 | Nómina | Tramos de 5, 10, 30 y 50 con pago mes a mes | Tramos anuales de 1 a 90 |
 | Paquete integral | No existe | Todos los módulos por $990.000 al mes |
-| RADIAN | $100 por evento | Sin cambio |
+| RADIAN | $100 por evento, del saldo | $200.000 al año por empresa, eventos ilimitados (11/11/2026) |
 | Causación | $510 compra, $200 venta | Sin cambio |
 
 No hace falta migrar a nadie: todavía no hay usuarios habilitados en esos consumos.
@@ -31,11 +31,11 @@ Más de 3.000 documentos se cotiza por WhatsApp.
 **Reglas**
 - Cualquier paquete incluye el certificado digital y la configuración inicial. No se cobra habilitación aparte.
 - Paquete y certificado son de una sola empresa: no se venden por firma ni se comparten.
-- El paquete se paga completo, no con el saldo. En facturación, el saldo solo se usa para RADIAN.
+- El paquete se paga completo, no con el saldo.
 - El paquete y el certificado valen un año desde la compra inicial.
 - Un paquete comprado después, dentro de ese año, tiene **10 % de descuento** y vence con el certificado inicial. Ejemplo: 120 documentos en enero y otro de 120 en junio por $178.200.
 - El paquete se descuenta en documentos, no en pesos.
-- El evento RADIAN se cobra aparte, del saldo, y no consume el paquete.
+- RADIAN se cobra aparte: un plan anual por empresa de $200.000 con eventos ilimitados. Se paga completo, no con el saldo, y no consume el paquete. Los eventos dejan de descontarse del saldo y el precio se edita en el super admin.
 
 **Dónde mirar**
 - `apps/api/src/electronic-billing-invoice-bags/`: productos, compra y saldo por empresa. Hoy el saldo no tiene vencimiento: hay que agregar la vigencia y el descuento.
@@ -122,6 +122,7 @@ Dejar estos valores configurables o fuera de esta entrega:
 - Qué precios van con IVA: falta revisarlo con el contador.
 - Límites y permanencia del paquete integral.
 - Si el plan inicial de nómina trae documentos de facturación.
+- Si RADIAN exige un paquete de facturación o el certificado, si su año va atado al del certificado y si entra en el paquete integral.
 
 ## Orden sugerido
 

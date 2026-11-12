@@ -452,11 +452,15 @@
       "nodos": [],
       "incluye": [
         [
-          "\\$100"
+          "200.000"
+        ],
+        [
+          "ilimitados"
         ]
       ],
       "excluye": [
-        "consumen cupo"
+        "consumen cupo",
+        "\\$100 "
       ]
     }
   ]

@@ -2,7 +2,7 @@
 id: demostracion-en-vivo
 titulo: Demostración en vivo
 publico: C
-actualizado: 2026-11-02
+actualizado: 2026-11-12
 conexiones:
   - argumentos-de-venta   # qué responder o qué mostrar
 fuentes:
@@ -16,6 +16,11 @@ fuentes:
 # Demostración en vivo
 
 Cómo se prepara, se presenta y se cierra una demostración en vivo de núvara. Es el canal que más ventas trae.
+
+## Cuándo se agenda
+- [C] Es gratis y dura unos 30 minutos, por Google Meet.
+- [C] Horario: lunes a viernes de 8:00 a. m. a 12:00 m. y de 1:30 p. m. a 4:30 p. m., y sábados de 8:00 a. m. a 12:00 m. Nunca en festivos de Colombia.
+- [I] El CRM de WhatsApp la agenda con el calendario del equipo: citas de 30 minutos con 5 de respiro.
 
 ## Cómo preparar la demostración en vivo
 - [C] Pide antes el RUT, el balance de prueba por terceros, los correos donde llegan las facturas y el acceso a la DIAN. Si no hay acceso al correo, se sigue y se conecta después.

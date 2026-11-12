@@ -21,7 +21,7 @@ fuentes:
 núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo recargar, cómo ver el saldo y cuántas facturas te alcanzan. Cuánto cuesta cada cosa está en `precios`.
 
 ## Cómo funcionan los créditos
-- [P] Recargas créditos una vez y cada causación o evento RADIAN se descuenta de tu saldo.
+- [P] Recargas créditos una vez y cada causación se descuenta de tu saldo.
 - [P] El saldo es de tu cuenta, no de cada empresa: lo compartes entre todas tus empresas y no tienes que recargar por empresa.
 - [P] Una compra consume más créditos que una venta, por eso los créditos no equivalen a un número fijo de facturas.
 - [P] Traer las facturas de la DIAN o del correo no gasta créditos: se descuentan cuando núvara causa la factura. Lo que eliminas de **Pendientes** antes de causar no cuesta.
@@ -56,7 +56,7 @@ núvara se paga con **créditos** que recargas en tu saldo. Aquí está cómo re
 ## Qué pasa si se acaba el saldo
 - [P] Cuando te estás quedando sin créditos, la plataforma te avisa con un botón para recargar.
 - [P] Con el saldo en cero no puedes causar ni emitir documentos electrónicos hasta que recargues.
-- [P] Los paquetes de facturación electrónica y los tramos de nómina se pagan completos, no con el saldo. Tus créditos sirven para causar y para los eventos RADIAN.
+- [P] Los paquetes de facturación electrónica, el plan anual de RADIAN y los tramos de nómina se pagan completos, no con el saldo. Tus créditos sirven para causar.
 - [P] Si lanzas una causación por lote con más facturas de las que cubre tu saldo, núvara te avisa: recarga o reduce el rango de fechas.
 - [P] Si trabajas en volumen, recarga antes de empezar el mes para no frenar el trabajo.
 

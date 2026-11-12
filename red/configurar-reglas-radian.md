@@ -34,5 +34,6 @@ fuentes:
 
 ## Lo que hay que saber
 - [P] La aceptación expresa automática se envía solo si no hay reclamo y dentro de los 3 días hábiles siguientes al recibo; piénsalo bien antes de ponerla para todos los proveedores.
-- [P] Solo aplica a compras a crédito con CUFE. Cada evento enviado se descuenta del saldo; sin saldo, se reintenta más tarde.
+- [P] Solo aplica a compras a crédito con CUFE. Con el plan anual de RADIAN los eventos son ilimitados.
+- [I] Hoy la plataforma todavía descuenta cada evento del saldo y, sin saldo, lo reintenta más tarde; cambia cuando se implemente el plan anual (11/11/2026).
 - [P] Una regla que falla 3 veces queda **Auto-pausada**: revisa la causa y vuelve a encenderla.

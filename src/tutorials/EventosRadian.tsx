@@ -137,8 +137,7 @@ const PASOS: Paso[] = [
     subtitulos: [
       { texto: "Pulsa *Acusar*, revisa y envía", en: 0.4 },
       { texto: "Queda *enviado* y en tu lista", en: 3.6, arriba: true },
-      // La cámara ya está en el saldo, arriba a la derecha
-      { texto: "Cada evento: *$100* en créditos", en: 6.8 },
+      { texto: "Con tu plan RADIAN, *eventos ilimitados*", en: 6.8 },
     ],
   },
   {
