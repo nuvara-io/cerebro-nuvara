@@ -214,6 +214,7 @@ Piezas gráficas, pauta (método de creativos y campañas en Meta), mensajes que
 | `calendario-de-marketing` | núcleo | C (detalle técnico: I) | "¿Dónde está el calendario de marketing?", "¿qué estados tiene una publicación?", "¿quién aprueba lo que se publica?" |  | `red/calendario.json`, `docs/campana-cierre-iva-2026-11.md` |
 | `aprobar-publicacion` | neurona | C | "¿Cómo apruebo una publicación?", "¿cómo dejo una nota en el calendario?" | `calendario-de-marketing` | `red/calendario-de-marketing.md`, `red/revisar-pieza-antes-de-publicar.md` |
 | `plan-de-redes` | núcleo | C (pendientes: I) | "¿Cuál es el plan de redes?", "¿qué tema va cada semana en redes?", "¿a qué hora publicamos?" |  | `red/calendario.json`, `diseno/redes.md`, `diseno/reels.md` |
+| `crecimiento-en-instagram` | núcleo | C (pendientes: I) | "¿Cómo crecemos en Instagram?", "¿qué son los reels de prueba?", "¿activamos las traducciones de los reels?" |  | "16 Claves de Crecimiento en Instagram" (Adam Mosseri, Google Docs, procesado el 12/11/2026), `diseno/reels.md`, `plan-de-redes` |
 | `plan-seo` | núcleo | C (pendientes: I) | "¿Cuál es el plan SEO?", "¿qué artículos faltan en el blog?", "¿cómo medimos el SEO?" |  | `red/calendario.json`, `conocimiento/sitio-web.md`, código de `platform` |
 | `pauta-en-meta` | núcleo | C (techo de CPA y cifras del curso: I) | "¿Cómo armamos las campañas en Meta?", "¿cuándo apago un anuncio?", "¿cómo hago un creativo que funcione?", "¿por qué subió el costo por resultado?" |  | Curso "META ADS con CLAUDE" de Benjamín Cordero (YouTube, procesado el 09/11/2026), `planeacion-de-marketing`, `marketing-y-adquisicion` |
 | `operar-pauta-con-claude` | neurona | I | "¿Cómo conecto Meta Ads a Claude Code?", "¿cómo corro el juez de la pauta?" | `pauta-en-meta` | Curso "META ADS con CLAUDE" (YouTube), `pauta-en-meta` |
@@ -356,6 +357,10 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `plan-seo` | `modulos-disponibles` | No se posiciona lo que no está disponible |
 | `plan-de-redes` | `linea-grafica` | Cómo se ven las piezas |
 | `plan-de-redes` | `mensajes-y-afirmaciones` | Qué se puede afirmar en redes |
+| `plan-de-redes` | `crecimiento-en-instagram` | Cómo ganar alcance en Instagram |
+| `crecimiento-en-instagram` | `linea-grafica` | Cómo se ven los reels y sus subtítulos |
+| `crecimiento-en-instagram` | `calendario-de-marketing` | Un reel de prueba también se aprueba |
+| `crecimiento-en-instagram` | `pauta-en-meta` | Lo orgánico que gana pasa a pauta |
 | `calendario-de-marketing` | `revisar-pieza-antes-de-publicar` | La lista que se revisa en cada pieza |
 | `pauta-en-meta` | `mensajes-y-afirmaciones` | Qué se puede decir en el anuncio |
 | `pauta-en-meta` | `campanas-de-activacion` | El código que mide cada anuncio |

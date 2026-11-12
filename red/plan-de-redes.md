@@ -2,13 +2,14 @@
 id: plan-de-redes
 titulo: Plan de redes orgánico
 publico: C
-actualizado: 2026-11-04
+actualizado: 2026-11-12
 vigencia: revisar cada mes, junto con la planeación de marketing
 conexiones:
   - calendario-de-marketing # donde se revisa y se aprueba cada publicación
   - planeacion-de-marketing # las fechas y los temas del mes
   - linea-grafica           # cómo se ven las piezas
   - mensajes-y-afirmaciones # qué se puede afirmar
+  - crecimiento-en-instagram # cómo ganar alcance en Instagram
 fuentes:
   - red/calendario.json
   - diseno/redes.md
