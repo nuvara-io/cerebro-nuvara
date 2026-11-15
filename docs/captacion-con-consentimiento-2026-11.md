@@ -66,7 +66,7 @@ Hoy no se guarda la fuente ni los UTM de un registro. Con lo que ya existe se re
 |---|---|
 | Formulario de Meta (agendar) | `DEMOMETA` |
 | Formulario de Meta (calendario de enero) | `ENERO27` |
-| Página de inscripción del sitio | `DEMOSITIO` |
+| Página de inscripción del sitio (sale el 17/11) | `DEMOSITIO` |
 | LinkedIn uno a uno | `DEMOLINKEDIN` |
 | Recontacto de la base | `DEMOBASE` |
 
