@@ -2,7 +2,7 @@
 id: causar-y-revisar
 titulo: Causar y revisar
 publico: P
-actualizado: 2026-11-02
+actualizado: 2026-11-15
 conexiones:
   - correcciones-y-aprendizaje   # corregir una cuenta
   - aprobacion-en-bloque         # aprobar muchas a la vez
@@ -79,6 +79,14 @@ Causar es convertir una factura electrónica en su asiento contable. núvara int
 
 ## Para el equipo
 - [C] El mensaje clave: núvara acelera la causación, pero el contador revisa y valida. No ofrecer causación "sin revisión".
+- [C] **Diferencial: inteligencia contable real** (verificado en el código el 15/11/2026). La propuesta del asiento parte de la configuración de la empresa y de la norma, no solo de lo aprendido:
+  - La cuenta de cada ítem sigue este orden: reglas aprendidas que ya se aplican solas, correcciones del usuario que coinciden exacto, lo aprendido de correcciones parecidas, el historial del proveedor y, al final, una elección entre las cuentas candidatas del proveedor y del plan de la empresa. La cuenta del producto y la regla fija mandan sobre todo eso.
+  - Nunca propone una cuenta que no exista en el plan de cuentas de la empresa. Si no tiene con qué sustentarla, la deja pendiente y la marca para revisión en vez de poner una cuenta por defecto.
+  - El balance de prueba por terceros genera la relación proveedor→cuenta (se aplica sola con 3 o más movimientos y 90 % o más de consistencia), y la actividad económica (CIIU) orienta si una compra es gasto o costo.
+  - IVA y retenciones se calculan, no se adivinan: montos y bases del XML, tarifas y bases en UVT vigentes a la fecha de la factura y la condición del proveedor y del comprador (agente retenedor, autorretenedor, régimen simple, declarante). La ReteICA sale de las reglas que la empresa configura por municipio, CIIU y tarifa.
+  - Débitos y créditos tienen que cuadrar, y si el asiento no coincide con el total de la factura, se marca para revisión.
+- [C] Lo que no se dice: «sin inteligencia artificial» ni «100 % reglas». La inteligencia artificial participa al elegir la cuenta de gasto entre candidatos y el concepto de la retención cuando ninguna regla, corrección, producto o convención lo resuelve. Guion de referencia: g06 del calendario de marketing.
+- [I] Dónde está en el código: `apps/causation/src/causation_api/invoices/domain/services/account_suggestion/` (cascada en `expense_orchestration/deterministic_tiers.py` y `llm_tiers.py`, último recurso en `fallback.py`), retenciones en `core/catalogs/retention/` y `entry_generators/retention/fiscal_gates.py`, ReteICA en `rete_ica/rule_engine.py`, líneas para revisión en `apps/api/src/invoices/application/helpers/causation-line-review.helper.ts`.
 - [I] La interfaz escribe el estado como «Pre-causadas», con guion; `conocimiento/` dice «Precausadas».
 - [I] La pestaña «Con error» ya no existe (issue #1361); la tarjeta Pre-causadas muestra «N necesitan revisión» para las líneas de baja confianza.
 - [I] La opción **Causación inteligente** de Acciones abre el diálogo «Causación automática». También existe por proveedor, en su ficha › Automatización › Causación automática.

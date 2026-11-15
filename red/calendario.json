@@ -2241,5 +2241,77 @@
     "nota": "Propuesta nueva. Depende de que el PDF del calendario de enero esté listo y con las fechas verificadas contra la DIAN.",
     "copy": "[0–3 s] ¿Te falta alguna factura antes de cerrar el año?\n\n[3–12 s] Antes del cierre, compara las facturas que tienes con el listado de la DIAN.\n\n[12–22 s] núvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran. Las que faltan quedan listas para causar.\n\n[22–32 s] Y te enviamos el calendario de vencimientos de enero. Pídelo en nuvara.com.co/demostracion-en-vivo.",
     "orden": 70
+  },
+  {
+    "id": "g06",
+    "linea": "Guiones",
+    "modulo": "Causación",
+    "fecha": "2026-11-19",
+    "hora": "11:00",
+    "semana": 2,
+    "orden": 71,
+    "pieza": "Guion: causar no es adivinar (inteligencia contable real)",
+    "formato": "Video vertical 9:16, 45 a 55 s, a cámara con insertos de la plataforma",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn",
+      "TikTok"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Es el diferencial de núvara: la propuesta del asiento parte de la configuración de la empresa y de la norma tributaria, no solo de lo aprendido. Responde la primera duda de los prospectos, que es el control (no causar a ciegas).",
+    "quien": "Un contador o contadora del equipo de núvara. Se graba el mismo día que g02, después de ese.",
+    "locacion": "Locación de la sesión oficial de fotos (ver docs/banco-fotos.md): escritorio con computador, luz de ventana, fondo limpio y sin marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "0–3 s",
+        "dice": "Causar no es adivinar.",
+        "pantalla": "A cámara, plano medio. «Causar no es adivinar» en pantalla, en Poppins, con «adivinar» en azul."
+      },
+      {
+        "t": "3–10 s",
+        "dice": "En núvara, el asiento no sale de una suposición. Sale de tu empresa y de la norma.",
+        "pantalla": "A cámara. Las palabras «tu empresa» y «la norma» en pantalla."
+      },
+      {
+        "t": "10–20 s",
+        "dice": "Tu plan de cuentas, tu balance de prueba por terceros, tu actividad económica y tu régimen. Con eso propone la cuenta de cada ítem, y nunca una que no exista en tu plan de cuentas.",
+        "pantalla": "Inserto: configuración de la empresa (plan de cuentas y balance por terceros) y una causación con la etiqueta «Por la configuración de tu empresa». Empresa de prueba."
+      },
+      {
+        "t": "20–30 s",
+        "dice": "El IVA y las retenciones se calculan con las tarifas y las bases en UVT vigentes a la fecha de la factura, y con la condición del proveedor: autorretenedor, régimen simple o declarante. La ReteICA, con las reglas que configuras por municipio.",
+        "pantalla": "Inserto: líneas de IVA, retención en la fuente y ReteICA del asiento, con su base y tarifa a la vista."
+      },
+      {
+        "t": "30–38 s",
+        "dice": "Cuando no tiene con qué sustentar una cuenta, no la inventa: la marca para que la revises.",
+        "pantalla": "Inserto: la tarjeta de Pre-causadas con «necesitan revisión» y una línea marcada."
+      },
+      {
+        "t": "38–45 s",
+        "dice": "Y lo que corriges manda: lo aprende para ese proveedor o lo dejas como regla fija, que se cumple siempre.",
+        "pantalla": "Inserto: el diálogo «¿Dónde aplicar este cambio?» con «Crear una regla fija» seleccionada."
+      },
+      {
+        "t": "45–55 s",
+        "dice": "Una sola factura puede implicar más de diez decisiones contables. núvara las prepara; tú revisas, validas y apruebas. Eso es inteligencia contable real. Agenda tu demostración en vivo en nuvara.com.co.",
+        "pantalla": "Vuelve a cámara. «Inteligencia contable real» en pantalla y cierre con el logo y nuvara.com.co."
+      }
+    ],
+    "tomas": [
+      "Plano medio a cámara, vertical",
+      "Plano por encima del hombro con la configuración de la empresa en pantalla",
+      "Grabación de pantalla 1920×1080 de la empresa de prueba: configuración, asiento con IVA y retenciones, «necesitan revisión» y el diálogo de regla fija"
+    ],
+    "relaciones": [
+      "g02",
+      "p04"
+    ],
+    "archivo": "out/videos-personas/g06-causar-no-es-adivinar.mp4 (por grabar)",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "copy": "[0–3 s] Causar no es adivinar.\n\n[3–10 s] En núvara, el asiento no sale de una suposición. Sale de tu empresa y de la norma.\n\n[10–20 s] Tu plan de cuentas, tu balance de prueba por terceros, tu actividad económica y tu régimen. Con eso propone la cuenta de cada ítem, y nunca una que no exista en tu plan de cuentas.\n\n[20–30 s] El IVA y las retenciones se calculan con las tarifas y las bases en UVT vigentes a la fecha de la factura, y con la condición del proveedor: autorretenedor, régimen simple o declarante. La ReteICA, con las reglas que configuras por municipio.\n\n[30–38 s] Cuando no tiene con qué sustentar una cuenta, no la inventa: la marca para que la revises.\n\n[38–45 s] Y lo que corriges manda: lo aprende para ese proveedor o lo dejas como regla fija, que se cumple siempre.\n\n[45–55 s] Una sola factura puede implicar más de diez decisiones contables. núvara las prepara; tú revisas, validas y apruebas. Eso es inteligencia contable real. Agenda tu demostración en vivo en nuvara.com.co.",
+    "nota": "Propuesta nueva, contrastada con el código de la plataforma el 15/11/2026 (apps/causation). Lo que dice está verificado: el orden de la propuesta (reglas y correcciones primero, luego lo aprendido y el historial del proveedor), la cuenta siempre dentro del plan de la empresa, retenciones con tarifas y bases en UVT por fecha y condiciones del proveedor, ReteICA por reglas de municipio, líneas sin sustento marcadas para revisión y regla fija determinista. No decir «sin inteligencia artificial» ni «100 % reglas»: la inteligencia artificial participa al elegir la cuenta de gasto entre candidatos y el concepto de retención cuando no hay regla, corrección, producto o convención que lo resuelva. Al grabar la pantalla, evitar que se lea «Que el sistema aprenda» (texto de la interfaz que la marca no usa). Sale una versión de 30 s para pauta con las escenas 1, 2, 4, 5 y 7."
   }
 ]
