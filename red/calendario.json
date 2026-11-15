@@ -521,7 +521,7 @@
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
     "archivo": "out/reels/reel-app-proximamente.mp4",
     "copy": "Próximamente: núvara en tu celular. Tus clientes ven cómo va su empresa y aprueban pagos, y tu equipo registra los gastos de caja.\n\nMuy pronto en iOS y Android.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "No programar si la app ya salió.",
+    "nota": "No programar si la app ya salió. Programado en Business Suite como reel (FB + IG) el 12/11 para las 12:00, sin música agregada y sin subtítulos automáticos. TikTok queda pendiente: no sale desde Business Suite.",
     "estadoPieza": "lista",
     "thumb": "rp",
     "relaciones": []
@@ -537,7 +537,7 @@
       "a02",
       "s01"
     ],
-    "nota": "Parte del foco del 10 al 25: lleva al artículo s01. Mismo carrusel aprobado para pauta. Las cifras de la placa 3 son de ejemplo y la pieza lo dice. Placas N2-Dian1 a N2-Dian5.",
+    "nota": "Parte del foco del 10 al 25: lleva al artículo s01. Mismo carrusel aprobado para pauta. Las cifras de la placa 3 son de ejemplo y la pieza lo dice. Placas N2-Dian1 a N2-Dian5. Aprobado por el operador en el chat el 12/11. Programado en Business Suite (FB + IG) el 12/11 para las 18:00, con las 5 placas en orden y sin promocionar.",
     "id": "p31",
     "fecha": "2026-11-12",
     "hora": "18:00",
@@ -724,7 +724,7 @@
     "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
     "archivo": "out/campana-modulos/H2-FacturacionElectronica.png",
     "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
-    "nota": "Misma historia de p11, que vuelve a salir en la semana de su módulo: las historias duran 24 horas.",
+    "nota": "Misma historia de p11, que vuelve a salir en la semana de su módulo: las historias duran 24 horas. Aprobada por el operador en el chat el 12/11. Programada en Business Suite (historia FB + IG) el 12/11 para las 10:00, con enlace a nuvara.com.co (solo se ve en FB).",
     "estadoPieza": "lista",
     "thumb": "h2",
     "relaciones": [
@@ -749,7 +749,7 @@
     "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
     "archivo": "out/campana-modulos/H3-Nomina.png",
     "copy": "Texto en la historia: ya viene en la pieza. Agrega el enlace a nuvara.com.co.",
-    "nota": "Misma historia de p15, que vuelve a salir en la semana de su módulo: las historias duran 24 horas.",
+    "nota": "Misma historia de p15, que vuelve a salir en la semana de su módulo: las historias duran 24 horas. Aprobada por el operador en el chat el 13/11. Programada en Business Suite (historia FB + IG) el 13/11 para las 18:00, con enlace a nuvara.com.co (solo se ve en FB).",
     "estadoPieza": "lista",
     "thumb": "h3",
     "relaciones": []
@@ -1783,5 +1783,173 @@
     "porque": "Probar en frío si RADIAN trae conversaciones de quien recibe facturas a crédito.",
     "copy": "¿Compraste a crédito y no enviaste el acuse a la DIAN? ⚠️\n\nEn una fiscalización te pueden desconocer el costo y el IVA descontable de esas compras.\n\nCon núvara lo envías en un clic o lo dejas con reglas, y ves lo que está por vencer antes de que venza. El reclamo siempre lo decides tú.\n\nEscríbenos y te lo mostramos con tus facturas 👇",
     "nota": "Reel propio de pauta, hecho el 09/11/2026 porque el de p16 se sentía flojo: mostraba botones sin el problema. Arranca por lo que se pierde: gancho «¿Compraste a crédito? ¿Y el acuse?», luego «En una fiscalización te pueden desconocer el costo y el IVA descontable» (red/eventos-radian.md), después acusar en un clic, reglas recomendadas y Cumplimiento, y cierra con «Escríbenos por WhatsApp». Voz nueva de Eduardo (ElevenLabs). No menciona los $100 por evento hasta confirmarlo. Entra al laboratorio Ponte al día IVA dentro del mismo tope de $30.000 diarios: no suma presupuesto. Falta subirlo a Meta."
+  },
+  {
+    "id": "s12",
+    "linea": "SEO",
+    "modulo": "General",
+    "fecha": "2026-11-23",
+    "hora": "08:00",
+    "semana": 0,
+    "pieza": "Página de inscripción a la demostración en vivo",
+    "formato": "Página",
+    "canales": [
+      "Sitio web"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Todos los canales orgánicos necesitan un formulario con autorización de datos a dónde llevar. Sale antes que los anuncios y los posts.",
+    "archivo": "/demostracion-en-vivo/",
+    "copy": "Formulario con las mismas preguntas del formulario de Meta (perfil, cuántas empresas, facturas al mes y programa contable), nombre, correo y WhatsApp, y la casilla de autorización sin marcar con el enlace a la política de privacidad. Al enviar: «Un asesor te escribe por WhatsApp para agendar tu demostración en vivo». El registro posterior usa el código DEMOSITIO.",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md. El sitio vive fuera de este repo. Legal revisa la casilla y la política antes de publicar.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [],
+    "url": "/demostracion-en-vivo/",
+    "palabraClave": "demostración en vivo núvara",
+    "intencion": "Transaccional",
+    "tituloSeo": "Agenda tu demostración en vivo de núvara",
+    "metaDescripcion": "Un asesor te muestra núvara con tus empresas y tus facturas: cómo llegan de la DIAN y del correo, y cómo revisas y apruebas la causación.",
+    "orden": 60
+  },
+  {
+    "id": "a19",
+    "linea": "Pauta",
+    "modulo": "General",
+    "fecha": "2026-11-23",
+    "hora": "08:00",
+    "semana": 0,
+    "pieza": "Anuncio con formulario: agenda tu demostración en vivo",
+    "formato": "Imagen 4:5 (feed) y 9:16 (historias)",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "En Axioma POS, la pauta a conversaciones de WhatsApp trajo curiosos que no se registraban; el formulario instantáneo que pregunta perfil y tamaño filtró mejor. Además deja contactos con autorización para escribirles por correo.",
+    "archivo": "out/pauta/Pauta-DemostracionEnVivo.png y out/pauta/Pauta-DemostracionEnVivo-Historia.png (Remotion: Pauta-DemostracionEnVivo)",
+    "copy": "¿Llevas varias empresas y las facturas no dan espera? 📂\n\nnúvara trae tus facturas de la DIAN y del correo y prepara la causación con PUC, IVA y retenciones. Tú revisas, validas y apruebas.\n\nDéjanos tus datos y un asesor te escribe por WhatsApp para agendar tu demostración en vivo con tus propias facturas.",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md. Empieza cuando termina el laboratorio (25/11) y no compite con su presupuesto. Formulario instantáneo con: perfil (contador, firma o empresa), cuántas empresas, facturas al mes, programa contable y la casilla de autorización sin marcar con enlace a la política. El asesor responde el mismo día. Presupuesto y código son propuesta: los decide el operador.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s12"
+    ],
+    "titulo": "Agenda tu demostración en vivo",
+    "objetivo": "Clientes potenciales (formulario instantáneo)",
+    "presupuesto": "Propuesta: $20.000 diarios del 23 de noviembre al 6 de diciembre, con límite total de $280.000",
+    "codigo": "DEMOMETA (por crear)",
+    "destino": "Formulario instantáneo de Meta con autorización de datos; después, WhatsApp del asesor",
+    "orden": 61
+  },
+  {
+    "id": "p37",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-11-24",
+    "hora": "12:00",
+    "semana": 3,
+    "pieza": "Post: agenda tu demostración en vivo",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Da a lo orgánico un llamado directo al formulario con autorización, para que quien ve los posts quede en la base.",
+    "archivo": "out/redes/captacion/demostracion-en-vivo.png",
+    "copy": "¿Quieres ver cómo quedaría la causación de tus facturas en núvara?\n\nAgenda tu demostración en vivo: un asesor la hace contigo, con tus empresas y tus facturas. Tú revisas cada asiento antes de aprobarlo.\n\n👉 Inscríbete en nuvara.com.co/demostracion-en-vivo\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md. En Instagram el enlace va en la biografía. Depende de que esté publicada la página s12.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s12",
+      "a19"
+    ],
+    "orden": 62
+  },
+  {
+    "id": "p38",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-11-26",
+    "hora": "12:00",
+    "semana": 3,
+    "pieza": "Historia: inscríbete a la demostración en vivo",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Recordatorio con sticker de enlace a la página de inscripción.",
+    "archivo": "out/redes/captacion/demostracion-en-vivo-historia.png",
+    "copy": "Agenda tu demostración en vivo con tus propias facturas. Tú revisas y apruebas. 👉 Sticker de enlace a nuvara.com.co/demostracion-en-vivo",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s12",
+      "p37"
+    ],
+    "orden": 63
+  },
+  {
+    "id": "a20",
+    "linea": "Pauta",
+    "modulo": "Causación",
+    "fecha": "2026-12-14",
+    "hora": "08:00",
+    "semana": 0,
+    "pieza": "Anuncio con formulario: calendario de vencimientos de enero",
+    "formato": "Imagen 4:5 (feed) y 9:16 (historias)",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Enero es el pico del año. Un calendario útil a cambio de los datos con autorización suma contadores a la base antes de la campaña de enero (a08).",
+    "archivo": "out/pauta/Pauta-CalendarioEnero.png y out/pauta/Pauta-CalendarioEnero-Historia.png (Remotion: Pauta-CalendarioEnero); el regalo es un PDF con el contenido de s10",
+    "copy": "📅 Enero es el mes con más vencimientos del año.\n\nTe enviamos al correo el calendario de vencimientos de enero 2027, con lo que debes tener causado antes de cada fecha.\n\nDéjanos tus datos y recíbelo. Con núvara llegas a enero con tus facturas causadas y aprobadas por ti.",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md. El PDF sale del artículo s10 y sus fechas se verifican contra el calendario de la DIAN antes de publicar. Formulario instantáneo con perfil, empresas, facturas al mes y la casilla de autorización sin marcar. Después del PDF, el asesor ofrece la demostración en vivo. Presupuesto y código son propuesta: los decide el operador.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "s10",
+      "a08"
+    ],
+    "titulo": "Calendario de vencimientos de enero 2027",
+    "objetivo": "Clientes potenciales (formulario instantáneo)",
+    "presupuesto": "Propuesta: $15.000 diarios del 14 al 22 de diciembre, con límite total de $135.000",
+    "codigo": "ENERO27 (por crear)",
+    "destino": "Formulario instantáneo de Meta con autorización de datos; el PDF llega por correo",
+    "orden": 64
+  },
+  {
+    "id": "p39",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-12-14",
+    "hora": "12:00",
+    "semana": 0,
+    "pieza": "Post: calendario de vencimientos de enero",
+    "formato": "Post 4:5 e historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Versión orgánica del regalo de enero, con el mismo formulario.",
+    "archivo": "out/redes/captacion/calendario-enero.png y out/redes/captacion/calendario-enero-historia.png",
+    "copy": "📅 Del calendario de enero depende tu primer cierre del año.\n\nTe enviamos el calendario de vencimientos de enero 2027, con lo que debes tener causado antes de cada fecha.\n\n👉 Pídelo en nuvara.com.co/demostracion-en-vivo\n\n#contadores #calendariotributario #DIAN #Colombia",
+    "nota": "Propuesta nueva. Estrategia en docs/captacion-con-consentimiento-2026-11.md. Mismo PDF que a20; las fechas se verifican contra la DIAN.",
+    "estadoPieza": "porhacer",
+    "thumb": "",
+    "relaciones": [
+      "a20",
+      "s10"
+    ],
+    "orden": 65
   }
 ]
