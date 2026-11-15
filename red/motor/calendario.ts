@@ -24,6 +24,8 @@ const LINEAS: Record<string, string[]> = {
   Pauta: ["titulo", "objetivo", "presupuesto", "codigo", "destino"],
   Redes: ["hora", "archivo"],
   SEO: ["url", "palabraClave", "intencion", "tituloSeo", "metaDescripcion"],
+  // Guiones para grabar con personas reales: la fecha es la de grabación.
+  Guiones: ["quien", "locacion", "escenas", "tomas"],
 };
 const ESTADOS = ["porhacer", "corte", "bloqueada", "lista"];
 const MODULOS = ["Causación", "Facturación electrónica", "RADIAN", "Nómina", "Tesorería", "App móvil", "General"];
@@ -72,7 +74,14 @@ for (const f of filas) {
   if (dia === 0 || dia === 6) avisar(`${f.id}: cae en fin de semana`);
   for (const r of f.relaciones) if (!ids.has(r)) mal(`relación a "${r}", que no existe`);
 
-  const publico = [f.pieza, f.copy, f.titulo, f.tituloSeo, f.metaDescripcion].filter(Boolean).join("\n");
+  const escenas = (f.escenas as { t: string; dice: string; pantalla: string }[] | undefined) ?? [];
+  if (f.linea === "Guiones") {
+    if (!Array.isArray(f.escenas) || !escenas.length) mal("el guion no tiene escenas");
+    for (const e of escenas) if (!e.t || !e.dice || !e.pantalla) mal("cada escena lleva tiempo, lo que se dice y lo que se ve");
+  }
+  const publico = [f.pieza, f.copy, f.titulo, f.tituloSeo, f.metaDescripcion, ...escenas.flatMap((e) => [e.dice, e.pantalla])]
+    .filter(Boolean)
+    .join("\n");
   for (const [re, motivo] of PROHIBIDO) if (re.test(publico)) mal(`${motivo} (${re.source})`);
   if (/\bclientes?\b/i.test(publico.replace(/tus clientes/gi, "")) && !/sus clientes/i.test(publico))
     avisar(`${f.id}: revisa la palabra cliente`);
@@ -82,7 +91,7 @@ for (const f of filas) {
     if (String(f.tituloSeo).length > 60) mal(`título de ${String(f.tituloSeo).length} caracteres (máximo 60)`);
     if (String(f.metaDescripcion).length > 155) mal(`descripción de ${String(f.metaDescripcion).length} caracteres (máximo 155)`);
   }
-  if (f.linea !== "SEO" && f.estadoPieza === "lista" && !existsSync(join(raiz, f.archivo)))
+  if (f.linea !== "SEO" && f.linea !== "Guiones" && f.estadoPieza === "lista" && !existsSync(join(raiz, f.archivo)))
     avisar(`${f.id}: no está el archivo ${f.archivo} (out/ no va en git)`);
 }
 
@@ -94,7 +103,7 @@ for (const f of filas.filter((x) => x.linea === "SEO")) {
 }
 
 const cuenta = (l: string) => filas.filter((f) => f.linea === l).length;
-console.log(`${filas.length} propuestas: ${cuenta("Pauta")} de pauta, ${cuenta("Redes")} de redes, ${cuenta("SEO")} de SEO`);
+console.log(`${filas.length} propuestas: ${cuenta("Pauta")} de pauta, ${cuenta("Redes")} de redes, ${cuenta("SEO")} de SEO y ${cuenta("Guiones")} guiones`);
 console.log(`  ${filas.length - pasadas} vigentes o por venir; ${pasadas} ya pasaron y no generan avisos`);
 for (const a of avisos) console.log(`  aviso  ${a}`);
 for (const e of errores) console.log(`  ✗ ${e}`);

@@ -2,7 +2,7 @@
 id: calendario-de-marketing
 titulo: Calendario de marketing
 publico: C
-actualizado: 2026-11-04
+actualizado: 2026-11-15
 vigencia: revisar cada semana mientras haya publicaciones por aprobar
 conexiones:
   - planeacion-de-marketing # de aquí salen los anuncios
@@ -25,7 +25,9 @@ Un solo calendario para lo que se publica en pauta, en redes y en el sitio. Los 
 - [C] **SEO** (`plan-seo`): artículos, páginas y ajustes del sitio, con palabra clave, título y descripción.
 - [C] Cada propuesta lleva su **tema** y sus **relaciones**: por ejemplo, el artículo de RADIAN se publica antes del video y el reel de RADIAN, para que estos tengan a dónde llevar.
 - [C] Cada propuesta lleva la etiqueta de su **módulo**: Causación, Facturación electrónica, RADIAN, Nómina, Tesorería, App móvil o General, cuando habla de núvara en conjunto.
-- [C] Las tres líneas se ven en la misma página, en vista de mes o de semanas, y se filtran por línea, módulo, canal y estado.
+- [C] **Guiones** (pestaña «Guiones con personas»): videos para grabar con personas reales (asesores, contadores del equipo o usuarios que acepten salir en cámara). Cada guion lleva quién aparece, dónde se graba, las escenas (tiempo, qué se dice y qué se ve) y las tomas. Su fecha es la de grabación y sus estados son Por grabar, Grabado y Editado. Se revisa y se aprueba como cualquier publicación antes de grabarlo.
+- [C] Antes de grabar: autorización de uso de imagen y de datos firmada, solo la empresa de prueba en pantalla, núvara bien pronunciado y solo cifras de `mensajes-y-afirmaciones`. A un usuario real no se le escriben respuestas: se le hace una guía de preguntas (formato cápsula de entrevista de la línea de reels).
+- [C] Las cuatro líneas se ven en la misma página, en vista de mes o de semanas, y se filtran por línea, módulo, canal y estado. Por defecto solo se ve lo que viene; lo pasado está en «Todo, también lo pasado».
 
 ## Dónde está
 - [C] **Calendario:** https://claude.ai/artifact/EMSaCGkJ5C6t9H1e7mwLvr. Ahí viven la revisión, las notas y la aprobación.

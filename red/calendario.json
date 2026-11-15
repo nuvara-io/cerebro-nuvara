@@ -1951,5 +1951,295 @@
       "s10"
     ],
     "orden": 65
+  },
+  {
+    "linea": "Guiones",
+    "hora": "09:00",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "id": "g01",
+    "modulo": "General",
+    "fecha": "2026-11-18",
+    "semana": 2,
+    "pieza": "Guion: ¿qué es núvara en 30 segundos?",
+    "formato": "Video vertical 9:16, 30 a 40 s, a cámara con insertos de la plataforma",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok",
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Pone una cara de núvara a la presentación que hoy solo existe en texto e imagen (p05). Es la base para que la gente reconozca a quien la atiende en la demostración en vivo.",
+    "quien": "Asesor o asesora comercial de núvara, la misma persona que hace las demostraciones en vivo.",
+    "locacion": "Locación de la sesión oficial de fotos (ver docs/banco-fotos.md): escritorio con computador, luz de ventana, fondo limpio y sin marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "0–3 s",
+        "dice": "¿Todavía digitas las facturas una por una?",
+        "pantalla": "Plano medio a cámara. La pregunta en pantalla, en Poppins, en los primeros 3 segundos."
+      },
+      {
+        "t": "3–12 s",
+        "dice": "núvara trae tus facturas de la DIAN y del correo y prepara la causación: PUC, IVA, retenciones y bases.",
+        "pantalla": "Inserto de la plataforma: la bandeja de Pendientes llenándose. Empresa de prueba, sin datos reales."
+      },
+      {
+        "t": "12–22 s",
+        "dice": "Tú revisas, validas y apruebas. Nada se exporta a tu programa contable sin tu aprobación.",
+        "pantalla": "Vuelve a cámara. Al final, inserto de la aprobación por grupos."
+      },
+      {
+        "t": "22–30 s",
+        "dice": "Llevas varias empresas en una sola cuenta y pagas tu consumo real, sin permanencia.",
+        "pantalla": "A cámara, con las palabras «varias empresas» y «sin permanencia» en pantalla."
+      },
+      {
+        "t": "30–38 s",
+        "dice": "Con núvara, siempre mantienes el control de tu operación. Agenda tu demostración en vivo en nuvara.com.co.",
+        "pantalla": "Cierre con el logo y nuvara.com.co sobre fondo azul de marca."
+      }
+    ],
+    "tomas": [
+      "Plano medio a la altura de los ojos, vertical",
+      "Plano detalle de manos en el teclado (para cortar entre frases)",
+      "Grabación de pantalla 1920×1080 de la empresa de prueba"
+    ],
+    "relaciones": [
+      "p05"
+    ],
+    "archivo": "out/videos-personas/g01-que-es-nuvara.mp4 (por grabar)",
+    "nota": "Propuesta nueva. La fecha es la sugerida para grabar. Revisar que diga NÚ-va-ra y que no lea cifras que no estén en mensajes-y-afirmaciones.",
+    "copy": "[0–3 s] ¿Todavía digitas las facturas una por una?\n\n[3–12 s] núvara trae tus facturas de la DIAN y del correo y prepara la causación: PUC, IVA, retenciones y bases.\n\n[12–22 s] Tú revisas, validas y apruebas. Nada se exporta a tu programa contable sin tu aprobación.\n\n[22–30 s] Llevas varias empresas en una sola cuenta y pagas tu consumo real, sin permanencia.\n\n[30–38 s] Con núvara, siempre mantienes el control de tu operación. Agenda tu demostración en vivo en nuvara.com.co.",
+    "orden": 66
+  },
+  {
+    "linea": "Guiones",
+    "hora": "09:00",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "id": "g02",
+    "modulo": "Causación",
+    "fecha": "2026-11-19",
+    "semana": 2,
+    "pieza": "Guion: un contador revisa, valida y aprueba",
+    "formato": "Video vertical 9:16, 30 a 40 s, a cámara y pantalla dividida",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok",
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Es la promesa de control contada por un contador de verdad, no por un texto animado. Acompaña el reel «Revisar y aprobar» (p07).",
+    "quien": "Un contador o contadora del equipo de núvara, o un usuario real que firme la autorización de uso de imagen.",
+    "locacion": "Locación de la sesión oficial de fotos (ver docs/banco-fotos.md): escritorio con computador, luz de ventana, fondo limpio y sin marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "0–3 s",
+        "dice": "Una sola factura puede implicar más de diez decisiones contables.",
+        "pantalla": "A cámara. La frase en pantalla con «más de diez decisiones» en negrilla."
+      },
+      {
+        "t": "3–12 s",
+        "dice": "Por eso en núvara no causas a ciegas: cada asiento llega preparado y lo revisas al lado de la factura original.",
+        "pantalla": "Pantalla dividida: la cara arriba, la factura original junto a la causación abajo."
+      },
+      {
+        "t": "12–20 s",
+        "dice": "Si algo no cuadra, corriges el ítem y la plataforma lo aprende para la próxima.",
+        "pantalla": "Inserto: corregir la cuenta de un ítem. Empresa de prueba."
+      },
+      {
+        "t": "20–28 s",
+        "dice": "Cuando está bien, apruebas por grupos, no una por una.",
+        "pantalla": "Inserto: aprobación por grupos."
+      },
+      {
+        "t": "28–36 s",
+        "dice": "Automatizar no siempre significa comprender. Tú revisas, tú apruebas. Agenda tu demostración en vivo en nuvara.com.co.",
+        "pantalla": "A cámara y cierre con el logo y nuvara.com.co."
+      }
+    ],
+    "tomas": [
+      "Plano medio a cámara",
+      "Plano por encima del hombro mirando la pantalla",
+      "Grabación de pantalla de la factura original al lado de la causación"
+    ],
+    "relaciones": [
+      "p07",
+      "p04"
+    ],
+    "archivo": "out/videos-personas/g02-revisa-valida-aprueba.mp4 (por grabar)",
+    "nota": "Propuesta nueva. Si lo graba un usuario real, firma la autorización de uso de imagen antes de grabar y en pantalla solo va la empresa de prueba.",
+    "copy": "[0–3 s] Una sola factura puede implicar más de diez decisiones contables.\n\n[3–12 s] Por eso en núvara no causas a ciegas: cada asiento llega preparado y lo revisas al lado de la factura original.\n\n[12–20 s] Si algo no cuadra, corriges el ítem y la plataforma lo aprende para la próxima.\n\n[20–28 s] Cuando está bien, apruebas por grupos, no una por una.\n\n[28–36 s] Automatizar no siempre significa comprender. Tú revisas, tú apruebas. Agenda tu demostración en vivo en nuvara.com.co.",
+    "orden": 67
+  },
+  {
+    "linea": "Guiones",
+    "hora": "09:00",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "id": "g03",
+    "modulo": "General",
+    "fecha": "2026-11-20",
+    "semana": 2,
+    "pieza": "Guion: así es tu demostración en vivo",
+    "formato": "Video vertical 9:16, 25 a 30 s, a cámara",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "La captación del 23 lleva al formulario de la demostración en vivo. Ver la cara de quien la hace baja la desconfianza y sirve para la ubicación de Reels del anuncio a19 y para el post p37.",
+    "quien": "El asesor o asesora que va a atender los formularios.",
+    "locacion": "Locación de la sesión oficial de fotos (ver docs/banco-fotos.md): escritorio con computador, luz de ventana, fondo limpio y sin marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "0–3 s",
+        "dice": "¿Quieres ver tus propias facturas causadas en núvara?",
+        "pantalla": "A cámara, con la pregunta en pantalla."
+      },
+      {
+        "t": "3–12 s",
+        "dice": "En la demostración en vivo creamos tu empresa con el RUT y traemos tus facturas del correo o de la DIAN.",
+        "pantalla": "A cámara. Inserto corto de crear la empresa."
+      },
+      {
+        "t": "12–20 s",
+        "dice": "Ves la causación lista, con sus retenciones, y cómo la apruebas y la envías a tu programa contable.",
+        "pantalla": "Inserto de la causación con retenciones y del envío al programa contable."
+      },
+      {
+        "t": "20–28 s",
+        "dice": "Déjanos tus datos en nuvara.com.co/demostracion-en-vivo y te escribo por WhatsApp para agendarla.",
+        "pantalla": "Cierre con nuvara.com.co/demostracion-en-vivo en pantalla."
+      }
+    ],
+    "tomas": [
+      "Plano medio a cámara",
+      "Plano corto saludando como en una videollamada",
+      "Grabación de pantalla de la empresa de prueba"
+    ],
+    "relaciones": [
+      "a19",
+      "p37",
+      "s12"
+    ],
+    "archivo": "out/videos-personas/g03-tu-demostracion-en-vivo.mp4 (por grabar)",
+    "nota": "Propuesta nueva. Para pauta va sin Nuvi y sin música encima de la voz. Se graba antes del 23 para que entre con el anuncio.",
+    "copy": "[0–3 s] ¿Quieres ver tus propias facturas causadas en núvara?\n\n[3–12 s] En la demostración en vivo creamos tu empresa con el RUT y traemos tus facturas del correo o de la DIAN.\n\n[12–20 s] Ves la causación lista, con sus retenciones, y cómo la apruebas y la envías a tu programa contable.\n\n[20–28 s] Déjanos tus datos en nuvara.com.co/demostracion-en-vivo y te escribo por WhatsApp para agendarla.",
+    "orden": 68
+  },
+  {
+    "linea": "Guiones",
+    "hora": "09:00",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "id": "g04",
+    "modulo": "Causación",
+    "fecha": "2026-11-26",
+    "semana": 3,
+    "pieza": "Guía de entrevista: cápsula con un usuario real",
+    "formato": "Cápsula de entrevista 9:16, 40 a 55 s editada",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Un usuario que cuenta con sus palabras cómo trabaja con núvara convence más que cualquier pieza de marca. Es el formato «cápsula de entrevista» de la línea de reels.",
+    "quien": "Un usuario real de núvara (contador o firma contable) que acepte grabar y firme la autorización de uso de imagen.",
+    "locacion": "Su oficina o la locación de la sesión oficial. Nada de fondos con marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "Pregunta 1",
+        "dice": "¿Cómo causabas las facturas antes de usar núvara? (Responde con sus palabras: no se le da texto.)",
+        "pantalla": "La pregunta en pantalla en los primeros 3 segundos, como pide la línea de reels."
+      },
+      {
+        "t": "Pregunta 2",
+        "dice": "¿Qué revisas antes de aprobar una causación? (Responde con sus palabras.)",
+        "pantalla": "Pregunta arriba y subtítulos palabra por palabra."
+      },
+      {
+        "t": "Pregunta 3",
+        "dice": "¿Qué cambió en tu cierre de mes? (Responde con sus palabras.)",
+        "pantalla": "Pregunta arriba y subtítulos palabra por palabra."
+      },
+      {
+        "t": "Pregunta 4",
+        "dice": "¿A quién le recomendarías núvara y por qué? (Responde con sus palabras.)",
+        "pantalla": "Cierre con el logo y nuvara.com.co."
+      }
+    ],
+    "tomas": [
+      "Plano medio, la persona mira un poco al lado de la cámara (a quien pregunta)",
+      "Plano detalle trabajando en su computador, sin datos visibles",
+      "Plano general de su espacio de trabajo"
+    ],
+    "relaciones": [
+      "g02"
+    ],
+    "archivo": "out/videos-personas/g04-capsula-usuario.mp4 (por grabar)",
+    "nota": "Propuesta nueva. No se le escriben respuestas ni se le piden cifras. En la edición se quitan nombres de empresas, NIT, montos y cifras de ahorro que no estén en la lista oficial. La autorización de uso de imagen y de datos se firma antes de grabar. Falta elegir el usuario: lo propone Comercial.",
+    "copy": "[Pregunta 1] ¿Cómo causabas las facturas antes de usar núvara? (Responde con sus palabras: no se le da texto.)\n\n[Pregunta 2] ¿Qué revisas antes de aprobar una causación? (Responde con sus palabras.)\n\n[Pregunta 3] ¿Qué cambió en tu cierre de mes? (Responde con sus palabras.)\n\n[Pregunta 4] ¿A quién le recomendarías núvara y por qué? (Responde con sus palabras.)",
+    "orden": 69
+  },
+  {
+    "linea": "Guiones",
+    "hora": "09:00",
+    "estadoPieza": "lista",
+    "thumb": "",
+    "id": "g05",
+    "modulo": "Causación",
+    "fecha": "2026-12-09",
+    "semana": 5,
+    "pieza": "Guion: antes de cerrar el año, compara con la DIAN",
+    "formato": "Video vertical 9:16, 30 a 35 s, a cámara con insertos",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "LinkedIn"
+    ],
+    "tema": "Captación con consentimiento",
+    "porque": "Lleva cara al regalo del calendario de vencimientos de enero (a20 y p39) y prepara la campaña de enero.",
+    "quien": "Un contador o contadora del equipo de núvara.",
+    "locacion": "Locación de la sesión oficial de fotos (ver docs/banco-fotos.md): escritorio con computador, luz de ventana, fondo limpio y sin marcas de otras firmas.",
+    "escenas": [
+      {
+        "t": "0–3 s",
+        "dice": "¿Te falta alguna factura antes de cerrar el año?",
+        "pantalla": "A cámara, con la pregunta en pantalla."
+      },
+      {
+        "t": "3–12 s",
+        "dice": "Antes del cierre, compara las facturas que tienes con el listado de la DIAN.",
+        "pantalla": "A cámara."
+      },
+      {
+        "t": "12–22 s",
+        "dice": "núvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran. Las que faltan quedan listas para causar.",
+        "pantalla": "Inserto de la comparación con la DIAN. Empresa de prueba."
+      },
+      {
+        "t": "22–32 s",
+        "dice": "Y te enviamos el calendario de vencimientos de enero. Pídelo en nuvara.com.co/demostracion-en-vivo.",
+        "pantalla": "Cierre con nuvara.com.co/demostracion-en-vivo."
+      }
+    ],
+    "tomas": [
+      "Plano medio a cámara",
+      "Grabación de pantalla de la comparación con la DIAN"
+    ],
+    "relaciones": [
+      "a20",
+      "p39",
+      "s10"
+    ],
+    "archivo": "out/videos-personas/g05-compara-con-la-dian.mp4 (por grabar)",
+    "nota": "Propuesta nueva. Depende de que el PDF del calendario de enero esté listo y con las fechas verificadas contra la DIAN.",
+    "copy": "[0–3 s] ¿Te falta alguna factura antes de cerrar el año?\n\n[3–12 s] Antes del cierre, compara las facturas que tienes con el listado de la DIAN.\n\n[12–22 s] núvara te muestra cuáles tienes, cuáles te faltan y cuáles no cuadran. Las que faltan quedan listas para causar.\n\n[22–32 s] Y te enviamos el calendario de vencimientos de enero. Pídelo en nuvara.com.co/demostracion-en-vivo.",
+    "orden": 70
   }
 ]
