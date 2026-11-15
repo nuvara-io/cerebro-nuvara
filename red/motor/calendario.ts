@@ -44,6 +44,11 @@ const PROHIBIDO: [RegExp, string][] = [
   [/sin intervención|sin revisión|núvara decide/i, "quita el control al usuario"],
 ];
 
+// Lo que ya pasó (y no es pauta que sigue corriendo) no genera avisos: solo ruido.
+const hoy = new Date().toLocaleDateString("en-CA", { timeZone: "America/Bogota" });
+const vigente = (f: Fila) => f.fecha >= hoy || String((f.inversion as { hasta?: string } | undefined)?.hasta ?? "") >= hoy;
+let pasadas = 0;
+
 const errores: string[] = [];
 const avisos: string[] = [];
 const ids = new Set(filas.map((f) => f.id));
@@ -51,6 +56,8 @@ if (ids.size !== filas.length) errores.push("hay ids repetidos");
 
 for (const f of filas) {
   const mal = (m: string) => errores.push(`${f.id}: ${m}`);
+  const avisar = (m: string) => vigente(f) && avisos.push(m);
+  if (!vigente(f)) pasadas++;
   const campos = LINEAS[f.linea];
   if (!campos) {
     mal(`línea desconocida "${f.linea}"`);
@@ -62,13 +69,13 @@ for (const f of filas) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(f.fecha)) mal(`fecha inválida "${f.fecha}"`);
   if (FESTIVOS.includes(f.fecha)) mal(`cae en festivo (${f.fecha})`);
   const dia = new Date(`${f.fecha}T12:00:00`).getDay();
-  if (dia === 0 || dia === 6) avisos.push(`${f.id}: cae en fin de semana`);
+  if (dia === 0 || dia === 6) avisar(`${f.id}: cae en fin de semana`);
   for (const r of f.relaciones) if (!ids.has(r)) mal(`relación a "${r}", que no existe`);
 
   const publico = [f.pieza, f.copy, f.titulo, f.tituloSeo, f.metaDescripcion].filter(Boolean).join("\n");
   for (const [re, motivo] of PROHIBIDO) if (re.test(publico)) mal(`${motivo} (${re.source})`);
   if (/\bclientes?\b/i.test(publico.replace(/tus clientes/gi, "")) && !/sus clientes/i.test(publico))
-    avisos.push(`${f.id}: revisa la palabra cliente`);
+    avisar(`${f.id}: revisa la palabra cliente`);
 
   if (f.linea === "Pauta" && /\bNuvi\b/.test(f.copy)) mal("Nuvi no va en anuncios");
   if (f.linea === "SEO") {
@@ -76,7 +83,7 @@ for (const f of filas) {
     if (String(f.metaDescripcion).length > 155) mal(`descripción de ${String(f.metaDescripcion).length} caracteres (máximo 155)`);
   }
   if (f.linea !== "SEO" && f.estadoPieza === "lista" && !existsSync(join(raiz, f.archivo)))
-    avisos.push(`${f.id}: no está el archivo ${f.archivo} (out/ no va en git)`);
+    avisar(`${f.id}: no está el archivo ${f.archivo} (out/ no va en git)`);
 }
 
 const claves = new Map<string, string>();
@@ -88,6 +95,7 @@ for (const f of filas.filter((x) => x.linea === "SEO")) {
 
 const cuenta = (l: string) => filas.filter((f) => f.linea === l).length;
 console.log(`${filas.length} propuestas: ${cuenta("Pauta")} de pauta, ${cuenta("Redes")} de redes, ${cuenta("SEO")} de SEO`);
+console.log(`  ${filas.length - pasadas} vigentes o por venir; ${pasadas} ya pasaron y no generan avisos`);
 for (const a of avisos) console.log(`  aviso  ${a}`);
 for (const e of errores) console.log(`  ✗ ${e}`);
 
