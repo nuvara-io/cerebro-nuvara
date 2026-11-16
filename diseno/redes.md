@@ -56,6 +56,23 @@ Hay cuatro, y cada pieza usa uno solo:
 - **Pie de página:** "www.nuvara.com.co" o "Síguenos" con los íconos de redes, chico y centrado abajo.
 - **Siguiente lámina:** `>>>` en `redes-azul` (o blanco sobre foto), abajo a la derecha.
 
+## Portada con foto y marco (portadas de reel)
+
+Es la línea de las portadas que ya salieron en el perfil (Drive › Piezas graficas › portadas de reels, 73 a 77) y la que tienen que seguir **todas las portadas de reel y el primer segundo de cada reel**. En código es `PortadaFoto` (`src/components/PortadaFoto.tsx`), y las portadas se renderizan desde la carpeta **Portadas-reels** de Studio.
+
+- **Foto real del banco a sangre**, nunca fondo gris ni pantallazo. La cara queda dentro del marco.
+- **Wordmark blanco** chico (210px de ancho en 1080×1920) y centrado arriba.
+- **Marco blanco delgado** (3px) de esquinas redondeadas, a 110px de los lados. Está abierto abajo: se desvanece antes del titular.
+- **Titular abajo a la izquierda, dentro del marco:**
+  - una línea en Regular blanca, con alguna palabra en Bold;
+  - la frase clave en Bold `redes-azul`, más grande;
+  - si hace falta, un remate en blanco («Esto te **interesa.**»).
+  - En las portadas de reel, el titular termina por encima de los 420px de abajo.
+- **Fundidos:** uno oscuro abajo para que el titular se lea, y uno suave arriba para el wordmark.
+- **Arco de marca** (turquesa → azul, 46px de grueso) en la esquina de abajo. Nunca cruza el titular.
+- **Efecto pendiente:** en las portadas originales la persona tapa el marco (va por delante). Para eso hay que recortarla de la foto, y el recorte automático todavía no está habilitado. Mientras tanto, la persona va dentro del marco, como en la portada «¿Cómo interpreta núvara en segundos?».
+- Los posts de producto con pantallazos (fondo gris o azul) siguen siendo válidos para el feed, pero **no se usan como portada de reel**.
+
 ## Fotografía
 
 - Personas reales del perfil del Brand OS: contadores y empresarios colombianos de 25 a 45 años, diversos, en oficinas cálidas con madera, bibliotecas, plantas y luz natural. Trabajan con laptop, tablet o papeles.

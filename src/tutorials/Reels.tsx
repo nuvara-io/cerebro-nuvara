@@ -21,6 +21,7 @@ import {
   type Punto,
   type Toma,
 } from "../components/PantallaReal";
+import { PortadaFoto } from "../components/PortadaFoto";
 import { TwoToneTitle } from "../components/TwoToneTitle";
 import { CLICS, CURSOR } from "./EventosRadian";
 import { GRABACIONES } from "./FlujoCausacion";
@@ -37,7 +38,8 @@ const TOP_SUBTITULO = 1362;
 const TELEFONO = { ancho: 425, alto: 920 };
 
 type Base = { readonly voz?: string; readonly vozEn?: number };
-type Gancho = Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string; readonly dura: number; readonly fuerte?: boolean };
+// foto: la del banco (public/posts/banco-<n>.jpg). Con foto, el gancho usa la línea de portadas.
+type Gancho = Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string; readonly dura: number; readonly fuerte?: boolean; readonly foto?: number; readonly enfoque?: string };
 type Pantalla = Base & {
   readonly tipo: "pantalla";
   readonly lead: string;
@@ -76,7 +78,7 @@ const agrupada = GRABACIONES.agrupada;
 const extra = GRABACIONES.extra;
 
 const CAUSACION: Escena[] = [
-  { tipo: "gancho", linea1: "Del 11 al 25 vence el IVA.", linea2: "¿Ya causaste todo?", dura: 3.9, voz: "c1", vozEn: 0.2 },
+  { tipo: "gancho", linea1: "Del 11 al 25 vence el IVA.", linea2: "¿Ya causaste todo?", dura: 3.9, foto: 152, enfoque: "62% 30%", voz: "c1", vozEn: 0.2 },
   {
     tipo: "pantalla", lead: "Tus facturas", rest: "llegan solas.", subtitulo: "De la *DIAN* y de tu *correo*",
     recording: flujo.src, desde: 5.6, hasta: 14.5, velocidad: 1.25,
@@ -106,7 +108,7 @@ const CAUSACION: Escena[] = [
 
 // N1 de la pauta de cierre: arranca más fuerte y sin tramos largos sin voz
 const CIERRE_IVA: Escena[] = [
-  { tipo: "gancho", linea1: "Faltan días para el IVA.", linea2: "¿Y tus facturas?", dura: 3.1, voz: "n1", vozEn: 0.1, fuerte: true },
+  { tipo: "gancho", linea1: "Faltan días para el IVA.", linea2: "¿Y tus facturas?", dura: 3.1, foto: 172, enfoque: "60% 25%", voz: "n1", vozEn: 0.1, fuerte: true },
   CAUSACION[1],
   { ...(CAUSACION[2] as Pantalla), velocidad: 2.4 },
   { ...(CAUSACION[3] as Pantalla), velocidad: 2.28, voz: "n2", vozEn: 0.1 },
@@ -115,7 +117,7 @@ const CIERRE_IVA: Escena[] = [
 ];
 
 const RADIAN: Escena[] = [
-  { tipo: "gancho", linea1: "¿Recibes facturas", linea2: "a crédito?", dura: 4.4, voz: "r1", vozEn: 0.2 },
+  { tipo: "gancho", linea1: "¿Recibes facturas", linea2: "a crédito?", dura: 4.4, foto: 71, enfoque: "55% 30%", voz: "r1", vozEn: 0.2 },
   {
     tipo: "pantalla", lead: "Acusa en", rest: "un momento.", subtitulo: "Pulsas *Acusar*, revisas y envías",
     recording: "recordings/radian-usuario.mp4", desde: 6.4, hasta: 18, velocidad: 2,
@@ -148,7 +150,7 @@ const RADIAN: Escena[] = [
 
 // Versión de pauta (a18): arranca por lo que se pierde y no por la función
 const RADIAN_PAUTA: Escena[] = [
-  { tipo: "gancho", linea1: "¿Compraste a crédito?", linea2: "¿Y el acuse?", dura: 3.4, voz: "rp1", vozEn: 0.1, fuerte: true },
+  { tipo: "gancho", linea1: "¿Compraste a crédito?", linea2: "¿Y el acuse?", dura: 3.4, foto: 73, enfoque: "55% 30%", voz: "rp1", vozEn: 0.1, fuerte: true },
   { tipo: "riesgo", lead: "En una fiscalización", rest: "te pueden desconocer:", tarjetas: ["El costo", "El IVA descontable"], dura: 4.6, voz: "rp2", vozEn: 0.1 },
   { ...(RADIAN[1] as Pantalla), lead: "Lo envías", rest: "en un clic.", subtitulo: "Pulsas *Acusar* y listo", velocidad: 2.4, voz: "rp3", vozEn: 0.1 },
   { ...(RADIAN[2] as Pantalla), subtitulo: "*Acuse* al llegar, *recibo* al causar", velocidad: 2.6, voz: "rp4", vozEn: 0.1 },
@@ -157,7 +159,7 @@ const RADIAN_PAUTA: Escena[] = [
 ];
 
 const APP: Escena[] = [
-  { tipo: "gancho", linea1: "Lleva tu operación", linea2: "al celular.", dura: 2.6, voz: "a1", vozEn: 0.2 },
+  { tipo: "gancho", linea1: "Lleva tu operación", linea2: "al celular.", dura: 2.6, foto: 197, enfoque: "50% 30%", voz: "a1", vozEn: 0.2 },
   {
     tipo: "telefono", lead: "Tus clientes", rest: "aprueban pagos.", subtitulo: "Ven *cómo va su empresa*",
     recording: "recordings/tesoreria-app-cliente.mp4", velocidad: 1, dura: 12.8, voz: "a2", vozEn: 0.2,
@@ -172,7 +174,7 @@ const APP: Escena[] = [
 
 // Hasta que la app esté en las tiendas: sin fecha ni precio
 const APP_PROXIMAMENTE: Escena[] = [
-  { tipo: "gancho", linea1: "Próximamente:", linea2: "núvara en tu celular.", dura: 2.6, voz: "a1", vozEn: 0.2 },
+  { tipo: "gancho", linea1: "Próximamente:", linea2: "núvara en tu celular.", dura: 2.6, foto: 138, enfoque: "50% 30%", voz: "a1", vozEn: 0.2 },
   ...APP.slice(1, -1),
   { tipo: "cierre", dura: 3.2, voz: "p1", vozEn: 0.2, aviso: "Muy pronto en iOS y Android" },
 ];
@@ -261,6 +263,18 @@ const EscenaRiesgo: React.FC<{ readonly e: Riesgo }> = ({ e }) => {
 
 const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
   const { fps } = useVideoConfig();
+  if (e.tipo === "gancho" && e.foto) {
+    return (
+      <>
+        <PortadaFoto foto={staticFile(`posts/banco-${e.foto}.jpg`)} enfoque={e.enfoque} linea1={e.linea1} linea2={e.linea2} golpe={e.fuerte} />
+        {e.fuerte ? (
+          <Sequence from={15} layout="none">
+            <Audio src={staticFile("sonido/pop.wav")} volume={0.6} />
+          </Sequence>
+        ) : null}
+      </>
+    );
+  }
   if (e.tipo === "gancho" && e.fuerte) return <GanchoFuerte linea1={e.linea1} linea2={e.linea2} />;
   if (e.tipo === "gancho") {
     return (
@@ -378,3 +392,19 @@ export const ReelRadian = () => <Reel escenas={RADIAN} />;
 export const ReelRadianPauta = () => <Reel escenas={RADIAN_PAUTA} />;
 export const ReelApp = () => <Reel escenas={APP} />;
 export const ReelAppProximamente = () => <Reel escenas={APP_PROXIMAMENTE} />;
+
+// Portadas de los reels (1080×1920): el mismo gancho, quieto, para subir como portada
+const portada = (escenas: readonly Escena[]) => {
+  const g = escenas[0];
+  if (g.tipo !== "gancho" || !g.foto) throw new Error("El reel no arranca con un gancho con foto");
+  const foto = g.foto;
+  return () => <PortadaFoto foto={staticFile(`posts/banco-${foto}.jpg`)} enfoque={g.enfoque} linea1={g.linea1} linea2={g.linea2} animar={false} />;
+};
+export const PORTADAS_REELS = {
+  "Portada-ReelCausacion": portada(CAUSACION),
+  "Portada-ReelCierreIva": portada(CIERRE_IVA),
+  "Portada-ReelRadian": portada(RADIAN),
+  "Portada-ReelRadianPauta": portada(RADIAN_PAUTA),
+  "Portada-ReelApp": portada(APP),
+  "Portada-ReelAppProximamente": portada(APP_PROXIMAMENTE),
+} as const;

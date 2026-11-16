@@ -26,7 +26,7 @@ import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
 import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
 import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
-import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
+import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, PORTADAS_REELS, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -79,6 +79,11 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="Pauta-N5-PagasLoQueCausas" component={ReelN5} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N5} />
         <Composition id="ReelCreditos" component={ReelCreditos} width={1080} height={1920} fps={30} durationInFrames={DURACION_REEL_CREDITOS} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
+      </Folder>
+      <Folder name="Portadas-reels">
+        {Object.entries(PORTADAS_REELS).map(([id, P]) => (
+          <Still key={id} id={id} component={P} width={1080} height={1920} />
+        ))}
       </Folder>
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />

@@ -17,6 +17,8 @@ Los tiempos que llevan "~" son estimados a partir de muestras de 1 fotograma por
 1. **Tipografía animada** (la referencia): solo texto, fondos de marca y formas del isotipo, sin personas ni capturas. Es el formato más fiel a la marca.
 2. **Cápsula de entrevista**: una persona real responde preguntas, con el título de la pregunta arriba y subtítulos palabra por palabra. Antes de hacer una, revisá la sección "Lo que no se repite".
 
+**Gancho y portada:** sea cual sea el formato, el primer segundo del reel y su portada siguen la **Portada con foto y marco** de la línea de redes. En código: el gancho lleva `foto` (número del banco) y usa `PortadaFoto`, y la portada estática sale del mismo gancho (`PORTADAS_REELS` en `src/tutorials/Reels.tsx`).
+
 Hay un tercer formato que todavía no se usó y es el que necesitan los tutoriales: **grabación de la plataforma**. Para eso están las grabaciones de demostraciones en vivo (Drive › Demos). Son de 1920×1080 a 24 fps y hay que recortarlas al área de la app, porque se ve la ventana de la videollamada.
 
 ## Estructura del reel de tipografía animada
