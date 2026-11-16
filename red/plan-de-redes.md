@@ -2,7 +2,7 @@
 id: plan-de-redes
 titulo: Plan de redes orgánico
 publico: C
-actualizado: 2026-11-12
+actualizado: 2026-11-16
 vigencia: revisar cada mes, junto con la planeación de marketing
 conexiones:
   - calendario-de-marketing # donde se revisa y se aprueba cada publicación
@@ -29,7 +29,7 @@ Qué publica núvara en redes sin pauta, en qué orden y con qué ritmo. Va del 
 
 ## Canales y ritmo
 - [C] **Instagram y Facebook:** posts 4:5, historias y reels, a las 12:00.
-- [C] **LinkedIn:** videos, brochures y posts. Los videos y brochures van sobre todo a las 08:00.
+- [C] **LinkedIn:** todavía no está activo (decisión del 16/11/2026). Lo que iba solo a LinkedIn (los brochures) queda en pausa en el calendario y el resto sale en Instagram y Facebook. Cuando se active: videos, brochures y posts, sobre todo a las 08:00.
 - [C] **TikTok:** solo reels.
 - [C] El ritmo base es de tres a seis publicaciones por semana; la primera lleva más por la app móvil. No se publica en festivos.
 

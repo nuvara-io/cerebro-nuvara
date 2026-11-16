@@ -593,8 +593,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Revisa, valida y aprueba",
     "porque": "Es la semana de «Revisa, valida y aprueba» y la pieza habla justo de eso.",
@@ -619,8 +618,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "Vence el IVA bimestral del 11 al 25 de noviembre.",
@@ -789,8 +787,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Revisa, valida y aprueba",
     "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
@@ -867,8 +864,8 @@
     "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
     "archivo": "out/brochure/nuvara-causacion-propuesta.pdf",
     "copy": "Todo lo que hace núvara en causación, en un documento: de la factura al asiento, con tu revisión en cada paso.\n\nCompártelo con quien lleva la contabilidad en tu equipo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#firmascontables #contadores #contabilidad #Colombia",
-    "nota": "La portada ya no dice «Propuesta comercial»: desde el 16/11 dice «Causación» (PDF reexportado).",
-    "estadoPieza": "lista",
+    "nota": "La portada ya no dice «Propuesta comercial»: desde el 16/11 dice «Causación» (PDF reexportado). En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
+    "estadoPieza": "bloqueada",
     "thumb": "bc",
     "relaciones": []
   },
@@ -939,8 +936,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
@@ -993,8 +989,8 @@
     "porque": "Módulo por módulo, cuando termina el IVA.",
     "archivo": "out/brochure-fe/nuvara-facturacion-electronica.pdf",
     "copy": "Facturación electrónica en núvara: qué emites, cómo empiezas y cuánto cuesta, en un documento.\n\nTambién responde tus eventos RADIAN desde la misma plataforma.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Se pasó del 25 de noviembre al 1 de diciembre. Incluye el precio de $100 por evento RADIAN.",
-    "estadoPieza": "lista",
+    "nota": "Se pasó del 25 de noviembre al 1 de diciembre. Incluye el precio de $100 por evento RADIAN. En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
+    "estadoPieza": "bloqueada",
     "thumb": "bf",
     "relaciones": [
       "s03"
@@ -1100,7 +1096,6 @@
     "pieza": "Eventos RADIAN en núvara",
     "formato": "Video 16:9, 1 min",
     "canales": [
-      "LinkedIn",
       "Facebook"
     ],
     "tema": "Más que causación",
@@ -1126,8 +1121,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Nómina y tesorería",
     "porque": "Cierre de año: prima antes del 18 de diciembre.",
@@ -1206,8 +1200,8 @@
     "porque": "Cierre de año: prima antes del 18 de diciembre.",
     "archivo": "out/brochure-nomina/nuvara-nomina.pdf",
     "copy": "Se acerca la prima de servicios. Mira cómo llevas la nómina en núvara, de la novedad al asiento: liquidación, nómina electrónica, PILA y precios por tramo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "",
-    "estadoPieza": "lista",
+    "nota": "En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
+    "estadoPieza": "bloqueada",
     "thumb": "bn",
     "relaciones": [
       "s05"
@@ -1287,8 +1281,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Nómina y tesorería",
     "porque": "Cierre de año: prima antes del 18 de diciembre.",
@@ -1335,7 +1328,6 @@
     "pieza": "Tesorería: el flujo completo",
     "formato": "Video 16:9, 2 min",
     "canales": [
-      "LinkedIn",
       "Facebook"
     ],
     "tema": "Tu operación en un solo lugar",
@@ -1367,8 +1359,8 @@
     "porque": "Tesorería completa y app móvil.",
     "archivo": "out/brochure-tesoreria/nuvara-tesoreria.pdf",
     "copy": "Cobra, paga, concilia y controla tus cajas, con su asiento contable. Tú revisas y apruebas.\n\nEn este documento está todo lo que incluye tesorería en núvara.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Lleva la página de la app y precios de suscripción: publicar con la app en tiendas y esos precios confirmados.",
-    "estadoPieza": "lista",
+    "nota": "Lleva la página de la app y precios de suscripción: publicar con la app en tiendas y esos precios confirmados. En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
+    "estadoPieza": "bloqueada",
     "thumb": "bt",
     "relaciones": [
       "s07"
@@ -1852,8 +1844,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Captación con consentimiento",
     "porque": "Da a lo orgánico un llamado directo al formulario con autorización, para que quien ve los posts quede en la base.",
@@ -1936,8 +1927,7 @@
     "formato": "Post 4:5 e historia 9:16",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Captación con consentimiento",
     "porque": "Versión orgánica del regalo de enero, con el mismo formulario.",
@@ -1966,8 +1956,7 @@
     "canales": [
       "Instagram",
       "Facebook",
-      "TikTok",
-      "LinkedIn"
+      "TikTok"
     ],
     "tema": "Revisa, valida y aprueba",
     "porque": "Pone una cara de núvara a la presentación que hoy solo existe en texto e imagen (p05). Es la base para que la gente reconozca a quien la atiende en la demostración en vivo.",
@@ -2027,8 +2016,7 @@
     "canales": [
       "Instagram",
       "Facebook",
-      "TikTok",
-      "LinkedIn"
+      "TikTok"
     ],
     "tema": "Revisa, valida y aprueba",
     "porque": "Es la promesa de control contada por un contador de verdad, no por un texto animado. Acompaña el reel «Revisar y aprobar» (p07).",
@@ -2144,8 +2132,7 @@
     "formato": "Cápsula de entrevista 9:16, 40 a 55 s editada",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Revisa, valida y aprueba",
     "porque": "Un usuario que cuenta con sus palabras cómo trabaja con núvara convence más que cualquier pieza de marca. Es el formato «cápsula de entrevista» de la línea de reels.",
@@ -2199,8 +2186,7 @@
     "formato": "Video vertical 9:16, 30 a 35 s, a cámara con insertos",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Captación con consentimiento",
     "porque": "Lleva cara al regalo del calendario de vencimientos de enero (a20 y p39) y prepara la campaña de enero.",
@@ -2255,7 +2241,6 @@
     "canales": [
       "Instagram",
       "Facebook",
-      "LinkedIn",
       "TikTok"
     ],
     "tema": "Revisa, valida y aprueba",
