@@ -31,7 +31,7 @@ export const PortadaFE: React.FC = () => (
     />
     <Img src={logo.wordmarkWhite} style={{ position: "absolute", left: MX, top: 72, width: 170 }} />
     <div style={{ position: "absolute", left: MX, top: 300, width: 860, display: "grid", gap: 36 }}>
-      <Pill blanco>PROPUESTA COMERCIAL</Pill>
+      <Pill blanco>FACTURACIÓN ELECTRÓNICA</Pill>
       <div>
         <p style={t(76, { fontWeight: 300, color: color.white, lineHeight: 1.05 })}>Facturación electrónica</p>
         <p style={t(104, { fontWeight: 700, color: color.white, lineHeight: 1.02 })}>en la misma</p>

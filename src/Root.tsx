@@ -1,4 +1,5 @@
-import { Composition, Folder, Still } from "remotion";
+import { Composition, Folder, Still, staticFile } from "remotion";
+import { PortadaFoto } from "./components/PortadaFoto";
 import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { DIAPOSITIVAS_NOMINA } from "./brochure/Nomina";
@@ -27,6 +28,11 @@ import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo, PortadaPonteAlDia } from "./tut
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
 import { DURACION_PAUTA, PORTADAS_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
 import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, PORTADAS_REELS, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
+
+// «¿Qué es núvara?» (p05) con la línea de foto y marco, en 4:5 para el feed
+const QueEsNuvaraFoto = () => (
+  <PortadaFoto foto={staticFile("posts/banco-165.jpg")} enfoque="50% 25%" linea1="**núvara** es causación contable" linea2="sin digitar," linea3="con control: **tú apruebas.**" animar={false} />
+);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -94,6 +100,7 @@ export const RemotionRoot: React.FC = () => {
         <Still id="Blog-CompararDian-Card" component={BlogCompararDian} width={920} height={517} />
         <Still id="Blog-CompararDian-OG" component={BlogCompararDian} width={1200} height={630} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
+        <Still id="QueEsNuvara-Foto" component={QueEsNuvaraFoto} width={1080} height={1350} />
         <Still id="N2-Dian1" component={DianPlaca1} width={1080} height={1350} />
         <Still id="N2-Dian2" component={DianPlaca2} width={1080} height={1350} />
         <Still id="N2-Dian3" component={DianPlaca3} width={1080} height={1350} />
