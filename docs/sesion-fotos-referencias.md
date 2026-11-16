@@ -4,7 +4,7 @@ Propuesta del 16/11/2026 para dar más variedad a las piezas sin salirnos de la 
 
 ## Tablero de referencias
 
-- **Pinterest:** «núvara · referencias para sesión de fotos», tablero **privado** (https://co.pinterest.com/axiomapos/n%C3%BAvara-referencias-para-sesi%C3%B3n-de-fotos/). Tiene 11 pines en tres grupos: retrato de marca con laptop, equipo en reunión y detalles de manos (celular, teclado, calculadora, tablet).
+- **Pinterest:** «núvara · referencias para sesión de fotos», tablero **privado** (https://co.pinterest.com/axiomapos/n%C3%BAvara-referencias-para-sesi%C3%B3n-de-fotos/). Tiene 19 pines en cuatro grupos: retrato de marca con laptop (mujeres y hombres), retrato de hombre con brazos cruzados, empresario en su negocio con el celular, equipo en reunión y detalles de manos (celular, teclado, calculadora, tablet).
 - **Ojo:** quedó en la cuenta de Pinterest que estaba abierta en el navegador, que es la de Axioma POS. Si núvara tiene su propia cuenta, conviene moverlo allá.
 - Las fotos del tablero son **solo referencia** de encuadre, pose y luz. Tienen dueño: no se descargan ni se usan en piezas, ni retocadas ni recortadas.
 
@@ -20,6 +20,14 @@ El banco oficial tiene 96 fotos, pero son siempre las mismas 8 o 9 personas en t
 6. **Aire para texto:** retratos con pared libre a un lado y retratos verticales con espacio arriba para el marco de las portadas.
 
 ## Lista de tomas
+
+Cada toma de retrato (1 a 4, 11 y 12) se hace **dos veces: con una mujer y con un hombre** del equipo, con edades y estilos distintos. Así las piezas alternan caras y nadie protagoniza todo. Hoy el banco tiene más mujeres que hombres, y los hombres que hay salen casi siempre de camisa negra o de gafas.
+
+Referentes de hombres en el tablero:
+- trabajando en la laptop, de camisa clara o de jean;
+- retrato con brazos cruzados junto a una ventana, con blazer y sin corbata;
+- retrato casual con camisa abierta;
+- empresario en su tienda revisando el celular.
 
 | # | Toma | Orientación | Referencia del tablero | Para qué |
 |---|---|---|---|---|
