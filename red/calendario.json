@@ -2313,5 +2313,105 @@
     "thumb": "",
     "copy": "[0–3 s] Causar no es adivinar.\n\n[3–10 s] En núvara, el asiento no sale de una suposición. Sale de tu empresa y de la norma.\n\n[10–20 s] Tu plan de cuentas, tu balance de prueba por terceros, tu actividad económica y tu régimen. Con eso propone la cuenta de cada ítem, y nunca una que no exista en tu plan de cuentas.\n\n[20–30 s] El IVA y las retenciones se calculan con las tarifas y las bases en UVT vigentes a la fecha de la factura, y con la condición del proveedor: autorretenedor, régimen simple o declarante. La ReteICA, con las reglas que configuras por municipio.\n\n[30–38 s] Cuando no tiene con qué sustentar una cuenta, no la inventa: la marca para que la revises.\n\n[38–45 s] Y lo que corriges manda: lo aprende para ese proveedor o lo dejas como regla fija, que se cumple siempre.\n\n[45–55 s] Una sola factura puede implicar más de diez decisiones contables. núvara las prepara; tú revisas, validas y apruebas. Eso es inteligencia contable real. Agenda tu demostración en vivo en nuvara.com.co.",
     "nota": "Propuesta nueva, contrastada con el código de la plataforma el 15/11/2026 (apps/causation). Lo que dice está verificado: el orden de la propuesta (reglas y correcciones primero, luego lo aprendido y el historial del proveedor), la cuenta siempre dentro del plan de la empresa, retenciones con tarifas y bases en UVT por fecha y condiciones del proveedor, ReteICA por reglas de municipio, líneas sin sustento marcadas para revisión y regla fija determinista. No decir «sin inteligencia artificial» ni «100 % reglas»: la inteligencia artificial participa al elegir la cuenta de gasto entre candidatos y el concepto de retención cuando no hay regla, corrección, producto o convención que lo resuelva. Al grabar la pantalla, evitar que se lea «Que el sistema aprenda» (texto de la interfaz que la marca no usa). Sale una versión de 30 s para pauta con las escenas 1, 2, 4, 5 y 7."
+  },
+  {
+    "id": "p40",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-18",
+    "hora": "18:00",
+    "semana": 2,
+    "pieza": "Historia: comparte el reel «Revisar y aprobar»",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "Le da una segunda vuelta al reel del día (p07) a quien ya sigue la cuenta. No necesita pieza nueva.",
+    "archivo": "out/reels/reel-causacion.mp4",
+    "copy": "Comparte el reel de las 12:00 en historias y agrega el sticker de enlace a nuvara.com.co con el texto «Agenda tu demostración en vivo».",
+    "nota": "Propuesta del 16/11 para llenar la semana. Se publica desde el mismo reel ya publicado (compartir en tu historia).",
+    "estadoPieza": "lista",
+    "thumb": "vc",
+    "relaciones": [
+      "p07"
+    ],
+    "orden": 72
+  },
+  {
+    "id": "p42",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-19",
+    "hora": "18:00",
+    "semana": 2,
+    "pieza": "Reel: ¿tus clientes usan otro programa?",
+    "formato": "Reel 9:16, 18 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "El reel N4 de pauta está en reserva y ya tiene voz y portada de foto y marco. Probarlo en orgánico dice si vale la pena pautarlo: lo que funciona en orgánico es candidato para la pauta.",
+    "archivo": "out/reels/pauta/Pauta-N4-VariosProgramas.mp4",
+    "copy": "¿Tus clientes llevan la contabilidad en programas distintos? 🗂️\n\nCon núvara causas desde un solo panel y exportas al programa contable de cada empresa. Si aún no tenemos el formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#firmascontables #contadores #contabilidad #Colombia",
+    "nota": "Propuesta del 16/11. Es el mismo video del anuncio a14 (reexportado el 16/11). Portada: out/portadas-reels/Portada-Pauta-N4-VariosProgramas.png. Voz de Eduardo, todavía sin confirmar.",
+    "estadoPieza": "lista",
+    "thumb": "pn4",
+    "relaciones": [
+      "a14"
+    ],
+    "orden": 73
+  },
+  {
+    "id": "p43",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-20",
+    "hora": "12:00",
+    "semana": 2,
+    "pieza": "Reel: 500 causaciones, ¿una hora?",
+    "formato": "Reel 9:16, 18 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "El reel N3 de pauta está listo y usa una cifra oficial (500 causaciones en una hora o menos). Llena el viernes, que solo tenía una historia.",
+    "archivo": "out/reels/pauta/Pauta-N3-500Causaciones.mp4",
+    "copy": "500 causaciones en una hora o menos. ⏱️\n\nnúvara trae tus facturas de la DIAN y del correo y prepara la causación por lotes. Tú revisas y apruebas por grupos, no una por una.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #productividad #causacioncontable #Colombia",
+    "nota": "Propuesta del 16/11. Es el mismo video del anuncio a13 (reexportado el 16/11). Portada: out/portadas-reels/Portada-Pauta-N3-500Causaciones.png. Voz de Eduardo, todavía sin confirmar.",
+    "estadoPieza": "lista",
+    "thumb": "pn3",
+    "relaciones": [
+      "a13"
+    ],
+    "orden": 74
+  },
+  {
+    "id": "p41",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-11-21",
+    "hora": "11:00",
+    "semana": 2,
+    "pieza": "Historia: encuesta ¿cuántas facturas causas al mes?",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Revisa, valida y aprueba",
+    "porque": "El sábado no tiene nada. Una encuesta genera interacción y nos dice el tamaño de quien sigue la cuenta (sirve para la pauta y para la captación).",
+    "archivo": "out/redes/semana-16-11/H8-EncuestaFacturas.png",
+    "copy": "Agrega el sticker de encuesta debajo del titular con tres opciones: «Menos de 100», «De 100 a 500» y «Más de 500».",
+    "nota": "Propuesta del 16/11 (Remotion: H8-EncuestaFacturas, foto 170 del banco). Los resultados se anotan para la planeación de la pauta.",
+    "estadoPieza": "lista",
+    "thumb": "h8",
+    "relaciones": [],
+    "orden": 75
   }
 ]

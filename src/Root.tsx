@@ -34,6 +34,11 @@ const QueEsNuvaraFoto = () => (
   <PortadaFoto foto={staticFile("posts/banco-165.jpg")} enfoque="50% 25%" linea1="**núvara** es causación contable" linea2="sin digitar," linea3="con control: **tú apruebas.**" animar={false} />
 );
 
+// Historia de encuesta (p41): el sticker de encuesta se pone en Instagram, debajo del titular
+const EncuestaFacturas = () => (
+  <PortadaFoto foto={staticFile("posts/banco-170.jpg")} enfoque="62% 25%" linea1="Pregunta rápida:" linea2="¿Cuántas facturas causas al mes?" linea3="**Responde en la encuesta.**" animar={false} />
+);
+
 export const RemotionRoot: React.FC = () => {
   return (
     <>
@@ -101,6 +106,7 @@ export const RemotionRoot: React.FC = () => {
         <Still id="Blog-CompararDian-OG" component={BlogCompararDian} width={1200} height={630} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
         <Still id="QueEsNuvara-Foto" component={QueEsNuvaraFoto} width={1080} height={1350} />
+        <Still id="H8-EncuestaFacturas" component={EncuestaFacturas} width={1080} height={1920} />
         <Still id="N2-Dian1" component={DianPlaca1} width={1080} height={1350} />
         <Still id="N2-Dian2" component={DianPlaca2} width={1080} height={1350} />
         <Still id="N2-Dian3" component={DianPlaca3} width={1080} height={1350} />
