@@ -23,9 +23,9 @@ import { CausarFactura } from "./tutorials/CausarFactura";
 import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
-import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
+import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo, PortadaPonteAlDia } from "./tutorials/PonteAlDia";
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
-import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
+import { DURACION_PAUTA, PORTADAS_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
 import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, PORTADAS_REELS, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
 
 export const RemotionRoot: React.FC = () => {
@@ -81,7 +81,8 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
       <Folder name="Portadas-reels">
-        {Object.entries(PORTADAS_REELS).map(([id, P]) => (
+        <Still id="Portada-ReelPonteAlDia" component={PortadaPonteAlDia} width={1080} height={1920} />
+        {Object.entries({ ...PORTADAS_REELS, ...PORTADAS_PAUTA }).map(([id, P]) => (
           <Still key={id} id={id} component={P} width={1080} height={1920} />
         ))}
       </Folder>

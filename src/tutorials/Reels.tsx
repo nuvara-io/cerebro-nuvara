@@ -226,6 +226,30 @@ export const GanchoFuerte: React.FC<{ readonly linea1: string; readonly linea2: 
   );
 };
 
+// Gancho con la línea de portadas: foto del banco con marco. En 16:9 no hay marco
+// que funcione, así que el video horizontal sigue con el golpe sobre azul.
+type GanchoFotoProps = { readonly foto: number; readonly enfoque?: string; readonly linea1: string; readonly linea2: string; readonly fuerte?: boolean };
+export const GanchoFoto: React.FC<GanchoFotoProps> = ({ foto, enfoque, linea1, linea2, fuerte }) => {
+  const { width, height } = useVideoConfig();
+  if (width > height) return <GanchoFuerte linea1={linea1} linea2={linea2} />;
+  return (
+    <>
+      <PortadaFoto foto={staticFile(`posts/banco-${foto}.jpg`)} enfoque={enfoque} linea1={linea1} linea2={linea2} golpe={fuerte} />
+      {fuerte ? (
+        <Sequence from={15} layout="none">
+          <Audio src={staticFile("sonido/pop.wav")} volume={0.6} />
+        </Sequence>
+      ) : null}
+    </>
+  );
+};
+
+// La misma portada, quieta, para subir como portada del reel (<Still> 1080×1920)
+export const portadaFija = (foto: number, enfoque: string | undefined, linea1: string, linea2: string) => {
+  const Portada = () => <PortadaFoto foto={staticFile(`posts/banco-${foto}.jpg`)} enfoque={enfoque} linea1={linea1} linea2={linea2} animar={false} />;
+  return Portada;
+};
+
 // Cada tarjeta entra y, un momento después, una línea roja la tacha
 const EscenaRiesgo: React.FC<{ readonly e: Riesgo }> = ({ e }) => {
   const frame = useCurrentFrame();
@@ -263,18 +287,7 @@ const EscenaRiesgo: React.FC<{ readonly e: Riesgo }> = ({ e }) => {
 
 const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
   const { fps } = useVideoConfig();
-  if (e.tipo === "gancho" && e.foto) {
-    return (
-      <>
-        <PortadaFoto foto={staticFile(`posts/banco-${e.foto}.jpg`)} enfoque={e.enfoque} linea1={e.linea1} linea2={e.linea2} golpe={e.fuerte} />
-        {e.fuerte ? (
-          <Sequence from={15} layout="none">
-            <Audio src={staticFile("sonido/pop.wav")} volume={0.6} />
-          </Sequence>
-        ) : null}
-      </>
-    );
-  }
+  if (e.tipo === "gancho" && e.foto) return <GanchoFoto foto={e.foto} enfoque={e.enfoque} linea1={e.linea1} linea2={e.linea2} fuerte={e.fuerte} />;
   if (e.tipo === "gancho" && e.fuerte) return <GanchoFuerte linea1={e.linea1} linea2={e.linea2} />;
   if (e.tipo === "gancho") {
     return (
@@ -397,8 +410,7 @@ export const ReelAppProximamente = () => <Reel escenas={APP_PROXIMAMENTE} />;
 const portada = (escenas: readonly Escena[]) => {
   const g = escenas[0];
   if (g.tipo !== "gancho" || !g.foto) throw new Error("El reel no arranca con un gancho con foto");
-  const foto = g.foto;
-  return () => <PortadaFoto foto={staticFile(`posts/banco-${foto}.jpg`)} enfoque={g.enfoque} linea1={g.linea1} linea2={g.linea2} animar={false} />;
+  return portadaFija(g.foto, g.enfoque, g.linea1, g.linea2);
 };
 export const PORTADAS_REELS = {
   "Portada-ReelCausacion": portada(CAUSACION),

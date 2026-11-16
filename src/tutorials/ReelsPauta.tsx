@@ -6,7 +6,7 @@ import { color, radius, shadow, type } from "../brand/tokens";
 import { Backdrop } from "../components/Backdrop";
 import { FadeUp } from "../components/FadeUp";
 import { TwoToneTitle } from "../components/TwoToneTitle";
-import { GanchoFuerte } from "./Reels";
+import { GanchoFoto, portadaFija } from "./Reels";
 
 // Versiones 9:16 con voz de los anuncios de imagen de NUVARA20 (N2 a N5).
 // Meta también entrega esos anuncios en Reels, y una imagen quieta ahí sale
@@ -27,7 +27,7 @@ const DESPUES = 0.55;
 
 type Base = { readonly voces: readonly string[]; readonly minimo?: number };
 type Escena =
-  | (Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string })
+  | (Base & { readonly tipo: "gancho"; readonly linea1: string; readonly linea2: string; readonly foto: number; readonly enfoque?: string })
   | (Base & { readonly tipo: "placa"; readonly placa: string })
   | (Base & { readonly tipo: "cierre" });
 
@@ -50,19 +50,19 @@ const N2: Escena[] = [
 ];
 
 const N3: Escena[] = [
-  { tipo: "gancho", linea1: "500 causaciones.", linea2: "¿Una hora?", voces: ["e1"] },
+  { tipo: "gancho", linea1: "500 causaciones.", linea2: "¿Una hora?", foto: 80, enfoque: "50% 30%", voces: ["e1"] },
   { tipo: "placa", placa: "Post500Causaciones", voces: ["e2", "e3"] },
   CIERRE,
 ];
 
 const N4: Escena[] = [
-  { tipo: "gancho", linea1: "¿Tus clientes usan", linea2: "otro programa?", voces: ["v1"] },
+  { tipo: "gancho", linea1: "¿Tus clientes usan", linea2: "otro programa?", foto: 156, enfoque: "50% 30%", voces: ["v1"] },
   { tipo: "placa", placa: "N4-VariosProgramas", voces: ["v2", "v3"] },
   CIERRE,
 ];
 
 const N5: Escena[] = [
-  { tipo: "gancho", linea1: "Sin permanencia.", linea2: "Pagas lo que causas.", voces: ["g1"] },
+  { tipo: "gancho", linea1: "Sin permanencia.", linea2: "Pagas lo que causas.", foto: 37, enfoque: "50% 30%", voces: ["g1"] },
   { tipo: "placa", placa: "N5-PagasLoQueCausas", voces: ["g2", "g3"] },
   { tipo: "cierre", voces: ["g4"], minimo: 2.6 },
 ];
@@ -159,7 +159,7 @@ const Reel: React.FC<{ readonly escenas: readonly Escena[] }> = ({ escenas }) =>
       <Series>
         {escenas.map((e, i) => (
           <Series.Sequence key={i} name={e.tipo === "placa" ? e.placa : e.tipo} durationInFrames={frames(e)}>
-            {e.tipo === "gancho" ? <GanchoFuerte linea1={e.linea1} linea2={e.linea2} /> : e.tipo === "placa" ? <Placa placa={e.placa} dura={duracion(e)} /> : <Cierre />}
+            {e.tipo === "gancho" ? <GanchoFoto foto={e.foto} enfoque={e.enfoque} linea1={e.linea1} linea2={e.linea2} fuerte /> : e.tipo === "placa" ? <Placa placa={e.placa} dura={duracion(e)} /> : <Cierre />}
             <Voces voces={e.voces} />
           </Series.Sequence>
         ))}
@@ -178,3 +178,17 @@ export const ReelN2 = () => <Reel escenas={N2} />;
 export const ReelN3 = () => <Reel escenas={N3} />;
 export const ReelN4 = () => <Reel escenas={N4} />;
 export const ReelN5 = () => <Reel escenas={N5} />;
+
+// Portadas de los reels de pauta. N2 arranca con su placa (sin gancho): su portada lleva
+// el gancho del carrusel para que también siga la línea de foto con marco.
+const deGancho = (escenas: readonly Escena[]) => {
+  const g = escenas[0];
+  if (g.tipo !== "gancho") throw new Error("El reel no arranca con un gancho");
+  return portadaFija(g.foto, g.enfoque, g.linea1, g.linea2);
+};
+export const PORTADAS_PAUTA = {
+  "Portada-Pauta-N2-Dian": portadaFija(76, "50% 30%", "Antes de presentar el IVA,", "¿te falta alguna factura?"),
+  "Portada-Pauta-N3-500Causaciones": deGancho(N3),
+  "Portada-Pauta-N4-VariosProgramas": deGancho(N4),
+  "Portada-Pauta-N5-PagasLoQueCausas": deGancho(N5),
+} as const;

@@ -72,7 +72,7 @@ export const PortadaFoto: React.FC<Props> = ({ foto, enfoque = "50% 30%", linea1
       {/* Fundidos: oscuro abajo para el titular, suave arriba para el wordmark */}
       <AbsoluteFill
         style={{
-          background: `linear-gradient(0deg, rgba(8,12,20,0.9) 0%, rgba(8,12,20,0.62) ${vertical ? 26 : 30}%, rgba(8,12,20,0) ${vertical ? 52 : 60}%), linear-gradient(180deg, rgba(8,12,20,0.38) 0%, rgba(8,12,20,0) 16%)`,
+          background: `linear-gradient(0deg, rgba(8,12,20,0.92) 0%, rgba(8,12,20,0.78) ${vertical ? 30 : 34}%, rgba(8,12,20,0) ${vertical ? 56 : 64}%), linear-gradient(180deg, rgba(8,12,20,0.38) 0%, rgba(8,12,20,0) 16%)`,
         }}
       />
 
