@@ -2,7 +2,7 @@
 id: pauta-en-meta
 titulo: Pauta en Meta: método de creativos, campañas y decisiones
 publico: C
-actualizado: 2026-11-09
+actualizado: 2026-11-17
 vigencia: revisar cada trimestre; Meta cambia su plataforma seguido
 conexiones:
   - mensajes-y-afirmaciones # qué se puede decir en cada anuncio
@@ -95,6 +95,12 @@ Cómo se monta y se decide la pauta de núvara en Meta (Facebook e Instagram). E
 - [C] Publicar imágenes generadas sin revisar la política de Meta sobre contenido creado con inteligencia artificial.
 - [C] Meter creativos de las tres etapas en una sola campaña fría.
 - [I] Las cifras del curso (gasto diario, CPA y umbrales en dólares) son de un negocio de suscripción con venta en línea y no se usan para núvara. El reparto 40/40/20 sí, porque es una proporción.
+
+## Lo que aprendimos (laboratorio Ponte al día IVA, del 10 al 17 de noviembre de 2026)
+- [C] **Una conversación barata no es un lead.** La imagen de facturación electrónica fue la más barata del laboratorio ($3.850 por conversación), pero las conversaciones entraban preguntando por préstamos. Se apagó a propósito el 16-17/11.
+- [C] Por eso cada lectura mira también **qué preguntan las conversaciones** de cada anuncio, no solo el costo por conversación. El asesor marca cada conversación como calificada o no, según el anuncio de donde viene.
+- [C] Con público amplio, un anuncio que habla de plata o de facturas sin decir para quién es atrae a quien busca crédito. Hipótesis por probar: decir en el título a quién va ("para contadores", "si llevas varias empresas") filtra antes de que escriban.
+- [C] El que trae conversaciones de causación es el reel de "Ponte al día" ($5.438 por conversación del 10 al 17/11): es la referencia para medir los anuncios nuevos.
 
 ## Lo que aprendimos (NUVARA20, del 1 de octubre al 8 de noviembre de 2026)
 - [C] **Resultado:** $164.428 gastados, 13 conversaciones por WhatsApp y $12.648 por conversación, tres veces el objetivo. Se apagó el 9 de noviembre.
