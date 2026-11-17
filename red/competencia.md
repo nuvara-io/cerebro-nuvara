@@ -2,10 +2,11 @@
 id: competencia
 titulo: Competencia
 publico: C
-actualizado: 2026-11-02
+actualizado: 2026-11-17
 conexiones:
   - argumentos-de-venta   # qué decirle a quien ya usa otro programa
   - planeacion-de-marketing # qué hace hoy cada competidor
+  - competencia-en-redes    # qué publican y pautan, y los huecos para núvara
 fuentes:
   - conocimiento/sitio-web.md#comparativa-con-competidores
   - conocimiento/sitio-web.md#posicionamiento
@@ -14,6 +15,7 @@ fuentes:
   - conocimiento/demostraciones-y-ventas.md#objeciones-y-respuestas
   - conocimiento/objeciones-y-dolores.md#dolores-recurrentes
   - conocimiento/por-confirmar.md#4
+  - docs/estrategia-de-crecimiento-organico-2026-11.md  # competencia al 17/11/2026
 ---
 
 # Competencia
@@ -31,6 +33,8 @@ Cómo se diferencia núvara de otras soluciones de causación y del programa con
 ## Por qué no usar solo Siigo u otro programa contable
 - [C] núvara **no reemplaza el programa contable**: no es un software contable ni un ERP. Prepara la causación desde el correo y la DIAN y la envía al programa que el usuario ya tiene.
 - [C] Los programas contables suelen registrar solo el total de la compra y no leen la factura; núvara la interpreta línea por línea y calcula IVA y retenciones por bases y conceptos.
+- [C] **Si dice que Siigo Nube ya causa solo:** es cierto desde octubre de 2026, y solo para empresas en Siigo Nube. Pregunta cuántas de sus empresas están en otros programas, si las facturas también le llegan por correo y si cruza lo causado con la DIAN. Muéstrale la factura original al lado de la causación y cómo aprueba antes de exportar.
+- [C] **Si dice que su programa causa sin revisión:** algunos programas causan sin un paso de revisión. En núvara nada se exporta sin la aprobación del contador; ese es el argumento, sin nombrar al otro.
 - [C] Con Siigo (nube) la conexión es por API oficial; con World Office, por API con token; con Alegra, Helisa, Siigo PyME y Contai, por archivo de exportación.
 - [C] El mensaje es de complemento, no de reemplazo: "sigues en tu programa contable; núvara te deja la causación lista para que la revises y la apruebes".
 
@@ -49,3 +53,4 @@ Cómo se diferencia núvara de otras soluciones de causación y del programa con
 - [C] No nombres ni critiques a un competidor; habla de lo que hace núvara y de la aprobación del contador.
 - [C] Propón un piloto con una empresa real para que el prospecto compare con datos propios.
 - [C] Si la pregunta es qué decirle a quien ya usa otro programa, sigue en `argumentos-de-venta`.
+- [C] Qué publica y pauta cada competidor, y qué huecos puede ocupar núvara en redes: `competencia-en-redes`.

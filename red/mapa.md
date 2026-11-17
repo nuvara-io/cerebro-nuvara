@@ -213,7 +213,8 @@ Piezas gráficas, pauta (método de creativos y campañas en Meta), mensajes que
 | `planeacion-de-marketing` | núcleo | C (pendientes: I) | "¿Qué campañas hacemos este mes?", "¿qué está haciendo la competencia en pauta?", "¿qué fechas del contador aprovechamos?" |  | Calendario DIAN 2026, Actualícese, INCP, Meta Ad Library y sitios de la competencia (03/11/2026), código de `platform` |
 | `calendario-de-marketing` | núcleo | C (detalle técnico: I) | "¿Dónde está el calendario de marketing?", "¿qué estados tiene una publicación?", "¿quién aprueba lo que se publica?" |  | `red/calendario.json`, `docs/campana-cierre-iva-2026-11.md` |
 | `aprobar-publicacion` | neurona | C | "¿Cómo apruebo una publicación?", "¿cómo dejo una nota en el calendario?" | `calendario-de-marketing` | `red/calendario-de-marketing.md`, `red/revisar-pieza-antes-de-publicar.md` |
-| `plan-de-redes` | núcleo | C (pendientes: I) | "¿Cuál es el plan de redes?", "¿qué tema va cada semana en redes?", "¿a qué hora publicamos?" |  | `red/calendario.json`, `diseno/redes.md`, `diseno/reels.md` |
+| `plan-de-redes` | núcleo | C (pendientes: I) | "¿Cuál es el plan de redes?", "¿qué tema va cada semana en redes?", "¿a qué hora publicamos?", "¿cuáles son los pilares de contenido?", "¿cuántas publicaciones hacemos por red?" |  | `red/calendario.json`, `diseno/redes.md`, `diseno/reels.md`, `docs/estrategia-de-crecimiento-organico-2026-11.md` |
+| `competencia-en-redes` | núcleo | C (precios de la competencia: I) | "¿Qué publica la competencia en redes?", "¿qué copiamos y qué evitamos de la competencia?", "¿Siigo ya causa facturas de la DIAN?" |  | Meta Ad Library (Colombia, 17/11/2026), sitios, YouTube e Instagram de la competencia, `docs/estrategia-de-crecimiento-organico-2026-11.md` |
 | `crecimiento-en-instagram` | núcleo | C (pendientes: I) | "¿Cómo crecemos en Instagram?", "¿qué son los reels de prueba?", "¿activamos las traducciones de los reels?" |  | "16 Claves de Crecimiento en Instagram" (Adam Mosseri, Google Docs, procesado el 12/11/2026), `diseno/reels.md`, `plan-de-redes` |
 | `plan-seo` | núcleo | C (pendientes: I) | "¿Cuál es el plan SEO?", "¿qué artículos faltan en el blog?", "¿cómo medimos el SEO?" |  | `red/calendario.json`, `conocimiento/sitio-web.md`, código de `platform` |
 | `pauta-en-meta` | núcleo | C (techo de CPA y cifras del curso: I) | "¿Cómo armamos las campañas en Meta?", "¿cuándo apago un anuncio?", "¿cómo hago un creativo que funcione?", "¿por qué subió el costo por resultado?" |  | Curso "META ADS con CLAUDE" de Benjamín Cordero (YouTube, procesado el 09/11/2026), `planeacion-de-marketing`, `marketing-y-adquisicion` |
@@ -229,6 +230,7 @@ Piezas gráficas, pauta (método de creativos y campañas en Meta), mensajes que
 | `compartir-post-en-grupos` | neurona | C | "¿Cómo comparto un post en grupos de Facebook?", "¿cómo publico en la página de Facebook?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
 | `preparar-whatsapp-business` | neurona | C | "¿Cómo armo el catálogo de WhatsApp?", "¿cómo creo las respuestas rápidas de WhatsApp?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
 | `recontactar-leads-sin-respuesta` | neurona | I | "¿Cómo recontacto los leads que no respondieron?", "¿qué hago con los prospectos que dejaron de contestar?" | `marketing-y-adquisicion` | `cerebro-axiomapos` (09/11/2026) |
+| `prospeccion-por-whatsapp` | núcleo | C (pendientes: I) | "¿Cómo conseguimos firmas contables por WhatsApp?", "¿qué le escribo a un contador por primera vez?", "¿puedo escribirle en frío por WhatsApp?", "¿cómo califico una firma?" |  | `docs/prospeccion-por-whatsapp-2026-11.md`, política de WhatsApp Business, Ley 1581 de 2012, Ley 2300 de 2023, `demostracion-en-vivo`, `objeciones` |
 
 ## Red neuronal: Equipo interno
 
@@ -358,6 +360,13 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `plan-de-redes` | `linea-grafica` | Cómo se ven las piezas |
 | `plan-de-redes` | `mensajes-y-afirmaciones` | Qué se puede afirmar en redes |
 | `plan-de-redes` | `crecimiento-en-instagram` | Cómo ganar alcance en Instagram |
+| `competencia` | `competencia-en-redes` | Qué publica y pauta la competencia |
+| `competencia-en-redes` | `plan-de-redes` | Qué hace núvara con los huecos que deja la competencia |
+| `competencia-en-redes` | `planeacion-de-marketing` | Las campañas del mes |
+| `competencia-en-redes` | `mensajes-y-afirmaciones` | Lo que núvara sí puede afirmar |
+| `plan-de-redes` | `competencia-en-redes` | Qué hace la competencia y qué huecos quedan |
+| `plan-de-redes` | `pauta-en-meta` | Lo orgánico que gana pasa a pauta |
+| `plan-de-redes` | `prospeccion-por-whatsapp` | El perfil respalda al asesor |
 | `crecimiento-en-instagram` | `linea-grafica` | Cómo se ven los reels y sus subtítulos |
 | `crecimiento-en-instagram` | `calendario-de-marketing` | Un reel de prueba también se aprueba |
 | `crecimiento-en-instagram` | `pauta-en-meta` | Lo orgánico que gana pasa a pauta |
@@ -367,6 +376,11 @@ Una conexión se sigue solo si la pregunta toca los dos temas. Por ejemplo, "¿c
 | `pauta-en-meta` | `crear-pieza-de-redes` | Producir el creativo |
 | `planeacion-de-marketing` | `pauta-en-meta` | Cómo se monta y se decide la campaña del mes |
 | `marketing-y-adquisicion` | `pauta-en-meta` | Cómo se lleva la pauta paga |
+| `marketing-y-adquisicion` | `prospeccion-por-whatsapp` | Cómo se buscan firmas y se conversa por WhatsApp |
+| `embudo-de-adquisicion` | `prospeccion-por-whatsapp` | El contacto que lleva a la demostración en vivo |
+| `prospeccion-por-whatsapp` | `demostracion-en-vivo` | Cómo se prepara y se cierra la cita |
+| `prospeccion-por-whatsapp` | `objeciones` | La respuesta larga a cada objeción |
+| `prospeccion-por-whatsapp` | `recontactar-leads-sin-respuesta` | La base propia, primero |
 | `operar-pauta-con-claude` | `revisar-pieza-antes-de-publicar` | Revisar el creativo antes de subirlo |
 | `facturacion-electronica-y-radian` | `configuracion-facturacion-electronica`, `factura-de-venta-y-notas`, `documento-soporte-electronico`, `eventos-radian` | La parte del módulo por la que pregunta |
 | `configurar-resoluciones` | `emitir-factura-de-venta` | Ya cargada la resolución: emitir |

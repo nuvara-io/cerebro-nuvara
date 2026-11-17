@@ -2398,5 +2398,534 @@
     "thumb": "h8",
     "relaciones": [],
     "orden": 75
+  },
+  {
+    "id": "p44",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-23",
+    "hora": "12:00",
+    "semana": 3,
+    "pieza": "Carrusel: antes de declarar el IVA, 5 cruces con la DIAN",
+    "formato": "Carrusel 4:5, 8 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Pilar calendario del contador. El IVA bimestral vence hasta el 25 de noviembre y nadie muestra cómo cruzar lo causado con la DIAN. Es contenido para guardar y enviar a un colega, y es el «dato útil» del día 2 de la prospección por WhatsApp.",
+    "archivo": "out/redes/plan-90/C1-CrucesIVA.png",
+    "copy": "Antes de declarar el IVA, cruza esto con la DIAN. 📋\n\n1. Las facturas de compra del bimestre que la DIAN tiene y tú no.\n2. Las que causaste dos veces.\n3. Las notas crédito que cambian la base.\n4. Las ventas que emitiste y no causaste.\n5. Las retenciones que te practicaron.\n\nCon núvara subes el listado del mes y cruzas por CUFE: ves qué falta y lo traes. Tú revisas y apruebas.\n\nGuárdalo y mándaselo a quien declara contigo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#IVA #contadores #DIAN #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar con Contable que los 5 cruces son los correctos antes de diseñar.",
+    "estadoPieza": "porhacer",
+    "relaciones": [],
+    "orden": 76
+  },
+  {
+    "id": "p45",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-11-24",
+    "hora": "18:00",
+    "semana": 3,
+    "pieza": "Historia: encuesta ¿ya declaraste el IVA?",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Llega al cierre con todo causado",
+    "porque": "Pilar la vida de la firma. Último tramo del IVA: una encuesta da interacción y nos dice cómo va quien sigue la cuenta.",
+    "archivo": "out/redes/plan-90/H-EncuestaIVA.png",
+    "copy": "Agrega el sticker de encuesta con dos opciones: «Ya lo declaré» y «Todavía no».",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md).",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p44"
+    ],
+    "orden": 77
+  },
+  {
+    "id": "p46",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-27",
+    "hora": "18:00",
+    "semana": 3,
+    "pieza": "Historia: hasta el 30, tu primera recarga con descuento",
+    "formato": "Historia 9:16",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Más que causación",
+    "porque": "Pilar oferta. Últimos días de la promoción de primera recarga. Cae en Black Friday sin inventar otra oferta: solo la vigente, con sus condiciones y su fecha.",
+    "archivo": "out/redes/plan-90/H-PromoHasta30.png",
+    "copy": "Hasta el 30 de noviembre: 10 % desde 500 facturas y 20 % desde 1.000, solo en tu primera recarga.\n\nEscríbenos por WhatsApp desde nuvara.com.co.",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Si el operador no quiere más piezas de oferta en la semana, se descarta: p33 ya la recuerda el 20/11.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p33"
+    ],
+    "orden": 78
+  },
+  {
+    "id": "p47",
+    "linea": "Redes",
+    "modulo": "Nómina",
+    "fecha": "2026-12-02",
+    "hora": "12:00",
+    "semana": 4,
+    "pieza": "Carrusel: prima de servicios, checklist antes del 18 de diciembre",
+    "formato": "Carrusel 4:5, 7 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Pilar calendario del contador. La prima se paga a más tardar el 18 de diciembre (el 20 cae domingo). Encaja en la semana de nómina.",
+    "archivo": "out/redes/plan-90/C2-Prima.png",
+    "copy": "La prima de servicios se paga a más tardar el 18 de diciembre. ✅\n\nRevisa antes:\n• Quién tiene derecho y desde qué fecha.\n• La base: salario y lo que la integra.\n• Los días trabajados en el semestre.\n• El auxilio de transporte, si aplica.\n• El soporte en la nómina electrónica.\n\nCon núvara liquidas la nómina y llevas el comprobante a tu programa contable.\n\nGuárdalo para el cierre.\n\n#prima #nomina #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar la fecha y los puntos con Contable.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p14"
+    ],
+    "orden": 79
+  },
+  {
+    "id": "p48",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-12-03",
+    "hora": "12:00",
+    "semana": 4,
+    "pieza": "Carrusel: lo que propone el proyecto sobre facturas que no cumplen",
+    "formato": "Carrusel 4:5, 6 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Nómina y tesorería",
+    "porque": "Pilar calendario del contador. El proyecto de Ley de Rescate se discute hasta mediados de diciembre. Contenido educativo, sin alarmar ni darlo por aprobado.",
+    "archivo": "out/redes/plan-90/C3-ProyectoLey.png",
+    "copy": "Hay un proyecto de ley en el Congreso que propone sanciones más altas por facturas que no cumplen requisitos. 📄\n\nTodavía es un proyecto: no es ley.\n\nLo que sí puedes hacer hoy: revisar cada factura antes de causarla. En núvara ves la factura original al lado de la causación y nada se exporta sin tu aprobación.\n\nTe contamos si se aprueba.\n\n#DIAN #facturaelectronica #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar el estado del proyecto el día de publicar. Si ya se aprobó o se cayó, se reescribe.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "a06"
+    ],
+    "orden": 80
+  },
+  {
+    "id": "p49",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-12-09",
+    "hora": "12:00",
+    "semana": 5,
+    "pieza": "Post: demostración en vivo grupal, cierre de diciembre",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Respuesta propia a los eventos gratis de la competencia: una demostración en vivo grupal el sábado 12 de diciembre, con el formulario de inscripción.",
+    "archivo": "out/redes/plan-90/P-DemostracionGrupal.png",
+    "copy": "Cierre de diciembre en vivo. 🗓️\n\nEl sábado 12 de diciembre te mostramos cómo núvara trae las facturas de la DIAN y del correo y prepara la causación. Tú revisas y apruebas.\n\nGratis, 45 minutos y con tus preguntas.\n\nInscríbete en nuvara.com.co.",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Solo si el operador decide hacer la demostración grupal: hora, duración, enlace y quién la da están por definir.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "s12"
+    ],
+    "orden": 81
+  },
+  {
+    "id": "p50",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-12-10",
+    "hora": "12:00",
+    "semana": 5,
+    "pieza": "Reel: retención de noviembre, causa antes de que se junte con diciembre",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Pilar calendario del contador. La retención de noviembre vence del 10 al 23 de diciembre.",
+    "archivo": "out/redes/plan-90/R-RetencionNoviembre.mp4",
+    "copy": "La retención de noviembre vence del 10 al 23 de diciembre. ⏳\n\nSi noviembre no está causado, se te junta con el cierre del año.\n\nnúvara trae las facturas de la DIAN y del correo y prepara la causación con IVA y retenciones. Tú revisas y apruebas.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#retencionenlafuente #contadores #DIAN #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar las fechas contra el calendario de la DIAN.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "a07"
+    ],
+    "orden": 82
+  },
+  {
+    "id": "p51",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-12-11",
+    "hora": "18:00",
+    "semana": 5,
+    "pieza": "Reel: Me preguntaron… n.º 1",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Tu operación en un solo lugar",
+    "porque": "Pilar la vida de la firma. La mejor pregunta de los comentarios o de la prospección de la semana, respondida en pantalla. Abre la serie.",
+    "archivo": "out/redes/plan-90/R-MePreguntaron-01.mp4",
+    "copy": "Me preguntaron: «¿y si la causación queda mal?» 🤔\n\nNo se exporta. En núvara ves la factura al lado de la causación, la ajustas y solo cuando tú la apruebas va a tu programa contable.\n\n¿Qué nos preguntas tú? Déjalo en los comentarios.\n\n#contadores #causacioncontable #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). La pregunta del copy es un ejemplo: se cambia por una real de los comentarios de la semana.",
+    "estadoPieza": "porhacer",
+    "relaciones": [],
+    "orden": 83
+  },
+  {
+    "id": "p52",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-12-15",
+    "hora": "12:00",
+    "semana": 6,
+    "pieza": "Reel: cierre anual sin trasnochar",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Cierre anual",
+    "porque": "Pilar así se ve el control. Mismo mensaje que la ronda 3 de pauta y el artículo de cierre: núvara prepara, tú apruebas y te vas con el mes listo.",
+    "archivo": "out/redes/plan-90/R-CierreAnual.mp4",
+    "copy": "Cierre anual sin trasnochar. 🌙\n\nnúvara trae las facturas del mes y prepara la causación por lotes. Tú revisas, validas y apruebas.\n\nY te vas de vacaciones con diciembre en orden.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#cierrecontable #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md).",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "a07",
+      "s09"
+    ],
+    "orden": 84
+  },
+  {
+    "id": "p53",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2026-12-17",
+    "hora": "12:00",
+    "semana": 6,
+    "pieza": "Post: lo que un contador pide de Navidad",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Cierre anual",
+    "porque": "Pilar la vida de la firma. Humor sobrio de cierre, con Nuvi, para enviar entre colegas.",
+    "archivo": "out/redes/plan-90/P-NavidadContador.png",
+    "copy": "Lo que un contador pide de Navidad: 🎄\n\nque no le lleguen facturas el 31.\n\nEtiqueta a quien cierra contigo.\n\n#contadores #cierrecontable #Navidad",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Lleva a Nuvi (pieza de comunidad, no de producto).",
+    "estadoPieza": "porhacer",
+    "relaciones": [],
+    "orden": 85
+  },
+  {
+    "id": "p54",
+    "linea": "Redes",
+    "modulo": "Nómina",
+    "fecha": "2026-12-30",
+    "hora": "12:00",
+    "semana": 8,
+    "pieza": "Post: salario mínimo 2027",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Cierre anual",
+    "porque": "Pilar calendario del contador. El salario mínimo 2027 se fija antes del 30 de diciembre y cambia la nómina de enero.",
+    "archivo": "out/redes/plan-90/P-SalarioMinimo2027.png",
+    "copy": "El salario mínimo de 2027 quedó en [cifra del decreto]. 📌\n\nActualízalo en la nómina de enero antes de liquidar.\n\nEn núvara lo cambias una vez y aplica a todos tus empleados.\n\n#salariominimo #nomina #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Bloqueada hasta que salga el decreto: va solo la cifra oficial. Verificar con Producto que el cambio aplica así en núvara.",
+    "estadoPieza": "bloqueada",
+    "relaciones": [
+      "p14"
+    ],
+    "orden": 86
+  },
+  {
+    "id": "p55",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-05",
+    "hora": "12:00",
+    "semana": 9,
+    "pieza": "Carrusel: del 13 al 26 de enero vence casi todo",
+    "formato": "Carrusel 4:5, 8 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Enero sin sorpresas",
+    "porque": "Pilar calendario del contador. El pico del año. Versión orgánica del calendario de enero con «Comenta CALENDARIO» para recibirlo por mensaje directo.",
+    "archivo": "out/redes/plan-90/C4-VenceEnero.png",
+    "copy": "Del 13 al 26 de enero vence casi todo. 📅\n\nIVA bimestral y cuatrimestral, retención de diciembre y anticipo del régimen simple.\n\nLas facturas de diciembre tienen que estar causadas antes.\n\nComenta CALENDARIO y te mandamos el calendario completo por mensaje.\n\n#DIAN #vencimientos #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar las fechas cuando la DIAN publique 2027. Necesita decidir cómo se responde «CALENDARIO» (a mano o con mensaje automático).",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p39",
+      "s10",
+      "a08"
+    ],
+    "orden": 87
+  },
+  {
+    "id": "p56",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-06",
+    "hora": "12:00",
+    "semana": 9,
+    "pieza": "Reel: Enero sin sorpresas 1, causa diciembre esta semana",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Enero sin sorpresas",
+    "porque": "Pilar así se ve el control. Abre una serie corta para el pico de enero.",
+    "archivo": "out/redes/plan-90/R-EneroSinSorpresas-01.mp4",
+    "copy": "Enero sin sorpresas, episodio 1: causa diciembre esta semana. 🧾\n\nnúvara trae las facturas de diciembre de la DIAN y del correo. Tú revisas y apruebas por lotes.\n\nAsí llegas al 13 con todo listo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#cierrecontable #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md).",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p55"
+    ],
+    "orden": 88
+  },
+  {
+    "id": "p57",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-12",
+    "hora": "12:00",
+    "semana": 10,
+    "pieza": "Carrusel: Exógena 2026, lo que cambia (1 de 3)",
+    "formato": "Carrusel 4:5, 8 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Pilar calendario del contador. La exógena del año gravable 2026 estrena formatos (2821, 2822, 2854 y 2856). Serie de tres piezas que terminan en terceros y conceptos ordenados desde la causación.",
+    "archivo": "out/redes/plan-90/C5-Exogena-1.png",
+    "copy": "Exógena 2026: lo que cambia. 1 de 3. 📑\n\nLlegan formatos nuevos: 2821, 2822, 2854 y 2856.\n\nEn las próximas dos piezas: qué cambia en los que ya conoces y qué dejar listo desde la causación.\n\nGuárdalo para cuando la prepares.\n\n#exogena #DIAN #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar con Contable la lista de formatos y su alcance antes de diseñar.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "s06"
+    ],
+    "orden": 89
+  },
+  {
+    "id": "p58",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-14",
+    "hora": "12:00",
+    "semana": 10,
+    "pieza": "Carrusel: Exógena 2026, lo que cambia (2 de 3)",
+    "formato": "Carrusel 4:5, 8 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Segunda pieza de la serie: los formatos que cambian (1001, 1003, 1005, 1007 y 1011).",
+    "archivo": "out/redes/plan-90/C5-Exogena-2.png",
+    "copy": "Exógena 2026: lo que cambia. 2 de 3. 📑\n\nTambién cambian formatos que ya conoces: 1001, 1003, 1005, 1007 y 1011.\n\nRevisa terceros y conceptos antes de cerrar el año, no en abril.\n\n#exogena #DIAN #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar con Contable qué cambia en cada formato.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p57"
+    ],
+    "orden": 90
+  },
+  {
+    "id": "p59",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-20",
+    "hora": "12:00",
+    "semana": 11,
+    "pieza": "Carrusel: Exógena 2026, lo que cambia (3 de 3)",
+    "formato": "Carrusel 4:5, 7 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Cierre de la serie: terceros y conceptos ordenados desde la causación.",
+    "archivo": "out/redes/plan-90/C5-Exogena-3.png",
+    "copy": "Exógena 2026: lo que cambia. 3 de 3. 📑\n\nLa exógena sale bien cuando la causación está bien: cada tercero con su NIT y cada gasto en su concepto.\n\nEn núvara la causación queda con el tercero y la cuenta del PUC, y tú la apruebas antes de exportarla.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#exogena #DIAN #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md).",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p58"
+    ],
+    "orden": 91
+  },
+  {
+    "id": "p60",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2027-01-15",
+    "hora": "12:00",
+    "semana": 10,
+    "pieza": "Collab: cómo cierra enero un contador con varias empresas",
+    "formato": "Reel 9:16, 45 s (collab)",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Pilar la vida de la firma. Primera collab con un contador creador: publica él, núvara aparece como coautora. Las collabs llegan a no seguidores y se envían más que los posts propios.",
+    "archivo": "out/redes/plan-90/R-Collab-01.mp4",
+    "copy": "Así cierra enero [nombre del contador], que lleva varias empresas. 👇\n\n[Texto del creador.]\n\nCollab con núvara.",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Por definir: el creador, cómo se le reconoce (no hay referidos ni bonos oficiales), autorización de imagen y que solo se vea la empresa de prueba. El texto lo escribe el creador y se revisa como cualquier pieza.",
+    "estadoPieza": "porhacer",
+    "relaciones": [],
+    "orden": 92
+  },
+  {
+    "id": "p61",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-01-18",
+    "hora": "08:00",
+    "semana": 11,
+    "pieza": "Historias: hoy vence para…",
+    "formato": "Historias 9:16 (lunes a viernes)",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Pilar calendario del contador. Semana de vencimientos de enero: una historia corta cada mañana, sin venta, con el enlace al calendario.",
+    "archivo": "out/redes/plan-90/H-HoyVence.png",
+    "copy": "Hoy vence [impuesto] para los NIT terminados en [dígitos]. Revisa tu fecha en el calendario: enlace en la historia.",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Una plantilla con el día cambiado. Las fechas salen del calendario oficial 2027 de la DIAN; hoy no está publicado.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p55"
+    ],
+    "orden": 93
+  },
+  {
+    "id": "p62",
+    "linea": "Redes",
+    "modulo": "General",
+    "fecha": "2027-01-27",
+    "hora": "12:00",
+    "semana": 12,
+    "pieza": "Post: live de exógena con un gremio o una universidad",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Pilar la vida de la firma. Un live con un docente o un gremio ocupa un espacio que la competencia directa no tiene.",
+    "archivo": "out/redes/plan-90/P-LiveExogena.png",
+    "copy": "Live: exógena 2026, preguntas y respuestas. 🎙️\n\n[Día] a las [hora], con [invitado].\n\nDeja tu pregunta en los comentarios y la respondemos en vivo.",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Por definir: invitado, fecha y hora. Si no hay invitado confirmado, se descarta.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p57"
+    ],
+    "orden": 94
+  },
+  {
+    "id": "p63",
+    "linea": "Redes",
+    "modulo": "Nómina",
+    "fecha": "2027-01-28",
+    "hora": "12:00",
+    "semana": 12,
+    "pieza": "Post: intereses de cesantías antes del 31 de enero",
+    "formato": "Post 4:5",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Exógena 2026",
+    "porque": "Pilar calendario del contador. Los intereses de cesantías se pagan a más tardar el 31 de enero.",
+    "archivo": "out/redes/plan-90/P-InteresesCesantias.png",
+    "copy": "Los intereses de cesantías se pagan al trabajador a más tardar el 31 de enero. 📌\n\nSon el 12 % anual sobre las cesantías.\n\nEn núvara los liquidas en la nómina y llevas el comprobante a tu programa contable.\n\n#cesantias #nomina #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar con Contable la fecha y el cálculo.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p14"
+    ],
+    "orden": 95
+  },
+  {
+    "id": "p64",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2027-02-03",
+    "hora": "12:00",
+    "semana": 13,
+    "pieza": "Reel: una firma, varios programas contables",
+    "formato": "Reel 9:16, 30 s",
+    "canales": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ],
+    "tema": "Varios programas, un panel",
+    "porque": "Pilar tu programa contable, cualquiera. Caso de una firma con empresas en programas distintos, contado sin datos reales identificables.",
+    "archivo": "out/redes/plan-90/R-VariosProgramas-Caso.mp4",
+    "copy": "Una firma, empresas en tres programas contables distintos. 🗂️\n\nCon núvara causas todas desde un solo panel y exportas al programa de cada empresa. Si aún no tenemos el formato, lo generamos.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#firmascontables #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Si se cuenta un caso real: autorización del usuario y sin nombres, NIT ni montos.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p42"
+    ],
+    "orden": 96
+  },
+  {
+    "id": "p65",
+    "linea": "Redes",
+    "modulo": "Nómina",
+    "fecha": "2027-02-09",
+    "hora": "12:00",
+    "semana": 14,
+    "pieza": "Carrusel: cesantías, lo que no se te puede pasar",
+    "formato": "Carrusel 4:5, 7 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Varios programas, un panel",
+    "porque": "Pilar calendario del contador. Las cesantías se consignan al fondo a más tardar el 14 de febrero.",
+    "archivo": "out/redes/plan-90/C6-Cesantias.png",
+    "copy": "Las cesantías se consignan al fondo a más tardar el 14 de febrero. ✅\n\nRevisa:\n• El salario base de cada trabajador.\n• Los días trabajados en 2026.\n• El fondo de cada uno.\n• Los intereses que ya pagaste en enero.\n\nGuárdalo para la próxima semana.\n\n#cesantias #nomina #contadores #Colombia",
+    "nota": "Propuesta del 17/11, plan de 90 días (docs/estrategia-de-crecimiento-organico-2026-11.md). Verificar con Contable la fecha y los puntos.",
+    "estadoPieza": "porhacer",
+    "relaciones": [
+      "p63"
+    ],
+    "orden": 97
   }
 ]

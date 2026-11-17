@@ -8,6 +8,7 @@ conexiones:
   - demostracion-en-vivo    # la etapa que más cierra
   - campanas-de-activacion  # el código que abre la prueba
   - precios                 # la recarga inicial
+  - prospeccion-por-whatsapp  # el contacto por WhatsApp que lleva a la demostración en vivo
 fuentes:
   - conocimiento/demostraciones-y-ventas.md#cierre-típico
   - conocimiento/demostraciones-y-ventas.md#posicionamiento-y-público
@@ -20,7 +21,7 @@ El camino de un prospecto desde que ve una pieza hasta que su cuenta queda habil
 
 ## Etapas
 1. [C] **Contacto:** una pieza, un anuncio, el sitio o un correo de campaña lo llevan al WhatsApp del asesor o a un enlace de registro.
-2. [C] **Demostración en vivo** (opcional, pero es la que más cierra): diagnóstico, qué hay hoy y qué está en desarrollo, crear la empresa y ver la causación con sus facturas.
+2. [C] **Demostración en vivo** (opcional, pero es la que más cierra): diagnóstico, qué hay hoy y qué está en desarrollo, y el flujo de causación en la cuenta demo, con facturas de prueba. No se crea nada del prospecto: su empresa se crea en la capacitación.
 3. [C] **Registro** en `app.nuvara.com.co/signup`: nombre, correo y contraseña, o Google. Después nombra su organización. El registro es abierto: no hay que pedir acceso.
 4. [C] **Activación** en **Activa tu cuenta**: paga la **recarga inicial**, que es el mínimo mensual ($80.000), por Wompi, Bre-B o QR. Si pide capacitación, paga $230.000: $150.000 de la capacitación y esos $80.000 de saldo. Si tiene un código, lo escribe en **Tengo un código** y entra a la **prueba** sin pagar.
 5. [C] **Prueba:** causa con el crédito de bienvenida (por defecto, 20 facturas) en una sola empresa, con hasta 20 facturas traídas del correo y sin la extensión de la DIAN. La guía **Primeros pasos** lo acompaña: configurar la empresa, importar facturas y causar la primera.

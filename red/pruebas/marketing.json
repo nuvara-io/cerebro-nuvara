@@ -630,6 +630,54 @@
           "$12.648"
         ]
       ]
+    },
+    {
+      "pregunta": "¿Cómo conseguimos firmas contables por WhatsApp?",
+      "publico": "C",
+      "nodos": [
+        "prospeccion-por-whatsapp"
+      ],
+      "incluye": [
+        [
+          "puente de permiso"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Puedo escribirle en frío por WhatsApp a un contador?",
+      "publico": "C",
+      "nodos": [
+        "prospeccion-por-whatsapp"
+      ],
+      "incluye": [
+        [
+          "Ley 1581"
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Qué dice la ley 2300 de los horarios para escribir?",
+      "publico": "C",
+      "nodos": [
+        "prospeccion-por-whatsapp"
+      ],
+      "incluye": [
+        [
+          "3:00 p. m."
+        ]
+      ]
+    },
+    {
+      "pregunta": "¿Cómo califico una lista de firmas?",
+      "publico": "C",
+      "nodos": [
+        "prospeccion-por-whatsapp"
+      ],
+      "incluye": [
+        [
+          "Puntaje de 0 a 10"
+        ]
+      ]
     }
   ]
 }

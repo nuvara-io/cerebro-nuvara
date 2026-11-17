@@ -26,3 +26,6 @@ red/registro/
 
 # Muestras de voz grabadas (audio personal, fuera de git)
 docs/voz/muestras/
+
+# Listas de prospección con datos de contacto de firmas (fuera de git)
+prospeccion/
