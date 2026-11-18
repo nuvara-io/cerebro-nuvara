@@ -848,28 +848,6 @@
     ]
   },
   {
-    "id": "p08",
-    "linea": "Redes",
-    "modulo": "Causación",
-    "fecha": "2026-11-19",
-    "hora": "08:00",
-    "semana": 2,
-    "orden": 21,
-    "pieza": "Brochure de causación",
-    "formato": "Documento PDF",
-    "canales": [
-      "LinkedIn"
-    ],
-    "tema": "Revisa, valida y aprueba",
-    "porque": "Mostrar el control: núvara prepara y tú decides qué se aprueba.",
-    "archivo": "out/brochure/nuvara-causacion-propuesta.pdf",
-    "copy": "Todo lo que hace núvara en causación, en un documento: de la factura al asiento, con tu revisión en cada paso.\n\nCompártelo con quien lleva la contabilidad en tu equipo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#firmascontables #contadores #contabilidad #Colombia",
-    "nota": "La portada ya no dice «Propuesta comercial»: desde el 16/11 dice «Causación» (PDF reexportado). En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
-    "estadoPieza": "bloqueada",
-    "thumb": "bc",
-    "relaciones": []
-  },
-  {
     "id": "s03",
     "linea": "SEO",
     "modulo": "Facturación electrónica",
@@ -891,7 +869,6 @@
     "thumb": "",
     "relaciones": [
       "p10",
-      "p12",
       "s04"
     ],
     "url": "/facturacion-electronica/",
@@ -912,8 +889,7 @@
     "formato": "Post 4:5",
     "canales": [
       "Instagram",
-      "Facebook",
-      "LinkedIn"
+      "Facebook"
     ],
     "tema": "Llega al cierre con todo causado",
     "porque": "La semana del IVA no puede ser solo de causación: núvara también factura, liquida nómina y lleva la tesorería.",
@@ -971,30 +947,6 @@
     "estadoPieza": "lista",
     "thumb": "h2",
     "relaciones": []
-  },
-  {
-    "id": "p12",
-    "linea": "Redes",
-    "modulo": "Facturación electrónica",
-    "fecha": "2026-12-01",
-    "hora": "08:00",
-    "semana": 3,
-    "orden": 26,
-    "pieza": "Brochure de facturación electrónica",
-    "formato": "Documento PDF",
-    "canales": [
-      "LinkedIn"
-    ],
-    "tema": "Más que causación",
-    "porque": "Módulo por módulo, cuando termina el IVA.",
-    "archivo": "out/brochure-fe/nuvara-facturacion-electronica.pdf",
-    "copy": "Facturación electrónica en núvara: qué emites, cómo empiezas y cuánto cuesta, en un documento.\n\nTambién responde tus eventos RADIAN desde la misma plataforma.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Se pasó del 25 de noviembre al 1 de diciembre. RADIAN va como plan anual de $200.000 por empresa con eventos ilimitados (desde el 11/11/2026); el PDF se reexportó el 16/11 con ese precio. En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
-    "estadoPieza": "bloqueada",
-    "thumb": "bf",
-    "relaciones": [
-      "s03"
-    ]
   },
   {
     "id": "a06",
@@ -1076,8 +1028,7 @@
     "estadoPieza": "porhacer",
     "thumb": "",
     "relaciones": [
-      "p14",
-      "p17"
+      "p14"
     ],
     "url": "/nomina-electronica/",
     "palabraClave": "nómina electrónica",
@@ -1184,30 +1135,6 @@
     ]
   },
   {
-    "id": "p17",
-    "linea": "Redes",
-    "modulo": "Nómina",
-    "fecha": "2026-12-02",
-    "hora": "08:00",
-    "semana": 4,
-    "orden": 34,
-    "pieza": "Brochure de nómina",
-    "formato": "Documento PDF",
-    "canales": [
-      "LinkedIn"
-    ],
-    "tema": "Nómina y tesorería",
-    "porque": "Cierre de año: prima antes del 18 de diciembre.",
-    "archivo": "out/brochure-nomina/nuvara-nomina.pdf",
-    "copy": "Se acerca la prima de servicios. Mira cómo llevas la nómina en núvara, de la novedad al asiento: liquidación, nómina electrónica, PILA y precios por tramo.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
-    "estadoPieza": "bloqueada",
-    "thumb": "bn",
-    "relaciones": [
-      "s05"
-    ]
-  },
-  {
     "id": "s07",
     "linea": "SEO",
     "modulo": "Tesorería",
@@ -1230,7 +1157,6 @@
     "relaciones": [
       "p18",
       "p20",
-      "p21",
       "s08"
     ],
     "url": "/tesoreria/",
@@ -1340,30 +1266,6 @@
     "relaciones": [
       "s07",
       "s08"
-    ]
-  },
-  {
-    "id": "p21",
-    "linea": "Redes",
-    "modulo": "Tesorería",
-    "fecha": "2026-12-09",
-    "hora": "08:00",
-    "semana": 5,
-    "orden": 40,
-    "pieza": "Brochure de tesorería",
-    "formato": "Documento PDF",
-    "canales": [
-      "LinkedIn"
-    ],
-    "tema": "Tu operación en un solo lugar",
-    "porque": "Tesorería completa y app móvil.",
-    "archivo": "out/brochure-tesoreria/nuvara-tesoreria.pdf",
-    "copy": "Cobra, paga, concilia y controla tus cajas, con su asiento contable. Tú revisas y apruebas.\n\nEn este documento está todo lo que incluye tesorería en núvara.\n\nAgenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #causacioncontable #facturaelectronica #Colombia",
-    "nota": "Lleva la página de la app y precios de suscripción: publicar con la app en tiendas y esos precios confirmados. En pausa: LinkedIn todavía no está activo (decisión del 16/11/2026). Sale cuando se active.",
-    "estadoPieza": "bloqueada",
-    "thumb": "bt",
-    "relaciones": [
-      "s07"
     ]
   },
   {

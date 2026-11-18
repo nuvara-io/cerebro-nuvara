@@ -47,7 +47,7 @@ Qué publica núvara en redes sin pauta, en qué orden y con qué ritmo. Los tem
 - [C] **Facebook:** las mismas publicaciones, con reels nativos, y el post general compartido en 2 o 3 grupos de contadores por semana (ver `compartir-post-en-grupos`). En los grupos primero se responde sin vender.
 - [C] **TikTok:** 3 videos por semana: los reels adaptados y un tutorial vertical por semana, con la búsqueda exacta en el título ("causar facturas DIAN", "exógena 2026"). Los tutoriales de 60 a 90 segundos son una prueba: la línea de reels es de 30 a 45.
 - [C] **YouTube:** un tutorial cada dos semanas y los reels como cortos.
-- [C] **LinkedIn:** todavía no está activo (decisión del 16/11/2026). Lo que iba solo a LinkedIn (los brochures) queda en pausa en el calendario y el resto sale en Instagram y Facebook. Cuando se active: videos, brochures y posts, sobre todo a las 08:00.
+- [C] **LinkedIn:** todavía no está activo (decisión del 16/11/2026). Lo que iba solo a LinkedIn (los cuatro brochures) se quitó del calendario el 18/11; los PDF siguen en `out/brochure*/` para cuando se active. El resto sale en Instagram y Facebook. Cuando se active: videos, brochures y posts, sobre todo a las 08:00.
 - [C] No se publica en festivos y nunca hay una semana vacía. El día de un vencimiento solo van historias, porque el contador está declarando.
 
 ## Fechas del contador hasta febrero
