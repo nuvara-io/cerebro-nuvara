@@ -2829,5 +2829,28 @@
       "p63"
     ],
     "orden": 97
+  },
+  {
+    "id": "p66",
+    "linea": "Redes",
+    "modulo": "Causación",
+    "fecha": "2026-11-25",
+    "hora": "12:00",
+    "semana": 3,
+    "pieza": "Carrusel: antes de aprobar una causación, revisa esto",
+    "formato": "Carrusel 3:4 (1080×1440), 10 láminas",
+    "canales": [
+      "Instagram",
+      "Facebook"
+    ],
+    "tema": "Más que causación",
+    "porque": "Primera prueba de la estructura de «Carruseles que se leen hasta el final» y del formato 3:4 en orgánico. Aporta valor antes de vender: seis revisiones prácticas para el contador.",
+    "archivo": "out/redes/carrusel-revisar/01.png a 10.png (Remotion: carpeta Carrusel-revisar)",
+    "copy": "Antes de aprobar una causación, revisa esto 👇\n\nUna sola factura puede implicar más de diez decisiones contables: el cuadre, el grupo de cada valor, el impuesto al consumo, las propinas, los anticipos y las notas crédito.\n\nEn núvara ves la factura original al lado del asiento. Tú revisas, validas y apruebas.\n\nGuarda este carrusel para tu próximo cierre y agenda tu demostración en vivo en nuvara.com.co.\n\n#contadores #contabilidad #causacioncontable #cierrecontable",
+    "nota": "Propuesta del 18/11. Formato 3:4 en prueba (diseno/redes.md): solo orgánico. Datos de red/causar-y-revisar.md (cómo se revisa una causación y casos que se revisan a mano). Portada con la foto 79 del banco.",
+    "estadoPieza": "lista",
+    "thumb": "cr1",
+    "relaciones": [],
+    "orden": 98
   }
 ]

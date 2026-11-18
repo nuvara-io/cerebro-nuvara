@@ -1,5 +1,6 @@
 import { Composition, Folder, Still, staticFile } from "remotion";
 import { PortadaFoto } from "./components/PortadaFoto";
+import { CARRUSEL, CARRUSEL_REVISAR } from "./posts/CarruselRevisar";
 import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { DIAPOSITIVAS_NOMINA } from "./brochure/Nomina";
@@ -90,6 +91,11 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="Pauta-N5-PagasLoQueCausas" component={ReelN5} width={1080} height={1920} fps={30} durationInFrames={DURACION_PAUTA.N5} />
         <Composition id="ReelCreditos" component={ReelCreditos} width={1080} height={1920} fps={30} durationInFrames={DURACION_REEL_CREDITOS} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
+      </Folder>
+      <Folder name="Carrusel-revisar">
+        {CARRUSEL_REVISAR.map((C, i) => (
+          <Still key={i} id={`CarruselRevisar-${String(i + 1).padStart(2, "0")}`} component={C} width={CARRUSEL.ancho} height={CARRUSEL.alto} />
+        ))}
       </Folder>
       <Folder name="Portadas-reels">
         <Still id="Portada-ReelPonteAlDia" component={PortadaPonteAlDia} width={1080} height={1920} />
