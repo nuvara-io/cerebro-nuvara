@@ -93,6 +93,7 @@ Detrás van círculos y arcos grandes del isotipo en blanco translúcido, que de
 
 - Hay audio en todo el reel. El de entrevista es más fuerte (voz) y el de tipografía animada lleva música más baja.
 - La narración, si va, se hace con la voz de marca de ElevenLabs y respeta la pronunciación NÚ-va-ra.
+- Los efectos de sonido se ponen y se revisan con Real SFX y earshot, y los recursos externos salen de Openverse con licencia comercial. Las reglas de licencias están en `sonido-y-recursos.md`.
 
 ## Nuvi en movimiento
 

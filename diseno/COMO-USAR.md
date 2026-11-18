@@ -8,6 +8,7 @@ Esta carpeta es la **fuente versionada** del Cerebro gráfico núvara. La **vist
 | `tutoriales.md` | Reglas de los tutoriales en video (16:9) |
 | `redes.md` | Reglas de posts, historias y LinkedIn |
 | `reels.md` | Reglas de los reels (9:16) y del movimiento |
+| `sonido-y-recursos.md` | Herramientas de sonido (Real SFX, earshot) y recursos con licencia abierta (Openverse), con las reglas de licencias |
 | `tokens.json` | Todos los tokens: color, tipografía, espaciado, radios, sombras y tiempos |
 | `components/*/` | Cada componente con sus reglas (`README.md`) y su vista previa (`preview.html`) |
 | `assets/*/README.md` | Cómo usar logos, íconos, Nuvi y referencias |
