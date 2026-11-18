@@ -1,4 +1,6 @@
-import { Composition, Folder, Still } from "remotion";
+import { Composition, Folder, Still, staticFile } from "remotion";
+import { PortadaFoto } from "./components/PortadaFoto";
+import { CARRUSEL, CARRUSEL_REVISAR } from "./posts/CarruselRevisar";
 import { DIAPOSITIVAS } from "./brochure/Diapositivas";
 import { DIAPOSITIVAS_FE } from "./brochure/FacturacionElectronica";
 import { DIAPOSITIVAS_NOMINA } from "./brochure/Nomina";
@@ -23,10 +25,20 @@ import { CausarFactura } from "./tutorials/CausarFactura";
 import { DURACION_RADIAN, EventosRadian } from "./tutorials/EventosRadian";
 import { DURACION_FLUJO, FlujoCausacion } from "./tutorials/FlujoCausacion";
 import { DURACION_TESORERIA, FlujoTesoreria } from "./tutorials/FlujoTesoreria";
-import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo } from "./tutorials/PonteAlDia";
+import { DURACION_PONTE_AL_DIA, PonteAlDiaVideo, PortadaPonteAlDia } from "./tutorials/PonteAlDia";
 import { DURACION_REEL_CREDITOS, ReelCreditos } from "./tutorials/ReelCreditos";
-import { DURACION_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
-import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
+import { DURACION_PAUTA, PORTADAS_PAUTA, ReelN2, ReelN3, ReelN4, ReelN5 } from "./tutorials/ReelsPauta";
+import { DURACION_REEL_APP, DURACION_REEL_APP_PROXIMAMENTE, DURACION_REEL_CAUSACION, DURACION_REEL_CIERRE_IVA, DURACION_REEL_RADIAN, DURACION_REEL_RADIAN_PAUTA, ReelApp, ReelAppProximamente, ReelCausacion, ReelCierreIva, PORTADAS_REELS, ReelRadian, ReelRadianPauta } from "./tutorials/Reels";
+
+// «¿Qué es núvara?» (p05) con la línea de foto y marco, en 4:5 para el feed
+const QueEsNuvaraFoto = () => (
+  <PortadaFoto foto={staticFile("posts/banco-165.jpg")} enfoque="50% 25%" linea1="**núvara** es causación contable" linea2="sin digitar," linea3="con control: **tú apruebas.**" animar={false} />
+);
+
+// Historia de encuesta (p41): el sticker de encuesta se pone en Instagram, debajo del titular
+const EncuestaFacturas = () => (
+  <PortadaFoto foto={staticFile("posts/banco-170.jpg")} enfoque="62% 25%" linea1="Pregunta rápida:" linea2="¿Cuántas facturas causas al mes?" linea3="**Responde en la encuesta.**" animar={false} />
+);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -80,6 +92,17 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="ReelCreditos" component={ReelCreditos} width={1080} height={1920} fps={30} durationInFrames={DURACION_REEL_CREDITOS} />
         <Composition id="ReelApp" component={ReelApp} width={1080} height={1920} fps={30} durationInFrames={Math.round(DURACION_REEL_APP * 30)} />
       </Folder>
+      <Folder name="Carrusel-revisar">
+        {CARRUSEL_REVISAR.map((C, i) => (
+          <Still key={i} id={`CarruselRevisar-${String(i + 1).padStart(2, "0")}`} component={C} width={CARRUSEL.ancho} height={CARRUSEL.alto} />
+        ))}
+      </Folder>
+      <Folder name="Portadas-reels">
+        <Still id="Portada-ReelPonteAlDia" component={PortadaPonteAlDia} width={1080} height={1920} />
+        {Object.entries({ ...PORTADAS_REELS, ...PORTADAS_PAUTA }).map(([id, P]) => (
+          <Still key={id} id={id} component={P} width={1080} height={1920} />
+        ))}
+      </Folder>
       <Folder name="Redes">
         <Still id="Post500Causaciones" component={Post500Causaciones} width={1080} height={1350} />
         <Still id="PortadaCausaciones" component={PortadaCausaciones} width={1080} height={1350} />
@@ -88,6 +111,8 @@ export const RemotionRoot: React.FC = () => {
         <Still id="Blog-CompararDian-Card" component={BlogCompararDian} width={920} height={517} />
         <Still id="Blog-CompararDian-OG" component={BlogCompararDian} width={1200} height={630} />
         <Still id="QueEsNuvara" component={QueEsNuvara} width={1080} height={1350} />
+        <Still id="QueEsNuvara-Foto" component={QueEsNuvaraFoto} width={1080} height={1350} />
+        <Still id="H8-EncuestaFacturas" component={EncuestaFacturas} width={1080} height={1920} />
         <Still id="N2-Dian1" component={DianPlaca1} width={1080} height={1350} />
         <Still id="N2-Dian2" component={DianPlaca2} width={1080} height={1350} />
         <Still id="N2-Dian3" component={DianPlaca3} width={1080} height={1350} />

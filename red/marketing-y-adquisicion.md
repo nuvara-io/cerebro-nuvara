@@ -11,6 +11,7 @@ conexiones:
   - compartir-post-en-grupos  # post de página compartido en grupos
   - preparar-whatsapp-business  # catálogo y respuestas rápidas
   - pauta-en-meta           # cómo se montan y deciden las campañas en Meta
+  - prospeccion-por-whatsapp  # buscar firmas contables y llevarlas a la demostración en vivo
 fuentes:
   - diseno/README.md
   - conocimiento/demostraciones-y-ventas.md#posicionamiento-y-público
@@ -39,6 +40,7 @@ Cómo núvara sale a buscar usuarios: las piezas gráficas y la pauta, los mensa
 - [C] **Grupos de Facebook:** un post general de la página se comparte, como página, en grupos de contadores y empresarios, uno a la vez (ver `compartir-post-en-grupos`). Es orgánico y no cuesta. Jugada replicada de Axioma POS.
 - [C] **Demostración en vivo:** es donde más se cierra. Los sábados convierten bien.
 - [C] **Correo de campaña** con código de activación, solo a contactos con autorización previa o relación comercial.
+- [C] **Prospección por WhatsApp:** firmas contables y contadores independientes, con permiso antes del primer mensaje y uno a uno, hasta la demostración en vivo (ver `prospeccion-por-whatsapp`). Nunca envíos masivos ni mensajes en frío.
 - [C] **Enlace con código:** `app.nuvara.com.co/signup?code=<CÓDIGO>` registra a la persona y le aplica el código en un paso.
 
 ## Pauta paga

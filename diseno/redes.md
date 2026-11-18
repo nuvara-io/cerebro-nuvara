@@ -8,7 +8,8 @@ Esta sección aplica los **Fundamentos** (tipografía, color, fondos, logo y voz
 
 | Pieza | Tamaño | Notas |
 |---|---|---|
-| Post y carrusel | 1080×1350 (4:5) | El formato principal. También se usa 1080×1080 en comparativas. |
+| Post y carrusel | 1080×1350 (4:5) | El formato principal y **el único para pauta**. También se usa 1080×1080 en comparativas. |
+| Post y carrusel orgánico (en prueba) | 1080×1440 (3:4) | El feed y la grilla del perfil de Instagram ya se ven en 3:4. Margen de seguridad: 180px arriba y abajo y 50px a los lados, para que el contenido clave también quede dentro del recorte 4:5. Solo en orgánico: la pauta sigue en 1080×1350. Se prueba primero en un carrusel. |
 | Historia | 1080×1920 (9:16) | Deja libres 220px arriba y 300px abajo para la interfaz de la app. |
 | Portada de reel | 1080×1920 (9:16) | El texto va en el tercio central y nunca en los 420px de abajo, que tapan los botones del reel. |
 | LinkedIn | 1200×628 (1.91:1) | Carruseles de "Tips", con más aire y menos texto. |
@@ -55,6 +56,55 @@ Hay cuatro, y cada pieza usa uno solo:
 - **Arco de marca** (`ArcoMarca`): un trazo grueso de círculo parcial con el degradado de marca, cortado por una esquina. Da movimiento a piezas con mucho aire (LinkedIn, portadas).
 - **Pie de página:** "www.nuvara.com.co" o "Síguenos" con los íconos de redes, chico y centrado abajo.
 - **Siguiente lámina:** `>>>` en `redes-azul` (o blanco sobre foto), abajo a la derecha.
+
+## Carruseles que se leen hasta el final
+
+Referencia: el carrusel «Carrusel feo vs carrusel viral» de @joharoodriguez (Instagram, 5/10/2026). Su idea central es que un carrusel no necesita más información, sino mejores decisiones de diseño. Así lo aplicamos:
+
+1. **Jerarquía en el orden de lectura.** Se lee en F o en Z: arriba a la izquierda lo más grande (el titular), después el subtítulo y al final lo chico. Cada lámina tiene un solo punto de entrada. En núvara, el titular en dos tonos o dos pesos va arriba, y la palabra clave es lo más grande de la lámina.
+2. **Contraste medido, no a ojo.** Se comprueba con un medidor de contraste (4,5:1 mínimo para el texto chico y 3:1 para el grande) pensando en pantallas pequeñas y con poco brillo. Valen las reglas de la sección Contraste: nada de gris sobre gris oscuro ni blanco chico sobre turquesa.
+3. **Una secuencia que obliga a deslizar.** Para un carrusel de 10 láminas:
+
+   | Láminas | Qué hacen |
+   |---|---|
+   | 1 | Detienen el scroll con un gancho: una pregunta o un problema del contador |
+   | 2–3 | Despiertan interés con un ejemplo concreto |
+   | 4–5 | Sostienen la atención con un diagrama: flujo, antes y después, comparación |
+   | 6–9 | Dan información práctica, una idea por lámina |
+   | 10 | Cierran con un solo llamado a la acción: demostración en vivo, guardar o seguir |
+
+   Errores que no se repiten:
+   - un gancho plano;
+   - láminas que no dan razón para pasar a la siguiente;
+   - vender antes de aportar valor;
+   - información al azar;
+   - cerrar con otra oferta en vez de un llamado claro.
+
+   Cada lámina deja un hilo abierto hacia la siguiente, y la flecha `>>>` lo refuerza.
+4. **Imágenes integradas, no pegadas.** Una foto o una captura sobre un fondo plano «se ve fuera de lugar». Se integra:
+   - con sombra de contacto (`redes-sombra-tarjeta`);
+   - dentro de una tarjeta o un marco;
+   - o recortada sobre el fondo con su sombra.
+
+   Las capturas de la plataforma van en su marco (`ScreenFrame`), nunca sueltas.
+5. **Dimensiones al día.** Ver «Formatos»: en orgánico se prueba 3:4 (1080×1440) y en pauta se sigue en 4:5.
+
+## Portada con foto y marco (portadas de reel)
+
+Es la línea de las portadas que ya salieron en el perfil (Drive › Piezas graficas › portadas de reels, 73 a 77) y la que tienen que seguir **todas las portadas de reel y el primer segundo de cada reel**. En código es `PortadaFoto` (`src/components/PortadaFoto.tsx`), y las portadas se renderizan desde la carpeta **Portadas-reels** de Studio.
+
+- **Foto real del banco a sangre**, nunca fondo gris ni pantallazo. La cara queda dentro del marco.
+- **Wordmark blanco** chico (210px de ancho en 1080×1920) y centrado arriba.
+- **Marco blanco delgado** (3px) de esquinas redondeadas, a 110px de los lados. Está abierto abajo: se desvanece antes del titular.
+- **Titular abajo a la izquierda, dentro del marco:**
+  - una línea en Regular blanca, con alguna palabra en Bold;
+  - la frase clave en Bold `redes-azul`, más grande;
+  - si hace falta, un remate en blanco («Esto te **interesa.**»).
+  - En las portadas de reel, el titular termina por encima de los 420px de abajo.
+- **Fundidos:** uno oscuro abajo para que el titular se lea, y uno suave arriba para el wordmark.
+- **Arco de marca** (turquesa → azul, 46px de grueso) en la esquina de abajo. Nunca cruza el titular.
+- **Efecto pendiente:** en las portadas originales la persona tapa el marco (va por delante). Para eso hay que recortarla de la foto, y el recorte automático todavía no está habilitado. Mientras tanto, la persona va dentro del marco, como en la portada «¿Cómo interpreta núvara en segundos?».
+- Los posts de producto con pantallazos (fondo gris o azul) siguen siendo válidos para el feed, pero **no se usan como portada de reel**.
 
 ## Fotografía
 

@@ -9,7 +9,7 @@ import { FadeUp } from "../components/FadeUp";
 import { PantallaReal } from "../components/PantallaReal";
 import { TwoToneTitle } from "../components/TwoToneTitle";
 import { GRABACIONES } from "./FlujoCausacion";
-import { GanchoFuerte } from "./Reels";
+import { GanchoFoto, portadaFija } from "./Reels";
 
 // Pauta "Ponte al día": reel 1080×1920 y video 1920×1080 con las mismas escenas y
 // la voz de Eduardo. Sin Nuvi: es una pieza de promoción. La oferta sale de
@@ -41,6 +41,9 @@ const ESCENAS: Escena[] = [
   { tipo: "oferta", voz: "d5", dura: 7.8 },
   { tipo: "cierre", voz: "d6", dura: 5.8 },
 ];
+
+const GANCHO = { foto: 75, enfoque: "50% 30%", linea1: "¿Se te acumularon las", linea2: "causaciones?" } as const;
+export const PortadaPonteAlDia = portadaFija(GANCHO.foto, GANCHO.enfoque, GANCHO.linea1, GANCHO.linea2);
 
 export const DURACION_PONTE_AL_DIA = ESCENAS.reduce((s, e) => s + Math.round(e.dura * 30) / 30, 0);
 
@@ -115,7 +118,7 @@ const Contenido: React.FC<{ readonly e: Escena }> = ({ e }) => {
   const vertical = useVertical();
   const { fps } = useVideoConfig();
 
-  if (e.tipo === "gancho") return <GanchoFuerte linea1="¿Se te acumularon las" linea2="causaciones?" />;
+  if (e.tipo === "gancho") return <GanchoFoto foto={GANCHO.foto} enfoque={GANCHO.enfoque} linea1={GANCHO.linea1} linea2={GANCHO.linea2} fuerte />;
 
   if (e.tipo === "pila") {
     return (

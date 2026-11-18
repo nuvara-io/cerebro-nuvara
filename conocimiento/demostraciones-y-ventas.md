@@ -3,6 +3,8 @@
 Basado en reuniones comerciales con contadores independientes, firmas contables, empresas y una entidad pública, entre diciembre de 2025 y agosto de 2026. Las cifras de precios y de resultados son lo que el asesor dijo en cada sesión y **cambian entre reuniones**: los únicos precios confirmados son los de `sitio-web.md` y `CLAUDE.md`. Valida en `por-confirmar.md` antes de usar cualquier otra cifra en un video o en una respuesta.
 
 ## Cómo se estructura una demostración en vivo
+> **Vigente desde el 17/11/2026 (decisión del equipo):** la demostración en vivo se hace solo en la cuenta demo, con una empresa demo y facturas de prueba: se muestra cómo funciona núvara y no se crea nada del prospecto. Crear la empresa con el RUT, cargar el balance y conectar el correo y la DIAN con los datos reales del cliente es parte de la capacitación (ver `capacitacion.md`). Los pasos 3 a 5 y el párrafo «Para preparar» describen cómo se hacía en las reuniones de 2025 y 2026.
+
 1. **Diagnóstico (5 a 10 min):** cuántas empresas, cuántas facturas al mes, qué software contable usa, si tiene auxiliares, qué solución probó antes y cuál es su dolor. Con una firma, los dolores cambian según con quién se hable: el dueño habla de costo y dependencia; el contador, de tiempo y de su trabajo.
 2. **Qué hay hoy y qué está en desarrollo:** antes de compartir pantalla, el asesor aclara que hoy está la causación y que nómina y conciliación bancaria están en desarrollo según el equipo (2026).
 3. **Crear la empresa:** se sube solo el RUT (unos 10 minutos); se pide que el usuario revise el NIT. Cada empresa opera en un entorno aislado y lleva su propio correo.
@@ -16,7 +18,7 @@ Basado en reuniones comerciales con contadores independientes, firmas contables,
 11. **Comparación con la DIAN** para detectar faltantes o NIT mal escritos.
 12. **Cierre comercial:** reglas de créditos, capacitación incluida, soporte y siguiente paso (pago y fecha de capacitación).
 
-**Para preparar:** pide antes el RUT, el balance de prueba por terceros, los correos donde llegan las facturas y el acceso a la DIAN; si no hay acceso al correo en ese momento, se sigue y se conecta después. No se improvisa una demostración inmediata con datos reales de un prospecto: se prepara su información o se usa una empresa ya configurada, con una carpeta organizada de empresas de prueba. Pedir tantos datos de entrada puede percibirse como invasivo.
+**Para preparar (antes del 17/11/2026; hoy no se piden estos datos para la demostración en vivo):** pide antes el RUT, el balance de prueba por terceros, los correos donde llegan las facturas y el acceso a la DIAN; si no hay acceso al correo en ese momento, se sigue y se conecta después. No se improvisa una demostración inmediata con datos reales de un prospecto: se prepara su información o se usa una empresa ya configurada, con una carpeta organizada de empresas de prueba. Pedir tantos datos de entrada puede percibirse como invasivo.
 <!-- fuentes: h-040559feec95, h-3a9a315786c4, h-722e015bdc9c, h-bc9b20a13601, h-5cb9422bb0c9, h-a540b6ab78be, h-a59810d87210, h-b451d169d162, h-f093ed31e568, h-1d261692318e -->
 
 ## Qué decir y qué evitar
